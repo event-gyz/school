@@ -14,7 +14,7 @@ $_nickname = $_POST['p7'];
 // 查询手机号和验证码
 $select = "select  *  from message where phone ='{$_PHONE}' and message_code='{$_AUTH}' and status=0 ";
 $result = M()->find($select);
-if($result){
+if(!$result){
     die(genResponse(false, $_v_ERROR_REGISTER_FAILED."，请获取验证码"));
 }
 // 更新手机验证码信息状态
