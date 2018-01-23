@@ -7,7 +7,7 @@
 //$dbpw   = "Evt_huitang2015";
 //$mysql_database = "school";
 
-$mysql_database = "sunny_school";
+$mysql_database = "school";
 $dbhost = "127.0.0.1";
 $dbuser = "root";
 $dbpw   = "root";
