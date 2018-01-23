@@ -88,8 +88,8 @@ function query_result($sql)
 	$result=null;
 	if(func_num_args()==1 && $conn!=null)
 	{
-		$result = mysqli_query($conn,$sql) or die("query_resultServer Error:".mysql_error());
-                $tmp = mysqli_fetch_array($result,MYSQL_ASSOC);
+		$result = mysqli_query($conn,$sql) or die("query_resultServer Error:".mysqli_error());
+                $tmp = mysqli_fetch_array($result,MYSQLI_NUM);
                 mysqli_free_result($result);
                 return $tmp;
 	}
