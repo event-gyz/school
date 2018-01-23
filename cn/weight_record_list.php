@@ -127,6 +127,14 @@ include('inc.php');
             <div class="weight_record_contraction" style="display:none">
                 
             </div>
+			<?php
+			if(isset($_SESSION['user_token'])) {
+				$member_uid = $_SESSION["CURRENT_KID_UID"];
+				$sql = "select * from wap_weight where uid in (select supervisor_uid from user where uid={$member_uid}) order by Id";
+				$list = M()->select($sql);
+				$url = base64_encode($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+			}
+			?>
             <!-- 列表 -->
         	<div class="weight_record_list">
     			<div class="title">
@@ -136,24 +144,24 @@ include('inc.php');
                         <span>体重（kg）</span>
     				</p>
     				<ul class="list">
+						<?php foreach($list as $value){ ?>
     					<li>
-    						<p><i><a href="#"><img src="../content/epaper/images/height_record_list_01.png" alt=""></a></i></p>
-    						<p>2017年11月20日</p>
-    						<p>40.0</p>
+    						<p><i><a href="#"><img src=<?php echo $value['picurl']?> alt=""></a></i></p>
+    						<p><?php echo date('Y年m月d日',strtotime($value['date']))?></p>
+    						<p><?php echo $value['weight']?></p>
     					</li>
-    					<li>
-    						<p><b class="eqit"></b><span>编辑</span></p>
-    						<p><b class="delete"></b><span>删除</span></p>
-    					</li>
-    					<li>
-    						<p><i><a href="#"><img src="../content/epaper/images/height_record_list_02.png" alt=""></a></i></p>
-    						<p>2017年11月20日</p>
-    						<p>21.26</p>
-    					</li>
-    					<li>
-    						<p><b class="eqit"></b><span>编辑</span></p>
-    						<p><b class="delete"></b><span>删除</span></p>
-    					</li>
+
+						<li>
+							<p><b class="eqit"></b><span><a href="weight_record_eqit.php?id=<?= $value['id']?>">编辑</a></span></p>
+							<p><b class="delete"></b>
+								<span>
+								<a href="weight_record.php?id=<?= $value['id']?>&type=delete&back=<?=$url?>">删除</a>
+							</span>
+							</p>
+
+						</li>
+
+						<?php }?>
     				</ul>
     			</div>
     		</div>
