@@ -33,7 +33,7 @@ function af_index_list_recommend() {
 	$result = query($sql);
 	$count = 0;
 	echo('<ul>');
-	while ($row = mysqli_fetch_array($result)) {
+	while ($row = mysql_fetch_array($result)) {
 		$uid = $row['uid'];
 		$title = $row['title'];
 		$desc = $row['description'];
@@ -74,7 +74,7 @@ function af_index_list_news() {
 	$result = query($sql);
 	$count = 0;
 	echo("<ul>");
-	while ($row = mysqli_fetch_array($result)) {
+	while ($row = mysql_fetch_array($result)) {
 		$uid = $row['uid'];
 		$title = $row['title'];
 		$desc = $row['description'];
@@ -117,7 +117,7 @@ function af_news_list($page) {
 	$result = query($sql);
 	$count = 0;
 	echo("<ul>");
-	while ($row = mysqli_fetch_array($result)) {
+	while ($row = mysql_fetch_array($result)) {
 		$uid = $row['uid'];
 		$title = $row['title'];
 		$icon = $row['image'];
@@ -179,7 +179,7 @@ function af_recommend_load_article() {
 	}
 
 	$result = query($sql);
-	if($row=mysqli_fetch_array($result)) {
+	if($row=mysql_fetch_array($result)) {
 		$uid = $row['uid'];
 		$v_image = $row['image'];
 		if(empty($v_image)) {
@@ -248,7 +248,7 @@ function af_recommend_list_related($uid) {
 		$sql = "SELECT * from articles WHERE type='REC' AND (".$search_string.") ORDER BY rand() limit 4";
 		$result = query($sql);
 		$count = 0;
-		while ($row = mysqli_fetch_array($result)) {
+		while ($row = mysql_fetch_array($result)) {
 			$uid = $row['uid'];
 			$title = $row['title'];
 			$desc = $row['description'];
@@ -312,7 +312,7 @@ function af_recommend_list_latest() {
 	}
 
 	$result = query($sql);
-	while ($row = mysqli_fetch_array($result)) {
+	while ($row = mysql_fetch_array($result)) {
 		$uid = $row['uid'];
 		$title = $row['title'];
 		$desc = $row['description'];
@@ -354,7 +354,7 @@ function af_recommend_list($tag) {
 		$sql = "SELECT * from articles WHERE type='REC' ORDER BY uid desc,pub_date";
 
 	$result = query($sql);
-	while ($row = mysqli_fetch_array($result)) {
+	while ($row = mysql_fetch_array($result)) {
 		$uid = $row['uid'];
 		$title = $row['title'];
 		$desc = $row['description'];
