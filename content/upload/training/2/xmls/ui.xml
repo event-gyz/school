@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ui>
+	<productID productSN="0001"/>
+
+	<exam examSN="1" question="哪一种动物不是昆虫？" modeType="2"  btn1="imgs/1/1.png" btn2="imgs/1/2.png" btn3="imgs/1/3.png" btn4="imgs/1/4.png" btn5="imgs/1/5.png">1</exam>
+
+	<exam examSN="2" question="哪一种工具可以把昆虫看得更清楚？" modeType="3"  btn1="imgs/2/1.png" btn2="imgs/2/2.png" btn3="imgs/2/3.png" btn4="imgs/2/4.png" btn5="imgs/2/5.png">1</exam>
+
+	<exam examSN="3" question="这个交通工具少了哪个部分？" modeType="3"  btn1="imgs/3/1.png" btn2="imgs/3/2.png" btn3="imgs/3/3.png" btn4="imgs/3/4.png" btn5="imgs/3/5.png">1</exam>
+
+	<exam examSN="4" question="属于「三角形家族」的图形一共有多少个？" modeType="5"  btn1="imgs/4/1.png" btn2="imgs/4/2.png" btn3="imgs/4/3.png" btn4="imgs/4/4.png" btn5="imgs/4/5.png">1</exam>
+
+	<exam examSN="5" question="空格里应该是什么图形？" modeType="1"  btn1="imgs/5/1.png" btn2="imgs/5/2.png" btn3="imgs/5/3.png" btn4="imgs/5/4.png" btn5="imgs/5/5.png">1</exam>
+
+	<exam examSN="6" question="空格里应该是什么图形？" modeType="1"  btn1="imgs/6/1.png" btn2="imgs/6/2.png" btn3="imgs/6/3.png" btn4="imgs/6/4.png" btn5="imgs/6/5.png">1</exam>
+
+	<exam examSN="7" question="空格里应该是什么图形？" modeType="1"  btn1="imgs/7/1.png" btn2="imgs/7/2.png" btn3="imgs/7/3.png" btn4="imgs/7/4.png" btn5="imgs/7/5.png">1</exam>
+
+</ui>

@@ -1,0 +1,15 @@
+SUBJECT>>{$username} 您好,感謝您加入{$sitename}大家庭!<<
+Hi,{$username}
+
+{$sitename}歡迎您的加入！
+
+以下是您在本站註冊的信息，請閱讀完後盡快刪除此郵件，以免帳號信息泄漏
+
+用戶名： {$username}
+密碼為： {$passwd}
+
+祝您在論壇過得開心！
+來自管理員
+
+如果您不幸忘記密碼，可以到社區找回密碼，也可以寫信請管理員重新設定。
+{$main_url}/{$startIndex}

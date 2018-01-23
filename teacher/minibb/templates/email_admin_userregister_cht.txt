@@ -1,0 +1,19 @@
+SUBJECT>>{$sitename}: 新註冊提醒<<
+您好，
+
+有人在您的 {$sitename} 網站成功註冊了，以下是新註冊用戶的詳細信息：
+
+ID: {$insres}
+
+用戶名: {$username}
+郵箱地址: {$user_email}
+聯絡方式: {$user_icq}
+網站: {$user_website}
+職業: {$user_occ}
+來自: {$user_from}
+興趣: {$user_interest}
+
+查看該用戶更詳細的資料:
+{$main_url}/{$indexphp}action=userinfo&user={$insres}
+
+提示：若您不再想收取有關這樣的提醒，請在您的論壇根目錄下的 setup_options.php 文件中更改 $emailadmin 的值為 '0' 即可，反之亦然！

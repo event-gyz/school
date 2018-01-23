@@ -1,0 +1,16 @@
+SUBJECT>>{$sitename}: 帳戶激活 - {$loginName}<<
+您好！{$loginName}：
+
+感謝您加入{$sitename}大家庭，
+
+帳戶需要激活才能使用，趕緊激活成為{$sitename}正式的一員吧:)
+
+點擊下面的鏈接立即激活帳戶(或將網址復制到瀏覽器中打開)：
+
+{$main_url}/{$indexphp}action=confirmpasswd&confirmCode={$confirmCode}
+
+願您在社區過得開心！
+來自管理員
+
+
+請不要直接回覆本郵件，本郵件為系統自動發送！

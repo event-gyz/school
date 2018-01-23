@@ -1,0 +1,32 @@
+SUBJECT>>{$sitename}: 你所關注的話題有新的回覆<<
+您好，
+
+您在"{$forum_title_em}" 中所訂閱的帖子 "{$topicTitle_em}" {$user_usr_em}對它發佈了新的回覆 。
+
+內容如下：
+--
+
+{$postTextSmall}
+
+--
+
+你可以點擊或複製下面的鏈接地址進行訪問，
+該鏈接可以有助於您更好的閱讀或對此帖進行答復：
+
+[FOLLOW_CODE]
+
+如果您不再想收到有關此主題任何消息，
+想退訂本話題，請點擊的鏈接進行取消關注：
+
+[UNSUBSCRIBE_BY_CODE]
+
+如果很不幸，您忘記了自己的密碼，可以點擊下面鏈接訪問我們主頁：
+
+{$main_url}/{$startIndex}
+
+點擊登陸後，有找回密碼功能，請完成整個頁面內容，提交您的郵箱，並按照所提示完成即可重置密碼。
+
+願你在論壇上過得愉快！
+來自社區管理員。
+
+本郵件為系統自動發送，請勿直接進行答復！

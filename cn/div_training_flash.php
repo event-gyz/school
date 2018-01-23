@@ -1,0 +1,1 @@
+<div style="width:100%;height:400px;line-height:400px;text-align:center;border:1px dashed #ccc;">嵌入現成FLASH</div>

@@ -1,0 +1,16 @@
+SUBJECT>>{$sitename}: 帐户激活 - {$loginName}<<
+您好！{$loginName}：
+
+感谢您加入{$sitename}大家庭，
+
+帐户需要激活才能使用，赶紧激活成为{$sitename}正式的一员吧:)
+
+点击下面的链接立即激活帐户(或将网址复制到浏览器中打开)：
+
+{$main_url}/{$indexphp}action=confirmpasswd&confirmCode={$confirmCode}
+
+愿您在社区过得开心！
+来自管理员
+
+
+请不要直接回覆本邮件，本邮件为系统自动发送！

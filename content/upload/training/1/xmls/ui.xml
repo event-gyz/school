@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ui>
+	<productID productSN="0001"/>
+
+	<exam examSN="1" question="哪一个物件是三角形？" modeType="2"  btn1="imgs/1/1.png" btn2="imgs/1/2.png" btn3="imgs/1/3.png" btn4="imgs/1/4.png" btn5="imgs/1/5.png">1</exam>
+
+	<exam examSN="2" question="哪一组和图例一样？" modeType="3"  btn1="imgs/2/1.png" btn2="imgs/2/2.png" btn3="imgs/2/3.png" btn4="imgs/2/4.png" btn5="imgs/2/5.png">1</exam>
+
+	<exam examSN="3" question="哪一种物件和星星的数量一样？" modeType="4"  btn1="imgs/3/1.png" btn2="imgs/3/2.png" btn3="imgs/3/3.png" btn4="imgs/3/4.png" btn5="imgs/3/5.png">1</exam>
+
+	<exam examSN="4" question="哪一种动物不会叫？" modeType="2"  btn1="imgs/4/1.png" btn2="imgs/4/2.png" btn3="imgs/4/3.png" btn4="imgs/4/4.png" btn5="imgs/4/5.png">1</exam>
+
+	<exam examSN="5" question="哪一个物件是红色，也是圆形？" modeType="2"  btn1="imgs/5/1.png" btn2="imgs/5/2.png" btn3="imgs/5/3.png" btn4="imgs/5/4.png" btn5="imgs/5/5.png">1</exam>
+
+	<exam examSN="6" question="哪一组和图例一模一样？" modeType="3"  btn1="imgs/6/1.png" btn2="imgs/6/2.png" btn3="imgs/6/3.png" btn4="imgs/6/4.png" btn5="imgs/6/5.png">1</exam>
+
+	<exam examSN="7" question="谁最高？" modeType="1"  btn1="imgs/7/1.png" btn2="imgs/7/2.png" btn3="imgs/7/3.png" btn4="imgs/7/4.png" btn5="imgs/7/5.png">1</exam>
+
+	<exam examSN="8" question="什么最重？" modeType="2"  btn1="imgs/8/1.png" btn2="imgs/8/2.png" btn3="imgs/8/3.png" btn4="imgs/8/4.png" btn5="imgs/8/5.png">1</exam>
+
+	<exam examSN="9" question="圆形的物件有几个？" modeType="5"  btn1="imgs/9/1.png" btn2="imgs/9/2.png" btn3="imgs/9/3.png" btn4="imgs/9/4.png" btn5="imgs/9/5.png">1</exam>
+
+	<exam examSN="10" question="三朵小花连成一线，可以连成几条？" modeType="3" btn1="imgs/10/1.png" btn2="imgs/10/2.png" btn3="imgs/10/3.png" btn4="imgs/10/4.png" btn5="imgs/10/5.png">1</exam>
+
+	<exam examSN="11" question="谁的头发最长？" modeType="2" btn1="imgs/11/1.png" btn2="imgs/11/2.png" btn3="imgs/11/3.png" btn4="imgs/11/4.png" btn5="imgs/11/5.png">1</exam>
+
+	<exam examSN="12" question="哪一个和其它不一样？" modeType="2" btn1="imgs/12/1.png" btn2="imgs/12/2.png" btn3="imgs/12/3.png" btn4="imgs/12/4.png" btn5="imgs/12/5.png">1</exam>
+</ui>
