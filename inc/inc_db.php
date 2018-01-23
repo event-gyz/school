@@ -35,7 +35,7 @@ function query($sql)
 		if(substr_count($sql,"'")%2>0) return null;
 		if(substr_count($sql,"drop")>0) return null;
 //		$result = mysql_query($sql, $conn) or die("Server Error:".mysql_error());
-        $result = mysqli_query($conn,$sql ) or die("Server Error:".mysql_error());
+        $result = mysqli_query($conn,$sql ) or die("queryServer Error:".mysql_error());
 		return $result;
 	}
 	return null;
@@ -88,7 +88,7 @@ function query_result($sql)
 	$result=null;
 	if(func_num_args()==1 && $conn!=null)
 	{
-		$result = mysqli_query($conn,$sql) or die("Server Error:".mysql_error());
+		$result = mysqli_query($conn,$sql) or die("query_resultServer Error:".mysql_error());
                 $tmp = mysqli_fetch_array($result,MYSQL_ASSOC);
                 mysqli_free_result($result);
                 return $tmp;
@@ -103,7 +103,7 @@ function query_result_list($sql)
         $tmp = array();
 	if(func_num_args()==1 && $conn!=null)
 	{
-		$result = mysqli_query($conn,$sql) or die("Server Error:".mysqli_error());
+		$result = mysqli_query($conn,$sql) or die("query_result_listServer Error:".mysqli_error());
                 while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
                     $tmp[] = $row;
                 }
@@ -115,7 +115,7 @@ function query_result_list($sql)
 function query_delete($sql){
     global $conn;
     $result=null;
-    $result = mysqli_query( $conn,$sql) or die("Server Error:".mysqli_error());
+    $result = mysqli_query( $conn,$sql) or die("query_deleteServer Error:".mysqli_error());
     return $result;
 }
 
