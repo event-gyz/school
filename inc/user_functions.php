@@ -33,36 +33,36 @@ class MyUser
 				$sql = "SELECT uid from member where email ='".$_EMAIL."' and password= md5(lower('".$_PASS."'))";
 			}
 			$result = query($sql);
-			
+
 			if($result==null) return -1;
 			if(mysql_num_rows($result)!=1)
-			{	
+			{
 				return -1;
 			}
 			else
 			{
 				$row=mysql_fetch_row($result);
- 				$this->uid = $row[0];
+				$this->uid = $row[0];
 				$this->getUserToken();
 				return $this->uid;
 			}
-			
+
 		}
-		else 
+		else
 		{
 			return -1;
 		}
-	
+
 	}
 
 	function exist($_EMAIL)
 	{
 		$_EMAIL = strtolower($_EMAIL);
-		if(isset($_EMAIL)) 
+		if(isset($_EMAIL))
 		{
 			$sql = "select count(*) from member where email ='".$_EMAIL."'";
 			$result = query($sql);
-			if($row=mysqli_fetch_row($result))
+			if($row=mysql_fetch_row($result))
 			{
 				if($row[0]==1) return true;
 				else return false;
@@ -77,22 +77,22 @@ class MyUser
 	function register($_EMAIL, $_PASS, $_FNAME, $_LNAME, $_PHONE)
 	{
 		$_EMAIL = strtolower($_EMAIL);
-                if(!$this->exist( $_EMAIL ))
+		if(!$this->exist( $_EMAIL ))
 		{
 
-                    $sql = "INSERT INTO member (id, password, first_name, last_name, cellphone, email) VALUES ('".$_EMAIL."',md5(lower('".$_PASS."')),'".$_FNAME."','".$_LNAME."','".$_PHONE."','".$_EMAIL."')";
-                    $result = query($sql);
+			$sql = "INSERT INTO member (id, password, first_name, last_name, cellphone, email) VALUES ('".$_EMAIL."',md5(lower('".$_PASS."')),'".$_FNAME."','".$_LNAME."','".$_PHONE."','".$_EMAIL."')";
+			$result = query($sql);
 
-                    if($this->login($_EMAIL, $_PASS) == -1)
-                    {
-                            return false;
-                    }
-                    else
-                    {
-                            $this->getUserInfo();
-                            return true;
-                    }
-		}	
+			if($this->login($_EMAIL, $_PASS) == -1)
+			{
+				return false;
+			}
+			else
+			{
+				$this->getUserInfo();
+				return true;
+			}
+		}
 		else
 		{
 			return false;
@@ -111,19 +111,19 @@ class MyUser
 		$result = query($sql);
 		if($result!=null)
 		{
-			if(mysqli_num_rows($result)==1)
+			if(mysql_num_rows($result)==1)
 			{
-			$obj = mysqli_fetch_object($result);
-			$this->id 		= $obj->id;
-			$this->first_name	= $obj->first_name;
-			$this->last_name	= $obj->last_name;
-			$this->email		= $obj->email;
-			$this->credit		= $obj->credit;
-			$this->image_url	= $obj->image_url;
-			$this->cellphone	= $obj->cellphone;
-			$this->epaper		= $obj->epaper;
+				$obj = mysql_fetch_object($result);
+				$this->id 		= $obj->id;
+				$this->first_name	= $obj->first_name;
+				$this->last_name	= $obj->last_name;
+				$this->email		= $obj->email;
+				$this->credit		= $obj->credit;
+				$this->image_url	= $obj->image_url;
+				$this->cellphone	= $obj->cellphone;
+				$this->epaper		= $obj->epaper;
 			}
-		}		
+		}
 	}
 
 	function getUserId(){
@@ -133,18 +133,18 @@ class MyUser
 	{
 		if($this->token == null)
 		{
-			$this->token = generateFullTokenNew($this->uid);		
+			$this->token = generateFullTokenNew($this->uid);
 		}
 		elseif($this->verifyToken()==-1)
 		{
-			$this->token = generateFullTokenNew($this->uid);				
-		}		
+			$this->token = generateFullTokenNew($this->uid);
+		}
 		return $this->token;
 	}
 
 	function verifyToken()
 	{
-		return verifyTokenNew($this->token);		
+		return verifyTokenNew($this->token);
 	}
 
 	function accessFromToken($token)
@@ -169,21 +169,21 @@ class MyUser
 		$this->email 		= null;
 		$this->credit 		= null;
 		$this->image_url 	= null;
-		$this->token 		= null;	
+		$this->token 		= null;
 	}
 
 	function getCredit()
 	{
-               $sql = "select credit from member where uid = '".$this->uid."'";
-                $result = query($sql);
-                if($result!=null)
-                {
-                        if(mysqli_num_rows($result)==1)
-                        {
-                        $obj = mysqli_fetch_object($result);
-                        $this->credit           = $obj->credit;
-                	return $this->credit;
-		        }
+		$sql = "select credit from member where uid = '".$this->uid."'";
+		$result = query($sql);
+		if($result!=null)
+		{
+			if(mysql_num_rows($result)==1)
+			{
+				$obj = mysql_fetch_object($result);
+				$this->credit           = $obj->credit;
+				return $this->credit;
+			}
 			else return -1;
 		}
 		else return -1;
@@ -207,15 +207,15 @@ class MyUser
 		{
 			$sql = " select birth_day from user where uid = '".$this->uid."'";
 			$result = query($sql);
-			if($row = mysqli_fetch_object($result))
-				{
+			if($row = mysql_fetch_object($result))
+			{
 				$sec = abs(strtotime(date("Ym")) - strtotime($row->birth_day));
 				$year = (int)($sec/(365.5*60*60*24));
 				$month = (int)(($sec%(365.5*60*60*24))/(30*60*60*24));
 				$this->age = $year.".".$month;
-					return $this->age;
-				}
-			else 
+				return $this->age;
+			}
+			else
 				return -1;
 
 		}
@@ -231,7 +231,7 @@ class MyUser
 			$result=query($sql);
 			if($result)
 			{
-				$row=mysqli_fetch_object($result);
+				$row=mysql_fetch_object($result);
 				$this->perm=$row->perm;
 			}
 			else
@@ -244,71 +244,71 @@ class MyUser
 
 	function getUserAgeByMemberUid()
 	{
-                if(isset($this->uid))
-                {
-                        $sql = " select birth_day from user where uid = ( select max(uid) as uid from member where uid ='".$this->uid."') ";
-                        $result = query($sql);
-                        if($row = mysqli_fetch_object($result))
-                        {
-                                $sec = abs(strtotime(date("Ym")) - strtotime($row->birth_day));
-                                $year = (int)($sec/(365.5*60*60*24));
-                                $month = (int)(($sec%(365.5*60*60*24))/(30*60*60*24));
-                                $this->age = $year.".".$month;
-                                return $this->age;
-                        }
-                }
-                return -1;
+		if(isset($this->uid))
+		{
+			$sql = " select birth_day from user where uid = ( select max(uid) as uid from member where uid ='".$this->uid."') ";
+			$result = query($sql);
+			if($row = mysql_fetch_object($result))
+			{
+				$sec = abs(strtotime(date("Ym")) - strtotime($row->birth_day));
+				$year = (int)($sec/(365.5*60*60*24));
+				$month = (int)(($sec%(365.5*60*60*24))/(30*60*60*24));
+				$this->age = $year.".".$month;
+				return $this->age;
+			}
+		}
+		return -1;
 
 	}
-	
+
 	function getUserAgeByMemberUidInMonths() {
-        if(isset($this->uid))
-        {
-                $sql = " select birth_day from user where uid = ( select max(uid) as uid from member where uid ='".$this->uid."') ";
-                $result = query($sql);
-                if($row = mysqli_fetch_object($result))
-                {
-					$birthday = new DateTime($row->birth_day);
-					$diff = $birthday->diff(new DateTime());
-					$months = $diff->format('%m') + 12 * $diff->format('%y');
-					$days = $diff->format('%d');
-					if($days >= 15)
-						$months += 0.5;
-					return $months;
-                }
-        }
-        return -1;
+		if(isset($this->uid))
+		{
+			$sql = " select birth_day from user where uid = ( select max(uid) as uid from member where uid ='".$this->uid."') ";
+			$result = query($sql);
+			if($row = mysql_fetch_object($result))
+			{
+				$birthday = new DateTime($row->birth_day);
+				$diff = $birthday->diff(new DateTime());
+				$months = $diff->format('%m') + 12 * $diff->format('%y');
+				$days = $diff->format('%d');
+				if($days >= 15)
+					$months += 0.5;
+				return $months;
+			}
+		}
+		return -1;
 	}
-	
+
 	function getKidsUidArray() {
 		$arr = array();
-        if(isset($this->uid))
+		if(isset($this->uid))
 		{
 			$sql = "select uid from user where supervisor_uid='".$this->uid."'";
 			$result = query($sql);
-			while($row=mysqli_fetch_array($result)) {
+			while($row=mysql_fetch_array($result)) {
 				$arr[] = $row['uid'];
 			}
-		}	
-		return $arr;	
+		}
+		return $arr;
 	}
-        
-    function cleanUserScoreByMemberUid()
+
+	function cleanUserScoreByMemberUid()
 	{
-       	if(isset($this->uid))
+		if(isset($this->uid))
 		{
 			$sql = " delete from score where uid = ( select max(uid) as uid from member where uid ='".$this->uid."') ";
 			query($sql);
 		}
 	}
-	
+
 	function cleanUserScore()
 	{
 		if(isset($this->uid))
-        {
-                $sql = " delete from score where uid = '".$this->uid."' ";
-                query($sql);
-        }
+		{
+			$sql = " delete from score where uid = '".$this->uid."' ";
+			query($sql);
+		}
 	}
 }
 
