@@ -24,7 +24,7 @@
       <file leaf-file-name="ceanza_menu.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cn/ceanza_menu.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
+            <state relative-caret-position="-49">
               <caret line="113" column="32" selection-start-line="113" selection-start-column="32" selection-end-line="113" selection-end-column="32" />
               <folding>
                 <marker date="1516607902203" expanded="true" signature="1164:1286" ph="UPDATE reset... " />
@@ -52,7 +52,7 @@
       <file leaf-file-name="ceanza_add.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cn/ceanza_add.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
+            <state relative-caret-position="71">
               <caret line="109" column="65" selection-start-line="108" selection-start-column="16" selection-end-line="109" selection-end-column="65" />
               <folding>
                 <marker date="1516614453606" expanded="true" signature="1164:1286" ph="UPDATE reset... " />
@@ -69,7 +69,7 @@
       <file leaf-file-name="grow_diary.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cn/grow_diary.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="473">
+            <state relative-caret-position="419">
               <caret line="51" column="47" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="47" />
               <folding>
                 <marker date="1516615799621" expanded="true" signature="735:1012" ph="INSERT INTO grow_diary... " />
@@ -91,7 +91,7 @@
       <file leaf-file-name="ceanza_list.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cn/ceanza_list.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
+            <state relative-caret-position="68">
               <caret line="241" column="27" selection-start-line="241" selection-start-column="27" selection-end-line="241" selection-end-column="27" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -112,14 +112,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
-              <folding>
-                <element signature="e#7#25#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="135">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -127,11 +125,59 @@
       <file leaf-file-name="inc_db.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/inc_db.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="12" selection-end-column="17" />
+            <state relative-caret-position="263">
+              <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
               <folding>
-                <element signature="e#7#34#0#PHP" expanded="true" />
-                <marker date="1516673739841" expanded="true" signature="1944:2081" ph="..." />
+                <marker date="1516674211281" expanded="true" signature="1944:2081" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reg_message.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cn/reg_message.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+              <folding>
+                <marker date="1516677358797" expanded="true" signature="218:268" ph="select * fro... member" />
+                <marker date="1516677358797" expanded="true" signature="458:558" ph="INSERT INTO message... " />
+                <marker date="1516677358797" expanded="true" signature="906:980" ph="select * fro... message" />
+                <marker date="1516677358797" expanded="true" signature="1258:1308" ph="select * fro... member" />
+                <marker date="1516677358797" expanded="true" signature="1471:1571" ph="INSERT INTO message... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="send_message.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/send_message.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="5" column="21" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inc_bottom_js.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cn/inc_bottom_js.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="446">
+              <caret line="385" column="32" selection-start-line="385" selection-start-column="32" selection-end-line="385" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="other.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/other.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="337">
+              <caret line="204" column="4" selection-start-line="204" selection-start-column="4" selection-end-line="204" selection-end-column="4" />
+              <folding>
+                <marker date="1516677269368" expanded="true" signature="6636:6739" ph="..." />
+                <marker date="1516677269368" expanded="true" signature="7201:7304" ph="..." />
               </folding>
             </state>
           </provider>
@@ -140,8 +186,8 @@
       <file leaf-file-name="inc_db_bak.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/inc_db_bak.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+            <state relative-caret-position="243">
+              <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
               <folding>
                 <marker date="1516673739845" expanded="true" signature="1920:2057" ph="..." />
               </folding>
@@ -152,7 +198,7 @@
       <file leaf-file-name="ceanza_eqit.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cn/ceanza_eqit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2187">
+            <state relative-caret-position="2052">
               <caret line="112" column="79" selection-start-line="112" selection-start-column="72" selection-end-line="112" selection-end-column="79" />
               <folding>
                 <marker date="1516615633010" expanded="true" signature="1164:1286" ph="UPDATE reset... " />
@@ -162,19 +208,6 @@
                 <marker date="1516615633010" expanded="true" signature="2500:2614" ph="..." />
                 <marker date="1516615633010" expanded="true" signature="2529:2604" ph="{...}" />
                 <marker date="1516615633010" expanded="true" signature="4172:4206" ph="select * fro... grow_diary" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="other.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/other.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="251" column="127" selection-start-line="251" selection-start-column="127" selection-end-line="251" selection-end-column="127" />
-              <folding>
-                <marker date="1516614835857" expanded="true" signature="6598:6701" ph="..." />
-                <marker date="1516614835857" expanded="true" signature="7163:7266" ph="..." />
               </folding>
             </state>
           </provider>
@@ -193,7 +226,7 @@
       <file leaf-file-name="ceanza_view.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cn/ceanza_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
+            <state relative-caret-position="250">
               <caret line="121" column="87" selection-start-line="121" selection-start-column="57" selection-end-line="121" selection-end-column="87" />
               <folding>
                 <marker date="1516614743108" expanded="true" signature="1164:1286" ph="UPDATE reset... " />
@@ -211,7 +244,7 @@
       <file leaf-file-name="Model.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inc/Model.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
+            <state relative-caret-position="284">
               <caret line="149" column="35" selection-start-line="149" selection-start-column="35" selection-end-line="149" selection-end-column="35" />
               <folding />
             </state>
@@ -281,19 +314,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/cn/gi_list_by_age.php" />
         <option value="$PROJECT_DIR$/cn/gi_load_trial.ajax.php" />
         <option value="$PROJECT_DIR$/cn/report.php" />
         <option value="$PROJECT_DIR$/cn/send_epaper.php" />
         <option value="$PROJECT_DIR$/cn/send_forget.php" />
-        <option value="$PROJECT_DIR$/cn/reg_message.php" />
         <option value="$PROJECT_DIR$/cn/register.php" />
         <option value="$PROJECT_DIR$/cn/login_t.php" />
         <option value="$PROJECT_DIR$/cn/login.php" />
         <option value="$PROJECT_DIR$/cn/check_login_status.ajax.php" />
         <option value="$PROJECT_DIR$/cn/height_record_list.php" />
         <option value="$PROJECT_DIR$/cn/medical_institution.php" />
-        <option value="$PROJECT_DIR$/cn/inc_bottom_js.php" />
         <option value="$PROJECT_DIR$/inc/user_functions.php" />
         <option value="$PROJECT_DIR$/cn/recommend.php" />
         <option value="$PROJECT_DIR$/cn/addUser.php" />
@@ -324,14 +354,17 @@
         <option value="$PROJECT_DIR$/cn/ceanza_menu.php" />
         <option value="$PROJECT_DIR$/cn/ceanza_add.php" />
         <option value="$PROJECT_DIR$/cn/ceanza_view.php" />
-        <option value="$PROJECT_DIR$/scripts/other.js" />
         <option value="$PROJECT_DIR$/cn/ceanza_eqit.php" />
         <option value="$PROJECT_DIR$/inc/upload.php" />
         <option value="$PROJECT_DIR$/cn/grow_diary.php" />
         <option value="$PROJECT_DIR$/cn/ceanza_list.php" />
         <option value="$PROJECT_DIR$/inc/inc_db_bak.php" />
-        <option value="$PROJECT_DIR$/inc/inc_db.php" />
         <option value="$PROJECT_DIR$/inc/config.php" />
+        <option value="$PROJECT_DIR$/inc/inc_db.php" />
+        <option value="$PROJECT_DIR$/scripts/other.js" />
+        <option value="$PROJECT_DIR$/inc/send_message.php" />
+        <option value="$PROJECT_DIR$/cn/reg_message.php" />
+        <option value="$PROJECT_DIR$/cn/inc_bottom_js.php" />
       </list>
     </option>
   </component>
@@ -459,6 +492,20 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="school" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="school" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cn" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -528,12 +575,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1516586756915</updated>
-      <workItem from="1516586758934" duration="22845000" />
+      <workItem from="1516586758934" duration="27059000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22845000" />
+    <option name="totallyTimeSpent" value="27059000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="23" width="1920" height="983" extended-state="0" />
@@ -576,54 +623,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cn/height_record_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1404">
-          <caret line="148" column="20" selection-start-line="148" selection-start-column="20" selection-end-line="148" selection-end-column="20" />
-          <folding>
-            <marker date="1516592185187" expanded="true" signature="1164:1286" ph="UPDATE reset... " />
-            <marker date="1516592185187" expanded="true" signature="1933:2078" ph="..." />
-            <marker date="1516592185187" expanded="true" signature="1955:2061" ph="{...}" />
-            <marker date="1516592185187" expanded="true" signature="2252:2370" ph="UPDATE reg_v... " />
-            <marker date="1516592185187" expanded="true" signature="2500:2614" ph="..." />
-            <marker date="1516592185187" expanded="true" signature="2529:2604" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/teacher/inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/access_token.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="197" column="23" selection-start-line="197" selection-start-column="23" selection-end-line="197" selection-end-column="23" />
-          <folding>
-            <marker date="1516589098484" expanded="true" signature="4815:4867" ph="SELECT user_... access" />
-            <marker date="1516589098484" expanded="true" signature="5107:5164" ph="SELECT user_... user_access" />
-            <marker date="1516589098484" expanded="true" signature="5447:5540" ph="SELECT user_... user_access" />
-            <marker date="1516589098484" expanded="true" signature="5790:5883" ph="SELECT user_... user_access" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cn/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
           <caret line="29" column="50" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cn/inc_bottom_js.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="441" column="20" selection-start-line="441" selection-start-column="20" selection-end-line="441" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -1095,20 +1098,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/other.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="251" column="127" selection-start-line="251" selection-start-column="127" selection-end-line="251" selection-end-column="127" />
-          <folding>
-            <marker date="1516614835857" expanded="true" signature="6598:6701" ph="..." />
-            <marker date="1516614835857" expanded="true" signature="7163:7266" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cn/ceanza_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
+        <state relative-caret-position="250">
           <caret line="121" column="87" selection-start-line="121" selection-start-column="57" selection-end-line="121" selection-end-column="87" />
           <folding>
             <marker date="1516614743108" expanded="true" signature="1164:1286" ph="UPDATE reset... " />
@@ -1124,7 +1116,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/inc/Model.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
+        <state relative-caret-position="284">
           <caret line="149" column="35" selection-start-line="149" selection-start-column="35" selection-end-line="149" selection-end-column="35" />
           <folding />
         </state>
@@ -1132,7 +1124,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cn/ceanza_add.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
+        <state relative-caret-position="71">
           <caret line="109" column="65" selection-start-line="108" selection-start-column="16" selection-end-line="109" selection-end-column="65" />
           <folding>
             <marker date="1516614453606" expanded="true" signature="1164:1286" ph="UPDATE reset... " />
@@ -1155,7 +1147,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cn/ceanza_menu.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
+        <state relative-caret-position="-49">
           <caret line="113" column="32" selection-start-line="113" selection-start-column="32" selection-end-line="113" selection-end-column="32" />
           <folding>
             <marker date="1516607902203" expanded="true" signature="1164:1286" ph="UPDATE reset... " />
@@ -1181,7 +1173,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cn/ceanza_eqit.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2187">
+        <state relative-caret-position="2052">
           <caret line="112" column="79" selection-start-line="112" selection-start-column="72" selection-end-line="112" selection-end-column="79" />
           <folding>
             <marker date="1516615633010" expanded="true" signature="1164:1286" ph="UPDATE reset... " />
@@ -1197,7 +1189,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cn/grow_diary.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
+        <state relative-caret-position="419">
           <caret line="51" column="47" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="47" />
           <folding>
             <marker date="1516615799621" expanded="true" signature="735:1012" ph="INSERT INTO grow_diary... " />
@@ -1215,9 +1207,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="1194" column="2" selection-start-line="1194" selection-start-column="2" selection-end-line="1194" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cn/ceanza_list.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
+        <state relative-caret-position="68">
           <caret line="241" column="27" selection-start-line="241" selection-start-column="27" selection-end-line="241" selection-end-column="27" />
           <folding>
             <element signature="n#style#0;n#div#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1237,34 +1237,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/inc_db_bak.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-          <folding>
-            <marker date="1516673739845" expanded="true" signature="1920:2057" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inc/inc_db.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="12" selection-end-column="17" />
+        <state relative-caret-position="263">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
           <folding>
-            <element signature="e#7#34#0#PHP" expanded="true" />
-            <marker date="1516673739841" expanded="true" signature="1944:2081" ph="..." />
+            <marker date="1516674211281" expanded="true" signature="1944:2081" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/inc/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
+        <state relative-caret-position="135">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cn/reg_message.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
           <folding>
-            <element signature="e#7#25#0#PHP" expanded="true" />
+            <marker date="1516677358797" expanded="true" signature="218:268" ph="select * fro... member" />
+            <marker date="1516677358797" expanded="true" signature="458:558" ph="INSERT INTO message... " />
+            <marker date="1516677358797" expanded="true" signature="906:980" ph="select * fro... message" />
+            <marker date="1516677358797" expanded="true" signature="1258:1308" ph="select * fro... member" />
+            <marker date="1516677358797" expanded="true" signature="1471:1571" ph="INSERT INTO message... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/other.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="204" column="4" selection-start-line="204" selection-start-column="4" selection-end-line="204" selection-end-column="4" />
+          <folding>
+            <marker date="1516677269368" expanded="true" signature="6636:6739" ph="..." />
+            <marker date="1516677269368" expanded="true" signature="7201:7304" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/inc_db_bak.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+          <folding>
+            <marker date="1516673739845" expanded="true" signature="1920:2057" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/send_message.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cn/inc_bottom_js.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="385" column="32" selection-start-line="385" selection-start-column="32" selection-end-line="385" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>

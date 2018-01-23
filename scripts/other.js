@@ -197,7 +197,8 @@ $(function(){
         var params = {
           Mobile: $('#reg_tel').val(),
           validEl: $('#ref_code'),
-          errEl: $('#errorbar_reg_tel')
+          errEl: $('#errorbar_reg_tel'),
+			type: 'send',
         }
         getCode(waitTime, params)
 	})
@@ -206,7 +207,8 @@ $(function(){
         var params = {
           Mobile: $('#forget_mobile').val(),
           validEl: $('#forget_ref_code'),
-          errEl: $('#errorbar_reg_mobile')
+          errEl: $('#errorbar_reg_mobile'),
+			type: 'forget',
         }
         getCode(waitTime, params)
 	})

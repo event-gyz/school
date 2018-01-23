@@ -315,17 +315,18 @@ $(function(){
             $(this).addClass('selected').siblings('.selected').removeClass('selected');
         }
     });
-    $("#ref_code").click(function() {
-        if(!checkRegTelFormat()){
-            return false;
-        }
-        var params = {
-          Mobile: $('#reg_tel').val(),
-          validEl: $('#ref_code'),
-          errEl: $('#errorbar_reg_tel')
-        };
-        getCode(waitTime, params,$('#reg_tel').val(),"send");
-    });
+//    $("#ref_code").click(function() {
+//        if(!checkRegTelFormat()){
+//            return false;
+//        }
+//        var params = {
+//          Mobile: $('#reg_tel').val(),
+//          validEl: $('#ref_code'),
+//          type: "send",
+//          errEl: $('#errorbar_reg_tel')
+//        };
+//        getCode(waitTime, params,params.Mobile,params.type);
+//    });
     $("#reg_tel").blur(checkRegTelFormat);
     $("#reg_email").blur(checkRegEmailFormat);
     $("#reg_password").blur(checkRegPasswordFormat);
@@ -333,14 +334,15 @@ $(function(){
     $("#reg_name").blur(checkRegNameFormat);
     $("#reg_date").blur(checkRegDateFormat);
     
-    $("#forget_ref_code").click(function() {
-        var params = {
-          Mobile: $('#forget_mobile').val(),
-          validEl: $('#forget_ref_code'),
-          errEl: $('#errorbar_reg_mobile')
-        };
-        getCode(waitTime, params,$('#forget_mobile').val(),"forget");
-    });
+//    $("#forget_ref_code").click(function() {
+//        var params = {
+//          Mobile: $('#forget_mobile').val(),
+//          validEl: $('#forget_ref_code'),
+//          errEl: $('#errorbar_reg_mobile'),
+//            type: "forget",
+//        };
+//        getCode(waitTime, params,$('#forget_mobile').val(),"forget");
+//    });
 
     $('.fancybox').click(function() {
             clearTimer(waitTime);
@@ -366,34 +368,22 @@ $(function(){
 
 // 发送验证码
 function send_message(phone,type){
-    	$.ajax({
-	    	url: "reg_message.php",
-                type: "POST",
-                data: {
-                    'phone': phone,
-                    'type':  type
-                },
-                dataType: "json",
-                success: function (jsonStr) {
-                    console.log(jsonStr);
-                    if(jsonStr.result=='success') {
-                        alert("发送成功");
-                    }
-                    else {
-                        $("#errorbar_reg_authcode").text(jsonStr.message).show().delay(3000).fadeOut();
-                    }
-                },
-                error: function(xhr, err) {
-                    alert('Ajax request ' + err);
-                }
-        });  
+    $.post("reg_message.php",{'phone': phone,'type':  type},function(result){
+        result = jQuery.parseJSON(result)
+        if(result.result!='success') {
+            alert(result.msg);
+            return false;
+        }
+    });
         return false;
     }
 
-function getCode (time, params,phone,type) { // params: 参数对象
+function getCode (time, params) { // params: 参数对象
   if (time.timer) return false
   var mobileReg = /^[1][34578](\d){9}$/,html = ''
   if (params.Mobile && mobileReg.test(params.Mobile)) {
+      //发送验证码
+      send_message(params.Mobile,params.type);
     params.errEl.hide()
     time.timer = setInterval(() => {
       time.second -= 1
@@ -403,7 +393,6 @@ function getCode (time, params,phone,type) { // params: 参数对象
       html = time.timer === '' ? '获取验证码' : time.timer !== null ? waitTime.second + 's' : '重新获取';
       params.validEl.html(html)
     }, 1000);
-    send_message(phone,type);
   } else {
         params.errEl.show()
     return false

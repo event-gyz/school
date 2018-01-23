@@ -9,9 +9,9 @@ if(isset($_POST['type']) && $_POST['type'] == "send"){
     $select = "select  *  from member where cellphone ='{$phone}' ";
 
     if(query_result($select)){
-        die(genResponse(false, "手机号已注册"));
+        echo json_encode(array('result'=>'error','msg'=> "手机号已注册"));
+        exit;
     }
-    
     // 发送短信
     if(send_message($phone, $code)){
         $sql = "INSERT INTO message (phone, message_code,create_time) VALUES ('".$phone."','".$code."','".time()."')";
