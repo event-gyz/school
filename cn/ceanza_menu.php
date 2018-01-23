@@ -117,7 +117,7 @@ include('inc.php');
                             $sql  = 'select * from user where supervisor_uid='.$CMEMBER->getUserId();
                             $result = M()->find($sql);
                         ?>
-                        <h4>nick_name</h4>
+                        <h4><?php echo $result['nick_name'];?></h4>
                         <p>性别：<span><?php echo ($result['gender']==1)?'女':'男';?></span></p>
                         <p>出生日期：<span><?php echo date('Y年m月d日',strtotime($result['birth_day']))?></span></p>
 <!--                                                        <p>身高：<span>117.7cm</span></p>-->
