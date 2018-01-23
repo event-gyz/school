@@ -38,7 +38,7 @@ if(isset($_POST['type']) && $_POST['type'] == 'update'){
     $id = $_POST['id'];
     $title = $_POST['title'];
     $content = $_POST['content'];
-    $file = isset($_POST['file'])?$_POST['file']:'';
+    $files = $_POST['file'];
     $new_files = $_FILES['new_file'];
     $date = $_POST['date'];
     $address = $_POST['address'];
@@ -53,7 +53,7 @@ if(isset($_POST['type']) && $_POST['type'] == 'update'){
             if(isset($_FILES['new_file']) && !empty($_FILES['new_file'])){
                 $picurl = ceanza_upload("new_file");
             }else{
-                $picurl = $file;
+                $picurl = '"'.$files.'"';
             }
             $sql = "update grow_diary set title='{$title}',content='{$content}',picurl='{$picurl}',address='{$address}',`date`='{$date}' where Id=$id";
             $result = query($sql);

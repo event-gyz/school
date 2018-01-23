@@ -109,8 +109,8 @@ include('inc.php');
         <!-- InstanceBeginEditable name="content" -->
         	<section class="ceanza">
 				<form action="grow_diary.php" method="post" enctype="multipart/form-data">
-					<input hidden="" name="type" value="update" />
-					<input hidden="" name="id" value="<?php echo $_GET['grow_id']?>" />
+					<input type="hidden" name="type" value="update" />
+					<input type="hidden" name="id" value="<?php echo $_GET['grow_id']?>" />
 				<?php
 				$sql  = 'select * from grow_diary where Id='.$_GET['grow_id'];
 				$result = M()->find($sql);
@@ -118,6 +118,7 @@ include('inc.php');
 				?>
         		<h4>成长日记</h4>
         		<ul class="eqit_content">
+					<input type="hidden" name="file" value=<?php echo $result['picurl']?> />
 					<li class="title">标题：<input type="text" name="title" value="<?php echo $result['title']?>"></li>
 					<li>内容：<input type="text" name="content" value="<?php echo $result['content']?>"></li>
 

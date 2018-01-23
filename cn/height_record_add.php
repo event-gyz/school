@@ -106,24 +106,27 @@ include('inc.php');
         <section id="content">
         <!-- InstanceBeginEditable name="content" -->
         	<section class="height_record">
+				<form action="height_record.php" method="post" enctype="multipart/form-data">
+					<input hidden="" name="type" value="diary" />
         		<h4>身高记录</h4>
         		<ul class="form">
-        			<li><p>身高（公分）：</p><input type="text" maxlength="20"></li>
-        			<li><p>内容（体重）：</p><input type="text" maxlength="20"></li>
+        			<li><p>身高（公分）：</p><input name="height" type="text" maxlength="20"></li>
+        			<li><p>体重（公斤）：</p><input name="weight" type="text" maxlength="20"></li>
         			<li>
         				<b class="clock"></b>
         				记录时间：
-        				<input class="time" type="date" value="2017-12-21">
+        				<input class="time" name="date" type="date" value="<?php echo date('Y-m-d',time())?>">
         			</li>
         		</ul>
-        		<ul class="uploadImgList">
-        			<li class="uploadImg">
-	        			<div class="imgContent">+</div>
-	        			<input type="file"/>
-        			</li>
-        		</ul>
+					<ul class="uploadImgList">
+						<li class="uploadImg">
+							<div class="imgContent">+</div>
+							<input type="file" name="file"/>
+						</li>
+					</ul>
         		<p class="uploadDemand">(上传图片档案大小不得超过3MB)</p>
         		<button class="submit">提交</button>
+					</form>
         	</section>
         	<!-- InstanceEndEditable -->
         </section>

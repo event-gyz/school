@@ -214,8 +214,6 @@ $(function(){
 	})
 
 	$("#register").click(function(e) {
-		console.log(1231231)
-		alert(123123123);return false;
 //        e.preventDefault();
 		if(!checkRegEmailFormat()) {
 			$("#errorbar_reg_email").text('请输入正确的电子邮件').show().delay(3000).fadeOut();

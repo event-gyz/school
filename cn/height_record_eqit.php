@@ -106,19 +106,34 @@ include('inc.php');
         <section id="content">
         <!-- InstanceBeginEditable name="content" -->
         	<section class="height_record">
+				<form action="height_record.php" method="post" enctype="multipart/form-data">
+					<input type="hidden" name="type" value="update" />
+					<input type="hidden" name="id" value="<?php echo $_GET['id']?>" />
+
+				<?php
+				$sql  = 'select * from wap_height where id='.$_GET['id'];
+				$result = M()->find($sql);
+				//				print_r($result);
+				?>
+					<input type="hidden" name="file" value=<?php echo $result['picurl']?> />
         		<h4>身高记录</h4>
         		<ul class="eqit_content">
-        			<li class="title">身高（公分）：<span>111.0</span></li>
-        			<li class="eqitUploadImg">
-        				<div class="imgContent"><img src="../content/epaper/images/diaryImg.png" alt=""></div>
-        				<input type="file">
-        				<span>点击图片，重新上传</span>
-        			</li>
+					<li class="title">身高（公分）：<input type="text" name="height" value="<?= $result['height']?>"></li>
+					<li class="title">体重（公斤）：<input type="text" name="weight" value="<?= $result['weight']?>"></li>
+					<li class="eqitUploadImg">
+						<div class="imgContent"><img src=<?php echo $result['picurl']?> alt=""></div>
+						<input type="file" name="file" >
+						<span>点击图片，重新上传</span>
+					</li>
+					<li>
+						<b class="clock"></b>
+						记录时间：
+						<input class="time" type="date" name="date" value="<?php echo $result['date']?>">
+					</li>
         		</ul>
-        		<div class="diaryTime">
-        			<p>2017年12月20日</p>
-        		</div>
-        		<a href="#" class="height_record_eqit_submit">提交</a>
+
+					<button class="submit">提交</button>
+					</form>
         	</section>
         	<!-- InstanceEndEditable -->   
         </section>

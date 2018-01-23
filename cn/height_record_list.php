@@ -113,7 +113,7 @@ include('inc.php');
         			<p></p>
         			<ul class="mode_sel">
         				<li>
-        					<span>缩图</span>
+        					<span>图标</span>
         					<b></b>
         				</li>
         				<li class="selected">
@@ -123,10 +123,19 @@ include('inc.php');
         			</ul>
         		</div>
         	</section>
+
             <!-- 缩图图表 -->
             <div class="height_record_contraction">
                 
             </div>
+			<?php
+			if(isset($_SESSION['user_token'])) {
+				$member_uid = $_SESSION["CURRENT_KID_UID"];
+				$sql = "select * from wap_height where uid in (select supervisor_uid from user where uid={$member_uid}) order by Id";
+				$list = M()->select($sql);
+				$url = base64_encode($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+			}
+			?>
             <!-- 列表 -->
         	<div class="height_record_list">
     			<div class="title">
@@ -136,24 +145,23 @@ include('inc.php');
                         <span>身高（cm）</span>
     				</p>
     				<ul class="list">
+						<?php foreach($list as $value){ ?>
     					<li>
-    						<p><i><a href="#"><img src="../content/epaper/images/height_record_list_01.png" alt=""></a></i></p>
-    						<p>2017年11月20日</p>
-    						<p>117.7</p>
+    						<p><i><a href="#"><img src=<?php echo $value['picurl']?> alt=""></a></i></p>
+    						<p><?php echo date('Y年m月d日',strtotime($value['date']))?></p>
+    						<p><?php echo $value['height']?></p>
     					</li>
-    					<li>
-    						<p><b class="eqit"></b><span>编辑</span></p>
-    						<p><b class="delete"></b><span>删除</span></p>
-    					</li>
-    					<li>
-    						<p><i><a href="#"><img src="../content/epaper/images/height_record_list_02.png" alt=""></a></i></p>
-    						<p>2017年11月20日</p>
-    						<p>80</p>
-    					</li>
-    					<li>
-    						<p><b class="eqit"></b><span>编辑</span></p>
-    						<p><b class="delete"></b><span>删除</span></p>
-    					</li>
+							<li>
+								<p><b class="eqit"></b><span><a href="height_record_eqit.php?id=<?= $value['id']?>">编辑</a></span></p>
+								<p><b class="delete"></b>
+									<span>
+									<a href="height_record.php?id=<?= $value['id']?>&type=delete&back=<?=$url?>">删除</a>
+								</span>
+								</p>
+
+							</li>
+						<?php }?>
+
     				</ul>
     			</div>
     		</div>
