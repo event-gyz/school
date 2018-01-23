@@ -85,9 +85,9 @@ $(function(){
         if (!checkPasswordRepeat()){
             return true;
         }
-        if (!checkRegNameFormat()){
-            return true;
-        }
+//        if (!checkRegNameFormat()){
+//            return true;
+//        }
         if (!checkRegDateFormat()){
             return true;
         }
@@ -108,7 +108,7 @@ $(function(){
             return true;
         }
 
-        
+
     	$.ajax({
 	    url: "register.php",
             type: "POST",
@@ -138,11 +138,11 @@ $(function(){
 			            echo('
 			            	$("#regdone").css("max-width","500px");	
 			            	$("#regdone").fancybox({"width":500, "height":500, "autoSize" : false}).trigger("click");
-			            ');		           
+			            ');
 			    }
 		            ?>
             	}
-            	else 
+            	else
                 {
                     $("#fy-register .error01").text(jsonStr.message).show().delay(3000).fadeOut();
             	}
@@ -150,9 +150,9 @@ $(function(){
             error: function(xhr, err) {
 	            alert('Ajax request ' + err);
       		}
-        });  
-        return false;   
-    });     	    	
+        });
+        return false;
+    });
     // modify baby
     $("#modify_baby_form").submit(function(){
         var nickname = $("#fst_nickname").val();

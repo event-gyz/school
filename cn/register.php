@@ -28,7 +28,7 @@ else {
 	if($CMEMBER->exist( $_EMAIL ))   die(genResponse(false, $_v_ERROR_REGISTER_FAILED."，此帐号已存在"));
 	elseif($CMEMBER->register( $_EMAIL, $_PASS, '', '', $_PHONE ))
 	{
-            $member_id = mysqli_insert_id();
+            $member_id = @mysql_insert_id();
 		$CMEMBER->getUserInfo();
                 $token = $CMEMBER->getUserToken();
 		$credit= $CMEMBER->credit;
@@ -53,12 +53,12 @@ else {
 		$arr = array(
 			'token' => $token,
 			'credit' => $credit,
-			'email' => $CMEMBER->email
+			'email' => $_EMAIL
 		);
 
 		$_SESSION['user_token'] = $token;
 		$_SESSION['user_credit'] = $credit;
-		$_SESSION['user_email'] = $CMEMBER->email;
+		$_SESSION['user_email'] = $_EMAIL;
 
 // KidsDNA 決定不要激活帳號功能
 		echo(genResponse(true, json_encode($arr)));

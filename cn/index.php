@@ -31,7 +31,7 @@ include('inc.php');
 			        		// check if the link is already used
 				        	$sql = "UPDATE reset_password SET status=1,act_datetime=now() WHERE member_id='".$CMEMBER->id."' AND code='$ver_code' AND status=0";
 				        	$result = query($sql);
-				        	if(mysqli_affected_rows() > 0) {
+				        	if(mysql_affected_rows() > 0) {
 			        		// login for now
 							unset($_SESSION['user_token']);
 							unset($_SESSION['user_email']);
@@ -70,7 +70,7 @@ include('inc.php');
 		        	$ver_code = $params[2];
 		        	$sql = "UPDATE reg_verify SET status='1',act_datetime=now() WHERE member_id='$member_id' AND ver_code='$ver_code' AND status=0";
 		        	$result = query($sql);
-		        	if(mysqli_affected_rows() > 0) {
+		        	if(mysql_affected_rows() > 0) {
 			        	echo ('<script type="text/javascript"> 
 			        			$(function(){
 			        				$("#regwork").fancybox().trigger("click");
@@ -110,6 +110,7 @@ include('inc.php');
 			        }
 	        	}	        	
         	}
+
         ?>
 	<!-- InstanceBeginEditable name="wrap" -->
 	<section id="wrap">

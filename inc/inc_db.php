@@ -2,15 +2,15 @@
 //=========================
 // define area
 //=========================
-$dbhost = "192.168.100.21";
-$dbuser = "huitang";
-$dbpw   = "Evt_huitang2015";
-$mysql_database = "school";
+//$dbhost = "192.168.100.21";
+//$dbuser = "huitang";
+//$dbpw   = "Evt_huitang2015";
+//$mysql_database = "school";
 
-//$mysql_database = "sunny_school";
-//$dbhost = "127.0.0.1";
-//$dbuser = "root";
-//$dbpw   = "root";
+$mysql_database = "sunny_school";
+$dbhost = "127.0.0.1";
+$dbuser = "root";
+$dbpw   = "root";
 
 date_default_timezone_set('Asia/Taipei');
 error_reporting(E_ALL ^ E_DEPRECATED);
