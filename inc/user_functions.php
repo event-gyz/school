@@ -80,7 +80,7 @@ class MyUser
 		if(!$this->exist( $_EMAIL ))
 		{
 
-			$sql = "INSERT INTO member (id, password, first_name, last_name, cellphone, email) VALUES ('".$_EMAIL."',md5(lower('".$_PASS."')),'".$_FNAME."','".$_LNAME."','".$_PHONE."','".$_EMAIL."')";
+			$sql = "INSERT INTO member (`id`, password, first_name, last_name, cellphone, email) VALUES ('".$_EMAIL."',md5(lower('".$_PASS."')),'".$_FNAME."','".$_LNAME."','".$_PHONE."','".$_EMAIL."')";
 			$result = query($sql);
 
 			if($this->login($_EMAIL, $_PASS) == -1)
