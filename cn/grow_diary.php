@@ -15,8 +15,8 @@ if(isset($_POST['type']) && $_POST['type'] == 'diary'){
     $create_time = time();
     $_token = $_SESSION['user_token'];
     $grow_diary_category_name = $_POST['grow_diary_category_name'];
-    if(empty($title) || empty($_token)) {
-        die(genResponse(false, $_v_ERROR_REGISTER_FAILED."，请填写完整资料"));
+    if(empty($title)) {
+        die(genResponse(false, "请填写完整资料"));
     }
     else {
         if ($supervisor_uid = $CMEMBER->accessFromToken($_token)) {
