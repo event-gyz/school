@@ -35,13 +35,13 @@ class MyUser
 			$result = query($sql);
 			
 			if($result==null) return -1;
-			if(mysqli_num_rows($result)!=1)
+			if(mysql_num_rows($result)!=1)
 			{	
 				return -1;
 			}
 			else
 			{
-				$row=mysqli_fetch_row($result);
+				$row=mysql_fetch_row($result);
  				$this->uid = $row[0];
 				$this->getUserToken();
 				return $this->uid;
