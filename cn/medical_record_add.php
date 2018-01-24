@@ -108,26 +108,26 @@ include('inc.php');
         	<section class="medical_record">
         		<h4>新增就诊记录</h4>
         		<ul class="form">
-        			<li>
-        				<b class="clock"></b>
-        				<p>就诊日期：</p>
-        				<input type="text" value="2016年11月3日">
-        			</li>
-        			<li class="title"><p>医院：</p><input type="text" value=""></li>
-        			<li class="doctor"><p>医生：</p><input type="text" value=""></li>
+					<li>
+						<b class="clock"></b>
+						<p>就诊日期：</p>
+						<input class="time" name="date" type="date" value="<?php echo date('Y-m-d',time())?>">
+					</li>
+        			<li class="title"><p>医院：</p><input name="hospital" type="text" value=""></li>
+        			<li class="doctor"><p>医生：</p><input name="doctor" type="text" value=""></li>
         			<li class="original_info">
         				<p>或套用之前建立资料：</p>
-        				<input type="text">
+						<select class="diagnosis-doctors">
+							<option value=""></option>
+							<option value="72" data-hospital="121" data-name="1">121 1</option>
+							<option value="71" data-hospital="丰台医院" data-name="李医生">丰台医院 李医生</option>
+						</select>
         				<i></i>
         			</li>
-        			<li class="concerned">
-        				<p class="selected">丰台医院<span>李医生</span></p>
-        				<p class="">同仁医院<span>张医生</span></p>
-        			</li>
-        			<li class="diagnosis"><p>诊断：</p><input type="text" value=""></li>
+        			<li class="diagnosis"><p>诊断：</p><input name="symptom" type="text" value=""></li>
         			<li class="told">
         				<p>医生叮嘱：</p>
-        				<textarea maxlength="100"></textarea>
+        				<textarea name="note" maxlength="100"></textarea>
         			</li>
         		</ul>
         		<a href="#" class="medical_record_add_submit">提交</a>
