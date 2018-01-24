@@ -5,28 +5,49 @@ session_start();
 include("inc.php"); 
 
 if(isset($_POST['type']) && $_POST['type'] == 'add'){
-    $name = $_POST['name'];
-    $doctorname = $_POST['doctorname'];
+    $hospital = $_POST['hospital'];
+    $doctor_name = $_POST['doctor_name'];
     $address = $_POST['address'];
-    $phone = $_POST['phone'];
+    $doctor_phone = $_POST['doctor_phone'];
     $_token = $_SESSION['user_token'];
     $member_uid = $CMEMBER->accessFromToken($_token);
-    if(empty($name) || empty($_token)) {
-        die(genResponse(false, $_v_ERROR_REGISTER_FAILED."，请填写完整资料"));
-    }
-    else {
-            $sql = "INSERT INTO grow_hospital (`name`,doctorname,address, phone,uid)  "
-                    . "VALUES ('".$name."','".$doctorname."','".$address."','".$phone."','".$member_uid."')";
-			$result = query($sql);
-			if($result!=null) {
-                header("Location:medical_record.php");
-//                die(genResponse(true, "添加成功"));
-			}
-            die(genResponse(false,$_v_ERROR_REGISTER_FAILED."，添加失败"));
 
+    $sql = "INSERT INTO wap_medical (hospital,doctor_name,address, doctor_phone,uid)  value('{$hospital}','{$doctor_name}','{$address}','{$doctor_phone}','{$member_uid}')";
+    $result = query($sql);
+    if($result!=null) {
+        header("Location:medical_record.php");
+//                die(genResponse(true, "添加成功"));
     }
+    die(genResponse(false,$_v_ERROR_REGISTER_FAILED."，添加失败"));
+
 }
 
+if(isset($_POST['type']) && $_POST['type'] == 'update'){
+    $id = $_POST['id'];
+    $hospital = $_POST['hospital'];
+    $doctor_name = $_POST['doctor_name'];
+    $address = $_POST['address'];
+    $doctor_phone = $_POST['doctor_phone'];
+    $_token = $_SESSION['user_token'];
+
+    if ($supervisor_uid = $CMEMBER->accessFromToken($_token)) {
+
+        if(isset($_FILES['new_file']) && !empty($_FILES['new_file'])){
+            $picurl = ceanza_upload("new_file");
+        }else{
+            $picurl = '"'.$files.'"';
+        }
+        $sql = "update wap_medical set hospital='{$hospital}',doctor_name='{$doctor_name}',doctor_phone='{$doctor_phone}',address='{$address}' where id=$id";
+        $result = query($sql);
+        if($result!=null) {
+            header("Location:medical_record.php");
+            die(genResponse(true, "添加成功"));
+        }
+        // die(genResponse(false,$_v_ERROR_REGISTER_FAILED."，添加失败"));
+    }
+
+    exit;
+}
 
 if(isset($_GET['type']) && $_GET['type'] == "get"){
     $category = 0;
@@ -37,7 +58,7 @@ if(isset($_GET['type']) && $_GET['type'] == "get"){
     if($category){
         $where .= " and grow_diary_category_id=".$category;
     }
-    $sql = "select * from grow_diary {$where} group by date";
+    $sql = "select * from wap_medical {$where} group by date";
     $result = query_result_list($sql);
     if($result){
         var_dump($result);
@@ -46,10 +67,10 @@ if(isset($_GET['type']) && $_GET['type'] == "get"){
 }
 
 if(isset($_GET['type']) && $_GET['type'] == "delete"){
-    $sql = "delete from grow_diary where Id=".$_GET['grow_id'];
+    $sql = "delete from wap_medical where id=".$_GET['id'];
     if(query_delete($sql)){
         $url = base64_decode($_GET['back']);
-        header("Location:ceanza_list.php");
+        header("Location:medical_record.php");
     }
 }
 

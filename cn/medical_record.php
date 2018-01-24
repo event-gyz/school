@@ -154,35 +154,45 @@ include('inc.php');
     				</li>
     			</ul>
     		</div>
+			<?php
+
+			if(isset($_SESSION['user_token'])) {
+				$member_uid = $_SESSION["CURRENT_KID_UID"];
+				$sql = "select * from wap_medical where uid in (select supervisor_uid from user where uid={$member_uid}) order by id desc";
+				$list = M()->select($sql);
+			}
+			?>
     		<div class="medical_institution_list">
     			<p>常用医疗机构</p>
     			<ul class="medical_institution_detail">
+					<?php foreach($list as $value){?>
     				<li>
     					<p>医院：</p>
-    					<span>丰台医院</span>
+    					<span><?= $value['hospital']?></span>
     					<ul class="operation">
     						<li>
     							<p class="eqit"></p>
-    							<span>编辑</span>
+    							<span><a href="medical_institution_eqit.php?id=<?= $value['id']?>">编辑</a></span>
     						</li>
     						<li>
     							<p class="delete"></p>
-    							<span>删除</span>
+    							<span><a href="medical_institution.php?id=<?= $value['id']?>&type=delete">删除</a></span>
     						</li>
     					</ul>
     				</li>
     				<li>
     					<p>医生：</p>
-    					<span>李医生</span>
+    					<span><?= $value['doctor_name']?></span>
     				</li>
     				<li>
     					<p>地址：</p>
-    					<span>北京市丰台区富丰路</span>
+    					<span><?= $value['address']?></span>
     				</li>
     				<li>
     					<p>电话：</p>
-    					<span>010123456</span>
+    					<span><?= $value['doctor_phone']?></span>
     				</li>
+					<?php }?>
     			</ul>
     		</div>
         	<!-- InstanceEndEditable -->   

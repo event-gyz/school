@@ -111,11 +111,11 @@ include('inc.php');
         		<ul class="form">
         			<li class="title">
 						<p>医院：</p>
-						<input type="text" name="name" value="">
+						<input type="text" name="hospital" value="">
 					</li>
         			<li class="doctor">
 						<p>医生：</p>
-						<input type="text" name="doctorname" value="">
+						<input type="text" name="doctor_name" value="">
 					</li>
         			<li class="address">
         				<b></b>
@@ -125,11 +125,11 @@ include('inc.php');
         			<li class="phone">
         				<b></b>
         				<p>电话：</p>
-        				<input type="text" name="phone" value="">
+        				<input type="text" name="doctor_phone" value="">
         			</li>
         		</ul>
 					<input type="hidden" name="type" value="add">
-					<button class="submit">提交</button>
+					<button class="medical_institution_add_submit submit">提交</button>
 				</form>
 			</section>
         	<!-- InstanceEndEditable -->   

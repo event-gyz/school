@@ -131,7 +131,7 @@ include('inc.php');
 			<?php
 			if(isset($_SESSION['user_token'])) {
 				$member_uid = $_SESSION["CURRENT_KID_UID"];
-				$sql = "select * from wap_height where uid in (select supervisor_uid from user where uid={$member_uid}) order by Id";
+				$sql = "select * from wap_height where uid in (select supervisor_uid from user where uid={$member_uid}) order by id desc";
 				$list = M()->select($sql);
 				$url = base64_encode($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 			}
