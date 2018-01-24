@@ -4,7 +4,8 @@ session_start();
 
 include("inc.php"); 
 
-if(isset($_POST['type']) && $_POST['type'] == 'add'){
+if(isset($_POST['type']) && $_POST['type'] == 'diary'){
+//    print_r($_POST);exit;
     $date = $_POST['date'];
     $hospital = $_POST['hospital'];
     $doctor = $_POST['doctor'];
@@ -13,7 +14,7 @@ if(isset($_POST['type']) && $_POST['type'] == 'add'){
     $_token = $_SESSION['user_token'];
     $member_uid = $CMEMBER->accessFromToken($_token);
 
-    $sql = "INSERT INTO wap_diagnoses (`date`,doctor_name,address, doctor_phone,uid)  value('{$hospital}','{$doctor_name}','{$address}','{$doctor_phone}','{$member_uid}')";
+    $sql = "INSERT INTO wap_diagnoses (`date`,doctor,hospital, symptom,note,uid)  value('{$date}','{$doctor}','{$hospital}','{$symptom}','{$note}','{$member_uid}')";
     $result = query($sql);
     if($result!=null) {
         header("Location:medical_record.php");
@@ -25,20 +26,16 @@ if(isset($_POST['type']) && $_POST['type'] == 'add'){
 
 if(isset($_POST['type']) && $_POST['type'] == 'update'){
     $id = $_POST['id'];
+    $date = $_POST['date'];
     $hospital = $_POST['hospital'];
-    $doctor_name = $_POST['doctor_name'];
-    $address = $_POST['address'];
-    $doctor_phone = $_POST['doctor_phone'];
+    $doctor = $_POST['doctor'];
+    $symptom = $_POST['symptom'];
+    $note = $_POST['note'];
     $_token = $_SESSION['user_token'];
 
     if ($supervisor_uid = $CMEMBER->accessFromToken($_token)) {
 
-        if(isset($_FILES['new_file']) && !empty($_FILES['new_file'])){
-            $picurl = ceanza_upload("new_file");
-        }else{
-            $picurl = '"'.$files.'"';
-        }
-        $sql = "update wap_diagnoses set hospital='{$hospital}',doctor_name='{$doctor_name}',doctor_phone='{$doctor_phone}',address='{$address}' where id=$id";
+        $sql = "update wap_diagnoses set note='{$note}',symptom='{$symptom}',doctor='{$doctor}',hospital='{$hospital}',date='{$date}' where id=$id";
         $result = query($sql);
         if($result!=null) {
             header("Location:medical_record.php");
@@ -70,7 +67,6 @@ if(isset($_GET['type']) && $_GET['type'] == "get"){
 if(isset($_GET['type']) && $_GET['type'] == "delete"){
     $sql = "delete from wap_diagnoses where id=".$_GET['id'];
     if(query_delete($sql)){
-        $url = base64_decode($_GET['back']);
         header("Location:medical_record.php");
     }
 }

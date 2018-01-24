@@ -107,6 +107,8 @@ include('inc.php');
         <!-- InstanceBeginEditable name="content" -->
         	<section class="medical_record">
         		<h4>新增就诊记录</h4>
+				<form action="medical_records.php" method="post" enctype="multipart/form-data">
+					<input hidden="" name="type" value="diary" />
         		<ul class="form">
 					<li>
 						<b class="clock"></b>
@@ -130,7 +132,8 @@ include('inc.php');
         				<textarea name="note" maxlength="100"></textarea>
         			</li>
         		</ul>
-        		<a href="#" class="medical_record_add_submit">提交</a>
+					<button class="medical_record_add_submit submit">提交</button>
+				 </form>
         	</section>
         	<!-- InstanceEndEditable -->
         </section>

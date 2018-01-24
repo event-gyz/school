@@ -114,58 +114,65 @@ include('inc.php');
         	</section>
         	<div class="consultation_list">
     			<p>就诊记录</p>
-<!--				--><?php //af_index_list_recommend(); ?>
 				<?php
-//				$sql_medical_list = "select * from grow_medical_records where uid=".$CMEMBER->getUserId();
-				$sql_medical_list = "select * from grow_medical_records where uid=".$CMEMBER->getUserId();
-				$result = query($sql_medical_list);
 
+				if(isset($_SESSION['user_token'])) {
+					$member_uid = $_SESSION["CURRENT_KID_UID"];
+					$diagnosessql = "select * from wap_diagnoses where uid in (select supervisor_uid from user where uid={$member_uid}) order by id desc";
+					$diagnoseslist = M()->select($diagnosessql);
+				}
 				?>
+				<?php
+
+				foreach($diagnoseslist as $v){?>
     			<ul class="consultation_detail">
+
     				<li>
     					<p>就诊日期：</p>
-    					<span>2017年11月21日</span>
+    					<span><?= date('Y年m月d日',strtotime($v['date']))?></span>
     					<ul class="operation">
     						<li>
     							<p class="eqit"></p>
-    							<span>编辑</span>
+    							<span><a href="medical_record_eqit.php?id=<?= $v['id']?>">编辑</a></span>
     						</li>
     						<li>
     							<p class="delete"></p>
-    							<span>删除</span>
+    							<span><a href="medical_records.php?id=<?= $v['id']?>&type=delete">删除</a></span>
     						</li>
     					</ul>
     				</li>
     				<li>
     					<p>医院：</p>
-    					<span>北京同仁医院</span>
+    					<span><?= $v['hospital']?></span>
     				</li>
     				<li>
     					<p>医生：</p>
-    					<span>李明 医生</span>
+    					<span><?= $v['doctor']?>医生</span>
     				</li>
     				<li>
     					<p>诊断：</p>
-    					<span>牙齿发炎</span>
+    					<span><?= $v['symptom']?></span>
     				</li>
     				<li>
     					<p>医生叮嘱：</p>
-    					<span>吃消炎药，不能吃甜食，多喝水</span>
+    					<span><?= $v['note']?></span>
     				</li>
+
     			</ul>
+				<?php } ?>
     		</div>
 			<?php
 
 			if(isset($_SESSION['user_token'])) {
 				$member_uid = $_SESSION["CURRENT_KID_UID"];
-				$sql = "select * from wap_medical where uid in (select supervisor_uid from user where uid={$member_uid}) order by id desc";
-				$list = M()->select($sql);
+				$medicalsql = "select * from wap_medical where uid in (select supervisor_uid from user where uid={$member_uid}) order by id desc";
+				$medicallist = M()->select($medicalsql);
 			}
 			?>
     		<div class="medical_institution_list">
     			<p>常用医疗机构</p>
     			<ul class="medical_institution_detail">
-					<?php foreach($list as $value){?>
+					<?php foreach($medicallist as $value){?>
     				<li>
     					<p>医院：</p>
     					<span><?= $value['hospital']?></span>

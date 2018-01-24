@@ -106,22 +106,32 @@ include('inc.php');
         <section id="content">
         <!-- InstanceBeginEditable name="content" -->
         	<section class="medical_record">
+				<form action="medical_records.php" method="post" enctype="multipart/form-data">
+					<input type="hidden" name="type" value="update" />
+					<input type="hidden" name="id" value="<?php echo $_GET['id']?>" />
+
+					<?php
+					$sql  = 'select * from wap_diagnoses where id='.$_GET['id'];
+					$result = M()->find($sql);
+					//				print_r($result);
+					?>
         		<h4>编辑就诊记录</h4>
         		<ul class="eqit_content">
-        			<li class="time">
-        				<b></b>
-        				<p>就诊日期：</p>
-        				<input type="text" value="2016年11月3日">
-        			</li>
-        			<li class="title">医院：<input type="text" value="北京丰台医院"></li>
-        			<li class="doctor">医生：<input type="text" value="李医生"></li>
-        			<li class="diagnosis">诊断：<input type="text" value="感冒"></li>
+					<li>
+						<b class="clock"></b>
+						记录时间：
+						<input class="time" type="date" name="date" value="<?= $result['date']?>">
+					</li>
+        			<li class="title">医院：<input name="hospital" type="text" value="<?= $result['hospital']?>"></li>
+        			<li class="doctor">医生：<input name="doctor" type="text" value="<?= $result['doctor']?>"></li>
+        			<li class="diagnosis">诊断：<input name="symptom" type="text" value="<?= $result['symptom']?>"></li>
         			<li class="told">
         				<p>医生叮嘱：</p>
-        				<textarea maxlength="100">多喝水，物理降温，注意饮食！</textarea>
+        				<textarea maxlength="100" name="note"><?= $result['note']?></textarea>
         			</li>
         		</ul>
-        		<a href="#" class="medical_record_eqit_submit">提交</a>
+        		<button class="medical_record_eqit_submit">提交</button>
+					</form>
         	</section>
         	<!-- InstanceEndEditable -->   
         </section>
