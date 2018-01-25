@@ -177,38 +177,37 @@ function af_recommend_load_article() {
 		}
 		$sql = "select * from articles where uid='$uid'";
 	}
-
-	$result = query($sql);
-	if($row=mysql_fetch_array($result)) {
-		$uid = $row['uid'];
-		$v_image = $row['image'];
+	$result = M()->find($sql);
+	if($result) {
+		$uid = $result['uid'];
+		$v_image = $result['image'];
 		if(empty($v_image)) {
 			$v_image = 'ig11_about.jpg';
 		}
-		if($_show_image)
+		if(!empty($v_image))
 			$image_html = '<p><img src="../theme/cn/images/content/img/'.$v_image.'"></p>';
-		if($row['type']=='REC') {
+		if($result['type']=='REC') {
 			$v_type = '推荐文章';
 		}
 		else {
 			$v_type = '最新消息';
 		}
-		$title = $row['title'];
-		$desc = stripcslashes($row['description']);
+		$title = $result['title'];
+		$desc = stripcslashes($result['description']);
 
 		// Try to resolve as base64 content
 		;
-		if($cdata = base64_decode($row['content'],true))
+		if($cdata = base64_decode($result['content'],true))
 			$content = stripcslashes($cdata);
 		else
-			$content = stripcslashes($row['content']);
-		$tag = $row['tag'];
+			$content = stripcslashes($result['content']);
+		$tag = $result['tag'];
 
-		$b_force_add_go_top = ($row['type']=='NEWS');
+		$b_force_add_go_top = ($result['type']=='NEWS');
 
 		if($from_page == 'index') {
 			$html = '<section class="fy-hd"><h2 class="title">'.$v_type.'</h2></section><section class="fy-bd clearfix"><h3 class="title">'.$title.'</h3> <section class="Txt clearfix"> <p>'.$desc.'</p> '.$image_html.' <div>'.$content.'</div> </section> </section>';
-			if($b_add_go_top)
+			if(@$b_add_go_top)
 				$html .= '<div class="gotop divtop pc"><img src="../theme/cn/images/content/item_gotop01.png">回頂端</div>';
 			else
 				$html .= '<div class="gotop divtop"><img src="../theme/cn/images/content/item_gotop01.png">回頂端</div>';

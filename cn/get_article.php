@@ -3,7 +3,7 @@ include('inc.php');
 $__USE_CACHE__ = false;
 
 $uid = $_REQUEST['uid'];
-$from_page = $_REQUEST['from_page'];
+$from_page = @$_REQUEST['from_page'];
 
 if(!isset($from_page))
 	$from_page = 'index';
