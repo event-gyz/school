@@ -5,10 +5,10 @@
  */
 $db     = array(
     'DB_TYPE' => 'mysqli',
-    'DB_HOST' => '192.168.100.21',
+    'DB_HOST' => '39.107.75.139',
     'DB_NAME' => 'school',
-    'DB_USER' => 'huitang',
-    'DB_PWD'  => 'Evt_huitang2015',
+    'DB_USER' => 'root',
+    'DB_PWD'  => 'root',
     'DB_PORT' => '3306',
 );
 $config = array(

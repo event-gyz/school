@@ -2,9 +2,9 @@
 //=========================
 // define area
 //=========================
-$dbhost = "192.168.100.21";
-$dbuser = "huitang";
-$dbpw   = "Evt_huitang2015";
+$dbhost = "39.107.75.139";
+$dbuser = "root";
+$dbpw   = "root";
 $mysql_database = "school";
 
 //$dbhost = "127.0.0.1";
