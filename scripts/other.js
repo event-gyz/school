@@ -79,7 +79,9 @@ function clearTimer (time) {
   time.timer = null
   time.second = 60
 }
-
+function trim(str){ //删除左右两端的空格
+	return str.replace(/(^\s*)|(\s*$)/g, "");
+}
 $(window).resize(function(e){
 	w();
 });
@@ -290,6 +292,19 @@ $(function(){
 		$(".tab-bd .scrolltype").mCustomScrollbar();
 	});
 
+	$('.ceanza_add_submit').click(function(){
+		var title = trim($("input[name='title']").val())
+		var type = trim($("input[name='grow_diary_category_name']").val())
+		var content = trim($("textarea[name='content']").val())
+		var date = $("input[name='date']").val()
+		var address = trim($("input[name='address']").val())
+		var file = $("input[name='file']").val()
+		if(!(title && type && content && date && address && file)){
+			alert('请填写完整成长日记信息')
+			return false;
+		}
+	});
+
 	// var uploadLi;
 	$('.uploadImgList').on('change','li>input',function(){
 		var imgContent = $(this).prev()
@@ -374,6 +389,7 @@ $(function(){
 		$(this).addClass('checked').siblings('.checked').removeClass('checked')
 		$(this).parents('.category-list').removeClass('title-list-block')
 		$('.noData .ceanza_type').html($(this).html())
+		location.href = '../cn/ceanza_list.php?category_name='+ $(this).html()
 	})
 
 	$('.project_status p').click(function(){

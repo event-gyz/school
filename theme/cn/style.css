@@ -305,7 +305,7 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 
 /* 添加日记页面样式 start */
 .ceanza,.height_record,.weight_record,.buds_record,.medical_institution,.medical_record,.growth_index{width:8.7805rem;margin: 0 auto;padding-top:120px;color:#B7B2A9;} 
-.ceanza>h4,.relevant_articles>h4,.height_record>h4,.weight_record>h4,.buds_record>h4,.medical_institution>h4,.medical_record>h4,.growth_index>h4{color:#60C351;font-size: 20px;}
+.ceanza h4,.relevant_articles>h4,.height_record>h4,.weight_record>h4,.buds_record>h4,.medical_institution>h4,.medical_record>h4,.growth_index>h4{color:#60C351;font-size: 20px;margin-bottom: 20px;}
 .medical_institution>h4,.medical_record>h4{margin-bottom: 10px;}
 .bread-crumb{margin-top:12px;overflow: hidden}
 .bread-crumb li{float: left;font-size: 14px;color:#999;position: relative;padding-right: 25px;}
@@ -313,10 +313,11 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .bread-crumb li b{position: absolute;top:center;right:6px;}
 .ceanza-menu{padding: 63px 0 30px;overflow: hidden;}
 .ceanza-menu li{float:left;width:20%;height:140px;color:#fff;box-sizing: border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;background:#5CCB4D;margin:30px 18px 0;border-radius: 4px;position: relative;}
+.ceanza-menu li a{color:#fff;}
 .ceanza-menu li b{position: absolute;top:-58%;left:50%;transform: translateX(-50%);width:60px;height:130px;background:url('../../content/epaper/images/bafudou.png') no-repeat;background-size:100% 100%;z-index: -1;}
 .ceanza-menu li.selected{background: #F5B545}
 .ceanza-menu li.selected h4{line-height: 28px;background:#F3A41A;}
-.ceanza-menu li h4{line-height: 38px;background:#64BE58;font-size: 18px;text-align: center;margin-bottom: 10px;border-radius: 4px;}
+.ceanza-menu li h4{line-height: 38px;color:#fff;background:#64BE58;font-size: 18px;text-align: center;margin-bottom: 10px;border-radius: 4px;}
 .ceanza-menu li p{line-height: 24px;padding: 0 20px;font-size: 14px}
 .ceanza-menu li i{position: absolute;width:40px;height:30px;background:#5CCB4D url('../../content/epaper/images/pullDown.png') no-repeat center 17px;background-size: 12px 9px;border-radius: 50%;bottom:-15px;left:50%;transform: translateX(-50%);line-height: 30px;text-align: center;}
 
