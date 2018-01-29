@@ -15,23 +15,20 @@ if(isset($_SESSION['user_token'])) {
 }
 if($member_uid > 0) {
 	$sql = "select first_name,email,cellphone from member where uid='$member_uid'";
-	$result = query($sql);
+	$result = M()->find($sql);
 	if($result!=null) {
-		if($row=mysqli_fetch_array($result)) {
-			$name = $row['first_name'];
-			$email = $row['email'];
-			$phone = $row['cellphone'];
-		}
+        $name = $result['first_name'];
+        $email = $result['email'];
+        $phone = $result['cellphone'];
 	}
-	
+	unset($result);
+    unset($sql);
 	$sql = "select nick_name,birth_day,gender from user where supervisor_uid='$member_uid'";
-	$result = query($sql);
+    $result = M()->find($sql);
 	if($result!=null) {
-		if($row=mysqli_fetch_array($result)) {
-			$nick_name = $row['nick_name'];
-			$birth_day = $row['birth_day'];
-			$gender = ($row['gender']==0?"男":"女");
-		}
+        $nick_name = $result['nick_name'];
+        $birth_day = $result['birth_day'];
+        $gender = ($result['gender']==0?"男":"女");
 	}
 }
 ?>
@@ -39,7 +36,6 @@ if($member_uid > 0) {
 <section class="board board01">
     <section class="inboard">
         <ul class="clearfix">
-            <li><b>昵称</b><i><?php echo($name); ?></i></li>
             <li><b>帐号</b><i><?php echo($email); ?></i></li>
             <li><b>密码</b><i>********</i></li>
             <li><b>电话</b><i><?php echo($phone); ?></i></li>

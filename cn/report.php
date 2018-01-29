@@ -2,7 +2,7 @@
 session_start(); 
 include('inc.php');	
 
-$tabon = $_REQUEST['f'];
+$tabon = @$_REQUEST['f'];
 if(!isset($tabon))
 	$tabon = 0;
 if(!isset($_SESSION['user_token'])) {
@@ -77,8 +77,8 @@ if(!isset($_SESSION['user_token'])) {
 //	                            $sql = "select text from grow_index where age_max < '$user_age' and uid not in (select item_uid from grow_log where user_uid='$user_uid') limit 10";
 $sql = "select text from grow_index where (age_min <= '$user_age' and age_max >= '$user_age') and uid not in (select item_uid from grow_log where user_uid='$user_uid') limit 10";
 
-	                            $result = query($sql);
-	                            while($row=mysqli_fetch_array($result)) {
+	                            $result  = M()->select($sql);
+	                            foreach($result as $row){
 	                            	echo('<li>'.$row["text"].'</li>');
 	                            }       
                             ?>

@@ -180,10 +180,10 @@ class GrowIndex {
 		return 0;
 	}
 	
-	function getMore($uid) {
+	static function getMore($uid) {
 		$sql = "SELECT text,detail,advice,image_file FROM grow_index WHERE uid='$uid'";
-		$result = query($sql);
-		if($row=mysqli_fetch_array($result)) {
+        $row = M()->find($sql);
+		if(!empty($row)) {
 			$text = $row['text'];
 			$detail = $row['detail'];
 			$advice = $row['advice'];
@@ -197,7 +197,7 @@ class GrowIndex {
 
 	
 	//-- HTML formatting output --//
-	function output_more($uid,$type) {
+	static function output_more($uid,$type) {
 		$data = self::getMore($uid);
 		$title = ($type==0?'详细说明':'医生建议');
 		$h3 = $data[0];

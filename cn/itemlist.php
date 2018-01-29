@@ -5,7 +5,7 @@ if(!isset($_SESSION['user_token'])) {
 	header( 'Location: index.php' ) ;
 	exit();
 }
-$tabon = $_REQUEST['f'];
+$tabon = @$_REQUEST['f'];
 if(!isset($tabon))
 	$tabon = 'a';
 ?>

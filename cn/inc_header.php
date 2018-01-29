@@ -122,8 +122,6 @@ function onMenuItem3Click() {
             type: "POST",
             dataType: "json",
             success: function (jsonStr) {
-//            console.log(jsonStr);
-//            console.log(jsonStr.haskid);
             	if(jsonStr.islogin==true) {
             		if(jsonStr.haskid==true) {
 	            		_next_move_ = 0;
@@ -441,12 +439,17 @@ function loadTrialQA(year,month) {
             <!--//選單//-->
             <ul class="mnav">
 	            <li <?php if($pagename=='news') echo('class="on"'); ?> ><a href="news.php">最新消息</a></li>
-	            <li <?php if($pagename=='weblive_index') echo('class="on"'); ?>><a id="menuitem_2" href="javascript:void(0);">线上学习</a></li>
-	            <li <?php if($pagename=='itemlist') echo('class="on"'); ?>><a id="menuitem_3" href="javascript:void(0);">成长指标</a></li>
-	            <li <?php if($pagename=='training') echo('class="on"'); ?>><a id="menuitem_4" href="javascript:void(0);">每日e练习</a></li>
-	            <li <?php if($pagename=='recommend') echo('class="on"'); ?>><a href="recommend.php">推荐文章</a></li>
-	            <li <?php if($pagename=='report') echo('class="on"'); ?>><a id="menuitem_6" href="javascript:void(0);">成长报告</a></li>
-	            <li <?php if($pagename=='epaper') echo('class="on"'); ?>><a  id="menuitem_7" href="javascript:void(0);">咕噜小报</a></li>
+				<li <?php if($pagename=='recommend') echo('class="on"'); ?>><a href="recommend.php">推荐文章</a></li>
+				<li <?php if($pagename=='itemlist') echo('class="on"'); ?>><a id="menuitem_3" href="javascript:void(0);">成长指标</a></li>
+				<li <?php if($pagename=='report') echo('class="on"'); ?>><a id="menuitem_6" href="javascript:void(0);">成长报告</a></li>
+	            <li <?php if($pagename=='ceanza_menu') echo('class="on"'); ?>><a id="menuitem_2" href="javascript:void(0);">成长日记</a></li>
+
+<!--	            <li --><?php //if($pagename=='training') echo('class="on"'); ?><!-->
+<!--					<a id="menuitem_4" href="javascript:void(0);">每日e练习</a>-->
+<!--				</li>-->
+	            <li <?php if($pagename=='buds_record') echo('class="on"'); ?>><a href="buds_record.php">萌芽记录</a></li>
+
+	            <li <?php if($pagename=='epaper') echo('class="on"'); ?>><a  id="menuitem_7" href="javascript:void(0);">巴布豆家庭早教</a></li>
 	            <li <?php if($pagename=='about') echo('class="on"'); ?>><a href="about.php">关于我们</a></li>
             </ul>
         </nav>
@@ -456,13 +459,16 @@ function loadTrialQA(year,month) {
     <div class="i-menu">Menu</div>
    	<nav class="s-mnav">
         <ul class="clearfix">
+
+
             <li <?php if($pagename=='news') echo('class="on"'); ?> ><a href="news.php">最新消息</a></li>
-            <li <?php if($pagename=='weblive_index') echo('class="on"'); ?>><a id="menuitem_2_m" href="javascript:void(0);">线上学习</a></li>
-            <li <?php if($pagename=='itemlist') echo('class="on"'); ?>><a id="menuitem_3_m" href="javascript:void(0);">成长指标</a></li>
-            <li <?php if($pagename=='training') echo('class="on"'); ?>><a id="menuitem_4_m" href="javascript:void(0);">每日e练习</a></li>
-            <li <?php if($pagename=='recommend') echo('class="on"'); ?>><a href="recommend.php">推荐文章</a></li>
-            <li <?php if($pagename=='report') echo('class="on"'); ?>><a id="menuitem_6_m" href="javascript:void(0);">成长报告</a></li>
-            <li <?php if($pagename=='epaper') echo('class="on"'); ?>><a id="menuitem_7_m" href="javascript:void(0);">咕噜小报</a></li>
+			<li <?php if($pagename=='recommend') echo('class="on"'); ?>><a href="recommend.php">推荐文章</a></li>
+			<li <?php if($pagename=='itemlist') echo('class="on"'); ?>><a id="menuitem_3_m" href="javascript:void(0);">成长指标</a></li>
+			<li <?php if($pagename=='report') echo('class="on"'); ?>><a id="menuitem_6_m" href="javascript:void(0);">成长报告</a></li>
+			<li <?php if($pagename=='ceanza_menu') echo('class="on"'); ?>><a id="menuitem_2_m" href="javascript:void(0);">成长日记</a></li>
+            <li <?php if($pagename=='buds_record') echo('class="on"'); ?>><a href="buds_record.php">萌芽记录</a></li>
+
+            <li <?php if($pagename=='epaper') echo('class="on"'); ?>><a id="menuitem_7_m" href="javascript:void(0);">巴布豆家庭早教</a></li>
             <li <?php if($pagename=='about') echo('class="on"'); ?>><a href="about.php">关于我们</a></li>
             <?php 
 	            if(isset($_SESSION['user_token'])) {

@@ -42,10 +42,12 @@ if(!isset($_SESSION['user_token'])) {
                     <section id="paper_main" name="paper_main" class="paper-main clearfix">  
                     <?php
                     $sql = "select subject,pdf_name,pub_date from epaper  where date(pub_date) <= curdate() order by pub_date desc";
-                    $result = query($sql);
+                    $result = M()->select($sql);
                     $issues = array();
-                    while($row = mysqli_fetch_array($result)) {
-	                    $issues[] = $row;
+                    if($result){
+                        foreach($result as $row){
+                            $issues[] = $row;
+                        }
                     }
 
                     if(count($issues) > 0) {

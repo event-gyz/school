@@ -11,10 +11,12 @@ function fetchContent($age, $type, $func) {
 	$user_uid = $_SESSION["CURRENT_KID_UID"];
 	
 	$sql = "select grow_index.uid,grow_index.text,grow_index.age_max,grow_log.early from grow_index LEFT JOIN grow_log on grow_log.item_uid=grow_index.uid and grow_log.user_uid='$user_uid' where grow_index.age_min <= '$age' and grow_index.age_max >= '$age' and grow_index.type='$type' ";
-	
-	$result = query($sql);
+
+//	$result = query($sql);
+	$resule = M()->select($sql);
 	$li_count = 0;
-	while($row=mysqli_fetch_array($result)) {
+//	while($row=mysqli_fetch_array($result)) {
+	foreach($resule as $row){
 		$uid = $row["uid"];
 		$text = $row["text"];
 		$age_max = $row["age_max"];

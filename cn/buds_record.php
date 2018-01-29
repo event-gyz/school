@@ -114,11 +114,14 @@ include('inc.php');
 				$dates = array_column($re,'date');
 				$buds = array_combine($buds_type,$dates);
 			}
-//			name="a" value="<?= isset($buds['a'])?$buds['a']:'';?>"
-			?>
+//			name="a" value="<?= isset($buds['a'])?$buds['a']:'';?>
         <!-- InstanceBeginEditable name="content" -->
         	<section class="buds_record">
         		<h4>萌芽记录</h4>
+				<ul class="bread-crumb">
+					<li><a href="/">首页</a><b>&gt;</b></li>
+					<li><a href="#">萌芽记录</a></li>
+				</ul>
         		<p>记录您宝宝牙齿的成长时间，能够更了解您宝宝在营养吸收和生长发育的健康状态！</p>
         		<div class="model_diagram">
         			<div class="model_diagram_top">

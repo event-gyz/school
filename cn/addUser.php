@@ -24,7 +24,7 @@ else {
 	
 	if ($supervisor_uid = $CMEMBER->accessFromToken($_token)) {
 		$kids_uid_array = $CMEMBER->getKidsUidArray();
-		// 目前只支援ㄧ個小孩
+		// 目前只支持ㄧ個小孩
 		if(count($kids_uid_array) == 0) {
 			$sql = "INSERT INTO user ".
 				" (first_name,last_name,nick_name,gender,".
@@ -40,14 +40,15 @@ else {
 		else {
 			$UID = $kids_uid_array[0];
 			$sql = "update user set nick_name='$_nick_name',gender='$_gender' where uid='$UID'";
-			query($sql);
+			M()->execute($sql);
 			$sql = "update user set birth_day='$_birthday' where uid='$UID'";
-			query($sql);
-			if(mysqli_affected_rows() > 0) {
+			$re = M()->execute($sql);
+			if($re) {
 				// clean user logs
 				$sql = "delete from grow_log where user_uid='$UID'";
-				query($sql);
+				M()->execute($sql);
 			}
+			$_SESSION['CURRENT_KID_BIRTH_DAY'] = $_birthday;
 		}
 		//if UID exist, means this user has been created.
 		if(isset($UID)) {			

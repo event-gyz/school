@@ -7,10 +7,9 @@ $fen_zi = array(0,0,0,0,0,0);
 $total_learned = 0;
 $user_uid = $_SESSION["CURRENT_KID_UID"];
 $sql = "SELECT TYPE as t , COUNT( * ) as c FROM grow_log where user_uid='$user_uid' GROUP BY t";
-//echo($sql);
-$result = query($sql);
+$result = M()->select($sql);
 if($result!=null) {
-	while($row=mysqli_fetch_array($result)) {
+	foreach($result as $row){
 		$type = $row['t'];
 		$count = $row['c'];
 		$fen_zi[$type] = $count;
@@ -27,12 +26,12 @@ if($result!=null) {
 //echo(json_encode($data));
 
 $sql = "SELECT date_format(d,'%m/%d') as md, c FROM (SELECT DATE( log_time ) AS d, COUNT( * ) AS c FROM grow_log WHERE user_uid = '$user_uid' GROUP BY d ORDER BY d DESC LIMIT 10) AS a ORDER BY d ASC";
-$result = query($sql);
+$result = M()->select($sql);
 $arr_date = array();
 $arr_count = array();
 $arr_date[] = "";// date("Y");
 $arr_count[] = 0;
-while($row=mysqli_fetch_array($result)) {
+foreach($result as $row){
 	$arr_date[] = $row['md'];
 	$arr_count[] = $row['c'];	
 }
