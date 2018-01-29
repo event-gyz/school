@@ -110,10 +110,11 @@ include('inc.php');
 			$sql = "select * from wap_buds where uid=$supervisor_uid";
 			$re = M()->select($sql);
 			if($re){
-				foreach($re as $value){
-					$buds[$value['buds_type']] = $value['date'];
-				}
+				$buds_type = array_column($re,'buds_type');
+				$dates = array_column($re,'date');
+				$buds = array_combine($buds_type,$dates);
 			}
+//			name="a" value="<?= isset($buds['a'])?$buds['a']:'';?>"
 			?>
         <!-- InstanceBeginEditable name="content" -->
         	<section class="buds_record">
