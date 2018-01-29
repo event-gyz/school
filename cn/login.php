@@ -23,7 +23,6 @@ else {
 	$CMEMBER->getUserInfo();
 	$token = $CMEMBER->getUserToken();
 	$credit= $CMEMBER->credit;
-
 	if(isset($token)) {
 		$arr = array(
 			'token' => $token,
@@ -35,7 +34,11 @@ else {
 		$_SESSION['user_credit'] = $credit;
 		$_SESSION['user_email'] = $CMEMBER->email;
 		$_SESSION['user_epaper'] = $CMEMBER->epaper;
-
+		$sql = 'select * from `user` where supervisor_uid='.$CMEMBER->uid;
+		$kid = M()->find($sql);
+//		$_SESSION['CURRENT_KID_BIRTH_DAY'] = $kid['birth_day'];
+		$_SESSION['CURRENT_KID_UID'] = $kid['uid'];
+//		CURRENT_KID_UID
 		echo(genResponse(true, json_encode($arr)));
 	}
 	else

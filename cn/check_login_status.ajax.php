@@ -10,14 +10,14 @@ if(isset($member_uid) && $member_uid > 0) {
 	$CMEMBER->getUserInfo();
 	$_SESSION['user_credit'] = !empty($credit)?$credit:'';
 	$_SESSION['user_epaper'] = $CMEMBER->epaper;
-		
+
 	if(!isset($_SESSION['CURRENT_KID_UID'])) {
 		$kids_uid_array = $CMEMBER->getKidsUidArray();
 		if(count($kids_uid_array) > 0) {
-			$_SESSION['CURRENT_KID_UID'] = $kids_uid_array[0];
+//			$_SESSION['CURRENT_KID_UID'] = $kids_uid_array[0];
 			$uid = $_SESSION['CURRENT_KID_UID'];
 			if(	!isset($_SESSION['CURRENT_KID_NICKNAME'])
-				||!isset($_SESSION['CURRENT_KID_AGE'])) {
+				||!isset($_SESSION['CURRENT_KID_AGE']) || !isset($_SESSION['CURRENT_KID_BIRTH_DAY'])) {
 				$sql = " select nick_name, birth_day from user where uid = '$uid'";
 				$result = query($sql);
 				if($row = mysqli_fetch_object($result)) {
@@ -32,7 +32,7 @@ if(isset($member_uid) && $member_uid > 0) {
 					$nickname = $row->nick_name;
 					$_SESSION['CURRENT_KID_AGE'] = $user_age;
 					$_SESSION['CURRENT_KID_NICKNAME'] = $nickname;
-                                        $_SESSION['CURRENT_KID_BIRTH_DAY'] = $row->birth_day;
+                    $_SESSION['CURRENT_KID_BIRTH_DAY'] = $row->birth_day;
 				}	
 			}
 		}

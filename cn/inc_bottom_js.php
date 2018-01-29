@@ -47,7 +47,7 @@
                         }
                         else if(_next_move_ == 102) {
                             _next_move_ = 0;
-                            document.location.href = 'weblive_index.php';
+                            document.location.href = 'ceanza_menu.php';
                         }
                         else if(_next_move_ == 104) {
                             _next_move_ = 0;

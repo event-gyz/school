@@ -192,55 +192,91 @@ include('inc.php');
                 }else{
                     $sql = "select * from grow_diary where uid in (select supervisor_uid from user where uid={$member_uid}) order by Id";
                 }
-//                echo $sql;exit;
 				$list = query_result_list($sql);
 			}
 			if($list){
 				$tmp_list = array();
 				foreach ($list as $k){
 					$picurl = $k['picurl'];
-					$tmp_list[$k['date']][] = array('img' => $picurl,'title' => $k['title'],'Id' =>$k['Id']);
+                    $year_now = date('Y',strtotime($k['date']));
+                    $year_old = date('Y', strtotime($_SESSION['CURRENT_KID_BIRTH_DAY']));
+                    $year_age = $year_now - $year_old;
+					$tmp_list[$year_now][] = array('img' => $picurl,'title' => $k['title'],'Id' =>$k['Id'],'date'=>$k['date']);
 				}
-
-				$key_list = array_keys($tmp_list);
-				while($key_list){
-					$age = array_pop($key_list);
-					$year_now = date('Y',strtotime($age));
-					$year_old = date('Y', strtotime($_SESSION['CURRENT_KID_BIRTH_DAY']));
-					$year_age = $year_now - $year_old;
-					// 缩略图列表开始
-					echo "<div class=\"ceanza_list contraction\">";
-					echo "<p>{$year_now} 年<span>{$year_age} 岁</span></p>";
-					echo "<ul class=\"ceanza_contraction\">";
-					foreach($tmp_list[$age] as $k){
-						echo "<li><p><img src={$k['img']} alt=\"\"><i></i></p>
+                unset($k);
+				foreach($tmp_list as $key=>$value){
+                    $year_now = $key;
+                    $year_old = date('Y', strtotime($_SESSION['CURRENT_KID_BIRTH_DAY']));
+                    $year_age = $key - $year_old;
+                    echo "<div class=\"ceanza_list contraction\">";
+                    echo "<p>{$year_now} 年<span>{$year_age} 岁</span></p>";
+                    echo "<ul class=\"ceanza_contraction\">";
+                    foreach($value as $k){
+                        echo "<li><p><img src={$k['img']} alt=\"\"><i></i></p>
     			<span><b>{$k['title']}</b></span></li>";
-					}
-					echo "</ul>";
-					echo "</div>";
-					// 缩略图列表结束
+                    }
+                    echo "</ul>";
+                    echo "</div>";
 
-					// 列表开始
-					$url = base64_encode($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
-					echo "<div class=\"ceanza_list\">";
-					echo "<p>{$year_now} 年<span>{$year_age} 岁</span></p>";
-					echo "<div class=\"title\"> <p> <span>撰写日期</span> <span>日记标题</span> </p>";
-					echo "<ul class=\"list\">";
-					foreach($tmp_list[$age] as $k){
-						$date = date('Y年m月d日',strtotime($age));
-						echo "<li><p>{$date}</p>
+                    echo "<div class=\"ceanza_list\">";
+                    echo "<p>{$year_now} 年<span>{$year_age} 岁</span></p>";
+                    echo "<div class=\"title\"> <p> <span>撰写日期</span> <span>日记标题</span> </p>";
+                    echo "<ul class=\"list\">";
+                    foreach($value as $k){
+                        $date = date('Y年m月d日',strtotime($k['date']));
+                        echo "<li><p>{$date}</p>
                         <p>{$k['title']}</p>  <p><b class=\"check\"></b>"
-							. "<span><a href=\"ceanza_view.php?grow_id={$k['Id']}\">查看</a></span></p> "
-							. "</li>";
-						echo "<li>
+                            . "<span><a href=\"ceanza_view.php?grow_id={$k['Id']}\">查看</a></span></p> "
+                            . "</li>";
+                        echo "<li>
                             <p><b class=\"eqit\"></b><span><a href=\"ceanza_eqit.php?grow_id={$k['Id']}\">编辑</a></span></p>
-                            <p><b class=\"delete\"></b><span><a href=\"grow_diary.php?grow_id={$k['Id']}&type=delete&back={$url}\">删除</a></span></p>
+                            <p><b class=\"delete\"></b><span><a href=\"grow_diary.php?grow_id={$k['Id']}&type=delete\">删除</a></span></p>
                           </li>";
-					}
-					echo "</ul>";
-					echo "</div></div>";
-					// 列表结束
-				}
+                    }
+                    echo "</ul>";
+                    echo "</div></div>";
+                }
+
+
+//				$key_list = array_keys($tmp_list);
+//				while($key_list){
+//					$age = array_pop($key_list);
+//					$year_now = date('Y',strtotime($age));
+//					$year_old = date('Y', strtotime($_SESSION['CURRENT_KID_BIRTH_DAY']));
+//					$year_age = $year_now - $year_old;
+//					// 缩略图列表开始
+//					echo "<div class=\"ceanza_list contraction\">";
+//					echo "<p>{$year_now} 年<span>{$year_age} 岁</span></p>";
+//					echo "<ul class=\"ceanza_contraction\">";
+//					foreach($tmp_list[$age] as $k){
+//						echo "<li><p><img src={$k['img']} alt=\"\"><i></i></p>
+//    			<span><b>{$k['title']}</b></span></li>";
+//					}
+//					echo "</ul>";
+//					echo "</div>";
+//					// 缩略图列表结束
+//
+//					// 列表开始
+//					$url = base64_encode($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+//					echo "<div class=\"ceanza_list\">";
+//					echo "<p>{$year_now} 年<span>{$year_age} 岁</span></p>";
+//					echo "<div class=\"title\"> <p> <span>撰写日期</span> <span>日记标题</span> </p>";
+//					echo "<ul class=\"list\">";
+//					foreach($tmp_list[$age] as $k){
+//						$date = date('Y年m月d日',strtotime($age));
+//						echo "<li><p>{$date}</p>
+//                        <p>{$k['title']}</p>  <p><b class=\"check\"></b>"
+//							. "<span><a href=\"ceanza_view.php?grow_id={$k['Id']}\">查看</a></span></p> "
+//							. "</li>";
+//						echo "<li>
+//                            <p><b class=\"eqit\"></b><span><a href=\"ceanza_eqit.php?grow_id={$k['Id']}\">编辑</a></span></p>
+//                            <p><b class=\"delete\"></b><span><a href=\"grow_diary.php?grow_id={$k['Id']}&type=delete&back={$url}\">删除</a></span></p>
+//                          </li>";
+//					}
+//					echo "</ul>";
+//					echo "</div></div>";
+//					// 列表结束
+//				}
 			}else{
                 if(isset($_GET['category_name']) && !empty($_GET['category_name'])) {
                     ?>

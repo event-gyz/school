@@ -104,6 +104,17 @@ include('inc.php');
 
         <!--【Content】-->
         <section id="content">
+			<?php
+			$_token = $_SESSION['user_token'];
+			$supervisor_uid = $CMEMBER->accessFromToken($_token);
+			$sql = "select * from wap_buds where uid=$supervisor_uid";
+			$re = M()->select($sql);
+			if($re){
+				foreach($re as $value){
+					$buds[$value['buds_type']] = $value['date'];
+				}
+			}
+			?>
         <!-- InstanceBeginEditable name="content" -->
         	<section class="buds_record">
         		<h4>萌芽记录</h4>

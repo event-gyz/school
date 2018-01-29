@@ -337,6 +337,14 @@ $(function(){
 	    }
 	})
 
+	$('.diagnosis-doctors').change(function(){
+		if($(this).val()){
+			var option = $("option[value='"+ $(this).val() +"']")
+			$('input[name="hospital"]').val(option.attr('data-hospital'))
+			$('input[name="doctor"]').val(option.attr('data-name'))
+		}
+	})
+
 	$('.mode_sel li').click(function(){
 		if(!$(this).hasClass('selected')){
 			$(this).addClass('selected').siblings().removeClass('selected')
