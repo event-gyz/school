@@ -119,7 +119,6 @@ include('inc.php');
         		<h4>身高记录</h4>
         		<ul class="eqit_content">
 					<li class="title">身高（公分）：<input type="text" name="height" value="<?= $result['height']?>"></li>
-					<li class="title">体重（公斤）：<input type="text" name="weight" value="<?= $result['weight']?>"></li>
 					<li class="eqitUploadImg">
 						<div class="imgContent"><img src=<?php echo $result['picurl']?> alt=""></div>
 						<input type="file" name="file" >

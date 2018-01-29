@@ -110,7 +110,6 @@ include('inc.php');
 					<input hidden="" name="type" value="diary" />
         		<h4>体重记录</h4>
         		<ul class="form">
-					<li><p>身高（公分）：</p><input name="height" type="text" maxlength="20"></li>
 					<li><p>体重（公斤）：</p><input name="weight" type="text" maxlength="20"></li>
 					<li>
 						<b class="clock"></b>

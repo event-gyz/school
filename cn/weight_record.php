@@ -8,14 +8,14 @@ include("../inc/upload.php");
 if(isset($_POST['type']) && $_POST['type'] == 'diary'){
 
     $weight = $_POST['weight'];
-    $height = $_POST['height'];
+
     $files = $_FILES['file'];
     $date = $_POST['date'];
     $_token = $_SESSION['user_token'];
 
     if ($supervisor_uid = $CMEMBER->accessFromToken($_token)) {
         $picurl = ceanza_upload("file");
-        $sql = "INSERT INTO wap_weight (`date`,height,weight, picurl,uid) VALUES ('{$date}',$height,$weight,'{$picurl}',$supervisor_uid)";
+        $sql = "INSERT INTO wap_weight (`date`,weight, picurl,uid) VALUES ('{$date}',$weight,'{$picurl}',$supervisor_uid)";
         $result = query($sql);
         if($result!=null) {
             header("Location:weight_record_list.php");
@@ -27,7 +27,6 @@ if(isset($_POST['type']) && $_POST['type'] == 'diary'){
 if(isset($_POST['type']) && $_POST['type'] == 'update'){
     $id = $_POST['id'];
     $weight = $_POST['weight'];
-    $height = $_POST['height'];
     $files = $_POST['file'];
     $date = $_POST['date'];
     $_token = $_SESSION['user_token'];
@@ -39,7 +38,7 @@ if(isset($_POST['type']) && $_POST['type'] == 'update'){
         }else{
             $picurl = '"'.$files.'"';
         }
-        $sql = "update wap_weight set weight='{$weight}',height='{$height}',picurl='{$picurl}',`date`='{$date}' where id=$id";
+        $sql = "update wap_weight set weight='{$weight}',picurl='{$picurl}',`date`='{$date}' where id=$id";
         $result = query($sql);
         if($result!=null) {
             header("Location:weight_record_list.php");
