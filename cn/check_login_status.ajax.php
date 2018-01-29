@@ -14,7 +14,7 @@ if(isset($member_uid) && $member_uid > 0) {
 
 		$kids_uid_array = $CMEMBER->getKidsUidArray();
 		if(count($kids_uid_array) > 0) {
-//			$_SESSION['CURRENT_KID_UID'] = $kids_uid_array[0];
+			$_SESSION['CURRENT_KID_UID'] = $kids_uid_array[0];
 			$uid = $_SESSION['CURRENT_KID_UID'];
 			if(	!isset($_SESSION['CURRENT_KID_NICKNAME'])
 				||!isset($_SESSION['CURRENT_KID_AGE']) || !isset($_SESSION['CURRENT_KID_BIRTH_DAY'])) {

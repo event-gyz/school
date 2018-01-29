@@ -4,19 +4,24 @@
     <section class="fy-bd clearfix">
         <section class="fy-cont clearfix">
             <p class="ps">欢迎您加入我们，请填入您的宝宝资料</p>
+            <?php
+                $member_uid = $CMEMBER->accessFromToken($_SESSION['user_token']);
+                $sql = 'select * from `user` where supervisor_uid='.$member_uid;
+                $userInfo = M()->find($sql);
+            ?>
             <form id="modify_baby_form">
             <section class="fstmb">
                 <section class="formbox">
                     <div class="fbar clearfix">
-                        <label><i>昵称</i><input id="fst_nickname" type="text" class="tf"></label>
+                        <label><i>昵称</i><input id="fst_nickname" type="text" class="tf" value="<?= (isset($userInfo['nick_name'])?$userInfo['nick_name']:'')?>"></label>
                         <div class="errorbar">请填入昵称</div>
                     </div>
                     <div class="fbar clearfix">
                         <i>性别</i>
                         <div class="ralist ralist02">
                             <ul class="clearfix">
-                                <li><label><input type="radio" name="fst_sex" value="0" checked="checked"><b>男</b></label></li>
-                                <li><label><input type="radio" name="fst_sex" value="1"><b>女</b></label></li>
+                                <li><label><input type="radio" name="fst_sex" value="0" checked><b>男</b></label></li>
+                                <li><label><input type="radio" name="fst_sex" value="1" ><b>女</b></label></li>
                             </ul>
                         </div>
                     </div>

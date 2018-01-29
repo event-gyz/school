@@ -97,6 +97,7 @@
             var user_id = $("#reg_email").val();
             var user_password = $("#reg_password").val();
             var birthday = $("#reg_date").val();
+            var address = $("#address").val();
             var sex = 1;
             if(reg_genner == "男"){
                 sex = 0;
@@ -119,7 +120,8 @@
                     'p4': phone,
                     'p5':birthday,
                     'p6':sex,
-                    'p7':nickname
+                    'p7':nickname,
+                    'p8':address,
                 },
                 dataType: "json",
                 success: function (jsonStr) {
@@ -205,15 +207,15 @@
         });
         // modify member
         $("#modify_member_form").submit(function(){
-            var nickname = $("#fstmb_nickname").val();
+//            var nickname = $("#fstmb_nickname").val();
             var phone = $("#fstmb_phone").val();
             var password = $("#fstmb_password").val();
             var password2 = $("#fstmb_password2").val();
             var check_ok = true;
-            if(!nickname) {
-                $("#fstmb_error1").show().delay(2000).fadeOut();
-                check_ok = false;
-            }
+//            if(!nickname) {
+//                $("#fstmb_error1").show().delay(2000).fadeOut();
+//                check_ok = false;
+//            }
             if(phone && !isTel(phone)) {
                 $("#fstmb_error2").show().delay(2000).fadeOut();
                 check_ok = false;
@@ -233,7 +235,7 @@
                     url: "edit_member.php",
                     type: "POST",
                     data: {
-                        'p1': nickname,
+//                        'p1': nickname,
                         'p2': phone,
                         'p3': password
                     },

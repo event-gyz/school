@@ -4,12 +4,17 @@
     <section class="fy-bd clearfix">
         <section class="fy-cont clearfix">
             <p class="ps">请填写您的联系方式，也可在此变更密码</p>
+            <?php
+                $member_uid = $CMEMBER->accessFromToken($_SESSION['user_token']);
+                $sql = 'select * from member where uid='.$member_uid;
+                $userInfo = M()->find($sql);
+            ?>
             <form id="modify_member_form">
             <section class="fstmb">
                 <section class="formbox clearfix">
                     <div class="lbox">
                         <div class="fbar clearfix">
-                            <label><i>电话</i><input id="fstmb_phone" type="text" class="tf" value=""></label>
+                            <label><i>电话</i><input id="fstmb_phone" type="text" class="tf" value="<?= (isset($userInfo['cellphone'])?$userInfo['cellphone']:'')?>"></label>
                             <div id="fstmb_error2" class="errorbar">电话有误</div>
                         </div>
                     </div>
