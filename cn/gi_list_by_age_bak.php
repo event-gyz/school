@@ -5,13 +5,18 @@ include('inc.php');
 function fetchContent($age, $type, $func) {
 	global $cur_li_count;
 	$htmlString = "";
+
+	$a_name = $type.'_'.str_replace(".","_",$age);
+
 	$user_uid = $_SESSION["CURRENT_KID_UID"];
 //	$end_age = ceil($age/12)*12;
 	$end_age = $age;
 	$sql = "select grow_index.uid,grow_index.text,grow_index.age_max,grow_log.early from grow_index LEFT JOIN grow_log on grow_log.item_uid=grow_index.uid and grow_log.user_uid='$user_uid' where grow_index.age_min <= '$age' and grow_index.age_max >= '$end_age' and grow_index.type='$type' ";
-    echo $sql ;
+
+//	$result = query($sql);
 	$resule = M()->select($sql);
 	$li_count = 0;
+//	while($row=mysqli_fetch_array($result)) {
 	foreach($resule as $row){
 		$uid = $row["uid"];
 		$text = $row["text"];
@@ -21,9 +26,32 @@ function fetchContent($age, $type, $func) {
 
 		if(($func == 'b' && $checked) || ($func == 'c' && !$checked))
 			continue;
-
-		$htmlString .= ('<li id="gi_'.$uid.'"');
-
+			
+		if($li_count > 4)	
+			$htmlString .= ('<li name="'.$a_name.'" id="gi_'.$uid.'"');
+		else 
+			$htmlString .= ('<li id="gi_'.$uid.'"');
+/*
+		if(isset($early)) {
+			if($early==true) {
+				if($li_count > 4)
+					$htmlString .= (' class="passmore" ');
+				else 
+					$htmlString .= (' class="pass" ');				
+			}
+		}
+		else if($age_max < $_SESSION['CURRENT_KID_AGE']) {
+			$htmlString .= (' class="out" ');
+			if($li_count > 4)
+				$htmlString .= (' class="outmore" ');
+			else 
+				$htmlString .= (' class="out" ');
+		}
+		else {
+			if($li_count > 4)
+				$htmlString .= (' class="more" ');
+		}
+*/
 		if(isset($early)) {
 			if($early==true) {
 				$htmlString .= (' class="pass" ');				
@@ -32,8 +60,8 @@ function fetchContent($age, $type, $func) {
 		else if($age_max < $_SESSION['CURRENT_KID_AGE']) {
 			$htmlString .= (' class="out" ');
 		}
-//		if($li_count > 4)
-//			$htmlString .= (' style="display:none;" ');
+		if($li_count > 4)
+			$htmlString .= (' style="display:none;" ');
 
 		$htmlString .= ('>');
 		$htmlString .= ('<i><img src="../theme/cn/images/content/item_rep01.jpg"></i>
@@ -55,11 +83,28 @@ function fetchContent($age, $type, $func) {
 }
 
 function echo_start($age, $type, $first) {
-//	$type_names = array('语言沟通','社会人格','粗大动作','细微动作','知觉认知','自主能力');
+	global $cur_li_count;
+	
+	$type_names = array('语言沟通','社会人格','粗大动作','细微动作','知觉认知','自主能力');
 	$age_top = $age+0.5;
-    echo('<tr><th width="18%" rowspan="6"><div>');
-    echo('<b>'.$age.'月</b>~'.$age_top.'月</div></th>');
-    echo('<td width="65%"><ul class="clearfix">');
+	$a_name = $type.'_'.str_replace(".","_",$age);
+
+	if($first) {
+		echo('<tr><th width="18%" rowspan="6"><div>');
+		if($age == $_SESSION['CURRENT_KID_AGE']) {
+			echo('目前年龄');
+		}
+		echo('<b>'.$age.'个月</b>~'.$age_top.'个月</div></th><td width="17%" class="title"><div>'.$type_names[$type]);
+		if($cur_li_count > 5)
+			echo('<a id="'.$a_name.'" href="javascript:showMoreInList(\''.$a_name.'\');">[+]</a>');
+		echo('</div></td><td width="65%"><ul class="clearfix">');
+	}
+	else {
+		echo('<tr><td class="title"><div>'.$type_names[$type]);
+		if($cur_li_count > 5)
+			echo('<a id="'.$a_name.'" href="javascript:showMoreInList(\''.$a_name.'\');">[+]</a>');
+		echo('</div></td><td><ul class="clearfix">');
+	}
 }
 
 function echo_end() {
@@ -76,21 +121,31 @@ function echo_end() {
  *
 **********************/
 $user_age = $_SESSION['CURRENT_KID_AGE'];
-//$page = $_REQUEST['p'];
-$func = @$_REQUEST['f'];
+$page = $_REQUEST['p']; 
+$func = $_REQUEST['f'];
+$_REQUEST['t'] = 5;
 $type = $_REQUEST['t'];
-//$age = $page /2.0 - 0.5;
-$age = $user_age;
+$age = $page /2.0 - 0.5;
 $cur_li_count = 0;
-if(($user_age) > 72) {
+
+if(($user_age+$age) > 72) {
 	exit();
 }
 
-	$li = fetchContent($age, $type, $func);
-		echo_start($age, $type, $type==0);
+if(isset($user_age)) {// && $func!='b') {
+	if($user_age > 0.5)
+		$user_age -= 0.5;
+	$age += $user_age;	
+}
+
+$age_top = $age+0.5;
+for($i = 0; $i < 6; $i++) {
+	$li = fetchContent($age, $i, $func);
+		echo_start($age, $i, $i==0);
 		if(strlen($li) > 0)
 			echo($li);
 		else
 			echo('<li> - - </li>');
 		echo_end();
+}
 ?>

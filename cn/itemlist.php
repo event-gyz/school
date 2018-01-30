@@ -7,7 +7,7 @@ if(!isset($_SESSION['user_token'])) {
 }
 $tabon = @$_REQUEST['f'];
 if(!isset($tabon))
-	$tabon = 'a';
+	$tabon = '0';
 ?>
 <!DOCTYPE html> 
 <html><!-- InstanceBegin template="/Templates/_page01.dwt" codeOutsideHTMLIsLocked="false" -->
@@ -72,25 +72,23 @@ if(!isset($tabon))
                     <section class="replist">
                     	<section class="tab-hd">
                         	<ul class="clearfix">
-                            	<li <?php if($tabon=='a') echo('class="on"'); ?>><a id="tab_01" href="#">全部项目</a></li>
-	                            <li <?php if($tabon=='b') echo('class="on"'); ?>><a id="tab_02" href="#">还不会的项目</a></li>
-                                <li <?php if($tabon=='c') echo('class="on"'); ?>><a id="tab_03"href="#">已经会的项目</a></li>
+                            	<li <?php if($tabon=='0') echo('class="on"'); ?>><a id="tab_01" href="#">语言沟通</a></li>
+	                            <li <?php if($tabon=='1') echo('class="on"'); ?>><a id="tab_02" href="#">社会人格</a></li>
+                                <li <?php if($tabon=='4') echo('class="on"'); ?>><a id="tab_03"href="#">知觉认知</a></li>
+                                <li <?php if($tabon=='2') echo('class="on"'); ?>><a id="tab_04"href="#">粗大动作</a></li>
+                                <li <?php if($tabon=='3') echo('class="on"'); ?>><a id="tab_05"href="#">细微动作</a></li>
+                                <li <?php if($tabon=='5') echo('class="on"'); ?>><a id="tab_06"href="#">自主能力</a></li>
                             </ul>
                         </section>
                         <section class="tab-bd">
+
                         	<div class="tabcont on">
-                        		<!--
-                            	<div class="scrolltype">
-                            	-->
                             	<table id="gi_table" border="0" cellpadding="0" cellspacing="0" class="tb-rep">
 	                            	
                                 </table>
-                        		<!--
-                                </div>
-                            	-->
                             </div>
                         </section>
-                       	<div id="next"><a href="gi_list_by_age.php?f=a&p=2"></a>&nbsp;</div>
+<!--                       	<div id="next"><a href="gi_list_by_age.php?f=a&p=2"></a>&nbsp;</div>-->
                     </section>
                 </section>
                 <!--//成長指標//-->
@@ -120,27 +118,47 @@ if(!isset($tabon))
     <script src="../scripts/ios_slider/jquery.iosslider.min.js"></script>
     <script src="../scripts/other.js"></script>
     <script type="text/javascript">
-    $(function() { 
+    $(function() {
+//        a=all b=buhui c=yihui
+        //语言沟通
     	$("#tab_01").click(function(){
-	    	initList('a');
+	    	initList('0');
     	});
+        //社会人格
     	$("#tab_02").click(function(){
-	    	initList('b');
-    	});
-    	$("#tab_03").click(function(){
-	    	initList('c');
-    	});
+            initList('1');
+        });
+        //知觉认知
+        $("#tab_03").click(function(){
+            initList('4');
+        });
+        //粗动作
+        $("#tab_04").click(function(){
+            initList('2');
+        });
+        //细动作
+        $("#tab_05").click(function(){
+            initList('3');
+        });
+        //自主能力
+        $("#tab_06").click(function(){
+            initList('5');
+        });
     	
     	ajaxLoadUserStat();
     	initList('<?php echo($tabon); ?>');
     });
     
-    function initList(func) {
+    function initList(type,func) {
     	cur_func = func;
-    	var url = "gi_list_by_age.php?f="+func;
-    	var link = url + "&p=1";
-    	$("#next a").attr("href",url+"&p=2");
-    	
+    	var url = "gi_list_by_age.php?t="+type;
+        if(func){
+            link = url + "&f="+func;
+        }else{
+            link = url;
+        }
+//    	$("#next a").attr("href",url+"&p=2");
+
 	    var infiniteScrollContainer = $("#gi_table");
 	    // Reset the plugin before intializing it again
     	infiniteScrollContainer.load(link, function() {
@@ -157,11 +175,11 @@ if(!isset($tabon))
 			      }
 			});
     		
-	   		infiniteScrollContainer.infinitescroll({
-				navSelector  	: "#next",
-				nextSelector 	: "#next a",
-				itemSelector 	: "tr"
-			},addItemListeners);	    	
+//	   		infiniteScrollContainer.infinitescroll({
+//				navSelector  	: "#next",
+//				nextSelector 	: "#next a",
+//				itemSelector 	: "tr"
+//			},addItemListeners);
     	});    		
     }
     
