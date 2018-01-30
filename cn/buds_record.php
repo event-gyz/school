@@ -222,12 +222,10 @@ include('inc.php');
         		<div class="end_line"></div>
         	</section>
         	<div class="relevant_articles">
-    			<h4>成长日记相关文章</h4>
-    			<ul>
-    				<li>让宝宝记住个人资讯</li>
-    				<li>让孩子为自己的行为负责</li>
-    				<li>让2-3岁的孩子学画画</li>
-    			</ul>
+    			<h4>萌芽日记相关文章</h4>
+                <ul>
+                    <?php af_articles_list_recommend('乳牙'); ?>
+                </ul>
     		</div>
         	<!-- InstanceEndEditable -->   
         </section>

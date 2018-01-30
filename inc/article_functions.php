@@ -29,7 +29,7 @@ function add_new_article($title, $description, $content, $image, $tag, $type, $p
 function af_index_list_recommend() {
 	global $_show_image;
 	$item_count = $_show_image?4:8;
-	$sql = "SELECT * from articles WHERE type='REC' ORDER BY uid desc,pub_date limit $item_count";
+	$sql = "SELECT * from articles WHERE type='REC' and uid<355 ORDER BY uid desc,pub_date limit $item_count";
 	$result = query($sql);
 	$count = 0;
 	echo('<ul>');
@@ -59,6 +59,42 @@ function af_index_list_recommend() {
 			}
 			else {
 				echo('<li><a href="javascript:loadArticle('.$uid.')" class="fancybox"><b>'.$title.'</b><p>'.$desc.'</p><i>'.$pub_date.'</i></a></li>');
+			}
+		}
+		$count++;
+	}
+	echo('</ul>');
+}
+
+/**********************
+ *	ceanza_list.php
+ *********************/
+function af_articles_list_recommend($tag) {
+	global $_show_image;
+	$item_count = $_show_image?4:8;
+	$sql = "SELECT * from articles WHERE type='REC' and tag='{$tag}' ORDER BY uid desc,pub_date limit $item_count";
+	$result = query($sql);
+	$count = 0;
+	echo('<ul>');
+	while ($row = mysql_fetch_array($result)) {
+		$uid = $row['uid'];
+		$title = $row['title'];
+		if($count == 3) {
+			if($_show_image) {
+				echo('<li class="m-none"><a href="javascript:loadArticle('.$uid.')" class="fancybox">');
+				echo('<span><b>'.$title.'</b></span></a></li>');
+			}
+			else {
+				echo('<li class="m-none"><a href="javascript:loadArticle('.$uid.')" class="fancybox"><b>'.$title.'</b></a></li>');
+			}
+		}
+		else {
+			if($_show_image) {
+				echo('<li><a href="javascript:loadArticle('.$uid.')" class="fancybox">');
+				echo('<span><b>'.$title.'</b></span></a></li>');
+			}
+			else {
+				echo('<li><a href="javascript:loadArticle('.$uid.')" class="fancybox"><b>'.$title.'</b></a></li>');
 			}
 		}
 		$count++;
@@ -181,11 +217,12 @@ function af_recommend_load_article() {
 	if($result) {
 		$uid = $result['uid'];
 		$v_image = $result['image'];
-		if(empty($v_image)) {
-			$v_image = 'ig11_about.jpg';
-		}
-		if(!empty($v_image))
-			$image_html = '<p><img src="../theme/cn/images/content/img/'.$v_image.'"></p>';
+//		if(empty($v_image)) {
+//			$v_image = 'ig11_about.jpg';
+//		}
+//		if(!empty($v_image))
+//			$image_html = '<p><img src="../theme/cn/images/content/img/'.$v_image.'"></p>';
+		$image_html= '';
 		if($result['type']=='REC') {
 			$v_type = '推荐文章';
 		}
@@ -217,7 +254,7 @@ function af_recommend_load_article() {
 		else {
 			echo($image_html);
 			echo('<h3 class="title">'.$title.'</h3>');
-			if($_show_tags)
+			if(@$_show_tags)
 				echo('<b>TAGS: '.$tag.'</b>');
 			//echo('<b>'.$desc.'</b>');
 			echo($content);
@@ -263,7 +300,7 @@ function af_recommend_list_related($uid) {
 			else
 				$str = '<li><a href="javascript:loadMainArticle('.$uid.');"><b>'.$title.'</b><p>'.$desc;
 
-			if($_show_tags)
+			if(@$_show_tags)
 				$str .= '<b>TAGS: '.$tag.'</b>';
 			if($_show_image)
 				$str .= '<i>'.$pub_date.'</i></span></a></li>';

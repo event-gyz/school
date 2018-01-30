@@ -106,7 +106,7 @@ include('inc.php');
         <section id="content">
         <!-- InstanceBeginEditable name="content" -->
         	<section class="height_record">
-        		<h4>身高记录</h4>
+        		<h4>身高日记</h4>
         		<p>您可以在这里看到宝宝的身高改变曲线，当宝宝的身高落于有顏色的区域，这代表着符合世界卫生组织(WHO)儿童身高区间，也就是身高落于大部分儿童身高族群之间。</p>
         		<a href="height_record_add.php" class="add_height_record">新增身高记录<b></b></a>
         		<div class="browse_mode">
@@ -167,12 +167,10 @@ include('inc.php');
     		</div>
     		<p class='end_line'></p>
     		<div class="relevant_articles">
-    			<h4>成长日记相关文章</h4>
-    			<ul>
-    				<li>让宝宝记住个人资讯</li>
-    				<li>让孩子为自己的行为负责</li>
-    				<li>让2-3岁的孩子学画画</li>
-    			</ul>
+    			<h4>身高日记相关文章</h4>
+				<ul>
+					<?php af_articles_list_recommend('身高'); ?>
+				</ul>
     		</div>
         	<!-- InstanceEndEditable -->   
         </section>

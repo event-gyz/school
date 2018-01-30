@@ -205,7 +205,12 @@ include('inc.php');
         	<!-- InstanceEndEditable -->   
         </section>
         <!--【Content End】-->
-        
+		<div class="relevant_articles">
+			<h4>就诊日记相关文章</h4>
+			<ul>
+				<?php af_articles_list_recommend('就诊'); ?>
+			</ul>
+		</div>
     </section>
     <?php include 'inc_bottom_js.php'; ?>
 </body>
