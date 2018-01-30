@@ -106,7 +106,7 @@ include('inc.php');
         <section id="content">
         <!-- InstanceBeginEditable name="content" -->
         	<section class="weight_record">
-        		<h4>体重日记</h4>
+        		<h4>体重记录</h4>
         		<p>您可以在这里看到宝宝的体重改变曲线，有颜色的区域是世界卫生组织(WHO)所统计全世界儿童的平均体重区间，当宝宝的体重落于其间则表示正常，如果超出这份区域，则表示过胖或过瘦。</p>
         		<a href="weight_record_add.php" class="add_weight_record">新增体重记录<b></b></a>
         		<div class="browse_mode">
@@ -167,7 +167,7 @@ include('inc.php');
     		</div>
     		<p class='end_line'></p>
     		<div class="relevant_articles">
-    			<h4>体重日记相关文章</h4>
+    			<h4>体重相关文章</h4>
 				<ul>
 					<?php af_articles_list_recommend('体重'); ?>
 				</ul>

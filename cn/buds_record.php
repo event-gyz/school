@@ -222,7 +222,7 @@ include('inc.php');
         		<div class="end_line"></div>
         	</section>
         	<div class="relevant_articles">
-    			<h4>萌芽日记相关文章</h4>
+    			<h4>萌芽相关文章</h4>
                 <ul>
                     <?php af_articles_list_recommend('乳牙'); ?>
                 </ul>
