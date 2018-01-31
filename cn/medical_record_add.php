@@ -121,8 +121,20 @@ include('inc.php');
         				<p>或套用之前建立资料：</p>
 						<select class="diagnosis-doctors">
 							<option value=""></option>
-							<option value="72" data-hospital="121" data-name="1">121 1</option>
-							<option value="71" data-hospital="丰台医院" data-name="李医生">丰台医院 李医生</option>
+							<?php
+							$member_uid = $_SESSION["CURRENT_KID_UID"];
+							$sql = "select * from wap_medical where uid in (select supervisor_uid from user where uid={$member_uid}) order by id";
+							$re = M()->select($sql);
+							if($re){
+								foreach($re as $value){
+								?>
+									<option value="<?=$value['id']?>" data-hospital="<?=$value['hospital']?>" data-name="<?=$value['doctor_name']?>"><?=$value['hospital']?> <?=$value['doctor_name']?></option>
+							<?php
+								}
+							}
+
+							?>
+
 						</select>
         				<i></i>
         			</li>
