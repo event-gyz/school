@@ -6,10 +6,10 @@ function fetchContent($age, $type, $func) {
 	global $cur_li_count;
 	$htmlString = "";
 	$user_uid = $_SESSION["CURRENT_KID_UID"];
-//	$end_age = ceil($age/12)*12;
-	$end_age = $age;
-	$sql = "select grow_index.uid,grow_index.text,grow_index.age_max,grow_log.early from grow_index LEFT JOIN grow_log on grow_log.item_uid=grow_index.uid and grow_log.user_uid='$user_uid' where grow_index.age_min <= '$age' and grow_index.age_max >= '$end_age' and grow_index.type='$type' ";
-    echo $sql ;
+	$end_age = ceil($age/12)*12;
+	$start_age = intval($age/12)*12;
+//	$end_age = $age;
+	$sql = "select grow_index.uid,grow_index.text,grow_index.age_max,grow_index.age_min,grow_log.early from grow_index LEFT JOIN grow_log on grow_log.item_uid=grow_index.uid and grow_log.user_uid='$user_uid' where grow_index.age_min <= '$start_age' and grow_index.age_max <= '$end_age' and grow_index.type='$type' ";
 	$resule = M()->select($sql);
 	$li_count = 0;
 	foreach($resule as $row){
@@ -18,7 +18,6 @@ function fetchContent($age, $type, $func) {
 		$age_max = $row["age_max"];
 		$early = $row["early"];
 		$checked = isset($row['early']);
-
 		if(($func == 'b' && $checked) || ($func == 'c' && !$checked))
 			continue;
 
@@ -57,9 +56,7 @@ function fetchContent($age, $type, $func) {
 function echo_start($age, $type, $first) {
 //	$type_names = array('语言沟通','社会人格','粗大动作','细微动作','知觉认知','自主能力');
 	$age_top = $age+0.5;
-    echo('<tr><th width="18%" rowspan="6"><div>');
-    echo('<b>'.$age.'月</b>~'.$age_top.'月</div></th>');
-    echo('<td width="65%"><ul class="clearfix">');
+    echo('<tr><td width="65%"><ul class="clearfix">');
 }
 
 function echo_end() {

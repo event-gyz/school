@@ -162,7 +162,16 @@ a.i-more{color:#666666;font-size:13px;position:absolute;right:0;text-shadow:none
 .board li b{display:inline-block;vertical-align:top;width:30%;}
 .board li i{display:inline-block;font-size:30px;font-style:normal;font-weight:bold;text-align:right;width:70%;}
 .board li small{display:inline-block;font-size:15px;padding:0 1%;}
-.replist{clear:both;padding:10px 0 0;}
+.replist{
+    width: 100%;
+
+    background: #fff;
+    left: 0;
+    top: 0;
+    color: #666666;
+    text-align: center;
+    font-size: 14px;
+    box-sizing: border-box;}
 .tab-hd{
 }
 .tab-hd li{display:inline;float:left;margin:0 1% 0 0;width:15%;}
@@ -170,6 +179,21 @@ a.i-more{color:#666666;font-size:13px;position:absolute;right:0;text-shadow:none
 .tab-hd li.on a{background:none repeat scroll 0 0 #5EC051;color:#FFFFFF;margin:0;padding-top:25px;}
 .tab-bd{border:2px solid #5EC051;border-radius:0 0 15px 15px;clear:both;}
 .tabcont.on{display:block !important;}
+.tabcont .title {
+    line-height: 30px;
+    background: #BAE4B5;
+    overflow: hidden;
+}
+.tabcont .title p {
+    float: left;
+    width: 40%;
+}
+.tabcont .loadmore p {
+    width: 40%;
+    line-height: 24px;
+    cursor: pointer;
+    color: #5EC053;
+}
 table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .tb-rep th{border-top:1px solid #CCCCCC;text-align:center;}
 .tb-rep th b{color:#5EC051;display:block;font-size:30px;padding:2px 0;}
@@ -478,7 +502,7 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .progress_data ul li{line-height: 60px;font-size: 14px;font-weight: bold;}
 .progress_data ul li p{float:right;height:60px;line-height: 60px;overflow: hidden;}
 .progress_data ul li span{margin-right: 5px;font-size: 30px;}
-.icon_explain{margin-top:20px;color:#1F1E1E;line-height: 34px;font-weight: bold;font-size: 15px;}
+.icon_explain{margin: 20px auto 0;  width: 80%;color:#1F1E1E;line-height: 34px;font-weight: bold;font-size: 15px;}
 .icon_explain i{display: inline-block;width:32px;height:24px;vertical-align: middle;margin-right: 8px;}
 .icon_explain span{margin:0 8px;color:#FC0D09;font-size: 18px;}
 .icon_explain .lead{width:22px;height:26px;background: url('../../content/epaper/images/lead.png') no-repeat;background-size: 100%;}

@@ -303,7 +303,9 @@ include('inc.php');
 							var list = <?php
                                 echo '[';
                                 foreach($height as $k=>$v){
-                                    echo "['{$k}月','{$v}','10'],";
+                                    if($k>0){
+                                        echo "['{$k}月','{$v}','10'],";
+                                    }
                                 }
                                 echo ']';
 

@@ -31,21 +31,27 @@ else {
 
 // late
 $sql = "select count(*) as late_count from grow_index where age_max < '$user_age' and uid not in (select uid from grow_log where user_uid='$uid')";
-$result = query($sql);
-if($row = mysqli_fetch_object($result)) {
-	$late_count = $row->late_count;
+$row = M()->find($sql);
+if($row['late_count']) {
+	$late_count = $row['late_count'];
+}else{
+    $late_count = 0;
 }
 // early
 $sql = "select count(*) as early_count from grow_log where user_uid='$uid' and early=1";
-$result = query($sql);
-if($row = mysqli_fetch_object($result)) {
-	$early_count = $row->early_count;
+$row = M()->find($sql);
+if($row['early_count']) {
+	$early_count = $row['early_count'];
+}else{
+    $early_count = 0;
 }
 // all learned
 $sql = "select count(*) as all_count from grow_log where user_uid='$uid'";
-$result = query($sql);
-if($row = mysqli_fetch_object($result)) {
-	$all_count = $row->all_count;
+$row = M()->find($sql);
+if($row['all_count']) {
+	$all_count = $row['all_count'];
+}else{
+    $all_count = 0;
 }
 $arr = array('nickname'=>$nickname,'all'=>$all_count,'early'=>$early_count,'late'=>$late_count);
 echo(json_encode($arr));

@@ -199,7 +199,7 @@ class GrowIndex {
 	//-- HTML formatting output --//
 	static function output_more($uid,$type) {
 		$data = self::getMore($uid);
-		$title = ($type==0?'详细说明':'医生建议');
+		$title = ($type==0?'详细说明':'专家建议');
 		$h3 = $data[0];
 		$content = $data[1+$type];
 		echo('<section class="fy-hd"><h2 class="title">'.$title.'</h2></section>');
