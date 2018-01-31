@@ -191,10 +191,16 @@ include('inc.php');
 					borderWidth: 2,
 					borderColor: '#7FC242',
 					padding:0,
+                    axisPointer: {
+                        lineStyle: {
+                            color: 'transparent'
+                        },
+                    },
 					textStyle: {
 						align: 'center',
 						color: '#7FC242'
 					},
+                    triggerOn: 'click',
 					formatter: function(params){
 						// console.log(params)
 						var year = parseInt(parseInt(params[0].data[0])/12)

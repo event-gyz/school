@@ -159,7 +159,6 @@ include('inc.php');
 									<a href="height_record.php?id=<?= $value['id']?>&type=delete&back=<?=$url?>">删除</a>
 								</span>
 								</p>
-
 							</li>
 						<?php }?>
 
@@ -192,12 +191,17 @@ include('inc.php');
 					borderWidth: 2,
 					borderColor: '#7FC242',
 					padding:0,
+                    axisPointer: {
+                        lineStyle: {
+                            color: 'transparent'
+                        },
+                    },
 					textStyle: {
 						align: 'center',
 						color: '#7FC242'
 					},
+                    triggerOn: 'click',
 					formatter: function(params){
-						// console.log(params)
 						var year = parseInt(parseInt(params[0].data[0])/12)
 						var month = parseInt(params[0].data[0])%12
 						var old = (year > 0 ? year + '岁' : '') + (month > 0 ? month + '个月' : '')

@@ -191,7 +191,7 @@ include('inc.php');
                     }
                     ?>
                     	<h3 class="title">推荐文章<a href="recommend.php" class="i-more">更多内容</a></h3>
-                    	<?php af_index_list_recommend(); ?>
+                    <?php af_articles_list_recommend('首页'); ?>
                     </section>
                     <!--//推薦文章//-->
                     

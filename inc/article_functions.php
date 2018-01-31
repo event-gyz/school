@@ -79,13 +79,16 @@ function af_articles_list_recommend($tag) {
 	while ($row = mysql_fetch_array($result)) {
 		$uid = $row['uid'];
 		$title = $row['title'];
+		$desc = $row['description'];
+//		$desc = mb_substr($desc,0,15,'utf-8').'....';
 		if($count == 3) {
 			if($_show_image) {
 				echo('<li class="m-none"><a href="javascript:loadArticle('.$uid.')" class="fancybox">');
-				echo('<span><b>'.$title.'</b></span></a></li>');
+				echo('<span><b>'.$title.'</b>'.$desc.'</span></a></li>');
 			}
 			else {
-				echo('<li class="m-none"><a href="javascript:loadArticle('.$uid.')" class="fancybox"><b>'.$title.'</b></a></li>');
+//				echo('<li class="m-none"><a href="javascript:loadArticle('.$uid.')" class="fancybox"><b>'.$title.'</b></a></li>');
+				echo('<li class="m-none"><a href="javascript:loadArticle('.$uid.')" class="fancybox"><b>'.$title.'</b><p>'.$desc.'</p></a></li>');
 			}
 		}
 		else {
@@ -94,7 +97,8 @@ function af_articles_list_recommend($tag) {
 				echo('<span><b>'.$title.'</b></span></a></li>');
 			}
 			else {
-				echo('<li><a href="javascript:loadArticle('.$uid.')" class="fancybox"><b>'.$title.'</b></a></li>');
+//				echo('<li><a href="javascript:loadArticle('.$uid.')" class="fancybox"><b>'.$title.'</b></a></li>');
+				echo('<li><a href="javascript:loadArticle('.$uid.')" class="fancybox"><b>'.$title.'</b><p>'.$desc.'</p></a></li>');
 			}
 		}
 		$count++;

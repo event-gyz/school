@@ -128,46 +128,46 @@ include('inc.php');
         				<ul class="model_diagram_left">
         					<li>
         						<p>a <span>中门齿（8-12月）</span></p>
-        						<input type="text">
+        						<input type="date">
         					</li>
         					<li>
         						<p>b <span>侧门齿（9-13月）</span></p>
-        						<input type="text">
+        						<input type="date">
         					</li>
         					<li>
         						<p>c <span>乳犬齿（16-22月）</span></p>
-        						<input type="text">
+        						<input type="date">
         					</li>
         					<li>
         						<p>d <span>第一乳臼齿（13-19月）</span></p>
-        						<input type="text">
+        						<input type="date">
         					</li>
         					<li>
         						<p>e <span>第二乳臼齿（25-33月）</span></p>
-        						<input type="text">
+        						<input type="date">
         					</li>
         				</ul>
         				<p><img src="../content/epaper/images/buds_top.png" alt=""></p>
         				<ul class="model_diagram_right">
         					<li>
         						<p>k <span>中门齿（8-12月）</span></p>
-        						<input type="text">
+        						<input type="date">
         					</li>
         					<li>
         						<p>l <span>侧门齿（9-13月）</span></p>
-        						<input type="text">
+        						<input type="date">
         					</li>
         					<li>
         						<p>m <span>乳犬齿（16-22月）</span></p>
-        						<input type="text">
+        						<input type="date">
         					</li>
         					<li>
         						<p>n <span>第一乳臼齿（13-19月）</span></p>
-        						<input type="text">
+        						<input type="date">
         					</li>
         					<li>
         						<p>o <span>第二乳臼齿（25-33月）</span></p>
-        						<input type="text">
+        						<input type="date">
         					</li>
         				</ul>
         			</div>
@@ -175,46 +175,46 @@ include('inc.php');
         				<ul class="model_diagram_left">
         					<li>
         						<p>f <span>第二乳臼齿（23-31月）</span></p>
-        						<input type="text">
+        						<input type="date">
         					</li>
         					<li>
         						<p>g <span>第一乳臼齿（14-18月）</span></p>
-        						<input type="text">
+        						<input type="date">
         					</li>
         					<li>
         						<p>h <span>乳犬齿（17-23月）</span></p>
-        						<input type="text">
+        						<input type="date">
         					</li>
         					<li>
         						<p>i <span>侧门齿（10-16月）</span></p>
-        						<input type="text">
+        						<input type="date">
         					</li>
         					<li>
         						<p>j <span>中门齿（6-10月）</span></p>
-        						<input type="text">
+        						<input type="date">
         					</li>
         				</ul>
         				<p><img src="../content/epaper/images/buds_bottom.png" alt=""></p>
         				<ul class="model_diagram_right">
         					<li>
         						<p>p <span>第二乳臼齿（23-31月）</span></p>
-        						<input type="text">
+        						<input type="date">
         					</li>
         					<li>
         						<p>q <span>第一乳臼齿（14-18月）</span></p>
-        						<input type="text">
+        						<input type="date">
         					</li>
         					<li>
         						<p>r <span>乳犬齿（17-23月）</span></p>
-        						<input type="text">
+        						<input type="date">
         					</li>
         					<li>
         						<p>s <span>侧门齿（10-16月）</span></p>
-        						<input type="text">
+        						<input type="date">
         					</li>
         					<li>
         						<p>t <span>中门齿（6-10月）</span></p>
-        						<input type="text">
+        						<input type="date">
         					</li>
         				</ul>
         			</div>

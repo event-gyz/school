@@ -83,42 +83,6 @@ function clearTimer (time) {
 function trim(str){
 	return str.replace(/(^\s*)|(\s*$)/g, "");
 }
-// 图片压缩
-function dealImage(path, obj, callback){
-	var img = new Image();
-	img.src = path;
-	img.onload = function(){
-		var that = this;
-		// 默认按比例压缩
-		var w = that.width,
-		h = that.height,
-		scale = w / h;
-		w = obj.width || w;
-		h = obj.height || (w / scale);
-		var quality = 0.7;  // 默认图片质量为0.7
-		//生成canvas
-		var canvas = document.createElement('canvas');
-		var ctx = canvas.getContext('2d');
-		// 创建属性节点
-		var anw = document.createAttribute("width");
-		anw.nodeValue = w;
-		var anh = document.createAttribute("height");
-		anh.nodeValue = h;
-		canvas.setAttributeNode(anw);
-		canvas.setAttributeNode(anh);
-		ctx.drawImage(that, 0, 0, w, h);
-		// 图像质量
-		if(obj.quality && obj.quality <= 1 && obj.quality > 0){
-			quality = obj.quality;
-		}
-		// quality值越小，所绘制出的图像越模糊\
-		var base64 = canvas.toDataURL('image/jpeg', quality );
-		alert(base64)
-		// 回调函数返回base64的值
-		callback(base64);
-	}
-}
-
 
 $(window).resize(function(e){
 	w();
@@ -335,64 +299,73 @@ $(function(){
 		var type = trim($("input[name='grow_diary_category_name']").val())
 		var content = trim($("textarea[name='content']").val())
 		var date = $("input[name='date']").val()
-		var address = trim($(".address-input").val())
+		var address = trim($("input[name='address']").val())
 		var file = $("input[name='file']").val()
-		if(!(title && type && content && date && address && file)){
+		var camera_file = $('.camera_input').val()
+		debugger
+		if(!(title && type && content && date && address && (file || camera_file))){
 			alert('请填写完整成长日记信息')
 			return false;
 		}
 	});
 
-	// var uploadLi;
-	$('.uploadImgList').on('change','li>input',function(){
-		var imgContent = $(this).prev()
-		// if($('.uploadImgList li').length - 1 == $(this).parent().index() && $('.uploadImgList li').length < 6){
-		// 	uploadLi = $(this).parent().clone()
-		// }
-		if (this.files && this.files[0]) {
-			console.log(this.files[0])
-	    	var reader = new FileReader();
-	    	reader.onload = function(evt) {
-	    		console.log(evt)
-	    		imgContent.html('<img src="' + evt.target.result + '" />');
-	    	}
-	    	reader.readAsDataURL(this.files[0]);
-	    	// $('.uploadImgList ').append(uploadLi)
-	    }else {
-	    	imgContent.html('<div class="img" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + this.value + '\'"></div>');
-	    }
-	})
-
-	$('.camera_input').change(function(){
-		var imgContent = $('.imgContent')
-		if (this.files && this.files[0]) {
-	    	var reader = new FileReader();
-	    	reader.onload = function(evt) {
-	    		imgContent.html('<img src="' + evt.target.result + '" />');
-	    	}
-	    	reader.readAsDataURL(this.files[0]);
-	    }else {
-	    	imgContent.html('<div class="img" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + this.value + '\'"></div>');
-	    }
-	 // 	dealImage(path, {width: 120, height: 120}, function(base){
-	 // 		alert(base)
-	 // 		alert(base.length / 1024)
-	 // 		imgContent.html('<img src="' + base + '" />')
-		// })
+	$('.uploadImgList').on('change','input',function(){
+		var files = this.files;
+    	var item = files[0];
+        // console.log("原图片大小", item.size);
+        var imgContent = $('.imgContent')
+        if (item.size > 1024 * 1024 * 3) {
+            // console.log("图片大于3M，开始进行压缩...");
+            (function(img) {
+            	// console.log(img)
+                var mpImg = new MegaPixImage(img);
+                var resImg = document.createElement("img");
+                resImg.file = img;
+                mpImg.render(resImg, { maxWidth: 500, maxHeight: 500, quality: 1 }, function() {
+                	imgContent.html('<img src="' + $(resImg).attr('src') + '" />');
+                });
+            })(item);
+        }else{
+	        if (this.files && this.files[0]) {
+		    	var reader = new FileReader();
+		    	reader.onload = function(evt) {
+		    		imgContent.html('<img src="' + evt.target.result + '" />');
+		    	}
+		    	reader.readAsDataURL(this.files[0]);
+		    }else {
+		    	imgContent.html('<div class="img" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + this.value + '\'"></div>');
+		    }
+        }
 	})
 
 	$('.eqitUploadImg input').change(function(){
-		var imgContent = $('.eqitUploadImg .imgContent')
-	    if (this.files && this.files[0]) {
-	      var reader = new FileReader();
-	      reader.onload = function(evt) {
-	        imgContent.html('<img src="' + evt.target.result + '" />');
-	      }
-	      reader.readAsDataURL(this.files[0]);
-	      $(this).attr('name',"new_file")
-	    } else {
-	      imgContent.html('<div class="img" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + this.value + '\'"></div>');
-	    }
+		var files = this.files;
+    	var item = files[0];
+        // console.log("原图片大小", item.size);
+        var imgContent = $('.eqitUploadImg .imgContent')
+        if (item.size > 1024 * 1024 * 3) {
+            // console.log("图片大于3M，开始进行压缩...");
+            (function(img) {
+            	// console.log(img)
+                var mpImg = new MegaPixImage(img);
+                var resImg = document.createElement("img");
+                resImg.file = img;
+                mpImg.render(resImg, { maxWidth: 500, maxHeight: 500, quality: 1 }, function() {
+                	imgContent.html('<img src="' + $(resImg).attr('src') + '" />');
+                });
+            })(item);
+        }else{
+	        if (this.files && this.files[0]) {
+		    	var reader = new FileReader();
+		    	reader.onload = function(evt) {
+		    		imgContent.html('<img src="' + evt.target.result + '" />');
+		    	}
+		    	reader.readAsDataURL(this.files[0]);
+		    }else {
+		    	imgContent.html('<div class="img" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + this.value + '\'"></div>');
+		    }
+        }
+        $(this).attr('name',"new_file")
 	})
 
 	$('.diagnosis-doctors').change(function(){

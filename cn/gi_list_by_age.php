@@ -25,7 +25,7 @@ function fetchContent($age, $type, $func) {
 
 		if(isset($early)) {
 			if($early==true) {
-				$htmlString .= (' class="pass" ');				
+				$htmlString .= (' class="pass" ');
 			}
 		}
 		else if($age_max < $_SESSION['CURRENT_KID_AGE']) {
@@ -34,28 +34,26 @@ function fetchContent($age, $type, $func) {
 //		if($li_count > 4)
 //			$htmlString .= (' style="display:none;" ');
 
-		$htmlString .= ('>');
-		$htmlString .= ('<i><img src="../theme/cn/images/content/item_rep01.jpg"></i>
-	                <label>
-	                    <input type="checkbox" class="ck" value="'.$uid.'"');
-	    if($checked) $htmlString .= (' checked ');        
-	    $htmlString .= ('>
+		$htmlString .= '>';
+		$htmlString .= '<i><img src="../theme/cn/images/content/item_rep01.jpg"></i>
+	                <p>
+	                    <input type="checkbox" class="ck" value="'.$uid.'"';
+	    if($checked) $htmlString .= (' checked ');
+	    $htmlString .= '>
 	                    <span>'.$text.'</span>
-	                </label>
+	                </p>
 	                <div class="tablinks">
 	                	<a name="'.$uid.'" value="0" href="javascript:void(0)"><img src="../theme/cn/images/content/item_rep02.jpg"></a>
 	                    <a name="'.$uid.'" value="1" href="javascript:void(0)"><img src="../theme/cn/images/content/item_rep03.jpg"></a>
 	            	</div>
-	            </li>');
+	            </li>';
 	    $li_count++;
-	}	
+	}
 	$cur_li_count = $li_count;
 	return $htmlString;
 }
 
-function echo_start($age, $type, $first) {
-//	$type_names = array('语言沟通','社会人格','粗大动作','细微动作','知觉认知','自主能力');
-	$age_top = $age+0.5;
+function echo_start() {
     echo('<tr><td width="65%"><ul class="clearfix">');
 }
 
@@ -64,7 +62,7 @@ function echo_end() {
 	        </ul>
 	    </td>
 	</tr>
-	');	
+	');
 }
 
 /**********************
@@ -73,7 +71,6 @@ function echo_end() {
  *
 **********************/
 $user_age = $_SESSION['CURRENT_KID_AGE'];
-//$page = $_REQUEST['p'];
 $func = @$_REQUEST['f'];
 $type = $_REQUEST['t'];
 //$age = $page /2.0 - 0.5;
