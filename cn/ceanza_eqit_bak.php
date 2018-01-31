@@ -101,37 +101,48 @@ include('inc.php');
     	<!--【Header】-->
     	<?php include 'inc_header.php'; ?>
         <!--【Header End】-->
-
+		<?php
+			$sql = '';
+		?>
         <!--【Content】-->
         <section id="content">
         <!-- InstanceBeginEditable name="content" -->
-        	<section class="weight_record">
-				<form action="weight_record.php" method="post" enctype="multipart/form-data">
-					<input hidden="" name="type" value="diary" />
-        		<h4>体重记录</h4>
-        		<ul class="form">
-					<li><p>体重（公斤）：</p><input name="weight" type="text" maxlength="20"></li>
+        	<section class="ceanza">
+				<form action="grow_diary.php" method="post" enctype="multipart/form-data">
+					<input type="hidden" name="type" value="update" />
+					<input type="hidden" name="id" value="<?php echo $_GET['grow_id']?>" />
+				<?php
+				$sql  = 'select * from grow_diary where Id='.$_GET['grow_id'];
+				$result = M()->find($sql);
+//				print_r($result);
+				?>
+        		<h4>成长日记</h4>
+        		<ul class="eqit_content">
+					<input type="hidden" name="file" value=<?php echo $result['picurl']?> />
+					<li class="title">标题：<input type="text" name="title" value="<?php echo $result['title']?>"></li>
+					<li>内容：<input type="text" name="content" value="<?php echo $result['content']?>"></li>
+
+					<li class="eqitUploadImg">
+						<div class="imgContent"><img src=<?php echo $result['picurl']?> alt=""></div>
+						<input type="file" name="file">
+						<span>点击图片，重新上传</span>
+					</li>
 					<li>
 						<b class="clock"></b>
 						记录时间：
-						<input class="time" name="date" type="date" value="<?php echo date('Y-m-d',time())?>">
+						<input class="time" type="date" name="date" value="<?php echo $result['date']?>">
+					</li>
+					<li>
+						<b class="address"></b>
+						记录地址：
+						<input class="address-input" type="text" name="address" value="<?php echo $result['address']?>">
 					</li>
         		</ul>
-					<ul class="uploadImgList">
-						<li class="uploadImg">
-							<div class="imgContent">+</div>
-							<input type="file" name="file"/>
-							<div class="camera_photograph">
-								<p><img src="../content/epaper/images/camera.png" alt=""></p>
-								<input type="file" class="camera_input" name="myPhoto" capture="camera" accept="image/*"/>
-							</div>
-						</li>
-					</ul>
-        		<p class="uploadDemand">(上传图片档案大小不得超过3MB)</p>
+
         		<button class="submit">提交</button>
-				</form>
+					</form>
         	</section>
-        	<!-- InstanceEndEditable -->
+        	<!-- InstanceEndEditable -->   
         </section>
         <!--【Content End】-->
         

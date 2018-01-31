@@ -122,6 +122,10 @@ include('inc.php');
 							<div class="imgContent">+</div>
 							<input type="file" name="file"/>
 						</li>
+						<div class="camera_photograph">
+							<p><img src="../content/epaper/images/camera.png" alt=""></p>
+							<input type="file" class="camera_input" name="myPhoto" capture="camera" accept="image/*"/>
+						</div>
 					</ul>
         		<p class="uploadDemand">(上传图片档案大小不得超过3MB)</p>
         		<button class="submit">提交</button>

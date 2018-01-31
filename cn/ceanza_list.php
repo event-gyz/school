@@ -114,55 +114,13 @@ include('inc.php');
                     <b></b>
                     <div class="category-list">
                         <ul>
-                            <li class="checked">一般日记</li>
-                            <li>宝宝出生喽</li>
-                            <li>第一次打预防针</li>
-                            <li>三朝礼</li>
-                            <li>满月</li>
-                            <li>第一次量身高</li>
-                            <li>剃胎发</li>
-                            <li>宝宝的第一个玩具</li>
-                            <li>百日礼</li>
-                            <li>收涎</li>
-                            <li>戴长命锁</li>
-                            <li>第一次吃副食品</li>
-                            <li>第一次撑起上半身</li>
-                            <li>第一次坐着</li>
-                            <li>第一次向前爬行</li>
-                            <li>第一次扶着物品站立</li>
-                            <li>第一次扶着物品向前走动</li>
-                            <li>满周岁（抓周）</li>
-                            <li>第一次用杯子喝水</li>
-                            <li>第一次不依靠搀扶会自己行走</li>
-                            <li>把球举高往前丢</li>
-                            <li>第一次自己脱裤子</li>
-                            <li>学会自己拉拉链</li>
-                            <li>学会往后跳</li>
-                            <li>第一次过新年</li>
-                            <li>第一次切蛋糕</li>
-                            <li>学会自己洗手</li>
-                            <li>第一次和新朋友一起玩</li>
-                            <li>第一次自己吃饭</li>
-                            <li>宝宝最喜欢的玩具</li>
-                            <li>宝宝第一次盖的城堡</li>
-                            <li>宝宝骑三轮车</li>
-                            <li>第一次自己看书</li>
-                            <li>幼稚园开学</li>
-                            <li>第一次写作业</li>
-                            <li>第一次亲子活动</li>
-                            <li>第一次过圣诞节</li>
-                            <li>第一次上台表演</li>
-                            <li>第一次自己穿衣服</li>
-                            <li>宝宝第一次画全家福</li>
-                            <li>学会单脚站立</li>
-                            <li>才艺课初体验</li>
-                            <li>第一次运动会</li>
-                            <li>学会自己刷牙</li>
-                            <li>学会自己扣扣子</li>
-                            <li>学会自己上厕所</li>
-                            <li>完成八片以上的拼图</li>
-                            <li>能够以单脚往前跳</li>
-                            <li>幼稚园毕业典礼</li>
+                            <li class="checked">0月-3月</li>
+                            <li>3月-1岁</li>
+                            <li>1岁-2岁</li>
+                            <li>2岁-3岁</li>
+                            <li>3岁-4岁</li>
+                            <li>4岁-5岁</li>
+                            <li>5岁-6岁</li>
                         </ul>
                         <p class="close">×</p>
                     </div>
@@ -170,11 +128,11 @@ include('inc.php');
         		<div class="browse_mode">
         			<p></p>
         			<ul class="mode_sel">
-        				<li>
+                        <li class="selected">
         					<span>缩图</span>
         					<b></b>
         				</li>
-        				<li class="selected">
+        				<li>
         					<span>列表</span>
         					<b></b>
         				</li>
@@ -218,7 +176,7 @@ include('inc.php');
                     echo "</ul>";
                     echo "</div>";
 
-                    echo "<div class=\"ceanza_list\">";
+                    echo "<div class=\"ceanza_list\" style='display:none'>";
                     echo "<p>{$year_now} 年<span>{$year_age} 岁</span></p>";
                     echo "<div class=\"title\"> <p> <span>撰写日期</span> <span>日记标题</span> </p>";
                     echo "<ul class=\"list\">";

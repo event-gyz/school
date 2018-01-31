@@ -6,6 +6,7 @@ include('inc.php');
 <html><!-- InstanceBegin template="/Templates/_page01.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
 	<?php include('inc_head.php');	?>
+	<script src="../scripts/echarts/echarts.js"></script>
 	<style>
 		body{background: none;}
 		h1,h2,h3,h4,h5,h6,p,ul,li,dl,dt,dd{margin:0;padding:0;list-style: none;}
@@ -105,28 +106,27 @@ include('inc.php');
         <!--【Content】-->
         <section id="content">
         <!-- InstanceBeginEditable name="content" -->
-        	<section class="weight_record">
-        		<h4>体重记录</h4>
-        		<p>您可以在这里看到宝宝的体重改变曲线，有颜色的区域是世界卫生组织(WHO)所统计全世界儿童的平均体重区间，当宝宝的体重落于其间则表示正常，如果超出这份区域，则表示过胖或过瘦。</p>
-        		<a href="weight_record_add.php" class="add_weight_record">新增体重记录<b></b></a>
-        		<div class="browse_mode">
-        			<p></p>
-        			<ul class="mode_sel">
-        				<li>
-        					<span>缩图</span>
-        					<b></b>
-        				</li>
-        				<li class="selected">
-        					<span>列表</span>
-        					<b></b>
-        				</li>
-        			</ul>
-        		</div>
-        	</section>
-            <!-- 缩图图表 -->
-            <div class="weight_record_contraction" style="display:none">
-                
-            </div>
+				<section class="weight_record">
+					<h4>体重记录</h4>
+					<p>您可以在这里看到宝宝的体重改变曲线，有颜色的区域是世界卫生组织(WHO)所统计全世界儿童的平均体重区间，当宝宝的体重落于其间则表示正常，如果超出这份区域，则表示过胖或过瘦。</p>
+					<a href="weight_record_add.php" class="add_weight_record">新增身高/体重记录<b></b></a>
+					<div class="browse_mode">
+						<p></p>
+						<ul class="mode_sel">
+							<li class="selected">
+								<span>图表</span>
+								<b></b>
+							</li>
+							<li>
+								<span>列表</span>
+								<b></b>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<!-- 缩图图表 -->
+				<div id="weight_record_contraction" class="weight_record_contraction"></div>
+				<p class="prompt">左右滑动查看</p>
 			<?php
 			if(isset($_SESSION['user_token'])) {
 				$member_uid = $_SESSION["CURRENT_KID_UID"];
@@ -178,5 +178,138 @@ include('inc.php');
         
     </section>
     <?php include 'inc_bottom_js.php'; ?>
+		<script>
+			// 身高图表
+			// 基于准备好的dom，初始化echarts实例
+			var weightChart = echarts.init(document.getElementById('weight_record_contraction'));
+
+			// 指定图表的配置项和数据
+			weightOption = {
+				tooltip : {
+					trigger: 'axis',
+					backgroundColor: '#fff',
+					borderWidth: 2,
+					borderColor: '#7FC242',
+					padding:0,
+					textStyle: {
+						align: 'center',
+						color: '#7FC242'
+					},
+					formatter: function(params){
+						// console.log(params)
+						var year = parseInt(parseInt(params[0].data[0])/12)
+						var month = parseInt(params[0].data[0])%12
+						var old = (year > 0 ? year + '岁' : '') + (month > 0 ? month + '个月' : '')
+						var res = '<div class="detail"><p class="headImg"><img src="../content/epaper/images/kids_headimg.png"></p><span class="old">'+ old +'</span><p>'+ parseInt(params[0].data[1]) +'<span>kg</span></p></div>'
+						return res;
+					}
+				},
+				xAxis : [
+					{
+						type : 'category',
+						boundaryGap : false,
+						data : function (){
+							var list = [];
+							for (var i = 0; i <= 96; i++) {
+								list.push(i + '月');
+							}
+							return list;
+						}(),
+						axisLine: {
+							lineStyle:{
+								color:'#87C64D'
+							}
+						},
+						axisLabel: {
+							interval: 11,
+							color: '#87C64D'
+						}
+					}
+				],
+				yAxis : [
+					{
+						type : 'category',
+						name: '单位(kg)',
+						boundaryGap : false,
+						data : function (){
+							var list = [];
+							for (var i = 0; i <= 80; i++) {
+								list.push(i);
+							}
+							return list;
+						}(),
+						axisLine: {
+							lineStyle:{
+								color:'#87C64D'
+							}
+						},
+						axisLabel: {
+							interval: 19,
+							color: '#87C64D'
+						}
+					}
+				],
+				dataZoom: [
+					{
+						type: 'slider',
+						start: 0,
+						end: 100,
+						width:'54%',
+						height: '11%',
+						fillerColor: '#fff',
+						dataBackgroundColor :'#7EC342',
+						backgroundColor:'#fff',
+						dataBackground: {
+							lineStyle:{
+								color: '#fff'
+							},
+							areaStyle:{
+								color: '#fff',
+								opacity: 0
+							}
+						},
+						handleIcon:'image://../content/epaper/images/pullIcon.png',
+						handleSize: '101%',
+						textStyle: {
+							color: '#88C650'
+						},
+						lineHeight: 56,
+						left: '23%',
+						bottom:"0%"
+					},
+					{
+						type: 'inside',
+						start: 0,
+						end: 35
+					}
+				],
+				series : [
+					{
+						type:'line',
+						data:function (){
+							var list = [['45月','20','5'],['64月','40','5'],['79月','30','5']];
+							return list;
+						}(),
+						itemStyle: {
+							normal: {
+								color: '#649E2F',
+								lineStyle: {
+									color: '#649E2F',
+									width: 2
+								},
+							},
+							showAllSymbol: true
+						},
+						symbolSize: function (val) {
+							return val[2];
+						},
+						symbol: 'circle'
+					}
+				]
+			}
+
+			// 使用刚指定的配置项和数据显示图表。
+			weightChart.setOption(weightOption);
+		</script>
 </body>
 <!-- InstanceEnd --></html>

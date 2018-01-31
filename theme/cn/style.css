@@ -94,7 +94,7 @@ a.i-more{color:#666666;font-size:13px;position:absolute;right:0;text-shadow:none
 .picbox .pgs .on{background-position:left bottom;}
 .artbox .Txt.fl{width:56%;}
 .artbox .lbox{padding:0;width:65%;}
-.artbox .rbox{background:none repeat scroll 0 0 #F1F1F1;border:0 none;border-radius:10px;float:right;padding:20px 2%;width:28%;}
+.artbox .rbox{background:none repeat scroll 0 0 #F1F1F1;border:0 none;border-radius:10px;padding:20px 2%;width:28%;}
 .artbox .Txt h3.title{color:#5EC252;padding:20px 0 10px;text-shadow:none;}
 .artbox .Txt img{border:10px solid #FFFFFF;border-radius:10px;box-shadow:0 0 7px rgba(0,0,0,0.3);margin:10px 0;}
 .artbox .lbox .list02{border-top:1px solid #CCCCCC;margin:20px 0 0;padding:20px 0 0;}
@@ -106,7 +106,7 @@ a.i-more{color:#666666;font-size:13px;position:absolute;right:0;text-shadow:none
 .tvbox.fst{width:75%;}
 .tvbox h3.title{color:#666666;font-size:20px;text-shadow:none;}
 .ansbox{border-top:1px solid #CCCCCC;margin:20px 0 0;padding:20px 0 0;}
-.lbox,.rbox{display:inline;float:left;padding:10px 3%;width:43%;}
+.lbox,.rbox{display:inline;padding:10px 3%;width:43%;}
 .rbox{border-left:1px solid #CCCCCC;}
 .fbar{clear:both;padding:15px 0;position:relative;}
 .ansbox .rbox p{padding:10px 0 0;}
@@ -305,22 +305,22 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 
 /* 添加日记页面样式 start */
 .ceanza,.height_record,.weight_record,.buds_record,.medical_institution,.medical_record,.growth_index{width:8.7805rem;margin: 0 auto;padding-top:120px;color:#B7B2A9;} 
-.ceanza h4,.relevant_articles>h4,.height_record>h4,.weight_record>h4,.buds_record>h4,.medical_institution>h4,.medical_record>h4,.growth_index>h4{color:#60C351;font-size: 20px;margin-bottom: 20px;}
+.ceanza h4,.relevant_articles>h4,.height_record h4,.weight_record h4,.buds_record>h4,.medical_institution>h4,.medical_record>h4,.growth_index>h4{color:#60C351;font-size: 20px;margin-bottom: 20px;}
 .medical_institution>h4,.medical_record>h4{margin-bottom: 10px;}
 .bread-crumb{margin:12px 0 20px;overflow: hidden}
 .bread-crumb li{float: left;font-size: 14px;color:#999;position: relative;padding-right: 25px;}
 .bread-crumb li a{color:#999;}
 .bread-crumb li b{position: absolute;top:center;right:6px;}
-.ceanza-menu{padding: 63px 18px 30px;overflow: hidden;}
-.ceanza-menu li{float:left;width:40%;height:160px;color:#fff;box-sizing: border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;background:#5CCB4D;margin:30px 0;border-radius: 4px;position: relative;}
-.ceanza-menu li:nth-child(odd){margin-right:10%;}
-.ceanza-menu li:nth-child(even){margin-left:10%;}
-.ceanza-menu li a{color:#fff;}
-.ceanza-menu li b{position: absolute;top:-58%;left:50%;transform: translateX(-50%);width:60px;height:130px;background:url('../../content/epaper/images/bafudou.png') no-repeat;background-size:100% 100%;z-index: -1;}
+.ceanza-menu{padding: 54px 18px 30px;overflow: hidden;}
+.ceanza-menu li{float:left;width:48%;height:160px;color:#fff;box-sizing: border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;background:#5CCB4D;margin:30px 0;border-radius: 4px;position: relative;}
+.ceanza-menu li:nth-child(odd){margin-right:2%;}
+.ceanza-menu li:nth-child(even){margin-left:2%;}
+.ceanza-menu li a{color:#fff;font-size: 12px;}
+.ceanza-menu li b{position: absolute;top:-52%;left:50%;transform: translateX(-50%);width:60px;height:130px;background:url('../../content/epaper/images/bafudou.png') no-repeat;background-size:100% 100%;z-index: -1;}
 .ceanza-menu li.selected{background: #F5B545}
 .ceanza-menu li.selected h4{line-height: 28px;background:#F3A41A;}
 .ceanza-menu li h4{line-height: 38px;color:#fff;background:#64BE58;font-size: 18px;text-align: center;margin-bottom: 10px;border-radius: 4px;}
-.ceanza-menu li p{line-height: 24px;padding: 0 20px;font-size: 14px}
+.ceanza-menu li p{line-height: 24px;padding: 0 10px;font-size: 14px}
 .ceanza-menu li i{position: absolute;width:40px;height:30px;background:#5CCB4D url('../../content/epaper/images/pullDown.png') no-repeat center 17px;background-size: 12px 9px;border-radius: 50%;bottom:-15px;left:50%;transform: translateX(-50%);line-height: 30px;text-align: center;}
 
 .eqit_content li,.form>li{box-shadow: 0px 4px 5px -1px #E3E3E3;padding: 8px 15px;font-size: 16px;}
@@ -337,17 +337,17 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .medical_institution .medical_institution_eqit_submit,.medical_institution .medical_institution_add_submit{margin-top:15px;width:120px;}
 .medical_record .medical_record_eqit_submit,.medical_record .medical_record_add_submit{margin-top:15px;width:120px;}
 .eqitUploadImg .imgContent{display: block;width:300px;height:240px;border:1px solid #A9CE87;border-radius: 5px;box-shadow: 0px 2px 5px -1px #A9CE87;margin: 10px auto 5px;overflow: hidden;}
-.eqitUploadImg .imgContent>img{width:60%;height:105%;}
+.eqitUploadImg .imgContent>img{width:100%;height:100%;}
 .eqitUploadImg input{position: absolute;width:300px;height:240px;top:19px;left:50%;transform: translateX(-50%);opacity: 0;}
 .diaryTime{text-align: right;padding-right: 15px;line-height: 24px;margin:8px 0;font-size: 16px;color:#B7B2A9;}
-.ceanza .ceanza_eqit_submit,.ceanza .submit,.height_record .submit,.height_record_eqit_submit,.weight_record .submit,.weight_record_eqit_submit,.medical_institution_eqit_submit,.medical_institution_add_submit,.medical_record_eqit_submit,.medical_record_add_submit{display:block;width:100px;height:34px;background: #7FC242;border-radius: 3px;color:#fff;font-size: 16px;font-weight: bold;margin:100px auto 0;border-bottom: 3px solid #69A036;}
+.ceanza .ceanza_eqit_submit,.ceanza .submit,.height_record .submit,.height_record_eqit_submit,.weight_record .submit,.weight_record_eqit_submit,.medical_institution_eqit_submit,.medical_institution_add_submit,.medical_record_eqit_submit,.medical_record_add_submit{display:block;width:100px;height:34px;background: #7FC242;border-radius: 3px;color:#fff;font-size: 16px;font-weight: bold;margin:100px auto 20px;border-bottom: 3px solid #69A036;}
 .ceanza .ceanza_eqit_submit,.medical_institution_eqit_submit,.medical_institution_add_submit,.medical_record_eqit_submit,.medical_record_add_submit{text-align: center;line-height: 34px;}
 .form>li{overflow: hidden;color:#B7B2A9;}
 .form .title-menu{padding: 0 15px;height:38px;line-height: 38px;position: relative;overflow: inherit;}
 .form>li p{float: left;}
 .form>li input{float: right;width:60%;height:100%;color:#B7B2A9;text-align: right;}
 .diagnosis-doctors{font-size: 14px;height: 22px;width:140px;}
-.form>li .time{width:55%;}
+.form>li .time{width:55%;-webkit-appearance: none;-moz-appearance: none;-ms-appearance: none;appearance: none;}
 .form>li .title{float: left;border:0;width:200px;text-align:left;}
 .form>li textarea,.eqit_content>li textarea{float: left;border:0;height:180px;width:70%;color:#B8B3AA;resize : none;outline: none;}
 .eqit_content>li textarea{height:280px;}
@@ -355,17 +355,21 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .form>li .address{float: left;width:14px;height:22px;background:url('../../content/epaper/images/address.png') no-repeat;background-size: 100%;margin-right: 10px;margin-left:5px;}
 .original_info i{float: right;width:20px;height:20px;border-radius: 50%;border:1px solid #B7B2A9;background: url('../../content/epaper/images/down.png') no-repeat 4px 7px;background-size: 12px 7px;cursor: pointer;}
 .title-menu>a{color:#60C351;text-decoration: underline;}
-.title-list,.category-list{display:none;position: absolute;width:100%;min-height:200px;background: #fff;border:1px solid #BFE0A1;border-radius: 4px;top:38px;left:50%;transform: translateX(-50%);z-index: 88;box-shadow: 0 1px 1px 1px #B7B7B7;margin-bottom: 5px;}
-.title-list-block,.category-list-block{display:block;}
+.title-list,.category-list,.headtitle-list{display:none;position: absolute;width:100%;background: #fff;border:1px solid #BFE0A1;border-radius: 4px;top:38px;left:50%;transform: translateX(-50%);z-index: 88;box-shadow: 0 1px 1px 1px #B7B7B7;margin-bottom: 5px;}
+.title-list-block,.category-list-block,.headtitle-list-block{display:block;}
 .category-list{width:280%;top:44px;}
 .close{position: absolute;right:0;font-size: 18px;font-weight: bold;color:#8D8D8D;line-height: 24px;padding-right:5px;cursor: pointer;}
-.title-list li,.category-list li{border:1px dashed #92CA63;color:#92CA63;font-size: 14px;float: left;padding: 0 6px;line-height: 25px;margin:8px 10px 8px 5px;border-radius: 5px;cursor: pointer;}
-.title-list li.checked,.category-list li.checked{background: #92CA63;color:#fff;}
+.title-list li,.category-list li,.headtitle-list li{border:1px dashed #92CA63;color:#92CA63;font-size: 14px;float: left;padding: 0 6px;line-height: 25px;margin:8px 10px 8px 5px;border-radius: 5px;cursor: pointer;}
+.title-list li.checked,.category-list li.checked,.headtitle-list li.checked{background: #92CA63;color:#fff;}
 .uploadImgList{overflow: hidden;}
-.uploadImg{position: relative;float:left;}
-.imgContent{width:120px;height:120px;font-size: 80px;text-align: center;line-height: 100px;border:1px dotted #B8B3AA;margin-top: 60px;margin-left: 15px;color:#B7B2A9;}
+.uploadImg{position: relative;float:left;padding-top: 60px;}
+.imgContent{float:left;width:120px;height:120px;font-size: 80px;text-align: center;line-height: 100px;border:1px dotted #B8B3AA;margin: 0 15px;color:#B7B2A9;}
 .imgContent>img{width:100%;height:100%;}
-.uploadImg input{position: absolute;top:61px;left:16px;width:120px;height:120px;opacity: 0;overflow: hidden;}
+.uploadImg>input{position: absolute;top:61px;left:16px;width:120px;height:120px;opacity: 0;overflow: hidden;}
+.camera_photograph{float: left;position: relative;width:100px;height:120px;}
+.camera_photograph p{position: absolute;bottom:0;}
+.camera_photograph input{position: absolute;width:85px;height:71px;bottom:0;opacity: 0;}
+.uploadImgPrompt{margin:20px 10px 0;font-size: 12px;}
 .ceanza>p,.height_record > p,.weight_record > p,.buds_record > p,.growth_index>p{margin-top:20px;font-size: 16px;color:#8D8D8D;}
 .add_ceanza,.add_height_record,.ceanza_category,.add_weight_record,.add_consultation,.add_medical_institution{display: block;margin:50px auto 0;width:180px;height:40px;text-align: center;line-height: 40px;font-size: 16px;border-bottom: 4px solid #69A036;border-radius: 3px;background: #7FC242;color:#fff;}
 .add_medical_institution{margin-top:20px;}
@@ -382,7 +386,7 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .mode_sel li.selected{color:#7FC242;}
 .mode_sel li.selected b{background: url('../../content/epaper/images/mode_selected.png') no-repeat;background-size: 100%;}
 .ceanza_list,.height_record_list,.weight_record_list{margin-top:20px;font-size: 16px;color:#B7B2A9;}
-.contraction{display: none;margin-top: 20px;}
+.contraction{margin-top: 20px;}
 .ceanza_list>p,.consultation_list>p,.medical_institution_list>p{width:120px;height:30px;background: #7FC242;border-radius: 4px;color:#fff;font-size: 16px;font-weight: bold;padding-left: 20px;line-height: 30px;}
 .ceanza_list>p span{margin-left: 15px;}
 .ceanza_list .title,.height_record_list .title,.weight_record_list .title,.consultation_detail,.medical_institution_detail{width:80%;margin:10px auto 0;}
@@ -417,7 +421,6 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 /* 添加日记页面样式 end */
 
 /* 添加身高体重记录页面样式 start */
-.height_record > h4,.weight_record > h4,.buds_record > h4{margin-bottom: 20px;}
 .height_record .form li,.weight_record .form li{height:25px;line-height: 25px;}
 .height_record .form input,.weight_record .form input{float: left;text-align: left;height:30px;line-height: 30px;}
 .height_record .form .time,.weight_record .form .time{float: right;text-align: right;}
@@ -425,10 +428,20 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .height_record .submit,.weight_record .submit{width:230px;margin-top:70px;}
 .height_record_eqit_submit,.weight_record_eqit_submit{text-align: center;line-height: 34px;}
 .add_height_record,.add_weight_record{width:190px;}
+.height_record_list,.weight_record_list{display: none;}
 .height_record_list .title>p span,.weight_record_list .title>p span{width:32.6888%;}
 .height_record_list .list li p:first-child i,.weight_record_list .list li p:first-child i{display: block;width:50px;height:50px;border-radius: 50%;margin:3px auto;padding: 2px;overflow: hidden;box-shadow: -1px 0px 1px 1px #DBDBDB;}
 .height_record_list .list li p:first-child a,.weight_record_list .list li p:first-child a{display: block;width:100%;height:100%;border-radius: 50%;overflow: hidden;}
 .height_record_list .list li p:first-child a img,.weight_record_list .list li p:first-child a img{width: 100%;height:100%;vertical-align: top;}
+
+.height_record_contraction,.weight_record_contraction{width:360px;height:280px;text-align: center;margin:0 auto;}
+.height_record_contraction .detail,.weight_record_contraction .detail{width:120px;height:150px;padding-top: 10px;overflow: hidden;}
+.height_record_contraction .detail .headImg,.weight_record_contraction .detail .headImg{width:90px;height:90px;margin:0 auto 10px;border-radius: 50%;overflow: hidden;background:#5FC050;}
+.height_record_contraction .detail .headImg img,.weight_record_contraction .detail .headImg img{width:100%;height:100%;}
+.height_record_contraction .old,.weight_record_contraction .old{line-height: 22px;}
+.height_record_contraction p:last-child,.weight_record_contraction p:last-child{background: #7FC242;color:#fff;font-size: 24px;margin:0;padding: 4px 0;}
+.height_record_contraction .detail p:last-child span,.weight_record_contraction .detail p:last-child span{font-size: 14px;}
+.prompt{width:55%;margin-top:5px;text-align: left;color:#999;margin:5px auto;}
 /* 添加身高记录页面样式 end */
 
 /* 添加萌芽记录页面样式 start */
@@ -455,11 +468,6 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .consultation_detail>li li .delete+span,.medical_institution_detail>li li .delete+span{right:3px;}
 .consultation_list,.medical_institution_list{margin:80px 0;}
 /* 添加就诊记录页面样式 end */
-
-
-
-
-
 
 
 /* 添加成长指标页面样式 start */

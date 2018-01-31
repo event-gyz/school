@@ -79,9 +79,47 @@ function clearTimer (time) {
   time.timer = null
   time.second = 60
 }
-function trim(str){ //删除左右两端的空格
+//删除左右两端的空格
+function trim(str){
 	return str.replace(/(^\s*)|(\s*$)/g, "");
 }
+// 图片压缩
+function dealImage(path, obj, callback){
+	var img = new Image();
+	img.src = path;
+	img.onload = function(){
+		var that = this;
+		// 默认按比例压缩
+		var w = that.width,
+		h = that.height,
+		scale = w / h;
+		w = obj.width || w;
+		h = obj.height || (w / scale);
+		var quality = 0.7;  // 默认图片质量为0.7
+		//生成canvas
+		var canvas = document.createElement('canvas');
+		var ctx = canvas.getContext('2d');
+		// 创建属性节点
+		var anw = document.createAttribute("width");
+		anw.nodeValue = w;
+		var anh = document.createAttribute("height");
+		anh.nodeValue = h;
+		canvas.setAttributeNode(anw);
+		canvas.setAttributeNode(anh);
+		ctx.drawImage(that, 0, 0, w, h);
+		// 图像质量
+		if(obj.quality && obj.quality <= 1 && obj.quality > 0){
+			quality = obj.quality;
+		}
+		// quality值越小，所绘制出的图像越模糊\
+		var base64 = canvas.toDataURL('image/jpeg', quality );
+		alert(base64)
+		// 回调函数返回base64的值
+		callback(base64);
+	}
+}
+
+
 $(window).resize(function(e){
 	w();
 });
@@ -312,8 +350,10 @@ $(function(){
 		// 	uploadLi = $(this).parent().clone()
 		// }
 		if (this.files && this.files[0]) {
+			console.log(this.files[0])
 	    	var reader = new FileReader();
 	    	reader.onload = function(evt) {
+	    		console.log(evt)
 	    		imgContent.html('<img src="' + evt.target.result + '" />');
 	    	}
 	    	reader.readAsDataURL(this.files[0]);
@@ -322,7 +362,25 @@ $(function(){
 	    	imgContent.html('<div class="img" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + this.value + '\'"></div>');
 	    }
 	})
-	
+
+	$('.camera_input').change(function(){
+		var imgContent = $('.imgContent')
+		if (this.files && this.files[0]) {
+	    	var reader = new FileReader();
+	    	reader.onload = function(evt) {
+	    		imgContent.html('<img src="' + evt.target.result + '" />');
+	    	}
+	    	reader.readAsDataURL(this.files[0]);
+	    }else {
+	    	imgContent.html('<div class="img" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + this.value + '\'"></div>');
+	    }
+	 // 	dealImage(path, {width: 120, height: 120}, function(base){
+	 // 		alert(base)
+	 // 		alert(base.length / 1024)
+	 // 		imgContent.html('<img src="' + base + '" />')
+		// })
+	})
+
 	$('.eqitUploadImg input').change(function(){
 		var imgContent = $('.eqitUploadImg .imgContent')
 	    if (this.files && this.files[0]) {
@@ -349,13 +407,14 @@ $(function(){
 		if(!$(this).hasClass('selected')){
 			$(this).addClass('selected').siblings().removeClass('selected')
 		}
-		if($('.mode_sel .selected').children('span').html() == '缩图'){
+		if($('.mode_sel .selected').children('span').html() == '缩图' || $('.mode_sel .selected').children('span').html() == '图表'){
 			$('.ceanza_list').css('display','none')
 			$('.contraction').css('display','block')
 			$('.height_record_list').css('display','none')
 			$('.height_record_contraction').css('display','block')
 			$('.weight_record_list').css('display','none')
 			$('.weight_record_contraction').css('display','block')
+			$('.prompt').css('display','block')
 		}else{
 			$('.ceanza_list').css('display','block')
 			$('.contraction').css('display','none')
@@ -363,12 +422,44 @@ $(function(){
 			$('.height_record_contraction').css('display','none')
 			$('.weight_record_list').css('display','block')
 			$('.weight_record_contraction').css('display','none')
+			$('.prompt').css('display','none')
 		}
+	})
+
+	$('.title-menu>input').click(function(){
+		$('.headtitle-list').addClass('headtitle-list-block')
+		$('.title-list').removeClass('title-list-block')
+	})
+
+	$('.headtitle-list .close').click(function(){
+		event.stopPropagation()
+		$('.headtitle-list').removeClass('headtitle-list-block')
+	})
+
+	$('.headtitle-list li').click(function(){
+		event.stopPropagation()
+		if($(this).html() == '一般日记'){
+			$(".title-menu>input").val('')
+			$(this).addClass('checked').siblings('.checked').removeClass('checked')
+			$('.headtitle-list').removeClass('headtitle-list-block')
+		}else{
+			console.log(2)
+			$(".title-menu>input").val($(this).html())
+			$(this).addClass('checked').siblings('.checked').removeClass('checked')
+			$(this).parents('.headtitle-list').removeClass('headtitle-list-block')
+		}
+		$(".title-menu>input")[0].focus()
+	})
+
+	$('.headtitle-list .li').click(function(){
+		event.stopPropagation()
+		$('.headtitle-list').removeClass('headtitle-list-block')
 	})
 
 	$('.title-menu>a').click(function(){
 		$('.title-list').addClass('title-list-block')
 	})
+
 
 	$('.title-menu .close').click(function(){
 		event.stopPropagation()
