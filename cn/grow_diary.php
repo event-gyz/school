@@ -97,7 +97,7 @@ function ceanza_upload($name = "file"){
     $up = new fileupload;
     //设置属性(上传的位置， 大小， 类型， 名是是否要随机生成)
     $up -> set("path", "../uploads/");
-    $up -> set("maxsize", 2000000);
+    $up -> set("maxsize", 30000000);
     $up -> set("allowtype", array("gif", "png", "jpg","jpeg"));
     $up -> set("israndname", false);
   
