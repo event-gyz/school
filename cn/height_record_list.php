@@ -298,22 +298,26 @@ include('inc.php');
                             $heightInfo = M()->select($sql);
 //                            $height = array_combine(array_column($heightInfo,'date'),array_column($heightInfo,'height'));
                             $birth_day = $_SESSION['CURRENT_KID_BIRTH_DAY'];
-                            foreach($heightInfo as $value){
-                                $c = strtotime($value['date'])-strtotime($birth_day);
-                                $new_key = intval($c/86400/30);
-                                @$height[$new_key]['height'] = $value['height'];
-                                @$height[$new_key]['img'] = $value['picurl'];
+                            if($heightInfo){
+                                foreach($heightInfo as $value){
+                                    $c = strtotime($value['date'])-strtotime($birth_day);
+                                    $new_key = intval($c/86400/30);
+                                    @$height[$new_key]['height'] = $value['height'];
+                                    @$height[$new_key]['img'] = $value['picurl'];
+                                }
                             }
+
                             ?>
 							var list = <?php
-                                echo '[';
-                                foreach($height as $k=>$v){
-                                    if($k>=0){
-                                        echo "['{$k}月','{$v['height']}','10',{$v['img']}],";
+                                if($height){
+                                    echo '[';
+                                    foreach($height as $k=>$v){
+                                        if($k>=0){
+                                            echo "['{$k}月','{$v['height']}','10',{$v['img']}],";
+                                        }
                                     }
+                                    echo ']';
                                 }
-                                echo ']';
-
                                 ?>;
 							return list;
 						}(),

@@ -109,7 +109,7 @@ include('inc.php');
 				<section class="weight_record">
 					<h4>体重记录</h4>
 					<p>您可以在这里看到宝宝的体重改变曲线，有颜色的区域是世界卫生组织(WHO)所统计全世界儿童的平均体重区间，当宝宝的体重落于其间则表示正常，如果超出这份区域，则表示过胖或过瘦。</p>
-					<a href="weight_record_add.php" class="add_weight_record">新增身高/体重记录<b></b></a>
+					<a href="weight_record_add.php" class="add_weight_record">新增体重记录<b></b></a>
 					<div class="browse_mode">
 						<p></p>
 						<ul class="mode_sel">
@@ -296,24 +296,27 @@ include('inc.php');
                             <?php
                             $echartsql = "select * from wap_weight where  uid=(select supervisor_uid from user where uid={$member_uid})";
                             $weightInfo = M()->select($sql);
-                            $weight = array_combine(array_column($weightInfo,'date'),array_column($weightInfo,'weight'));
                             $birth_day = $_SESSION['CURRENT_KID_BIRTH_DAY'];
-                            foreach($weightInfo as $value){
-                                $c = strtotime($value['date'])-strtotime($birth_day);
-                                $new_key = intval($c/86400/30);
-                                @$weight[$new_key]['height'] = $value['height'];
-                                @$weight[$new_key]['img'] = $value['picurl'];
+                            if($weightInfo){
+                                foreach($weightInfo as $value){
+                                    $c = strtotime($value['date'])-strtotime($birth_day);
+                                    $new_key = intval($c/86400/30);
+                                    @$weight[$new_key]['weight'] = $value['weight'];
+                                    @$weight[$new_key]['img'] = $value['picurl'];
+                                }
                             }
+
                             ?>
 							var list = <?php
-                                echo '[';
-                                foreach($weight as $k=>$v){
-                                    if($k>=0){
-                                        echo "['{$k}月','{$v['height']}','10',{$v['img']}],";
+                                if($weight){
+                                    echo '[';
+                                    foreach($weight as $k=>$v){
+                                        if($k>=0){
+                                            echo "['{$k}月','{$v['weight']}','10',{$v['img']}],";
+                                        }
                                     }
+                                    echo ']';
                                 }
-                                echo ']';
-
                                 ?>;
 							return list;
 						}(),
