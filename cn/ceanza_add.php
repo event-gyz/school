@@ -194,7 +194,7 @@ if(isset($payload)) {
                     <li>
                         <b class="address"></b>
                         记录地址：
-                        <input name="address" class="address-input" type="text">
+                        <input name="address"  class="address-input" type="text" value="">
                     </li>
                 </ul>
                 <ul class="uploadImgList">

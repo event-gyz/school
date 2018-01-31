@@ -335,7 +335,7 @@ $(function(){
 		var type = trim($("input[name='grow_diary_category_name']").val())
 		var content = trim($("textarea[name='content']").val())
 		var date = $("input[name='date']").val()
-		var address = trim($("input[name='address']").val())
+		var address = trim($(".address-input").val())
 		var file = $("input[name='file']").val()
 		if(!(title && type && content && date && address && file)){
 			alert('请填写完整成长日记信息')

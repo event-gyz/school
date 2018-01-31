@@ -287,7 +287,25 @@ include('inc.php');
 					{
 						type:'line',
 						data:function (){
-							var list = [['45月','20','5'],['64月','40','5'],['79月','30','5']];
+                            <?php
+                            $echartsql = "select * from wap_weight where  uid=(select supervisor_uid from user where uid={$member_uid})";
+                            $weightInfo = M()->select($sql);
+                            $weight = array_combine(array_column($weightInfo,'date'),array_column($weightInfo,'weight'));
+                            $birth_day = $_SESSION['CURRENT_KID_BIRTH_DAY'];
+                            foreach($weight as $key=>$value){
+                                 $c = strtotime($key)-strtotime($birth_day);
+                                 @$weight[intval($c/86400/30)] = $value;
+                                 unset($weight[$key]);
+                            }
+                            ?>
+							var list = <?php
+                                echo '[';
+                                foreach($weight as $k=>$v){
+                                    echo "['{$k}月','{$v}','10'],";
+                                }
+                                echo ']';
+
+                                ?>;
 							return list;
 						}(),
 						itemStyle: {

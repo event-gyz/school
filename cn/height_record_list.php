@@ -289,7 +289,25 @@ include('inc.php');
 						// name:'最高',
 						type:'line',
 						data:function (){
-							var list = [['8月','50','5'],['26月','100','5'],['40月','76','5'],['58月','55','5']];
+                            <?php
+                            $echartsql = "select * from wap_height where  uid=(select supervisor_uid from user where uid={$member_uid})";
+                            $heightInfo = M()->select($sql);
+                            $height = array_combine(array_column($heightInfo,'date'),array_column($heightInfo,'height'));
+                            $birth_day = $_SESSION['CURRENT_KID_BIRTH_DAY'];
+                            foreach($height as $key=>$value){
+                                $c = strtotime($key)-strtotime($birth_day);
+                                @$height[intval($c/86400/30)] = $value;
+                                unset($height[$key]);
+                            }
+                            ?>
+							var list = <?php
+                                echo '[';
+                                foreach($height as $k=>$v){
+                                    echo "['{$k}月','{$v}','10'],";
+                                }
+                                echo ']';
+
+                                ?>;
 							return list;
 						}(),
 						itemStyle: {
