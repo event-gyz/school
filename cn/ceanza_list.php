@@ -170,9 +170,10 @@ include('inc.php');
                     echo "<p>{$year_now} 年<span>{$year_age} 岁</span></p>";
                     echo "<ul class=\"ceanza_contraction\">";
                     foreach($value as $k){
-                        echo "<li><p><img src={$k['img']} alt=\"\"><i></i></p>
-    			<span><b>{$k['title']}</b></span></li>";
+                        echo "<li><a href=\"ceanza_view.php?grow_id={$k['Id']}\"><p><img src={$k['img']} alt=\"\"><i></i></p>
+    			<span><b>{$k['title']}</b></span></a></li>";
                     }
+                    
                     echo "</ul>";
                     echo "</div>";
 
