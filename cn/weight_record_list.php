@@ -200,7 +200,7 @@ include('inc.php');
 						var year = parseInt(parseInt(params[0].data[0])/12)
 						var month = parseInt(params[0].data[0])%12
 						var old = (year > 0 ? year + '岁' : '') + (month > 0 ? month + '个月' : '')
-						var res = '<div class="detail"><p class="headImg"><img src="../content/epaper/images/kids_headimg.png"></p><span class="old">'+ old +'</span><p>'+ parseInt(params[0].data[1]) +'<span>kg</span></p></div>'
+                        var res = '<div class="detail"><p class="headImg"><img src="'+ params[0].data[3] +'"></p><span class="old">'+ old +'</span><p>'+ parseInt(params[0].data[1]) +'<span>kg</span></p></div>';
 						return res;
 					}
 				},
@@ -292,17 +292,18 @@ include('inc.php');
                             $weightInfo = M()->select($sql);
                             $weight = array_combine(array_column($weightInfo,'date'),array_column($weightInfo,'weight'));
                             $birth_day = $_SESSION['CURRENT_KID_BIRTH_DAY'];
-                            foreach($weight as $key=>$value){
-                                 $c = strtotime($key)-strtotime($birth_day);
-                                 @$weight[intval($c/86400/30)] = $value;
-                                 unset($weight[$key]);
+                            foreach($weightInfo as $value){
+                                $c = strtotime($value['date'])-strtotime($birth_day);
+                                $new_key = intval($c/86400/30);
+                                @$weight[$new_key]['height'] = $value['height'];
+                                @$weight[$new_key]['img'] = $value['picurl'];
                             }
                             ?>
 							var list = <?php
                                 echo '[';
                                 foreach($weight as $k=>$v){
                                     if($k>=0){
-                                        echo "['{$k}月','{$v}','10'],";
+                                        echo "['{$k}月','{$v['height']}','10',{$v['img']}],";
                                     }
                                 }
                                 echo ']';
