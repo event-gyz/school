@@ -294,7 +294,7 @@ include('inc.php');
 						type:'line',
 						data:function (){
                             <?php
-                            $echartsql = "select * from wap_height where  uid=(select supervisor_uid from user where uid={$member_uid})";
+                            $echartsql = "select * from wap_height where  uid=(select supervisor_uid from user where uid={$member_uid}) order by id desc";
                             $heightInfo = M()->select($sql);
 //                            $height = array_combine(array_column($heightInfo,'date'),array_column($heightInfo,'height'));
                             $birth_day = $_SESSION['CURRENT_KID_BIRTH_DAY'];

@@ -294,7 +294,7 @@ include('inc.php');
 						type:'line',
 						data:function (){
                             <?php
-                            $echartsql = "select * from wap_weight where  uid=(select supervisor_uid from user where uid={$member_uid})";
+                            $echartsql = "select * from wap_weight where  uid=(select supervisor_uid from user where uid={$member_uid}) order by id desc";
                             $weightInfo = M()->select($sql);
                             $birth_day = $_SESSION['CURRENT_KID_BIRTH_DAY'];
                             if($weightInfo){

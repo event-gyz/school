@@ -6,7 +6,9 @@ include('inc.php');
 <html><!-- InstanceBegin template="/Templates/_page01.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
     <?php include('inc_head.php');	?>
+    <link rel="stylesheet" href="../theme/cn/jquery.cxcalendar.css">
     <script src="../scripts/megapix/megapix-image.js"></script>
+    <script src="../scripts/jquery.cxcalendar.js"></script>
     <style>
         body{background: none;}
         h1,h2,h3,h4,h5,h6,p,ul,li,dl,dt,dd{margin:0;padding:0;list-style: none;}
@@ -190,7 +192,7 @@ if(isset($payload)) {
                     <li>
                         <b class="clock"></b>
                         记录时间：
-                        <input name="date" class="time" type="date" x-webkit-speech="none" value="<?php echo date('Y-m-d',time())?>">
+                        <input class="time date_a"  name="date" type="text" data-position='bottomLeft' readonly x-webkit-speech="none" value="<?php echo date('Y-m-d',time())?>">
                     </li>
                     <li>
                         <b class="address"></b>
@@ -202,10 +204,10 @@ if(isset($payload)) {
                     <li class="uploadImg">
                         <div class="imgContent">+</div>
                         <input type="file" name="file"/>
-                        <div class="camera_photograph">
-                            <p><img src="../content/epaper/images/camera.png" alt=""></p>
-                            <input type="file" class="camera_input" name="myPhoto" capture="camera" accept="image/*"/>
-                        </div>
+                        <!-- <div class="camera_photograph">
+                             <p><img src="../content/epaper/images/camera.png" alt=""></p>
+                             <input type="file" class="camera_input" name="myPhoto" capture="camera" accept="image/*"/>
+                         </div> -->
                     </li>
                 </ul>
                 <p class="uploadImgPrompt">(上传图片档案大小不得超过3MB)</p>
@@ -218,5 +220,14 @@ if(isset($payload)) {
 
 </section>
 <?php include 'inc_bottom_js.php'; ?>
+<script>
+    // 限制可选日期
+    $('.date_a').cxCalendar({
+        type: 'date',
+        format: 'YYYY-MM-DD',
+        wday: 0,
+        endDate: new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate()
+    });
+</script>
 </body>
 <!-- InstanceEnd --></html>

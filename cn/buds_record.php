@@ -12,6 +12,8 @@ include('inc.php');
 		input,button{padding: 0;margin:0;border:0;outline: none;}
 		img{vertical-align: bottom}
 	</style>
+	<link rel="stylesheet" href="../theme/cn/jquery.cxcalendar.css">
+	<script src="../scripts/jquery.cxcalendar.js"></script>
 </head>
 <body>
         <?php
@@ -128,46 +130,46 @@ include('inc.php');
         				<ul class="model_diagram_left">
         					<li>
         						<p>a <span>中门齿（8-12月）</span></p>
-        						<input type="date">
+        						<input class="date_a" type="text" readonly>
         					</li>
         					<li>
         						<p>b <span>侧门齿（9-13月）</span></p>
-        						<input type="date">
+        						<input class="date_a" type="text" readonly>
         					</li>
         					<li>
         						<p>c <span>乳犬齿（16-22月）</span></p>
-        						<input type="date">
+        						<input class="date_a" type="text" readonly>
         					</li>
         					<li>
         						<p>d <span>第一乳臼齿（13-19月）</span></p>
-        						<input type="date">
+        						<input class="date_a" type="text" readonly>
         					</li>
         					<li>
         						<p>e <span>第二乳臼齿（25-33月）</span></p>
-        						<input type="date">
+        						<input class="date_a" type="text" readonly>
         					</li>
         				</ul>
         				<p><img src="../content/epaper/images/buds_top.png" alt=""></p>
         				<ul class="model_diagram_right">
         					<li>
         						<p>k <span>中门齿（8-12月）</span></p>
-        						<input type="date">
+        						<input class="date_a" data-position='bottomLeft' type="text" readonly>
         					</li>
         					<li>
         						<p>l <span>侧门齿（9-13月）</span></p>
-        						<input type="date">
+        						<input class="date_a" data-position='bottomLeft' type="text" readonly>
         					</li>
         					<li>
         						<p>m <span>乳犬齿（16-22月）</span></p>
-        						<input type="date">
+        						<input class="date_a" data-position='bottomLeft' type="text" readonly>
         					</li>
         					<li>
         						<p>n <span>第一乳臼齿（13-19月）</span></p>
-        						<input type="date">
+        						<input class="date_a" data-position='bottomLeft' type="text" readonly>
         					</li>
         					<li>
         						<p>o <span>第二乳臼齿（25-33月）</span></p>
-        						<input type="date">
+        						<input class="date_a" data-position='bottomLeft' type="text" readonly>
         					</li>
         				</ul>
         			</div>
@@ -175,46 +177,46 @@ include('inc.php');
         				<ul class="model_diagram_left">
         					<li>
         						<p>f <span>第二乳臼齿（23-31月）</span></p>
-        						<input type="date">
+        						<input class="date_a" type="text" readonly>
         					</li>
         					<li>
         						<p>g <span>第一乳臼齿（14-18月）</span></p>
-        						<input type="date">
+        						<input class="date_a" type="text" readonly>
         					</li>
         					<li>
         						<p>h <span>乳犬齿（17-23月）</span></p>
-        						<input type="date">
+        						<input class="date_a" type="text" readonly>
         					</li>
         					<li>
         						<p>i <span>侧门齿（10-16月）</span></p>
-        						<input type="date">
+        						<input class="date_a" type="text" readonly>
         					</li>
         					<li>
         						<p>j <span>中门齿（6-10月）</span></p>
-        						<input type="date">
+        						<input class="date_a" type="text" readonly>
         					</li>
         				</ul>
         				<p><img src="../content/epaper/images/buds_bottom.png" alt=""></p>
         				<ul class="model_diagram_right">
         					<li>
         						<p>p <span>第二乳臼齿（23-31月）</span></p>
-        						<input type="date">
+        						<input class="date_a" data-position='bottomLeft' type="text" readonly>
         					</li>
         					<li>
         						<p>q <span>第一乳臼齿（14-18月）</span></p>
-        						<input type="date">
+        						<input class="date_a" data-position='bottomLeft' type="text" readonly>
         					</li>
         					<li>
         						<p>r <span>乳犬齿（17-23月）</span></p>
-        						<input type="date">
+        						<input class="date_a" data-position='bottomLeft' type="text" readonly>
         					</li>
         					<li>
         						<p>s <span>侧门齿（10-16月）</span></p>
-        						<input type="date">
+        						<input class="date_a" data-position='bottomLeft' type="text" readonly>
         					</li>
         					<li>
         						<p>t <span>中门齿（6-10月）</span></p>
-        						<input type="date">
+        						<input class="date_a" data-position='bottomLeft' type="text" readonly>
         					</li>
         				</ul>
         			</div>
@@ -233,5 +235,14 @@ include('inc.php');
         
     </section>
     <?php include 'inc_bottom_js.php'; ?>
+        <script>
+            // 限制可选日期
+            $('.date_a').cxCalendar({
+                type: 'date',
+                format: 'YYYY-MM-DD',
+                wday: 0,
+                endDate: new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate()
+            });
+        </script>
 </body>
 <!-- InstanceEnd --></html>

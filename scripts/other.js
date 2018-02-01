@@ -293,7 +293,7 @@ $(function(){
 	$(window).load(function(){
 		$(".tab-bd .scrolltype").mCustomScrollbar();
 	});
-
+	
 	$('.ceanza_add_submit').click(function(){
 		var title = trim($("input[name='title']").val())
 		var type = trim($("input[name='grow_diary_category_name']").val())
@@ -301,9 +301,9 @@ $(function(){
 		var date = $("input[name='date']").val()
 		var address = trim($(".address-input").val())
 		var file = $("input[name='file']").val()
-		var camera_file = $('.camera_input').val()
-		debugger
-		if(!(title && type && content && date && address && (file || camera_file))){
+		// var camera_file = $('.camera_input').val()
+		// debugger;
+		if(!(title && type && content && date && address && file)){
 			alert('请填写完整成长日记信息')
 			return false;
 		}
@@ -314,18 +314,18 @@ $(function(){
     	var item = files[0];
         // console.log("原图片大小", item.size);
         var imgContent = $('.imgContent')
-        // if (item.size > 1024 * 1024 * 3) {
-        //     // console.log("图片大于3M，开始进行压缩...");
-        //     (function(img) {
-        //     	// console.log(img)
-        //         var mpImg = new MegaPixImage(img);
-        //         var resImg = document.createElement("img");
-        //         resImg.file = img;
-        //         mpImg.render(resImg, { maxWidth: 500, maxHeight: 500, quality: 1 }, function() {
-        //         	imgContent.html('<img src="' + $(resImg).attr('src') + '" />');
-        //         });
-        //     })(item);
-        // }else{
+        if (item.size > 1024 * 1024 * 3) {
+            // console.log("图片大于3M，开始进行压缩...");
+            (function(img) {
+            	// console.log(img)
+                var mpImg = new MegaPixImage(img);
+                var resImg = document.createElement("img");
+                resImg.file = img;
+                mpImg.render(resImg, { maxWidth: 500, maxHeight: 500, quality: 1 }, function() {
+                	imgContent.html('<img src="' + $(resImg).attr('src') + '" />');
+                });
+            })(item);
+        }else{
 	        if (this.files && this.files[0]) {
 		    	var reader = new FileReader();
 		    	reader.onload = function(evt) {
@@ -335,7 +335,7 @@ $(function(){
 		    }else {
 		    	imgContent.html('<div class="img" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + this.value + '\'"></div>');
 		    }
-        // }
+        }
 	})
 
 	$('.eqitUploadImg input').change(function(){
