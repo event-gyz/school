@@ -314,18 +314,18 @@ $(function(){
     	var item = files[0];
         // console.log("原图片大小", item.size);
         var imgContent = $('.imgContent')
-        if (item.size > 1024 * 1024 * 3) {
-            // console.log("图片大于3M，开始进行压缩...");
-            (function(img) {
-            	// console.log(img)
-                var mpImg = new MegaPixImage(img);
-                var resImg = document.createElement("img");
-                resImg.file = img;
-                mpImg.render(resImg, { maxWidth: 500, maxHeight: 500, quality: 1 }, function() {
-                	imgContent.html('<img src="' + $(resImg).attr('src') + '" />');
-                });
-            })(item);
-        }else{
+        // if (item.size > 1024 * 1024 * 3) {
+        //     // console.log("图片大于3M，开始进行压缩...");
+        //     (function(img) {
+        //     	// console.log(img)
+        //         var mpImg = new MegaPixImage(img);
+        //         var resImg = document.createElement("img");
+        //         resImg.file = img;
+        //         mpImg.render(resImg, { maxWidth: 500, maxHeight: 500, quality: 1 }, function() {
+        //         	imgContent.html('<img src="' + $(resImg).attr('src') + '" />');
+        //         });
+        //     })(item);
+        // }else{
 	        if (this.files && this.files[0]) {
 		    	var reader = new FileReader();
 		    	reader.onload = function(evt) {
@@ -335,7 +335,7 @@ $(function(){
 		    }else {
 		    	imgContent.html('<div class="img" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + this.value + '\'"></div>');
 		    }
-        }
+        // }
 	})
 
 	$('.eqitUploadImg input').change(function(){
