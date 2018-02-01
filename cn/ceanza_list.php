@@ -114,13 +114,14 @@ include('inc.php');
                     <b></b>
                     <div class="category-list">
                         <ul>
-                            <li class="checked">0月-3月</li>
-                            <li>3月-1岁</li>
-                            <li>1岁-2岁</li>
-                            <li>2岁-3岁</li>
-                            <li>3岁-4岁</li>
-                            <li>4岁-5岁</li>
-                            <li>5岁-6岁</li>
+
+                            <li <?= (isset($_GET['category_name'])&&($_GET['category_name']=='0月-3月'))?'class="checked"':''?>>0月-3月</li>
+                            <li <?= (isset($_GET['category_name'])&&($_GET['category_name']=='3月-1岁'))?'class="checked"':''?>>3月-1岁</li>
+                            <li <?= (isset($_GET['category_name'])&&($_GET['category_name']=='1岁-2岁'))?'class="checked"':''?>>1岁-2岁</li>
+                            <li <?= (isset($_GET['category_name'])&&($_GET['category_name']=='2岁-3岁'))?'class="checked"':''?>>2岁-3岁</li>
+                            <li <?= (isset($_GET['category_name'])&&($_GET['category_name']=='3岁-4岁'))?'class="checked"':''?>>3岁-4岁</li>
+                            <li <?= (isset($_GET['category_name'])&&($_GET['category_name']=='4岁-5岁'))?'class="checked"':''?>>4岁-5岁</li>
+                            <li <?= (isset($_GET['category_name'])&&($_GET['category_name']=='5岁-6岁'))?'class="checked"':''?>>5岁-6岁</li>
                         </ul>
                         <p class="close">×</p>
                     </div>
@@ -173,7 +174,7 @@ include('inc.php');
                         echo "<li><a href=\"ceanza_view.php?grow_id={$k['Id']}\"><p><img src={$k['img']} alt=\"\"><i></i></p>
     			<span><b>{$k['title']}</b></span></a></li>";
                     }
-                    
+
                     echo "</ul>";
                     echo "</div>";
 
