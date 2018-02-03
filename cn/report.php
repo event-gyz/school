@@ -82,7 +82,7 @@ $sql = "select text from grow_index where (age_min <= '$user_age' and age_max >=
 	                            	echo('<li>'.$row["text"].'</li>');
 	                            }       
                             ?>
-                                <li class="last"><a href="itemlist.php?f=b">看全部项目...</a></li>
+                                <li class="last"><a href="itemlist.php">看全部项目...</a></li>
                             </ul>
                         </section>
                         <section class="btnbox clearfix">

@@ -62,7 +62,8 @@ if(!isset($tabon))
                         <!--//記分板//-->
                         <div class="progress_board">
                             <div class="progress_data">
-                                <h3>豆豆</h3>
+
+                                <h3><?= $_SESSION['CURRENT_KID_NICKNAME'];?></h3>
                                 <h4>进度记分板</h4>
                                 <ul>
                                     <li>
