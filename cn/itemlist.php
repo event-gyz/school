@@ -313,37 +313,9 @@ if(!isset($tabon))
                     var uid = message.uid;
                     var is_early = message.is_early;
                     var is_late = message.is_late;
-                    /*
-                     if($("li[name=gi_"+uid+"]").hasClass('out')) {
-                     late_count--;
-                     }
-                     if($("li[name=gi_"+uid+"]").hasClass('out')) {
-                     early_count--;
-                     }
-                     */
-                    $("#gi_"+uid).removeClass('out');
-                    $("#gi_"+uid).removeClass('pass');
-                    if(is_early==true) {
-                        $("#gi_"+uid).addClass('pass');
-//	              		early_count++;
-                    }
-                    if(is_late==true) {
-                        $("#gi_"+uid).addClass('out');
-//	              		late_count++;
-                    }
-                    // update stat panel
-                    /*
-                     if(checked==0) {
-                     all_count--;
-                     }
-                     else {
-                     all_count++;
-                     }
-                     */
+                    $("#gi_"+uid).remove();
                     ajaxLoadUserStat();
-//            		if(func=='c' && checked==0) {
-//            			$("li").remove("[name=gi_"+uid+"]");
-//            		}
+                    layer.msg('保存成功');
                 }
                 else {
                     // changed nothing
