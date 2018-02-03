@@ -429,7 +429,7 @@
             success: function (jsonStr) {
                 if(jsonStr.islogin==true) {
                     _next_move_ = 0;
-                    document.location.href = 'ceanza_menu.php';
+                    document.location.href = 'ceanza_add.php';
                 }
                 else {
                     _next_move_ = 102;

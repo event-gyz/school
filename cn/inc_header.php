@@ -468,7 +468,7 @@ function loadTrialQA(year,month) {
 			<li <?php if($pagename=='ceanza_menu') echo('class="on"'); ?>><a id="menuitem_2_m" href="javascript:void(0);">成长日记</a></li>
             <li <?php if($pagename=='buds_record') echo('class="on"'); ?>><a href="buds_record.php">萌芽记录</a></li>
 
-            <li <?php if($pagename=='epaper') echo('class="on"'); ?>><a id="menuitem_7_m" href="javascript:void(0);">巴布豆家庭早教</a></li>
+            <li <?php if($pagename=='epaper') echo('class="on"'); ?>><a id="menuitem_7_m" href="javascript:onMenuItem4Click();">巴布豆家庭早教</a></li>
             <li <?php if($pagename=='about') echo('class="on"'); ?>><a href="about.php">关于我们</a></li>
             <?php 
 	            if(isset($_SESSION['user_token'])) {
