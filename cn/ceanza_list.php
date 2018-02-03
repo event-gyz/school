@@ -143,6 +143,9 @@ include('inc.php');
 			<?php
 			// 缩略图列表开始
 			//        var_dump($_SESSION);
+//            if($_SESSION['CURRENT_KID_BIRTH_DAY']){
+//
+//            }
 			if(isset($_SESSION['user_token'])) {
 				$member_uid = $_SESSION["CURRENT_KID_UID"];
                 $category_name = !empty($_GET['category_name'])?$_GET['category_name']:'';
