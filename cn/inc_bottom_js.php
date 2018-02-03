@@ -333,7 +333,7 @@
         $("#reg_email").blur(checkRegEmailFormat);
         $("#reg_password").blur(checkRegPasswordFormat);
         $("#confirm_password").blur(checkPasswordRepeat);
-        $("#reg_name").blur(checkRegNameFormat);
+//        $("#reg_name").blur(checkRegNameFormat);
         $("#reg_date").blur(checkRegDateFormat);
 
 //    $("#forget_ref_code").click(function() {
