@@ -70,7 +70,7 @@ if(!isset($tabon))
                                         完成项目：
                                     </li>
                                     <li>
-                                        <p><span class="early">0</span>枚</p>
+                                        <p><span class="eraly">0</span>枚</p>
                                         提前奖章：
                                     </li>
                                     <li>
