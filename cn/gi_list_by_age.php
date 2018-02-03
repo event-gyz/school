@@ -2,20 +2,25 @@
 session_start();
 include('inc.php');	
 
-function fetchContent($age, $type, $func) {
+function fetchContent($age, $type, $func,$e) {
 	global $cur_li_count;
 	$htmlString = "";
 	$user_uid = $_SESSION["CURRENT_KID_UID"];
-	$end_age = ceil($age/12)*12;
-	$start_age = intval($age/12)*12;
+    $start_age = intval($age/12)*12;
+    if(!empty($e) && ($start_age>=12)){
+        $start_age -=12;
+    }
+    $end_age = ceil($age/12)*12;
 //	$end_age = $age;
-	$sql = "select grow_index.uid,grow_index.text,grow_index.age_max,grow_index.age_min,grow_log.early from grow_index LEFT JOIN grow_log on grow_log.item_uid=grow_index.uid and grow_log.user_uid='$user_uid' where grow_index.age_min <= '$start_age' and grow_index.age_max <= '$end_age' and grow_index.type='$type' ";
+	$sql = "select grow_index.uid,grow_index.text,grow_index.age_max,grow_index.age_min,grow_log.early from grow_index LEFT JOIN grow_log on grow_log.item_uid=grow_index.uid and grow_log.user_uid='$user_uid' where grow_index.age_min >= '$start_age' and grow_index.age_max <= '$end_age' and grow_index.type='$type' ";
 	$resule = M()->select($sql);
+//    print_r($resule);exit;
 	$li_count = 0;
 	foreach($resule as $row){
 		$uid = $row["uid"];
 		$text = $row["text"];
 		$age_max = $row["age_max"];
+        $age_min = $row["age_min"];
 		$early = $row["early"];
 		$checked = isset($row['early']);
 		if(($func == 'b' && $checked) || ($func == 'c' && !$checked))
@@ -24,7 +29,7 @@ function fetchContent($age, $type, $func) {
 		$htmlString .= ('<li id="gi_'.$uid.'"');
 
 		if(isset($early)) {
-			if($early==true) {
+			if($early) {
 				$htmlString .= (' class="pass" ');
 			}
 		}
@@ -33,15 +38,20 @@ function fetchContent($age, $type, $func) {
 		}
 //		if($li_count > 4)
 //			$htmlString .= (' style="display:none;" ');
-
+        $a = '<div class="project_detail">
+                <p><span></span>8周-7月</p>
+                <div class="detail">
+                    <p>能说出自己喜爱的旋律</p>
+                </div>
+            </div>';
 		$htmlString .= '>';
-		$htmlString .= '<i><img src="../theme/cn/images/content/item_rep01.jpg"></i>
-	                <p>
-	                    <input type="checkbox" class="ck" value="'.$uid.'"';
+		$htmlString .= '<p style="float:left">
+	                    <input type="checkbox" class="new_ck" value="'.$uid.'"';
 	    if($checked) $htmlString .= (' checked ');
-	    $htmlString .= '>
-	                    <span>'.$text.'</span>
-	                </p>
+	    $htmlString .= '>'.$age_min.'月-'.$age_max.'月</p><div class="detail">
+                                            <p>'.$text.'</p>
+                                        </div>
+	                
 	                <div class="tablinks">
 	                	<a name="'.$uid.'" value="0" href="javascript:void(0)"><img src="../theme/cn/images/content/item_rep02.jpg"></a>
 	                    <a name="'.$uid.'" value="1" href="javascript:void(0)"><img src="../theme/cn/images/content/item_rep03.jpg"></a>
@@ -72,15 +82,21 @@ function echo_end() {
 **********************/
 $user_age = $_SESSION['CURRENT_KID_AGE'];
 $func = @$_REQUEST['f'];
-$type = $_REQUEST['t'];
+if(empty($func)){
+    $func = 'b';
+}
+$type = @$_REQUEST['t'];
+$e = @$_REQUEST['e'];
 //$age = $page /2.0 - 0.5;
 $age = $user_age;
 $cur_li_count = 0;
 if(($user_age) > 72) {
 	exit();
 }
-
-	$li = fetchContent($age, $type, $func);
+//a全部项目
+//b还不会的项目
+//c已经会的项目
+	$li = fetchContent($age, $type, $func,$e);
 		echo_start($age, $type, $type==0);
 		if(strlen($li) > 0)
 			echo($li);

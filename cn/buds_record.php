@@ -130,46 +130,46 @@ include('inc.php');
         				<ul class="model_diagram_left">
         					<li>
         						<p>a <span>中门齿（8-12月）</span></p>
-        						<input class="date_a" type="text" readonly>
+        						<input class="date_a" data-bud="a" type="text" readonly value="<?=isset($buds['a'])?$buds['a']:''?>">
         					</li>
         					<li>
         						<p>b <span>侧门齿（9-13月）</span></p>
-        						<input class="date_a" type="text" readonly>
+        						<input class="date_a" data-bud="b" type="text" readonly value="<?=isset($buds['b'])?$buds['b']:''?>">
         					</li>
         					<li>
         						<p>c <span>乳犬齿（16-22月）</span></p>
-        						<input class="date_a" type="text" readonly>
+        						<input class="date_a" data-bud="c" type="text" readonly value="<?=isset($buds['c'])?$buds['c']:''?>">
         					</li>
         					<li>
         						<p>d <span>第一乳臼齿（13-19月）</span></p>
-        						<input class="date_a" type="text" readonly>
+        						<input class="date_a" data-bud="d" type="text" readonly value="<?=isset($buds['d'])?$buds['d']:''?>">
         					</li>
         					<li>
         						<p>e <span>第二乳臼齿（25-33月）</span></p>
-        						<input class="date_a" type="text" readonly>
+        						<input class="date_a" data-bud="e" type="text" readonly value="<?=isset($buds['e'])?$buds['e']:''?>">
         					</li>
         				</ul>
         				<p><img src="../content/epaper/images/buds_top.png" alt=""></p>
         				<ul class="model_diagram_right">
         					<li>
         						<p>k <span>中门齿（8-12月）</span></p>
-        						<input class="date_a" data-position='bottomLeft' type="text" readonly>
+        						<input class="date_a" data-bud="k" data-position='bottomLeft' type="text" readonly value="<?=isset($buds['k'])?$buds['k']:''?>">
         					</li>
         					<li>
         						<p>l <span>侧门齿（9-13月）</span></p>
-        						<input class="date_a" data-position='bottomLeft' type="text" readonly>
+        						<input class="date_a" data-bud="l" data-position='bottomLeft' type="text" readonly value="<?=isset($buds['l'])?$buds['l']:''?>">
         					</li>
         					<li>
         						<p>m <span>乳犬齿（16-22月）</span></p>
-        						<input class="date_a" data-position='bottomLeft' type="text" readonly>
+        						<input class="date_a" data-bud="m" data-position='bottomLeft' type="text" readonly value="<?=isset($buds['m'])?$buds['m']:''?>">
         					</li>
         					<li>
         						<p>n <span>第一乳臼齿（13-19月）</span></p>
-        						<input class="date_a" data-position='bottomLeft' type="text" readonly>
+        						<input class="date_a" data-bud="n" data-position='bottomLeft' type="text" readonly value="<?=isset($buds['n'])?$buds['n']:''?>">
         					</li>
         					<li>
         						<p>o <span>第二乳臼齿（25-33月）</span></p>
-        						<input class="date_a" data-position='bottomLeft' type="text" readonly>
+        						<input class="date_a" data-bud="o" data-position='bottomLeft' type="text" readonly value="<?=isset($buds['o'])?$buds['o']:''?>">
         					</li>
         				</ul>
         			</div>
@@ -177,46 +177,46 @@ include('inc.php');
         				<ul class="model_diagram_left">
         					<li>
         						<p>f <span>第二乳臼齿（23-31月）</span></p>
-        						<input class="date_a" type="text" readonly>
+        						<input class="date_a" type="text" data-bud="f"  readonly value="<?=isset($buds['f'])?$buds['f']:''?>">
         					</li>
         					<li>
         						<p>g <span>第一乳臼齿（14-18月）</span></p>
-        						<input class="date_a" type="text" readonly>
+        						<input class="date_a" type="text" data-bud="g" readonly value="<?=isset($buds['g'])?$buds['g']:''?>">
         					</li>
         					<li>
         						<p>h <span>乳犬齿（17-23月）</span></p>
-        						<input class="date_a" type="text" readonly>
+        						<input class="date_a" type="text" data-bud="h" readonly value="<?=isset($buds['h'])?$buds['h']:''?>">
         					</li>
         					<li>
         						<p>i <span>侧门齿（10-16月）</span></p>
-        						<input class="date_a" type="text" readonly>
+        						<input class="date_a" type="text" data-bud="i" readonly value="<?=isset($buds['i'])?$buds['i']:''?>">
         					</li>
         					<li>
         						<p>j <span>中门齿（6-10月）</span></p>
-        						<input class="date_a" type="text" readonly>
+        						<input class="date_a" type="text" data-bud="j" readonly value="<?=isset($buds['j'])?$buds['j']:''?>">
         					</li>
         				</ul>
         				<p><img src="../content/epaper/images/buds_bottom.png" alt=""></p>
         				<ul class="model_diagram_right">
         					<li>
         						<p>p <span>第二乳臼齿（23-31月）</span></p>
-        						<input class="date_a" data-position='bottomLeft' type="text" readonly>
+        						<input class="date_a" data-position='bottomLeft' data-bud="p"  type="text" readonly value="<?=isset($buds['p'])?$buds['p']:''?>">
         					</li>
         					<li>
         						<p>q <span>第一乳臼齿（14-18月）</span></p>
-        						<input class="date_a" data-position='bottomLeft' type="text" readonly>
+        						<input class="date_a" data-position='bottomLeft' data-bud="q" type="text" readonly value="<?=isset($buds['q'])?$buds['q']:''?>">
         					</li>
         					<li>
         						<p>r <span>乳犬齿（17-23月）</span></p>
-        						<input class="date_a" data-position='bottomLeft' type="text" readonly>
+        						<input class="date_a" data-position='bottomLeft' data-bud="r" type="text" readonly value="<?=isset($buds['r'])?$buds['r']:''?>">
         					</li>
         					<li>
         						<p>s <span>侧门齿（10-16月）</span></p>
-        						<input class="date_a" data-position='bottomLeft' type="text" readonly>
+        						<input class="date_a" data-position='bottomLeft' data-bud="s" type="text" readonly value="<?=isset($buds['s'])?$buds['s']:''?>">
         					</li>
         					<li>
         						<p>t <span>中门齿（6-10月）</span></p>
-        						<input class="date_a" data-position='bottomLeft' type="text" readonly>
+        						<input class="date_a" data-position='bottomLeft' data-bud="t" type="text" readonly value="<?=isset($buds['t'])?$buds['t']:''?>">
         					</li>
         				</ul>
         			</div>
@@ -242,6 +242,27 @@ include('inc.php');
                 format: 'YYYY-MM-DD',
                 wday: 0,
                 endDate: new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate()
+            });
+
+            $(".model_diagram_left>li>input,.model_diagram_right>li>input").change(function(){
+                var buds_type = $(this).attr('data-bud');
+                var date  = $(this).val();
+                $.ajax({
+                    url: "_buds_record.php",
+                    type: "POST",
+                    data: {
+//                        'p1': nickname,
+                        'buds_type': buds_type,
+                        'date': date,
+                        'type':'save'
+                    },
+                    dataType: "json",
+                    success: function (jsonStr) {
+                        if(jsonStr.result=='success') {
+
+                        }
+                    }
+                });
             });
         </script>
 </body>
