@@ -47,7 +47,7 @@ function fetchContent($age, $type, $func,$e) {
                 </div>
             </div>';
 		$htmlString .= '>';
-		$htmlString .= '<p style="float:left">
+		$htmlString .= '<i><img src="../theme/cn/images/content/item_rep01.jpg"></i><p style="float:left">
 	                    <input type="checkbox" class="new_ck" value="'.$uid.'"';
 	    if($checked) $htmlString .= (' checked ');
 	    $htmlString .= '>'.$age_min.'月-'.$age_max.'月</p><div class="detail">
