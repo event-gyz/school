@@ -376,6 +376,8 @@
                 clearTimer(time)
                 layer.msg(result.msg);
                 return false;
+            }else{
+                layer.msg('发送成功');
             }
         });
         return false;

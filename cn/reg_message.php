@@ -32,7 +32,7 @@ if(isset($_POST['type']) && $_POST['type'] == "vali"){
     $select = "select  *  from message where phone ='{$phone}' and message_code='{$code}' ";
 
     if(!query_result($select)){
-        die(genResponse(false, "请获取验证码"));
+        die(genResponse(false, "验证码错误"));
     }
     echo(genResponse(true, "验证成功"));
 }
