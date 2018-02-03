@@ -374,7 +374,7 @@
             result = jQuery.parseJSON(result)
             if(result.result!='success') {
                 clearTimer(time)
-                alert(result.msg);
+                layer.msg(result.msg);
                 return false;
             }
         });
@@ -641,6 +641,7 @@
                     authcode = true;
                 }
                 else {
+                    layer.msg(jsonStr.message);
                     authcode = false;
                 }
             },
