@@ -40,12 +40,6 @@ function fetchContent($age, $type, $func,$e) {
 		}
 //		if($li_count > 4)
 //			$htmlString .= (' style="display:none;" ');
-        $a = '<div class="project_detail">
-                <p><span></span>8周-7月</p>
-                <div class="detail">
-                    <p>能说出自己喜爱的旋律</p>
-                </div>
-            </div>';
 		$htmlString .= '>';
 		$htmlString .= '<i><img src="../theme/cn/images/content/item_rep01.jpg"></i><p style="float:left">
 	                    <input type="checkbox" class="new_ck" value="'.$uid.'"';

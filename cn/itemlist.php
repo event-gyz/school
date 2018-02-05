@@ -165,36 +165,42 @@ if(!isset($tabon))
             initList('0');
             $(".ttile").removeClass("selected");
             $(this).parent('li').addClass("selected");
+            $(".loadmore p").removeClass("have_selected");
         });
         //社会人格
         $("#tab_02").click(function(){
             initList('1');
             $(".ttile").removeClass("selected");
             $(this).parent('li').addClass("selected");
+            $(".loadmore p").removeClass("have_selected");
         });
         //知觉认知
         $("#tab_03").click(function(){
             initList('4');
             $(".ttile").removeClass("selected");
             $(this).parent('li').addClass("selected");
+            $(".loadmore p").removeClass("have_selected");
         });
         //粗动作
         $("#tab_04").click(function(){
             initList('2');
             $(".ttile").removeClass("selected");
             $(this).parent('li').addClass("selected");
+            $(".loadmore p").removeClass("have_selected");
         });
         //细动作
         $("#tab_05").click(function(){
             initList('3');
             $(".ttile").removeClass("selected");
             $(this).parent('li').addClass("selected");
+            $(".loadmore p").removeClass("have_selected");
         });
         //自主能力
         $("#tab_06").click(function(){
             initList('5');
             $(".ttile").removeClass("selected");
             $(this).parent('li').addClass("selected");
+            $(".loadmore p").removeClass("have_selected");
         });
 
         ajaxLoadUserStat();
@@ -221,10 +227,16 @@ if(!isset($tabon))
         });
 
         $(".loadmore p").click(function(){
+            var have_selected = $(this).hasClass("have_selected");
             var func = $("span[class$='success']").parents().attr('data-status');
             var selectedId = $("li[class$='selected']").children("a").attr("ID");
             var type = '';
-            var early = 'yes';
+            if(have_selected){
+                $(".loadmore p").removeClass("have_selected");
+            }else{
+                $(this).addClass("have_selected");
+                var early = 'yes';
+            }
             if(selectedId == 'tab_01'){
                 type = '0';
             }else if(selectedId == 'tab_02'){
@@ -239,6 +251,7 @@ if(!isset($tabon))
                 type = '5';
             }
             initList(type,func,early);
+
         });
     });
 
