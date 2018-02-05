@@ -32,17 +32,15 @@ class MyUser
 			{
 				$sql = "SELECT uid from member where email ='".$_EMAIL."' and password= md5(lower('".$_PASS."'))";
 			}
-			$result = query($sql);
-
+			$result = M()->find($sql);
 			if($result==null) return -1;
-			if(mysql_num_rows($result)!=1)
+			if(empty($result))
 			{
 				return -1;
 			}
 			else
 			{
-				$row=mysql_fetch_row($result);
-				$this->uid = $row[0];
+				$this->uid = $result['uid'];
 				$this->getUserToken();
 				return $this->uid;
 			}
@@ -108,22 +106,19 @@ class MyUser
 			$sql = "select * from admin where uid = '".$this->uid."'";
 		else
 			$sql = "select * from member where uid = '".$this->uid."'";
-		$result = query($sql);
-		if($result!=null)
-		{
-			if(mysql_num_rows($result)==1)
+		$result = M()->find($sql);
+			if(!empty($result))
 			{
-				$obj = mysql_fetch_object($result);
-				$this->id 		= $obj->id;
-				$this->first_name	= $obj->first_name;
-				$this->last_name	= $obj->last_name;
-				$this->email		= $obj->email;
-				$this->credit		= $obj->credit;
-				$this->image_url	= $obj->image_url;
-				$this->cellphone	= $obj->cellphone;
-				$this->epaper		= $obj->epaper;
+				$this->id 		= $result['id'];
+				$this->first_name	= $result['first_name'];
+				$this->last_name	= $result['last_name'];
+				$this->email		= $result['email'];
+				$this->credit		= $result['credit'];
+				$this->image_url	= $result['image_url'];
+				$this->cellphone	= $result['cellphone'];
+				$this->epaper		= $result['epaper'];
 			}
-		}
+
 	}
 
 	function getUserId(){
