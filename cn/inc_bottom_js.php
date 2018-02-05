@@ -429,6 +429,27 @@
             success: function (jsonStr) {
                 if(jsonStr.islogin==true) {
                     _next_move_ = 0;
+                    document.location.href = 'ceanza_menu.php';
+                }
+                else {
+                    _next_move_ = 102;
+                    $.fancybox({
+                        href: "#fy-login"
+                    });
+                }
+            },
+            error: function(xhr, err) {
+//	            alert('Ajax request ' + err);
+            }
+        });
+    }
+    function onMenuItem2NewClick() {
+        $.ajax({url: "check_login_status.ajax.php",
+            type: "POST",
+            dataType: "json",
+            success: function (jsonStr) {
+                if(jsonStr.islogin==true) {
+                    _next_move_ = 0;
                     document.location.href = 'ceanza_add.php';
                 }
                 else {

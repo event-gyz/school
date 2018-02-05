@@ -83,8 +83,8 @@ $(function(){
 
  
     // menu item click
-    $("#menuitem_2").click(onMenuItem2Click);
-    $("#menuitem_2_m").click(onMenuItem2Click);
+    $("#menuitem_2").click(onMenuItem2NewClick);
+    $("#menuitem_2_m").click(onMenuItem2NewClick);
     $("#menuitem_3").click(onMenuItem3Click);
     $("#menuitem_3_m").click(onMenuItem3Click);
     $("#menuitem_4").click(onMenuItem4Click);
