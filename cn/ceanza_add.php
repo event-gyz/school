@@ -210,7 +210,6 @@ if(isset($payload)) {
                          </div> -->
                     </li>
                 </ul>
-                <p class="uploadImgPrompt">(上传图片档案大小不得超过3MB)</p>
                 <button class="submit ceanza_add_submit">提交</button>
             </form>
         </section>

@@ -130,7 +130,6 @@ if(isset($payload)) {
                     </div> -->
                     </li>
                 </ul>
-                <p class="uploadDemand">(上传图片档案大小不得超过3MB)</p>
                 <button class="submit">提交</button>
             </form>
         </section>
