@@ -22,14 +22,14 @@ if(!empty($row)) {
 		$sql = "DELETE FROM grow_log WHERE user_uid='$user_uid' AND item_uid='$item_uid'";
         $result = M()->execute($sql);
 		$arr = array('uid'=>$item_uid,'is_late'=>$is_late);//,'age_max'=>$age_max,'user_age'=>$user_age);
-		die(genResponse($result>0, json_encode($arr)));
+		die(genResponse($result, json_encode($arr)));
 	}
 	else {
 		$is_early = ($user_age < $age_min);
 		$sql = "INSERT INTO grow_log (user_uid, item_uid, early,type) values ('$user_uid','$item_uid','$is_early','$type') on duplicate key update item_uid=item_uid";
         $result = M()->execute($sql);
 		$arr = array('uid'=>$item_uid,'is_early'=>$is_early);
-		die(genResponse($result>0, json_encode($arr)));
+		die(genResponse($result, json_encode($arr)));
 	}
 }
 
