@@ -162,42 +162,48 @@ if(!isset($tabon))
 //        a=all b=buhui c=yihui
         //语言沟通
         $("#tab_01").click(function(){
-            initList('0');
+            var func = $("span[class$='success']").parents().attr('data-status');
+            initList('0',func);
             $(".ttile").removeClass("selected");
             $(this).parent('li').addClass("selected");
             $(".loadmore p").removeClass("have_selected");
         });
         //社会人格
         $("#tab_02").click(function(){
-            initList('1');
+            var func = $("span[class$='success']").parents().attr('data-status');
+            initList('1',func);
             $(".ttile").removeClass("selected");
             $(this).parent('li').addClass("selected");
             $(".loadmore p").removeClass("have_selected");
         });
         //知觉认知
         $("#tab_03").click(function(){
-            initList('4');
+            var func = $("span[class$='success']").parents().attr('data-status');
+            initList('4',func);
             $(".ttile").removeClass("selected");
             $(this).parent('li').addClass("selected");
             $(".loadmore p").removeClass("have_selected");
         });
         //粗动作
         $("#tab_04").click(function(){
-            initList('2');
+            var func = $("span[class$='success']").parents().attr('data-status');
+            initList('2',func);
             $(".ttile").removeClass("selected");
             $(this).parent('li').addClass("selected");
             $(".loadmore p").removeClass("have_selected");
         });
         //细动作
         $("#tab_05").click(function(){
-            initList('3');
+            var func = $("span[class$='success']").parents().attr('data-status');
+            initList('3',func);
             $(".ttile").removeClass("selected");
             $(this).parent('li').addClass("selected");
             $(".loadmore p").removeClass("have_selected");
         });
         //自主能力
         $("#tab_06").click(function(){
-            initList('5');
+            var func = $("span[class$='success']").parents().attr('data-status');
+            initList('5',func);
             $(".ttile").removeClass("selected");
             $(this).parent('li').addClass("selected");
             $(".loadmore p").removeClass("have_selected");

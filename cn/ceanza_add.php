@@ -88,7 +88,7 @@ if(isset($payload)) {
             $_SESSION['user_credit'] = $CMEMBER->credit;
             $_SESSION['user_epaper'] = $CMEMBER->epaper;
             if($action == 'epaper') {
-                echo ('<script type="text/javascript"> $(function(){document.location.href ="epaper.php";});</script>');
+                echo ('<script type="text/javascript"> $(function(){document.location.href ="http://x.eqxiu.com/s/PclsbuXT";});</script>');
             }
             else {
                 echo ('<script type="text/javascript"> $(function(){document.location.href ="training.php";});</script>');
@@ -203,7 +203,7 @@ if(isset($payload)) {
                 <ul class="uploadImgList">
                     <li class="uploadImg">
                         <div class="imgContent">+</div>
-                        <input type="file" name="file"/>
+                        <input type="file" name="file"  accept="image/jpg"/>
                         <!-- <div class="camera_photograph">
                              <p><img src="../content/epaper/images/camera.png" alt=""></p>
                              <input type="file" class="camera_input" name="myPhoto" capture="camera" accept="image/*"/>

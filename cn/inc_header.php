@@ -222,7 +222,7 @@ function onMenuItem7Click() {
             success: function (jsonStr) {
             	if(jsonStr.islogin==true) {
 	            	_next_move_ = 0;
-            		document.location.href = 'epaper.php';
+            		document.location.href = 'http://x.eqxiu.com/s/PclsbuXT';
             	}
             	else {
 	            	_next_move_ = 107;
