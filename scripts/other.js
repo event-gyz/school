@@ -294,66 +294,11 @@ $(function(){
         $(".tab-bd .scrolltype").mCustomScrollbar();
     });
 
-    // $('html').on('click',function(e){
-
-    // 	e=e.target;
-    // 	console.log($(".cxcalendar").eq(0).attr("style").indexOf("display: block;"))
-    // 	if($(".cxcalendar").eq(0).attr("style").indexOf("display: block;")!=-1){
-
-    // 		$('.clear_btn').css({display:'block'})
-    // 	}else{
-
-    // 		$('.clear_btn').css({display:'none'})
-    // 	}
-    // })
-
-    var clearBtnIndex =undefined;
-    $('.date_a').change(function(e){
-        if(clearBtnIndex==undefined){
-            $(this).next().css({display:'block'})
-            clearBtnIndex=$('.date_a').index($(this));
-        }else{
-            $(".clear_btn").eq(clearBtnIndex).css({display:'none'})
-            $(".clear_btn").eq($('.date_a').index($(this))).css({display:'block'})
-            clearBtnIndex=$('.date_a').index($(this));
-        }
-    })
-
-    // $('.model_diagram').on('focus','input',function(){
-    // 	setTimeout(function(){$('.cxcalendar_lock').css('display','none')}, 500);
-    // 	$(this).next().css('display','block')
-    // 	$(this).next().addClass('clear')
-    // })
-
-
-    // $('.model_diagram').on('focus','input',function(){
-    // 	$('.cxcalendar_lock').css('display','block')
-    // 	var that = this
-    // 	setTimeout(function(){
-    // 		$(that).next().css('display','none')
-    // 		$('.cxcalendar').css('display','none')
-    // 		$(this).next().removeClass('clear')
-    // 	}, 500);
-    // })
-
 
     $('.uploadImgList').on('change','input',function(){
         var files = this.files;
         var item = files[0];
-        // console.log("原图片大小", item.size);
         var imgContent = $('.imgContent')
-        // if (item.size > 1024 * 1024 * 3) {
-        //     // console.log("图片大于3M，开始进行压缩...");
-        //     (function(img) {
-        //     	// console.log(img)
-        //         var mpImg = new MegaPixImage(img);
-        //         var resImg = document.createElement("img");
-        //         resImg.file = img;
-        //         mpImg.render(resImg, { maxWidth: 500, maxHeight: 500, quality: 1 }, function() {
-        //         	imgContent.html('<img src="' + $(resImg).attr('src') + '" />');
-        //         });
-        //     })(item);
-        // }else{
         if (this.files && this.files[0]) {
             var reader = new FileReader();
             reader.onload = function(evt) {
@@ -363,7 +308,6 @@ $(function(){
         }else {
             imgContent.html('<div class="img" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + this.value + '\'"></div>');
         }
-        // }
     })
 
     $('.eqitUploadImg input').change(function(){
@@ -392,7 +336,7 @@ $(function(){
         }else {
             imgContent.html('<div class="img" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + this.value + '\'"></div>');
         }
-        //}
+        // }
         $(this).attr('name',"new_file")
     })
 
@@ -463,7 +407,6 @@ $(function(){
         $(".title-menu>input")[0].focus()
     })
 
-
     $('.title-menu>a').click(function(){
         $('.title-list').addClass('title-list-block')
     })
@@ -498,6 +441,7 @@ $(function(){
         $('.noData .ceanza_type').html($(this).html())
         location.href = '../cn/ceanza_list.php?category_name='+ $(this).html()
     })
+
     $('.ceanza_add_submit').click(function(){
         var title = trim($("input[name='title']").val())
         var type = trim($("input[name='grow_diary_category_name']").val())

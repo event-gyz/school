@@ -473,15 +473,36 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 /* 添加身高记录页面样式 end */
 
 /* 添加萌芽记录页面样式 start */
-.model_diagram{margin-top:20px;width:9.0537rem;}
-.model_diagram li{position: relative;}
-.model_diagram li b{display: none;position: absolute;bottom: 2px;right:-18px;width:14px;height:14px;line-height: 14px;text-align: center;background:#F5F5F5;border:1px solid #CCCCCC;border-radius: 50%;color:#8E8E8E;font-size: 12px;font-weight: bold;z-index: 9999;cursor: pointer;}
-.model_diagram_right li b{left:-18px;}
-.model_diagram_top,.model_diagram_bottom{overflow: hidden;margin-bottom: 0.2927rem}
-.model_diagram_top>p,.model_diagram_bottom>p{float: left;width:4.9756rem;height:4.0rem;margin-top: 0.2927rem;}
-.model_diagram_bottom>p{margin-top: 0.0976rem;}
-.model_diagram_top>p img,.model_diagram_bottom>p img{width:100%;height:100%;}
-.model_diagram_left,.model_diagram_right{float: left;width:1.9902rem;}
+.model_diagram{width:9.0732rem;margin:20px auto;background:url('../../content/epaper/images/tooths_bg.png') no-repeat center 0.5854rem;background-size: 4.9756rem 7.9415rem;overflow: hidden;position: relative;}
+.model_diagram li.tooth_f,.model_diagram li.tooth_p{margin-top:0.3902rem;}
+.model_diagram .tooth{position: absolute;display: none;}
+.tooth_a .tooth{width:0.7317rem;height:0.6829rem;top:1.8049rem;left:3.7659rem;background:url('../../content/epaper/images/tooth_a.png') no-repeat;background-size: 100%;}
+.tooth_b .tooth{width:0.5659rem;height:0.6829rem;top:2.0rem;left:3.3171rem;background:url('../../content/epaper/images/tooth_b.png') no-repeat;background-size: 100%;}
+.tooth_c .tooth{width:0.6537rem;height:0.6634rem;top:2.3805rem;left:3.0122rem;background:url('../../content/epaper/images/tooth_c.png') no-repeat;background-size: 100%;}
+.tooth_d .tooth{width:0.761rem;height:0.6634rem;top:2.8878rem;left:2.7512rem;background:url('../../content/epaper/images/tooth_d.png') no-repeat;background-size: 100%;}
+.tooth_e .tooth{width:0.7805rem;height:0.8683rem;top:3.4829rem;left:2.6927rem;background:url('../../content/epaper/images/tooth_e.png') no-repeat;background-size: 100%;}
+.tooth_f .tooth{width:0.7902rem;height:1.0146rem;top:4.839rem;left:2.6439rem;background:url('../../content/epaper/images/tooth_f.png') no-repeat;background-size: 100%;}
+.tooth_g .tooth{width:0.7317rem;height:0.761rem;top:5.678rem;left:2.8488rem;background:url('../../content/epaper/images/tooth_g.png') no-repeat;background-size: 100%;}
+.tooth_h .tooth{width:0.6732rem;height:0.7317rem;top:6.3024rem;left:3.1317rem;background:url('../../content/epaper/images/tooth_h.png') no-repeat;background-size: 100%;}
+.tooth_i .tooth{width:0.6732rem;height:0.7317rem;top:6.6927rem;left:3.5512rem;background:url('../../content/epaper/images/tooth_i.png') no-repeat;background-size: 100%;}
+.tooth_j .tooth{width:0.5561rem;height:0.6439rem;top:6.9073rem;left:4.0878rem;background:url('../../content/epaper/images/tooth_j.png') no-repeat;background-size: 100%;}
+.tooth_k .tooth{width:0.7317rem;height:0.711rem;top:1.7659rem;left:4.3902rem;background:url('../../content/epaper/images/tooth_k.png') no-repeat;background-size: 100%;}
+.tooth_l .tooth{width:0.5951rem;height:0.6634rem;top:2.0098rem;left:5.0146rem;background:url('../../content/epaper/images/tooth_l.png') no-repeat;background-size: 100%;}
+.tooth_m .tooth{width:0.6146rem;height:0.6829rem;top:2.361rem;left:5.3854rem;background:url('../../content/epaper/images/tooth_m.png') no-repeat;background-size: 100%;}
+.tooth_n .tooth{width:0.7024rem;height:0.6927rem;top:2.839rem;left:5.522rem;background:url('../../content/epaper/images/tooth_n.png') no-repeat;background-size: 100%;}
+.tooth_o .tooth{width:0.8098rem;height:0.9268rem;top:3.4244rem;left:5.561rem;background:url('../../content/epaper/images/tooth_o.png') no-repeat;background-size: 100%;}
+.tooth_p .tooth{width:0.761rem;height:0.9659rem;top:4.8293rem;left:5.6098rem;background:url('../../content/epaper/images/tooth_p.png') no-repeat;background-size: 100%;}
+.tooth_q .tooth{width:0.6537rem;height:0.7415rem;top:5.6488rem;left:5.4634rem;background:url('../../content/epaper/images/tooth_q.png') no-repeat;background-size: 100%;}
+.tooth_r .tooth{width:0.6732rem;height:0.6634rem;top:6.2244rem;left:5.2683rem;background:url('../../content/epaper/images/tooth_r.png') no-repeat;background-size: 100%;}
+.tooth_s .tooth{width:0.6146rem;height:0.6634rem;top:6.6537rem;left:5.0049rem;background:url('../../content/epaper/images/tooth_s.png') no-repeat;background-size: 100%;}
+.tooth_t .tooth{width:0.5854rem;height:0.6341rem;top:6.9268rem;left:4.5854rem;background:url('../../content/epaper/images/tooth_t.png') no-repeat;background-size: 100%;}
+
+.date_input{position: relative;}
+.model_diagram li b{display: none;position: absolute;bottom: 50%;right:-18%;width:0.2927rem;height:0.2927rem;line-height: 0.2927rem;text-align: center;background:#F5F5F5;border:1px solid #CCCCCC;border-radius: 50%;color:#8E8E8E;font-size: 0.2341rem;font-weight: bold;z-index: 9999;cursor: pointer;transform: translateY(50%);}
+.model_diagram .model_diagram_right b{left:-18%;}
+.model_diagram_left{float: left;width:2.0976rem;}
+.model_diagram_right{float: right;width:2.0976rem;}
+
 .model_diagram_left p,.model_diagram_right p{margin-left: 0.0976rem;color:#60C351;font-size: 0.1561rem;height:0.3707rem;line-height: 0.3707rem;white-space:nowrap;position: relative;z-index: 11;}
 .model_diagram_right p{margin-left: -0.5854rem;}
 .model_diagram input{width:100%;height:0.4098rem;border:1px solid #DDDDDD;border-radius: 3px;box-sizing: border-box;font-size: 12px;-webkit-appearance: none;-moz-appearance: none;-ms-appearance: none;appearance: none;background:#fff;color:#999;padding-left: 0.0976rem;box-sizing: border-box;-webkit-box-sizing: border-box;}

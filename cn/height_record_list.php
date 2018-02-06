@@ -196,6 +196,7 @@ if(isset($payload)) {
                     color: 'transparent'
                 },
             },
+
             textStyle: {
                 align: 'center',
                 color: '#7FC242'
@@ -205,7 +206,7 @@ if(isset($payload)) {
                 var year = parseInt(parseInt(params[0].data[0])/12)
                 var month = parseInt(params[0].data[0])%12
                 var old = (year > 0 ? year + '岁' : '') + (month > 0 ? month + '个月' : '')
-                var res = '<div class="detail"><p class="headImg"><img src="'+ params[0].data[3] +'"></p><span class="old">'+ old +'</span><p>'+ parseInt(params[0].data[1]) +'<span>cm</span></p></div>';
+                var res = '<div class="detail"><p class="headImg"><img src="'+ params[0].data[3] +'"></p><span class="old">'+ old +'</span><p>'+ parseInt(params[0].data[1]) +'<span>cm</span></p></div>'
                 return res;
             }
         },
@@ -322,161 +323,6 @@ if(isset($payload)) {
                             foreach($height as $k=>$v){
                                 if($k>=0){
                                     echo "['{$k}','{$v['height']}','10',{$v['img']}],";
-                                }
-                            }
-                            echo ']';
-                        }
-                        ?>;
-                    return list;
-                }(),
-                itemStyle: {
-                    normal: {
-                        color: '#649E2F',
-                        lineStyle: {
-                            color: '#649E2F',
-                            width: 2
-                        },
-                    },
-                    showAllSymbol: true
-                },
-                symbolSize: function (val) {
-                    return val[2];
-                },
-                symbol: 'circle'
-            }
-        ]
-    }
-    // 指定图表的配置项和数据
-    heightOption = {
-        tooltip : {
-            trigger: 'axis',
-            backgroundColor: '#fff',
-            borderWidth: 2,
-            borderColor: '#7FC242',
-            padding:0,
-            axisPointer: {
-                lineStyle: {
-                    color: 'transparent'
-                },
-            },
-            textStyle: {
-                align: 'center',
-                color: '#7FC242'
-            },
-            triggerOn: 'click',
-            formatter: function(params){
-                var year = parseInt(parseInt(params[0].data[0])/12)
-                var month = parseInt(params[0].data[0])%12
-                var old = (year > 0 ? year + '岁' : '') + (month > 0 ? month + '个月' : '')
-                var res = '<div class="detail"><p class="headImg"><img src="'+ params[0].data[3] +'"></p><span class="old">'+ old +'</span><p>'+ parseInt(params[0].data[1]) +'<span>cm</span></p></div>';
-                return res;
-            }
-        },
-        xAxis : [
-            {
-                type : 'category',
-                boundaryGap : false,
-                data : function (){
-                    var list = [];
-                    for (var i = 0; i <= 96; i++) {
-                        list.push(i + '月');
-                    }
-                    return list;
-                }(),
-                axisLine: {
-                    lineStyle:{
-                        color:'#87C64D'
-                    }
-                },
-                axisLabel: {
-                    interval: 11,
-                    color: '#87C64D'
-                }
-            }
-        ],
-        yAxis : [
-            {
-                type : 'category',
-                name: '单位(cm)',
-                boundaryGap : false,
-                data : function (){
-                    var list = [];
-                    for (var i = 0; i <= 180; i++) {
-                        list.push(i);
-                    }
-                    return list;
-                }(),
-                axisLine: {
-                    lineStyle:{
-                        color:'#87C64D'
-                    }
-                },
-                axisLabel: {
-                    interval: 44,
-                    color: '#87C64D'
-                }
-            }
-        ],
-        dataZoom: [
-            {
-                type: 'slider',
-                start: 0,
-                end: 100,
-                width:'54%',
-                height: '11%',
-                fillerColor: '#fff',
-                dataBackgroundColor :'#7EC342',
-                backgroundColor:'#fff',
-                dataBackground: {
-                    lineStyle:{
-                        color: '#fff'
-                    },
-                    areaStyle:{
-                        color: '#fff',
-                        opacity: 0
-                    }
-                },
-                handleIcon:'image://../content/epaper/images/pullIcon.png',
-                handleSize: '101%',
-                textStyle: {
-                    color: '#88C650'
-                },
-                lineHeight: 56,
-                left: '23%',
-                bottom:"0%"
-            },
-            {
-                type: 'inside',
-                start: 0,
-                end: 35
-            },
-        ],
-        series : [
-            {
-                // name:'最高',
-                type:'line',
-                data:function (){
-                    <?php
-                    $echartsql = "select * from wap_height where  uid=(select supervisor_uid from user where uid={$member_uid}) order by id desc";
-                    $heightInfo = M()->select($sql);
-                    //                            $height = array_combine(array_column($heightInfo,'date'),array_column($heightInfo,'height'));
-                    $birth_day = $_SESSION['CURRENT_KID_BIRTH_DAY'];
-                    if($heightInfo){
-                        foreach($heightInfo as $value){
-                            $c = strtotime($value['date'])-strtotime($birth_day);
-                            $new_key = intval($c/86400/30);
-                            @$height[$new_key]['height'] = $value['height'];
-                            @$height[$new_key]['img'] = $value['picurl'];
-                        }
-                    }
-
-                    ?>
-                    var list = <?php
-                        if($height){
-                            echo '[';
-                            foreach($height as $k=>$v){
-                                if($k>=0){
-                                    echo "['{$k}月','{$v['height']}','10',{$v['img']}],";
                                 }
                             }
                             echo ']';
