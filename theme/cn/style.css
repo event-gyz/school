@@ -327,18 +327,18 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .bread-crumb li{float: left;font-size: 14px;color:#999;position: relative;padding-right: 25px;}
 .bread-crumb li a{color:#999;}
 .bread-crumb li b{position: absolute;top:center;right:6px;}
-.ceanza-menu{padding: 54px 18px 30px;overflow: hidden;}
+.ceanza-menu{padding: 0px 18px 30px;overflow: hidden;}
 .ceanza-menu li{float:left;width:48%;height:160px;color:#fff;box-sizing: border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;background:#5CCB4D;margin:30px 0;border-radius: 4px;position: relative;}
-.ceanza-menu li s{position: absolute;top:5px;right:15px;width:18px;height:18px;text-align: center;line-height: 18px;background:#C15050;font-size: 12px;color:#fff;border-radius: 50%;text-decoration: none;}
+.ceanza-menu li s{position: absolute;top:5px;right:5px;height:18px;padding:0 5px;text-align: center;line-height: 18px;background:#C15050;font-size: 12px;color:#fff;border-radius: 9px;text-decoration: none;}
 .ceanza-menu li:nth-child(odd){margin-right:2%;}
 .ceanza-menu li:nth-child(even){margin-left:2%;}
 .ceanza-menu li a{color:#fff;font-size: 12px;}
-.ceanza-menu li b{position: absolute;top:-52%;left:50%;transform: translateX(-50%);width:60px;height:130px;background:url('../../content/epaper/images/bafudou.png') no-repeat;background-size:100% 100%;z-index: -1;}
+/*.ceanza-menu li b{position: absolute;top:-52%;left:50%;transform: translateX(-50%);width:60px;height:130px;background:url('../../content/epaper/images/bafudou.png') no-repeat;background-size:100% 100%;z-index: -1;}*/
 .ceanza-menu li.selected{background: #F5B545}
 .ceanza-menu li.selected h4{line-height: 28px;background:#F3A41A;}
 .ceanza-menu li h4{line-height: 38px;color:#fff;background:#64BE58;font-size: 18px;text-align: center;margin-bottom: 10px;border-radius: 4px;}
 .ceanza-menu li p{line-height: 24px;padding: 0 10px;font-size: 14px}
-.ceanza-menu li:not(.selected) p{width: 48%;line-height: 24px;padding:0;padding-left: 5%;font-size: 14px;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 4;-webkit-box-orient: vertical;}
+.ceanza-menu li:not(.selected) p{width: 48%;line-height: 24px;padding:0;padding-left: 5%;font-size: 14px;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 4;-webkit-box-orient: vertical;position: relative;z-index: 88;}
 .menu_logo{position: absolute;width:52%;height:70%;bottom:0;right:0;z-index: 10;overflow: hidden;}
 .menu_logo img{width:100%;height:100%;margin-top:25px;}
 .height_record_img img{height:250%;}
@@ -516,6 +516,8 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .icon_explain .lead{width:22px;height:26px;background: url('../../content/epaper/images/lead.png') no-repeat;background-size: 100%;}
 .icon_explain .search_detail,.search_detail{background: url('../../content/epaper/images/search_detail.png') no-repeat;background-size: 100%;}
 .icon_explain .proposal,.proposal{background: url('../../content/epaper/images/proposal.png') no-repeat;background-size: 100%;margin-left:8px;}
+#gi_table li>p{width:40%;}
+#gi_table .detail{width:55%;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
 
 
 .slider_container{height: 44px;overflow: hidden;position: relative;width: 80%;margin:10px auto 0;}
@@ -651,7 +653,7 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
     .tb-rep .ck{left:3%;top:20px;}
     .tb-rep .new_ck{top:20px;margin-right:10px;}
     .tb-rep li i{bottom:10px;left:1%;margin:0;top:auto;}
-    .tb-rep .tablinks{margin:5px 0 0;position:static;}
+    .tb-rep .tablinks{margin:5px 38px 0;position:static;text-align: right;}
     .report01,.report02{border:0 none;display:block;float:none;margin:0 auto;padding:10px 0;width:95%;}
     .board01 .btnbox{position:static;text-align:right;width:100%;}
     .board01 .btnbox .btn01{width:50%;}
