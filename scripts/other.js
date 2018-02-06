@@ -294,20 +294,48 @@ $(function(){
         $(".tab-bd .scrolltype").mCustomScrollbar();
     });
 
-    $('.ceanza_add_submit').click(function(){
-        var title = trim($("input[name='title']").val())
-        var type = trim($("input[name='grow_diary_category_name']").val())
-        var content = trim($("textarea[name='content']").val())
-        var date = $("input[name='date']").val()
-        var address = trim($(".address-input").val())
-        var file = $("input[name='file']").val()
-        // var camera_file = $('.camera_input').val()
-        // debugger;
-        if(!(title && type && content && date && address && file)){
-            alert('请填写完整成长日记信息')
-            return false;
+    // $('html').on('click',function(e){
+
+    // 	e=e.target;
+    // 	console.log($(".cxcalendar").eq(0).attr("style").indexOf("display: block;"))
+    // 	if($(".cxcalendar").eq(0).attr("style").indexOf("display: block;")!=-1){
+
+    // 		$('.clear_btn').css({display:'block'})
+    // 	}else{
+
+    // 		$('.clear_btn').css({display:'none'})
+    // 	}
+    // })
+
+    var clearBtnIndex =undefined;
+    $('.date_a').change(function(e){
+        if(clearBtnIndex==undefined){
+            $(this).next().css({display:'block'})
+            clearBtnIndex=$('.date_a').index($(this));
+        }else{
+            $(".clear_btn").eq(clearBtnIndex).css({display:'none'})
+            $(".clear_btn").eq($('.date_a').index($(this))).css({display:'block'})
+            clearBtnIndex=$('.date_a').index($(this));
         }
-    });
+    })
+
+    // $('.model_diagram').on('focus','input',function(){
+    // 	setTimeout(function(){$('.cxcalendar_lock').css('display','none')}, 500);
+    // 	$(this).next().css('display','block')
+    // 	$(this).next().addClass('clear')
+    // })
+
+
+    // $('.model_diagram').on('focus','input',function(){
+    // 	$('.cxcalendar_lock').css('display','block')
+    // 	var that = this
+    // 	setTimeout(function(){
+    // 		$(that).next().css('display','none')
+    // 		$('.cxcalendar').css('display','none')
+    // 		$(this).next().removeClass('clear')
+    // 	}, 500);
+    // })
+
 
     $('.uploadImgList').on('change','input',function(){
         var files = this.files;
@@ -398,9 +426,19 @@ $(function(){
             $('.prompt').css('display','none')
         }
     })
+
     $('.list').on('click','li:nth-child(odd)',function(){
         $(this).next().toggle()
     })
+
+    $('.consultation_detail').on('click','li',function(){
+        $('.consultation_detail .operation').toggle()
+    })
+
+    $('.medical_institution_detail').on('click','li',function(){
+        $('.medical_institution_detail .operation').toggle()
+    })
+
     $('.title-menu>input').click(function(){
         $('.headtitle-list').addClass('headtitle-list-block')
         $('.title-list').removeClass('title-list-block')
@@ -414,22 +452,17 @@ $(function(){
     $('.headtitle-list li').click(function(){
         event.stopPropagation()
         if($(this).html() == '一般日记'){
-            $(".title-menu>input").val('')
+            $("input[name='title']").val('')
             $(this).addClass('checked').siblings('.checked').removeClass('checked')
             $('.headtitle-list').removeClass('headtitle-list-block')
         }else{
-            console.log(2)
-            $(".title-menu>input").val($(this).html())
+            $("input[name='title']").val($(this).html())
             $(this).addClass('checked').siblings('.checked').removeClass('checked')
             $(this).parents('.headtitle-list').removeClass('headtitle-list-block')
         }
         $(".title-menu>input")[0].focus()
     })
 
-    $('.headtitle-list .li').click(function(){
-        event.stopPropagation()
-        $('.headtitle-list').removeClass('headtitle-list-block')
-    })
 
     $('.title-menu>a').click(function(){
         $('.title-list').addClass('title-list-block')
@@ -444,7 +477,7 @@ $(function(){
     $('.title-list li').click(function(){
         event.stopPropagation()
         $('.title-menu>a').html($(this).html())
-        $(".title-menu>input:hidden").val($(this).html())
+        $("input[name='grow_diary_category_name']").val($(this).html())
         $(this).addClass('checked').siblings('.checked').removeClass('checked')
         $(this).parents('.title-list').removeClass('title-list-block')
     })
@@ -465,6 +498,20 @@ $(function(){
         $('.noData .ceanza_type').html($(this).html())
         location.href = '../cn/ceanza_list.php?category_name='+ $(this).html()
     })
+    $('.ceanza_add_submit').click(function(){
+        var title = trim($("input[name='title']").val())
+        var type = trim($("input[name='grow_diary_category_name']").val())
+        var content = trim($("textarea[name='content']").val())
+        var date = $("input[name='date']").val()
+        var address = trim($(".address-input").val())
+        var file = $("input[name='file']").val()
+        // var camera_file = $('.camera_input').val()
+        debugger;
+        if(!(title && type && content && date && address && file)){
+            alert('请填写完整成长日记信息')
+            return false;
+        }
+    });
 
     $('.project_status p').click(function(){
         event.preventDefault()

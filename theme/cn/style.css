@@ -492,7 +492,7 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .consultation_detail>li,.medical_institution_detail>li{box-shadow: 0 4px 5px -1px #E6E6E6;min-height:60px;line-height: 60px;overflow: hidden;}
 .consultation_detail>li>p,.medical_institution_detail>li>p{float:left;margin-left: 10px}
 .consultation_detail>li>span,.medical_institution_detail>li>span{float:left;min-width:100px;max-width:70%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-.consultation_detail>li>ul,.medical_institution_detail>li>ul{float: right;margin-right: 10px;}
+.consultation_detail>li>ul,.medical_institution_detail>li>ul{float: right;margin-right: 10px;display: none;}
 .consultation_detail>li li,.medical_institution_detail>li li{float: left;margin-left: 120px;line-height: 26px;}
 .consultation_detail>li .eqit,.medical_institution_detail>li .eqit{margin-top:5px;}
 .consultation_detail>li .delete,.medical_institution_detail>li .delete{margin-top:10px;}
