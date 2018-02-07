@@ -5,6 +5,7 @@ include('inc.php');
 <!DOCTYPE html>
 <html><!-- InstanceBegin template="/Templates/_page01.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0" />
 	<?php include('inc_head.php');	?>
 	<style>
 		body{background: none;}
@@ -87,7 +88,7 @@ if(isset($payload)) {
 			$_SESSION['user_credit'] = $CMEMBER->credit;
 			$_SESSION['user_epaper'] = $CMEMBER->epaper;
 			if($action == 'epaper') {
-				echo ('<script type="text/javascript"> $(function(){document.location.href ="http://x.eqxiu.com/s/PclsbuXT";});</script>');
+				echo ('<script type="text/javascript"> $(function(){document.location.href ="epaper.php";});</script>');
 			}
 			else {
 				echo ('<script type="text/javascript"> $(function(){document.location.href ="training.php";});</script>');
@@ -126,120 +127,170 @@ if(isset($payload)) {
 			</ul>
 			<p>记录您宝宝牙齿的成长时间，能够更了解您宝宝在营养吸收和生长发育的健康状态！</p>
 			<div class="model_diagram">
-				<div class="model_diagram_top">
-					<ul class="model_diagram_left">
-						<li>
-							<p>a <span>中门齿（8-12月）</span></p>
-							<input class="date_a" data-bud="a" type="text" value="<?=isset($buds['a'])?$buds['a']:''?>">
+				<ul class="model_diagram_left">
+					<li class="tooth_a">
+						<div class="tooth"></div>
+						<p>a <span>中门齿（8-12月）</span></p>
+						<div class="date_input">
+							<input class="date_a" data-bud="a" type="text" readonly value="<?=isset($buds['a'])?$buds['a']:''?>">
 							<b class="clear_btn">×</b>
-						</li>
-						<li>
-							<p>b <span>侧门齿（9-13月）</span></p>
+						</div>
+					</li>
+					<li class="tooth_b">
+						<div class="tooth"></div>
+						<p>b <span>侧门齿（9-13月）</span></p>
+						<div class="date_input">
 							<input class="date_a" data-bud="b" type="text" readonly value="<?=isset($buds['b'])?$buds['b']:''?>">
 							<b class="clear_btn">×</b>
-						</li>
-						<li>
-							<p>c <span>乳犬齿（16-22月）</span></p>
+						</div>
+					</li>
+					<li class="tooth_c">
+						<div class="tooth"></div>
+						<p>c <span>乳犬齿（16-22月）</span></p>
+						<div class="date_input">
 							<input class="date_a" data-bud="c" type="text" readonly value="<?=isset($buds['c'])?$buds['c']:''?>">
 							<b class="clear_btn">×</b>
-						</li>
-						<li>
-							<p>d <span>第一乳臼齿（13-19月）</span></p>
+						</div>
+					</li>
+					<li class="tooth_d">
+						<div class="tooth"></div>
+						<p>d <span>第一乳臼齿（13-19月）</span></p>
+						<div class="date_input">
 							<input class="date_a" data-bud="d" type="text" readonly value="<?=isset($buds['d'])?$buds['d']:''?>">
 							<b class="clear_btn">×</b>
-						</li>
-						<li>
-							<p>e <span>第二乳臼齿（25-33月）</span></p>
+						</div>
+					</li>
+					<li class="tooth_e">
+						<div class="tooth"></div>
+						<p>e <span>第二乳臼齿（25-33月）</span></p>
+						<div class="date_input">
 							<input class="date_a" data-bud="e" type="text" readonly value="<?=isset($buds['e'])?$buds['e']:''?>">
 							<b class="clear_btn">×</b>
-						</li>
-					</ul>
-					<p><img src="../content/epaper/images/buds_top.png" alt=""></p>
-					<ul class="model_diagram_right">
-						<li>
-							<p>k <span>中门齿（8-12月）</span></p>
-							<input class="date_a" data-bud="k" data-position='bottomLeft' type="text" readonly value="<?=isset($buds['k'])?$buds['k']:''?>">
-							<b class="clear_btn">×</b>
-						</li>
-						<li>
-							<p>l <span>侧门齿（9-13月）</span></p>
-							<input class="date_a" data-bud="l" data-position='bottomLeft' type="text" readonly value="<?=isset($buds['l'])?$buds['l']:''?>">
-							<b class="clear_btn">×</b>
-						</li>
-						<li>
-							<p>m <span>乳犬齿（16-22月）</span></p>
-							<input class="date_a" data-bud="m" data-position='bottomLeft' type="text" readonly value="<?=isset($buds['m'])?$buds['m']:''?>">
-							<b class="clear_btn">×</b>
-						</li>
-						<li>
-							<p>n <span>第一乳臼齿（13-19月）</span></p>
-							<input class="date_a" data-bud="n" data-position='bottomLeft' type="text" readonly value="<?=isset($buds['n'])?$buds['n']:''?>">
-							<b class="clear_btn">×</b>
-						</li>
-						<li>
-							<p>o <span>第二乳臼齿（25-33月）</span></p>
-							<input class="date_a" data-bud="o" data-position='bottomLeft' type="text" readonly value="<?=isset($buds['o'])?$buds['o']:''?>">
-							<b class="clear_btn">×</b>
-						</li>
-					</ul>
-				</div>
-				<div class="model_diagram_bottom">
-					<ul class="model_diagram_left">
-						<li>
-							<p>f <span>第二乳臼齿（23-31月）</span></p>
+						</div>
+					</li>
+					<li class="tooth_f">
+						<div class="tooth"></div>
+						<p>f <span>第二乳臼齿（23-31月）</span></p>
+						<div class="date_input">
 							<input class="date_a" type="text" data-bud="f"  readonly value="<?=isset($buds['f'])?$buds['f']:''?>">
 							<b class="clear_btn">×</b>
-						</li>
-						<li>
-							<p>g <span>第一乳臼齿（14-18月）</span></p>
+						</div>
+					</li>
+					<li class="tooth_g">
+						<div class="tooth"></div>
+						<p>g <span>第一乳臼齿（14-18月）</span></p>
+						<div class="date_input">
 							<input class="date_a" type="text" data-bud="g" readonly value="<?=isset($buds['g'])?$buds['g']:''?>">
 							<b class="clear_btn">×</b>
-						</li>
-						<li>
-							<p>h <span>乳犬齿（17-23月）</span></p>
+						</div>
+					</li>
+					<li class="tooth_h">
+						<div class="tooth"></div>
+						<p>h <span>乳犬齿（17-23月）</span></p>
+						<div class="date_input">
 							<input class="date_a" type="text" data-bud="h" readonly value="<?=isset($buds['h'])?$buds['h']:''?>">
 							<b class="clear_btn">×</b>
-						</li>
-						<li>
-							<p>i <span>侧门齿（10-16月）</span></p>
+						</div>
+					</li>
+					<li class="tooth_i">
+						<div class="tooth"></div>
+						<p>i <span>侧门齿（10-16月）</span></p>
+						<div class="date_input">
 							<input class="date_a" type="text" data-bud="i" readonly value="<?=isset($buds['i'])?$buds['i']:''?>">
 							<b class="clear_btn">×</b>
-						</li>
-						<li>
-							<p>j <span>中门齿（6-10月）</span></p>
+						</div>
+					</li>
+					<li class="tooth_j">
+						<div class="tooth"></div>
+						<p>j <span>中门齿（6-10月）</span></p>
+						<div class="date_input">
 							<input class="date_a" type="text" data-bud="j" readonly value="<?=isset($buds['j'])?$buds['j']:''?>">
 							<b class="clear_btn">×</b>
-						</li>
-					</ul>
-					<p><img src="../content/epaper/images/buds_bottom.png" alt=""></p>
-					<ul class="model_diagram_right">
-						<li>
-							<p>p <span>第二乳臼齿（23-31月）</span></p>
+						</div>
+					</li>
+				</ul>
+				<ul class="model_diagram_right">
+					<li class="tooth_k">
+						<div class="tooth"></div>
+						<p>k <span>中门齿（8-12月）</span></p>
+						<div class="date_input">
+							<input class="date_a" data-bud="k" data-position='bottomLeft' type="text" readonly value="<?=isset($buds['k'])?$buds['k']:''?>">
+							<b class="clear_btn">×</b>
+						</div>
+					</li>
+					<li class="tooth_l">
+						<div class="tooth"></div>
+						<p>l <span>侧门齿（9-13月）</span></p>
+						<div class="date_input">
+							<input class="date_a" data-bud="l" data-position='bottomLeft' type="text" readonly value="<?=isset($buds['l'])?$buds['l']:''?>">
+							<b class="clear_btn">×</b>
+						</div>
+					</li>
+					<li class="tooth_m">
+						<div class="tooth"></div>
+						<p>m <span>乳犬齿（16-22月）</span></p>
+						<div class="date_input">
+							<input class="date_a" data-bud="m" data-position='bottomLeft' type="text" readonly value="<?=isset($buds['m'])?$buds['m']:''?>">
+							<b class="clear_btn">×</b>
+						</div>
+					</li>
+					<li class="tooth_n">
+						<div class="tooth"></div>
+						<p>n <span>第一乳臼齿（13-19月）</span></p>
+						<div class="date_input">
+							<input class="date_a" data-bud="n" data-position='bottomLeft' type="text" readonly value="<?=isset($buds['n'])?$buds['n']:''?>">
+							<b class="clear_btn">×</b>
+						</div>
+					</li>
+					<li class="tooth_o">
+						<div class="tooth"></div>
+						<p>o <span>第二乳臼齿（25-33月）</span></p>
+						<div class="date_input">
+							<input class="date_a" data-bud="o" data-position='bottomLeft' type="text" readonly value="<?=isset($buds['o'])?$buds['o']:''?>">
+							<b class="clear_btn">×</b>
+						</div>
+					</li>
+					<li class="tooth_p">
+						<div class="tooth"></div>
+						<p>p <span>第二乳臼齿（23-31月）</span></p>
+						<div class="date_input">
 							<input class="date_a" data-position='bottomLeft' data-bud="p"  type="text" readonly value="<?=isset($buds['p'])?$buds['p']:''?>">
 							<b class="clear_btn">×</b>
-						</li>
-						<li>
-							<p>q <span>第一乳臼齿（14-18月）</span></p>
+						</div>
+					</li>
+					<li class="tooth_q">
+						<div class="tooth"></div>
+						<p>q <span>第一乳臼齿（14-18月）</span></p>
+						<div class="date_input">
 							<input class="date_a" data-position='bottomLeft' data-bud="q" type="text" readonly value="<?=isset($buds['q'])?$buds['q']:''?>">
 							<b class="clear_btn">×</b>
-						</li>
-						<li>
-							<p>r <span>乳犬齿（17-23月）</span></p>
+						</div>
+					</li>
+					<li class="tooth_r">
+						<div class="tooth"></div>
+						<p>r <span>乳犬齿（17-23月）</span></p>
+						<div class="date_input">
 							<input class="date_a" data-position='bottomLeft' data-bud="r" type="text" readonly value="<?=isset($buds['r'])?$buds['r']:''?>">
 							<b class="clear_btn">×</b>
-						</li>
-						<li>
-							<p>s <span>侧门齿（10-16月）</span></p>
+						</div>
+					</li>
+					<li class="tooth_s">
+						<div class="tooth"></div>
+						<p>s <span>侧门齿（10-16月）</span></p>
+						<div class="date">
 							<input class="date_a" data-position='bottomLeft' data-bud="s" type="text" readonly value="<?=isset($buds['s'])?$buds['s']:''?>">
 							<b class="clear_btn">×</b>
-						</li>
-						<li>
-							<p>t <span>中门齿（6-10月）</span></p>
+						</div>
+					</li>
+					<li class="tooth_t">
+						<div class="tooth"></div>
+						<p>t <span>中门齿（6-10月）</span></p>
+						<div class="date_input">
 							<input class="date_a" data-position='bottomLeft' data-bud="t" type="text" readonly value="<?=isset($buds['t'])?$buds['t']:''?>">
 							<b class="clear_btn">×</b>
-						</li>
-					</ul>
-				</div>
+						</div>
+					</li>
+				</ul>
 			</div>
 			<div class="end_line"></div>
 		</section>
@@ -264,9 +315,31 @@ if(isset($payload)) {
 		endDate: new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate()
 	});
 
-	$(".model_diagram_left>li>input,.model_diagram_right>li>input").change(function(){
+	$(function () {
+		var inputList = $('.model_diagram input')
+		console.log(inputList)
+		for(var i = 0; i < inputList.length; i++){
+			if($(inputList[i]).val() == ''){
+				$(inputList[i]).parent().siblings('.tooth').css('display','none')
+			}else{
+				$(inputList[i]).parent().siblings('.tooth').css('display','block')
+			}
+		}
+	});
+
+	var clearBtnIndex = null;
+	$('.model_diagram').on('change','input',function(){
 		var buds_type = $(this).attr('data-bud');
 		var date  = $(this).val();
+		console.log(clearBtnIndex)
+		if(clearBtnIndex === null){
+			$(this).next().css({display:'block'})
+			clearBtnIndex=$('.date_a').index($(this));
+		}else{
+			$(".clear_btn").eq(clearBtnIndex).css({display:'none'})
+			clearBtnIndex=$('.date_a').index($(this));
+			$(".clear_btn").eq($('.date_a').index($(this))).css({display:'block'})
+		}
 		$.ajax({
 			url: "_buds_record.php",
 			type: "POST",
@@ -283,11 +356,22 @@ if(isset($payload)) {
 				}
 			}
 		});
+		console.log(date)
+		if(date == ''){
+			$(this).parent().siblings('.tooth').css('display','none')
+		}else{
+			$(this).parent().siblings('.tooth').css('display','block')
+		}
+	});
+
+	$('.model_diagram').on('focus','input',function(){
+		$(this).trigger('blur');
 	});
 
 	$('.model_diagram').on('click','b',function(){
 		$(this).prev().val('')
 		$(this).css({display:"none"})
+		$(this).parent().siblings('.tooth').css('display','none')
 		var buds_type = $(this).attr('data-bud');
 		var date  = $(this).val();
 		$.ajax({
@@ -307,6 +391,7 @@ if(isset($payload)) {
 			}
 		});
 	})
+
 </script>
 </body>
 <!-- InstanceEnd --></html>

@@ -449,8 +449,7 @@ $(function(){
         var date = $("input[name='date']").val()
         var address = trim($(".address-input").val())
         var file = $("input[name='file']").val()
-        // var camera_file = $('.camera_input').val()
-        debugger;
+
         if(!(title && type && content && date && address && file)){
             alert('请填写完整成长日记信息')
             return false;

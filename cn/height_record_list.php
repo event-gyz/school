@@ -227,7 +227,6 @@ if(isset($payload)) {
                     }
                 },
                 axisLabel: {
-
                     color: '#87C64D',
                     formatter: function (value, index) {
                         var year = parseInt(value/12)
@@ -337,13 +336,13 @@ if(isset($payload)) {
                             color: '#649E2F',
                             width: 2
                         },
-                    },
-                    showAllSymbol: true
+                    }
                 },
                 symbolSize: function (val) {
                     return val[2];
                 },
-                symbol: 'circle'
+                symbol: 'circle',
+                showAllSymbol: true
             }
         ]
     }

@@ -497,14 +497,15 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .tooth_s .tooth{width:0.6146rem;height:0.6634rem;top:6.6537rem;left:5.0049rem;background:url('../../content/epaper/images/tooth_s.png') no-repeat;background-size: 100%;}
 .tooth_t .tooth{width:0.5854rem;height:0.6341rem;top:6.9268rem;left:4.5854rem;background:url('../../content/epaper/images/tooth_t.png') no-repeat;background-size: 100%;}
 
-.date_input{position: relative;}
-.model_diagram li b{display: none;position: absolute;bottom: 50%;right:-18%;width:0.2927rem;height:0.2927rem;line-height: 0.2927rem;text-align: center;background:#F5F5F5;border:1px solid #CCCCCC;border-radius: 50%;color:#8E8E8E;font-size: 0.2341rem;font-weight: bold;z-index: 9999;cursor: pointer;transform: translateY(50%);}
-.model_diagram .model_diagram_right b{left:-18%;}
-.model_diagram_left{float: left;width:2.0976rem;}
-.model_diagram_right{float: right;width:2.0976rem;}
 
+.date_input{position: relative;}
+.model_diagram li b{display: none;position: absolute;bottom: 50%;right:-18px;width:14px;height:14px;line-height: 14px;text-align: center;background:#F5F5F5;border:1px solid #CCCCCC;border-radius: 50%;color:#8E8E8E;font-size: 12px;font-weight: bold;z-index: 9999;cursor: pointer;transform: translateY(50%);}
+.model_diagram .model_diagram_right b{left:-18px;}
+.model_diagram_left{float: left;width:2.0878rem;}
+.model_diagram_right{float: right;width:2.0878rem;}
 .model_diagram_left p,.model_diagram_right p{margin-left: 0.0976rem;color:#60C351;font-size: 0.1561rem;height:0.3707rem;line-height: 0.3707rem;white-space:nowrap;position: relative;z-index: 11;}
-.model_diagram_right p{margin-left: -0.5854rem;}
+.model_diagram_right p{margin-left: -0.7805rem}
+
 .model_diagram input{width:100%;height:0.4098rem;border:1px solid #DDDDDD;border-radius: 3px;box-sizing: border-box;font-size: 12px;-webkit-appearance: none;-moz-appearance: none;-ms-appearance: none;appearance: none;background:#fff;color:#999;padding-left: 0.0976rem;box-sizing: border-box;-webkit-box-sizing: border-box;}
 /* 添加萌芽记录页面样式 end */
 

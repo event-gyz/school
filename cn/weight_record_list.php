@@ -196,17 +196,17 @@ if(isset($payload)) {
                     color: 'transparent'
                 },
             },
+
             textStyle: {
                 align: 'center',
                 color: '#7FC242'
             },
             triggerOn: 'click',
             formatter: function(params){
-                // console.log(params)
                 var year = parseInt(parseInt(params[0].data[0])/12)
                 var month = parseInt(params[0].data[0])%12
                 var old = (year > 0 ? year + '岁' : '') + (month > 0 ? month + '个月' : '')
-                var res = '<div class="detail"><p class="headImg"><img src="'+ params[0].data[3] +'"></p><span class="old">'+ old +'</span><p>'+ parseInt(params[0].data[1]) +'<span>kg</span></p></div>';
+                var res = '<div class="detail"><p class="headImg"><img src="'+ params[0].data[3] +'"></p><span class="old">'+ old +'</span><p>'+ parseInt(params[0].data[1]) +'<span>kg</span></p></div>'
                 return res;
             }
         },
@@ -228,7 +228,7 @@ if(isset($payload)) {
                 },
                 axisLabel: {
 
-                    color: '#87C64D'
+                    color: '#87C64D',
                     formatter: function (value, index) {
                         var year = parseInt(value/12)
                         var month = value % 12
@@ -236,6 +236,7 @@ if(isset($payload)) {
                         return value
                     },
                     minInterval: 0
+                    // interval:0
                 }
             }
         ],
@@ -298,6 +299,7 @@ if(isset($payload)) {
         ],
         series : [
             {
+                // name:'最高',
                 type:'line',
                 data:function (){
                     <?php
@@ -334,13 +336,14 @@ if(isset($payload)) {
                             color: '#649E2F',
                             width: 2
                         },
-                    },
-                    showAllSymbol: true
+                    }
+
                 },
                 symbolSize: function (val) {
                     return val[2];
                 },
-                symbol: 'circle'
+                symbol: 'circle',
+                showAllSymbol: true
             }
         ]
     }
