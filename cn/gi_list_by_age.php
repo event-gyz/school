@@ -3,18 +3,25 @@ session_start();
 include('inc.php');	
 
 function fetchContent($age, $type, $func,$e) {
+	echo $age;
 	global $cur_li_count;
 	$htmlString = "";
 	$user_uid = $_SESSION["CURRENT_KID_UID"];
-    $start_age = intval($age/12)*12;
-    if(!empty($e) && ($start_age>=12)){
-        $start_age -=12;
-    }
-    $end_age = ceil($age/12)*12;
-    if($start_age == $end_age){
-        $end_age = $end_age+12;
-    }
-	$sql = "select grow_index.uid,grow_index.text,grow_index.age_max,grow_index.age_min,grow_log.early from grow_index LEFT JOIN grow_log on grow_log.item_uid=grow_index.uid and grow_log.user_uid='$user_uid' where grow_index.age_min >= '$start_age' and grow_index.age_max <= '$end_age' and grow_index.type='$type' ";
+//    $start_age = intval($age/12)*12;
+//    if(!empty($e) && ($start_age>=12)){
+//        $start_age -=12;
+//    }
+//    $end_age = ceil($age/12)*12;
+//    if($start_age == $end_age){
+//        $end_age = $end_age+12;
+//    }
+	$start_age = $age-1;
+	$end_age = $age+4;
+	if(!empty($e) && ($start_age>=12)){
+		$start_age -=12;
+	}
+	$sql = "select grow_index.uid,grow_index.text,grow_index.age_max,grow_index.age_min,grow_log.early from grow_index LEFT JOIN grow_log on grow_log.item_uid=grow_index.uid and grow_log.user_uid='$user_uid' where (grow_index.age_min >= '$start_age' and grow_index.age_min<= '$end_age') or (grow_index.age_max <= '$end_age' and grow_index.age_max >= '$start_age') and grow_index.type='$type' order by uid asc";
+echo $sql;
 	$resule = M()->select($sql);
 //    print_r($resule);exit;
 	$li_count = 0;
