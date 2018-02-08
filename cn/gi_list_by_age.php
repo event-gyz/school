@@ -3,7 +3,6 @@ session_start();
 include('inc.php');	
 
 function fetchContent($age, $type, $func,$e) {
-	echo $age;
 	global $cur_li_count;
 	$htmlString = "";
 	$user_uid = $_SESSION["CURRENT_KID_UID"];
