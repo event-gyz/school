@@ -162,7 +162,7 @@ include('inc.php');
     					<img src=<?= $image_url?> alt="" id="img" class="noHead">
     					<img alt="" id="img" class="userHead">
     					<b></b>
-                        <form action="head_sculpture.php" method="post" enctype="multipart/form-data">
+                        <form action="head_sculpture.php" class="babyForm" method="post" enctype="multipart/form-data">
                             <input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="imgfile">
                             <input hidden="" name="type" value="baby" />
                         </form>
@@ -214,11 +214,9 @@ include('inc.php');
 <script>
     $('.imgfile').on('change', function(){
         $(this).closest('form').submit();
+        $('.babyForm').submit();
     });
 
-    $('form').submit( function(){
 
-        return true;
-    });
 </script>
 <!-- InstanceEnd --></html>

@@ -93,6 +93,32 @@ include('inc.php');
 			        }
 	        	}	        	
         	}
+
+        if(isset($_SESSION['user_token'])) {
+            $member_uid = $CMEMBER->accessFromToken($_SESSION['user_token']);
+        }
+        if($member_uid > 0) {
+            $sql = "select * from member where uid='$member_uid'";
+            $result = M()->find($sql);
+            if($result!=null) {
+                $name = $result['first_name'];
+                $email = $result['email'];
+                $phone = $result['cellphone'];
+                $personImage = (!empty($result['image_url']) && $result['image_url']!=' ')?$result['image_url']:'"../content/epaper/images/parent.png"';
+                $momImage = (!empty($result['mother_image']) && $result['mother_image']!=' ')?$result['mother_image']:'"../content/epaper/images/mather.png"';
+            }
+            unset($result);
+            unset($sql);
+            $sql = "select nick_name,birth_day,gender,image_url from user where supervisor_uid='$member_uid'";
+            $result = M()->find($sql);
+            if($result!=null) {
+                $nick_name = $result['nick_name'];
+                $birth_day = $result['birth_day'];
+                $gender = ($result['gender']==0?"男":"女");
+                $babyImage = (!empty($result['image_url']) && $result['image_url']!=' ')?$result['image_url']:'"../content/epaper/images/baby.png"';
+            }
+        }
+
         ?>
 	<!-- InstanceBeginEditable name="wrap" -->
 	<section id="wrap">
@@ -111,28 +137,37 @@ include('inc.php');
         			<p><img src="../content/epaper/images/ceanza_menu.jpg" alt=""></p>
         			<div class="father-head-portrait">
         				<div class="upHead">
-        					<img src="../content/epaper/images/father.png" alt="" id="img" class="noHead">
+        					<img src=<?= $personImage?> alt="" id="img" class="noHead">
         					<img alt="" id="img" class="userHead">
         					<b></b>
-						    <input type="file" accept="image/png,image/jpg,image/jpeg" class="imgfile">
+                            <form action="head_sculpture.php" class="personForm" method="post" enctype="multipart/form-data">
+                                <input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="personImgfile">
+                                <input hidden="" name="type" value="person" />
+                            </form>
 						</div>
         				<span>宝爸</span>
         			</div>
         			<div class="baby-head-portrait">
         				<div class="upHead">
-        					<img src="../content/epaper/images/baby.png" alt="" id="img" class="noHead">
+        					<img src=<?= $babyImage?> alt="" id="img" class="noHead">
         					<img alt="" id="img" class="userHead">
         					<b></b>
-						    <input type="file" accept="image/png,image/jpg,image/jpeg" class="imgfile">
+                            <form action="head_sculpture.php" class="babyForm" method="post" enctype="multipart/form-data">
+                                <input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="babyImgfile">
+                                <input hidden="" name="type" value="baby" />
+                            </form>
 						</div>
         				<span>宝宝</span>
         			</div>
         			<div class="mather-head-portrait">
         				<div class="upHead">
-        					<img src="../content/epaper/images/mather.png" alt="" id="img" class="noHead">
+        					<img src=<?= $momImage?> alt="" id="img" class="noHead">
         					<img alt="" id="img" class="userHead">
         					<b></b>
-						    <input type="file" accept="image/png,image/jpg,image/jpeg" class="imgfile">
+                            <form action="head_sculpture.php" class="momForm" method="post" enctype="multipart/form-data">
+                                <input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="momImgfile">
+                                <input hidden="" name="type" value="mother" />
+                            </form>
 						</div>
         				<span>宝妈</span>
         			</div>
@@ -140,11 +175,19 @@ include('inc.php');
         		<ul class="ceanza-menu">
         			<li class="selected">
                         <?php
-                            $sql  = 'select * from user where supervisor_uid='.$CMEMBER->getUserId();
+                        $uid = $CMEMBER->getUserId();
+                            $sql  = 'select * from user where supervisor_uid='.$uid;
                             $result = M()->find($sql);
                         ?>
                         <h4><?php echo $result['nick_name'];?></h4>
-                        <s>188</s>
+                        <?php
+                            $age = $_SESSION['CURRENT_KID_AGE'];
+                            $start_age = $age-1;
+                            $end_age = $age+4;
+                            $itemSql = "select grow_index.uid,grow_index.text,grow_index.age_max,grow_index.age_min,grow_log.early from grow_index LEFT JOIN grow_log on grow_log.item_uid=grow_index.uid where grow_log.user_uid='$uid' and (grow_index.age_min >= '$start_age' and grow_index.age_min<= '$end_age') or (grow_index.age_max <= '$end_age' and grow_index.age_max >= '$start_age') order by uid asc";
+                        $itemCount = count(M()->query($itemSql));
+                        ?>
+                        <s><?=$itemCount?></s>
                         <p>性别：<span><?php echo ($result['gender']==1)?'女':'男';?></span></p>
                         <p>出生日期：<span><?php echo date('Y年m月d日',strtotime($result['birth_day']))?></span></p>
                         <!--<p>身高：<span>117.7cm</span></p>-->
@@ -209,6 +252,19 @@ include('inc.php');
     		$('.father-head-portrait .noHead').css('display','none')
     		$('.father-head-portrait .userHead').css('display','block')
     	}
+
+        $('.personImgfile').on('change', function(){
+            $(this).closest('form').submit();
+            $('.personForm').submit();
+        });
+        $('.babyImgfile').on('change', function(){
+            $(this).closest('form').submit();
+            $('.babyForm').submit();
+        });
+        $('.momImgfile').on('change', function(){
+            $(this).closest('form').submit();
+            $('.momForm').submit();
+        });
     </script>
 </body>
 <!-- InstanceEnd --></html>

@@ -14,7 +14,7 @@ if(isset($_POST['type']) && $_POST['type'] == 'person'){
         $sql = "update member set image_url='{$picurl}' where uid = $supervisor_uid";
         $result = query($sql);
         if($result!=null) {
-            header("Location:person.php");
+            header("Location:".$_SERVER['HTTP_REFERER']);
         }
     }
     exit;
@@ -29,7 +29,22 @@ if(isset($_POST['type']) && $_POST['type'] == 'baby'){
         $sql = "update `user` set image_url='{$picurl}' where supervisor_uid = $supervisor_uid";
         $result = query($sql);
         if($result!=null) {
-            header("Location:baby_info.php");
+            header("Location:".$_SERVER['HTTP_REFERER']);
+        }
+    }
+    exit;
+}
+
+if(isset($_POST['type']) && $_POST['type'] == 'mother'){
+    $files = $_FILES['file'];
+    $_token = $_SESSION['user_token'];
+
+    if ($supervisor_uid = $CMEMBER->accessFromToken($_token)) {
+        $picurl = ceanza_upload("file");
+        $sql = "update member set mother_image='{$picurl}' where uid = $supervisor_uid";
+        $result = query($sql);
+        if($result!=null) {
+            header("Location:".$_SERVER['HTTP_REFERER']);
         }
     }
     exit;
