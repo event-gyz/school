@@ -85,7 +85,7 @@ include('inc.php');
 			        	$_SESSION['user_credit'] = $CMEMBER->credit;
 			        	$_SESSION['user_epaper'] = $CMEMBER->epaper;
 			        	if($action == 'epaper') {
-				        	echo ('<script type="text/javascript"> $(function(){document.location.href ="http://x.eqxiu.com/s/PclsbuXT";});</script>');
+				        	echo ('<script type="text/javascript"> $(function(){document.location.href ="epaper.php";});</script>');	
 			        	}
 				        else {
 				        	echo ('<script type="text/javascript"> $(function(){document.location.href ="training.php";});</script>');	
@@ -113,13 +113,13 @@ include('inc.php');
 				$result = M()->find($sql);
 //				print_r($result);
 				?>
-        		<h4>成长日记</h4>
-        		<ul class="eqit_content">
+        		<h4>查看成长记录</h4>
+        		<ul class="ceanza_view">
         			<li class="title">标题：<?php echo $result['title']?></li>
         			<li>内容：<?php echo $result['content']?></li>
 
 					<li class="eqitUploadImg">
-						<div class="imgContent"><img src=<?php echo $result['picurl']?> alt=""></div>
+						<img src=<?php echo $result['picurl']?> alt="">
 					</li>
         		</ul>
         		<div class="diaryTime">
@@ -127,11 +127,11 @@ include('inc.php');
 					<span><?php echo $result['address']?></span>
         		</div>
         	</section>
-        	<!-- InstanceEndEditable -->   
+        	<!-- InstanceEndEditable -->
         </section>
         <!--【Content End】-->
         
-    </section>
+    </section> 
     <?php include 'inc_bottom_js.php'; ?>
 </body>
 <!-- InstanceEnd --></html>

@@ -38,8 +38,8 @@ if(!isset($tabon))
         <!-- InstanceBeginEditable name="content" -->
 
         <!--//主內容//-->
-        <section class="indexcont">
-            <section class="inbox">
+        <section class="indexcont itenlist">
+            <section class="inbox noBoxShadowPage">
                 <section class="contbox clearfix">
 
                     <!--//主選單標題與路徑//-->
@@ -63,7 +63,26 @@ if(!isset($tabon))
                         <div class="progress_board">
                             <div class="progress_data">
 
-                                <h3><?= $_SESSION['CURRENT_KID_NICKNAME'];?></h3>
+                                <h3>
+                                    <?= $_SESSION['CURRENT_KID_NICKNAME'];?>
+                                    <span>
+                                    <?php
+                                    $birthday = new DateTime($_SESSION['CURRENT_KID_BIRTH_DAY']);
+                                    $diff = $birthday->diff(new DateTime());
+                                    $months = $diff->format('%m') + 12 * $diff->format('%y');
+                                    $year = floor($months/12);
+                                    $mm = $months%12;
+                                    echo '(';
+                                    if($year>0){
+                                        echo $year.'岁';
+                                    }
+                                    if($mm>0){
+                                        echo $mm.'个月';
+                                    }
+                                    echo ')';
+                                    ?>
+                                        </span>
+                                </h3>
                                 <h4>进度记分板</h4>
                                 <ul>
                                     <li>
@@ -95,22 +114,22 @@ if(!isset($tabon))
                             <div class="project_list">
                                 <ul class="clearfix">
                                     <li class="ttile selected">
-                                        <a id="tab_01">语言沟通</a>
+                                        <a id="tab_01">语言<br>沟通</a>
                                     </li>
                                     <li class="ttile">
-                                        <a id="tab_02">社会人格</a>
+                                        <a id="tab_02">社会<br>人格</a>
                                     </li>
                                     <li class="ttile">
-                                        <a id="tab_03">自觉认知</a>
+                                        <a id="tab_03">自觉<br>认知</a>
                                     </li>
                                     <li class="ttile">
-                                        <a id="tab_04">粗动作技能</a>
+                                        <a id="tab_04">粗动作<br>技能</a>
                                     </li>
                                     <li class="ttile">
-                                        <a id="tab_05">细动作技能</a>
+                                        <a id="tab_05">细动作<br>技能</a>
                                     </li>
                                     <li class="ttile">
-                                        <a id="tab_06">自主能力</a>
+                                        <a id="tab_06">自主<br>能力</a>
                                     </li>
                                 </ul>
                             </div>
@@ -155,6 +174,8 @@ if(!isset($tabon))
     <!--【Footer】-->
     <?php include 'inc_footer.html'; ?>
     <!--【Footer End】-->
+
+
 </section>
 
 <script type="text/javascript">
@@ -162,48 +183,42 @@ if(!isset($tabon))
 //        a=all b=buhui c=yihui
         //语言沟通
         $("#tab_01").click(function(){
-            var func = $("span[class$='success']").parents().attr('data-status');
-            initList('0',func);
+            initList('0');
             $(".ttile").removeClass("selected");
             $(this).parent('li').addClass("selected");
             $(".loadmore p").removeClass("have_selected");
         });
         //社会人格
         $("#tab_02").click(function(){
-            var func = $("span[class$='success']").parents().attr('data-status');
-            initList('1',func);
+            initList('1');
             $(".ttile").removeClass("selected");
             $(this).parent('li').addClass("selected");
             $(".loadmore p").removeClass("have_selected");
         });
         //知觉认知
         $("#tab_03").click(function(){
-            var func = $("span[class$='success']").parents().attr('data-status');
-            initList('4',func);
+            initList('4');
             $(".ttile").removeClass("selected");
             $(this).parent('li').addClass("selected");
             $(".loadmore p").removeClass("have_selected");
         });
         //粗动作
         $("#tab_04").click(function(){
-            var func = $("span[class$='success']").parents().attr('data-status');
-            initList('2',func);
+            initList('2');
             $(".ttile").removeClass("selected");
             $(this).parent('li').addClass("selected");
             $(".loadmore p").removeClass("have_selected");
         });
         //细动作
         $("#tab_05").click(function(){
-            var func = $("span[class$='success']").parents().attr('data-status');
-            initList('3',func);
+            initList('3');
             $(".ttile").removeClass("selected");
             $(this).parent('li').addClass("selected");
             $(".loadmore p").removeClass("have_selected");
         });
         //自主能力
         $("#tab_06").click(function(){
-            var func = $("span[class$='success']").parents().attr('data-status');
-            initList('5',func);
+            initList('5');
             $(".ttile").removeClass("selected");
             $(this).parent('li').addClass("selected");
             $(".loadmore p").removeClass("have_selected");

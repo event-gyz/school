@@ -6,22 +6,22 @@ var iPadUIMin = 768;
 var iPhoneUIMax = 480;
 var iPhoneUIMin = 320;
 var waitTime = {
-        timer: '',
-        second: 60
-    }
+            timer: '',
+            second: 60
+        }
 
 // 单位换算
-    ;(function (doc, win) {
+;(function (doc, win) {
     var docEl = doc.documentElement,
-        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-        recalc    = function () {
-            var clientWidth = docEl.clientWidth;
-            if (clientWidth>=1025) {
-                clientWidth = 1025;
-            };
-            if (!clientWidth) return;
-            docEl.style.fontSize = 102.5 * (clientWidth / 1025) + 'px';
+    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+    recalc    = function () {
+        var clientWidth = docEl.clientWidth;
+        if (clientWidth>=1025) {
+            clientWidth = 1025;
         };
+        if (!clientWidth) return;
+        docEl.style.fontSize = 102.5 * (clientWidth / 1025) + 'px';
+    };
     if (!doc.addEventListener) return;
     win.addEventListener(resizeEvt, recalc, false);
     doc.addEventListener('DOMContentLoaded', recalc, false);
@@ -56,28 +56,28 @@ function w(){
 }
 
 function getCode (time, params) { // params: 参数对象
-    if (time.timer) return false
-    var mobileReg = /^[1][34578](\d){9}$/,html = ''
-    if (params.Mobile && mobileReg.test(params.Mobile)) {
-        params.errEl.hide()
-        time.timer = setInterval(function(){
-            time.second -= 1
-            if (time.second < 0) {
-                clearTimer(time)
-            }
-            html = time.timer === '' ? '获取验证码' : time.timer !== null ? waitTime.second + 's' : '重新获取'
-            params.validEl.html(html)
-        }, 1000)
-    } else {
-        params.errEl.show()
-        return false
-    }
+  if (time.timer) return false
+  var mobileReg = /^[1][34578](\d){9}$/,html = ''
+  if (params.Mobile && mobileReg.test(params.Mobile)) {
+    params.errEl.hide()
+    time.timer = setInterval(function(){
+      time.second -= 1
+      if (time.second < 0) {
+        clearTimer(time)
+      }
+      html = time.timer === '' ? '获取验证码' : time.timer !== null ? waitTime.second + 's' : '重新获取'
+      params.validEl.html(html)
+    }, 1000)
+  } else {
+    params.errEl.show()
+    return false
+  }
 }
 // 清除定时器
 function clearTimer (time) {
-    clearInterval(time.timer)
-    time.timer = null
-    time.second = 60
+  clearInterval(time.timer)
+  time.timer = null
+  time.second = 60
 }
 //删除左右两端的空格
 function trim(str){
@@ -89,10 +89,10 @@ $(window).resize(function(e){
 });
 
 $(function(){
-
+    
     w();
-
-    /*===========================【首頁主選單】 ===========================*/
+    
+    /*===========================【首頁主選單】 ===========================*/  
     $('#header nav li').hover(function(){
         $(this).addClass('hv');
     } , function(){
@@ -103,7 +103,7 @@ $(function(){
         $('#header .s-mnav').stop(false, true).slideToggle();
         $('.bg-o').stop(false, true).fadeToggle();
     });
-
+    
     /*===========================【首頁slider】 ===========================*/
     $('.slider').iosSlider({
         snapToChildren: true,
@@ -115,11 +115,11 @@ $(function(){
         onSlideChange: slideChange
     });
     function slideChange(args) {
-//		console.log(args);
+//      console.log(args);
         $('.pgs .item').removeClass('on');
         $('.pgs .item:eq(' + (args.currentSlideNumber - 1) + ')').addClass('on');
     }
-
+    
     // code for fade in element by element
     $.fn.fadeInWithDelay = function(){
         var delay = 0;
@@ -128,19 +128,19 @@ $(function(){
             delay += 100;
         });
     };
-
-    /*===========================【Fancybox】 ===========================*/
+    
+    /*===========================【Fancybox】 ===========================*/   
     $('.fancybox').fancybox({
         'maxWidth':850
     });
-
-    /*===========================【首頁主選單】 ===========================*/
+    
+    /*===========================【首頁主選單】 ===========================*/  
     $('.btn01,.btn_submit01,.btn_submit03,.btn_submit04,.btn_submit05').hover(function(){
         $(this).addClass('hv');
     } , function(){
         $(this).removeClass('hv');
     });
-
+    
     /*=========================== 【頁籤表單】 ===========================*/
     $(".tabcont").hide();
     $('.tab-hd li').click(function(){
@@ -154,10 +154,10 @@ $(function(){
     }).find('a').focus(function(){
         this.blur();
     });
-
+    
     /*=========================== 【表格】 ===========================*/
-    $(".tb-rep tr:odd").addClass("even");
-
+    $(".tb-rep tr:odd").addClass("even"); 
+    
     /*=========================== 【Masonry】 ===========================*/
     $('.masonry').imagesLoaded(function(){
         $('.masonry').masonry({
@@ -168,7 +168,7 @@ $(function(){
             }
         });
     });
-
+    
     /*=========================== 【Radio】 ===========================*/
     $('.ralist01 li').click(function() {
         $('.ralist01 li').removeClass("selected");
@@ -178,14 +178,14 @@ $(function(){
         $('.ralist02 li').removeClass("selected");
         $(this).addClass("selected");
     });
-
+    
     /*=========================== 【回頂端】 ===========================*/
     $('.bodytop').click(function() {
         $('body,html').animate({scrollTop:0},800);
     });
     $('.divtop').click(function() {
         if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-            $('body,html').animate({scrollTop:$('.fy-bd').offset().top-50},800);
+            $('body,html').animate({scrollTop:$('.fy-bd').offset().top-50},800);    
         } else {
             $('.fancybox-overlay').animate({scrollTop:0},800);
         }
@@ -199,19 +199,19 @@ $(function(){
 
     $("#ref_code").click(function() {
         var params = {
-            Mobile: $('#reg_tel').val(),
-            validEl: $('#ref_code'),
-            errEl: $('#errorbar_reg_tel'),
+          Mobile: $('#reg_tel').val(),
+          validEl: $('#ref_code'),
+          errEl: $('#errorbar_reg_tel'),
             type: 'send',
         }
         getCode(waitTime, params)
     })
-
+    
     $("#forget_ref_code").click(function() {
         var params = {
-            Mobile: $('#forget_mobile').val(),
-            validEl: $('#forget_ref_code'),
-            errEl: $('#errorbar_reg_mobile'),
+          Mobile: $('#forget_mobile').val(),
+          validEl: $('#forget_ref_code'),
+          errEl: $('#errorbar_reg_mobile'),
             type: 'forget',
         }
         getCode(waitTime, params)
@@ -293,24 +293,25 @@ $(function(){
     $(window).load(function(){
         $(".tab-bd .scrolltype").mCustomScrollbar();
     });
-
+    
 
     $('.uploadImgList').on('change','input',function(){
         var files = this.files;
         var item = files[0];
         var imgContent = $('.imgContent')
-        if (this.files && this.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function(evt) {
-                imgContent.html('<img src="' + evt.target.result + '" />');
+            if (this.files && this.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(evt) {
+                    imgContent.html('<img src="' + evt.target.result + '" />');
+                }
+                reader.readAsDataURL(this.files[0]);
+            }else {
+                imgContent.html('<div class="img" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + this.value + '\'"></div>');
             }
-            reader.readAsDataURL(this.files[0]);
-        }else {
-            imgContent.html('<div class="img" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + this.value + '\'"></div>');
-        }
     })
 
     $('.eqitUploadImg input').change(function(){
+        var that = this
         var files = this.files;
         var item = files[0];
         // console.log("原图片大小", item.size);
@@ -318,26 +319,32 @@ $(function(){
         // if (item.size > 1024 * 1024 * 3) {
         //     // console.log("图片大于3M，开始进行压缩...");
         //     (function(img) {
-        //     	// console.log(img)
+        //      // console.log(img)
         //         var mpImg = new MegaPixImage(img);
         //         var resImg = document.createElement("img");
         //         resImg.file = img;
         //         mpImg.render(resImg, { maxWidth: 500, maxHeight: 500, quality: 1 }, function() {
-        //         	imgContent.html('<img src="' + $(resImg).attr('src') + '" />');
+        //          imgContent.html('<img src="' + $(resImg).attr('src') + '" />');
         //         });
         //     })(item);
         // }else{
-        if (this.files && this.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function(evt) {
-                imgContent.html('<img src="' + evt.target.result + '" />');
+            if (this.files && this.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(evt) {
+                    imgContent.html('<img src="' + evt.target.result + '" />');
+                }
+                reader.readAsDataURL(this.files[0]);
+                $(this).attr('name',"new_file")
+                $(this).siblings('.imgContent').css('height','auto')
+            }else {
+                $(this).siblings('.imgContent').css('height','240px')
+                imgContent.html('<div class="img" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + this.value + '\'"></div>');
             }
-            reader.readAsDataURL(this.files[0]);
-        }else {
-            imgContent.html('<div class="img" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + this.value + '\'"></div>');
-        }
+            setTimeout(function(){
+                $(that).css('height',$(that).siblings('.imgContent').css('height'))
+            }, 500);
+            
         // }
-        $(this).attr('name',"new_file")
     })
 
     $('.diagnosis-doctors').change(function(){
@@ -449,7 +456,6 @@ $(function(){
         var date = $("input[name='date']").val()
         var address = trim($(".address-input").val())
         var file = $("input[name='file']").val()
-
         if(!(title && type && content && date && address && file)){
             alert('请填写完整成长日记信息')
             return false;
@@ -499,7 +505,7 @@ $(function(){
         }
     }
 
-    $('.project_list').iosSlider();
+    // $('.project_list').iosSlider();
 
 
     $('.project_tab').iosSlider({

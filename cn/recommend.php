@@ -10,6 +10,12 @@ if(!isset($_tag))
 <html><!-- InstanceBegin template="/Templates/_page01.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
 	<?php include('inc_head.php');	?>
+    <style>
+        body{background: none;padding: 0}
+        h1,h2,h3,h4,h5,h6,p,ul,li,dl,dt,dd{margin:0;padding:0;list-style: none;}
+        input,button{padding: 0;margin:0;border:0;outline: none;}
+        img{vertical-align: bottom}
+    </style>
 </head>
 
 <body>
@@ -27,12 +33,19 @@ if(!isset($_tag))
             
             <!--//主內容//-->
             <section class="indexcont">
-            <section class="inbox">
+            <section class="inbox noBoxShadowPage">
             	<section class="contbox clearfix">
             	
                 <!--//主選單標題與路徑//-->
-                <h2 class="title">推荐文章</h2>
-                <section class="gopath"><a href="index.php">首頁</a> > 推荐文章</section>
+                <div class="breadcrumbs_logo">
+                    <h2 class="title">推荐文章</h2>
+                    <section class="gopath"><a href="index.php">首頁</a> > 推荐文章</section>
+                </div>
+                <p <?php if($_tag==0) echo('style="display:block"'); ?>><img src="../content/epaper/images/parenting.jpg" alt=""></p>
+                <p <?php if($_tag==1) echo('style="display:block"'); ?>><img src="../content/epaper/images/medical_care.jpg" alt=""></p>
+                <p <?php if($_tag==2) echo('style="display:block"'); ?>><img src="../content/epaper/images/psychology.jpg" alt=""></p>
+                <p <?php if($_tag==3) echo('style="display:block"'); ?>><img src="../content/epaper/images/education.jpg" alt=""></p>
+                
                 <!--//主選單標題與路徑//-->
                 
                 <!--//文章內容和文章列表//-->
@@ -40,13 +53,20 @@ if(!isset($_tag))
                     
                     <section class="lbox">
                     	
-                    	<div>
-                    	类别: 
-                    	<a href="?t=0" id="tag1" <?php if($_tag==0) echo('style="font-family:arial;color:blue;font-size:20px;"'); ?>>育儿</a>&nbsp;
-                    	<a href="?t=1" id="tag2" <?php if($_tag==1) echo('style="font-family:arial;color:blue;font-size:20px;"'); ?>>医疗</a>&nbsp;
-                    	<a href="?t=2" id="tag3" <?php if($_tag==2) echo('style="font-family:arial;color:blue;font-size:20px;"'); ?>>心理</a>&nbsp;
-                    	<a href="?t=3" id="tag4" <?php if($_tag==3) echo('style="font-family:arial;color:blue;font-size:20px;"'); ?>>教育</a>
-                    	</div>
+                    	<ul class="artbox_category">
+                            <li>
+                                <a href="?t=0" id="tag1" <?php if($_tag==0) echo('style="font-family:arial;color:#59C448;font-size:20px;"'); ?>>育儿</a>&nbsp;
+                            </li>
+                            <li>
+                                <a href="?t=1" id="tag2" <?php if($_tag==1) echo('style="font-family:arial;color:#59C448;"'); ?>>医疗</a>&nbsp;
+                            </li>
+                            <li>
+                                <a href="?t=2" id="tag3" <?php if($_tag==2) echo('style="font-family:arial;color:#59C448;"'); ?>>心理</a>&nbsp;
+                            </li>
+                            <li>
+                                <a href="?t=3" id="tag4" <?php if($_tag==3) echo('style="font-family:arial;color:#59C448;"'); ?>>教育</a>
+                            </li>
+                        </ul>
                     	<!--//文字編輯器區//-->
                         <section id="main_article" name="main_article" class="Txt clearfix">
                             <?php 
@@ -90,10 +110,12 @@ if(!isset($_tag))
          <!-- InstanceEndEditable -->   
         </section>
         <!--【Content End】-->
-        
+
         <!--【Footer】-->
-       	<?php include 'inc_footer.html'; ?>
+        <?php include 'inc_footer.html'; ?>
         <!--【Footer End】-->
+        
+
     </section>
 	<script type="text/javascript">
 	function loadMainArticle(v_id) {

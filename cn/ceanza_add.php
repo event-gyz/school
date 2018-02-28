@@ -88,7 +88,7 @@ if(isset($payload)) {
             $_SESSION['user_credit'] = $CMEMBER->credit;
             $_SESSION['user_epaper'] = $CMEMBER->epaper;
             if($action == 'epaper') {
-                echo ('<script type="text/javascript"> $(function(){document.location.href ="http://x.eqxiu.com/s/PclsbuXT";});</script>');
+                echo ('<script type="text/javascript"> $(function(){document.location.href ="epaper.php";});</script>');
             }
             else {
                 echo ('<script type="text/javascript"> $(function(){document.location.href ="training.php";});</script>');
@@ -111,7 +111,7 @@ if(isset($payload)) {
         <section class="ceanza">
             <form action="grow_diary.php" method="post" enctype="multipart/form-data">
                 <input hidden="" name="type" value="diary" />
-                <h4>成长日记</h4>
+                <h4>新增成长记录</h4>
                 <ul class="form">
                     <li class="title-menu">
                         <p>标题：</p>
@@ -203,7 +203,7 @@ if(isset($payload)) {
                 <ul class="uploadImgList">
                     <li class="uploadImg">
                         <div class="imgContent">+</div>
-                        <input type="file" name="file"  accept="image/jpg"/>
+                        <input type="file" name="file" accept="image/jpg"/>
                         <!-- <div class="camera_photograph">
                              <p><img src="../content/epaper/images/camera.png" alt=""></p>
                              <input type="file" class="camera_input" name="myPhoto" capture="camera" accept="image/*"/>

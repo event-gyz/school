@@ -71,9 +71,7 @@ include('inc.php');
         </section>
         <!--【Content End】-->
         
-        <!--【Footer】-->
-        <?php include 'inc_footer.html'; ?>
-        <!--【Footer End】-->
+
     </section>
     <script src="../scripts/jquery.masonry.min.js"></script>
     <link rel="stylesheet" href="../scripts/fancybox/jquery.fancybox.css">

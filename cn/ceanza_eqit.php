@@ -86,7 +86,7 @@ if(isset($payload)) {
 			$_SESSION['user_credit'] = $CMEMBER->credit;
 			$_SESSION['user_epaper'] = $CMEMBER->epaper;
 			if($action == 'epaper') {
-				echo ('<script type="text/javascript"> $(function(){document.location.href ="http://x.eqxiu.com/s/PclsbuXT";});</script>');
+				echo ('<script type="text/javascript"> $(function(){document.location.href ="epaper.php";});</script>');
 			}
 			else {
 				echo ('<script type="text/javascript"> $(function(){document.location.href ="training.php";});</script>');
@@ -117,7 +117,7 @@ if(isset($payload)) {
 				$result = M()->find($sql);
 				//				print_r($result);
 				?>
-				<h4>成长日记</h4>
+				<h4>编辑成长记录</h4>
 				<ul class="eqit_content">
 					<input type="hidden" name="file" value=<?php echo $result['picurl']?> />
 					<li class="title">标题：<input type="text" name="title" value="<?php echo $result['title']?>"></li>
@@ -125,8 +125,8 @@ if(isset($payload)) {
 
 					<li class="eqitUploadImg">
 						<div class="imgContent"><img src=<?php echo $result['picurl']?> alt=""></div>
-						<input type="file" name="file">
-						<span>点击图片，重新上传</span>
+						<input type="file" name="file" accept="image/jpg">
+						<p>点击图片，重新上传</p>
 					</li>
 					<li>
 						<b class="clock"></b>

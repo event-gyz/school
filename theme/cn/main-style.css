@@ -77,7 +77,7 @@ input:valid,textarea:valid{}
 input:invalid,textarea:invalid{background-color:#f0dddd;}
 
 /*==【文字編輯器】==*/
-.Txt{width:100%;line-height:1.6;margin:0 auto;padding:0;font-size:13px !important;color:#666;word-break:break-all;word-wrap:break-word;text-align:left;}
+.Txt{line-height:1.6;margin:0 auto;font-size:13px !important;color:#666;word-break:break-all;word-wrap:break-word;text-align:left;}
 	.Txt h1,.Txt h2,.Txt h3,.Txt h4,.Txt h5,.Txt h6{margin:0;padding:7px 0;color:#333;}
 	.Txt p{padding:8px 0;}
 	.Txt ul,.Txt ol{margin:2px 0 10px 0 !important;padding-left:20px !important;list-style:circle !important;overflow:visible !important;}

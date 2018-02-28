@@ -85,7 +85,7 @@ include('inc.php');
 			        	$_SESSION['user_credit'] = $CMEMBER->credit;
 			        	$_SESSION['user_epaper'] = $CMEMBER->epaper;
 			        	if($action == 'epaper') {
-				        	echo ('<script type="text/javascript"> $(function(){document.location.href ="http://x.eqxiu.com/s/PclsbuXT";});</script>');
+				        	echo ('<script type="text/javascript"> $(function(){document.location.href ="epaper.php";});</script>');	
 			        	}
 				        else {
 				        	echo ('<script type="text/javascript"> $(function(){document.location.href ="training.php";});</script>');	
@@ -106,7 +106,7 @@ include('inc.php');
         <section id="content">
         <!-- InstanceBeginEditable name="content" -->
         	<section class="ceanza">
-        		<h4>成长日记</h4>
+        		<h4>成长记录</h4>
         		<p>替您的宝宝写下成长日记，为您的宝宝记录每天的成长与回忆。</p>
         		<button class="add_ceanza">新增成长日记<b></b></button>
         		<div class="browse_mode">
