@@ -104,7 +104,7 @@ include('inc.php');
                 $name = $result['first_name'];
                 $email = $result['email'];
                 $phone = $result['cellphone'];
-                $personImage = (!empty($result['image_url']) && $result['image_url']!=' ')?$result['image_url']:'"../content/epaper/images/parent.png"';
+                $fatherImage = (!empty($result['father_image']) && $result['father_image']!=' ')?$result['father_image']:'"../content/epaper/images/father.png"';
                 $momImage = (!empty($result['mother_image']) && $result['mother_image']!=' ')?$result['mother_image']:'"../content/epaper/images/mather.png"';
             }
             unset($result);
@@ -137,7 +137,7 @@ include('inc.php');
         			<p><img src="../content/epaper/images/ceanza_menu.jpg" alt=""></p>
         			<div class="father-head-portrait">
         				<div class="upHead">
-        					<img src=<?= $personImage?> alt="" id="img" class="noHead">
+        					<img src=<?= $fatherImage?> alt="" id="img" class="noHead">
         					<img alt="" id="img" class="userHead">
         					<b></b>
                             <form action="head_sculpture.php" class="personForm" method="post" enctype="multipart/form-data">
