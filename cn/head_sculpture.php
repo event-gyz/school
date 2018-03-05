@@ -50,6 +50,21 @@ if(isset($_POST['type']) && $_POST['type'] == 'mother'){
     exit;
 }
 
+if(isset($_POST['type']) && $_POST['type'] == 'father'){
+    $files = $_FILES['file'];
+    $_token = $_SESSION['user_token'];
+
+    if ($supervisor_uid = $CMEMBER->accessFromToken($_token)) {
+        $picurl = ceanza_upload("file");
+        $sql = "update member set father_image='{$picurl}' where uid = $supervisor_uid";
+        $result = query($sql);
+        if($result!=null) {
+            header("Location:".$_SERVER['HTTP_REFERER']);
+        }
+    }
+    exit;
+}
+
 if(isset($_GET['type']) && $_GET['type'] == "get"){
     $category = 0;
     if(isset($_GET['category'])){

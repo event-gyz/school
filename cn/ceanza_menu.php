@@ -142,7 +142,7 @@ include('inc.php');
         					<b></b>
                             <form action="head_sculpture.php" class="personForm" method="post" enctype="multipart/form-data">
                                 <input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="personImgfile">
-                                <input hidden="" name="type" value="person" />
+                                <input hidden="" name="type" value="father" />
                             </form>
 						</div>
         				<span>宝爸</span>
