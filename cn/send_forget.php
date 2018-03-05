@@ -19,8 +19,8 @@ else {
 	// send email
 	$log_file = "../log/send_forget_log".date("Y_m_d_H_i_s").".txt";
 	$sql = "select uid,email from member where id='$_ID'";
-	$result = query($sql);
-	if($row = mysqli_fetch_array($result)) {
+	$row = M()->find($sql);
+	if($row) {
 		$uid = $row['uid'];
 		$email = $row['email'];
                 $update = "update member set password=md5(lower('".$_AUTH."')) where uid =".$row['uid'];
