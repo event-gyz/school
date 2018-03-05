@@ -231,6 +231,9 @@ if(isset($payload)) {
 </section>
 <!--【Content End】-->
 
+<!--【Footer】-->
+<?php include 'inc_footer.html'; ?>
+<!--【Footer End】-->
 
 </section>
 <?php include 'inc_bottom_js.php'; ?>

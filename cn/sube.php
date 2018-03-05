@@ -73,6 +73,9 @@ if(!isset($_SESSION['user_token'])) {
         </section>
         <!--【Content End】-->
         
+        <!--【Footer】-->
+        <?php include 'inc_footer.html'; ?>
+        <!--【Footer End】-->
 
     </section>
     <script src="../scripts/jquery.masonry.min.js"></script>

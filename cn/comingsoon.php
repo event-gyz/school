@@ -49,6 +49,10 @@ $title = $_GET['t'];
          <!-- InstanceEndEditable -->   
         </section>
         <!--【Content End】-->
+
+        <!--【Footer】-->
+        <?php include 'inc_footer.html'; ?>
+        <!--【Footer End】-->
         
 
     </section>

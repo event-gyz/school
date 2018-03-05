@@ -203,7 +203,7 @@ if(isset($payload)) {
                 <ul class="uploadImgList">
                     <li class="uploadImg">
                         <div class="imgContent">+</div>
-                        <input type="file" name="file" accept="image/jpg"/>
+                        <input type="file" name="file" accept="image/png,image/jpg,image/jpeg"/>
                         <!-- <div class="camera_photograph">
                              <p><img src="../content/epaper/images/camera.png" alt=""></p>
                              <input type="file" class="camera_input" name="myPhoto" capture="camera" accept="image/*"/>
@@ -217,6 +217,10 @@ if(isset($payload)) {
         <!-- InstanceEndEditable -->
     </section>
     <!--【Content End】-->
+
+    <!--【Footer】-->
+    <?php include 'inc_footer.html'; ?>
+    <!--【Footer End】-->
 
 </section>
 <?php include 'inc_bottom_js.php'; ?>

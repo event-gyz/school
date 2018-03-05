@@ -74,6 +74,10 @@ if(!isset($_SESSION['user_token'])) {
          <!-- InstanceEndEditable -->   
         </section>
         <!--【Content End】-->
+
+        <!--【Footer】-->
+        <?php include 'inc_footer.html'; ?>
+        <!--【Footer End】-->
         
         
     </section>

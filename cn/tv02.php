@@ -126,6 +126,9 @@ include('inc.php');
         </section>
         <!--【Content End】-->
         
+        <!--【Footer】-->
+        <?php include 'inc_footer.html'; ?>
+        <!--【Footer End】-->
 
     </section>
     <link rel="stylesheet" href="../scripts/fancybox/jquery.fancybox.css">

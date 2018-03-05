@@ -2,7 +2,7 @@
 header('Content-Type:text/plain;charset=utf-8');
 session_start();
 
-include("inc.php"); 
+include("inc.php");
 
 include("../inc/upload.php");
 if(isset($_POST['type']) && $_POST['type'] == 'diary'){

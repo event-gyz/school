@@ -376,7 +376,7 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .bread-crumb li{float: left;font-size: 14px;color:#999;position: relative;padding-right: 25px;}
 .bread-crumb li a{color:#999;}
 .bread-crumb li b{position: absolute;top:center;right:6px;}
-.ceanza-menu{padding: 0px 0.8585rem 0.5854rem;overflow: hidden;}
+.ceanza-menu{padding: 0px 0.8585rem;overflow: hidden;}
 .ceanza-menu li{float:left;width:48%;height:160px;color:#fff;box-sizing: border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;background:#5CCB4D;margin:30px 0;border-radius: 4px;position: relative;}
 .ceanza-menu li s{position: absolute;top:5px;right:5px;height:18px;padding:0 5px;text-align: center;line-height: 18px;background:#C15050;font-size: 12px;color:#fff;border-radius: 9px;text-decoration: none;}
 .ceanza-menu li:nth-child(odd){margin-right:2%;}
@@ -665,8 +665,19 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 /* 底部导航栏样式 start */
 .foooter_nav{position: fixed;bottom:0;left:0;width:100%;height:1.561rem;background: #F4F4F4;box-shadow: 0px 3px 3px -3px #DBDBDB;z-index: 999;margin:0;padding:0;}
 .foooter_nav li{float: left;width:20%;text-align: center;list-style: none;}
-.foooter_nav li a{display: block;color:#AAAAAA;}
-.foooter_nav li p{line-height: 1.0244rem;margin-bottom: 0.0488rem;}
+.foooter_nav li a{display: block;color:#7D7D7D;}
+.foooter_nav li p{width:100%;height:0.7805rem;line-height: 1.0244rem;margin:0.1951rem 0 0;text-align: center;}
+.foooter_nav li.icon_menu p{background:url('../../content/epaper/images/ceanza_record.png') no-repeat center center;background-size: 0.7805rem 0.7805rem;}
+.foooter_nav li.icon_index p{background:url('../../content/epaper/images/growth_index.png') no-repeat center center;background-size: 0.7805rem 0.7805rem;}
+.foooter_nav li.icon_report p{background:url('../../content/epaper/images/ceanza_report.png') no-repeat center center;background-size: 0.7805rem 0.7805rem;}
+.foooter_nav li.icon_newcomers p{background:url('../../content/epaper/images/newcomers.png') no-repeat center center;background-size: 0.7805rem 0.7805rem;}
+.foooter_nav li.icon_person p{background:url('../../content/epaper/images/person.png') no-repeat center center;background-size:  0.7805rem 0.7805rem;}
+.foooter_nav li.icon_menu.active p{background:url('../../content/epaper/images/ceanza_record_active.png') no-repeat center center;background-size: 0.7805rem 0.7805rem;}
+.foooter_nav li.icon_index.active p{background:url('../../content/epaper/images/growth_index_active.png') no-repeat center center;background-size: 0.7805rem 0.7805rem;}
+.foooter_nav li.icon_report.active p{background:url('../../content/epaper/images/ceanza_report_active.png') no-repeat center center;background-size: 0.7805rem 0.7805rem;}
+.foooter_nav li.icon_newcomers.active p{background:url('../../content/epaper/images/newcomers_active.png') no-repeat center center;background-size: 0.7805rem 0.7805rem;}
+.foooter_nav li.icon_person.active p{background:url('../../content/epaper/images/person_active.png') no-repeat center center;background-size:  0.7805rem 0.7805rem;}
+.foooter_nav li.active b{color:#3AB72A;}
 /* 底部导航栏样式 end */
 
 @media (max-width:1065px){
@@ -678,7 +689,7 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .slider li .item img{width:100%;}
 .slider-pg{bottom:7%;left:4%;margin-left:0;}
 #content .inbox{padding:20px 2% 80px;width:96%;}
-.inpage #content .inbox{padding:0 0 1.561rem;width:100%;}
+.inpage #content .inbox{padding:0;width:100%;}
 .sbnr li{margin:5px 0.6%;width:23%;}
 .bnrlist img{width:100%;}
 #footer{left:0;margin-left:0;width:100%;}
