@@ -107,6 +107,7 @@ if(isset($payload)) {
         <!-- InstanceBeginEditable name="content" -->
         <section class="ceanza">
             <h4>成长记录</h4>
+            <section class="gopath goback"><a href="index.php">首頁</a> > 成长记录</section>
             <p>替您的宝宝写下成长日记，为您的宝宝记录每天的成长与回忆。</p>
             <a href="ceanza_add.php" class="add_ceanza">新增成长日记<b></b></a>
             <a href="javascript: void(0)" class="ceanza_category">

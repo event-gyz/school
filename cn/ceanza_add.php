@@ -112,6 +112,7 @@ if(isset($payload)) {
             <form action="grow_diary.php" method="post" enctype="multipart/form-data">
                 <input hidden="" name="type" value="diary" />
                 <h4>新增成长记录</h4>
+                <section class="gopath"><a href="index.php">首頁</a> > 新增成长记录</section>
                 <ul class="form">
                     <li class="title-menu">
                         <p>标题：</p>

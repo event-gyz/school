@@ -120,6 +120,7 @@ if(isset($payload)) {
         <!-- InstanceBeginEditable name="content" -->
         <section class="buds_record">
             <h4>萌芽记录</h4>
+            <section class="gopath goback"><a href="index.php">首頁</a> > 萌芽记录</section>
             <ul class="bread-crumb">
                 <li><a href="index.php">首页</a><b>&gt;</b></li>
                 <li><a href="#">萌芽记录</a></li>

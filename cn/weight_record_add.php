@@ -112,6 +112,7 @@ if(isset($payload)) {
 			<form action="weight_record.php" method="post" enctype="multipart/form-data">
 				<input hidden="" name="type" value="diary" />
 				<h4>新增体重记录</h4>
+				<section class="gopath goback"><a href="index.php">首頁</a> > 新增体重记录</section>
 				<ul class="form">
 					<li><p>体重（公斤）：</p><input name="weight" type="text" maxlength="20"></li>
 					<li>

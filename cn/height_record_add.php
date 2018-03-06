@@ -112,6 +112,7 @@ if(isset($payload)) {
 			<form action="height_record.php" method="post" enctype="multipart/form-data">
 				<input hidden="" name="type" value="diary" />
 				<h4>新增身高记录</h4>
+				<section class="gopath"><a href="index.php">首頁</a> > 新增身高记录</section>
 				<ul class="form">
 					<li><p>身高（公分）：</p><input name="height" type="text" maxlength="20"></li>
 					<li>

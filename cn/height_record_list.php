@@ -132,6 +132,7 @@ if(isset($payload)) {
 		<!-- InstanceBeginEditable name="content" -->
 		<section class="height_record">
 			<h4>身高记录</h4>
+			<section class="gopath goback"><a href="index.php">首頁</a> > 身高记录</section>
 			<p>您可以在这里看到宝宝的身高改变曲线，当宝宝的身高落于有顏色的区域，这代表着符合世界卫生组织(WHO)儿童身高区间，也就是身高落于大部分儿童身高族群之间。</p>
 			<a href="height_record_add.php" class="add_height_record">新增身高记录<b></b></a>
 			<div class="browse_mode">

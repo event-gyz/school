@@ -108,6 +108,7 @@ if(isset($payload)) {
 		<!-- InstanceBeginEditable name="content" -->
 		<section class="ceanza">
 			<h4>就诊记录</h4>
+			<section class="gopath goback"><a href="index.php">首頁</a> > 就诊记录</section>
 			<p>每笔就诊记录都是日后珍贵的就医参考，同时也能了解宝宝的免疫能力与健康状态。</p>
 			<a href="medical_record_add.php" class="add_consultation">新增就诊记录<b></b></a>
 			<a href="medical_institution_add.php" class="add_medical_institution">新增常用医疗机构<b></b></a>

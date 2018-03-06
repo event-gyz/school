@@ -118,6 +118,7 @@ if(isset($payload)) {
 				//				print_r($result);
 				?>
 				<h4>编辑成长记录</h4>
+				<section class="gopath"><a href="index.php">首頁</a> > 编辑成长记录</section>
 				<ul class="eqit_content">
 					<input type="hidden" name="file" value=<?php echo $result['picurl']?> />
 					<li class="title">标题：<input type="text" name="title" value="<?php echo $result['title']?>"></li>

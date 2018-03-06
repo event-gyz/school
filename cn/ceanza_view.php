@@ -114,6 +114,7 @@ if(isset($payload)) {
 			//				print_r($result);
 			?>
 			<h4>查看成长记录</h4>
+			<section class="gopath goback"><a href="index.php">首頁</a> > 查看成长记录</section>
 			<ul class="ceanza_view">
 				<li class="title">标题：<?php echo $result['title']?></li>
 				<li>内容：<?php echo $result['content']?></li>
@@ -130,6 +131,7 @@ if(isset($payload)) {
 		<!-- InstanceEndEditable -->
 	</section>
 	<!--【Content End】-->
+
 	<!--【Footer】-->
 	<?php include 'inc_footer.html'; ?>
 	<!--【Footer End】-->

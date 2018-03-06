@@ -117,6 +117,7 @@ if(isset($payload)) {
 				?>
 				<input type="hidden" name="file" value=<?php echo $result['picurl']?> />
 				<h4>编辑体重记录</h4>
+				<section class="gopath goback"><a href="index.php">首頁</a> > 编辑体重记录</section>
 				<ul class="eqit_content">
 					<li class="title">体重（公斤）：<input type="text" name="weight" value="<?= $result['weight']?>"></li>
 					<li class="eqitUploadImg">

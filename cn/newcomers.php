@@ -108,6 +108,7 @@ include('inc.php');
         	<section class="newcomers">
         		<div class="title">
     				<h4>新手上路</h4>
+                    <section class="gopath goback"><a href="index.php">首頁</a> > 新手上路</section>
     				<p><img src="../content/epaper/images/newcomers_logo.jpg" alt=""></p>
     			</div>
     			<dl class="newcomers_guide">
