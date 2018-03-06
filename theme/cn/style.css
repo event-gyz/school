@@ -366,12 +366,12 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .photos .upHead>img{margin:0 auto;position: relative;}
 img.userHead{width:100%;height:100%;}
 .photos .baby-head-portrait .noHead{width:1.1512rem;height:0.9366rem;top:0.2927rem;}
-.photos .father-head-portrait .noHead{width:1.1707rem;height:2.1463rem;}
+.photos .father-head-portrait .noHead{width:1.3659rem;height:2.5366rem;}
 .photos .mather-head-portrait .noHead{width:1.2683rem;height:1.9512rem;top:0.1951rem;}
 .photos .upHead input{position: absolute;width:100%;height:100%;top:0;left:0;opacity: 0;}
-.photos .upHead b{position: absolute;left:50%;bottom:0;width:0.5268rem;height:0.5268rem;background:#FFFFFE;border-radius:50%;transform: translateX(-50%);}
-.photos .upHead b img{width: 0.4293rem;height: 0.3122rem;vertical-align: middle;margin:0 auto;}
-.photos .upHead + span{padding:0.0195rem 0.2439rem;background: #64BE58;border:2px solid #fff;border-radius: 0.0976rem;color:#fff;font-weight: bold;}
+.photos .upHead b{position: absolute;left:50%;bottom:0;width:0.5268rem;height:0.5268rem;background:#FFFFFE;border-radius:50%;transform: translateX(-50%);opacity: .6;}
+.photos .upHead p{position: absolute;left:50%;bottom:0.1073rem;width: 0.3902rem;height: 0.3122rem;background:url('../../content/epaper/images/samll_camera.png') no-repeat;background-size:100% 100%;transform: translateX(-50%);}
+.photos .upHead + span{color:#1D940D;font-weight: bold;}
 .ceanza_menu_bg{width:100%;height:7.3171rem;background:url('../../content/epaper/images/ceanza_menu_bg.png') no-repeat center;background-size: 100% 100%;box-shadow: 0 -20px 20px 0px #FDF7F0;}
 .ceanza h4,.relevant_articles>h4,.height_record h4,.weight_record h4,.buds_record>h4,.medical_institution h4,.medical_record h4,.growth_index>h4,.newcomers .title h4{margin-bottom: 0.0976rem;padding: 0 0.5854rem;color:#5FBF51;font-size:20px;text-shadow:2px 3px 5px rgba(0,0,0,0.15);font-weight: 600;}
 .goback{padding-left:0.5854rem;}
@@ -645,8 +645,8 @@ img.userHead{width:100%;height:100%;}
 .baby_info .baby-head-portrait .upHead>img{width:80%;height:80%;position: relative;top:0.1951rem;}
 .parent-head-portrait .noHead,.baby_info .baby-head-portrait .noHead{width:100%;height:100%;}
 .parent-head-portrait .upHead input,.baby_info .baby-head-portrait .upHead input{position: absolute;width:100%;height:100%;top:0;left:0;opacity: 0;}
-.parent-head-portrait .upHead b,.baby_info .baby-head-portrait .upHead b{position: absolute;left:50%;bottom:0;width:0.5268rem;height:0.5268rem;background:#FFEEE2;border-radius:50%;transform: translateX(-50%);}
-.parent-head-portrait .upHead b img,.baby_info .baby-head-portrait .upHead b img{width: 0.4293rem;height: 0.3122rem;vertical-align: middle;margin:0 auto;}
+.parent-head-portrait .upHead b,.baby_info .baby-head-portrait .upHead b{position: absolute;left:50%;bottom:0;width:0.5268rem;height:0.5268rem;background:#FFEEE2;border-radius:50%;transform: translateX(-50%);opacity: .6;}
+.parent-head-portrait .upHead p,.baby_info .baby-head-portrait .upHead p{position: absolute;left:50%;bottom:0.1073rem;width: 0.3902rem;height: 0.3122rem;background:url('../../content/epaper/images/samll_camera.png') no-repeat;background-size:100% 100%;transform: translateX(-50%);}
 .parent-head-portrait .upHead + span,.baby_info .baby-head-portrait .upHead + span{color:#B7B2A9;font-size: 0.5854rem;line-height: 1.1707rem;}
 .info_list{border-top:1px solid #E3E3E3;width:90%;margin: 0.2927rem auto 0;}
 .info_list li{border-bottom: 1px solid #E3E3E3;padding: 0 1.1707rem 0 0.3902rem;line-height: 1.0732rem;font-size: 0.3902rem;color:#B7B2A9;position: relative;overflow: hidden;}
