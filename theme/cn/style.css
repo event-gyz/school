@@ -363,11 +363,11 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .baby-head-portrait{top:-1.7561rem;left:4.2927rem;}
 .father-head-portrait{top:2.1463rem;left:0.4878rem;}
 .photos .upHead{position: relative;width:1.561rem;height:1.561rem;border:2px solid #D8EFD5;border-radius: 50%;margin-bottom:0.1463rem;overflow: hidden;background: #fff;}
-.photos .upHead>img{margin:0 auto;position: relative;}
+.photos .upHead>img{width:100%;height:100%;position: relative;}
 img.userHead{width:100%;height:100%;}
-.photos .baby-head-portrait .noHead{width:1.1512rem;height:0.9366rem;top:0.2927rem;}
-.photos .father-head-portrait .noHead{width:1.3659rem;height:2.5366rem;}
-.photos .mather-head-portrait .noHead{width:1.2683rem;height:1.9512rem;top:0.1951rem;}
+/*.photos .baby-head-portrait .noHead{width:1.1512rem;height:0.9366rem;top:0.2927rem;}
+.photos .father-head-portrait .noHead{width:100%;height:100%;}
+.photos .mather-head-portrait .noHead{width:1.2683rem;height:1.9512rem;top:0.1951rem;}*/
 .photos .upHead input{position: absolute;width:100%;height:100%;top:0;left:0;opacity: 0;}
 .photos .upHead b{position: absolute;left:50%;bottom:0;width:0.5268rem;height:0.5268rem;background:#FFFFFE;border-radius:50%;transform: translateX(-50%);opacity: .6;}
 .photos .upHead p{position: absolute;left:50%;bottom:0.1073rem;width: 0.3902rem;height: 0.3122rem;background:url('../../content/epaper/images/samll_camera.png') no-repeat;background-size:100% 100%;transform: translateX(-50%);}
@@ -642,7 +642,7 @@ img.userHead{width:100%;height:100%;}
 .parent-head-portrait,.baby_info .baby-head-portrait{text-align: center;}
 .parent-head-portrait .upHead,.baby_info .baby-head-portrait .upHead{position: relative;width:2.3415rem;height:2.3415rem;border:2px solid #CDEAC9;border-radius: 50%;overflow: hidden;background: #fff;margin:0 auto;}
 .parent-head-portrait .upHead>img{width:100%;height:100%;position: relative;}
-.baby_info .baby-head-portrait .upHead>img{width:80%;height:80%;position: relative;top:0.1951rem;}
+.baby_info .baby-head-portrait .upHead>img{width:100%;height:100%;}
 .parent-head-portrait .noHead,.baby_info .baby-head-portrait .noHead{width:100%;height:100%;}
 .parent-head-portrait .upHead input,.baby_info .baby-head-portrait .upHead input{position: absolute;width:100%;height:100%;top:0;left:0;opacity: 0;}
 .parent-head-portrait .upHead b,.baby_info .baby-head-portrait .upHead b{position: absolute;left:50%;bottom:0;width:0.5268rem;height:0.5268rem;background:#FFEEE2;border-radius:50%;transform: translateX(-50%);opacity: .6;}

@@ -93,6 +93,9 @@ $(function(){
     $("#menuitem_6_m").click(onMenuItem6Click);
     $("#menuitem_7").click(onMenuItem7Click);
     $("#menuitem_7_m").click(onMenuItem7Click);
+	$("#menuitem_8").click(onMenuItem8Click);
+	$("#menuitem_8_m").click(onMenuItem8Click);
+
 });
 
 function onMenuItem2Click() {
@@ -234,6 +237,55 @@ function onMenuItem7Click() {
             error: function(xhr, err) {
       		}
         }); 
+}
+
+function onMenuItem8Click() {
+	$.ajax({url: "check_login_status.ajax.php",
+		type: "POST",
+		dataType: "json",
+		success: function (jsonStr) {
+			if(jsonStr.islogin==true) {
+				_next_move_ = 0;
+				document.location.href = 'http://x.eqxiu.com/s/PclsbuXT';
+			}
+			else {
+				_next_move_ = 107;
+				$.fancybox({
+					href: "#fy-login"
+				});
+			}
+		},
+		error: function(xhr, err) {
+		}
+	});
+}
+
+function goUrlClick(url) {
+	$.ajax({url: "check_login_status.ajax.php",
+		type: "POST",
+		dataType: "json",
+		success: function (jsonStr) {
+			if(jsonStr.islogin==true) {
+				if(jsonStr.haskid==true) {
+					_next_move_ = 0;
+					document.location.href = url;
+				}
+				else {
+					_next_move_ = 100;
+					showEditBabyBox();
+				}
+			}
+			else {
+				_next_move_ = 100;
+				$.fancybox({
+					href: "#fy-login"
+				});
+			}
+		},
+		error: function(xhr, err) {
+			alert('Ajax request ' + err);
+		}
+	});
 }
 
 //-- birhday --//
@@ -468,7 +520,7 @@ function loadTrialQA(year,month) {
 <!--	            <li --><?php //if($pagename=='training') echo('class="on"'); ?><!-->
 <!--					<a id="menuitem_4" href="javascript:void(0);">每日e练习</a>-->
 <!--				</li>-->
-	            <li <?php if($pagename=='buds_record') echo('class="on"'); ?>><a href="buds_record.php">萌芽记录</a></li>
+	            <li <?php if($pagename=='buds_record') echo('class="on"'); ?>><a id="menuitem_8">萌芽记录</a></li>
 
 	            <li <?php if($pagename=='epaper') echo('class="on"'); ?>><a  id="menuitem_7" href="javascript:void(0);">巴布豆家庭早教</a></li>
 	            <li <?php if($pagename=='about') echo('class="on"'); ?>><a href="about.php">关于我们</a></li>
@@ -487,7 +539,7 @@ function loadTrialQA(year,month) {
 			<li <?php if($pagename=='itemlist') echo('class="on"'); ?>><a id="menuitem_3_m" href="javascript:void(0);">成长指标</a></li>
 			<li <?php if($pagename=='report') echo('class="on"'); ?>><a id="menuitem_6_m" href="javascript:void(0);">成长报告</a></li>
 			<li <?php if($pagename=='ceanza_menu') echo('class="on"'); ?>><a id="menuitem_2_m" href="javascript:void(0);">成长日记</a></li>
-            <li <?php if($pagename=='buds_record') echo('class="on"'); ?>><a href="buds_record.php">萌芽记录</a></li>
+            <li <?php if($pagename=='buds_record') echo('class="on"'); ?>><a id="menuitem_8_m">萌芽记录</a></li>
 
             <li <?php if($pagename=='epaper') echo('class="on"'); ?>><a id="menuitem_7_m" href="javascript:onMenuItem4Click();">巴布豆家庭早教</a></li>
             <li <?php if($pagename=='about') echo('class="on"'); ?>><a href="about.php">关于我们</a></li>

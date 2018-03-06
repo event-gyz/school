@@ -64,7 +64,12 @@ if(!isset($tabon))
                             <div class="progress_data">
 
                                 <h3>
-                                    <?= $_SESSION['CURRENT_KID_NICKNAME'];?>
+                                    <?=
+
+                                    $_SESSION['CURRENT_KID_NICKNAME'];
+
+
+                                    ?>
                                     <span>
                                     <?php
                                     $birthday = new DateTime($_SESSION['CURRENT_KID_BIRTH_DAY']);

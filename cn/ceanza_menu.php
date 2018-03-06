@@ -1,6 +1,14 @@
 <?php
 session_start();
 include('inc.php');
+
+$tabon = @$_REQUEST['f'];
+if(!isset($tabon))
+    $tabon = 0;
+if(!isset($_SESSION['user_token'])) {
+    header( 'Location: index.php' ) ;
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html><!-- InstanceBegin template="/Templates/_page01.dwt" codeOutsideHTMLIsLocked="false" -->

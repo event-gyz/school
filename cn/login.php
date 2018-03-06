@@ -38,6 +38,16 @@ else {
 		$kid = M()->find($sql);
 		$_SESSION['CURRENT_KID_BIRTH_DAY'] = $kid['birth_day'];
 		$_SESSION['CURRENT_KID_UID'] = $kid['uid'];
+		$_SESSION['CURRENT_KID_NICKNAME'] = $kid['nick_name'];
+		$_birthday = $kid['birth_day'];
+		$birthday = new DateTime($_birthday);
+		$diff = $birthday->diff(new DateTime());
+		$months = $diff->format('%m') + 12 * $diff->format('%y');
+		$days = $diff->format('%d');
+		if($days >= 15)
+			$months += 0.5;
+		$user_age = $months;
+		$_SESSION['CURRENT_KID_AGE'] = $user_age;
 		echo(genResponse(true, json_encode($arr)));
 	}
 	else
