@@ -160,11 +160,11 @@ if($member_uid > 0) {
 			<div class="baby-head-portrait">
 				<div class="upHead">
 					<?php if($image_url){?>
-						<img src=<?= $image_url?> alt="" id="img" class="userHead">
+						<img src=<?= $image_url?>  alt=""  class="userHead">
 					<?php }else{ ?>
-						<img src="../content/epaper/images/baby.png" alt="" id="img" class="noHead">
+						<img src="../content/epaper/images/baby.png" alt=""  class="noHead">
 					<?php } ?>
-					<b></b>
+                    <b><img src="../content/epaper/images/samll_camera.png" alt=""></b>
 					<form action="head_sculpture.php" class="babyForm" method="post" enctype="multipart/form-data">
 						<input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="imgfile">
 						<input hidden="" name="type" value="baby" />

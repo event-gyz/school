@@ -8,9 +8,11 @@ include('inc.php');
 	<?php include('inc_head.php');	?>
 	<style>
 		body{background: none;}
+		#content{padding-top: 0}
 		h1,h2,h3,h4,h5,h6,p,ul,li,dl,dt,dd{margin:0;padding:0;list-style: none;}
 		input,button{padding: 0;margin:0;border:0;outline: none;}
 		img{vertical-align: bottom}
+		.ceanza_menu_bg{padding-top: 125px;}
 	</style>
 </head>
 <body>
@@ -136,15 +138,15 @@ if($member_uid > 0) {
 				<h4>成长日记</h4>
 				<section class="gopath goback"><a href="index.php">首页</a> > 成长日记</section>
 				<div class="photos">
-					<p><img src="../content/epaper/images/parents.png" alt=""></p>
+
 					<div class="father-head-portrait">
 						<div class="upHead">
 							<?php if($fatherImage){?>
-							<img src=<?= $fatherImage?> alt="" id="img" class="userHead">
+								<img src=<?= $fatherImage?> alt=""  class="userHead"  >
 							<?php }else{ ?>
-							<img src="../content/epaper/images/father.png" alt="" id="img" class="noHead">
+								<img src="../content/epaper/images/father.png" alt=""  class="noHead">
 							<?php } ?>
-							<b></b>
+							<b><img src="../content/epaper/images/samll_camera.png" alt=""></b>
 							<form action="head_sculpture.php" class="personForm" method="post" enctype="multipart/form-data">
 								<input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="personImgfile">
 								<input hidden="" name="type" value="father" />
@@ -155,11 +157,11 @@ if($member_uid > 0) {
 					<div class="baby-head-portrait">
 						<div class="upHead">
 							<?php if($babyImage){?>
-								<img src=<?= $babyImage?> alt="" id="img" class="userHead">
+								<img src=<?= $babyImage?> alt=""  class="userHead"  >
 							<?php }else{ ?>
-								<img src="../content/epaper/images/baby.png" alt="" id="img" class="noHead">
+								<img src="../content/epaper/images/baby.png" alt=""  class="noHead">
 							<?php } ?>
-							<b></b>
+							<b><img src="../content/epaper/images/samll_camera.png" alt=""></b>
 							<form action="head_sculpture.php" class="babyForm" method="post" enctype="multipart/form-data">
 								<input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="babyImgfile">
 								<input hidden="" name="type" value="baby" />
@@ -170,11 +172,11 @@ if($member_uid > 0) {
 					<div class="mather-head-portrait">
 						<div class="upHead">
 							<?php if($momImage){?>
-								<img src=<?= $momImage?> alt="" id="img" class="userHead">
+								<img src=<?= $momImage?> alt=""  class="userHead"  >
 							<?php }else{ ?>
-								<img src="../content/epaper/images/mather.png" alt="" id="img" class="userHead">
+								<img src="../content/epaper/images/mather.png" alt=""  class="noHead">
 							<?php } ?>
-							<b></b>
+							<b><img src="../content/epaper/images/samll_camera.png" alt=""></b>
 							<form action="head_sculpture.php" class="momForm" method="post" enctype="multipart/form-data">
 								<input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="momImgfile">
 								<input hidden="" name="type" value="mother" />
@@ -256,14 +258,7 @@ if($member_uid > 0) {
 </section>
 <?php include 'inc_bottom_js.php'; ?>
 <script>
-	var fatherHead = ''
-	if(fatherHead == ''){
-		$('.father-head-portrait .noHead').css('display','block')
-		$('.father-head-portrait .userHead').css('display','none')
-	}else{
-		$('.father-head-portrait .noHead').css('display','none')
-		$('.father-head-portrait .userHead').css('display','block')
-	}
+
 
 	$('.personImgfile').on('change', function(){
 		$(this).closest('form').submit();
