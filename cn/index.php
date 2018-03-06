@@ -186,7 +186,7 @@ if(isset($payload)) {
                 <?php include 'inc_trial.php'; ?>
                 <!--//【Fancybox】體驗流程//-->
 
-                <!--//首頁三區塊//-->
+                <!--//首页三區塊//-->
                 <section class="contbox clearfix">
 
                     <!--//推薦文章//-->
@@ -221,7 +221,7 @@ if(isset($payload)) {
                 <!--//右側Bnr//-->
 
             </section>
-            <!--//首頁三區塊//-->
+            <!--//首页三區塊//-->
 
         </section>
     </section>

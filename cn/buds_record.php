@@ -12,10 +12,9 @@ include('inc.php');
         input,button{padding: 0;margin:0;border:0;outline: none;}
         img{vertical-align: bottom}
     </style>
-    <link rel="stylesheet" href="../theme/cn/jquery.cxcalendar.css">
-    <script src="../scripts/jquery.cxcalendar.js"></script>
 </head>
 <body>
+
 <?php
 $payload=@$_GET['t'];
 if(isset($payload)) {
@@ -120,7 +119,7 @@ if(isset($payload)) {
         <!-- InstanceBeginEditable name="content" -->
         <section class="buds_record">
             <h4>萌芽记录</h4>
-            <section class="gopath goback"><a href="index.php">首頁</a> > 萌芽记录</section>
+            <section class="gopath goback"><a href="index.php">首页</a> > 萌芽记录</section>
             <p>记录您宝宝牙齿的成长时间，能够更了解您宝宝在营养吸收和生长发育的健康状态！</p>
             <div class="model_diagram">
                 <ul class="model_diagram_left">
@@ -306,6 +305,8 @@ if(isset($payload)) {
 
 </section>
 <?php include 'inc_bottom_js.php'; ?>
+<link rel="stylesheet" href="../theme/cn/jquery.cxcalendar.css">
+<script src="../scripts/jquery.cxcalendar.js"></script>
 <script>
     // 限制可选日期
     $('.date_a').cxCalendar({

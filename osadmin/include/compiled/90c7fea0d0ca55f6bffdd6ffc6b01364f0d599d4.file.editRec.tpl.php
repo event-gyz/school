@@ -46,7 +46,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <link href="ckeditor/_samples/sample.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-總筆數: <b><?php echo $_smarty_tpl->tpl_vars['total']->value;?>
+总筆數: <b><?php echo $_smarty_tpl->tpl_vars['total']->value;?>
 </b>
 <p></p>
 <p><input type="button" name="new_button" value="新增">

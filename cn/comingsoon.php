@@ -30,7 +30,7 @@ $title = $_GET['t'];
             	
                 <!--//主選單標題與路徑//-->
                 <h2 class="title">即將開放</h2>
-                <section class="gopath"><a href="index.php">首頁</a> > 即將開放</section>
+                <section class="gopath"><a href="index.php">首页</a> > 即將開放</section>
                 <!--//主選單標題與路徑//-->
                 
                 <!--//敬請期待//-->

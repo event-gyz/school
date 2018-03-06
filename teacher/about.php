@@ -29,7 +29,7 @@ $func = 999;
             	
                 <!--//主選單標題與路徑//-->
                 <h2 class="title">关于我们</h2>
-                <section class="gopath"><a href="#">首頁</a> > 关于我们</section>
+                <section class="gopath"><a href="#">首页</a> > 关于我们</section>
                 <!--//主選單標題與路徑//-->
                 
                 <!--//文章區//-->

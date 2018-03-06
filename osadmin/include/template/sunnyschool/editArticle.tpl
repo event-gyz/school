@@ -8,7 +8,7 @@
 <link href="ckeditor/_samples/sample.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-總筆數: <b><{$total}></b>
+总筆數: <b><{$total}></b>
 <p></p>
 <select name="type_filter" id="type_filter">
 <{html_options values=$radio_options_val output=$radio_options_name selected=$type_filter_selected_val}>

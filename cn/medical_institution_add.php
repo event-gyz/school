@@ -107,7 +107,7 @@ if(isset($payload)) {
 		<!-- InstanceBeginEditable name="content" -->
 		<section class="medical_institution">
 			<h4>新增常用医疗机构资料</h4>
-			<section class="gopath goback"><a href="index.php">首頁</a> > 新增常用医疗机构资料</section>
+			<section class="gopath goback"><a href="index.php">首页</a> > 新增常用医疗机构资料</section>
 			<form action="medical_institution.php" method="post" enctype="multipart/form-data">
 				<ul class="form">
 					<li class="title">

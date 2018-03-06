@@ -32,7 +32,7 @@ if(!isset($_SESSION['user_token'])) {
             	
                 <!--//主選單標題與路徑//-->
                 <h2 class="title">每日e练习</h2>
-                <section class="gopath"><a href="#">首頁</a> > 每日e练习</section>
+                <section class="gopath"><a href="#">首页</a> > 每日e练习</section>
                 <!--//主選單標題與路徑//-->
                 
                 <!--//每日e练习//-->

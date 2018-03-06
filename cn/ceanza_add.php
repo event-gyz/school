@@ -6,9 +6,7 @@ include('inc.php');
 <html><!-- InstanceBegin template="/Templates/_page01.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
     <?php include('inc_head.php');	?>
-    <link rel="stylesheet" href="../theme/cn/jquery.cxcalendar.css">
     <script src="../scripts/megapix/megapix-image.js"></script>
-    <script src="../scripts/jquery.cxcalendar.js"></script>
     <style>
         body{background: none;}
         h1,h2,h3,h4,h5,h6,p,ul,li,dl,dt,dd{margin:0;padding:0;list-style: none;}
@@ -17,6 +15,7 @@ include('inc.php');
     </style>
 </head>
 <body>
+
 <?php
 $payload=@$_GET['t'];
 if(isset($payload)) {
@@ -112,7 +111,7 @@ if(isset($payload)) {
             <form action="grow_diary.php" method="post" enctype="multipart/form-data">
                 <input hidden="" name="type" value="diary" />
                 <h4>新增成长记录</h4>
-                <section class="gopath"><a href="index.php">首頁</a> > 新增成长记录</section>
+                <section class="gopath"><a href="index.php">首页</a> > 新增成长记录</section>
                 <ul class="form">
                     <li class="title-menu">
                         <p>标题：</p>
@@ -225,6 +224,8 @@ if(isset($payload)) {
 
 </section>
 <?php include 'inc_bottom_js.php'; ?>
+<link rel="stylesheet" href="../theme/cn/jquery.cxcalendar.css">
+<script src="../scripts/jquery.cxcalendar.js"></script>
 <script>
     // 限制可选日期
     $('.date_a').cxCalendar({

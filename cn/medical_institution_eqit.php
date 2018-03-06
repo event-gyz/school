@@ -115,7 +115,7 @@ if(isset($payload)) {
 				<input type="hidden" name="type" value="update" />
 				<input type="hidden" name="id" value="<?php echo $_GET['id']?>" />
 				<h4>编辑常用医疗机构资料</h4>
-				<section class="gopath goback"><a href="index.php">首頁</a> > 编辑常用医疗机构资料</section>
+				<section class="gopath goback"><a href="index.php">首页</a> > 编辑常用医疗机构资料</section>
 				<ul class="eqit_content">
 					<li class="title">医院：<input type="text" name="hospital" value="<?= $result['hospital']?>"></li>
 					<li class="doctor">医生：<input type="text" name="doctor_name" value="<?= $result['doctor_name']?>"></li>

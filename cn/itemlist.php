@@ -44,7 +44,7 @@ if(!isset($tabon))
 
                     <!--//主選單標題與路徑//-->
                     <h2 class="title">成长指标</h2>
-                    <section class="gopath"><a href="index.php">首頁</a> > 成长指标</section>
+                    <section class="gopath"><a href="index.php">首页</a> > 成长指标</section>
                     <!--//主選單標題與路徑//-->
 
                     <!--//成長指標//-->

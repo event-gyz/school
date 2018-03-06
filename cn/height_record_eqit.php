@@ -117,7 +117,7 @@ if(isset($payload)) {
 				?>
 				<input type="hidden" name="file" value=<?php echo $result['picurl']?> />
 				<h4>编辑身高记录</h4>
-				<section class="gopath"><a href="index.php">首頁</a> > 编辑身高记录</section>
+				<section class="gopath"><a href="index.php">首页</a> > 编辑身高记录</section>
 				<ul class="eqit_content">
 					<li class="title">身高（公分）：<input type="text" name="height" value="<?= $result['height']?>"></li>
 					<li class="eqitUploadImg">

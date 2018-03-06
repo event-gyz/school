@@ -86,7 +86,7 @@ a.i-more{color:#666666;font-size:13px;position:absolute;right:0;text-shadow:none
 .bnrlist img{border:1px solid #CCCCCC;border-radius:5px;margin:0 auto 14px;}
 .inpage #content .indexcont{background:none repeat scroll 0 0 rgba(0,0,0,0);}
 .inpage #content .inbox{padding:100px 30px 80px;width:1005px;}
-.contbox h2.title{color:#5FBF51;font-size:20px;padding:0 0 10px;text-shadow:2px 3px 5px rgba(0,0,0,0.15);}
+.contbox h2.title{color:#5FBF51;font-size:20px;padding:0 0 10px;text-shadow:2px 3px 5px rgba(0,0,0,0.15);font-weight: 600;}
 .gopath,.gopath a{color:#999999;padding:0 0 15px;}
 .gopath a:hover{color:#5FBF51;}
 .picbox{display:inline;float:right;padding:0 0 40%;position:relative;width:41%;}
@@ -360,16 +360,18 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .photos{position: relative;}
 .photos>div{position: absolute;text-align: center;}
 .mather-head-portrait{top:2.5366rem;left:0.4878rem;}
-.baby-head-portrait{top:0.1951rem;left:3.9024rem;}
+.baby-head-portrait{top:-0.878rem;left:3.9024rem;}
 .father-head-portrait{top:3.122rem;right:0.5854rem;}
-.photos .upHead{position: relative;width:1.3659rem;height:1.3659rem;border:1px solid #57CF43;border-radius: 50%;margin-bottom:0.1463rem;overflow: hidden;background: #D8EFD5;}
+.photos .upHead{position: relative;width:1.561rem;height:1.561rem;border:1px solid #57CF43;border-radius: 50%;margin-bottom:0.1463rem;overflow: hidden;background: #D8EFD5;}
 .photos .upHead img{width:100%;height:100%;position: relative;/*top:0.0976rem;*/}
 /*.father-head-portrait .noHead{left: 0.1463rem;}*/
 .photos .upHead input{position: absolute;width:100%;height:100%;top:0;left:0;opacity: 0;}
 .photos .upHead b{position: absolute;left:50%;bottom:0;width:0.3902rem;height:0.3902rem;background:#64BE58 url('../../content/epaper/images/samll_camera.png') no-repeat center center;background-size: 80% 65%;border-radius:50%;transform: translateX(-50%);}
 .photos .upHead + span{padding:0.0195rem 0.2439rem;background: #64BE58;border:2px solid #fff;border-radius: 0.0976rem;color:#fff;font-weight: bold;}
-.photos p>img{width:100%;height:auto;}
-.ceanza h4,.relevant_articles>h4,.height_record h4,.weight_record h4,.buds_record>h4,.medical_institution h4,.medical_record h4,.growth_index>h4,.newcomers .title h4{color:#60C351;font-size: 22px;margin-bottom: 0.0976rem;padding: 0 0.5854rem;}
+.ceanza_menu_bg{width:100%;background: linear-gradient(to top,rgba(252,242,233,0.9),rgba(255,255,255,0)),url('../../content/epaper/images/ceanza_menu_bg.png') no-repeat center;background-size: 100% 18.6439rem;box-shadow: 0 -20px 20px 0px #FDF7F0;}
+.photos p{height:5.8537rem;position: relative;}
+.photos p>img{width: 4.6829rem;height:4.878rem;position: absolute;bottom:0;left:50%;transform: translateX(-50%);}
+.ceanza h4,.relevant_articles>h4,.height_record h4,.weight_record h4,.buds_record>h4,.medical_institution h4,.medical_record h4,.growth_index>h4,.newcomers .title h4{margin-bottom: 0.0976rem;padding: 0 0.5854rem;color:#5FBF51;font-size:20px;text-shadow:2px 3px 5px rgba(0,0,0,0.15);font-weight: 600;}
 .goback{padding-left:0.5854rem;}
 .ceanza>form h4,.height_record>form h4,.weight_record>form h4{padding: 0;}
 .medical_institution>h4,.medical_record>h4{margin-bottom: 10px;}

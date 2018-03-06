@@ -36,7 +36,7 @@ if(!isset($_SESSION['user_token'])) {
             	
                 <!--//主選單標題與路徑//-->
                 <h2 class="title">成长报告</h2>
-                <section class="gopath"><a href="index.php">首頁</a> > 成长报告</section>
+                <section class="gopath"><a href="index.php">首页</a> > 成长报告</section>
                 <!--//主選單標題與路徑//-->
                 
                 <!--//成長報告//-->
@@ -66,7 +66,7 @@ if(!isset($_SESSION['user_token'])) {
                         </section>
                     </section>
                     
-                    <!--//待完成項目與看總表//-->
+                    <!--//待完成項目與看总表//-->
                     <section class="repinfo clearfix">
                     	<section class="repother">
                         	<h3 class="title">待完成项目：</h3>
@@ -86,7 +86,7 @@ $sql = "select text from grow_index where (age_min <= '$user_age' and age_max >=
                             </ul>
                         </section>
                         <section class="btnbox clearfix">
-                            <a href="itemlist.php" class="btn01"><i><img src="../theme/cn/images/content/icon_btn09.png"></i><span>去看看總表</span></a>
+                            <a href="itemlist.php" class="btn01"><i><img src="../theme/cn/images/content/icon_btn09.png"></i><span>去看看总表</span></a>
                         </section>
                     </section>
                     

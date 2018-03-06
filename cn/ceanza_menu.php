@@ -132,45 +132,47 @@ if($member_uid > 0) {
 	<section id="content">
 		<!-- InstanceBeginEditable name="content" -->
 		<section class="ceanza">
-			<h4>成长日记</h4>
-			<section class="gopath goback"><a href="index.php">首頁</a> > 成长日记</section>
-			<div class="photos">
-				<p><img src="../content/epaper/images/ceanza_menu.jpg" alt=""></p>
-				<div class="father-head-portrait">
-					<div class="upHead">
-						<img src=<?= $fatherImage?> alt="" id="img" class="noHead">
-						<img alt="" id="img" class="userHead">
-						<b></b>
-						<form action="head_sculpture.php" class="personForm" method="post" enctype="multipart/form-data">
-							<input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="personImgfile">
-							<input hidden="" name="type" value="father" />
-						</form>
+			<div class="ceanza_menu_bg">
+				<h4>成长日记</h4>
+				<section class="gopath goback"><a href="index.php">首页</a> > 成长日记</section>
+				<div class="photos">
+					<p><img src="../content/epaper/images/parents.png" alt=""></p>
+					<div class="father-head-portrait">
+						<div class="upHead">
+							<img src=<?= $fatherImage?> alt="" id="img" class="noHead">
+							<img alt="" id="img" class="userHead">
+							<b></b>
+							<form action="head_sculpture.php" class="personForm" method="post" enctype="multipart/form-data">
+								<input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="personImgfile">
+								<input hidden="" name="type" value="father" />
+							</form>
+						</div>
+						<span>宝爸</span>
 					</div>
-					<span>宝爸</span>
-				</div>
-				<div class="baby-head-portrait">
-					<div class="upHead">
-						<img src=<?= $babyImage?> alt="" id="img" class="noHead">
-						<img alt="" id="img" class="userHead">
-						<b></b>
-						<form action="head_sculpture.php" class="babyForm" method="post" enctype="multipart/form-data">
-							<input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="babyImgfile">
-							<input hidden="" name="type" value="baby" />
-						</form>
+					<div class="baby-head-portrait">
+						<div class="upHead">
+							<img src=<?= $babyImage?> alt="" id="img" class="noHead">
+							<img alt="" id="img" class="userHead">
+							<b></b>
+							<form action="head_sculpture.php" class="babyForm" method="post" enctype="multipart/form-data">
+								<input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="babyImgfile">
+								<input hidden="" name="type" value="baby" />
+							</form>
+						</div>
+						<span>宝宝</span>
 					</div>
-					<span>宝宝</span>
-				</div>
-				<div class="mather-head-portrait">
-					<div class="upHead">
-						<img src=<?= $momImage?> alt="" id="img" class="noHead">
-						<img alt="" id="img" class="userHead">
-						<b></b>
-						<form action="head_sculpture.php" class="momForm" method="post" enctype="multipart/form-data">
-							<input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="momImgfile">
-							<input hidden="" name="type" value="mother" />
-						</form>
+					<div class="mather-head-portrait">
+						<div class="upHead">
+							<img src=<?= $momImage?> alt="" id="img" class="noHead">
+							<img alt="" id="img" class="userHead">
+							<b></b>
+							<form action="head_sculpture.php" class="momForm" method="post" enctype="multipart/form-data">
+								<input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="momImgfile">
+								<input hidden="" name="type" value="mother" />
+							</form>
+						</div>
+						<span>宝妈</span>
 					</div>
-					<span>宝妈</span>
 				</div>
 			</div>
 			<ul class="ceanza-menu">

@@ -8,7 +8,7 @@
 <link href="ckeditor/_samples/sample.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-總筆數: <b><{$total}></b>
+总筆數: <b><{$total}></b>
 <p></p>
 <p><input type="button" name="new_button" value="新增">
 </p>

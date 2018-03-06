@@ -107,7 +107,7 @@ if(isset($payload)) {
 		<!-- InstanceBeginEditable name="content" -->
 		<section class="medical_record">
 			<h4>新增就诊记录</h4>
-			<section class="gopath goback"><a href="index.php">首頁</a> > 新增就诊记录</section>
+			<section class="gopath goback"><a href="index.php">首页</a> > 新增就诊记录</section>
 			<form action="medical_records.php" method="post" enctype="multipart/form-data">
 				<input hidden="" name="type" value="diary" />
 				<ul class="form">

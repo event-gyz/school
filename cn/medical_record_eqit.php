@@ -116,7 +116,7 @@ if(isset($payload)) {
 				//				print_r($result);
 				?>
 				<h4>编辑就诊记录</h4>
-				<section class="gopath goback"><a href="index.php">首頁</a> > 编辑就诊记录</section>
+				<section class="gopath goback"><a href="index.php">首页</a> > 编辑就诊记录</section>
 				<ul class="eqit_content">
 					<li>
 						<b class="clock"></b>

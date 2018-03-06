@@ -28,7 +28,7 @@ include('inc.php');
             	
                 <!--//主選單標題與路徑//-->
                 <h2 class="title">电视问答</h2>
-                <section class="gopath"><a href="#">首頁</a> > 电视问答</section>
+                <section class="gopath"><a href="#">首页</a> > 电视问答</section>
                 <!--//主選單標題與路徑//-->
                 
                 <!--//電視問答//-->

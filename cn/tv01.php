@@ -28,10 +28,10 @@ include('inc.php');
             	
                 <!--//主選單標題與路徑//-->
                 <h2 class="title">电视问答</h2>
-                <section class="gopath"><a href="index.php">首頁</a> > 电视问答</section>
+                <section class="gopath"><a href="index.php">首页</a> > 电视问答</section>
                 <!--//主選單標題與路徑//-->
                 
-                <!--//電視問答首頁//-->
+                <!--//電視問答首页//-->
                 <section class="tvbox fst">
                 
                     <!--//文字編輯器區//-->
@@ -60,7 +60,7 @@ include('inc.php');
                     </section>
                     
                 </section>
-                <!--//電視問答首頁//-->
+                <!--//電視問答首页//-->
                 
                 <!--//回頂端//-->
 				<section class="gotop bodytop"><img src="../theme/cn/images/content/item_gotop01.png">回顶端</section>

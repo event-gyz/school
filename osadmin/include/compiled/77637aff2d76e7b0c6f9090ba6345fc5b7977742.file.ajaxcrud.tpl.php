@@ -32,7 +32,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 <!-- TPLSTART 以上内容不需更改，保证该TPL页内的标签匹配即可 -->
 <div style="float: left">
-總筆數: <b><?php echo $_smarty_tpl->tpl_vars['gi_count']->value;?>
+总筆數: <b><?php echo $_smarty_tpl->tpl_vars['gi_count']->value;?>
 </b><br />
 </div>
 <div style="clear:both;"></div>
