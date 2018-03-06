@@ -104,8 +104,8 @@ if($member_uid > 0) {
 		$name = $result['first_name'];
 		$email = $result['email'];
 		$phone = $result['cellphone'];
-		$fatherImage = (!empty($result['father_image']) && $result['father_image']!=' ')?$result['father_image']:'"../content/epaper/images/father.png"';
-		$momImage = (!empty($result['mother_image']) && $result['mother_image']!=' ')?$result['mother_image']:'"../content/epaper/images/mather.png"';
+		$fatherImage = (!empty($result['father_image']) && $result['father_image']!=' ')?$result['father_image']:'';
+		$momImage = (!empty($result['mother_image']) && $result['mother_image']!=' ')?$result['mother_image']:'';
 	}
 	unset($result);
 	unset($sql);
@@ -115,7 +115,7 @@ if($member_uid > 0) {
 		$nick_name = $result['nick_name'];
 		$birth_day = $result['birth_day'];
 		$gender = ($result['gender']==0?"男":"女");
-		$babyImage = (!empty($result['image_url']) && $result['image_url']!=' ')?$result['image_url']:'"../content/epaper/images/baby.png"';
+		$babyImage = (!empty($result['image_url']) && $result['image_url']!=' ')?$result['image_url']:'';
 	}
 }
 
@@ -139,8 +139,11 @@ if($member_uid > 0) {
 					<p><img src="../content/epaper/images/parents.png" alt=""></p>
 					<div class="father-head-portrait">
 						<div class="upHead">
-							<img src=<?= $fatherImage?> alt="" id="img" class="noHead">
-							<img alt="" id="img" class="userHead">
+							<?php if($fatherImage){?>
+							<img src=<?= $fatherImage?> alt="" id="img" class="userHead">
+							<?php }else{ ?>
+							<img src="../content/epaper/images/father.png" alt="" id="img" class="noHead">
+							<?php } ?>
 							<b></b>
 							<form action="head_sculpture.php" class="personForm" method="post" enctype="multipart/form-data">
 								<input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="personImgfile">
@@ -151,8 +154,11 @@ if($member_uid > 0) {
 					</div>
 					<div class="baby-head-portrait">
 						<div class="upHead">
-							<img src=<?= $babyImage?> alt="" id="img" class="noHead">
-							<img alt="" id="img" class="userHead">
+							<?php if($babyImage){?>
+								<img src=<?= $babyImage?> alt="" id="img" class="userHead">
+							<?php }else{ ?>
+								<img src="../content/epaper/images/baby.png" alt="" id="img" class="noHead">
+							<?php } ?>
 							<b></b>
 							<form action="head_sculpture.php" class="babyForm" method="post" enctype="multipart/form-data">
 								<input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="babyImgfile">
@@ -163,8 +169,11 @@ if($member_uid > 0) {
 					</div>
 					<div class="mather-head-portrait">
 						<div class="upHead">
-							<img src=<?= $momImage?> alt="" id="img" class="noHead">
-							<img alt="" id="img" class="userHead">
+							<?php if($momImage){?>
+								<img src=<?= $momImage?> alt="" id="img" class="userHead">
+							<?php }else{ ?>
+								<img src="../content/epaper/images/mather.png" alt="" id="img" class="userHead">
+							<?php } ?>
 							<b></b>
 							<form action="head_sculpture.php" class="momForm" method="post" enctype="multipart/form-data">
 								<input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="momImgfile">
