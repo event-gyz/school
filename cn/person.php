@@ -112,7 +112,7 @@ include('inc.php');
                 $name = $result['first_name'];
                 $email = $result['email'];
                 $phone = $result['cellphone'];
-                $image_url = (!empty($result['image_url']) && $result['image_url']!=' ')?$result['image_url']:'"../content/epaper/images/parent.png"';
+                $image_url = (!empty($result['image_url']) && $result['image_url']!=' ')?$result['image_url']:'';
             }
             unset($result);
             unset($sql);
@@ -131,14 +131,16 @@ include('inc.php');
         	<section class="person">
         		<div class="parent-head-portrait">
     				<div class="upHead">
-    					<img src=<?=$image_url?> alt="" id="img" class="noHead">
-    					<img alt="" id="img" class="userHead">
+						<?php if($image_url){?>
+							<img src=<?= $image_url?> alt="" id="img" class="userHead">
+						<?php }else{ ?>
+							<img src="../content/epaper/images/parent.png" alt="" id="img" class="noHead">
+						<?php } ?>
     					<b></b>
 						<form action="head_sculpture.php"  method="post" enctype="multipart/form-data">
 							<input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="imgfile">
 							<input hidden="" name="type" value="person" />
 						</form>
-
 					</div>
     				<span>家长已登录</span>
     			</div>
