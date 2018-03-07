@@ -30,7 +30,7 @@ else {
 }
 
 // late
-$sql = "select count(*) as late_count from grow_index where age_max < '$user_age' and uid not in (select uid from grow_log where user_uid='$uid')";
+$sql = "select count(*) as late_count from grow_index where age_max < '$user_age' and uid not in (select item_uid from grow_log where user_uid='$uid')";
 $row = M()->find($sql);
 if($row['late_count']) {
 	$late_count = $row['late_count'];

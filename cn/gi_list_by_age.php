@@ -19,9 +19,24 @@ function fetchContent($age, $type, $func,$e) {
 	if(!empty($e) && ($start_age>=12)){
 		$start_age -=12;
 	}
-	$sql = "select grow_index.uid,grow_index.text,grow_index.age_max,grow_index.age_min,grow_log.early from grow_index LEFT JOIN grow_log on grow_log.item_uid=grow_index.uid where grow_log.user_uid='$user_uid' and (grow_index.age_min >= '$start_age' and grow_index.age_min<= '$end_age') or (grow_index.age_max <= '$end_age' and grow_index.age_max >= '$start_age') and grow_index.type='$type' order by uid asc";
-	$resule = M()->select($sql);
-//    print_r($resule);exit;
+//	$sql = "select grow_index.uid,grow_index.text,grow_index.age_max,grow_index.age_min,grow_log.early from grow_index LEFT JOIN grow_log on grow_log.item_uid=grow_index.uid where grow_log.user_uid='$user_uid' and (grow_index.age_min >= '$start_age' and grow_index.age_min<= '$end_age') or (grow_index.age_max <= '$end_age' and grow_index.age_max >= '$start_age') and grow_index.type='$type' order by uid asc";
+    $sql = "select grow_index.uid,grow_index.text,grow_index.age_max,grow_index.age_min from grow_index where ((grow_index.age_min >= '$start_age' and grow_index.age_min<= '$end_age') or (grow_index.age_max <= '$end_age' and grow_index.age_max >= '$start_age')) and grow_index.type='$type' order by uid asc";
+    $sql2 = "select early ,user_uid,item_uid from grow_log where user_uid=$user_uid";
+    $resule = M()->select($sql);
+    $result2 = M()->select($sql2);
+    $a = array_column($result2,'early');
+    $b = array_column($result2,'item_uid');
+    $c = array_combine($b,$a);
+    foreach($resule as &$value){
+        $uid =$value['uid'];
+        if(isset($c[$uid])){
+            $value['early'] = $c[$uid];
+        }else{
+            $value['early'] = '';
+        }
+    }
+
+//    echo '<pre>';print_r($resule);exit;
 	$li_count = 0;
 	foreach($resule as $row){
 		$uid = $row["uid"];
@@ -29,13 +44,13 @@ function fetchContent($age, $type, $func,$e) {
 		$age_max = $row["age_max"];
         $age_min = $row["age_min"];
 		$early = $row["early"];
-		$checked = isset($row['early']);
+		$checked = ($row['early']!='');
 		if(($func == 'b' && $checked) || ($func == 'c' && !$checked))
 			continue;
 
 		$htmlString .= ('<li id="gi_'.$uid.'"');
 
-		if(isset($early)) {
+		if(isset($early) && $early!='') {
 			if($early) {
 				$htmlString .= (' class="pass" ');
 			}
