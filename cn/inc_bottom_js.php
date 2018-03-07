@@ -97,7 +97,7 @@
             var user_id = $("#reg_email").val();
             var user_password = $("#reg_password").val();
             var birthday = $("#reg_date").val();
-            var address = $("#address").val();
+            var city_name = $("#city_name").val();
             var sex = 1;
             if(reg_genner == "男"){
                 sex = 0;
@@ -121,7 +121,7 @@
                     'p5':birthday,
                     'p6':sex,
                     'p7':nickname,
-                    'p8':address,
+                    'p8':city_name,
                 },
                 dataType: "json",
                 success: function (jsonStr) {

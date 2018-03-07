@@ -72,13 +72,13 @@ class MyUser
 		}
 	}
 
-	function register($_EMAIL, $_PASS, $_FNAME, $_LNAME, $_PHONE,$_ADDRESS)
+	function register($_EMAIL, $_PASS, $_FNAME, $_LNAME, $_PHONE,$_CITY)
 	{
 		$_EMAIL = strtolower($_EMAIL);
 		if(!$this->exist( $_EMAIL ))
 		{
 
-			$sql = "INSERT INTO member (`id`, password, first_name, last_name, cellphone, email,address) VALUES ('".$_EMAIL."',md5(lower('".$_PASS."')),'".$_FNAME."','".$_LNAME."','".$_PHONE."','".$_EMAIL."','".$_ADDRESS."')";
+			$sql = "INSERT INTO member (`id`, password, first_name, last_name, cellphone, email,city) VALUES ('".$_EMAIL."',md5(lower('".$_PASS."')),'".$_FNAME."','".$_LNAME."','".$_PHONE."','".$_EMAIL."','".$_CITY."')";
 			$result = query($sql);
 
 			if($this->login($_EMAIL, $_PASS) == -1)

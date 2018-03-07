@@ -7,11 +7,10 @@ $_EMAIL = $_POST['p1'];
 $_PASS 	= $_POST['p2'];
 $_AUTH = $_POST['p3'];
 $_PHONE = $_POST['p4'];
-$_ADDRESS = $_POST['p8'];
 $_birthday = $_POST['p5'];
 $_gender = $_POST['p6'];
 $_nickname = $_POST['p7'];
-
+$_CITY = $_POST['p8'];
 
 // 查询手机号和验证码
 $select = "select  *  from message where phone ='{$_PHONE}' and message_code='{$_AUTH}' and status=0 ";
@@ -29,7 +28,7 @@ if(empty($_EMAIL) || empty($_PASS) || empty($_AUTH)) {
 else {
 	$CMEMBER->resetCuser();
 	if($CMEMBER->exist( $_EMAIL ))   die(genResponse(false, $_v_ERROR_REGISTER_FAILED."，此帐号已存在"));
-	elseif($CMEMBER->register( $_EMAIL, $_PASS, '', '', $_PHONE,$_ADDRESS ))
+	elseif($CMEMBER->register( $_EMAIL, $_PASS, '', '', $_PHONE,$_CITY ))
 	{
             $member_id = @mysql_insert_id();
 		$CMEMBER->getUserInfo();
