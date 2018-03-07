@@ -41,6 +41,11 @@
                         日
                     </div>
                 </section>
+                <section class="empty_prompt">
+                    <h4>提示</h4>
+                    <p>若修改宝贝生日，成长指标将清空重新记录。</p>
+                    <input class="btn_sub" value="">
+                </section>
                 <section class="btnbox clearfix">
                     <input type="submit" class="btn_submit04" value="">
                 </section>
@@ -50,4 +55,9 @@
         <section class="gotop divtop"><img src="../theme/cn/images/content/item_gotop02.png">回顶端</section>
     </section>
 </section>
+<script>
+    $('.btn_sub').click(function(){
+        $(this).parent().hide()
+    })
+</script>
 <!--//【fancybox】寶貝資料填寫//-->

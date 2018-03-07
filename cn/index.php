@@ -197,7 +197,7 @@ if(isset($payload)) {
                         echo('<section class="list03 fl">');
                     }
                     ?>
-                    <h3 class="title">推荐文章<a href="recommend.php" class="i-more">更多内容</a></h3>
+                    <h3 class="title">推荐文章<a href="recommend.php" class="i-more">更多内容<span>&gt;&gt;</span></a></h3>
                     <?php af_articles_list_recommend('首页'); ?>
                 </section>
                 <!--//推薦文章//-->
@@ -205,7 +205,7 @@ if(isset($payload)) {
                 <!--//最新消息//-->
                 <!--【註1】固定五則訊息，最後二個給予class="m-none"是For手機不顯示用。-->
                 <section class="list02 fl">
-                    <h3 class="title">最新消息<a href="news.php" class="i-more">更多内容</a></h3>
+                    <h3 class="title">最新消息<a href="news.php" class="i-more">更多内容<span>&gt;&gt;</span></a></h3>
                     <?php af_index_list_news(); ?>
                 </section>
                 <!--//最新消息//-->

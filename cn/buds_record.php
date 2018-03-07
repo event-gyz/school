@@ -14,7 +14,6 @@ include('inc.php');
     </style>
 </head>
 <body>
-
 <?php
 $payload=@$_GET['t'];
 if(isset($payload)) {
@@ -289,12 +288,12 @@ if(isset($payload)) {
             </div>
             <div class="end_line"></div>
         </section>
-        <div class="relevant_articles">
-            <h4>萌芽相关文章</h4>
+        <section class="contbox clearfix relevant_articles">
+            <h3 class="title">萌芽相关文章<a href="recommend.php" class="i-more">更多内容<span>&gt;&gt;</span></a></h3>
             <ul>
                 <?php af_articles_list_recommend('乳牙'); ?>
             </ul>
-        </div>
+        </section>
         <!-- InstanceEndEditable -->
     </section>
     <!--【Content End】-->

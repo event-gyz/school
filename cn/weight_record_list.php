@@ -191,12 +191,12 @@ if($member_uid > 0) {
 			</div>
 		</div>
 		<p class='end_line'></p>
-		<div class="relevant_articles">
-			<h4>体重相关文章</h4>
+		<section class="contbox clearfix relevant_articles">
+			<h3 class="title">体重相关文章<a href="recommend.php" class="i-more">更多内容<span>&gt;&gt;</span></a></h3>
 			<ul>
 				<?php af_articles_list_recommend('体重'); ?>
 			</ul>
-		</div>
+		</section>
 		<!-- InstanceEndEditable -->
 	</section>
 	<!--【Content End】-->

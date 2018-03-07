@@ -55,8 +55,9 @@ body{background:url("images/bg_body.jpg") repeat scroll 0 0 rgba(0,0,0,0);font:1
 #main_article{padding: 0 0.5854rem}
 .noBoxShadowPage .contbox{padding: 0;}
 .itenlist .contbox{padding:0.2927rem 0.5854rem;}
-.contbox h3.title{color:#5FBF51;font-size:16px;padding:0 0 10px;position:relative;text-shadow:2px 3px 5px rgba(0,0,0,0.15);}
+.contbox h3.title{color:#5FBF51;font-size:14px;padding:0 0 10px;position:relative;text-shadow:2px 3px 5px rgba(0,0,0,0.15);}
 a.i-more{color:#666666;font-size:13px;position:absolute;right:0;text-shadow:none;top:0;}
+a.i-more span{font-family: 'simsun';}
 .contbox h3.title a:hover{color:#5EC252;}
 .fl{display:inline;float:left;}
 .list01.fl,.list02.fl,.list03.fl{padding:5px 1.5%;width:34%;}
@@ -100,7 +101,7 @@ a.i-more{color:#666666;font-size:13px;position:absolute;right:0;text-shadow:none
 /*.artbox .rbox{background:none repeat scroll 0 0 #F1F1F1;border:0 none;border-radius:10px;padding:20px 2%;width:28%;}*/
 /*.artbox .rbox{border:0 none;border-radius:10px;padding:20px 2%;width:28%;}*/
 .artbox .rbox{padding:0 0.5854rem;}
-.artbox .Txt h3.title{color:#5EC252;padding:20px 0 10px;text-shadow:none;}
+.artbox .Txt h3.title{color:#747474;padding:20px 0 10px;text-shadow:none;}
 .artbox .Txt img{border:10px solid #FFFFFF;border-radius:10px;box-shadow:0 0 7px rgba(0,0,0,0.3);margin:10px 0;}
 .artbox .lbox .list02{border-top:1px solid #CCCCCC;margin:20px 0 0;padding:20px 0 0;}
 .artbox .lbox .list02 li{clear:none;display:inline;float:left;margin:0 2%;padding:5px 0;width:45%;}
@@ -298,6 +299,12 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .fy-bd .error01{color:#FF0000;position:static;text-align:right;}
 .fy-bd .fbar i{font-size:15px;font-style:normal;font-weight:bold;left:0;margin-top:-10px;position:absolute;top:50%;}
 .fy-bd .fbar .tf{display:inline;float:left;width:98%;}
+
+.empty_prompt{position: absolute;top:50%;left:50%;transform: translate(-50%,-50%);width:4.6829rem;height:3.3171rem;border:1px solid #77CF6B;border-radius: 0.0488rem;background:#FFFFFF;}
+.empty_prompt h4{line-height: 0.7805rem;background: #75D069;color:#fff;text-align: center;}
+.empty_prompt>p{padding: 0.2927rem 0.3902rem;line-height: 0.4878rem;color:#707070;}
+.empty_prompt .btn_sub{width:50%;height:0.7805rem;margin-left:25%;background: url(images/content/btn_submit04.png) repeat scroll 0 0 / 100% auto rgba(0,0,0,0);
+    border: 0;}
 
 .search-citys{position:relative;}
 .search-citys-tit{padding:10px 10px 0;}
