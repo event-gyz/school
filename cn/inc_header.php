@@ -245,7 +245,7 @@
 			success: function (jsonStr) {
 				if(jsonStr.islogin==true) {
 					_next_move_ = 0;
-					document.location.href = 'http://x.eqxiu.com/s/PclsbuXT';
+					document.location.href = 'buds_record.php';
 				}
 				else {
 					_next_move_ = 107;
