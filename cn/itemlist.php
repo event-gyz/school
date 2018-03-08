@@ -70,6 +70,7 @@ if(!isset($tabon))
 
 
                                     ?>
+                                </h3>
                                     <h4>
                                     <?php
                                     $birthday = new DateTime($_SESSION['CURRENT_KID_BIRTH_DAY']);
@@ -87,7 +88,7 @@ if(!isset($tabon))
                                     echo ')';
                                     ?>
                                         </h4>
-                                </h3>
+
                                 <h4>进度记分板</h4>
                                 <ul>
                                     <li>
