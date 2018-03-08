@@ -6,50 +6,50 @@
             <p class="ps">欢迎您加入我们，请填入您的宝宝资料</p>
             <?php
                 $member_uid = $CMEMBER->accessFromToken($_SESSION['user_token']);
-                $sql = 'select * from `user` where supervisor_uid='.$member_uid;
-                $userInfo = M()->find($sql);
+            $sql = 'select * from `user` where supervisor_uid='.$member_uid;
+            $userInfo = M()->find($sql);
             ?>
             <form id="modify_baby_form">
-            <section class="fstmb">
-                <section class="formbox">
-                    <div class="fbar clearfix">
-                        <label><i>昵称</i><input id="fst_nickname" type="text" class="tf" value="<?= (isset($userInfo['nick_name'])?$userInfo['nick_name']:'')?>"></label>
-                        <div class="errorbar">请填入昵称</div>
-                    </div>
-                    <div class="fbar clearfix">
-                        <i>性别</i>
-                        <div class="ralist ralist02">
-                            <ul class="clearfix">
-                                <li><label><input type="radio" name="fst_sex" value="0" checked><b>男</b></label></li>
-                                <li><label><input type="radio" name="fst_sex" value="1" ><b>女</b></label></li>
-                            </ul>
+                <section class="fstmb">
+                    <section class="formbox">
+                        <div class="fbar clearfix">
+                            <label><i>昵称</i><input id="fst_nickname" type="text" class="tf" value="<?= (isset($userInfo['nick_name'])?$userInfo['nick_name']:'')?>"></label>
+                            <div class="errorbar">请填入昵称</div>
                         </div>
-                    </div>
-                    <div class="fbar clearfix">
-                        <i>生日</i>
-                        <select id="birth_box_years">
-                            <option>请选择...</option>
-                        </select>
-                        年
-                        <select id="birth_box_months">
-                            <option>请选择...</option>
-                        </select>
-                        月
-                        <select id="birth_box_days">
-                            <option>请选择...</option>
-                        </select>
-                        日
-                    </div>
+                        <div class="fbar clearfix">
+                            <i>性别</i>
+                            <div class="ralist ralist02">
+                                <ul class="clearfix">
+                                    <li><label><input type="radio" name="fst_sex" value="0" checked><b>男</b></label></li>
+                                    <li><label><input type="radio" name="fst_sex" value="1" ><b>女</b></label></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="fbar clearfix">
+                            <i>生日</i>
+                            <select id="birth_box_years">
+                                <option>请选择...</option>
+                            </select>
+                            年
+                            <select id="birth_box_months">
+                                <option>请选择...</option>
+                            </select>
+                            月
+                            <select id="birth_box_days">
+                                <option>请选择...</option>
+                            </select>
+                            日
+                        </div>
+                    </section>
+                    <section class="empty_prompt">
+                        <h4>提示</h4>
+                        <p>若修改宝贝生日，成长指标将清空重新记录。</p>
+                        <input type="submit" class="btn_sub" value="">
+                    </section>
+                    <section class="btnbox clearfix">
+                        <input class="btn_submit04" value="">
+                    </section>
                 </section>
-                <section class="empty_prompt">
-                    <h4>提示</h4>
-                    <p>若修改宝贝生日，成长指标将清空重新记录。</p>
-                    <input class="btn_sub" value="">
-                </section>
-                <section class="btnbox clearfix">
-                    <input type="submit" class="btn_submit04" value="">
-                </section>
-            </section>
             </form>
         </section>
         <section class="gotop divtop"><img src="../theme/cn/images/content/item_gotop02.png">回顶端</section>
@@ -57,7 +57,13 @@
 </section>
 <script>
     $('.btn_sub').click(function(){
-        $(this).parent().hide()
+        $('.empty_prompt').hide()
+        $('.fancybox-wrap').hide()
+        $('.fancybox-overlay.fancybox-overlay-fixed').hide()
+    })
+
+    $('#modify_baby_form .btnbox .btn_submit04').click(function(){
+        $('.empty_prompt').show()
     })
 </script>
 <!--//【fancybox】寶貝資料填寫//-->
