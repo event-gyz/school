@@ -70,7 +70,7 @@ if(!isset($tabon))
 
 
                                     ?>
-                                    <span>
+                                    <h4>
                                     <?php
                                     $birthday = new DateTime($_SESSION['CURRENT_KID_BIRTH_DAY']);
                                     $diff = $birthday->diff(new DateTime());
@@ -86,7 +86,7 @@ if(!isset($tabon))
                                     }
                                     echo ')';
                                     ?>
-                                        </span>
+                                        </h4>
                                 </h3>
                                 <h4>进度记分板</h4>
                                 <ul>
