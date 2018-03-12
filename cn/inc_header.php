@@ -1,20 +1,214 @@
 <script src="../scripts/ssutils.js"></script>
+
 <script type="text/javascript">
 	var _next_move_ = 0;
-
+	var waitTime = {    timer: '',  second: 60  };
+	var authcode = false;
+	var reg_genner = "男";
 	$(function(){
+		$("#login_form").submit(function(e){
+			e.preventDefault();
+//            if(!checkEmailFormat() || !checkPasswordFormat()) {
+//                $("#fy-login .error01").show().delay(3000).fadeOut();
+//                return true;
+//            }
+			var user_id = $("#login_id").val();
+			var user_password = $("#login_pass").val();
 
+			$.ajax({
+				url: "login.php",
+				type: "POST",
+				data: {
+					'p1': user_id,
+					'p2': user_password
+				},
+				dataType: "json",
+				success: function (jsonStr) {
+					if(jsonStr.result=='success') {
+						var message = $.parseJSON(jsonStr.message);
+						showLoginStatus(message.email,message.credit);
+						$.fancybox.close();
+						<?php
+						if(isset($b_post_tv_submit) && $b_post_tv_submit == true) {
+							$b_post_tv_submit = false;
+							echo('postTvSubmit();');
+						}
+						?>
+						if(_next_move_ == 100) {
+							onMenuItem3Click();
+						}
+						else if(_next_move_ == 102) {
+							_next_move_ = 0;
+							document.location.href = 'ceanza_menu.php';
+						}
+						else if(_next_move_ == 104) {
+							_next_move_ = 0;
+							document.location.href = 'training.php';
+						}
+						else if(_next_move_ == 106) {
+							onMenuItem6Click();
+						}
+						else if(_next_move_ == 107) {
+							_next_move_ = 0;
+							document.location.href = 'http://x.eqxiu.com/s/PclsbuXT';
+						}
+					}
+					else {
+						$("#fy-login .error01").show().delay(3000).fadeOut();
+					}
+				},
+				error: function(xhr, err) {
+					alert('Ajax request ' + err);
+				}
+			});
+			return false;
+		});
+		// Register
+		$("#register_form").submit(function(e){
+			e.preventDefault();
+			if(!checkRegEmailFormat()) {
+				$("#errorbar_reg_email").text('请输入正确的电子邮件').show().delay(3000).fadeOut();
+				return true;
+			}
+			if (!checkRegPasswordFormat()) {
+				$("#errorbar_reg_password").text('须6至20位，可含字母、数字、下划线').show().delay(3000).fadeOut();
+				return true;
+			}
+			if (!checkPasswordRepeat()){
+				return true;
+			}
+//        if (!checkRegNameFormat()){
+//            return true;
+//        }
+			if (!checkRegDateFormat()){
+				return true;
+			}
+			// 参数
+			var phone = $("#reg_tel").val();
+			var auth_code = $("#reg_authcode").val();
+			var user_id = $("#reg_email").val();
+			var user_password = $("#reg_password").val();
+			var birthday = $("#reg_date").val();
+			var city_name = $("#city_name").val();
+			var sex = 1;
+			if(reg_genner == "男"){
+				sex = 0;
+			}
+			var nickname = $("#reg_name").val();
+			checkAuthcodeFormat(phone, auth_code);
+			if (!authcode){
+				$("#errorbar_reg_authcode").text('验证码错误').show().delay(3000).fadeOut();
+				return true;
+			}
+
+
+			$.ajax({
+				url: "register.php",
+				type: "POST",
+				data: {
+					'p1': user_id,
+					'p2': user_password,
+					'p3': auth_code,
+					'p4': phone,
+					'p5':birthday,
+					'p6':sex,
+					'p7':nickname,
+					'p8':city_name,
+				},
+				dataType: "json",
+				success: function (jsonStr) {
+					//console.log(jsonStr);
+					if(jsonStr.result=='success') {
+						var message = $.parseJSON(jsonStr.message);
+						showLoginStatus(message.email,message.credit);
+						$.fancybox.close();
+						<?php
+						if(isset($b_post_tv_submit) && $b_post_tv_submit == true) {
+							$b_post_tv_submit = false;
+							echo('postTvSubmit();');
+						}
+						else {
+							//echo('$("#regdone").fancybox().trigger("click");');
+							echo('
+			            	$("#regdone").css("max-width","500px");	
+			            	$("#regdone").fancybox({"width":500, "height":500, "autoSize" : false}).trigger("click");
+			            ');
+						}
+						?>
+					}
+					else
+					{
+						$("#fy-register .error01").text(jsonStr.message).show().delay(3000).fadeOut();
+					}
+				},
+				error: function(xhr, err) {
+					alert('Ajax request ' + err);
+				}
+			});
+			return false;
+		});
+		// modify baby
+		$("#modify_baby_form").submit(function(){
+			var nickname = $("#fst_nickname").val();
+			var sex = $('input[name=fst_sex]:checked').val()
+			var birth_year = $("#birth_box_years").val();
+			var birth_month = $("#birth_box_months").val();
+			var birth_day = $("#birth_box_days").val();
+			var birthdate = birth_year+"-"+birth_month+"-"+birth_day;
+			console.log("nickname:"+nickname+",sex:"+sex+",birthdate:"+birthdate);
+			if(nickname) {
+				$.ajax({
+					url: "addUser.php",
+					type: "POST",
+					data: {
+						'p1': nickname,
+						'p2': sex,
+						'p3': birthdate
+					},
+					dataType: "json",
+					success: function (jsonStr) {
+						console.log(jsonStr);
+						if(jsonStr.result=='success') {
+							var message = $.parseJSON(jsonStr.message);
+							$.fancybox.close();
+							if(_next_move_==100) {
+								_next_move_ = 0;
+								document.location.href = 'itemlist.php';
+							}
+							else if(_next_move_==106) {
+								_next_move_ = 0;
+								document.location.href = 'report.php';
+							}
+							else
+								document.location.href= 'report.php?f=1';
+						}
+						else {
+							alert(jsonStr.message);
+							$("#modify_baby_form .errorbar").text(jsonStr.message).show().delay(3000).fadeOut();
+						}
+					},
+					error: function(xhr, err) {
+						alert('addUser failed: ' + err);
+					}
+				});
+			}
+			else {
+				$("#modify_baby_form .errorbar").show().delay(3000).fadeOut();
+			}
+			return false;
+		});
 		// modify member
 		$("#modify_member_form").submit(function(){
-			var nickname = $("#fstmb_nickname").val();
+//            var nickname = $("#fstmb_nickname").val();
 			var phone = $("#fstmb_phone").val();
 			var password = $("#fstmb_password").val();
 			var password2 = $("#fstmb_password2").val();
 			var check_ok = true;
-			if(!nickname) {
-				$("#fstmb_error1").show().delay(2000).fadeOut();
-				check_ok = false;
-			}
+//            if(!nickname) {
+//                $("#fstmb_error1").show().delay(2000).fadeOut();
+//                check_ok = false;
+//            }
+
 			if(phone && !isTel(phone)) {
 				$("#fstmb_error2").show().delay(2000).fadeOut();
 				check_ok = false;
@@ -34,7 +228,7 @@
 					url: "edit_member.php",
 					type: "POST",
 					data: {
-						'p1': nickname,
+//						'p1': nickname,
 						'p2': phone,
 						'p3': password
 					},
@@ -57,7 +251,36 @@
 			}
 			return false;
 		});
-
+// forget password
+		$("#forget_pwd_form").submit(function(){
+			var user_id = $("#forget_email").val();
+			var auth_code = $("#forget_authcode").val();
+			var phone = $("#forget_mobile").val();
+			$.ajax({
+				url: "send_forget.php",
+				type: "POST",
+				data: {
+					'p1': user_id,
+					'p2': auth_code,
+					'p3': phone
+				},
+				dataType: "json",
+				success: function (jsonStr) {
+					console.log(jsonStr);
+					if(jsonStr.result=='success') {
+						$.fancybox.close();
+						$.fancybox({        href: "#fgsend"    }	);
+					}
+					else {
+						$("#fy-forget .error01").text(jsonStr.message).show().delay(3000).fadeOut();
+					}
+				},
+				error: function(xhr, err) {
+					alert('Ajax request ' + err);
+				}
+			});
+			return false;
+		});
 		// trial
 		$("#exp_form").submit(function(e) {
 			e.preventDefault();
@@ -324,16 +547,16 @@
 		return new Date(year, month, 0).getDate();
 	}
 
-	function checkEmailFormat() {
-		if(!isEmail($("#login_id").val())) {
-			$("#div_err_email").show();
-			return false;
-		}
-		else {
-			$("#div_err_email").hide();
-			return true;
-		}
-	}
+    function checkEmailFormat() {
+        if(!isEmail($("#login_id").val()) && !isTel($("#login_id").val())) {
+            $("#div_err_email").show();
+            return false;
+        }
+        else {
+            $("#div_err_email").hide();
+            return true;
+        }
+    }
 
 	function checkRegTelFormat(){
 		if(!isTel($("#reg_tel").val())){
