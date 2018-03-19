@@ -16,10 +16,10 @@
         // Login
         $("#login_form").submit(function(e){
             e.preventDefault();
-            if(!checkEmailFormat() || !checkPasswordFormat()) {
-                $("#fy-login .error01").show().delay(3000).fadeOut();
-                return true;
-            }
+//            if(!checkEmailFormat() || !checkPasswordFormat()) {
+//                $("#fy-login .error01").show().delay(3000).fadeOut();
+//                return true;
+//            }
             var user_id = $("#login_id").val();
             var user_password = $("#login_pass").val();
 
@@ -584,7 +584,7 @@
     }
 
     function checkEmailFormat() {
-        if(!isEmail($("#login_id").val())) {
+        if(!isEmail($("#login_id").val()) && !isTel($("#login_id").val())) {
             $("#div_err_email").show();
             return false;
         }
