@@ -7,9 +7,9 @@ function fetchContent($age, $type, $func,$e) {
 	$htmlString = "";
 	$user_uid = $_SESSION["CURRENT_KID_UID"];
 	$start_age = $age-1;
-	$end_age = $age+5;
+	$end_age = $age+2;
 	if(!empty($e) && ($start_age>=12)){
-		$start_age -=12;
+		$start_age -=4;
 	}
     $sql = "select grow_index.uid,grow_index.text,grow_index.age_max,grow_index.age_min from grow_index where ((grow_index.age_min >= '$start_age' and grow_index.age_min<= '$end_age') or (grow_index.age_max <= '$end_age' and grow_index.age_max >= '$start_age')) and grow_index.type='$type' order by uid asc";
     $sql2 = "select early ,user_uid,item_uid from grow_log where user_uid=$user_uid";
