@@ -197,7 +197,7 @@ if(isset($payload)) {
                         echo('<section class="list03 fl">');
                     }
                     ?>
-                    <h3 class="title">推荐文章<a href="recommend.php" class="i-more">更多内容<span>&gt;&gt;</span></a></h3>
+                    <h3 class="title">推荐文章demo<a href="recommend.php" class="i-more">更多内容<span>&gt;&gt;</span></a></h3>
                     <?php af_articles_list_recommend('首页'); ?>
                 </section>
                 <!--//推薦文章//-->
