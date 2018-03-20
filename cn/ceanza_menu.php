@@ -143,8 +143,8 @@ if($member_uid > 0) {
         <!-- InstanceBeginEditable name="content" -->
         <section class="ceanza">
             <div class="ceanza_menu_bg">
-                <h4>成长日记</h4>
-                <section class="gopath goback"><a href="index.php">首页</a> > 成长日记</section>
+                <h4>宝贝日记</h4>
+                <section class="gopath goback"><a href="index.php">首页</a> > 宝贝日记</section>
                 <div class="photos">
 
                     <div class="father-head-portrait">
@@ -219,7 +219,7 @@ if($member_uid > 0) {
                 </li>
                 <li>
                     <a class="a_box" href="/cn/ceanza_list.php">
-                        <h4>成长记录</h4>
+                        <h4>宝贝日记</h4>
                         <p>替您的宝宝写下成长日記，为您的宝宝记录每天的成长与回忆......</p>
                         <i></i>
                         <div class="menu_logo"><img src="../content/epaper/images/ceanza.png" alt=""></div>

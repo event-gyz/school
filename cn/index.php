@@ -172,9 +172,11 @@ if(isset($payload)) {
                 <!--//4 Banner//-->
                 <section class="sbnr">
                     <ul class="clearfix">
-                        <li><a href="#exbox01" class="fancybox"><img src="../theme/cn/images/content/item_sbnr03.jpg"></a></li>
-                        <li><a href="javascript:onMenuItem3Click();"><img src="../theme/cn/images/content/item_sbnr02.jpg"></a></li>
-                        <li><a href="javascript:onMenuItem2Click();"><img src="../theme/cn/images/content/item_sbnr05.png"></a></li>
+                        <li><a href="#exbox01" class="fancybox"><img src="../theme/cn/images/content/item_sbnr01.png"></a></li>
+                        <li><a href="javascript:onMenuItem3Click();"><img src="../theme/cn/images/content/item_sbnr02.png"></a></li>
+                        <li><a href="javascript:onMenuItem2Click();"><img src="../theme/cn/images/content/item_sbnr03.png"></a></li>
+                        <li><a href="javascript:void(0);"><img src="../theme/cn/images/content/item_sbnr04.png"></a></li>
+                        <li><a href="javascript:void(0);"><img src="../theme/cn/images/content/item_sbnr05.png"></a></li>
                         <li><a href="javascript:onMenuItem4Click();"><img src="../theme/cn/images/content/item_sbnr06.png"></a></li>
                     </ul>
                 </section>

@@ -160,16 +160,6 @@ if(isset($payload)) {
                     <input type="text" value="<?=$email?>" disabled>
                 </li>
                 <li>
-                    <p class="password"></p>
-                    <span>密码</span>
-                    <input type="password" value="xxxxxx" disabled>
-                </li>
-                <li>
-                    <p class="password"></p>
-                    <span>确认密码</span>
-                    <input type="password" value="xxxxxx" disabled>
-                </li>
-                <li>
                     <p class="mobile"></p>
                     <span>电话</span>
                     <input type="phone" value="<?=$phone?>" disabled>

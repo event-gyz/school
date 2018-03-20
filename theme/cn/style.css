@@ -290,6 +290,7 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .fy-bd{padding:35px 5%;}
 #fy-register .lbox>p{color:#77CF6B;margin-bottom: 0.1951rem;}
 .fy-cont{position:relative;}
+.fy-cont .carefulness{color:#C53C3C;}
 .fy-bd .lbox{padding:0;width:46%;}
 .fy-bd .rbox{float:right;border:0 none;padding:0;width:49%;}
 .fy-bd .bbox{margin-top:35px;padding-bottom:20px;}
@@ -299,12 +300,6 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .fy-bd .error01{color:#FF0000;position:static;text-align:right;}
 .fy-bd .fbar i{font-size:15px;font-style:normal;font-weight:bold;left:0;margin-top:-10px;position:absolute;top:50%;}
 .fy-bd .fbar .tf{display:inline;float:left;width:98%;}
-
-.empty_prompt{position: absolute;top:50%;left:50%;transform: translate(-50%,-50%);width:4.6829rem;height:3.3171rem;border:1px solid #77CF6B;border-radius: 0.0488rem;background:#FFFFFF;display: none;}
-.empty_prompt h4{line-height: 0.7805rem;background: #75D069;color:#fff;text-align: center;}
-.empty_prompt>p{padding: 0.2927rem 0.3902rem;line-height: 0.4878rem;color:#707070;}
-.empty_prompt .btn_sub{width:50%;height:0.7805rem;margin-left:25%;background: url(images/content/btn_submit04.png) repeat scroll 0 0 / 100% auto rgba(0,0,0,0);
-    border: 0;}
 
 .search-citys{position:relative;}
 .search-citys-tit{padding:10px 10px 0;}
@@ -361,24 +356,21 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .repwrap h3.title,.repother h3.title{text-shadow:none;}
 
 /* 添加日记页面样式 start */
-#content{padding-top:125px;}
+#content{padding-top:105px;}
 .ceanza,.height_record,.weight_record,.buds_record,.medical_institution,.medical_record,.growth_index{color:#B7B2A9;} 
 .ceanza>form,.height_record>form,.weight_record>form{padding: 0 0.5854rem;}
 .photos{position: relative;}
 .photos>div{position: absolute;text-align: center;}
-.mather-head-portrait{top:1.9512rem;right:0.7805rem;}
+.mather-head-portrait{top:0;right:0.7805rem;}
 .baby-head-portrait{top:-1.7561rem;left:4.2927rem;}
-.father-head-portrait{top:2.1463rem;left:0.4878rem;}
-.photos .upHead{position: relative;width:1.561rem;height:1.561rem;border:2px solid #D8EFD5;border-radius: 50%;margin-bottom:0.1463rem;overflow: hidden;background: #fff;}
+.father-head-portrait{top:0.3902rem;left:0.4878rem;}
+.photos .upHead{position: relative;width:1.8927rem;height:1.8927rem;border:2px solid #D8EFD5;border-radius: 50%;margin-bottom:0.1463rem;overflow: hidden;background: #fff;}
 .photos .upHead>img{width:100%;height:100%;position: relative;}
 img.userHead{width:100%;height:100%;}
-/*.photos .baby-head-portrait .noHead{width:1.1512rem;height:0.9366rem;top:0.2927rem;}
-.photos .father-head-portrait .noHead{width:100%;height:100%;}
-.photos .mather-head-portrait .noHead{width:1.2683rem;height:1.9512rem;top:0.1951rem;}*/
 .photos .upHead input{position: absolute;width:100%;height:100%;top:0;left:0;opacity: 0;}
 .photos .upHead b{position: absolute;left:50%;bottom:0;width:0.5268rem;height:0.5268rem;background:#FFFFFE;border-radius:50%;transform: translateX(-50%);opacity: .6;}
 .photos .upHead p{position: absolute;left:50%;bottom:0.1073rem;width: 0.3902rem;height: 0.3122rem;background:url('../../content/epaper/images/samll_camera.png') no-repeat;background-size:100% 100%;transform: translateX(-50%);}
-.photos .upHead + span{color:#1D940D;font-weight: bold;}
+.photos .upHead + span{color:#1D940D;font-weight: bold;font-size: 14px;font-family: sans-serif;}
 .ceanza_menu_bg{width:100%;height:7.3171rem;background:url('../../content/epaper/images/ceanza_menu_bg.png') no-repeat center;background-size: 100% 100%;box-shadow: 0 -20px 20px 0px #FDF7F0;}
 .ceanza h4,.relevant_articles>h4,.height_record h4,.weight_record h4,.buds_record>h4,.medical_institution h4,.medical_record h4,.growth_index>h4,.newcomers .title h4{margin-bottom: 0.0976rem;padding: 0 0.5854rem;color:#5FBF51;font-size:20px;text-shadow:2px 3px 5px rgba(0,0,0,0.15);font-weight: 600;}
 .goback{padding-left:0.5854rem;}
@@ -512,7 +504,7 @@ img.userHead{width:100%;height:100%;}
 
 /* 添加身高体重记录页面样式 start */
 .height_record .form li,.weight_record .form li{height:25px;line-height: 25px;}
-.height_record .form input,.weight_record .form input{float: left;text-align: left;height:30px;line-height: 30px;}
+.height_record .form input,.weight_record .form input{float: left;width:55%;text-align: left;height:30px;line-height: 30px;}
 .height_record .form .time,.weight_record .form .time{float: right;text-align: right;}
 .uploadDemand{font-size: 12px;padding-left: 15px;margin-top:24px;}
 .height_record .submit,.weight_record .submit{width:120px;margin-top:70px;}
@@ -635,7 +627,6 @@ img.userHead{width:100%;height:100%;}
 /* 添加成长指标页面样式 end */
 
 /* 新手上路页面样式 start */
-/*.newcomers .title h4{font-size: 22px;margin-bottom: 0.2927rem;padding-left: 0.5854rem;color:#60C351;}*/
 .newcomers p{width:100%;}
 .newcomers p>img{width:100%;height:auto;}
 .newcomers_guide{width:90%;margin: 0.2927rem auto;border-top:1px solid #E3E3E3;}
@@ -676,7 +667,7 @@ img.userHead{width:100%;height:100%;}
 /* 我的页面样式 end */
 
 /* 底部导航栏样式 start */
-.foooter_nav{position: fixed;bottom:0;left:0;width:100%;height:1.561rem;background: #FFFFFF;box-shadow: 0px -7px 5px -5px #F0F0F0;z-index: 999;margin:0;padding:0;}
+.foooter_nav{position: fixed;bottom:0;left:0;width:10.0rem;height:1.561rem;background: #FFFFFF;box-shadow: 0px -7px 5px -5px #F0F0F0;z-index: 999;margin:0;padding:0;}
 .foooter_nav li{float: left;width:20%;text-align: center;list-style: none;}
 .foooter_nav li a{display: block;color:#7D7D7D;}
 .foooter_nav li p{width:100%;height:0.7805rem;line-height: 1.0244rem;margin:0.1951rem 0 0;text-align: center;}

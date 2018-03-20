@@ -4,6 +4,7 @@
     <section class="fy-bd clearfix">
         <section class="fy-cont clearfix">
             <p class="ps">欢迎您加入我们，请填入您的宝宝资料</p>
+            <p class="carefulness">注：若修改宝贝生日，成长指标将清空重新记录。</p>
             <?php
                 $member_uid = $CMEMBER->accessFromToken($_SESSION['user_token']);
             $sql = 'select * from `user` where supervisor_uid='.$member_uid;
@@ -41,11 +42,7 @@
                             日
                         </div>
                     </section>
-                    <section class="empty_prompt">
-                        <h4>提示</h4>
-                        <p>若修改宝贝生日，成长指标将清空重新记录。</p>
-                        <input type="submit" class="btn_sub" value="">
-                    </section>
+
                     <section class="btnbox clearfix">
                         <input class="btn_submit04" value="">
                     </section>
@@ -55,15 +52,5 @@
         <section class="gotop divtop"><img src="../theme/cn/images/content/item_gotop02.png">回顶端</section>
     </section>
 </section>
-<script>
-    $('.btn_sub').click(function(){
-        $('.empty_prompt').hide()
-        $('.fancybox-wrap').hide()
-        $('.fancybox-overlay.fancybox-overlay-fixed').hide()
-    })
 
-    $('#modify_baby_form .btnbox .btn_submit04').click(function(){
-        $('.empty_prompt').show()
-    })
-</script>
 <!--//【fancybox】寶貝資料填寫//-->

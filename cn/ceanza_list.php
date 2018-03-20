@@ -106,10 +106,10 @@ if(isset($payload)) {
     <section id="content">
         <!-- InstanceBeginEditable name="content" -->
         <section class="ceanza">
-            <h4>成长记录</h4>
-            <section class="gopath goback"><a href="index.php">首页</a> > 成长记录</section>
+            <h4>宝贝日记</h4>
+            <section class="gopath goback"><a href="index.php">首页</a> > 宝贝日记</section>
             <p>替您的宝宝写下成长日记，为您的宝宝记录每天的成长与回忆。</p>
-            <a href="ceanza_add.php" class="add_ceanza">新增成长日记<b></b></a>
+            <a href="ceanza_add.php" class="add_ceanza">新增宝贝日记<b></b></a>
             <a href="javascript: void(0)" class="ceanza_category">
                 浏览日记分类
                 <b></b>
@@ -247,7 +247,7 @@ if(isset($payload)) {
                 <div class="noData" style="display:inherit">
                     符合
                     <span class="ceanza_type"><?php echo $_GET['category_name'] ?></span>
-                    的日记有<span class="ceanza_count">0</span>篇,您可以点击<a href="ceanza_add.php">新增成长日记</a>
+                    的日记有<span class="ceanza_count">0</span>篇,您可以点击<a href="ceanza_add.php">新增宝贝日记</a>
                 </div>
                 <?php
             }
@@ -259,7 +259,7 @@ if(isset($payload)) {
 
         <p class='end_line'></p>
         <section class="contbox clearfix relevant_articles">
-            <h3 class="title">成长日记相关文章<a href="recommend.php" class="i-more">更多内容<span>&gt;&gt;</span></a></h3>
+            <h3 class="title">宝贝日记相关文章<a href="recommend.php" class="i-more">更多内容<span>&gt;&gt;</span></a></h3>
             <ul>
                 <?php af_articles_list_recommend('成长日记'); ?>
             </ul>
