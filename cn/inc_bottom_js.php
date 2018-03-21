@@ -16,10 +16,10 @@
         // Login
         $("#login_form").submit(function(e){
             e.preventDefault();
-//            if(!checkEmailFormat() || !checkPasswordFormat()) {
-//                $("#fy-login .error01").show().delay(3000).fadeOut();
-//                return true;
-//            }
+            if(!checkEmailFormat() || !checkPasswordFormat()) {
+                $("#fy-login .error01").show().delay(3000).fadeOut();
+                return true;
+            }
             var user_id = $("#login_id").val();
             var user_password = $("#login_pass").val();
 
@@ -392,12 +392,12 @@
             params.errEl.hide()
             time.timer = setInterval(function(){
                 time.second -= 1
-            if (time.second < 0) {
-                clearTimer(time)
-            }
-            html = time.timer === '' ? '获取验证码' : time.timer !== null ? waitTime.second + 's' : '重新获取';
-            params.validEl.html(html)
-        }, 1000);
+                if (time.second < 0) {
+                    clearTimer(time)
+                }
+                html = time.timer === '' ? '获取验证码' : time.timer !== null ? waitTime.second + 's' : '重新获取';
+                params.validEl.html(html)
+            }, 1000);
         } else {
             params.errEl.show()
             return false

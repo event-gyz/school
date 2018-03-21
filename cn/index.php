@@ -175,8 +175,8 @@ if(isset($payload)) {
                         <li><a href="#exbox01" class="fancybox"><img src="../theme/cn/images/content/item_sbnr01.png"></a></li>
                         <li><a href="javascript:onMenuItem3Click();"><img src="../theme/cn/images/content/item_sbnr02.png"></a></li>
                         <li><a href="javascript:onMenuItem2Click();"><img src="../theme/cn/images/content/item_sbnr03.png"></a></li>
-                        <li><a href="javascript:void(0);"><img src="../theme/cn/images/content/item_sbnr04.png"></a></li>
-                        <li><a href="javascript:void(0);"><img src="../theme/cn/images/content/item_sbnr05.png"></a></li>
+                        <li><a href="report.php"><img src="../theme/cn/images/content/item_sbnr04.png"></a></li>
+                        <li><a href="recommend.php"><img src="../theme/cn/images/content/item_sbnr05.png"></a></li>
                         <li><a href="javascript:onMenuItem4Click();"><img src="../theme/cn/images/content/item_sbnr06.png"></a></li>
                     </ul>
                 </section>

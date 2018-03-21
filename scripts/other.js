@@ -81,6 +81,7 @@ function clearTimer (time) {
 }
 //删除左右两端的空格
 function trim(str){
+    alert(str)
     return str.replace(/(^\s*)|(\s*$)/g, "");
 }
 
@@ -293,7 +294,26 @@ $(function(){
     $(window).load(function(){
         $(".tab-bd .scrolltype").mCustomScrollbar();
     });
-    
+
+    $("input[name='height']").keyup(function(){
+        var height = $(this).val()
+        height = height.replace(/[^\d.]/g, "");
+        height = height.replace(/^\./g, "");
+        height = height.replace(/\.{2,}/g, ".");
+        height = height.replace(".", "$#$").replace(/\./g, "").replace("$#$", ".");
+        height = height.replace(/^(\-)*(\d+)\.(\d).*$/, '$1$2.$3');
+        $(this).val(height);
+    })
+
+    $("input[name='weight']").keyup(function(){
+        var weight = $(this).val()
+        weight = weight.replace(/[^\d.]/g, "");
+        weight = weight.replace(/^\./g, "");
+        weight = weight.replace(/\.{2,}/g, ".");
+        weight = weight.replace(".", "$#$").replace(/\./g, "").replace("$#$", ".");
+        weight = weight.replace(/^(\-)*(\d+)\.(\d\d).*$/, '$1$2.$3');
+        $(this).val(weight);
+    })
 
     $('.uploadImgList').on('change','input',function(){
         var files = this.files;
@@ -457,62 +477,91 @@ $(function(){
         var address = trim($(".address-input").val())
         var file = $("input[name='file']").val()
         if(!(title && type && content && date && address && file)){
-            alert('请填写完整成长日记信息')
+            layer.msg('请填写完整成长日记信息')
             return false;
         }
     });
+
+    $('.ceanza_eqit_submit').click(function(){
+        var title = trim($("input[name='title']").val())
+        var content = trim($("input[name='content']").val())
+        var date = $("input[name='date']").val()
+        var address = trim($(".address-input").val())
+        var file = $("input[name='file']").val()
+        if(!(title && content && date && address && file)){
+            layer.msg('请填写完整成长日记信息')
+            return false;
+        }
+    })
+
+    $('.height_record .submit').click(function(){
+        var height = trim($("input[name='height']").val())
+        var date = $("input[name='date']").val()
+        var file = $("input[name='file']").val()
+        if(!(height && date && file)){
+            layer.msg('请填写完整身高记录信息')
+            return false;
+        }
+    })
+
+    $('.weight_record .submit').click(function(){
+        var weight = trim($("input[name='weight']").val())
+        var date = $("input[name='date']").val()
+        var file = $("input[name='file']").val()
+        if(!(weight && date && file)){
+            layer.msg('请填写完整体重记录信息')
+            return false;
+        }
+    })
+
+    $('.medical_institution_add_submit').click(function(){
+        var hospital = trim($("input[name='hospital']").val())
+        var doctor = trim($("input[name='doctor_name']").val())
+        var address = trim($("input[name='address']").val())
+        var phone = trim($("input[name='doctor_phone']").val())
+        if(!(hospital && doctor && address && address && phone)){
+            layer.msg('请填写完整医疗机构信息')
+            return false;
+        }
+    })
+
+    $('.medical_institution_eqit_submit').click(function(){
+        var hospital = trim($("input[name='hospital']").val())
+        var doctor = trim($("input[name='doctor_name']").val())
+        var address = trim($("input[name='address']").val())
+        var phone = trim($("input[name='doctor_phone']").val())
+        if(!(hospital && doctor && address && address && phone)){
+            layer.msg('请填写完整医疗机构信息')
+            return false;
+        }
+    })
+
+    $('.medical_record_add_submit').click(function(){
+        var date = $("input[name='date']").val()
+        var hospital = trim($("input[name='hospital']").val())
+        var doctor = trim($("input[name='doctor']").val())
+        var symptom = trim($("input[name='symptom']").val())
+        var told = trim($("textarea[name='note']").val())
+        if(!(date && hospital && doctor && symptom && told)){
+            layer.msg('请填写完整就诊记录信息')
+            return false;
+        }
+    })
+
+    $('.medical_record_eqit_submit').click(function(){
+        var date = $("input[name='date']").val()
+        var hospital = trim($("input[name='hospital']").val())
+        var doctor = trim($("input[name='doctor']").val())
+        var symptom = trim($("input[name='symptom']").val())
+        var told = trim($("textarea[name='note']").val())
+        if(!(date && hospital && doctor && symptom && told)){
+            layer.msg('请填写完整就诊记录信息')
+            return false;
+        }
+    })
 
     $('.project_status p').click(function(){
         event.preventDefault()
         $(this).children('span').addClass('success').parents().siblings().children('span').removeClass('success')
     })
-
-
-    $('.project_detail>p').click(function(){
-        $(this).children('span').toggleClass('success')
-    })
-
-
-
-    var currentIndex = 1;
-    var ulLeft = 0;
-    for(var i = 0; i < $('.project_list li').length; i++){
-        var li = $('.project_list li').eq(i)
-        ulLeft += -(parseInt(li.css('width')) + parseInt(li.css('marginRight')))
-    }
-
-    function project_tab_change(args){
-        $('.project_list li').removeClass('selected')
-        $('.project_list li:eq(' + (args.currentSlideNumber - 1) + ')').addClass('selected');
-        var liWidth = parseInt($('.project_list li').css('width'))
-        var liMargin = parseInt($('.project_list li').css('marginRight'))
-        $('.project_list ul').css('left',0)
-        if(currentIndex < args.currentSlideNumber){
-            currentIndex = args.currentSlideNumber
-            if(args.currentSlideNumber > 0 && args.currentSlideNumber < 4){
-                $('.project_list ul').css({'transform': 'matrix(1,0,0,1, ' + (ulLeft + ( - (args.currentSlideNumber - 1) * (liWidth + liMargin)) + 2) + ',0)'})
-            }else if(args.currentSlideNumber > 5){
-                $('.project_list ul').css({'transform': 'matrix(1,0,0,1, ' + (ulLeft + ( - ((args.currentSlideNumber - 4) * (liWidth + liMargin))) -14) + ',0)'})
-            }
-        }
-        else if(currentIndex > args.currentSlideNumber){
-            currentIndex = args.currentSlideNumber
-            if(args.currentSlideNumber < 6 && args.currentSlideNumber > 3){
-                $('.project_list ul').css({'transform': 'matrix(1,0,0,1, ' + (ulLeft + ( - ((args.currentSlideNumber - 4) * (liWidth + liMargin))) - 18) + ',0)'})
-            }else if(args.currentSlideNumber < 2){
-                $('.project_list ul').css({'transform': 'matrix(1,0,0,1, ' + (ulLeft + 2) + ',0)'})
-            }
-        }
-    }
-
-    // $('.project_list').iosSlider();
-
-
-    $('.project_tab').iosSlider({
-        snapToChildren: true,
-        desktopClickDrag: true,
-        keyboardControls: true,
-        navSlideSelector: $('.project_list li'),
-        onSlideChange: project_tab_change
-    });
 });

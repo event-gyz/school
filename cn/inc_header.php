@@ -1,5 +1,4 @@
 <script src="../scripts/ssutils.js"></script>
-
 <script type="text/javascript">
 	var _next_move_ = 0;
 	var waitTime = {    timer: '',  second: 60  };
@@ -148,55 +147,7 @@
 			return false;
 		});
 		// modify baby
-		$("#modify_baby_form").submit(function(){
-			var nickname = $("#fst_nickname").val();
-			var sex = $('input[name=fst_sex]:checked').val()
-			var birth_year = $("#birth_box_years").val();
-			var birth_month = $("#birth_box_months").val();
-			var birth_day = $("#birth_box_days").val();
-			var birthdate = birth_year+"-"+birth_month+"-"+birth_day;
-			console.log("nickname:"+nickname+",sex:"+sex+",birthdate:"+birthdate);
-			if(nickname) {
-				$.ajax({
-					url: "addUser.php",
-					type: "POST",
-					data: {
-						'p1': nickname,
-						'p2': sex,
-						'p3': birthdate
-					},
-					dataType: "json",
-					success: function (jsonStr) {
-						console.log(jsonStr);
-						if(jsonStr.result=='success') {
-							var message = $.parseJSON(jsonStr.message);
-							$.fancybox.close();
-							if(_next_move_==100) {
-								_next_move_ = 0;
-								document.location.href = 'itemlist.php';
-							}
-							else if(_next_move_==106) {
-								_next_move_ = 0;
-								document.location.href = 'report.php';
-							}
-							else
-								document.location.href= 'report.php?f=1';
-						}
-						else {
-							alert(jsonStr.message);
-							$("#modify_baby_form .errorbar").text(jsonStr.message).show().delay(3000).fadeOut();
-						}
-					},
-					error: function(xhr, err) {
-						alert('addUser failed: ' + err);
-					}
-				});
-			}
-			else {
-				$("#modify_baby_form .errorbar").show().delay(3000).fadeOut();
-			}
-			return false;
-		});
+
 		// modify member
 		$("#modify_member_form").submit(function(){
 //            var nickname = $("#fstmb_nickname").val();
@@ -547,16 +498,16 @@
 		return new Date(year, month, 0).getDate();
 	}
 
-    function checkEmailFormat() {
-        if(!isEmail($("#login_id").val()) && !isTel($("#login_id").val())) {
-            $("#div_err_email").show();
-            return false;
-        }
-        else {
-            $("#div_err_email").hide();
-            return true;
-        }
-    }
+	function checkEmailFormat() {
+		if(!isEmail($("#login_id").val()) && !isTel($("#login_id").val())) {
+			$("#div_err_email").show();
+			return false;
+		}
+		else {
+			$("#div_err_email").hide();
+			return true;
+		}
+	}
 
 	function checkRegTelFormat(){
 		if(!isTel($("#reg_tel").val())){
@@ -733,7 +684,7 @@ $pagename = substr($filename, 0, strrpos($filename, "."));
 			<!--//選單//-->
 			<ul class="mnav">
 				<li <?php if($pagename=='news') echo('class="on"'); ?> ><a href="news.php">最新消息</a></li>
-				<li <?php if($pagename=='recommend') echo('class="on"'); ?>><a href="recommend.php">推荐文章</a></li>
+				<li <?php if($pagename=='recommend') echo('class="on"'); ?>><a href="recommend.php">育儿天地</a></li>
 				<li <?php if($pagename=='itemlist') echo('class="on"'); ?>><a id="menuitem_3" href="javascript:void(0);">成长指标</a></li>
 				<li <?php if($pagename=='report') echo('class="on"'); ?>><a id="menuitem_6" href="javascript:void(0);">成长报告</a></li>
 				<li <?php if($pagename=='ceanza_menu') echo('class="on"'); ?>><a id="menuitem_2" href="javascript:void(0);">成长日记</a></li>
@@ -761,7 +712,7 @@ $pagename = substr($filename, 0, strrpos($filename, "."));
 			<li <?php if($pagename=='ceanza_menu') echo('class="on"'); ?>><a id="menuitem_2_m" href="javascript:void(0);">成长日记</a></li>
 			<li <?php if($pagename=='buds_record') echo('class="on"'); ?>><a id="menuitem_8_m">萌芽记录</a></li>
 			<li <?php if($pagename=='news') echo('class="on"'); ?> ><a href="news.php">最新消息</a></li>
-			<li <?php if($pagename=='recommend') echo('class="on"'); ?>><a href="recommend.php">推荐文章</a></li>
+			<li <?php if($pagename=='recommend') echo('class="on"'); ?>><a href="recommend.php">育儿天地</a></li>
 			<li <?php if($pagename=='epaper') echo('class="on"'); ?>><a id="menuitem_7_m" href="javascript:onMenuItem4Click();">巴布豆家庭早教</a></li>
 			<li <?php if($pagename=='about') echo('class="on"'); ?>><a href="about.php">关于我们</a></li>
 			<?php

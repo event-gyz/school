@@ -20,7 +20,7 @@ if(!isset($_SESSION['user_token'])) {
         h1,h2,h3,h4,h5,h6,p,ul,li,dl,dt,dd{margin:0;padding:0;list-style: none;}
         input,button{padding: 0;margin:0;border:0;outline: none;}
         img{vertical-align: bottom}
-        .ceanza_menu_bg{padding-top: 125px;}
+
     </style>
 </head>
 <body>
@@ -141,7 +141,7 @@ if($member_uid > 0) {
     <!--【Content】-->
     <section id="content">
         <!-- InstanceBeginEditable name="content" -->
-        <section class="ceanza">
+        <section class="ceanza ceanza_menu">
             <div class="ceanza_menu_bg">
                 <h4>宝贝日记</h4>
                 <section class="gopath goback"><a href="index.php">首页</a> > 宝贝日记</section>

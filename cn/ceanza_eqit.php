@@ -141,7 +141,7 @@ if(isset($payload)) {
 					</li>
 				</ul>
 
-				<button class="submit">提交</button>
+				<button class="submit ceanza_eqit_submit">提交</button>
 			</form>
 		</section>
 		<!-- InstanceEndEditable -->

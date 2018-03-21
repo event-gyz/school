@@ -145,7 +145,7 @@ if(isset($payload)) {
 						<textarea name="note" maxlength="100"></textarea>
 					</li>
 				</ul>
-				<button class="medical_record_add_submit submit">提交</button>
+				<button class="medical_record_add_submit">提交</button>
 			</form>
 		</section>
 		<!-- InstanceEndEditable -->

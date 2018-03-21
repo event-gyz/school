@@ -130,7 +130,7 @@ if(isset($payload)) {
 					</li>
 				</ul>
 				<input type="hidden" name="type" value="add">
-				<button class="medical_institution_add_submit submit">提交</button>
+				<button class="medical_institution_add_submit">提交</button>
 			</form>
 		</section>
 		<!-- InstanceEndEditable -->

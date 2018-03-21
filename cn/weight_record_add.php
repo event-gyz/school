@@ -113,7 +113,7 @@ if(isset($payload)) {
 				<h4>新增体重记录</h4>
 				<section class="gopath"><a href="index.php">首页</a> > 新增体重记录</section>
 				<ul class="form">
-					<li><p>体重（公斤）：</p><input name="weight" type="text" maxlength="20"></li>
+					<li><p>体重（公斤）：</p><input name="weight"></li>
 					<li>
 						<b class="clock"></b>
 						记录时间：
