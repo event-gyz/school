@@ -20,7 +20,6 @@ if(!isset($_ID) || !isset($_PASS) ) {
 }
 else {	
 	if($CMEMBER->login($_ID, $_PASS) == -1) die(genResponse(false, $_v_ERROR_LOGIN_FAILED."(ER-000002)"));
-	$CMEMBER->getUserInfo();
 	$token = $CMEMBER->getUserToken();
 	$credit= $CMEMBER->credit;
 	if(isset($token)) {
@@ -49,8 +48,8 @@ else {
 		$user_age = $months;
 		$_SESSION['CURRENT_KID_AGE'] = $user_age;
 		echo(genResponse(true, json_encode($arr)));
-	}
-	else
+	} else {
 		echo(genResponse(false, $_v_ERROR_LOGIN_FAILED));
+	}
 }
 ?>
