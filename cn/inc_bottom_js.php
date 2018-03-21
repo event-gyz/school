@@ -390,7 +390,7 @@
             //发送验证码
             send_message(params.Mobile,params.type,time,params);
             params.errEl.hide()
-            time.timer = setInterval(() => {
+            time.timer = setInterval(function(){
                 time.second -= 1
             if (time.second < 0) {
                 clearTimer(time)
