@@ -20,6 +20,7 @@ if(!isset($_ID) || !isset($_PASS) ) {
 }
 else {	
 	if($CMEMBER->login($_ID, $_PASS) == -1) die(genResponse(false, $_v_ERROR_LOGIN_FAILED."(ER-000002)"));
+	$CMEMBER->getUserInfo();
 	$token = $CMEMBER->getUserToken();
 	$credit= $CMEMBER->credit;
 	if(isset($token)) {
