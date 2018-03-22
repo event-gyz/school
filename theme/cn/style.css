@@ -5,8 +5,8 @@ body{background:url("images/bg_body.jpg") repeat scroll 0 0 rgba(0,0,0,0);font:1
 .btn01,.btn01.hv{transition:none 0s ease 0s;}
 #wrap{position:relative;}
 #header{margin:0 auto;position:relative;width:1065px;z-index:5;}
-#header .inbox{background:none repeat scroll 0 0 #FFFFFF;border-radius:0 0 10px 10px;box-shadow:0 10px 20px rgba(0,0,0,0.2);margin:0 2.5%;padding:0 1%;position:absolute;width:93%;}
-#header h1{display:inline;float:left;margin:5px 0 5px 10px;width:180px;}
+#header .inbox{background:none repeat scroll 0 0 #45883C;border-radius:0 0 10px 10px;box-shadow:0 10px 20px rgba(0,0,0,0.2);margin:0 2.5%;padding:0 1%;border:1px solid #97CA97;border-top:0;position:absolute;width:93%;}
+#header h1{display:inline;float:left;margin:5px 0;width:160px;}
 #header h1 img{width:100%;}
 #header nav{display:inline;float:right;width:77%;}
 #header nav ul{clear:both;display:inline;float:right;font-size:14px;}
@@ -20,7 +20,7 @@ body{background:url("images/bg_body.jpg") repeat scroll 0 0 rgba(0,0,0,0);font:1
 #header .mnav li{display:inline;float:left;margin:0 8px;}
 #header .mnav li a{border-bottom:5px solid #FFFFFF;color:#999999;display:inline-block;font-size:15px;padding:2px 5px 10px;}
 #header .mnav li.hv a,#header .mnav li.on a{border-bottom:5px solid #5EC252;color:#5EC252;}
-#header .i-menu{background:url("images/header/icon_menu.jpg") no-repeat scroll center center rgba(0,0,0,0);cursor:pointer;display:none;height:55px;position:absolute;right:5%;text-indent:-9999px;top:8px;width:55px;z-index:9999;}
+#header .i-menu{background:url("images/header/icon_menu.png") no-repeat scroll center center rgba(0,0,0,0);cursor:pointer;display:none;height:50px;position:absolute;right:5%;text-indent:-9999px;top:10px;width:55px;background-size: 100% 100%;z-index:9999;}
 #header .s-mnav{background:none repeat scroll 0 0 #FFFFFF;border-radius:10px;box-shadow:0 10px 10px rgba(0,0,0,0.2);display:none;margin:0 2.5%;padding:90px 0 0;position:absolute;width:95%;z-index:2;}
 #header .s-mnav ul{width:100%;}
 #header .s-mnav li{border-bottom:1px solid #CCCCCC;display:inline;float:left;width:50%;}
@@ -357,15 +357,15 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .repwrap h3.title,.repother h3.title{text-shadow:none;}
 
 /* 添加日记页面样式 start */
-#content{padding-top:120px;}
+#content{padding-top:80px;}
 .ceanza,.height_record,.weight_record,.buds_record,.medical_institution,.medical_record{color:#B7B2A9;} 
 .ceanza>form,.height_record>form,.weight_record>form,.medical_institution>form,.medical_record>form{padding: 0 0.5854rem;}
 .photos{position: relative;}
 .photos>div{position: absolute;text-align: center;}
-.mather-head-portrait{top:0;right:0.7805rem;}
+.mather-head-portrait{top:0.3902rem;right:0.7805rem;}
 .baby-head-portrait{top:-1.561rem;left:4.2927rem;}
-.father-head-portrait{top:0.3902rem;left:0.4878rem;}
-.photos .upHead{position: relative;width:1.8927rem;height:1.8927rem;border:2px solid #D8EFD5;border-radius: 50%;margin-bottom:0.1463rem;overflow: hidden;background: #fff;}
+.father-head-portrait{top: 0.7805rem;left:0.4878rem;}
+.photos .upHead{position: relative;width:2.2439rem;height:2.2439rem;border:2px solid #D8EFD5;border-radius: 50%;margin-bottom:0.1463rem;overflow: hidden;background: #fff;}
 .photos .upHead>img{width:100%;height:100%;position: relative;}
 img.userHead{width:100%;height:100%;}
 .photos .upHead input{position: absolute;width:100%;height:100%;top:0;left:0;opacity: 0;}
@@ -672,11 +672,10 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 /* 底部导航栏样式 end */
 
 @media (max-width:1065px){
-#content{padding-top: 110px;}
-.ceanza_menu_bg{padding-top: 0.9756rem;}
+.ceanza_menu_bg{padding-top: 1.0732rem;}
 #header{width:100%;}
 #header .tnav{margin:10px 10px 8px 0;}
-#header .mnav li{margin:0 3px;}
+#header .mnav li{margin:0;}
 .sliderbox{height:0;padding:0 0 40%;}
 .slider li .item{width:100%;}
 .slider li .item img{width:100%;}
@@ -690,7 +689,7 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 @media (max-width:950px){
 .list02 li span{margin:0 0 5px 30%;}
 .list03 li span{margin:0 0 5px 30%;}
-#header nav{width:74%;}
+#header nav{width:72%;}
 #header .mnav li a{font-size:12px;padding:2px 3px 12px;}
 .list01 ul,.list02 ul,.list03 ul{font-size:12px;max-height: 200px;overflow: auto}
 .list01 li span b,.list02 li span b,.list03 li span b{font-size:13px;}
