@@ -104,38 +104,49 @@ if(isset($payload)) {
 
 	<!--【Content】-->
 	<section id="content">
-		<!-- InstanceBeginEditable name="content" -->
-		<section class="medical_institution">
-			<h4>新增常用医疗机构资料</h4>
-			<section class="gopath goback"><a href="index.php">首页</a> > 新增常用医疗机构资料</section>
-			<form action="medical_institution.php" method="post" enctype="multipart/form-data">
-				<ul class="form">
-					<li class="title">
-						<p>医院：</p>
-						<input type="text" name="hospital" value="">
-					</li>
-					<li class="doctor">
-						<p>医生：</p>
-						<input type="text" name="doctor_name" value="">
-					</li>
-					<li class="address">
-						<b></b>
-						<p>地址：</p>
-						<input type="text" name="address" value="">
-					</li>
-					<li class="phone">
-						<b></b>
-						<p>电话：</p>
-						<input type="text" name="doctor_phone" value="">
-					</li>
-				</ul>
-				<input type="hidden" name="type" value="add">
-				<button class="medical_institution_add_submit">提交</button>
-			</form>
+		<!--//主內容//-->
+		<section class="indexcont">
+			<section class="inbox noBoxShadowPage">
+				<section class="contbox clearfix">
+					<section class="medical_institution">
+						<div class="breadcrumbs_logo">
+							<h2 class="title">新增常用医疗机构资料</h2>
+							<section class="gopath"><a href="index.php">首页</a> > 新增常用医疗机构资料</section>
+						</div>
+						<form action="medical_institution.php" method="post" enctype="multipart/form-data">
+							<ul class="form">
+								<li class="title">
+									<p>医院：</p>
+									<input type="text" name="hospital" value="">
+								</li>
+								<li class="doctor">
+									<p>医生：</p>
+									<input type="text" name="doctor_name" value="">
+								</li>
+								<li class="address">
+									<b></b>
+									<p>地址：</p>
+									<input type="text" name="address" value="">
+								</li>
+								<li class="phone">
+									<b></b>
+									<p>电话：</p>
+									<input type="text" name="doctor_phone" value="">
+								</li>
+							</ul>
+							<input type="hidden" name="type" value="add">
+							<button class="medical_institution_add_submit">提交</button>
+						</form>
+					</section>
+				</section>
+			</section>
 		</section>
+		<!--//主內容//-->
+
 		<!-- InstanceEndEditable -->
 	</section>
 	<!--【Content End】-->
+
 	<!--【Footer】-->
 	<?php include 'inc_footer.html'; ?>
 	<!--【Footer End】-->

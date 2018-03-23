@@ -104,35 +104,44 @@ if(isset($payload)) {
 
 	<!--【Content】-->
 	<section id="content">
-		<!-- InstanceBeginEditable name="content" -->
-		<?php
-		$sql  = 'select * from wap_medical where id='.$_GET['id'];
-		$result = M()->find($sql);
-		//				print_r($result);
-		?>
-		<section class="medical_institution">
-			<form action="medical_institution.php" method="post" enctype="multipart/form-data">
-				<input type="hidden" name="type" value="update" />
-				<input type="hidden" name="id" value="<?php echo $_GET['id']?>" />
-				<h4>编辑常用医疗机构资料</h4>
-				<section class="gopath goback"><a href="index.php">首页</a> > 编辑常用医疗机构资料</section>
-				<ul class="eqit_content">
-					<li class="title">医院：<input type="text" name="hospital" value="<?= $result['hospital']?>"></li>
-					<li class="doctor">医生：<input type="text" name="doctor_name" value="<?= $result['doctor_name']?>"></li>
-					<li class="address">
-						<b></b>
-						<p>地址：</p>
-						<input type="text" name="address" value="<?= $result['address']?>">
-					</li>
-					<li class="phone">
-						<b></b>
-						<p>电话：</p>
-						<input type="text" name="doctor_phone" value="<?= $result['doctor_phone']?>">
-					</li>
-				</ul>
-				<button class="medical_institution_eqit_submit">提交</button>
-			</form>
+		<!--//主內容//-->
+		<section class="indexcont">
+			<section class="inbox noBoxShadowPage">
+				<section class="contbox clearfix">
+					<?php
+					$sql  = 'select * from wap_medical where id='.$_GET['id'];
+					$result = M()->find($sql);
+					//				print_r($result);
+					?>
+					<section class="medical_institution">
+						<div class="breadcrumbs_logo">
+							<h2 class="title">编辑常用医疗机构资料</h2>
+							<section class="gopath"><a href="index.php">首页</a> > 编辑常用医疗机构资料</section>
+						</div>
+						<form action="medical_institution.php" method="post" enctype="multipart/form-data">
+							<input type="hidden" name="type" value="update" />
+							<input type="hidden" name="id" value="<?php echo $_GET['id']?>" />
+							<ul class="eqit_content">
+								<li class="title">医院：<input type="text" name="hospital" value="<?= $result['hospital']?>"></li>
+								<li class="doctor">医生：<input type="text" name="doctor_name" value="<?= $result['doctor_name']?>"></li>
+								<li class="address">
+									<b></b>
+									<p>地址：</p>
+									<input type="text" name="address" value="<?= $result['address']?>">
+								</li>
+								<li class="phone">
+									<b></b>
+									<p>电话：</p>
+									<input type="text" name="doctor_phone" value="<?= $result['doctor_phone']?>">
+								</li>
+							</ul>
+							<button class="medical_institution_eqit_submit">提交</button>
+						</form>
+					</section>
+				</section>
+			</section>
 		</section>
+		<!--//主內容//-->
 		<!-- InstanceEndEditable -->
 	</section>
 	<!--【Content End】-->

@@ -104,102 +104,111 @@ if(isset($payload)) {
 
     <!--【Content】-->
     <section id="content">
-        <!-- InstanceBeginEditable name="content" -->
-        <section class="ceanza">
-            <h4>宝贝日记</h4>
-            <section class="gopath goback"><a href="index.php">首页</a> > 宝贝日记</section>
-            <p>替您的宝宝写下成长日记，为您的宝宝记录每天的成长与回忆。</p>
-            <a href="ceanza_add.php" class="add_ceanza">新增宝贝日记<b></b></a>
-            <a href="javascript: void(0)" class="ceanza_category">
-                浏览日记分类
-                <b></b>
-                <div class="category-list">
-                    <ul>
+        <!--//主內容//-->
+        <section class="indexcont">
+            <section class="inbox noBoxShadowPage">
+                <section class="contbox clearfix">
+                    <section class="ceanza">
+                        <!--//主選單標題與路徑//-->
+                        <div class="breadcrumbs_logo">
+                            <h2 class="title">宝贝日记</h2>
+                            <section class="gopath"><a href="index.php">首页</a> > 宝贝日记</section>
+                        </div>
+                        <section class="Txt clearfix">
+                            <p>替您的宝宝写下成长日记，为您的宝宝记录每天的成长与回忆。</p>
+                        </section>
+                        <a href="ceanza_add.php" class="add_ceanza">新增宝贝日记<b></b></a>
+                        <a href="javascript: void(0)" class="ceanza_category">
+                            浏览日记分类
+                            <b></b>
+                            <div class="category-list">
+                                <ul>
 
-                        <li <?= (isset($_GET['category_name'])&&($_GET['category_name']=='0月-3月'))?'class="checked"':''?>>0月-3月</li>
-                        <li <?= (isset($_GET['category_name'])&&($_GET['category_name']=='3月-1岁'))?'class="checked"':''?>>3月-1岁</li>
-                        <li <?= (isset($_GET['category_name'])&&($_GET['category_name']=='1岁-2岁'))?'class="checked"':''?>>1岁-2岁</li>
-                        <li <?= (isset($_GET['category_name'])&&($_GET['category_name']=='2岁-3岁'))?'class="checked"':''?>>2岁-3岁</li>
-                        <li <?= (isset($_GET['category_name'])&&($_GET['category_name']=='3岁-4岁'))?'class="checked"':''?>>3岁-4岁</li>
-                        <li <?= (isset($_GET['category_name'])&&($_GET['category_name']=='4岁-5岁'))?'class="checked"':''?>>4岁-5岁</li>
-                        <li <?= (isset($_GET['category_name'])&&($_GET['category_name']=='5岁-6岁'))?'class="checked"':''?>>5岁-6岁</li>
-                    </ul>
-                    <p class="close">×</p>
-                </div>
-            </a>
-            <div class="browse_mode">
-                <p></p>
-                <ul class="mode_sel">
-                    <li class="selected">
-                        <span>缩图</span>
-                        <b></b>
-                    </li>
-                    <li>
-                        <span>列表</span>
-                        <b></b>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <?php
-        // 缩略图列表开始
-        //        var_dump($_SESSION);
-        //            if($_SESSION['CURRENT_KID_BIRTH_DAY']){
-        //
-        //            }
-        if(isset($_SESSION['user_token'])) {
-            $member_uid = $_SESSION["CURRENT_KID_UID"];
-            $category_name = !empty($_GET['category_name'])?$_GET['category_name']:'';
-            if($category_name){
-                $sql = "select * from grow_diary where uid in (select supervisor_uid from user where uid={$member_uid}) and grow_diary_category_name='{$category_name}' order by Id";
-            }else{
-                $sql = "select * from grow_diary where uid in (select supervisor_uid from user where uid={$member_uid}) order by Id";
-            }
-            $list = query_result_list($sql);
-        }
-        if($list){
-            $tmp_list = array();
-            foreach ($list as $k){
-                $picurl = $k['picurl'];
-                $year_now = date('Y',strtotime($k['date']));
-                $year_old = date('Y', strtotime($_SESSION['CURRENT_KID_BIRTH_DAY']));
-                $year_age = $year_now - $year_old;
-                $tmp_list[$year_now][] = array('img' => $picurl,'title' => $k['title'],'Id' =>$k['Id'],'date'=>$k['date']);
-            }
-            unset($k);
-            foreach($tmp_list as $key=>$value){
-                $year_now = $key;
-                $year_old = date('Y', strtotime($_SESSION['CURRENT_KID_BIRTH_DAY']));
-                $year_age = $key - $year_old;
-                echo "<div class=\"ceanza_list contraction\">";
-                echo "<p>{$year_now} 年<span>{$year_age} 岁</span></p>";
-                echo "<ul class=\"ceanza_contraction\">";
-                foreach($value as $k){
-                    echo "<li><a href=\"ceanza_view.php?grow_id={$k['Id']}\"><p><img src={$k['img']} alt=\"\"><i></i></p>
+                                    <li <?= (isset($_GET['category_name'])&&($_GET['category_name']=='0月-3月'))?'class="checked"':''?>>0月-3月</li>
+                                    <li <?= (isset($_GET['category_name'])&&($_GET['category_name']=='3月-1岁'))?'class="checked"':''?>>3月-1岁</li>
+                                    <li <?= (isset($_GET['category_name'])&&($_GET['category_name']=='1岁-2岁'))?'class="checked"':''?>>1岁-2岁</li>
+                                    <li <?= (isset($_GET['category_name'])&&($_GET['category_name']=='2岁-3岁'))?'class="checked"':''?>>2岁-3岁</li>
+                                    <li <?= (isset($_GET['category_name'])&&($_GET['category_name']=='3岁-4岁'))?'class="checked"':''?>>3岁-4岁</li>
+                                    <li <?= (isset($_GET['category_name'])&&($_GET['category_name']=='4岁-5岁'))?'class="checked"':''?>>4岁-5岁</li>
+                                    <li <?= (isset($_GET['category_name'])&&($_GET['category_name']=='5岁-6岁'))?'class="checked"':''?>>5岁-6岁</li>
+                                </ul>
+                                <p class="close">×</p>
+                            </div>
+                        </a>
+                        <div class="browse_mode">
+                            <p></p>
+                            <ul class="mode_sel">
+                                <li class="selected">
+                                    <span>缩图</span>
+                                    <b></b>
+                                </li>
+                                <li>
+                                    <span>列表</span>
+                                    <b></b>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <?php
+                    // 缩略图列表开始
+                    //        var_dump($_SESSION);
+                    //            if($_SESSION['CURRENT_KID_BIRTH_DAY']){
+                    //
+                    //            }
+                    if(isset($_SESSION['user_token'])) {
+                        $member_uid = $_SESSION["CURRENT_KID_UID"];
+                        $category_name = !empty($_GET['category_name'])?$_GET['category_name']:'';
+                        if($category_name){
+                            $sql = "select * from grow_diary where uid in (select supervisor_uid from user where uid={$member_uid}) and grow_diary_category_name='{$category_name}' order by Id";
+                        }else{
+                            $sql = "select * from grow_diary where uid in (select supervisor_uid from user where uid={$member_uid}) order by Id";
+                        }
+                        $list = query_result_list($sql);
+                    }
+                    if($list){
+                        $tmp_list = array();
+                        foreach ($list as $k){
+                            $picurl = $k['picurl'];
+                            $year_now = date('Y',strtotime($k['date']));
+                            $year_old = date('Y', strtotime($_SESSION['CURRENT_KID_BIRTH_DAY']));
+                            $year_age = $year_now - $year_old;
+                            $tmp_list[$year_now][] = array('img' => $picurl,'title' => $k['title'],'Id' =>$k['Id'],'date'=>$k['date']);
+                        }
+                        unset($k);
+                        foreach($tmp_list as $key=>$value){
+                            $year_now = $key;
+                            $year_old = date('Y', strtotime($_SESSION['CURRENT_KID_BIRTH_DAY']));
+                            $year_age = $key - $year_old;
+                            echo "<div class=\"ceanza_list contraction\">";
+                            echo "<p>{$year_now} 年<span>{$year_age} 岁</span></p>";
+                            echo "<ul class=\"ceanza_contraction\">";
+                            foreach($value as $k){
+                                echo "<li><a href=\"ceanza_view.php?grow_id={$k['Id']}\"><p><img src={$k['img']} alt=\"\"><i></i></p>
     			<span><b>{$k['title']}</b></span></a></li>";
-                }
+                            }
 
-                echo "</ul>";
-                echo "</div>";
+                            echo "</ul>";
+                            echo "</div>";
 
-                echo "<div class=\"ceanza_list\" style='display:none'>";
-                echo "<p>{$year_now} 年<span>{$year_age} 岁</span></p>";
-                echo "<div class=\"title\"> <p> <span>撰写日期</span> <span>日记标题</span> </p>";
-                echo "<ul class=\"list\">";
-                foreach($value as $k){
-                    $date = date('Y年m月d日',strtotime($k['date']));
-                    echo "<li><p>{$date}</p>
+                            echo "<div class=\"ceanza_list\" style='display:none'>";
+                            echo "<p>{$year_now} 年<span>{$year_age} 岁</span></p>";
+                            echo "<div class=\"title\"> <p> <span>撰写日期</span> <span>日记标题</span> </p>";
+                            echo "<ul class=\"list\">";
+                            foreach($value as $k){
+                                $date = date('Y年m月d日',strtotime($k['date']));
+                                echo "<li><p>{$date}</p>
                         <p>{$k['title']}</p>  <p><b class=\"check\"></b>"
-                        . "<span><a href=\"ceanza_view.php?grow_id={$k['Id']}\">查看</a></span></p> "
-                        . "</li>";
-                    echo "<li>
+                                    . "<span><a href=\"ceanza_view.php?grow_id={$k['Id']}\">查看</a></span></p> "
+                                    . "</li>";
+                                echo "<li>
                             <p><b class=\"eqit\"></b><span><a href=\"ceanza_eqit.php?grow_id={$k['Id']}\">编辑</a></span></p>
                             <p><b class=\"delete\"></b><span><a href=\"grow_diary.php?grow_id={$k['Id']}&type=delete\">删除</a></span></p>
                           </li>";
-                }
-                echo "</ul>";
-                echo "</div></div>";
-            }
+                            }
+                            echo "</ul>";
+                            echo "</div></div>";
+                        }
 
 
 //				$key_list = array_keys($tmp_list);
@@ -241,29 +250,35 @@ if(isset($payload)) {
 //					echo "</div></div>";
 //					// 列表结束
 //				}
-        }else{
-            if(isset($_GET['category_name']) && !empty($_GET['category_name'])) {
-                ?>
-                <div class="noData" style="display:inherit">
-                    符合
-                    <span class="ceanza_type"><?php echo $_GET['category_name'] ?></span>
-                    的日记有<span class="ceanza_count">0</span>篇,您可以点击<a href="ceanza_add.php">新增宝贝日记</a>
-                </div>
-                <?php
-            }
-        }
+                    }else{
+                        if(isset($_GET['category_name']) && !empty($_GET['category_name'])) {
+                            ?>
+                            <div class="noData" style="display:inherit">
+                                符合
+                                <span class="ceanza_type"><?php echo $_GET['category_name'] ?></span>
+                                的日记有<span class="ceanza_count">0</span>篇,您可以点击<a href="ceanza_add.php">新增宝贝日记</a>
+                            </div>
+                            <?php
+                        }
+                    }
 
 
 
-        ?>
+                    ?>
 
-        <p class='end_line'></p>
-        <section class="contbox clearfix relevant_articles">
-            <h3 class="title">宝贝日记相关文章<a href="recommend.php" class="i-more">更多内容<span>&gt;&gt;</span></a></h3>
-            <ul>
-                <?php af_articles_list_recommend('成长日记'); ?>
-            </ul>
+                    <p class='end_line'></p>
+                    <section class="clearfix relevant_articles">
+                        <h3 class="title">宝贝日记相关文章<a href="recommend.php" class="i-more">更多内容<span>&gt;&gt;</span></a></h3>
+                        <ul>
+                            <?php af_articles_list_recommend('成长日记'); ?>
+                        </ul>
+                    </section>
+                    <!--//主選單標題與路徑//-->
+                </section>
+            </section>
         </section>
+        <!--//主內容//-->
+
         <!-- InstanceEndEditable -->
     </section>
     <!--【Content End】-->

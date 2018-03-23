@@ -143,8 +143,8 @@ if($member_uid > 0) {
         <!-- InstanceBeginEditable name="content" -->
         <section class="ceanza ceanza_menu">
             <div class="ceanza_menu_bg">
-                <h4>宝贝日记</h4>
-                <section class="gopath goback"><a href="index.php">首页</a> > 宝贝日记</section>
+                <h4>成长记录</h4>
+                <section class="gopath goback"><a href="index.php">首页</a> > 成长记录</section>
                 <div class="photos">
 
                     <div class="father-head-portrait">

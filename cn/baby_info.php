@@ -156,7 +156,7 @@ if($member_uid > 0) {
     <!--【Content】-->
     <section id="content">
         <!-- InstanceBeginEditable name="content" -->
-        <section class="baby_info">
+        <section class="baby_info inbox noBoxShadowPage">
             <div class="baby-head-portrait">
                 <div class="upHead">
                     <?php if($image_url){?>

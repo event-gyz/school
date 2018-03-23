@@ -81,7 +81,6 @@ function clearTimer (time) {
 }
 //删除左右两端的空格
 function trim(str){
-    alert(str)
     return str.replace(/(^\s*)|(\s*$)/g, "");
 }
 

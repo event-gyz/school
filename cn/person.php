@@ -1,14 +1,13 @@
 <?php
 session_start();
 include('inc.php');
-
-$tabon = @$_REQUEST['f'];
-if(!isset($tabon))
-    $tabon = 0;
 if(!isset($_SESSION['user_token'])) {
     header( 'Location: index.php' ) ;
     exit();
 }
+$tabon = @$_REQUEST['f'];
+if(!isset($tabon))
+    $tabon = '0';
 ?>
 <!DOCTYPE html>
 <html><!-- InstanceBegin template="/Templates/_page01.dwt" codeOutsideHTMLIsLocked="false" -->
@@ -103,7 +102,7 @@ if(isset($payload)) {
 }
 ?>
 <!-- InstanceBeginEditable name="wrap" -->
-<section id="wrap">
+<section id="wrap" class="inpage">
     <!-- InstanceEndEditable -->
 
     <!--【Header】-->
@@ -136,54 +135,65 @@ if(isset($payload)) {
     <!--【Content】-->
     <section id="content">
         <!-- InstanceBeginEditable name="content" -->
-        <section class="person">
-            <div class="parent-head-portrait">
-                <div class="upHead">
-                    <?php if($image_url){?>
-                        <img src=<?= $image_url?> alt=""  class="userHead">
-                    <?php }else{ ?>
-                        <img src="../content/epaper/images/parent.png" alt=""  class="noHead">
-                    <?php } ?>
-                    <b></b>
-                    <p></p>
-                    <form action="head_sculpture.php"  method="post" enctype="multipart/form-data">
-                        <input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="imgfile">
-                        <input hidden="" name="type" value="person" />
-                    </form>
-                </div>
-                <span>家长已登录</span>
-            </div>
-            <ul class="info_list">
-                <li>
-                    <p class="account"></p>
-                    <span>账号资料</span>
-                    <input type="text" value="<?=$email?>" disabled>
-                </li>
-                <li>
-                    <p class="mobile"></p>
-                    <span>电话</span>
-                    <input type="phone" value="<?=$phone?>" disabled>
-                </li>
-                <li>
-                    <a href="baby_info.php">
-                        <i></i>
-                        <p class="info"></p>
-                        <span>宝宝信息</span>
-                        <input type="text" value="<?=$nick_name?>" disabled>
-                    </a>
-                </li>
-                <li>
-                    <i></i>
-                    <p class="consultation"></p>
-                    <span>专家咨询</span>
-                </li>
-                <li>
-                    <i></i>
-                    <p class="recommend"></p>
-                    <span>推荐好友</span>
-                </li>
-            </ul>
+
+        <!--//主內容//-->
+        <section class="indexcont newcomers">
+            <section class="inbox noBoxShadowPage">
+                <section class="contbox clearfix">
+                    <!-- InstanceBeginEditable name="content" -->
+                    <section class="person">
+                        <div class="parent-head-portrait">
+                            <div class="upHead">
+                                <?php if($image_url){?>
+                                    <img src=<?= $image_url?> alt=""  class="userHead">
+                                <?php }else{ ?>
+                                    <img src="../content/epaper/images/parent.png" alt=""  class="noHead">
+                                <?php } ?>
+                                <b></b>
+                                <p></p>
+                                <form action="head_sculpture.php"  method="post" enctype="multipart/form-data">
+                                    <input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="imgfile">
+                                    <input hidden="" name="type" value="person" />
+                                </form>
+                            </div>
+                            <span>家长已登录</span>
+                        </div>
+                        <ul class="info_list">
+                            <li>
+                                <p class="account"></p>
+                                <span>账号资料</span>
+                                <input type="text" value="<?=$email?>" disabled>
+                            </li>
+                            <li>
+                                <p class="mobile"></p>
+                                <span>电话</span>
+                                <input type="phone" value="<?=$phone?>" disabled>
+                            </li>
+                            <li>
+                                <a href="baby_info.php">
+                                    <i></i>
+                                    <p class="info"></p>
+                                    <span>宝宝信息</span>
+                                    <input type="text" value="<?=$nick_name?>" disabled>
+                                </a>
+                            </li>
+                            <li>
+                                <i></i>
+                                <p class="consultation"></p>
+                                <span>专家咨询</span>
+                            </li>
+                            <li>
+                                <i></i>
+                                <p class="recommend"></p>
+                                <span>推荐好友</span>
+                            </li>
+                        </ul>
+                    </section>
+
+                </section>
+            </section>
         </section>
+        <!--//主內容//-->
         <!-- InstanceEndEditable -->
     </section>
     <!--【Content End】-->
@@ -192,9 +202,8 @@ if(isset($payload)) {
     <?php include 'inc_footer.html'; ?>
     <!--【Footer End】-->
 </section>
-<?php include 'inc_bottom_js.php'; ?>
-</body>
-<script>
+
+<script type="text/javascript">
     $('.imgfile').on('change', function(){
         $(this).closest('form').submit();
     });
@@ -204,4 +213,6 @@ if(isset($payload)) {
         return true;
     });
 </script>
+<?php include 'inc_bottom_js.php'; ?>
+</body>
 <!-- InstanceEnd --></html>

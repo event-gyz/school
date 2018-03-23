@@ -104,36 +104,46 @@ if(isset($payload)) {
 
 	<!--【Content】-->
 	<section id="content">
-		<!-- InstanceBeginEditable name="content" -->
-		<section class="medical_record">
-			<form action="medical_records.php" method="post" enctype="multipart/form-data">
-				<input type="hidden" name="type" value="update" />
-				<input type="hidden" name="id" value="<?php echo $_GET['id']?>" />
+		<!--//主內容//-->
+		<section class="indexcont">
+			<section class="inbox noBoxShadowPage">
+				<section class="contbox clearfix">
+					<section class="medical_record">
+						<div class="breadcrumbs_logo">
+							<h2 class="title">编辑就诊记录</h2>
+							<section class="gopath"><a href="index.php">首页</a> > 编辑就诊记录</section>
+						</div>
+						<form action="medical_records.php" method="post" enctype="multipart/form-data">
+							<input type="hidden" name="type" value="update" />
+							<input type="hidden" name="id" value="<?php echo $_GET['id']?>" />
 
-				<?php
-				$sql  = 'select * from wap_diagnoses where id='.$_GET['id'];
-				$result = M()->find($sql);
-				//				print_r($result);
-				?>
-				<h4>编辑就诊记录</h4>
-				<section class="gopath goback"><a href="index.php">首页</a> > 编辑就诊记录</section>
-				<ul class="eqit_content">
-					<li>
-						<b class="clock"></b>
-						记录时间：
-						<input class="time" type="date" name="date" value="<?= $result['date']?>">
-					</li>
-					<li class="title">医院：<input name="hospital" type="text" value="<?= $result['hospital']?>"></li>
-					<li class="doctor">医生：<input name="doctor" type="text" value="<?= $result['doctor']?>"></li>
-					<li class="diagnosis">诊断：<input name="symptom" type="text" value="<?= $result['symptom']?>"></li>
-					<li class="told">
-						<p>医生叮嘱：</p>
-						<textarea maxlength="100" name="note"><?= $result['note']?></textarea>
-					</li>
-				</ul>
-				<button class="medical_record_eqit_submit">提交</button>
-			</form>
+							<?php
+							$sql  = 'select * from wap_diagnoses where id='.$_GET['id'];
+							$result = M()->find($sql);
+							//				print_r($result);
+							?>
+							<ul class="eqit_content">
+								<li>
+									<b class="clock"></b>
+									记录时间：
+									<input class="time" type="date" name="date" value="<?= $result['date']?>">
+								</li>
+								<li class="title">医院：<input name="hospital" type="text" value="<?= $result['hospital']?>"></li>
+								<li class="doctor">医生：<input name="doctor" type="text" value="<?= $result['doctor']?>"></li>
+								<li class="diagnosis">诊断：<input name="symptom" type="text" value="<?= $result['symptom']?>"></li>
+								<li class="told">
+									<p>医生叮嘱：</p>
+									<textarea maxlength="100" name="note"><?= $result['note']?></textarea>
+								</li>
+							</ul>
+							<button class="medical_record_eqit_submit">提交</button>
+						</form>
+					</section>
+				</section>
+			</section>
 		</section>
+		<!--//主內容//-->
+
 		<!-- InstanceEndEditable -->
 	</section>
 	<!--【Content End】-->

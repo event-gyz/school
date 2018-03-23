@@ -34,7 +34,7 @@ if(!isset($_tag))
         <!--//主內容//-->
         <section class="indexcont">
             <section class="inbox noBoxShadowPage">
-                <section class="contbox clearfix">
+                <section class="contbox clearfix recommend">
 
                     <!--//主選單標題與路徑//-->
                     <div class="breadcrumbs_logo">

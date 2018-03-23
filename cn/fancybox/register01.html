@@ -91,6 +91,7 @@
                 <div class="errorbar error01">注册失敗</div>
                 <div class="mlinks"><a href="#fy-login" class="fancybox">已是会员？</a><a href="#fy-forget" class="fancybox">忘记密码？</a></div>
                 <button class="btn_submit02 register"></button>
+                <p class="regulations">会员规约</p>
                 <!--//【註1】Iven暫時寫來呼叫註冊成功的畫面//
                 <script>
                 $(function(){
@@ -103,7 +104,7 @@
             </section>
             </form>
         </section>
-        <section class="bbox scrolltype">
+        <section class="bbox scrolltype regulations_content">
             <h3 class="title">会员规约：</h3>
             <section class="clearfix">
                 <h3>关于入会</h3>
@@ -161,6 +162,10 @@
         }
         
      });
+
+     $(".regulations").click(function(){
+        $('.regulations_content').toggle()
+     })
     })
     $(function() {
         $('#city_name').autocomplete(cities, {

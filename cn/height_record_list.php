@@ -129,74 +129,86 @@ if(isset($payload)) {
 
 	<!--【Content】-->
 	<section id="content">
-		<!-- InstanceBeginEditable name="content" -->
-		<section class="height_record">
-			<h4>身高记录</h4>
-			<section class="gopath goback"><a href="index.php">首页</a> > 身高记录</section>
-			<p>您可以在这里看到宝宝的身高改变曲线，当宝宝的身高落于有顏色的区域，这代表着符合世界卫生组织(WHO)儿童身高区间，也就是身高落于大部分儿童身高族群之间。</p>
-			<a href="height_record_add.php" class="add_height_record">新增身高记录<b></b></a>
-			<div class="browse_mode">
-				<p></p>
-				<ul class="mode_sel">
-					<li class="selected">
-						<span>图表</span>
-						<b></b>
-					</li>
-					<li>
-						<span>列表</span>
-						<b></b>
-					</li>
-				</ul>
-			</div>
-		</section>
+		<!--//主內容//-->
+		<section class="indexcont">
+			<section class="inbox noBoxShadowPage">
+				<section class="contbox clearfix">
+					<section class="height_record">
+						<!--//主選單標題與路徑//-->
+						<div class="breadcrumbs_logo">
+							<h2 class="title">身高记录</h2>
+							<section class="gopath"><a href="index.php">首页</a> > 身高记录</section>
+						</div>
+						<section class="Txt clearfix">
+							<p>您可以在这里看到宝宝的身高改变曲线，当宝宝的身高落于有顏色的区域，这代表着符合世界卫生组织(WHO)儿童身高区间，也就是身高落于大部分儿童身高族群之间。</p>
+						</section>
+						<a href="height_record_add.php" class="add_height_record">新增身高记录<b></b></a>
+						<div class="browse_mode">
+							<p></p>
+							<ul class="mode_sel">
+								<li class="selected">
+									<span>图表</span>
+									<b></b>
+								</li>
+								<li>
+									<span>列表</span>
+									<b></b>
+								</li>
+							</ul>
+						</div>
+					</section>
 
-		<!-- 缩图图表 -->
-		<div class="height_record_contraction" id="height_record_contraction">
-		</div>
-		<p class="prompt">左右滑动查看</p>
-		<?php
-		if(isset($_SESSION['user_token'])) {
-			$member_uid = $_SESSION["CURRENT_KID_UID"];
-			$sql = "select * from wap_height where uid in (select supervisor_uid from user where uid={$member_uid}) order by `date` desc";
-			$list = M()->select($sql);
-			$url = base64_encode($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
-		}
-		?>
-		<!-- 列表 -->
-		<div class="height_record_list">
-			<div class="title">
-				<p>
-					<span>照片</span>
-					<span>日期</span>
-					<span>身高（cm）</span>
-				</p>
-				<ul class="list">
-					<?php foreach($list as $value){ ?>
-						<li>
-							<p><i><a href="#"><img src=<?php echo $value['picurl']?> alt=""></a></i></p>
-							<p><?php echo date('Y年m月d日',strtotime($value['date']))?></p>
-							<p><?php echo $value['height']?></p>
-						</li>
-						<li>
-							<p><b class="eqit"></b><span><a href="height_record_eqit.php?id=<?= $value['id']?>">编辑</a></span></p>
-							<p><b class="delete"></b>
-								<span>
+					<!-- 缩图图表 -->
+					<div class="height_record_contraction" id="height_record_contraction">
+					</div>
+					<p class="prompt">左右滑动查看</p>
+					<?php
+					if(isset($_SESSION['user_token'])) {
+						$member_uid = $_SESSION["CURRENT_KID_UID"];
+						$sql = "select * from wap_height where uid in (select supervisor_uid from user where uid={$member_uid}) order by `date` desc";
+						$list = M()->select($sql);
+						$url = base64_encode($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+					}
+					?>
+					<!-- 列表 -->
+					<div class="height_record_list">
+						<div class="title">
+							<p>
+								<span>照片</span>
+								<span>日期</span>
+								<span>身高（cm）</span>
+							</p>
+							<ul class="list">
+								<?php foreach($list as $value){ ?>
+									<li>
+										<p><i><a href="#"><img src=<?php echo $value['picurl']?> alt=""></a></i></p>
+										<p><?php echo date('Y年m月d日',strtotime($value['date']))?></p>
+										<p><?php echo $value['height']?></p>
+									</li>
+									<li>
+										<p><b class="eqit"></b><span><a href="height_record_eqit.php?id=<?= $value['id']?>">编辑</a></span></p>
+										<p><b class="delete"></b>
+											<span>
 									<a href="height_record.php?id=<?= $value['id']?>&type=delete&back=<?=$url?>">删除</a>
 								</span>
-							</p>
-						</li>
-					<?php }?>
+										</p>
+									</li>
+								<?php }?>
 
-				</ul>
-			</div>
-		</div>
-		<p class='end_line'></p>
-		<section class="contbox clearfix relevant_articles">
-			<h3 class="title">身高相关文章<a href="recommend.php" class="i-more">更多内容<span>&gt;&gt;</span></a></h3>
-			<ul>
-				<?php af_articles_list_recommend('身高'); ?>
-			</ul>
+							</ul>
+						</div>
+					</div>
+					<p class='end_line'></p>
+					<section class="clearfix relevant_articles">
+						<h3 class="title">身高相关文章<a href="recommend.php" class="i-more">更多内容<span>&gt;&gt;</span></a></h3>
+						<ul>
+							<?php af_articles_list_recommend('身高'); ?>
+						</ul>
+					</section>
+				</section>
+			</section>
 		</section>
+		<!--//主內容//-->
 		<!-- InstanceEndEditable -->
 	</section>
 	<!--【Content End】-->

@@ -66,7 +66,7 @@
                     }
                 },
                 error: function(xhr, err) {
-                    alert('Ajax request ' + err);
+                    layer.msg('账号或密码不一致，请重新输入');
                 }
             });
             return false;
