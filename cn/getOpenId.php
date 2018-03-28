@@ -29,7 +29,7 @@ if(!isset($_GET['code'])){
     //根据openid和access_token查询用户信息
     $access_token = $json_obj['access_token'];
     $openid = $json_obj['openid'];
-    $get_user_info_url = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='.$access_token.'&openid='.$openid.'&lang=zh_CN';
+    $get_user_info_url = 'https://api.weixin.qq.com/sns/userinfo?access_token='.$access_token.'&openid='.$openid.'&lang=zh_CN';
 
 //    $ch = curl_init();
 //    curl_setopt($ch,CURLOPT_URL,$get_user_info_url);
@@ -41,6 +41,7 @@ if(!isset($_GET['code'])){
     $res = file_get_contents($get_user_info_url);
     //解析json
     $user_obj = json_decode($res,true);
-    $_SESSION['user'] = $user_obj;
+//    $_SESSION['user'] = $user_obj;
+//    unset($_SESSION['user']);
     print_r($user_obj);
 }
