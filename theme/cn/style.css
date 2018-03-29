@@ -5,7 +5,7 @@ body{background:url("images/bg_body.jpg") repeat scroll 0 0 rgba(0,0,0,0);font:1
 .btn01,.btn01.hv{transition:none 0s ease 0s;}
 #wrap{position:relative;}
 #header{margin:0 auto;position:relative;width:1065px;z-index:5;}
-#header .inbox{background:none repeat scroll 0 0 #45883C;border-radius:0 0 10px 10px;box-shadow:0 10px 20px rgba(0,0,0,0.2);margin:0 2.5%;padding:0 1%;border:1px solid #97CA97;border-top:0;position:absolute;width:93%;}
+#header .inbox{background:none repeat scroll 0 0 #45883C;border-radius:0 0 10px 10px;box-shadow:0 10px 20px rgba(0,0,0,0.2);margin:0 2.5%;padding:0 1%;border:1px solid #97CA97;border-top:0;position:absolute;width:95%;box-sizing: border-box;}
 #header h1{display:inline;float:left;margin:5px 0;width:180px;}
 #header h1 img{width:100%;}
 #header nav{display:inline;float:right;width:77%;}
@@ -292,6 +292,12 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .fy-cont .carefulness{color:#C53C3C;}
 .fy-bd .lbox{padding:0;width:46%;}
 .fy-bd .rbox{float:right;border:0 none;padding:0;width:49%;}
+.other_logins,.other_registers{padding: 0.5854rem 0.5854rem 0;clear:both;text-align: center;}
+.other_logins li,.other_registers li{float:left;width:50%;}
+.other_logins li i,.other_registers li i{display:inline-block;width:1.0244rem;height:1.0244rem;}
+.other_logins li p,.other_registers p{font-size: 0.2927rem;color:#444444;}
+.other_logins li.weixin i,.other_registers li.weixin i{background: url('../../content/epaper/images/weixin.png') no-repeat;background-size: 100%;}
+.other_logins li.mobile i,.other_registers li.mobile i{background: url('../../content/epaper/images/mobile_login.png') no-repeat;background-size: 100%;}
 .regulations_content{display: none;}
 .fy-bd .bbox{margin-top:35px;padding-bottom:20px;}
 .fy-bd h3.title{color:#666666;font-size:20px;padding:0 0 10px;text-shadow:none;}
@@ -300,6 +306,8 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .fy-bd .error01{color:#FF0000;position:static;text-align:right;}
 .fy-bd .fbar i{font-size:15px;font-style:normal;font-weight:bold;left:0;margin-top:-10px;position:absolute;top:50%;}
 .fy-bd .fbar .tf{display:inline;float:left;width:98%;}
+.bind_courtesy{position: absolute;bottom:-5px;text-decoration: underline;}
+.bind_courtesy a{color:#C84040;}
 
 .search-citys{position:relative;}
 .search-citys-tit{padding:10px 10px 0;}
@@ -354,7 +362,9 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .fy-bd .fstmb .lbox .fbar,.fy-bd .fstmb .rbox .fbar{padding:15px 0 15px 20%;}
 .fy-bd .fstmb .fbar .errorbar{left:10%;}
 .fy-bd .fstmb .lbox .fbar .errorbar,.fy-bd .fstmb .rbox .fbar .errorbar{left:20%;}
+.fy-bd>h3{color:#666666;font-size: 16px;}
 .repwrap h3.title,.repother h3.title{text-shadow:none;}
+
 
 /* 添加日记页面样式 start */
 #content{padding-top:80px;}
@@ -823,7 +833,7 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .shbox{margin:0 auto;padding:10px 0 30px;position:static;right:0;top:0;width:auto;}
 .shbox .tf{width:73%;}
 #footer{font-size:11px;}
-.btn_submit02,.btn_submit03,.btn_submit05{width:100%;height:60px;}
+.btn_submit02,.btn_submit03,.btn_submit05{width:100%;}
 .repbox .Txt.fl{display:block;float:none;width:100%;}
 .board{display:block;float:none;margin:10px 0 10px;width:95%;}
 .tab-hd li{width:32%;}
@@ -853,6 +863,7 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .slider-pg{bottom:5px;}
 .pgs .item{background-size:10px auto;height:10px;margin:0 0 0 1%;width:10px;}
 .btn_submit{background-size:100% auto;width:100%;}
+.btn_submit02,.btn_submit03,.btn_submit05{height:60px;}
 .endbox .btnbox .btn01{width:100%;}
 .winbox li{font-size:12px;}
 .btn_submit01{width:100%;}
