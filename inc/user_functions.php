@@ -62,7 +62,7 @@ class MyUser
 		{
 			if($this->admin)
 			{
-				$sql = "select uid from admin where email ='".$_PHONE."'";
+				$sql = "select uid from admin where cellphone ='".$_PHONE."'";
 			}
 			else
 			{
@@ -88,6 +88,40 @@ class MyUser
 		}
 
 	}
+
+    function login_wx($_OPENID)
+    {
+        $this->resetCuser();
+        if(func_num_args()==2)
+        {
+            if($this->admin)
+            {
+                $sql = "select uid from admin where wx_openid ='".$_OPENID."'";
+            }
+            else
+            {
+                $sql = "SELECT uid from member where (wx_openid ='".$_OPENID."')";
+            }
+            $result = M()->find($sql);
+            if($result==null) return -1;
+            if(empty($result))
+            {
+                return -1;
+            }
+            else
+            {
+                $this->uid = $result['uid'];
+                $this->getUserToken();
+                return $this->uid;
+            }
+
+        }
+        else
+        {
+            return -1;
+        }
+
+    }
 
 	function exist($_EMAIL)
 	{

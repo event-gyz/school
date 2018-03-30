@@ -24,10 +24,18 @@ else {
 	$token = $CMEMBER->getUserToken();
 	$credit= $CMEMBER->credit;
 	if(isset($token)) {
+		$email = '';
+		if($CMEMBER->email){
+			$email = $CMEMBER->email;
+		}elseif($CMEMBER->cellphone){
+			$email = $CMEMBER->cellphone;
+		}elseif($CMEMBER->nickname){
+			$email = $CMEMBER->nickname;
+		}
 		$arr = array(
 			'token' => $token,
 			'credit' => !empty($credit)?$credit:'',
-			'email' => !empty($CMEMBER->email)?$CMEMBER->email:$CMEMBER->cellphone
+			'email' => $email
 		);
 		
 		$_SESSION['user_token'] = $token;
