@@ -462,12 +462,6 @@
         });
     }
 
-    function showLoginStatus(nickname,points) {
-        $("#login_status").html('<li class="m_name-point fst"><b>'+nickname+'</b></li><li><a href="javascript:doLogout();">登出</a></li>');
-        $("#login_status_m").html('<b>'+nickname+'</b><a href="javascript:doLogout();">登出</a>');
-        $("#ex_target_text").text("立即使用");
-    }
-
     function doLogout() {
         $.ajax({
             url: "logout.php",

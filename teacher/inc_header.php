@@ -94,8 +94,9 @@ function checkAuthcodeFormat() {
 }
 
 
-function showLoginStatus() {
-	var nickname = <?=$_SESSION['user_email']?>;
+function showLoginStatus(nickname,points) {
+//	$("#login_status").html('<li class="m_name-point fst"><b>'+nickname+'</b><i>'+points+'點</i></li><li><a href="javascript:doLogout();">登出</a></li>');
+//	$("#login_status_m").html('<b>'+nickname+'</b><i>'+points+'點</i><a href="javascript:doLogout();">登出</a>');
 	$("#login_status").html('<li class="m_name-point fst"><b>'+nickname+'</b></li><li><a href="javascript:doLogout();">登出</a></li>');
 	$("#login_status_m").html('<b>'+nickname+'</b><a href="javascript:doLogout();">登出</a>');
 }
@@ -167,7 +168,7 @@ function OpenWindowWithPost(url, windowoption, name, params) {
 				}
 				else {
 			?>
-                <li class="m_name-point fst"><a href="#fy-login" class="fancybox">登入</a></li>					
+                <li class="m_name-point fst"><a href="#fy-login" class="fancybox">登入</a></li>
             <?php 
 				}
 			?>
