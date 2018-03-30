@@ -94,9 +94,8 @@ function checkAuthcodeFormat() {
 }
 
 
-function showLoginStatus(nickname,points) {
-//	$("#login_status").html('<li class="m_name-point fst"><b>'+nickname+'</b><i>'+points+'點</i></li><li><a href="javascript:doLogout();">登出</a></li>');
-//	$("#login_status_m").html('<b>'+nickname+'</b><i>'+points+'點</i><a href="javascript:doLogout();">登出</a>');
+function showLoginStatus() {
+	var nickname = <?=$_SESSION['user_email']?>;
 	$("#login_status").html('<li class="m_name-point fst"><b>'+nickname+'</b></li><li><a href="javascript:doLogout();">登出</a></li>');
 	$("#login_status_m").html('<b>'+nickname+'</b><a href="javascript:doLogout();">登出</a>');
 }
