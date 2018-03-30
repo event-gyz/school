@@ -217,6 +217,17 @@ $(function(){
         getCode(waitTime, params)
     })
 
+    //绑定手机
+    $("#bind_mobile_ref_code").click(function() {
+        var params = {
+            Mobile: $('#bind_mobile').val(),
+            validEl: $('#div_err_code'),
+            errEl: $('#div_err_mobile'),
+            type: 'send',
+        }
+        getCode(waitTime, params)
+    })
+
     $("#register").click(function(e) {
 //        e.preventDefault();
         if(!checkRegEmailFormat()) {

@@ -167,7 +167,18 @@ if(isset($payload)) {
                             <li>
                                 <p class="mobile"></p>
                                 <span>电话</span>
-                                <input type="phone" value="<?=$phone?>" disabled>
+                                <?php
+                                    if(!empty($phone)){
+                                ?>
+                                        <input type="phone" value="<?=$phone?>" disabled>
+                                <?php
+                                    }else{
+                                ?>
+                                        <b><a style="float: right;width: 4.4878rem;height: 1.0732rem;text-align: right;font-size: 0.3902rem;" class="bind_mobile">绑定手机</a></b>
+                                <?php
+                                    }
+                                ?>
+
                             </li>
                             <li>
                                 <a href="baby_info.php">
@@ -212,6 +223,13 @@ if(isset($payload)) {
 
         return true;
     });
+    $(function(){
+        $('.bind_mobile').click(function(){
+            $.fancybox({
+                href: "#fy-mobile-bind"
+            });
+        })
+    })
 </script>
 <?php include 'inc_bottom_js.php'; ?>
 </body>

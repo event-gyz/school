@@ -268,35 +268,62 @@
 			return false;
 		});
 // forget password
-		$("#forget_pwd_form").submit(function(){
-			var user_id = $("#forget_email").val();
-			var auth_code = $("#forget_authcode").val();
-			var phone = $("#forget_mobile").val();
-			$.ajax({
-				url: "send_forget.php",
-				type: "POST",
-				data: {
-					'p1': user_id,
-					'p2': auth_code,
-					'p3': phone
-				},
-				dataType: "json",
-				success: function (jsonStr) {
-					console.log(jsonStr);
-					if(jsonStr.result=='success') {
-						$.fancybox.close();
-						$.fancybox({        href: "#fgsend"    }	);
-					}
-					else {
-						$("#fy-forget .error01").text(jsonStr.message).show().delay(3000).fadeOut();
-					}
-				},
-				error: function(xhr, err) {
-					alert('Ajax request ' + err);
-				}
-			});
-			return false;
-		});
+        $("#forget_pwd_form").submit(function(){
+            var auth_code = $("#forget_authcode").val();
+            var phone = $("#forget_mobile").val();
+            $.ajax({
+                url: "send_forget.php",
+                type: "POST",
+                data: {
+                    'p2': auth_code,
+                    'p3': phone
+                },
+                dataType: "json",
+                success: function (jsonStr) {
+                    console.log(jsonStr);
+                    if(jsonStr.result=='success') {
+                        $.fancybox.close();
+                        $.fancybox({        href: "#fgsend"    }	);
+                    }
+                    else {
+                        $("#fy-forget .error01").text(jsonStr.message).show().delay(3000).fadeOut();
+                    }
+                },
+                error: function(xhr, err) {
+                    alert('Ajax request ' + err);
+                }
+            });
+            return false;
+        });
+
+        $("#mobile_bind").submit(function(){
+            var auth_code = $("#bind_vcode").val();
+            var phone = $("#bind_mobile").val();
+            $.ajax({
+                url: "mobile_bind.php",
+                type: "POST",
+                data: {
+                    'p2': auth_code,
+                    'p3': phone
+                },
+                dataType: "json",
+                success: function (jsonStr) {
+                    console.log(jsonStr);
+                    if(jsonStr.result=='success') {
+                        $.fancybox.close();
+                        $.fancybox({        href: "#bmsend"    }	);
+                    }
+                    else {
+                        $("#fy-mobile-bind .error01").text(jsonStr.message).show().delay(3000).fadeOut();
+                    }
+                },
+                error: function(xhr, err) {
+                    alert('Ajax request ' + err);
+                }
+            });
+            return false;
+        });
+
 		// trial
 		$("#exp_form").submit(function(e) {
 			e.preventDefault();
