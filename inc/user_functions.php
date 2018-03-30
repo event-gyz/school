@@ -58,7 +58,7 @@ class MyUser
 	{
 		$_PHONE = int($_PHONE);
 		$this->resetCuser();
-		if(func_num_args()==2)
+		if(!empty($_PHONE))
 		{
 			if($this->admin)
 			{
@@ -92,7 +92,7 @@ class MyUser
     function login_wx($_OPENID)
     {
         $this->resetCuser();
-        if(func_num_args()==2)
+        if(!empty($_OPENID))
         {
             if($this->admin)
             {
