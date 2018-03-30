@@ -50,7 +50,7 @@ if(!isset($_GET['code'])){
     $user_info = M()->find($user_info_sql);
     if(empty($user_info)){
         $headimg = '"'.$user_obj['headimgurl'].'"';
-        $sql = "INSERT INTO member (password, nickname, city, image_url, openid) VALUES (md5(lower('123456')),'".$user_obj['nickname']."','".$user_obj['province'].$user_obj['city']."','".$headimg."','".$user_obj['openid']."')";
+        $sql = "INSERT INTO member (password, nickname, city, image_url, wx_openid) VALUES (md5(lower('123456')),'".$user_obj['nickname']."','".$user_obj['province'].$user_obj['city']."','".$headimg."','".$user_obj['openid']."')";
         $result = M()->execute($sql);
     }
 

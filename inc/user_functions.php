@@ -100,7 +100,7 @@ class MyUser
             }
             else
             {
-                $sql = "SELECT uid from member where (wx_openid ='".$_OPENID."')";
+                $sql = "SELECT uid from member where wx_openid ='".$_OPENID."'";
             }
             $result = M()->find($sql);
             if($result==null) return -1;
