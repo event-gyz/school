@@ -122,6 +122,52 @@
 			return false;
 		});
 
+        $("#login_wx").click(function(e) {
+
+            $.ajax({
+                url: "login_wx.php",
+                dataType: "json",
+                success: function (jsonStr) {
+                    if(jsonStr.result=='success') {
+                        var message = $.parseJSON(jsonStr.message);
+                        showLoginStatus(message.email,message.credit);
+                        $.fancybox.close();
+                        <?php
+                        if(isset($b_post_tv_submit) && $b_post_tv_submit == true) {
+                            $b_post_tv_submit = false;
+                            echo('postTvSubmit();');
+                        }
+                        ?>
+                        if(_next_move_ == 100) {
+                            onMenuItem3Click();
+                        }
+                        else if(_next_move_ == 102) {
+                            _next_move_ = 0;
+                            document.location.href = 'ceanza_menu.php';
+                        }
+                        else if(_next_move_ == 104) {
+                            _next_move_ = 0;
+                            document.location.href = 'training.php';
+                        }
+                        else if(_next_move_ == 106) {
+                            onMenuItem6Click();
+                        }
+                        else if(_next_move_ == 107) {
+                            _next_move_ = 0;
+                            document.location.href = 'http://x.eqxiu.com/s/PclsbuXT';
+                        }
+                    }
+                    else {
+                        $("#fy-login .error01").show().delay(3000).fadeOut();
+                    }
+                },
+                error: function(xhr, err) {
+                    alert('Ajax request ' + err);
+                }
+            });
+            return false;
+        });
+
 
 		// Register
 		$("#register_form").submit(function(e){
