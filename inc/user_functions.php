@@ -187,6 +187,7 @@ class MyUser
 				$this->image_url	= $result['image_url'];
 				$this->cellphone	= $result['cellphone'];
 				$this->epaper		= $result['epaper'];
+                $this->nickname		= $result['nickname'];
 			}
 
 	}
