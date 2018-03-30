@@ -28,28 +28,31 @@ if(empty($_EMAIL) || empty($_PASS)) {
 }
 else {
 	$CMEMBER->resetCuser();
-	if($CMEMBER->exist( $_EMAIL ))   die(genResponse(false, $_v_ERROR_REGISTER_FAILED."，此帐号已存在"));
-	elseif($CMEMBER->register( $_EMAIL, $_PASS, '', '', '','' ))
-	{
-            $member_id = @mysql_insert_id();
+	if($CMEMBER->exist( $_EMAIL )) {
+
+        die(genResponse(false, $_v_ERROR_REGISTER_FAILED."，此帐号已存在"));
+
+    }else if($CMEMBER->register( $_EMAIL, $_PASS, '', '', '','' )){
+
+        $member_id = @mysql_insert_id();
 		$CMEMBER->getUserInfo();
-                $token = $CMEMBER->getUserToken();
+        $token = $CMEMBER->getUserToken();
 		$credit= $CMEMBER->credit;
 		tlog("REGISTER> ".$_EMAIL." > UID = ".$CMEMBER->uid);
-                // 加入宝宝信息
-                $supervisor_uid = $CMEMBER->accessFromToken($token);
-                $sql = "INSERT INTO user (first_name,last_name,image_url,supervisor_uid) VALUES (' ',' ',' ','".$supervisor_uid."')";
+        // 加入宝宝信息
+        $supervisor_uid = $CMEMBER->accessFromToken($token);
+        $sql = "INSERT INTO user (first_name,last_name,image_url,supervisor_uid) VALUES (' ',' ',' ','".$supervisor_uid."')";
 		$result = query($sql);
-                if($result == null) {
-                    $sql = "delete from member where uid=".$CMEMBER->uid;
-                    query($sql);
-                    die(genResponse(false, $_v_ERROR_REGISTER_FAILED."，注册失败"));
-                }
+        if($result == null) {
+            $sql = "delete from member where uid=".$CMEMBER->uid;
+            query($sql);
+            die(genResponse(false, $_v_ERROR_REGISTER_FAILED."，注册失败"));
+        }
+
 	}
 	else 
 	{
 		die(genResponse(false, "$_v_ERROR_REGISTER_FAILED.(系统错误)"));
-		tlog("REGISTER FAILED> ".$_EMAIL);
 	}	
 	if(isset($token)) {
 
