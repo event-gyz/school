@@ -90,7 +90,7 @@ if(!isset($_GET['code'])){
             $months += 0.5;
         $user_age = $months;
         $_SESSION['CURRENT_KID_AGE'] = $user_age;
-        echo(genResponse(true, json_encode($arr)));
+        header("Location:/");
     } else {
         echo(genResponse(false, $_v_ERROR_LOGIN_FAILED));
     }
