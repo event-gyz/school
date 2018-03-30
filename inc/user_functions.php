@@ -54,6 +54,41 @@ class MyUser
 
 	}
 
+	function login_phone($_PHONE)
+	{
+		$_PHONE = int($_PHONE);
+		$this->resetCuser();
+		if(func_num_args()==2)
+		{
+			if($this->admin)
+			{
+				$sql = "select uid from admin where email ='".$_PHONE."'";
+			}
+			else
+			{
+				$sql = "SELECT uid from member where (cellphone ='".$_PHONE."')";
+			}
+			$result = M()->find($sql);
+			if($result==null) return -1;
+			if(empty($result))
+			{
+				return -1;
+			}
+			else
+			{
+				$this->uid = $result['uid'];
+				$this->getUserToken();
+				return $this->uid;
+			}
+
+		}
+		else
+		{
+			return -1;
+		}
+
+	}
+
 	function exist($_EMAIL)
 	{
 		$_EMAIL = strtolower($_EMAIL);

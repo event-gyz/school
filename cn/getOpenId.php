@@ -8,6 +8,7 @@
 header("Content-type: text/html; charset=utf-8");
 if(!isset($_GET['code'])){
     $APPID='wxb87c1c8fcec6c6c2';
+    echo $_SERVER["HTTP_REFERER"];exit;
     $REDIRECT_URI='http://colavia.com.cn/cn/getOpenId.php';
 //    $scope='snsapi_base';
     $scope='snsapi_userinfo';

@@ -17,7 +17,7 @@
                 </section>
             </section>
             <section class="rbox">
-                <a href="#fy-complete-info01">
+                <a href="#fy-complete-info">
                     <input type="submit" class="btn_submit05" value="">
                 </a>
             </section>
@@ -27,8 +27,13 @@
 <script>
     $(function(){
         $('#fy-mobile-register .rbox a').click(function(){
+            var arr = location.href.split('#');
+            fancyboxName = arr[arr.length-1];
+            if(fancyboxName == 'fy-mobile-register'){
+                $('.isbind_mobile').show()
+            }
             $.fancybox({
-                href: "#fy-complete-info01"
+                href: "#fy-complete-info"
             });
         })
     })

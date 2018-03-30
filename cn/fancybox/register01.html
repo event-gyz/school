@@ -1,12 +1,10 @@
 <style>
     @charset "utf-8";
     h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0;}
-    body,button,input,select,textarea{font:12px/1.5 Microsoft YaHei,宋体,Arial,Helvetica,sans-serif;}
     dl,ol,ul,li{list-style:none;}
     a{text-decoration:none;outline:none;}
     a:hover{text-decoration:underline;}
     fieldset,img{border:0;}
-    button,input,select,textarea{font-size:100%;}
     .fl,.l{float:left;}
     .fr,.r{float:right;}
     .c{clear:both;}
@@ -40,7 +38,7 @@
             <section class="rbox">
                 <div class="errorbar error01">注册失敗</div>
                 <div class="mlinks"><a href="#fy-login" class="fancybox">已是会员？</a><a href="#fy-forget" class="fancybox">忘记密码？</a></div>
-                <button class="btn_submit02 register"></button>
+                <button type="submit" class="btn_submit02" id="register"></button>
                 <p class="regulations">会员规约</p>
                 <!--//【註1】Iven暫時寫來呼叫註冊成功的畫面//
                 <script>
@@ -56,7 +54,7 @@
             <ul class="other_registers">
                 <li class="weixin">
                     <i></i>
-                    <p>微信注册</p>
+                    <p>微信登录</p>
                 </li>
                 <li class="mobile">
                     <a href="#fy-mobile-register">
@@ -106,139 +104,16 @@
     </section>
 </section>
 <script>
-    var cityChange= eval(cityChange);
     $(function(){
         $('.other_registers a').click(function(){
             $.fancybox({
                 href: "#fy-mobile-register"
             });
         })
-     $('#index_province').change(function(){
-        for(var i in cityChange){
-            if(i==this.value){
-               var index_city_obj = $('#index_city')[0];
-               index_city_obj.innerHTML='';
-               var obj = cityChange[i];
-               for(var k in obj){
-                  if(obj[k].name){             
-                    index_city_obj.options[index_city_obj.options.length] = new Option( obj[k].name,obj[k].pinyin);
-                  }
-               }
-               break;
-            }
-        }
-        
-     });
 
-     $(".regulations").click(function(){
-        $('.regulations_content').toggle()
-     })
+        $(".regulations").click(function(){
+            $('.regulations_content').toggle()
+        })
     })
-    $(function() {
-        $('#city_name').autocomplete(cities, {
-        max: 12, //列表里的条目数
-        minChars: 0, //自动完成激活之前填入的最小字符
-        width: 385, //提示的宽度，溢出隐藏
-        scrollHeight: 300, //提示的高度，溢出显示滚动条
-        matchContains: true, //包含匹配，就是data参数里的数据，是否只要包含文本框里的数据就显示
-        autoFill: false, //自动填充
-        minChars:1,
-        formatItem: function(row, i, max) {
-        return row.name + '（'+row.pinyin+'）';
-        },
-        formatMatch: function(row, i, max) {
-        return row.match;
-        },
-        
-        formatResult: function(row) {
-        return row.name;
-        },resultsClass:'search-text'
-        }).result(function(event, row, formatted) {
-            $("#hid_city_name").val(row.pinyin);
-            $("#hid_real_city_name").val(row.name);
-            $('#pop_cities').hide();
-            });
-    });
-    function append_city(){
-        $('#cityarea').show();
-        $('.search-text').hide()
-        if($("#citylist").text()==""){
-            $("#citylist").append(cityarea);
-        }
-    }
-    $(document).ready(function(){
-        $(document).bind('click', hide_div);
-    });
-       
-    function hide_div(e){
-        var biaoqian = "click";
-        var classname= $(e.target)[0].className;
-        if(classname.indexOf('click')>'-1' ||$(e.target)[0].id=='city_name')
-        return ;
-        $("#cityarea").hide();
-    } 
-    //直接输入地址框的onblur事件
-    function input_blur()
-    {
-        var value = $('#city_name').val();
-        var all_city_val = $(".ac_over").text();
-        if(all_city_val && all_city_val!="")
-        {
-            var str = all_city_val.substr(0,(all_city_val.length-1));
-            strs=str.split("（");
-            $("#hid_city_name").val(strs[1]);
-            $("#hid_real_city_name").val(strs[0]);
-            $("#city_name").val(strs[0]);
-            $(".search-text").hide();
-        }  
-    }
-        
-    //直接输入地址框的onkeyup事件
-    function input_keyup()
-    {
-        var value = $('#city_name').val();
-        if($('#hid_real_city_name').val()!=value || $('#hid_real_city_name').val()=='')
-        {
-            $('#cityarea').hide();
-        }else if(value==$('#hid_real_city_name').val())
-        {
-            $('#cityarea').hide();
-        }
-        $('.search-text').css('width','180px')
-    }
-    function check_input(){
-        var value = $('#city_name').val();
-        if(value==$('#hid_real_city_name').val() && $("#hid_city_name").val()!=""){
-            return true;
-        }
-        return false;
-    }
-    /**
-     * 字母页面内链
-     *
-     */
-    function letter_scroll(letter)
-    {
-         var obj = $("#c_"+letter);
-         $('html,body').animate({scrollTop: obj.offset().top}, 500);
-    }
-    /*
-     * 用户点击城市后，城市名填入input框
-    */
-    function change_city_val(city, pinyin_city)
-    {
-        $('#city_name').css({ color: "#606060"});
-        $('#city_name').val(city);
-        $('#hid_city_name').val(pinyin_city);
-        $("#hid_real_city_name").val(city);
-        $('#cityarea').hide();
-    }
-    function tabCutover(c,d){
-        $(c).parent().attr("class");
-        $(c).parent().children().removeClass("current");
-        $(c).addClass("current");
-        $("."+d).parent().children().hide();
-        $("."+d).show();
-    }
 </script>
 <!--//【fancybox】註冊//-->

@@ -230,39 +230,39 @@ $(function(){
         if (!checkPasswordRepeat()){
             return true;
         }
-        if (!checkRegNameFormat()){
-            return true;
-        }
-        if (!checkRegDateFormat()){
-            return true;
-        }
+        // if (!checkRegNameFormat()){
+        //     return true;
+        // }
+        // if (!checkRegDateFormat()){
+        //     return true;
+        // }
         // 参数
-        var phone = $("#reg_tel").val();
-        var auth_code = $("#reg_authcode").val();
+        // var phone = $("#reg_tel").val();
+        // var auth_code = $("#reg_authcode").val();
         var user_id = $("#reg_email").val();
         var user_password = $("#reg_password").val();
-        var birthday = $("#reg_date").val();
-        var sex = 1;
-        if(reg_genner == "男"){
-            sex = 0;
-        }
-        var nickname = $("#reg_name").val();
-        checkAuthcodeFormat(phone, auth_code);
-        if (!authcode){
-            $("#errorbar_reg_authcode").text('验证码错误').show().delay(3000).fadeOut();
-            return true;
-        }
+        // var birthday = $("#reg_date").val();
+        // var sex = 1;
+        // if(reg_genner == "男"){
+        //     sex = 0;
+        // }
+        // var nickname = $("#reg_name").val();
+        // checkAuthcodeFormat(phone, auth_code);
+        // if (!authcode){
+        //     $("#errorbar_reg_authcode").text('验证码错误').show().delay(3000).fadeOut();
+        //     return true;
+        // }
         $.ajax({
             url: "register.php",
             type: "POST",
             data: {
                 'p1': user_id,
                 'p2': user_password,
-                'p3': auth_code,
-                'p4': phone,
-                'p5':birthday,
-                'p6':sex,
-                'p7':nickname
+                // 'p3': auth_code,
+                // 'p4': phone,
+                // 'p5':birthday,
+                // 'p6':sex,
+                // 'p7':nickname
             },
             dataType: "json",
             success: function (jsonStr) {

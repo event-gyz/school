@@ -6,20 +6,20 @@ include("inc.php");
 $beta=true;
 if($beta)
 {
-	$_ID = $_REQUEST['p1'];
-	$_PASS = $_REQUEST['p2'];
+	$_PHONE = $_REQUEST['p1'];
+	$_CODE = $_REQUEST['p2'];
 }
 else
 {
-	$_ID = $_POST['p1'];
-	$_PASS = $_POST['p2'];
+	$_PHONE = $_POST['p1'];
+	$_CODE = $_POST['p2'];
 }
 
-if(!isset($_ID) || !isset($_PASS) ) {
+if(!isset($_PHONE) || !isset($_CODE) ) {
 	die(genResponse(false, $_v_ERROR_INVALID_PARAMETER."(ER-000001)"));
 }
 else {	
-	if($CMEMBER->login($_ID, $_PASS) == -1) die(genResponse(false, $_v_ERROR_LOGIN_FAILED."(ER-000002)"));
+	if($CMEMBER->login_phone($_PHONE) == -1) die(genResponse(false, $_v_ERROR_LOGIN_FAILED."(ER-000002)"));
 	$CMEMBER->getUserInfo();
 	$token = $CMEMBER->getUserToken();
 	$credit= $CMEMBER->credit;
