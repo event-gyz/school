@@ -74,7 +74,7 @@ if(!isset($_GET['code'])){
 
         $_SESSION['user_token'] = $token;
         $_SESSION['user_credit'] = $credit;
-        $_SESSION['user_email'] = $CMEMBER->email;
+        $_SESSION['user_email'] = $email;
         $_SESSION['user_epaper'] = $CMEMBER->epaper;
         $sql = 'select * from `user` where supervisor_uid='.$CMEMBER->uid;
         $kid = M()->find($sql);
