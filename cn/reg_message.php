@@ -59,5 +59,22 @@ if(isset($_POST['type']) && $_POST['type'] == "forget"){
         die(genResponse(false, "发送失败"));
     }
 }
+
+if(isset($_POST['type']) && $_POST['type'] == "login"){
+    $phone = $_POST['phone'];
+    $code = rand(1000,9999);
+
+    // 发送短信
+    if(send_message($phone, $code)){
+        $sql = "INSERT INTO message (phone, message_code,create_time) VALUES ('".$phone."','".$code."','".time()."')";
+        if(query($sql)){
+            echo(genResponse(true, "发送成功"));
+        }else{
+            die(genResponse(false, "发送失败"));
+        }
+    }else{
+        die(genResponse(false, "发送失败"));
+    }
+}
  
 ?>

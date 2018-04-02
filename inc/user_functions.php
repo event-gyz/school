@@ -56,7 +56,7 @@ class MyUser
 
 	function login_phone($_PHONE)
 	{
-		$_PHONE = int($_PHONE);
+		$_PHONE = (int)$_PHONE;
 		$this->resetCuser();
 		if(!empty($_PHONE))
 		{
@@ -66,7 +66,7 @@ class MyUser
 			}
 			else
 			{
-				$sql = "SELECT uid from member where (cellphone ='".$_PHONE."')";
+				$sql = "SELECT uid from member where cellphone ='".$_PHONE."'";
 			}
 			$result = M()->find($sql);
 			if($result==null) return -1;
@@ -129,6 +129,24 @@ class MyUser
 		if(isset($_EMAIL))
 		{
 			$sql = "select count(*) from member where email ='".$_EMAIL."'";
+			$result = query($sql);
+			if($row=mysql_fetch_row($result))
+			{
+				if($row[0]==1) return true;
+				else return false;
+			}
+		}
+		else
+		{
+			return false;
+		}
+	}
+	function exist_mobile($_PHONE)
+	{
+		$_PHONE = int($_PHONE);
+		if(isset($_PHONE))
+		{
+			$sql = "select count(*) from member where cellphone ='".$_PHONE."'";
 			$result = query($sql);
 			if($row=mysql_fetch_row($result))
 			{

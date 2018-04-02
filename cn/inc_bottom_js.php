@@ -66,6 +66,56 @@
             return false;
         });
 
+        // complete_info_form
+        $("#complete_info_form").submit(function(){
+            var nickname = $("#reg_name").val();
+            var sex = $('input[name=fbar_sex]:checked').val()
+            var birthdate = $("#reg_date").val();
+            var city = $("#city_name").val()
+            console.log("nickname:"+nickname+",sex:"+sex+",birthdate:"+birthdate+",city:"+city);
+            if(nickname) {
+                $.ajax({
+                    url: "completeInfo.php",
+                    type: "POST",
+                    data: {
+                        'p1': nickname,
+                        'p2': sex,
+                        'p3': birthdate,
+                        'p4': city
+                    },
+                    dataType: "json",
+                    success: function (jsonStr) {
+                        console.log(jsonStr);
+                        if(jsonStr.result=='success') {
+                            var message = $.parseJSON(jsonStr.message);
+                            $.fancybox.close();
+                            if(_next_move_==100) {
+                                _next_move_ = 0;
+                                document.location.href = 'itemlist.php';
+                            }
+                            else if(_next_move_==106) {
+                                _next_move_ = 0;
+                                document.location.href = 'report.php';
+                            }
+                            else
+                                document.location.href= 'report.php?f=1';
+                        }
+                        else {
+                            alert(jsonStr.message);
+                            $("#modify_baby_form .errorbar").text(jsonStr.message).show().delay(3000).fadeOut();
+                        }
+                    },
+                    error: function(xhr, err) {
+                        alert('addUser failed: ' + err);
+                    }
+                });
+            }
+            else {
+                $("#modify_baby_form .errorbar").show().delay(3000).fadeOut();
+            }
+            return false;
+        });
+
         // trial
         $("#exp_form").submit(function(e) {
             e.preventDefault();
@@ -320,29 +370,6 @@
             },
             error: function(xhr, err) {
             }
-        });
-    }
-
-    //-- birhday --//
-    function showEditBabyBox() {
-        var cur_year = new Date().getFullYear();
-        $('#birth_box_years').html('');
-        $('#birth_box_months').html('');
-        $('#birth_box_days').html('');
-        for (i = cur_year; i > (cur_year-10); i--) {
-            $('#birth_box_years').append($('<option />').val(i).html(i));
-        }
-
-        for (i = 1; i < 13; i++) {
-            $('#birth_box_months').append($('<option />').val(i).html(i));
-        }
-        updateNumberOfDays();
-
-        $('#birth_box_years, #birth_box_months').change(function(){
-            updateNumberOfDays();
-        });
-        $.fancybox({
-            href: "#fy-fst"
         });
     }
 

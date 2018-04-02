@@ -20,17 +20,14 @@ $select = "select  *  from message where phone ='{$_PHONE}' and message_code='{$
 if(!query_result($select)){
 	die(genResponse(false, "验证码错误"));
 }
-
 // 更新手机验证码信息状态
 $update ="update message set status=1 where phone ='{$_PHONE}' and message_code='{$_CODE}'";
 query($update);
 
-
 $user_info_sql = 'select * from `member` where cellphone='.$_PHONE;
 $user_info = M()->find($user_info_sql);
 if(empty($user_info)){
-	$sql = "INSERT INTO member (password,cellphone) VALUES (md5(lower('123456')),'".$_PHONE."')";
-//        $user_obj['province'].
+	$sql = "INSERT INTO member (id,password,cellphone) VALUES ('".$_PHONE."',md5('123456'),'".$_PHONE."')";
 	$result = M()->execute($sql);
 }
 

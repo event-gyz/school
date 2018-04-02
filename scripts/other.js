@@ -221,9 +221,31 @@ $(function(){
     $("#bind_mobile_ref_code").click(function() {
         var params = {
             Mobile: $('#bind_mobile').val(),
-            validEl: $('#div_err_code'),
+            validEl: $('#bind_mobile_ref_code'),
             errEl: $('#div_err_mobile'),
             type: 'send',
+        }
+        getCode(waitTime, params)
+    })
+
+    //手机号注册
+    $("#mobile_reg_ref_code").click(function() {
+        var params = {
+            Mobile: $('#register_mobile').val(),
+            validEl: $('#mobile_reg_ref_code'),
+            errEl: $('#div_err_mobile_reg'),
+            type: 'send',
+        }
+        getCode(waitTime, params)
+    })
+
+    //手机号登录
+    $("#mobile_login_ref_code").click(function() {
+        var params = {
+            Mobile: $('#login_mobile').val(),
+            validEl: $('#mobile_login_ref_code'),
+            errEl: $('#div_err_mobile_login'),
+            type: 'login',
         }
         getCode(waitTime, params)
     })

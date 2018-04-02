@@ -174,7 +174,7 @@ if(isset($payload)) {
                                 <?php
                                     }else{
                                 ?>
-                                        <b><a style="float: right;width: 4.4878rem;height: 1.0732rem;text-align: right;font-size: 0.3902rem;" class="bind_mobile">绑定手机</a></b>
+                                        <b><a style="float: right;width: 4.4878rem;height: 1.0732rem;text-align: right;font-size: 0.3902rem;" class="bind_mobile">现在绑定立享好礼</a></b>
                                 <?php
                                     }
                                 ?>

@@ -324,6 +324,35 @@
             return false;
         });
 
+
+		$("#mobile_register_form").submit(function(){
+			var auth_code = $("#register_vcode").val();
+			var phone = $("#register_mobile").val();
+			$.ajax({
+				url: "register_phone.php",
+				type: "POST",
+				data: {
+					'p2': auth_code,
+					'p1': phone
+				},
+				dataType: "json",
+				success: function (jsonStr) {
+					console.log(jsonStr);
+					if(jsonStr.result=='success') {
+						$.fancybox.close();
+						$.fancybox({        href: "#bmsend"    }	);
+					}
+					else {
+						$("#fy-mobile-bind .error01").text(jsonStr.message).show().delay(3000).fadeOut();
+					}
+				},
+				error: function(xhr, err) {
+					alert('Ajax request ' + err);
+				}
+			});
+			return false;
+		});
+
 		// trial
 		$("#exp_form").submit(function(e) {
 			e.preventDefault();
@@ -571,7 +600,8 @@
 			updateNumberOfDays();
 		});
 		$.fancybox({
-			href: "#fy-fst"
+            href: "#fy-complete-info"
+//			href: "#fy-fst"
 		});
 	}
 

@@ -39,15 +39,15 @@ else {
         $token = $CMEMBER->getUserToken();
 		$credit= $CMEMBER->credit;
 		tlog("REGISTER> ".$_EMAIL." > UID = ".$CMEMBER->uid);
-        // 加入宝宝信息
-        $supervisor_uid = $CMEMBER->accessFromToken($token);
-        $sql = "INSERT INTO user (first_name,last_name,image_url,supervisor_uid) VALUES (' ',' ',' ','".$supervisor_uid."')";
-		$result = query($sql);
-        if($result == null) {
-            $sql = "delete from member where uid=".$CMEMBER->uid;
-            query($sql);
-            die(genResponse(false, $_v_ERROR_REGISTER_FAILED."，注册失败"));
-        }
+//        // 加入宝宝信息
+//        $supervisor_uid = $CMEMBER->accessFromToken($token);
+//        $sql = "INSERT INTO user (first_name,last_name,image_url,supervisor_uid) VALUES (' ',' ',' ','".$supervisor_uid."')";
+//		$result = query($sql);
+//        if($result == null) {
+//            $sql = "delete from member where uid=".$CMEMBER->uid;
+//            query($sql);
+//            die(genResponse(false, $_v_ERROR_REGISTER_FAILED."，注册失败"));
+//        }
 
 	}
 	else 
