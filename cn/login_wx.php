@@ -46,7 +46,7 @@ if(!isset($_GET['code'])){
     $user_obj = json_decode($res,true);
 //    $_SESSION['user'] = $user_obj;
 //    unset($_SESSION['user']);
-    $user_info_sql = 'select * from `member` where wx_openid='.$user_obj['openid'];
+    $user_info_sql = 'select * from `member` where wx_openid="'.$user_obj['openid'].'"';
     $user_info = M()->find($user_info_sql);
     if(empty($user_info)){
         $headimg = '"'.$user_obj['headimgurl'].'"';
