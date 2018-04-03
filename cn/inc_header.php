@@ -122,7 +122,7 @@
 			return false;
 		});
 
-        $("#login_wx").click(function(e) {
+        $(".login_wx").click(function(e) {
             document.location.href = 'login_wx.php';
         });
 
