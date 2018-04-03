@@ -2,46 +2,32 @@
 <section id="fy-mobile-bind" class="mbbox">
     <section class="fy-hd"><h2 class="title">手机绑定</h2></section>
     <section class="fy-bd clearfix">
-    	<h3>请输入您的手机号</h3>
+        <h3>请输入您的手机号</h3>
         <section class="fy-cont clearfix">
             <form id="mobile_bind" name="mobile_bind" method="post">
-            <section class="lbox">
-                <section class="formbox">
-                    <div class="fbar clearfix">
-                        <label><i>手机号</i><input name="bind_mobile" id="bind_mobile" type="tel" class="tf" placeholder="11位手机号码"></label>
-                        <div id="div_err_mobile" class="errorbar">请输入正确的手机号</div>
-                    </div>
-                    <div class="fbar clearfix">
-                        <label><i>验证码</i><input type="number" name="bind_vcode" id="bind_vcode" class="tf tf-s"></label>
-                        <a href="#" id="bind_mobile_ref_code">获取验证码</a>
-                        <div id="errorbar_reg_authcode" class="errorbar">请输入正确的验证码</div>
-                    </div>
+                <section class="lbox">
+                    <section class="formbox">
+                        <div class="fbar clearfix">
+                            <label><i>手机号</i><input name="bind_mobile" id="bind_mobile" type="tel" class="tf" placeholder="11位手机号码"></label>
+                            <div id="div_err_mobile" class="errorbar">请输入正确的手机号</div>
+                        </div>
+                        <div class="fbar clearfix">
+                            <label><i>验证码</i><input type="number" name="bind_vcode" id="bind_vcode" class="tf tf-s"></label>
+                            <a href="#" id="bind_mobile_ref_code">获取验证码</a>
+                            <div id="errorbar_reg_authcode" class="errorbar">请输入正确的验证码</div>
+                        </div>
+                    </section>
                 </section>
-            </section>
-            <section class="rbox">
-                <a href="#fy-complete-info">
-                    <div class="errorbar error01">失敗後的提示語</div>
-                    <input type="submit" class="btn_submit05" value="">
-                </a>
-            </section>
+                <section class="rbox">
+                    <a href="#fy-complete-info">
+                        <div class="errorbar error01">失敗後的提示語</div>
+                        <input type="submit" class="btn_submit05" value="">
+                    </a>
+                </section>
             </form>
         </section>
     </section>
 </section>
-<script>
-//    $(function(){
-//        $('#fy-mobile-bind .rbox a').click(function(){
-//            var arr = location.href.split('#');
-//            fancyboxName = arr[arr.length-1];
-//            if(fancyboxName == 'fy-mobile-bind'){
-//                $('.isbind_mobile').hide()
-//            }
-//            $.fancybox({
-//                href: "#fy-complete-info"
-//            });
-//        })
-//    })
-</script>
 <!--//【fancybox】手机绑定//-->
 <!--//【fancybox】密碼重設申請成功//-->
 <section id="bmsend" class="exbox">

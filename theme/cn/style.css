@@ -366,6 +366,15 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .fy-bd>h3{color:#666666;font-size: 16px;}
 .repwrap h3.title,.repother h3.title{text-shadow:none;}
 
+/* 礼包界面 start */
+.package{text-align: center;margin:0 auto;width:10.0rem;}
+.package p>img{width:100%;height:auto;}
+.package h3{font-size: 0.5463rem;margin-top:0.4878rem;color:#666666;}
+.package b{color:#CCCCCC;margin-top:0.2927rem;}
+.package a>input{display: block;width:3.8049rem;height:0.8195rem;background:#619E5F;color:#fff;font-weight: bold;margin: 1.0341rem auto 0.5854rem;}
+.package span{color:#629E5F;}
+/* 礼包界面 end */
+
 
 /* 添加日记页面样式 start */
 #content{padding-top:80px;}

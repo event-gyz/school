@@ -146,65 +146,74 @@ if($member_uid > 0) {
 
 ?>
 <!-- InstanceBeginEditable name="wrap" -->
-<section id="wrap">
+<section id="wrap" class="inpage">
     <!-- InstanceEndEditable -->
 
     <!--【Header】-->
     <?php include 'inc_header.php'; ?>
     <!--【Header End】-->
-
     <!--【Content】-->
     <section id="content">
         <!-- InstanceBeginEditable name="content" -->
-        <section class="baby_info inbox noBoxShadowPage">
-            <div class="baby-head-portrait">
-                <div class="upHead">
-                    <?php if($image_url){?>
-                        <img src=<?= $image_url?>  alt=""  class="userHead">
-                    <?php }else{ ?>
-                        <img src="../content/epaper/images/baby.png" alt=""  class="noHead">
-                    <?php } ?>
-                    <b></b>
-                    <p></p>
-                    <form action="head_sculpture.php" class="babyForm" method="post" enctype="multipart/form-data">
-                        <input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="imgfile">
-                        <input hidden="" name="type" value="baby" />
-                    </form>
-                </div>
-                <span><?=$nick_name?></span>
-            </div>
-            <ul class="info_list">
-                <li>
-                    <p class="date"></p>
-                    <span>测量日期：</span>
-                    <input type="text" value="<?=$lasttime?>" disabled>
-                </li>
-                <li>
-                    <p class="birthday"></p>
-                    <span>生日：</span>
-                    <input type="text" value="<?=$birth_day?>" disabled>
-                </li>
-                <li>
-                    <p class="gender"></p>
-                    <span>性别：</span>
-                    <input type="text" value="<?=$gender?>" disabled>
-                </li>
-                <?php if(!empty($height)){?>
-                    <li>
-                        <p class="height"></p>
-                        <span>身高(公分)：</span>
-                        <input type="text" value="<?=$height?>" disabled>
-                    </li>
-                <?php }?>
-                <?php if(!empty($weight)){?>
-                    <li>
-                        <p class="weight"></p>
-                        <span>体重(公斤)：</span>
-                        <input type="text" value="<?=$weight?>" disabled>
-                    </li>
-                <?php }?>
-            </ul>
+
+        <!--//主內容//-->
+        <section class="indexcont newcomers">
+            <section class="inbox noBoxShadowPage">
+                <section class="contbox clearfix">
+                    <!-- InstanceBeginEditable name="content" -->
+                    <section class="baby_info">
+                        <div class="baby-head-portrait">
+                            <div class="upHead">
+                                <?php if($image_url){?>
+                                    <img src=<?= $image_url?>  alt=""  class="userHead">
+                                <?php }else{ ?>
+                                    <img src="../content/epaper/images/baby.png" alt=""  class="noHead">
+                                <?php } ?>
+                                <b></b>
+                                <p></p>
+                                <form action="head_sculpture.php" class="babyForm" method="post" enctype="multipart/form-data">
+                                    <input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="imgfile">
+                                    <input hidden="" name="type" value="baby" />
+                                </form>
+                            </div>
+                            <span><?=$nick_name?></span>
+                        </div>
+                        <ul class="info_list">
+                            <li>
+                                <p class="date"></p>
+                                <span>测量日期：</span>
+                                <input type="text" value="<?=$lasttime?>" disabled>
+                            </li>
+                            <li>
+                                <p class="birthday"></p>
+                                <span>生日：</span>
+                                <input type="text" value="<?=$birth_day?>" disabled>
+                            </li>
+                            <li>
+                                <p class="gender"></p>
+                                <span>性别：</span>
+                                <input type="text" value="<?=$gender?>" disabled>
+                            </li>
+                            <?php if(!empty($height)){?>
+                                <li>
+                                    <p class="height"></p>
+                                    <span>身高(公分)：</span>
+                                    <input type="text" value="<?=$height?>" disabled>
+                                </li>
+                            <?php }?>
+                            <?php if(!empty($weight)){?>
+                                <li>
+                                    <p class="weight"></p>
+                                    <span>体重(公斤)：</span>
+                                    <input type="text" value="<?=$weight?>" disabled>
+                                </li>
+                            <?php }?>
+                        </ul>
+                    </section>
+                </section>
+            </section>
         </section>
+        <!--//主內容//-->
         <!-- InstanceEndEditable -->
     </section>
     <!--【Content End】-->
@@ -215,7 +224,7 @@ if($member_uid > 0) {
 </section>
 <?php include 'inc_bottom_js.php'; ?>
 </body>
-<script>
+<script type="text/javascript">
     $('.imgfile').on('change', function(){
         $(this).closest('form').submit();
         $('.babyForm').submit();
