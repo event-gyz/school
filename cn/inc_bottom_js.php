@@ -256,11 +256,17 @@
             dataType: "json",
             success: function (jsonStr) {
                 if(jsonStr.islogin==true) {
-                    _next_move_ = 0;
-                    document.location.href = 'ceanza_menu.php';
+                    if(jsonStr.haskid==true) {
+                        _next_move_ = 0;
+                        document.location.href = 'ceanza_list.php';
+                    }
+                    else {
+                        _next_move_ = 100;
+                        showEditBabyBox();
+                    }
                 }
                 else {
-                    _next_move_ = 102;
+                    _next_move_ = 100;
                     $.fancybox({
                         href: "#fy-login"
                     });

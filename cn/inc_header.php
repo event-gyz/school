@@ -392,27 +392,6 @@
 		$("#menuitem_8_m").click(onMenuItem8Click);
 	});
 
-	function onMenuItem2Click() {
-		$.ajax({url: "check_login_status.ajax.php",
-			type: "POST",
-			dataType: "json",
-			success: function (jsonStr) {
-				if(jsonStr.islogin==true) {
-					_next_move_ = 0;
-					document.location.href = 'ceanza_list.php';
-				}
-				else {
-					_next_move_ = 102;
-					$.fancybox({
-						href: "#fy-login"
-					});
-				}
-			},
-			error: function(xhr, err) {
-//	            alert('Ajax request ' + err);
-			}
-		});
-	}
 
 	function onMenuItem2NewClick() {
 		$.ajax({url: "check_login_status.ajax.php",
@@ -420,11 +399,17 @@
 			dataType: "json",
 			success: function (jsonStr) {
 				if(jsonStr.islogin==true) {
-					_next_move_ = 0;
-					document.location.href = 'ceanza_menu.php';
+					if(jsonStr.haskid==true) {
+						_next_move_ = 0;
+						document.location.href = 'ceanza_menu.php';
+					}
+					else {
+						_next_move_ = 100;
+						showEditBabyBox();
+					}
 				}
 				else {
-					_next_move_ = 102;
+					_next_move_ = 100;
 					$.fancybox({
 						href: "#fy-login"
 					});
