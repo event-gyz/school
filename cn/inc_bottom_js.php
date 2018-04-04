@@ -210,7 +210,7 @@
                 if(jsonStr.islogin==true) {
                     if(jsonStr.haskid==true) {
                         _next_move_ = 0;
-                        document.location.href = 'ceanza_list.php';
+                        document.location.href = 'ceanza_menu.php';
                     }
                     else {
                         _next_move_ = 100;
