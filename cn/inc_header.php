@@ -778,7 +778,7 @@ $pagename = substr($filename, 0, strrpos($filename, "."));
 				<li <?php if($pagename=='recommend') echo('class="on"'); ?>><a href="recommend.php">育儿天地</a></li>
 				<li <?php if($pagename=='itemlist') echo('class="on"'); ?>><a id="menuitem_3" href="javascript:void(0);">成长指标</a></li>
 				<li <?php if($pagename=='report') echo('class="on"'); ?>><a id="menuitem_6" href="javascript:void(0);">成长报告</a></li>
-				<li <?php if($pagename=='ceanza_menu') echo('class="on"'); ?>><a id="menuitem_2" href="javascript:void(0);">成长日记</a></li>
+				<li <?php if($pagename=='ceanza_menu') echo('class="on"'); ?>><a id="menuitem_2" href="javascript:void(0);">成长记录</a></li>
 
 				<!--	            <li --><?php //if($pagename=='training') echo('class="on"'); ?><!-->
 				<!--					<a id="menuitem_4" href="javascript:void(0);">每日e练习</a>-->
@@ -800,7 +800,7 @@ $pagename = substr($filename, 0, strrpos($filename, "."));
 
 			<li <?php if($pagename=='itemlist') echo('class="on"'); ?>><a id="menuitem_3_m" href="javascript:void(0);">成长指标</a></li>
 			<li <?php if($pagename=='report') echo('class="on"'); ?>><a id="menuitem_6_m" href="javascript:void(0);">成长报告</a></li>
-			<li <?php if($pagename=='ceanza_menu') echo('class="on"'); ?>><a id="menuitem_2_m" href="javascript:void(0);">成长日记</a></li>
+			<li <?php if($pagename=='ceanza_menu') echo('class="on"'); ?>><a id="menuitem_2_m" href="javascript:void(0);">成长记录</a></li>
 			<li <?php if($pagename=='buds_record') echo('class="on"'); ?>><a id="menuitem_8_m">萌芽记录</a></li>
 			<li <?php if($pagename=='news') echo('class="on"'); ?> ><a href="news.php">最新消息</a></li>
 			<li <?php if($pagename=='recommend') echo('class="on"'); ?>><a href="recommend.php">育儿天地</a></li>
