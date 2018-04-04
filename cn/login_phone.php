@@ -29,7 +29,8 @@ query($update);
 $user_info_sql = 'select * from `member` where cellphone='.$_PHONE;
 $user_info = M()->find($user_info_sql);
 if(empty($user_info)){
-	$sql = "INSERT INTO member (password,cellphone) VALUES (md5(lower('123456')),'".$_PHONE."')";
+    $membership = time()+7776000;
+	$sql = "INSERT INTO member (password,cellphone,membership) VALUES (md5(lower('123456')),'".$_PHONE."',$membership)";
 //        $user_obj['province'].
 	$result = M()->execute($sql);
 }

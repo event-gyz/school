@@ -595,5 +595,47 @@ $(function(){
     $('.project_status p').click(function(){
         event.preventDefault()
         $(this).children('span').addClass('success').parents().siblings().children('span').removeClass('success')
-    })
+    });
+
+
+    // complete_info_form
+    $("#complete_info_form").submit(function(){
+        var nickname = $("#reg_name").val();
+        var sex = $('input[name=fbar_sex]:checked').val()
+        var birthdate = $("#reg_date").val();
+        var city = $("#city_name").val()
+        console.log("nickname:"+nickname+",sex:"+sex+",birthdate:"+birthdate+",city:"+city);
+        if(nickname) {
+            $.ajax({
+                url: "completeInfo.php",
+                type: "POST",
+                data: {
+                    'p1': nickname,
+                    'p2': sex,
+                    'p3': birthdate,
+                    'p4': city
+                },
+                dataType: "json",
+                success: function (jsonStr) {
+                    console.log(jsonStr);
+                    if(jsonStr.result=='success') {
+                        var message = $.parseJSON(jsonStr.message);
+                        $.fancybox.close();
+                        document.location.href= 'index.php';
+                    }
+                    else {
+                        alert(jsonStr.message);
+                        $("#modify_baby_form .errorbar").text(jsonStr.message).show().delay(3000).fadeOut();
+                    }
+                },
+                error: function(xhr, err) {
+                    alert('addUser failed: ' + err);
+                }
+            });
+        }
+        else {
+            $("#modify_baby_form .errorbar").show().delay(3000).fadeOut();
+        }
+        return false;
+    });
 });

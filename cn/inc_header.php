@@ -92,24 +92,7 @@
 							echo('postTvSubmit();');
 						}
 						?>
-						if(_next_move_ == 100) {
-							onMenuItem3Click();
-						}
-						else if(_next_move_ == 102) {
-							_next_move_ = 0;
-							document.location.href = 'ceanza_menu.php';
-						}
-						else if(_next_move_ == 104) {
-							_next_move_ = 0;
-							document.location.href = 'training.php';
-						}
-						else if(_next_move_ == 106) {
-							onMenuItem6Click();
-						}
-						else if(_next_move_ == 107) {
-							_next_move_ = 0;
-							document.location.href = 'http://x.eqxiu.com/s/PclsbuXT';
-						}
+                        document.location.href = 'package.php';
 					}
 					else {
 						$("#fy-login .error01").show().delay(3000).fadeOut();
@@ -340,7 +323,7 @@
 					console.log(jsonStr);
 					if(jsonStr.result=='success') {
 						$.fancybox.close();
-						$.fancybox({        href: "#bmsend"    }	);
+                        document.location.href = 'package.php';
 					}
 					else {
 						$("#fy-mobile-bind .error01").text(jsonStr.message).show().delay(3000).fadeOut();
@@ -420,6 +403,7 @@
 			}
 		});
 	}
+
 	function onMenuItem3Click() {
 		$.ajax({url: "check_login_status.ajax.php",
 			type: "POST",

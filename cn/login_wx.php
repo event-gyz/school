@@ -49,8 +49,10 @@ if(!isset($_GET['code'])){
     $user_info_sql = 'select * from `member` where wx_openid="'.$user_obj['openid'].'"';
     $user_info = M()->find($user_info_sql);
     if(empty($user_info)){
+        $membership = time()+3888000;
+
         $headimg = '"'.$user_obj['headimgurl'].'"';
-        $sql = "INSERT INTO member (password, nickname, city, image_url, wx_openid) VALUES (md5(lower('123456')),'".$user_obj['nickname']."','".$user_obj['city']."','".$headimg."','".$user_obj['openid']."')";
+        $sql = "INSERT INTO member (password, nickname, city, image_url, wx_openid,membership) VALUES (md5(lower('123456')),'".$user_obj['nickname']."','".$user_obj['city']."','".$headimg."','".$user_obj['openid']."',$membership)";
 //        $user_obj['province'].
         $result = M()->execute($sql);
     }
