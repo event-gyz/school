@@ -23,6 +23,7 @@ else {
 	$supervisor_uid = $CMEMBER->accessFromToken($_token);
 	$sql = "select uid,email from member where cellphone='$_PHONE'";
 	$row = M()->find($sql);
+	//todo 如果手机号绑定过，将微信账号和手机账号进行关联
 	if(!$row) {
 		$update = "update member set cellphone='".$_PHONE."',membership=membership+3888000 where uid =".$supervisor_uid;
 		if(query($update)){
@@ -30,12 +31,8 @@ else {
 			$update ="update message set status=1 where phone ='{$_PHONE}' and message_code='{$_AUTH}'";
 			query($update);
 			echo(genResponse(true, "200 OK"));
-		}
-//		if(sendPwdResetEmail($supervisor_uid,$row['email'])){
-//                    echo(genResponse(true, "200 OK"));
-//                }
-		else{
-                    echo(genResponse(false, "重置失败，请稍后再试。"));  
+		}else{
+                    echo(genResponse(false, "绑定失败，请稍后再试。"));
                 }
 	}
 	else {
