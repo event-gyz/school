@@ -1,15 +1,27 @@
 <?php
 session_start();
 
-include("inc.php"); 
+include("inc.php");
 
 
-
-$membership = time()+3888000;
+if(!isset($_SESSION['wx_info']) || empty($_SESSION['wx_info'])){
+    die(genResponse(false, "数据有误"));
+}
 $user_obj = $_SESSION['wx_info'];
+if(empty($user_obj['openid'])){
+    die(genResponse(false, "数据有误"));
+}
+$membership = time()+3888000;
+
 $headimg = '"'.$user_obj['headimgurl'].'"';
-$sql = "INSERT INTO member (password, nickname, city, image_url, wx_openid,membership) VALUES (md5(lower('123456')),'".$user_obj['nickname']."','".$user_obj['city']."','".$headimg."','".$user_obj['openid']."',$membership)";
-$result = M()->execute($sql);
+
+$user_info_sql = 'select * from `member` where wx_openid="'.$user_obj['openid'].'"';
+$user_info = M()->find($user_info_sql);
+if(empty($user_info)){
+    $sql = "INSERT INTO member (password, nickname, city, image_url, wx_openid,membership) VALUES (md5(lower('123456')),'".$user_obj['nickname']."','".$user_obj['city']."','".$headimg."','".$user_obj['openid']."',$membership)";
+    $result = M()->execute($sql);
+}
+
 
 
 if($CMEMBER->login_wx($user_obj['openid']) == -1) {

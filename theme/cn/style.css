@@ -93,7 +93,8 @@ a.i-more span{font-family: 'simsun';}
 .isnew_user .head_top p{float: right;width:0.5854rem;height:0.5854rem;background:url('../../content/epaper/images/isnew_user_close.png') no-repeat;background-size: 100% 100%;margin-top:0.1756rem;right:0.3902rem;}
 .isnew_user_content p{line-height: 1.9512rem;text-align: center;color:#666666;font-size: 0.4098rem;}
 .isnew_user_content button{float:left;width:1.9512rem;height:0.5854rem;background:#60C054;border-radius: 0.078rem;color:#fff;border:none;}
-.isnew_user_content .confirm{margin-left: 0.4878rem;margin-right: 0.2341rem;}
+.isnew_user_content .cancel{margin-left: 6%;margin-right: 1%;}
+.isnew_user_content .confirm{margin-left: 6%;margin-right: 1%;}
 
 .bnrlist.fl{padding:10px 1.5% 5px;width:22%;}
 .bnrlist img{border:1px solid #CCCCCC;border-radius:5px;margin:0 auto 14px;}

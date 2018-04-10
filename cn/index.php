@@ -284,8 +284,10 @@ if(isset($payload)) {
     <div class="isnew_user_content">
         <p>是否为新用户注册</p>
         <div class="operation">
-            <a href="#fy-info-supplement" class="info_supplement"><button class="confirm">是</button></a>
-            <button class="cancel">否</button>
+            <button class="cancel">是</button>
+
+            <button class="confirm">否</button>
+
         </div>
     </div>
 </section>
@@ -298,12 +300,11 @@ if(isset($payload)) {
 <?php include 'inc_bottom_js.php'; ?>
 <script>
     $(function(){
-        <?php if(isset($_GET['ask_account']) && $_GET['ask_account']==1){?>
-        $.fancybox({
-            href: "#fy-info-ask-account"
-        });
+        <?php if(isset($_GET['ask_account']) && $_GET['ask_account']==1 && isset($_SESSION['wx_info'])){?>
+        $('.mask').toggle()
+        $('.isnew_user').toggle()
         <?php }?>
-        $('.info_supplement').click(function(){
+        $('.isnew_user .confirm').click(function(){
             $('.isnew_user').css('display','none')
             $('.mask').css('display','none')
             $.fancybox({
@@ -315,13 +316,30 @@ if(isset($payload)) {
             e.stopPropagation()
             $('.isnew_user').css('display','none')
             $('.mask').css('display','none')
+            createWxUser();
         })
         $('.isnew_user .cancel').click(function(){
             var e = e || window.event;
             e.stopPropagation()
             $('.isnew_user').css('display','none')
             $('.mask').css('display','none')
+            createWxUser();
         })
+
+        function createWxUser() {
+            $.ajax({url: "register_wx.php",
+                type: "POST",
+                dataType: "json",
+                success: function (jsonStr) {
+                    if(jsonStr.result=='success'){
+                        document.location.href = 'index.php';
+                    }
+                },
+                error: function(xhr, err) {
+                    alert('Ajax request ' + err);
+                }
+            });
+        }
     })
 </script>
 </body>
