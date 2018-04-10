@@ -17,8 +17,7 @@ if(!query_result($select)){
 }
 
 else {
-	// send email
-	$log_file = "../log/mobile_bind_log".date("Y_m_d_H_i_s").".txt";
+	$log_file = "../log/wx_bind_log".date("Y_m_d_H_i_s").".txt";
 	$_token = $_SESSION['user_token'];
 	$supervisor_uid = $CMEMBER->accessFromToken($_token);
 	$sql = "select uid,email from member where cellphone='$_PHONE'";
@@ -28,6 +27,13 @@ else {
         die(genResponse(false, "该手机号已经绑定过微信，请修改手机号"));
 	}
     $user_obj = $_SESSION['wx_info'];
+    if(!isset($_SESSION['wx_info']) || empty($_SESSION['wx_info'])){
+        die(genResponse(false, "数据有误"));
+    }
+    if(empty($user_obj['openid'])){
+        die(genResponse(false, "数据有误"));
+    }
+
 	if(!$row) {
 		$update = "update member set wx_openid='".$user_obj['openid']."' where uid =".$supervisor_uid;
 		if(query($update)){
