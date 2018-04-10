@@ -152,7 +152,15 @@ if(isset($payload)) {
                                 <b></b>
                                 <p></p>
                                 <form action="head_sculpture.php"  method="post" enctype="multipart/form-data">
-                                    <input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="imgfile">
+                                    <!-- <input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="imgfile"> -->
+                                    <div class="clipper">
+                                        <input class="clipper_input imgfile"
+                                               ref="input"
+                                               type="file"
+                                               accept="image/gif,image/jpeg,image/png,image/bmp,image/jpg"
+                                        >
+                                        <!-- <img v-if="imgELmShow" class="clipper_img" ref="img" src="../../../static/img/userImg_default.jpg" alt=""> -->
+                                    </div>
                                     <input hidden="" name="type" value="person" />
                                 </form>
                             </div>
@@ -168,15 +176,15 @@ if(isset($payload)) {
                                 <p class="mobile"></p>
                                 <span>电话</span>
                                 <?php
-                                    if(!empty($phone)){
-                                ?>
-                                        <input type="phone" value="<?=$phone?>" disabled>
-                                <?php
-                                    }else{
-                                ?>
-                                        <b><a style="float: right;width: 4.4878rem;height: 1.0732rem;text-align: right;font-size: 0.3902rem;" class="bind_mobile">现在绑定立享好礼</a></b>
-                                <?php
-                                    }
+                                if(!empty($phone)){
+                                    ?>
+                                    <input type="phone" value="<?=$phone?>" disabled>
+                                    <?php
+                                }else{
+                                    ?>
+                                    <b><a style="float: right;width: 4.4878rem;height: 1.0732rem;text-align: right;color:#C84648;padding:0;font-size: 0.3902rem;" class="bind_mobile">现在绑定立享好礼</a></b>
+                                    <?php
+                                }
                                 ?>
 
                             </li>
@@ -213,23 +221,40 @@ if(isset($payload)) {
     <?php include 'inc_footer.html'; ?>
     <!--【Footer End】-->
 </section>
-
 <script type="text/javascript">
-    $('.imgfile').on('change', function(){
-        $(this).closest('form').submit();
-    });
+    var clipper = null,imgElm = undefined;
 
-    $('form').submit( function(){
+    $('.imgfile').on('change', function(e){
+        let resultObj = imgElm // 预览对象
+        clipper.clip(e, {
+            resultObj,
+            aspectRatio : 1
+        })
+        // $(this).closest('form').submit();
 
-        return true;
     });
+    // $('form').submit( function(){
+    //     return true;
+    // });
+
+    $('.bind_mobile').click(function(){
+        $.fancybox({
+            href: "#fy-mobile-bind"
+        });
+    })
+
     $(function(){
-        $('.bind_mobile').click(function(){
-            $.fancybox({
-                href: "#fy-mobile-bind"
-            });
+        clipper = new Clipper()
+        clipper.confirm(function(file){
+            // formData
+            let fd = new FormData()
+            // 上传头像参数
+            fd.append('file', file)
+            // 调用接口
+
         })
     })
+
 </script>
 <?php include 'inc_bottom_js.php'; ?>
 </body>
