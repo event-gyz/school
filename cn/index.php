@@ -276,7 +276,7 @@ if(isset($payload)) {
 
 <!-- 验证是否新用户登录 -->
 <div class="mask"></div>
-<section class="isnew_user">
+<section id="fy-info-ask-account"  class="isnew_user">
     <div class="head_top">
         <p class="close"></p>
         <h4>提示</h4>
@@ -298,6 +298,11 @@ if(isset($payload)) {
 <?php include 'inc_bottom_js.php'; ?>
 <script>
     $(function(){
+        <?php if(isset($_GET['ask_account']) && $_GET['ask_account']==1){?>
+        $.fancybox({
+            href: "#fy-info-ask-account"
+        });
+        <?php }?>
         $('.info_supplement').click(function(){
             $('.isnew_user').css('display','none')
             $('.mask').css('display','none')
