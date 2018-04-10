@@ -307,6 +307,36 @@
             return false;
         });
 
+		//关联旧账号
+		$("#wx_bind_mobile").submit(function(){
+			var auth_code = $("#info_vcode").val();
+			var phone = $("#info_mobile").val();
+			$.ajax({
+				url: "wx_bind.php",
+				type: "POST",
+				data: {
+					'p2': auth_code,
+					'p3': phone
+				},
+				dataType: "json",
+				success: function (jsonStr) {
+					console.log(jsonStr);
+					if(jsonStr.result=='success') {
+						$.fancybox.close();
+						alert('关联成功');
+						document.location.href= 'index.php';
+					}
+					else {
+						layer.msg(jsonStr.message);
+					}
+				},
+				error: function(xhr, err) {
+					alert('Ajax request ' + err);
+				}
+			});
+			return false;
+		});
+
 
 		$("#mobile_register_form").submit(function(){
 			var auth_code = $("#register_vcode").val();

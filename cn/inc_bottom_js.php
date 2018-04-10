@@ -154,7 +154,7 @@
             result = jQuery.parseJSON(result)
             if(result.result!='success') {
                 clearTimer(time)
-                layer.msg(result.msg);
+                layer.msg(result.message);
                 return false;
             }else{
                 layer.msg('发送成功');

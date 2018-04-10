@@ -9,14 +9,13 @@ if(isset($_POST['type']) && $_POST['type'] == "send"){
     $select = "select  *  from member where cellphone ='{$phone}' ";
 
     if(query_result($select)){
-        echo json_encode(array('result'=>'error','msg'=> "手机号已注册"));
-        exit;
+        die(genResponse(false, "手机号已注册"));
     }
     // 发送短信
     if(send_message($phone, $code)){
         $sql = "INSERT INTO message (phone, message_code,create_time) VALUES ('".$phone."','".$code."','".time()."')";
         if(query($sql)){
-           echo(genResponse(true, "发送成功"));
+            die(genResponse(true, "发送成功"));
         }else{
             die(genResponse(false, "发送失败"));
         }
@@ -34,7 +33,7 @@ if(isset($_POST['type']) && $_POST['type'] == "vali"){
     if(!query_result($select)){
         die(genResponse(false, "验证码错误"));
     }
-    echo(genResponse(true, "验证成功"));
+    die(genResponse(true, "验证成功"));
 }
 
 if(isset($_POST['type']) && $_POST['type'] == "forget"){
@@ -51,7 +50,7 @@ if(isset($_POST['type']) && $_POST['type'] == "forget"){
     if(send_message($phone, $code)){
         $sql = "INSERT INTO message (phone, message_code,create_time) VALUES ('".$phone."','".$code."','".time()."')";
         if(query($sql)){
-           echo(genResponse(true, "发送成功"));
+            die(genResponse(true, "发送成功"));
         }else{
             die(genResponse(false, "发送失败"));
         }
@@ -68,7 +67,31 @@ if(isset($_POST['type']) && $_POST['type'] == "login"){
     if(send_message($phone, $code)){
         $sql = "INSERT INTO message (phone, message_code,create_time) VALUES ('".$phone."','".$code."','".time()."')";
         if(query($sql)){
-            echo(genResponse(true, "发送成功"));
+            die(genResponse(true, "发送成功"));
+        }else{
+            die(genResponse(false, "发送失败"));
+        }
+    }else{
+        die(genResponse(false, "发送失败"));
+    }
+}
+
+
+if(isset($_POST['type']) && $_POST['type'] == "old"){
+    $phone = $_POST['phone'];
+    $code = rand(100000,999999);
+    // 查询手机号是否注册
+    $select = "select  *  from member where cellphone ='{$phone}' ";
+
+    if(!query_result($select)){
+        die(genResponse(false, "此手机没有绑定,请选择新用户进入"));
+    }
+
+    // 发送短信
+    if(send_message($phone, $code)){
+        $sql = "INSERT INTO message (phone, message_code,create_time) VALUES ('".$phone."','".$code."','".time()."')";
+        if(query($sql)){
+            die(genResponse(true, "发送成功"));
         }else{
             die(genResponse(false, "发送失败"));
         }
