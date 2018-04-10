@@ -82,9 +82,8 @@
 				},
 				dataType: "json",
 				success: function (jsonStr) {
+                    console.log(jsonStr);
 					if(jsonStr.result=='success') {
-						var message = $.parseJSON(jsonStr.message);
-						showLoginStatus(message.email,message.credit);
 						$.fancybox.close();
 						<?php
 						if(isset($b_post_tv_submit) && $b_post_tv_submit == true) {
@@ -92,7 +91,12 @@
 							echo('postTvSubmit();');
 						}
 						?>
-                        document.location.href = 'package.php';
+                        if(jsonStr.need_complete == 1){
+                            document.location.href = 'package.php';
+                        }else{
+                            document.location.href = 'index.php';
+                        }
+
 					}
 					else {
 						$("#fy-login .error01").show().delay(3000).fadeOut();

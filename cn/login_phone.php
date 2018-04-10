@@ -1,8 +1,7 @@
 <?php
 session_start();
 
-include("inc.php"); 
-
+include("inc.php");
 
 
 $_PHONE = $_POST['p1'];
@@ -30,7 +29,7 @@ $user_info_sql = 'select * from `member` where cellphone='.$_PHONE;
 $user_info = M()->find($user_info_sql);
 if(empty($user_info)){
     $membership = time()+7776000;
-	$sql = "INSERT INTO member (password,cellphone,membership) VALUES (md5(lower('123456')),'".$_PHONE."',$membership)";
+	$sql = "INSERT INTO member (password,id,cellphone,membership) VALUES (md5(lower('123456')),'".$_PHONE."','".$_PHONE."',$membership)";
 //        $user_obj['province'].
 	$result = M()->execute($sql);
 }
@@ -62,6 +61,11 @@ if(isset($token)) {
 	$_SESSION['user_epaper'] = $CMEMBER->epaper;
 	$sql = 'select * from `user` where supervisor_uid='.$CMEMBER->uid;
 	$kid = M()->find($sql);
+	if(!empty($kid)){
+		$need_complete = 0;
+	}else{
+		$need_complete = 1;
+	}
 	$_SESSION['CURRENT_KID_BIRTH_DAY'] = $kid['birth_day'];
 	$_SESSION['CURRENT_KID_UID'] = $kid['uid'];
 	$_SESSION['CURRENT_KID_NICKNAME'] = $kid['nick_name'];
@@ -74,7 +78,8 @@ if(isset($token)) {
 		$months += 0.5;
 	$user_age = $months;
 	$_SESSION['CURRENT_KID_AGE'] = $user_age;
-	echo(genResponse(true, json_encode($arr)));
+	echo json_encode(array('result'=>'success','message'=>$arr,'need_complete'=>$need_complete));
+	exit;
 } else {
 	echo(genResponse(false, $_v_ERROR_LOGIN_FAILED));
 }

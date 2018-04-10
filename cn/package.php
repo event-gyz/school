@@ -1,6 +1,6 @@
 <?php
 session_start(); 
-include('inc.php');	
+include('inc.php');
 ?>
 <!DOCTYPE html> 
 <html><!-- InstanceBegin template="/Templates/_page01.dwt" codeOutsideHTMLIsLocked="false" -->
