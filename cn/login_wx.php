@@ -29,15 +29,12 @@ if(!isset($_GET['code'])){
     $res = file_get_contents($get_user_info_url);
     //解析json
     $user_obj = json_decode($res,true);
+    $_SESSION['wx_info'] = $user_obj;
     $user_info_sql = 'select * from `member` where wx_openid="'.$user_obj['openid'].'"';
     $user_info = M()->find($user_info_sql);
     if(empty($user_info)){
-        $membership = time()+3888000;
-
-        $headimg = '"'.$user_obj['headimgurl'].'"';
-        $sql = "INSERT INTO member (password, nickname, city, image_url, wx_openid,membership) VALUES (md5(lower('123456')),'".$user_obj['nickname']."','".$user_obj['city']."','".$headimg."','".$user_obj['openid']."',$membership)";
-//        $user_obj['province'].
-        $result = M()->execute($sql);
+        header("Location:/cn/index.php?ask_account=1");
+        exit;
     }
 
     if($CMEMBER->login_wx($user_obj['openid']) == -1) die(genResponse(false, $_v_ERROR_LOGIN_FAILED."(ER-000002)"));
@@ -76,7 +73,8 @@ if(!isset($_GET['code'])){
             $months += 0.5;
         $user_age = $months;
         $_SESSION['CURRENT_KID_AGE'] = $user_age;
-        header("Location:/cn/index.php?ask_account=1");
+        header("Location:/cn/index.php");
+        exit;
     } else {
         echo(genResponse(false, $_v_ERROR_LOGIN_FAILED));
     }

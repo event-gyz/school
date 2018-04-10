@@ -1,5 +1,6 @@
 <?php
 include("fancybox/login.html");
+include("fancybox/info_supplement.html");
 include("fancybox/mobile_bind.html");
 include("fancybox/mobile_register.html");
 include("fancybox/mobile_login.html");
