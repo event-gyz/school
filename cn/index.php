@@ -198,7 +198,31 @@ if(isset($payload)) {
                         echo('<section class="list03 fl">');
                     }
                     ?>
-                    <h3 class="title">推荐文章demo<a href="recommend.php" class="i-more">更多内容<span>&gt;&gt;</span></a></h3>
+                    <h3 class="title">最新消息</h3>
+                    <a href="javascript:void(0)" class="bind_mobile">绑定手机赢好礼</a>
+                    <ul>
+                        <li>
+                            <h4>您的宝宝最近一次疫苗</h4>
+                            <p>
+                                2018年4月15日1月龄乙肝疫苗第二次-乙型病毒性肝炎
+                                <span class="i-more">更多》</span>
+                            </p>
+                        </li>
+                        <li>
+                            <h4>您的宝宝最近一次疫苗</h4>
+                            <p>
+                                2018年4月15日1月龄乙肝疫苗第二次-乙型病毒性肝炎
+                                <span class="i-more">更多》</span>
+                            </p>
+                        </li>
+                        <li>
+                            <h4>您的宝宝最近一次疫苗</h4>
+                            <p>
+                                2018年4月15日1月龄乙肝疫苗第二次-乙型病毒性肝炎
+                                <span class="i-more">更多》</span>
+                            </p>
+                        </li>
+                    </ul>
                     <?php af_articles_list_recommend('首页'); ?>
                 </section>
                 <!--//推薦文章//-->
@@ -206,7 +230,27 @@ if(isset($payload)) {
                 <!--//最新消息//-->
                 <!--【註1】固定五則訊息，最後二個給予class="m-none"是For手機不顯示用。-->
                 <section class="list02 fl">
-                    <h3 class="title">最新消息<a href="news.php" class="i-more">更多内容<span>&gt;&gt;</span></a></h3>
+                    <h3 class="title">家长分享<a href="news.php" class="i-more">更多内容</a></h3>
+                    <ul>
+                        <li>
+                            <h4>您的宝宝最近一次疫苗</h4>
+                            <p>
+                                2018年4月15日1月龄乙肝疫苗第二次-乙型病毒性肝炎
+                            </p>
+                        </li>
+                        <li>
+                            <h4>您的宝宝最近一次疫苗</h4>
+                            <p>
+                                2018年4月15日1月龄乙肝疫苗第二次-乙型病毒性肝炎
+                            </p>
+                        </li>
+                        <li>
+                            <h4>您的宝宝最近一次疫苗</h4>
+                            <p>
+                                2018年4月15日1月龄乙肝疫苗第二次-乙型病毒性肝炎
+                            </p>
+                        </li>
+                    </ul>
                     <?php af_index_list_news(); ?>
                 </section>
                 <!--//最新消息//-->
@@ -230,12 +274,50 @@ if(isset($payload)) {
 </section>
 <!--【Content End】-->
 
+<!-- 验证是否新用户登录 -->
+<div class="mask"></div>
+<section class="isnew_user">
+    <div class="head_top">
+        <p class="close"></p>
+        <h4>提示</h4>
+    </div>
+    <div class="isnew_user_content">
+        <p>是否为新用户注册</p>
+        <div class="operation">
+            <a href="#fy-info-supplement" class="info_supplement"><button class="confirm">是</button></a>
+            <button class="cancel">否</button>
+        </div>
+    </div>
+</section>
+
 <!--【Footer】-->
 <?php include 'inc_footer.html'; ?>
 <!--【Footer End】-->
 
 </section>
 <?php include 'inc_bottom_js.php'; ?>
-
+<script>
+    $(function(){
+        $('.info_supplement').click(function(){
+            $('.isnew_user').css('display','none')
+            $('.mask').css('display','none')
+            $.fancybox({
+                href: "#fy-info-supplement"
+            });
+        })
+        $('.isnew_user .close').click(function(){
+            var e = e || window.event;
+            e.stopPropagation()
+            $('.isnew_user').css('display','none')
+            $('.mask').css('display','none')
+        })
+        $('.isnew_user .cancel').click(function(){
+            var e = e || window.event;
+            e.stopPropagation()
+            $('.isnew_user').css('display','none')
+            $('.mask').css('display','none')
+        })
+    })
+</script>
 </body>
 <!-- InstanceEnd --></html>
