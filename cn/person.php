@@ -159,7 +159,6 @@ if(isset($payload)) {
                                                type="file"
                                                accept="image/gif,image/jpeg,image/png,image/bmp,image/jpg"
                                         >
-                                        <!-- <img v-if="imgELmShow" class="clipper_img" ref="img" src="../../../static/img/userImg_default.jpg" alt=""> -->
                                     </div>
                                     <input hidden="" name="type" value="person" />
                                 </form>
@@ -223,12 +222,21 @@ if(isset($payload)) {
 </section>
 <script type="text/javascript">
     var clipper = null,imgElm = undefined;
+    clipper = new Clipper()
 
     $('.imgfile').on('change', function(e){
         let resultObj = imgElm // 预览对象
         clipper.clip(e, {
             resultObj,
             aspectRatio : 1
+        })
+        clipper.confirm(function(file){
+            // formData
+            let fd = new FormData()
+            // 上传头像参数
+            fd.append('file', file)
+            // 调用接口
+
         })
         // $(this).closest('form').submit();
 
@@ -243,17 +251,6 @@ if(isset($payload)) {
         });
     })
 
-    $(function(){
-        clipper = new Clipper()
-        clipper.confirm(function(file){
-            // formData
-            let fd = new FormData()
-            // 上传头像参数
-            fd.append('file', file)
-            // 调用接口
-
-        })
-    })
 
 </script>
 <?php include 'inc_bottom_js.php'; ?>

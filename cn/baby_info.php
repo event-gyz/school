@@ -172,7 +172,14 @@ if($member_uid > 0) {
                                 <b></b>
                                 <p></p>
                                 <form action="head_sculpture.php" class="babyForm" method="post" enctype="multipart/form-data">
-                                    <input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="imgfile">
+                                    <!-- <input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="imgfile"> -->
+                                    <div class="clipper">
+                                        <input class="clipper_input babyfile"
+                                               ref="input"
+                                               type="file"
+                                               accept="image/gif,image/jpeg,image/png,image/bmp,image/jpg"
+                                        >
+                                    </div>
                                     <input hidden="" name="type" value="baby" />
                                 </form>
                             </div>
@@ -225,10 +232,28 @@ if($member_uid > 0) {
 <?php include 'inc_bottom_js.php'; ?>
 </body>
 <script type="text/javascript">
-    $('.imgfile').on('change', function(){
-        $(this).closest('form').submit();
-        $('.babyForm').submit();
+
+    var clipper = null,imgElm = undefined;
+    clipper = new Clipper()
+
+    $('.babyfile').on('change', function(e){
+        let resultObj = imgElm // 预览对象
+        clipper.clip(e, {
+            resultObj,
+            aspectRatio : 1
+        })
+        clipper.confirm(function(file){
+            // formData
+            let fd = new FormData()
+            // 上传头像参数
+            fd.append('file', file)
+            // 调用接口
+
+        })
+        // $(this).closest('form').submit();
+        // $('.babyForm').submit();
     });
+
 
 
 </script>
