@@ -274,24 +274,6 @@ if(isset($payload)) {
 </section>
 <!--【Content End】-->
 
-<!-- 验证是否新用户登录 -->
-<div class="mask"></div>
-<section id="fy-info-ask-account"  class="isnew_user">
-    <div class="head_top">
-        <p class="close"></p>
-        <h4>提示</h4>
-    </div>
-    <div class="isnew_user_content">
-        <p>是否为新用户注册</p>
-        <div class="operation">
-            <button class="cancel">是</button>
-
-            <button class="confirm">否</button>
-
-        </div>
-    </div>
-</section>
-
 <!--【Footer】-->
 <?php include 'inc_footer.html'; ?>
 <!--【Footer End】-->
@@ -301,45 +283,10 @@ if(isset($payload)) {
 <script>
     $(function(){
         <?php if(isset($_GET['ask_account']) && $_GET['ask_account']==1 && isset($_SESSION['wx_info'])){?>
-        $('.mask').toggle()
-        $('.isnew_user').toggle()
+        $.fancybox({
+            href: "#fy-info-ask-account"
+        });
         <?php }?>
-        $('.isnew_user .confirm').click(function(){
-            $('.isnew_user').css('display','none')
-            $('.mask').css('display','none')
-            $.fancybox({
-                href: "#fy-info-supplement"
-            });
-        })
-        $('.isnew_user .close').click(function(){
-            var e = e || window.event;
-            e.stopPropagation()
-            $('.isnew_user').css('display','none')
-            $('.mask').css('display','none')
-            createWxUser();
-        })
-        $('.isnew_user .cancel').click(function(){
-            var e = e || window.event;
-            e.stopPropagation()
-            $('.isnew_user').css('display','none')
-            $('.mask').css('display','none')
-            createWxUser();
-        })
-
-        function createWxUser() {
-            $.ajax({url: "register_wx.php",
-                type: "POST",
-                dataType: "json",
-                success: function (jsonStr) {
-                    if(jsonStr.result=='success'){
-                        document.location.href = 'index.php';
-                    }
-                },
-                error: function(xhr, err) {
-                    alert('Ajax request ' + err);
-                }
-            });
-        }
     })
 </script>
 </body>
