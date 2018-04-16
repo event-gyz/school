@@ -236,6 +236,16 @@ if(isset($payload)) {
             // 上传头像参数
             fd.append('file', file)
             // 调用接口
+            $.ajax({
+                url: "test.php",
+                type: "POST",
+                processData: false,
+                contentType: false,
+                data: fd,
+                success: function(d) {
+                    console.log(d);
+                }
+            });
 
         })
         // $(this).closest('form').submit();

@@ -11,7 +11,7 @@ include("inc.php");
 header("Content-type: text/html; charset=utf-8");
 if(!isset($_GET['code'])){
     $APPID='wxb87c1c8fcec6c6c2';
-    $REDIRECT_URI='http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+    $REDIRECT_URI='https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
     $scope='snsapi_userinfo';
     $url='https://open.weixin.qq.com/connect/oauth2/authorize?appid='.$APPID.'&redirect_uri='.urlencode($REDIRECT_URI).'&response_type=code&scope='.$scope.'&state=wx'.'#wechat_redirect';
     header("Location:".$url);
