@@ -7,7 +7,9 @@
 <link rel="stylesheet" href="../theme/cn/style.css">
 <link rel="stylesheet" href="../theme/cn/cropper.css">
 <link rel="stylesheet" href="../theme/cn/layer.css">
+<link rel="stylesheet" href="../theme/cn/jquery-ui.min.css">
 <script src="../scripts/jquery-1.11.0.min.js"></script>
+<script src="../scripts/jquery-ui.min.js"></script>
 <script src="../scripts/jquery.easing-1.3.js"></script>
 <script src='../scripts/cropper.js'></script>
 <script src='../scripts/exif.js'></script>
