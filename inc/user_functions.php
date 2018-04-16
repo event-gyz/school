@@ -195,9 +195,9 @@ class MyUser
 
 	function getUserInfo()
 	{
-		if($this->admin)
-			$sql = "select * from admin where uid = '".$this->uid."'";
-		else
+//		if($this->admin)
+//			$sql = "select * from admin where uid = '".$this->uid."'";
+//		else
 			$sql = "select * from member where uid = '".$this->uid."'";
 		$result = M()->find($sql);
 			if(!empty($result))

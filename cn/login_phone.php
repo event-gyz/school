@@ -42,10 +42,8 @@ $token = $CMEMBER->getUserToken();
 $credit= $CMEMBER->credit;
 if(isset($token)) {
 	$email = '';
-	if($CMEMBER->email){
-		$email = $CMEMBER->email;
-	}elseif($CMEMBER->cellphone){
-		$email = $CMEMBER->cellphone;
+	if($CMEMBER->id){
+		$email = $CMEMBER->id;
 	}elseif($CMEMBER->nickname){
 		$email = $CMEMBER->nickname;
 	}

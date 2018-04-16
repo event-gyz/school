@@ -25,10 +25,8 @@ else {
 	$credit= $CMEMBER->credit;
 	if(isset($token)) {
         $email = '';
-        if($CMEMBER->email){
-            $email = $CMEMBER->email;
-        }elseif($CMEMBER->cellphone){
-            $email = $CMEMBER->cellphone;
+        if($CMEMBER->id){
+            $email = $CMEMBER->id;
         }elseif($CMEMBER->nickname){
             $email = $CMEMBER->nickname;
         }
@@ -40,7 +38,7 @@ else {
 		
 		$_SESSION['user_token'] = $token;
 		$_SESSION['user_credit'] = $credit;
-		$_SESSION['user_email'] = $CMEMBER->email;
+		$_SESSION['user_email'] = $email;
 		$_SESSION['user_epaper'] = $CMEMBER->epaper;
 		$sql = 'select * from `user` where supervisor_uid='.$CMEMBER->uid;
 		$kid = M()->find($sql);
