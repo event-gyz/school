@@ -24,8 +24,7 @@ Clipper.prototype.initilize = function(opt) {
 Clipper.prototype.createElement = function() {
     //初始化图片为空对象
     this.preview = null;
-
-    let str = '<div><img id="clip_image" src=""></div><button type="button" id="cancel_clip">取消</button><button type="button" id="clip_button">确定</button>';
+    let str = '<div><img id="clip_image" src=""></div><p class="choice"></p><span id="cancel_clip">取消</span><span id="clip_button">选取</span>';
     str += '<div class="crop_loading"><div class="crop_content"><div class="uploadLoading"></div><div class="crop_text">图片上传中</div></div></div>';
     str += '<div class="crop_success"><div class="crop_success_text">上传成功</div></div></div>';
 
@@ -83,7 +82,6 @@ Clipper.prototype.clip = function(e, opt) {
 
     //调用方法转成url格式
     this.originUrl = this.getObjectURL(this.picValue);
-
     //每次替换图片要重新得到新的url
     if (this.cropper) {
         this.cropper.replace(this.originUrl);
