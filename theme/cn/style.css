@@ -655,8 +655,19 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .article_list li{padding-top: 0.3902rem}
 .article_list li h4{line-height: 0.5854rem;color:#747474;font-size: 0.3902rem;}
 .article_list li p{color:#878787;line-height: 0.4878rem;font-size: 0.2927rem;}
-
 /* 家长分享页面样式 end */
+
+/* 宝宝疫苗页面样式 start */
+.baby_vaccine {width:100%;}
+.baby_vaccine p>img{width:100%;height:auto;}
+.vaccine_info{text-align: center;width:100%;}
+.vaccine_info th{color:#5EC053;padding: 0.2927rem 0 0.1951rem;box-shadow: 1px 2px 3px #E8E8E8;}
+.vaccine_info th:last-child,.vaccine_info td:last-child{box-shadow: 0 2px 3px #E8E8E8;}
+.vaccine_info .inoculation_time{width:2.5366rem;}
+.vaccine_info .age{width:1.4634rem;}
+.vaccine_info .frequency{width:1.2683rem;}
+.vaccine_info td{color:#B9B9B9;padding: 0.1951rem 0;box-shadow: 1px 2px 3px #E8E8E8;}
+/* 宝宝疫苗页面样式 end*/
 
 /* 我的页面样式 start */
 .parent-head-portrait,.baby_info .baby-head-portrait{text-align: center;}
