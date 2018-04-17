@@ -101,7 +101,7 @@ function af_articles_list_recommend($tag) {
 	}
 
 	$count = 0;
-	echo('<ul>');
+	echo('<ul class="recommended_articles">');
 	foreach($result as $row){
 		$uid = $row['uid'];
 		$title = $row['title'];
@@ -114,7 +114,14 @@ function af_articles_list_recommend($tag) {
 			}
 			else {
 //				echo('<li class="m-none"><a href="javascript:loadArticle('.$uid.')" class="fancybox"><b>'.$title.'</b></a></li>');
-				echo('<li class="m-none"><a href="javascript:loadArticle('.$uid.')" class="fancybox"><b>'.$title.'</b><p>'.$desc.'</p></a></li>');
+				echo('<li><a href="javascript:loadArticle('.$uid.')" class="fancybox"><b>'.$title.'</b><p>'.$desc.'</p></a></li>');
+//                <li>
+//                            独生子女教养术
+//                            <p>
+//                多为独生子女安排和其他同济相处的时间，让孩子练习与人相处。
+//                                <a href="recommend.php" class="i-more">更多》</a>
+//                            </p>
+//                        </li>
 			}
 		}
 		else {
@@ -124,7 +131,7 @@ function af_articles_list_recommend($tag) {
 			}
 			else {
 //				echo('<li><a href="javascript:loadArticle('.$uid.')" class="fancybox"><b>'.$title.'</b></a></li>');
-				echo('<li><a href="javascript:loadArticle('.$uid.')" class="fancybox"><b>'.$title.'</b><p>'.$desc.'</p></a></li>');
+				echo('<li><h4><a href="javascript:loadArticle('.$uid.')" class="fancybox"><b>'.$title.'</b></h4></a><p>'.$desc.'<a href="recommend.php" class="i-more">更多》</a></p></li>');
 			}
 		}
 		$count++;

@@ -77,7 +77,7 @@ a.i-more span{font-family: 'simsun';}
 .list02 li i{color:#5EC252;display:block;font-size:13px;font-style:normal;}
 
 .list03 li{clear:both;padding:5px 0 11px;position:relative;}
-.list03 li a{color:#666666;display:block;position:relative;}
+.list03 li a{color:#666666;position:relative;}
 .list03 li .n-img{border-radius:10px;height:70px;overflow:hidden;position:absolute;width:70px;}
 .list03 li img{border-radius:10px;width:100%;}
 /*.list03 li span{display:block;margin:0 0 5px 25%;}*/
@@ -85,7 +85,8 @@ a.i-more span{font-family: 'simsun';}
 .list03 li i{color:#5EC252;display:block;font-size:13px;font-style:normal;}
 .contbox .fl h4{color:#535353;}
 .contbox .fl p{color:#6F6F6F;}
-.list02 li span,.list03 li span{color:#65C25B;text-decoration: underline;}
+.list02 li a,.list03 li a{color:#68C35E;text-decoration: underline;}
+.list02 .recommended_articles,.list03 .recommended_articles{margin-top:0.5854rem;}
 
 .isnew_user_content p{line-height:40px;text-align: center;color:#666666;font-size: 0.4098rem;margin-bottom: 35px;}
 .operation{width:200px;overflow: hidden;margin:0 auto;}
