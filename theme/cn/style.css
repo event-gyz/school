@@ -85,7 +85,7 @@ a.i-more span{font-family: 'simsun';}
 .list03 li i{color:#5EC252;display:block;font-size:13px;font-style:normal;}
 .contbox .fl h4{color:#535353;}
 .contbox .fl p{color:#6F6F6F;}
-.list02 li a,.list03 li a{color:#68C35E;text-decoration: underline;}
+.list02 li p a,.list03 li p a{color:#68C35E;text-decoration: underline;}
 .list02 .recommended_articles,.list03 .recommended_articles{margin-top:0.5854rem;}
 
 .isnew_user_content p{line-height:40px;text-align: center;color:#666666;font-size: 0.4098rem;margin-bottom: 35px;}
