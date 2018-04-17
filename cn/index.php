@@ -305,6 +305,11 @@ if(isset($_SESSION['user_token'])) {
         });
         <?php }?>
     })
+    $('.bind_mobile').click(function(){
+        $.fancybox({
+            href: "#fy-mobile-bind"
+        });
+    })
 </script>
 </body>
 <!-- InstanceEnd --></html>
