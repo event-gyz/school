@@ -305,7 +305,7 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .fy-bd .rbox{float:right;border:0 none;padding:0;width:49%;}
 .other_logins,.other_registers{padding: 0.4878rem 0.5854rem;clear:both;text-align: center;overflow: hidden;}
 .other_logins li,.other_registers li{float:left;width:50%;}
-.other_logins li i,.other_registers li i{display:inline-block;width:1.0244rem;height:1.0244rem;}
+.other_logins li i,.other_registers li i{display:inline-block;width:1.561rem;height:1.561rem;margin-bottom: 0.1951rem}
 .other_logins li p,.other_registers p{font-size: 0.2927rem;color:#444444;}
 .other_logins li.weixin i,.other_registers li.weixin i{background: url('../../content/epaper/images/weixin.png') no-repeat;background-size: 100%;}
 .other_logins li.mobile i,.other_registers li.mobile i{background: url('../../content/epaper/images/mobile_login.png') no-repeat;background-size: 100%;}
@@ -344,8 +344,8 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .search-text ul li.ac_over{background:#fafafa;}
 
 .fy-bd .fbar .tf-s{width:90px;}
-.mlinks{text-align:right;}
-.mlinks a{color:#666666;display:inline;font-size:16px;margin:0 0 0 10px;padding:0 0 0 10px;}
+.mlinks{text-align:center;}
+.mlinks a{color:#7ACD6E;display:inline;font-size:16px;margin:0 0 0 10px;padding:0 0 0 10px;text-decoration: underline;}
 .mlinks a:hover{color:#5EC252;}
 .regulations{color:#5EC154;text-decoration:underline;text-align: center;clear: both;cursor: pointer;margin-top: 0.5854rem;border-bottom:1px solid #CCCCCC;}
 .formbox h3.title{padding:10px 0 20px;}
@@ -682,7 +682,7 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .parent-head-portrait .upHead + span,.baby_info .baby-head-portrait .upHead + span{color:#B7B2A9;font-size: 0.5854rem;line-height: 1.1707rem;}
 .info_list{margin: 0.2927rem auto 0;border-bottom: 1px solid #E3E3E3;}
 .info_list li{border-top:1px solid #E3E3E3;padding: 0 1.1707rem 0 0.3902rem;line-height: 1.0732rem;font-size: 0.3902rem;color:#B7B2A9;position: relative;overflow: hidden;}
-.info_list li a{display: block;color:#B7B2A9;transition: none;}
+.info_list li.baby_infos a{display: block;color:#B7B2A9;transition: none;}
 .info_list li i{position:absolute;top:0.3415rem;right:0.3902rem;width:0.2341rem;height:0.3902rem;background:url('../../content/epaper/images/right.png') no-repeat;background-size: 100% 100%;}
 .info_list li p{float: left;width:1.1707rem;height:1.0732rem;}
 .info_list li p.account{background: url('../../content/epaper/images/person.png') no-repeat center center;background-size: 60% 70%;}

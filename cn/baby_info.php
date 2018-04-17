@@ -194,12 +194,12 @@ if($member_uid > 0) {
                             <li>
                                 <p class="birthday"></p>
                                 <span>生日：</span>
-                                <input type="text" value="<?=$birth_day?>" disabled>
+                                <a href="javascript: void(0)"><input class="birthday_time" type="text" value="<?=$birth_day?>" disabled></a>
                             </li>
                             <li>
                                 <p class="gender"></p>
                                 <span>性别：</span>
-                                <input type="text" value="<?=$gender?>" disabled>
+                                <a href="javascript: void(0)"><input type="text" value="<?=$gender?>" disabled></a>
                             </li>
                             <?php if(!empty($height)){?>
                                 <li>
@@ -267,6 +267,16 @@ if($member_uid > 0) {
         // $('.babyForm').submit();
     });
 
+    $('.info_list a').click(function(){
+        showEditBabyBox()
+        var birthday = $('.birthday_time').val()
+        var years = parseInt(birthday.split('-')[0])
+        var months = parseInt(birthday.split('-')[1])
+        var days = parseInt(birthday.split('-')[2])
+        $('#birth_box_years').val(years)
+        $('#birth_box_months').val(months)
+        $('#birth_box_days').val(days)
+    })
 
 
 </script>

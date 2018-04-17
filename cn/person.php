@@ -186,7 +186,7 @@ if(isset($payload)) {
                                 ?>
 
                             </li>
-                            <li>
+                            <li class="baby_infos">
                                 <a href="baby_info.php">
                                     <i></i>
                                     <p class="info"></p>
