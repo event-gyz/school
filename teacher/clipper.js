@@ -203,17 +203,18 @@ Clipper.prototype.postImg = function(imgData) {
     $l.display = 'block'
 
     // 执行 确认的回调函数  裁剪完后摧毁对象 
-    this.callback(file, this.vue_this).then(() => {
-        // 成功 预览
-        cb(); 
-        if(this.resultObj){
-            this.resultObj.src = imgData
-        }
-    }).catch(() => {
-        // 错误提示
-        cb();
-        $('.crop_success_text').innerText = '上传出错'
-    })
+    this.callback(file, this.vue_this)
+    // .then(() => {
+    //     // 成功 预览
+    //     cb(); 
+    //     if(this.resultObj){
+    //         this.resultObj.src = imgData
+    //     }
+    // }).catch(() => {
+    //     // 错误提示
+    //     cb();
+    //     $('.crop_success_text').innerText = '上传出错'
+    // })
 }
 //图片旋转
 Clipper.prototype.rotateImg = function(img, direction, canvas, _step) { // 180度有bug 增加_step参数
