@@ -7,7 +7,7 @@ function fetchContent($age, $type, $func,$e) {
 	$htmlString = "";
 	$user_uid = $_SESSION["CURRENT_KID_UID"];
 	$start_age = $age-1;
-	$end_age = $age+2;
+	$end_age = $age+1;
 	if(!empty($e) && ($start_age>=12)){
 		$start_age -=4;
 	}

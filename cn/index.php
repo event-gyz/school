@@ -118,6 +118,30 @@ if(isset($payload)) {
 }
 
 ?>
+<?php
+if(isset($_SESSION['user_token'])) {
+    $member_uid = $CMEMBER->accessFromToken($_SESSION['user_token']);
+    if($member_uid > 0) {
+        $sql = "select first_name,email,cellphone,image_url from member where uid='$member_uid'";
+        $result = M()->find($sql);
+        if($result!=null) {
+            $name = $result['first_name'];
+            $email = $result['email'];
+            $phone = $result['cellphone'];
+            $image_url = (!empty($result['image_url']) && $result['image_url']!=' ')?$result['image_url']:'';
+        }
+        unset($result);
+        unset($sql);
+        $sql = "select nick_name,birth_day,gender from user where supervisor_uid='$member_uid'";
+        $result = M()->find($sql);
+        if($result!=null) {
+            $nick_name = $result['nick_name'];
+            $birth_day = $result['birth_day'];
+            $gender = ($result['gender']==0?"男":"女");
+        }
+    }
+}
+?>
 <!-- InstanceBeginEditable name="wrap" -->
 <section id="wrap">
     <!-- InstanceEndEditable -->
@@ -199,27 +223,20 @@ if(isset($payload)) {
                     }
                     ?>
                     <h3 class="title">最新消息</h3>
-                    <a href="javascript:void(0)" class="bind_mobile">绑定手机赢好礼</a>
+                    <?php
+                    if(empty($phone)){
+                        ?>
+                        <a href="javascript:void(0)" class="bind_mobile">绑定手机赢好礼</a>
+                        <?php
+                    }
+                    ?>
+
                     <ul>
                         <li>
                             <h4>您的宝宝最近一次疫苗</h4>
                             <p>
                                 2018年4月15日1月龄乙肝疫苗第二次-乙型病毒性肝炎
-                                <span class="i-more">更多》</span>
-                            </p>
-                        </li>
-                        <li>
-                            <h4>您的宝宝最近一次疫苗</h4>
-                            <p>
-                                2018年4月15日1月龄乙肝疫苗第二次-乙型病毒性肝炎
-                                <span class="i-more">更多》</span>
-                            </p>
-                        </li>
-                        <li>
-                            <h4>您的宝宝最近一次疫苗</h4>
-                            <p>
-                                2018年4月15日1月龄乙肝疫苗第二次-乙型病毒性肝炎
-                                <span class="i-more">更多》</span>
+                                <span class="i-more"><a href="baby_vaccine.php">更多》</a></span>
                             </p>
                         </li>
                     </ul>

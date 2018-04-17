@@ -5,7 +5,10 @@ session_start();
 include("inc.php"); 
 
 include("../inc/upload.php");
-if(isset($_POST['type']) && $_POST['type'] == 'person'){
+$_type = $_REQUEST['type'];
+$_file = $_REQUEST['file'];
+print_r($_type);exit;
+if(isset($_type) && $_type == 'person'){
     $files = $_FILES['file'];
     $_token = $_SESSION['user_token'];
 
@@ -20,7 +23,7 @@ if(isset($_POST['type']) && $_POST['type'] == 'person'){
     exit;
 }
 
-if(isset($_POST['type']) && $_POST['type'] == 'baby'){
+if(isset($_type) && $_type == 'baby'){
     $files = $_FILES['file'];
     $_token = $_SESSION['user_token'];
 
@@ -35,7 +38,7 @@ if(isset($_POST['type']) && $_POST['type'] == 'baby'){
     exit;
 }
 
-if(isset($_POST['type']) && $_POST['type'] == 'mother'){
+if(isset($_type) && $_type == 'mother'){
     $files = $_FILES['file'];
     $_token = $_SESSION['user_token'];
 
@@ -50,7 +53,7 @@ if(isset($_POST['type']) && $_POST['type'] == 'mother'){
     exit;
 }
 
-if(isset($_POST['type']) && $_POST['type'] == 'father'){
+if(isset($_type) && $_type == 'father'){
     $files = $_FILES['file'];
     $_token = $_SESSION['user_token'];
 

@@ -93,14 +93,19 @@ if($membership['membership']<time()){
                                     $diff = $birthday->diff(new DateTime());
                                     $months = $diff->format('%m') + 12 * $diff->format('%y');
                                     $year = floor($months/12);
-                                    $mm = $months%12;
+
                                     echo '(';
-                                    if($year>0){
+                                    if($year>1){
                                         echo $year.'岁';
+                                        $mm = $months%12;
+                                        if($mm>0){
+                                            echo $mm.'个月';
+                                        }
+
+                                    }else{
+                                        echo $months.'个月';
                                     }
-                                    if($mm>0){
-                                        echo $mm.'个月';
-                                    }
+
                                     echo ')';
                                     ?>
                                         </h4>

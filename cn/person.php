@@ -237,16 +237,17 @@ if(isset($payload)) {
             fd.append('file', file)
             // 调用接口
             $.ajax({
-                url: "test.php",
+                url: "head_sculpture.php",
                 type: "POST",
+                async:true,
+                data: {'file':fd,'type':'person'},
+                dataType: "json",
                 processData: false,
                 contentType: false,
-                data: fd,
                 success: function(d) {
                     console.log(d);
                 }
             });
-
         })
         // $(this).closest('form').submit();
 
