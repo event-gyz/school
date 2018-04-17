@@ -102,6 +102,9 @@ function af_articles_list_recommend($tag) {
 
 	$count = 0;
 	echo('<ul class="recommended_articles">');
+    if($tag == '推荐') {
+        echo '<h4>推荐文章</h4>';
+    }
 	foreach($result as $row){
 		$uid = $row['uid'];
 		$title = $row['title'];
@@ -115,13 +118,6 @@ function af_articles_list_recommend($tag) {
 			else {
 //				echo('<li class="m-none"><a href="javascript:loadArticle('.$uid.')" class="fancybox"><b>'.$title.'</b></a></li>');
 				echo('<li><a href="javascript:loadArticle('.$uid.')" class="fancybox"><b>'.$title.'</b><p>'.$desc.'</p></a></li>');
-//                <li>
-//                            独生子女教养术
-//                            <p>
-//                多为独生子女安排和其他同济相处的时间，让孩子练习与人相处。
-//                                <a href="recommend.php" class="i-more">更多》</a>
-//                            </p>
-//                        </li>
 			}
 		}
 		else {
@@ -448,5 +444,70 @@ function get_articles($type,$count) {
 	$result = query($sql);
 	echo(result_to_table($result));
 	return mysql_num_rows($result);
+}
+
+
+
+function get_baby_vaccine(){
+    if(isset($_SESSION['user_token'])) {
+        $CMEMBER = new MyUser();
+        $member_uid = $CMEMBER->accessFromToken($_SESSION['user_token']);
+        if($member_uid > 0) {
+            $sql = "select nick_name,birth_day,gender from user where supervisor_uid='$member_uid'";
+            $result = M()->find($sql);
+            if($result!=null) {
+                $birth_day = strtotime($result['birth_day']);
+                if(strtotime("+1 months", $birth_day)>time()){
+                    echo date("Y年m月d日", strtotime("+1 months", $birth_day));
+                    echo '乙肝疫苗第二次-乙型病毒性肝炎';
+                }else if(strtotime("+2 months", $birth_day)>time() && strtotime("+1 months", $birth_day)<time()){
+                    echo date("Y年m月d日", strtotime("+2 months", $birth_day));
+                    echo '脊灰疫苗第一次-脊髓灰质炎(小儿麻痹)';
+
+                }else if(strtotime("+3 months", $birth_day)>time() && strtotime("+2 months", $birth_day)<time()){
+                    echo date("Y年m月d日", strtotime("+3 months", $birth_day));
+                    echo '脊灰疫苗第二次-脊髓灰质炎(小儿麻痹)，无细胞百日破疫苗第一次-百日咳、白喉、破伤风';
+                }else if(strtotime("+4 months", $birth_day)>time() && strtotime("+3 months", $birth_day)<time()){
+                    echo date("Y年m月d日", strtotime("+4 months", $birth_day));
+                    echo '脊灰疫苗第三次-脊髓灰质炎(小儿麻痹)，无细胞百日破疫苗第二次-百日咳、白喉、破伤风';
+                }else if(strtotime("+5 months", $birth_day)>time() && strtotime("+4 months", $birth_day)<time()){
+                    echo date("Y年m月d日", strtotime("+5 months", $birth_day));
+                    echo '无细胞百日破疫苗第三次-百日咳、白喉、破伤风';
+                }else if(strtotime("+6 months", $birth_day)>time() && strtotime("+5 months", $birth_day)<time()){
+                    echo date("Y年m月d日", strtotime("+6 months", $birth_day));
+                    echo '乙肝疫苗第三次-乙型病毒性肝炎，流脑疫苗第一次-流行性脑脊髓膜炎';
+                }else if(strtotime("+8 months", $birth_day)>time() && strtotime("+6 months", $birth_day)<time()){
+                    echo date("Y年m月d日", strtotime("+8 months", $birth_day));
+                    echo '麻疹疫苗第一次-麻疹';
+                }else if(strtotime("+9 months", $birth_day)>time() && strtotime("+8 months", $birth_day)<time()){
+                    echo date("Y年m月d日", strtotime("+9 months", $birth_day));
+                    echo '流脑疫苗第二次-流行性脑脊髓膜炎';
+                }else if(strtotime("+1 years", $birth_day)>time() && strtotime("+9 months", $birth_day)<time()){
+                    echo date("Y年m月d日", strtotime("+1 years", $birth_day));
+                    echo '乙脑减毒疫苗第一次-流行性乙型脑炎';
+                }else if(strtotime("+18 months", $birth_day)>time() && strtotime("+1 years", $birth_day)<time()){
+                    echo date("Y年m月d日", strtotime("+18 months", $birth_day));
+                    echo '甲肝疫苗第一次-甲型病毒性肝炎，无细胞百日破疫苗第四次-百日咳、白喉、破伤风，麻风腮疫苗第一次-麻疹、风疹、腮腺炎';
+                }else if(strtotime("+2 years", $birth_day)>time() && strtotime("+18 months", $birth_day)<time()){
+                    echo date("Y年m月d日", strtotime("+2 years", $birth_day));
+                    echo '乙脑减毒疫苗第二次-流行性乙型脑炎，甲肝疫苗(与前剂间隔6-12个月)第二次-甲型病毒性肝炎';
+                }else if(strtotime("+3 years", $birth_day)>time() && strtotime("+2 years", $birth_day)<time()){
+                    echo date("Y年m月d日", strtotime("+3 years", $birth_day));
+                    echo 'A+C流脑疫苗加强-流行性脑脊髓膜炎';
+                }else if(strtotime("+4 years", $birth_day)>time() && strtotime("+3 years", $birth_day)<time()){
+                    echo date("Y年m月d日", strtotime("+4 years", $birth_day));
+                    echo '脊灰疫苗第四次-脊髓灰质炎(小儿麻痹)';
+                }else if(strtotime("+6 years", $birth_day)>time() && strtotime("+4 years", $birth_day)<time()){
+                    echo date("Y年m月d日", strtotime("+6 years", $birth_day));
+                    echo '无细胞百日破疫苗(白破)加强-百日咳、白喉、破伤风，麻风腮疫苗第二次-麻疹、风疹、腮腺炎，乙脑减毒疫苗第三次-流行性乙型脑炎';
+                }
+//                echo date("Y年m月d日", );
+            }
+        }
+    }else{
+        echo '乙肝疫苗第一次-乙型病毒性肝炎，卡介苗第一次-结核病';
+    }
+    echo '<a href="baby_vaccine.php" class="i-more">更多》</a>';
+
 }
 ?>
