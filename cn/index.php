@@ -236,7 +236,7 @@ if(isset($_SESSION['user_token'])) {
                             <h4>您的宝宝最近一次疫苗</h4>
                             <p>
                                 2018年4月15日1月龄乙肝疫苗第二次-乙型病毒性肝炎
-                                <a href="javascript: void(0)" class="i-more">更多》</a>
+                                <a href="baby_vaccine.php" class="i-more">更多》</a>
                             </p>
                         </li>
                     </ul>

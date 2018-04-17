@@ -178,6 +178,106 @@ if(isset($payload)) {
                             <td>第二次</td>
                             <td>百日咳、白喉、破伤风</td>
                         </tr>
+                        <tr>
+                            <td></td>
+                            <td>5月龄</td>
+                            <td>无细胞百日破疫苗</td>
+                            <td>第三次</td>
+                            <td>百日咳、白喉、破伤风</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2"></td>
+                            <td rowspan="2">6月龄</td>
+                            <td>乙肝疫苗</td>
+                            <td>第三次</td>
+                            <td>乙型病毒性肝炎</td>
+                        </tr>
+                        <tr>
+                            <td>流脑疫苗</td>
+                            <td>第一次</td>
+                            <td>流行性脑脊髓膜炎</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>8月龄</td>
+                            <td>麻疹疫苗</td>
+                            <td>第一次</td>
+                            <td>麻疹</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>9月龄</td>
+                            <td>流脑疫苗</td>
+                            <td>第二次</td>
+                            <td>流行性脑脊髓膜炎</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>1岁</td>
+                            <td>乙脑减毒疫苗</td>
+                            <td>第一次</td>
+                            <td>流行性乙型脑炎</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3"></td>
+                            <td rowspan="3">1.5岁</td>
+                            <td>甲肝疫苗</td>
+                            <td>第一次</td>
+                            <td>甲型病毒性肝炎</td>
+                        </tr>
+                        <tr>
+                            <td>无细胞百日破疫苗</td>
+                            <td>第四次</td>
+                            <td>百日咳、白喉、破伤风</td>
+                        </tr>
+                        <tr>
+                            <td>麻风腮疫苗</td>
+                            <td>第一次</td>
+                            <td>麻疹、风疹、腮腺炎</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2"></td>
+                            <td rowspan="2">2岁</td>
+                            <td>乙脑减毒疫苗</td>
+                            <td>第二次</td>
+                            <td>流行性乙型脑炎</td>
+                        </tr>
+                        <tr>
+                            <td>甲肝疫苗(与前剂间隔6-12个月)</td>
+                            <td>第二次</td>
+                            <td>甲型病毒性肝炎</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>3岁</td>
+                            <td>A+C流脑疫苗</td>
+                            <td>加强</td>
+                            <td>流行性脑脊髓膜炎</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>4岁</td>
+                            <td>脊灰疫苗</td>
+                            <td>第四次</td>
+                            <td>脊髓灰质炎(小儿麻痹)</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3"></td>
+                            <td rowspan="3">6岁</td>
+                            <td>无细胞百日破疫苗(白破)</td>
+                            <td>加强</td>
+                            <td>百日咳、白喉、破伤风</td>
+                        </tr>
+                        <tr>
+                            <td>麻风腮疫苗</td>
+                            <td>第二次</td>
+                            <td>麻疹、风疹、腮腺炎</td>
+                        </tr>
+                        <tr>
+                            <td>乙脑减毒疫苗</td>
+                            <td>第三次</td>
+                            <td>流行性乙型脑炎</td>
+                        </tr>
                     </tbody>
                 </table>
             </section>
