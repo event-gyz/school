@@ -151,17 +151,16 @@ if(isset($payload)) {
                                 <?php } ?>
                                 <b></b>
                                 <p></p>
-                                <form action="head_sculpture.php"  method="post" enctype="multipart/form-data">
-                                    <!-- <input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="imgfile"> -->
-                                    <div class="clipper">
-                                        <input class="clipper_input imgfile"
-                                               ref="input"
-                                               type="file"
-                                               accept="image/gif,image/jpeg,image/png,image/bmp,image/jpg"
-                                        >
-                                    </div>
-                                    <input hidden="" name="type" value="person" />
-                                </form>
+                                <!-- <form action="head_sculpture.php"  method="post" enctype="multipart/form-data"> -->
+                                <div class="clipper">
+                                    <input class="clipper_input imgfile"
+                                           ref="input"
+                                           type="file"
+                                           accept="image/gif,image/jpeg,image/png,image/bmp,image/jpg"
+                                    >
+                                </div>
+                                <!-- <input hidden="" name="type" value="person" /> -->
+                                <!-- </form> -->
                             </div>
                             <span>家长已登录</span>
                         </div>
@@ -234,19 +233,22 @@ if(isset($payload)) {
             // formData
             let fd = new FormData()
             // 上传头像参数
-            fd.append('file', file)
+            fd.append('type', 'person')
+            fd.append('file', file)  // 通过append向form对象添加数据
+
             // 调用接口
             $.ajax({
                 url: "head_sculpture.php",
-                type: "POST",
-                async:true,
-                data: {'file':fd,'type':'person'},
-                dataType: "json",
+                type: 'post',
+                data: fd,
+                dataType: 'json',
                 processData: false,
                 contentType: false,
-                success: function(d) {
-                    console.log(d);
-                }
+                success: function (jsonStr) {
+                    if(jsonStr.errno=='1') {
+                        window.location.reload();
+                    }
+                },
             });
         })
         // $(this).closest('form').submit();

@@ -6,8 +6,8 @@ include("inc.php");
 
 include("../inc/upload.php");
 $_type = $_REQUEST['type'];
-$_file = $_REQUEST['file'];
-print_r($_type);exit;
+$file_last = explode('/',$_FILES['file']['type']);
+$_FILES['file']['name'] = time().rand(1,1000).'.'.array_pop($file_last);
 if(isset($_type) && $_type == 'person'){
     $files = $_FILES['file'];
     $_token = $_SESSION['user_token'];
@@ -16,8 +16,9 @@ if(isset($_type) && $_type == 'person'){
         $picurl = ceanza_upload("file");
         $sql = "update member set image_url='{$picurl}' where uid = $supervisor_uid";
         $result = query($sql);
-        if($result!=null) {
-            header("Location:".$_SERVER['HTTP_REFERER']);
+        if($result) {
+            echo json_encode(['errno'=>1,'msg'=>'保存成功']);
+            exit;
         }
     }
     exit;
@@ -32,7 +33,8 @@ if(isset($_type) && $_type == 'baby'){
         $sql = "update `user` set image_url='{$picurl}' where supervisor_uid = $supervisor_uid";
         $result = query($sql);
         if($result!=null) {
-            header("Location:".$_SERVER['HTTP_REFERER']);
+            echo json_encode(['errno'=>1,'msg'=>'保存成功']);
+            exit;
         }
     }
     exit;
@@ -47,7 +49,8 @@ if(isset($_type) && $_type == 'mother'){
         $sql = "update member set mother_image='{$picurl}' where uid = $supervisor_uid";
         $result = query($sql);
         if($result!=null) {
-            header("Location:".$_SERVER['HTTP_REFERER']);
+            echo json_encode(['errno'=>1,'msg'=>'保存成功']);
+            exit;
         }
     }
     exit;
@@ -62,7 +65,8 @@ if(isset($_type) && $_type == 'father'){
         $sql = "update member set father_image='{$picurl}' where uid = $supervisor_uid";
         $result = query($sql);
         if($result!=null) {
-            header("Location:".$_SERVER['HTTP_REFERER']);
+            echo json_encode(['errno'=>1,'msg'=>'保存成功']);
+            exit;
         }
     }
     exit;

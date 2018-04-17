@@ -305,7 +305,21 @@ if($member_uid > 0) {
             let fd = new FormData()
             // 上传头像参数
             fd.append('file', file)
+            fd.append('type', 'father')
             // 调用接口
+            $.ajax({
+                url: "head_sculpture.php",
+                type: 'post',
+                data: fd,
+                dataType: 'json',
+                processData: false,
+                contentType: false,
+                success: function (jsonStr) {
+                    if(jsonStr.errno=='1') {
+                        window.location.reload();
+                    }
+                },
+            });
 
         })
         // $(this).closest('form').submit();
@@ -322,7 +336,21 @@ if($member_uid > 0) {
             let fd = new FormData()
             // 上传头像参数
             fd.append('file', file)
+            fd.append('type', 'baby')
             // 调用接口
+            $.ajax({
+                url: "head_sculpture.php",
+                type: 'post',
+                data: fd,
+                dataType: 'json',
+                processData: false,
+                contentType: false,
+                success: function (jsonStr) {
+                    if(jsonStr.errno=='1') {
+                        window.location.reload();
+                    }
+                },
+            });
 
         })
         // $(this).closest('form').submit();
@@ -339,7 +367,21 @@ if($member_uid > 0) {
             let fd = new FormData()
             // 上传头像参数
             fd.append('file', file)
+            fd.append('type', 'mother')
             // 调用接口
+            $.ajax({
+                url: "head_sculpture.php",
+                type: 'post',
+                data: fd,
+                dataType: 'json',
+                processData: false,
+                contentType: false,
+                success: function (jsonStr) {
+                    if(jsonStr.errno=='1') {
+                        window.location.reload();
+                    }
+                },
+            });
 
         })
         // $(this).closest('form').submit();

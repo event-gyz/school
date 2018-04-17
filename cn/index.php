@@ -240,7 +240,7 @@ if(isset($_SESSION['user_token'])) {
                             </p>
                         </li>
                     </ul>
-                    <?php af_articles_list_recommend('首页'); ?>
+                    <?php af_articles_list_recommend('推荐'); ?>
                 </section>
                 <!--//推薦文章//-->
 

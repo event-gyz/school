@@ -72,11 +72,37 @@ function af_index_list_recommend() {
 function af_articles_list_recommend($tag) {
 	global $_show_image;
 	$item_count = $_show_image?4:8;
-	$sql = "SELECT * from articles WHERE type='REC' and tag='{$tag}' ORDER BY uid desc,pub_date limit $item_count";
-	$result = query($sql);
+	if($tag == '推荐'){
+		$show_date = date('Y-m-d',time());
+		$sql = "SELECT * from articles WHERE type='REC' and show_date='{$show_date}' ORDER BY uid desc,pub_date limit $item_count";
+		$result = M()->select($sql);
+		if(!is_array($result) || empty($result)){
+			$all_art = "SELECT uid from articles";
+			$all_res = M()->select($all_art);
+			$all_uid = array_column($all_res,'uid');
+			shuffle($all_uid);
+			$i=0;
+			foreach($all_uid as $k_uid=>$uid){
+				if(($k_uid)%2==0){
+					$s_date = date("Y-m-d",strtotime("$i day"));
+					$i++;
+				}
+				if(empty($s_date)){
+					$s_date=$show_date;
+				}
+				$up_sql = "update articles set show_date='{$s_date}' where uid=$uid";
+				M()->execute($up_sql);
+			}
+		}
+		$result = M()->select($sql);
+	}else{
+		$sql = "SELECT * from articles WHERE type='REC' and tag='{$tag}' ORDER BY uid desc,pub_date limit $item_count";
+		$result = M()->select($sql);
+	}
+
 	$count = 0;
 	echo('<ul>');
-	while ($row = mysql_fetch_array($result)) {
+	foreach($result as $row){
 		$uid = $row['uid'];
 		$title = $row['title'];
 		$desc = $row['description'];
