@@ -168,7 +168,7 @@ if(isset($payload)) {
                             <li>
                                 <p class="account"></p>
                                 <span>账号资料</span>
-                                <input type="text" value="<?=$email?>" disabled>
+                                <input type="text" value="<?=$_SESSION['user_email']?>" disabled>
                             </li>
                             <li>
                                 <p class="mobile"></p>
