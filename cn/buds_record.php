@@ -299,9 +299,7 @@ if(isset($payload)) {
                     <div class="end_line"></div>
                     <section class="clearfix relevant_articles">
                         <h3 class="title">萌芽相关文章<a href="recommend.php" class="i-more">更多内容<span>&gt;&gt;</span></a></h3>
-                        <ul>
-                            <?php af_articles_list_recommend('乳牙'); ?>
-                        </ul>
+                        <?php af_articles_list_recommend('乳牙'); ?>
                     </section>
                 </section>
             </section>

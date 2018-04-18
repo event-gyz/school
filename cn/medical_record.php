@@ -210,9 +210,7 @@ if(isset($payload)) {
 					</div>
 					<section class="clearfix relevant_articles">
 						<h3 class="title">就诊相关文章<a href="recommend.php" class="i-more">更多内容<span>&gt;&gt;</span></a></h3>
-						<ul>
-							<?php af_articles_list_recommend('就诊'); ?>
-						</ul>
+						<?php af_articles_list_recommend('就诊'); ?>
 					</section>
 				</section>
 			</section>

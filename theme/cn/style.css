@@ -520,7 +520,9 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .noData a{color:#8CC558;}
 .end_line{width:8.6634rem;height:0.0976rem;background: url('../../content/epaper/images/end_line.png') no-repeat;background-size: 100%;margin: 20px auto;}
 .relevant_articles{margin: 80px auto 0;color: #B7B2A9;}
-.relevant_articles ul{padding-left: 10px;margin:10px 0;line-height: 24px;font-size: 14px;}
+.relevant_articles ul{font-size: 14px;}
+.recommended_articles li a{color:#666;position: relative;}
+.recommended_articles li p a{position: relative;color:#68C35E;}
 .ceanza_contraction{margin:40px auto 0;padding-bottom: 4px;}
 .ceanza_contraction:after{display: block;content:'';clear:both;}
 .ceanza_contraction li{float: left;width:33.333%;text-align: center;margin-top: 20px;}
@@ -665,10 +667,10 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .vaccine_info{text-align: center;width:100%;}
 .vaccine_info th{color:#5EC053;padding: 0.2927rem 0 0.1951rem;box-shadow: 1px 2px 3px #E8E8E8;}
 .vaccine_info th:last-child,.vaccine_info td:last-child{box-shadow: 0 2px 3px #E8E8E8;}
-.vaccine_info .inoculation_time{width:2.5366rem;}
+.vaccine_info .inoculation_time{width: 3.3171rem;}
 .vaccine_info .age{width:1.4634rem;}
-.vaccine_info .frequency{width:1.2683rem;}
-.vaccine_info td{color:#B9B9B9;padding: 0.1951rem 0;box-shadow: 1px 2px 3px #E8E8E8;}
+.vaccine_info tr{color:#7ED871;}
+.vaccine_info td{padding: 0.1951rem 0;box-shadow: 1px 2px 3px #E8E8E8;}
 /* 宝宝疫苗页面样式 end*/
 
 /* 我的页面样式 start */

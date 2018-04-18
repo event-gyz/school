@@ -64,273 +64,248 @@ if(isset($_SESSION['user_token'])) {
                 <!--//主選單標題與路徑//-->
                 <table class="vaccine_info">
                     <thead>
-                        <tr>
-                            <th class="inoculation_time">接种时间</th>
-                            <th class="age">年龄</th>
-                            <th class="vaccine_name">疫苗名称</th>
-                            <th class="frequency">次数</th>
-                            <th class="prevent_disease">可防的疾病</th>
-                        </tr>
+                    <tr>
+                        <th class="inoculation_time">接种时间</th>
+                        <th class="age">年龄</th>
+                        <th class="vaccine_name">疫苗名称</th>
+                        <th class="prevent_disease">可防的疾病</th>
+                    </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td rowspan="2"
-                                <?php if(strtotime($birth_day)<time()){
-                                    echo 'style="color: #B9B9B9;"';
-                                }?>
-
-                            ><?php
-                                if(!empty($birth_day)){
-                                    echo date('Y年m月d日',strtotime($birth_day));
-                                }
-                                ?></td>
-                            <td rowspan="2">出生时</td>
-                            <td>乙肝疫苗</td>
-                            <td>第一次</td>
-                            <td>乙型病毒性肝炎</td>
-                        </tr>
-                        <tr>
-                            <td>卡介苗</td>
-                            <td>第一次</td>
-                            <td>结核病</td>
-                        </tr>
-                        <tr>
-                            <td
-                                <?php if(strtotime("+1 months", strtotime($birth_day))<time()){
-                                    echo 'style="color: #B9B9B9;"';
-                                }?>
-                            ><?php
-                                if(!empty($birth_day)){
-                                    echo date("Y年m月d日", strtotime("+1 months", strtotime($birth_day)));
-                                }
-                                ?></td>
-                            <td>1月龄</td>
-                            <td>乙肝疫苗</td>
-                            <td>第二次</td>
-                            <td>乙型病毒性肝炎</td>
-                        </tr>
-                        <tr>
-                            <td <?php if(strtotime("+2 months", strtotime($birth_day))<time()){
-                                echo 'style="color: #B9B9B9;"';
-                            }?>
-                            ><?php
-                                if(!empty($birth_day)){
-                                    echo date("Y年m月d日", strtotime("+2 months", strtotime($birth_day)));
-                                }
-                                ?></td>
-                            <td>2月龄</td>
-                            <td>脊灰疫苗</td>
-                            <td>第一次</td>
-                            <td>脊髓灰质炎(小儿麻痹)</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="2" <?php if(strtotime("+3 months", strtotime($birth_day))<time()){
-                                echo 'style="color: #B9B9B9;"';
-                            }?>
-                            ><?php
-                                if(!empty($birth_day)){
-                                    echo date("Y年m月d日", strtotime("+3 months", strtotime($birth_day)));
-                                }
-                                ?></td>
-                            <td rowspan="2">3月龄</td>
-                            <td>脊灰疫苗</td>
-                            <td>第二次</td>
-                            <td>脊髓灰质炎(小儿麻痹)</td>
-                        </tr>
-                        <tr>
-                            <td>无细胞百日破疫苗</td>
-                            <td>第一次</td>
-                            <td>百日咳、白喉、破伤风</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="2" <?php if(strtotime("+4 months", strtotime($birth_day))<time()){
-                                echo 'style="color: #B9B9B9;"';
-                            }?>
-                            ><?php
-                                if(!empty($birth_day)){
-                                    echo date("Y年m月d日", strtotime("+4 months", strtotime($birth_day)));
-                                }
-                                ?></td>
-                            <td rowspan="2">4月龄</td>
-                            <td>脊灰疫苗</td>
-                            <td>第三次</td>
-                            <td>脊髓灰质炎(小儿麻痹)</td>
-                        </tr>
-                        <tr>
-                            <td>无细胞百日破疫苗</td>
-                            <td>第二次</td>
-                            <td>百日咳、白喉、破伤风</td>
-                        </tr>
-                        <tr>
-                            <td <?php if(strtotime("+5 months", strtotime($birth_day))<time()){
-                                echo 'style="color: #B9B9B9;"';
-                            }?>
-                            ><?php
-                                if(!empty($birth_day)){
-                                    echo date("Y年m月d日", strtotime("+5 months", strtotime($birth_day)));
-                                }
-                                ?></td>
-                            <td>5月龄</td>
-                            <td>无细胞百日破疫苗</td>
-                            <td>第三次</td>
-                            <td>百日咳、白喉、破伤风</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="2" <?php if(strtotime("+6 months", strtotime($birth_day))<time()){
-                                echo 'style="color: #B9B9B9;"';
-                            }?>
-                            ><?php
-                                if(!empty($birth_day)){
-                                    echo date("Y年m月d日", strtotime("+6 months", strtotime($birth_day)));
-                                }
-                                ?></td>
-                            <td rowspan="2">6月龄</td>
-                            <td>乙肝疫苗</td>
-                            <td>第三次</td>
-                            <td>乙型病毒性肝炎</td>
-                        </tr>
-                        <tr>
-                            <td>流脑疫苗</td>
-                            <td>第一次</td>
-                            <td>流行性脑脊髓膜炎</td>
-                        </tr>
-                        <tr>
-                            <td <?php if(strtotime("+8 months", strtotime($birth_day))<time()){
-                                echo 'style="color: #B9B9B9;"';
-                            }?>
-                            ><?php
-                                if(!empty($birth_day)){
-                                    echo date("Y年m月d日", strtotime("+8 months", strtotime($birth_day)));
-                                }
-                                ?></td>
-                            <td>8月龄</td>
-                            <td>麻疹疫苗</td>
-                            <td>第一次</td>
-                            <td>麻疹</td>
-                        </tr>
-                        <tr>
-                            <td <?php if(strtotime("+9 months", strtotime($birth_day))<time()){
-                                echo 'style="color: #B9B9B9;"';
-                            }?>
-                            ><?php
-                                if(!empty($birth_day)){
-                                    echo date("Y年m月d日", strtotime("+9 months", strtotime($birth_day)));
-                                }
-                                ?></td>
-                            <td>9月龄</td>
-                            <td>流脑疫苗</td>
-                            <td>第二次</td>
-                            <td>流行性脑脊髓膜炎</td>
-                        </tr>
-                        <tr>
-                            <td <?php if(strtotime("+1 years", strtotime($birth_day))<time()){
-                                echo 'style="color: #B9B9B9;"';
-                            }?>
-                            ><?php
-                                if(!empty($birth_day)){
-                                    echo date("Y年m月d日", strtotime("+1 years", strtotime($birth_day)));
-                                }
-                                ?></td>
-                            <td>1岁</td>
-                            <td>乙脑减毒疫苗</td>
-                            <td>第一次</td>
-                            <td>流行性乙型脑炎</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="3" <?php if(strtotime("+18 months", strtotime($birth_day))<time()){
-                                echo 'style="color: #B9B9B9;"';
-                            }?>
-                            ><?php
-                                if(!empty($birth_day)){
-                                    echo date("Y年m月d日", strtotime("+18 months", strtotime($birth_day)));
-                                }
-                                ?></td>
-                            <td rowspan="3">1.5岁</td>
-                            <td>甲肝疫苗</td>
-                            <td>第一次</td>
-                            <td>甲型病毒性肝炎</td>
-                        </tr>
-                        <tr>
-                            <td>无细胞百日破疫苗</td>
-                            <td>第四次</td>
-                            <td>百日咳、白喉、破伤风</td>
-                        </tr>
-                        <tr>
-                            <td>麻风腮疫苗</td>
-                            <td>第一次</td>
-                            <td>麻疹、风疹、腮腺炎</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="2" <?php if(strtotime("+2 years", strtotime($birth_day))<time()){
-                                echo 'style="color: #B9B9B9;"';
-                            }?>
-                            ><?php
-                                if(!empty($birth_day)){
-                                    echo date("Y年m月d日", strtotime("+2 years", strtotime($birth_day)));
-                                }
-                                ?></td>
-                            <td rowspan="2">2岁</td>
-                            <td>乙脑减毒疫苗</td>
-                            <td>第二次</td>
-                            <td>流行性乙型脑炎</td>
-                        </tr>
-                        <tr>
-                            <td>甲肝疫苗(与前剂间隔6-12个月)</td>
-                            <td>第二次</td>
-                            <td>甲型病毒性肝炎</td>
-                        </tr>
-                        <tr>
-                            <td <?php if(strtotime("+3 years", strtotime($birth_day))<time()){
-                                echo 'style="color: #B9B9B9;"';
-                            }?>
-                            ><?php
-                                if(!empty($birth_day)){
-                                    echo date("Y年m月d日", strtotime("+3 years", strtotime($birth_day)));
-                                }
-                                ?></td>
-                            <td>3岁</td>
-                            <td>A+C流脑疫苗</td>
-                            <td>加强</td>
-                            <td>流行性脑脊髓膜炎</td>
-                        </tr>
-                        <tr>
-                            <td <?php if(strtotime("+4 years", strtotime($birth_day))<time()){
-                                echo 'style="color: #B9B9B9;"';
-                            }?>
-                            ><?php
-                                if(!empty($birth_day)){
-                                    echo date("Y年m月d日", strtotime("+4 years", strtotime($birth_day)));
-                                }
-                                ?></td>
-                            <td>4岁</td>
-                            <td>脊灰疫苗</td>
-                            <td>第四次</td>
-                            <td>脊髓灰质炎(小儿麻痹)</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="3" <?php if(strtotime("+6 years", strtotime($birth_day))<time()){
-                                echo 'style="color: #B9B9B9;"';
-                            }?>
-                            ><?php
-                                if(!empty($birth_day)){
-                                    echo date("Y年m月d日", strtotime("+6 years", strtotime($birth_day)));
-                                }
-                                ?></td>
-                            <td rowspan="3">6岁</td>
-                            <td>无细胞百日破疫苗(白破)</td>
-                            <td>加强</td>
-                            <td>百日咳、白喉、破伤风</td>
-                        </tr>
-                        <tr>
-                            <td>麻风腮疫苗</td>
-                            <td>第二次</td>
-                            <td>麻疹、风疹、腮腺炎</td>
-                        </tr>
-                        <tr>
-                            <td>乙脑减毒疫苗</td>
-                            <td>第三次</td>
-                            <td>流行性乙型脑炎</td>
-                        </tr>
+                    <tr <?php if(strtotime($birth_day)<time()){
+                        echo 'style="color: #B9B9B9;"';
+                    }?>>
+                        <td rowspan="2"><?php
+                            if(!empty($birth_day)){
+                                echo date('Y年m月d日',strtotime($birth_day));
+                            }
+                            ?></td>
+                        <td rowspan="2">出生时</td>
+                        <td>乙肝疫苗<p>第一次</p></td>
+                        <td>乙型病毒性肝炎</td>
+                    </tr>
+                    <tr <?php if(strtotime($birth_day)<time()){
+                        echo 'style="color: #B9B9B9;"';
+                    }?>>
+                        <td>卡介苗<p>第一次</p></td>
+                        <td>结核病</td>
+                    </tr>
+                    <tr <?php if(strtotime("+1 months", strtotime($birth_day))<time()){
+                        echo 'style="color: #B9B9B9;"';
+                    }?>>
+                        <td><?php
+                            if(!empty($birth_day)){
+                                echo date("Y年m月d日", strtotime("+1 months", strtotime($birth_day)));
+                            }
+                            ?></td>
+                        <td>1月龄</td>
+                        <td>乙肝疫苗<p>第二次</p></td>
+                        <td>乙型病毒性肝炎</td>
+                    </tr>
+                    <tr <?php if(strtotime("+2 months", strtotime($birth_day))<time()){
+                        echo 'style="color: #B9B9B9;"';
+                    }?>>
+                        <td><?php
+                            if(!empty($birth_day)){
+                                echo date("Y年m月d日", strtotime("+2 months", strtotime($birth_day)));
+                            }
+                            ?></td>
+                        <td>2月龄</td>
+                        <td>脊灰疫苗<p>第一次</p></td>
+                        <td>脊髓灰质炎(小儿麻痹)</td>
+                    </tr>
+                    <tr <?php if(strtotime("+3 months", strtotime($birth_day))<time()){
+                        echo 'style="color: #B9B9B9;"';
+                    }?>>
+                        <td rowspan="2"><?php
+                            if(!empty($birth_day)){
+                                echo date("Y年m月d日", strtotime("+3 months", strtotime($birth_day)));
+                            }
+                            ?></td>
+                        <td rowspan="2">3月龄</td>
+                        <td>脊灰疫苗<p>第二次</p></td>
+                        <td>脊髓灰质炎(小儿麻痹)</td>
+                    </tr>
+                    <tr <?php if(strtotime("+3 months", strtotime($birth_day))<time()){
+                        echo 'style="color: #B9B9B9;"';
+                    }?>>
+                        <td>无细胞百日破疫苗<p>第一次</p></td>
+                        <td>百日咳、白喉、破伤风</td>
+                    </tr>
+                    <tr <?php if(strtotime("+4 months", strtotime($birth_day))<time()){
+                        echo 'style="color: #B9B9B9;"';
+                    }?>>
+                        <td rowspan="2"><?php
+                            if(!empty($birth_day)){
+                                echo date("Y年m月d日", strtotime("+4 months", strtotime($birth_day)));
+                            }
+                            ?></td>
+                        <td rowspan="2">4月龄</td>
+                        <td>脊灰疫苗<p>第三次</p></td>
+                        <td>脊髓灰质炎(小儿麻痹)</td>
+                    </tr>
+                    <tr <?php if(strtotime("+4 months", strtotime($birth_day))<time()){
+                        echo 'style="color: #B9B9B9;"';
+                    }?>>
+                        <td>无细胞百日破疫苗<p>第二次</p></td>
+                        <td>百日咳、白喉、破伤风</td>
+                    </tr>
+                    <tr <?php if(strtotime("+5 months", strtotime($birth_day))<time()){
+                        echo 'style="color: #B9B9B9;"';
+                    }?>>
+                        <td><?php
+                            if(!empty($birth_day)){
+                                echo date("Y年m月d日", strtotime("+5 months", strtotime($birth_day)));
+                            }
+                            ?></td>
+                        <td>5月龄</td>
+                        <td>无细胞百日破疫苗<p>第三次</p></td>
+                        <td>百日咳、白喉、破伤风</td>
+                    </tr>
+                    <tr <?php if(strtotime("+6 months", strtotime($birth_day))<time()){
+                        echo 'style="color: #B9B9B9;"';
+                    }?>>
+                        <td rowspan="2"><?php
+                            if(!empty($birth_day)){
+                                echo date("Y年m月d日", strtotime("+6 months", strtotime($birth_day)));
+                            }
+                            ?></td>
+                        <td rowspan="2">6月龄</td>
+                        <td>乙肝疫苗<p>第三次</p></td>
+                        <td>乙型病毒性肝炎</td>
+                    </tr>
+                    <tr <?php if(strtotime("+6 months", strtotime($birth_day))<time()){
+                        echo 'style="color: #B9B9B9;"';
+                    }?>>
+                        <td>流脑疫苗<p>第一次</p></td>
+                        <td>流行性脑脊髓膜炎</td>
+                    </tr>
+                    <tr <?php if(strtotime("+8 months", strtotime($birth_day))<time()){
+                        echo 'style="color: #B9B9B9;"';
+                    }?>>
+                        <td><?php
+                            if(!empty($birth_day)){
+                                echo date("Y年m月d日", strtotime("+8 months", strtotime($birth_day)));
+                            }
+                            ?></td>
+                        <td>8月龄</td>
+                        <td>麻疹疫苗<p>第一次</p></td>
+                        <td>麻疹</td>
+                    </tr>
+                    <tr <?php if(strtotime("+9 months", strtotime($birth_day))<time()){
+                        echo 'style="color: #B9B9B9;"';
+                    }?>>
+                        <td><?php
+                            if(!empty($birth_day)){
+                                echo date("Y年m月d日", strtotime("+9 months", strtotime($birth_day)));
+                            }
+                            ?></td>
+                        <td>9月龄</td>
+                        <td>流脑疫苗<p>第二次</p></td>
+                        <td>流行性脑脊髓膜炎</td>
+                    </tr>
+                    <tr <?php if(strtotime("+1 years", strtotime($birth_day))<time()){
+                        echo 'style="color: #B9B9B9;"';
+                    }?>>
+                        <td><?php
+                            if(!empty($birth_day)){
+                                echo date("Y年m月d日", strtotime("+1 years", strtotime($birth_day)));
+                            }
+                            ?></td>
+                        <td>1岁</td>
+                        <td>乙脑减毒疫苗<p>第一次</p></td>
+                        <td>流行性乙型脑炎</td>
+                    </tr>
+                    <tr <?php if(strtotime("+18 months", strtotime($birth_day))<time()){
+                        echo 'style="color: #B9B9B9;"';
+                    }?>>
+                        <td rowspan="3"><?php
+                            if(!empty($birth_day)){
+                                echo date("Y年m月d日", strtotime("+18 months", strtotime($birth_day)));
+                            }
+                            ?></td>
+                        <td rowspan="3">1.5岁</td>
+                        <td>甲肝疫苗<p>第一次</p></td>
+                        <td>甲型病毒性肝炎</td>
+                    </tr>
+                    <tr <?php if(strtotime("+18 months", strtotime($birth_day))<time()){
+                        echo 'style="color: #B9B9B9;"';
+                    }?>>
+                        <td>无细胞百日破疫苗<p>第四次</p></td>
+                        <td>百日咳、白喉、破伤风</td>
+                    </tr>
+                    <tr <?php if(strtotime("+18 months", strtotime($birth_day))<time()){
+                        echo 'style="color: #B9B9B9;"';
+                    }?>>
+                        <td>麻风腮疫苗<p>第一次</p></td>
+                        <td>麻疹、风疹、腮腺炎</td>
+                    </tr>
+                    <tr <?php if(strtotime("+2 years", strtotime($birth_day))<time()){
+                        echo 'style="color: #B9B9B9;"';
+                    }?>>
+                        <td rowspan="2"><?php
+                            if(!empty($birth_day)){
+                                echo date("Y年m月d日", strtotime("+2 years", strtotime($birth_day)));
+                            }
+                            ?></td>
+                        <td rowspan="2">2岁</td>
+                        <td>乙脑减毒疫苗<p>第二次</p></td>
+                        <td>流行性乙型脑炎</td>
+                    </tr>
+                    <tr <?php if(strtotime("+2 years", strtotime($birth_day))<time()){
+                        echo 'style="color: #B9B9B9;"';
+                    }?>>
+                        <td>甲肝疫苗(与前剂间隔6-12个月)<p>第二次</p></td>
+                        <td>甲型病毒性肝炎</td>
+                    </tr>
+                    <tr <?php if(strtotime("+3 years", strtotime($birth_day))<time()){
+                        echo 'style="color: #B9B9B9;"';
+                    }?>>
+                        <td><?php
+                            if(!empty($birth_day)){
+                                echo date("Y年m月d日", strtotime("+3 years", strtotime($birth_day)));
+                            }
+                            ?></td>
+                        <td>3岁</td>
+                        <td>A+C流脑疫苗<p>加强</p></td>
+                        <td>流行性脑脊髓膜炎</td>
+                    </tr>
+                    <tr <?php if(strtotime("+4 years", strtotime($birth_day))<time()){
+                        echo 'style="color: #B9B9B9;"';
+                    }?>>
+                        <td><?php
+                            if(!empty($birth_day)){
+                                echo date("Y年m月d日", strtotime("+4 years", strtotime($birth_day)));
+                            }
+                            ?></td>
+                        <td>4岁</td>
+                        <td>脊灰疫苗<p>第四次</p></td>
+                        <td>脊髓灰质炎(小儿麻痹)</td>
+                    </tr>
+                    <tr <?php if(strtotime("+6 years", strtotime($birth_day))<time()){
+                        echo 'style="color: #B9B9B9;"';
+                    }?>>
+                        <td rowspan="3"><?php
+                            if(!empty($birth_day)){
+                                echo date("Y年m月d日", strtotime("+6 years", strtotime($birth_day)));
+                            }
+                            ?></td>
+                        <td rowspan="3">6岁</td>
+                        <td>无细胞百日破疫苗(白破)<p>加强</p></td>
+                        <td>百日咳、白喉、破伤风</td>
+                    </tr>
+                    <tr <?php if(strtotime("+6 years", strtotime($birth_day))<time()){
+                        echo 'style="color: #B9B9B9;"';
+                    }?>>
+                        <td>麻风腮疫苗<p>第二次</p></td>
+                        <td>麻疹、风疹、腮腺炎</td>
+                    </tr>
+                    <tr <?php if(strtotime("+6 years", strtotime($birth_day))<time()){
+                        echo 'style="color: #B9B9B9;"';
+                    }?>>
+                        <td>乙脑减毒疫苗<p>第三次</p></td>
+                        <td>流行性乙型脑炎</td>
+                    </tr>
                     </tbody>
                 </table>
             </section>

@@ -269,9 +269,7 @@ if(isset($payload)) {
                     <p class='end_line'></p>
                     <section class="clearfix relevant_articles">
                         <h3 class="title">宝贝日记相关文章<a href="recommend.php" class="i-more">更多内容<span>&gt;&gt;</span></a></h3>
-                        <ul>
-                            <?php af_articles_list_recommend('成长日记'); ?>
-                        </ul>
+                        <?php af_articles_list_recommend('成长日记'); ?>
                     </section>
                     <!--//主選單標題與路徑//-->
                 </section>

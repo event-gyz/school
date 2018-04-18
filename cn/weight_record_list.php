@@ -201,9 +201,7 @@ if($member_uid > 0) {
 					<p class='end_line'></p>
 					<section class="clearfix relevant_articles">
 						<h3 class="title">体重相关文章<a href="recommend.php" class="i-more">更多内容<span>&gt;&gt;</span></a></h3>
-						<ul>
-							<?php af_articles_list_recommend('体重'); ?>
-						</ul>
+						<?php af_articles_list_recommend('体重'); ?>
 					</section>
 				</section>
 			</section>
