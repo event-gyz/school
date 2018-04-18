@@ -507,7 +507,7 @@ function get_baby_vaccine(){
     }else{
         echo '乙肝疫苗第一次-乙型病毒性肝炎，卡介苗第一次-结核病';
     }
-    echo '<a href="baby_vaccine.php" class="i-more">更多》</a>';
+    echo '<a href="baby_vaccine.php" class="i-more">完整疫苗接种信息》</a>';
 
 }
 ?>

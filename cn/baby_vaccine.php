@@ -74,7 +74,12 @@ if(isset($_SESSION['user_token'])) {
                     </thead>
                     <tbody>
                         <tr>
-                            <td rowspan="2"><?php
+                            <td rowspan="2"
+                                <?php if(strtotime($birth_day)<time()){
+                                    echo 'style="color: #B9B9B9;"';
+                                }?>
+
+                            ><?php
                                 if(!empty($birth_day)){
                                     echo date('Y年m月d日',strtotime($birth_day));
                                 }
@@ -90,7 +95,11 @@ if(isset($_SESSION['user_token'])) {
                             <td>结核病</td>
                         </tr>
                         <tr>
-                            <td><?php
+                            <td
+                                <?php if(strtotime("+1 months", strtotime($birth_day))<time()){
+                                    echo 'style="color: #B9B9B9;"';
+                                }?>
+                            ><?php
                                 if(!empty($birth_day)){
                                     echo date("Y年m月d日", strtotime("+1 months", strtotime($birth_day)));
                                 }
@@ -101,7 +110,10 @@ if(isset($_SESSION['user_token'])) {
                             <td>乙型病毒性肝炎</td>
                         </tr>
                         <tr>
-                            <td><?php
+                            <td <?php if(strtotime("+2 months", strtotime($birth_day))<time()){
+                                echo 'style="color: #B9B9B9;"';
+                            }?>
+                            ><?php
                                 if(!empty($birth_day)){
                                     echo date("Y年m月d日", strtotime("+2 months", strtotime($birth_day)));
                                 }
@@ -112,7 +124,10 @@ if(isset($_SESSION['user_token'])) {
                             <td>脊髓灰质炎(小儿麻痹)</td>
                         </tr>
                         <tr>
-                            <td rowspan="2"><?php
+                            <td rowspan="2" <?php if(strtotime("+3 months", strtotime($birth_day))<time()){
+                                echo 'style="color: #B9B9B9;"';
+                            }?>
+                            ><?php
                                 if(!empty($birth_day)){
                                     echo date("Y年m月d日", strtotime("+3 months", strtotime($birth_day)));
                                 }
@@ -128,7 +143,10 @@ if(isset($_SESSION['user_token'])) {
                             <td>百日咳、白喉、破伤风</td>
                         </tr>
                         <tr>
-                            <td rowspan="2"><?php
+                            <td rowspan="2" <?php if(strtotime("+4 months", strtotime($birth_day))<time()){
+                                echo 'style="color: #B9B9B9;"';
+                            }?>
+                            ><?php
                                 if(!empty($birth_day)){
                                     echo date("Y年m月d日", strtotime("+4 months", strtotime($birth_day)));
                                 }
@@ -144,7 +162,10 @@ if(isset($_SESSION['user_token'])) {
                             <td>百日咳、白喉、破伤风</td>
                         </tr>
                         <tr>
-                            <td><?php
+                            <td <?php if(strtotime("+5 months", strtotime($birth_day))<time()){
+                                echo 'style="color: #B9B9B9;"';
+                            }?>
+                            ><?php
                                 if(!empty($birth_day)){
                                     echo date("Y年m月d日", strtotime("+5 months", strtotime($birth_day)));
                                 }
@@ -155,7 +176,10 @@ if(isset($_SESSION['user_token'])) {
                             <td>百日咳、白喉、破伤风</td>
                         </tr>
                         <tr>
-                            <td rowspan="2"><?php
+                            <td rowspan="2" <?php if(strtotime("+6 months", strtotime($birth_day))<time()){
+                                echo 'style="color: #B9B9B9;"';
+                            }?>
+                            ><?php
                                 if(!empty($birth_day)){
                                     echo date("Y年m月d日", strtotime("+6 months", strtotime($birth_day)));
                                 }
@@ -171,7 +195,10 @@ if(isset($_SESSION['user_token'])) {
                             <td>流行性脑脊髓膜炎</td>
                         </tr>
                         <tr>
-                            <td><?php
+                            <td <?php if(strtotime("+8 months", strtotime($birth_day))<time()){
+                                echo 'style="color: #B9B9B9;"';
+                            }?>
+                            ><?php
                                 if(!empty($birth_day)){
                                     echo date("Y年m月d日", strtotime("+8 months", strtotime($birth_day)));
                                 }
@@ -182,7 +209,10 @@ if(isset($_SESSION['user_token'])) {
                             <td>麻疹</td>
                         </tr>
                         <tr>
-                            <td><?php
+                            <td <?php if(strtotime("+9 months", strtotime($birth_day))<time()){
+                                echo 'style="color: #B9B9B9;"';
+                            }?>
+                            ><?php
                                 if(!empty($birth_day)){
                                     echo date("Y年m月d日", strtotime("+9 months", strtotime($birth_day)));
                                 }
@@ -193,7 +223,10 @@ if(isset($_SESSION['user_token'])) {
                             <td>流行性脑脊髓膜炎</td>
                         </tr>
                         <tr>
-                            <td><?php
+                            <td <?php if(strtotime("+1 years", strtotime($birth_day))<time()){
+                                echo 'style="color: #B9B9B9;"';
+                            }?>
+                            ><?php
                                 if(!empty($birth_day)){
                                     echo date("Y年m月d日", strtotime("+1 years", strtotime($birth_day)));
                                 }
@@ -204,7 +237,10 @@ if(isset($_SESSION['user_token'])) {
                             <td>流行性乙型脑炎</td>
                         </tr>
                         <tr>
-                            <td rowspan="3"><?php
+                            <td rowspan="3" <?php if(strtotime("+18 months", strtotime($birth_day))<time()){
+                                echo 'style="color: #B9B9B9;"';
+                            }?>
+                            ><?php
                                 if(!empty($birth_day)){
                                     echo date("Y年m月d日", strtotime("+18 months", strtotime($birth_day)));
                                 }
@@ -225,7 +261,10 @@ if(isset($_SESSION['user_token'])) {
                             <td>麻疹、风疹、腮腺炎</td>
                         </tr>
                         <tr>
-                            <td rowspan="2"><?php
+                            <td rowspan="2" <?php if(strtotime("+2 years", strtotime($birth_day))<time()){
+                                echo 'style="color: #B9B9B9;"';
+                            }?>
+                            ><?php
                                 if(!empty($birth_day)){
                                     echo date("Y年m月d日", strtotime("+2 years", strtotime($birth_day)));
                                 }
@@ -241,7 +280,10 @@ if(isset($_SESSION['user_token'])) {
                             <td>甲型病毒性肝炎</td>
                         </tr>
                         <tr>
-                            <td><?php
+                            <td <?php if(strtotime("+3 years", strtotime($birth_day))<time()){
+                                echo 'style="color: #B9B9B9;"';
+                            }?>
+                            ><?php
                                 if(!empty($birth_day)){
                                     echo date("Y年m月d日", strtotime("+3 years", strtotime($birth_day)));
                                 }
@@ -252,7 +294,10 @@ if(isset($_SESSION['user_token'])) {
                             <td>流行性脑脊髓膜炎</td>
                         </tr>
                         <tr>
-                            <td><?php
+                            <td <?php if(strtotime("+4 years", strtotime($birth_day))<time()){
+                                echo 'style="color: #B9B9B9;"';
+                            }?>
+                            ><?php
                                 if(!empty($birth_day)){
                                     echo date("Y年m月d日", strtotime("+4 years", strtotime($birth_day)));
                                 }
@@ -263,7 +308,10 @@ if(isset($_SESSION['user_token'])) {
                             <td>脊髓灰质炎(小儿麻痹)</td>
                         </tr>
                         <tr>
-                            <td rowspan="3"><?php
+                            <td rowspan="3" <?php if(strtotime("+6 years", strtotime($birth_day))<time()){
+                                echo 'style="color: #B9B9B9;"';
+                            }?>
+                            ><?php
                                 if(!empty($birth_day)){
                                     echo date("Y年m月d日", strtotime("+6 years", strtotime($birth_day)));
                                 }
