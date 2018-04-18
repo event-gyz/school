@@ -103,7 +103,7 @@
 					}
 				},
 				error: function(xhr, err) {
-					alert('Ajax request ' + err);
+//					alert('Ajax request ' + err);
 				}
 			});
 			return false;
@@ -248,7 +248,7 @@
 						}
 					},
 					error: function(xhr, err) {
-						alert('edit member failed: ' + err);
+//						alert('edit member failed: ' + err);
 					}
 				});
 			}
@@ -277,7 +277,7 @@
                     }
                 },
                 error: function(xhr, err) {
-                    alert('Ajax request ' + err);
+//                    alert('Ajax request ' + err);
                 }
             });
             return false;
@@ -305,7 +305,7 @@
                     }
                 },
                 error: function(xhr, err) {
-                    alert('Ajax request ' + err);
+//                    alert('Ajax request ' + err);
                 }
             });
             return false;
@@ -335,7 +335,7 @@
 					}
 				},
 				error: function(xhr, err) {
-					alert('Ajax request ' + err);
+//					alert('Ajax request ' + err);
 				}
 			});
 			return false;
@@ -364,7 +364,7 @@
 					}
 				},
 				error: function(xhr, err) {
-					alert('Ajax request ' + err);
+//					alert('Ajax request ' + err);
 				}
 			});
 			return false;
@@ -461,7 +461,7 @@
 				}
 			},
 			error: function(xhr, err) {
-				alert('Ajax request ' + err);
+//				alert('Ajax request ' + err);
 			}
 		});
 	}
@@ -510,7 +510,7 @@
 				}
 			},
 			error: function(xhr, err) {
-				console.log('Ajax request ' + err);
+//				console.log('Ajax request ' + err);
 			}
 		});
 	}
@@ -580,7 +580,7 @@
 				}
 			},
 			error: function(xhr, err) {
-				alert('Ajax request ' + err);
+//				alert('Ajax request ' + err);
 			}
 		});
 	}
@@ -774,7 +774,7 @@
 				$.fancybox({   	href: "#exbox02"    });
 			},
 			error: function(xhr, err) {
-				alert('Woops! Something was wrong!');
+//				alert('Woops! Something was wrong!');
 			}
 		});
 	}

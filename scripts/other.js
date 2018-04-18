@@ -322,7 +322,7 @@ $(function(){
                 }
             },
             error: function(xhr, err) {
-                alert('Ajax request ' + err);
+                // alert('Ajax request ' + err);
             }
         });
         return false;
@@ -640,7 +640,7 @@ $(function(){
                     }
                 },
                 error: function(xhr, err) {
-                    alert('addUser failed: ' + err);
+                    // alert('addUser failed: ' + err);
                 }
             });
         }

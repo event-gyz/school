@@ -56,7 +56,7 @@
                         }
                     },
                     error: function(xhr, err) {
-                        alert('addUser failed: ' + err);
+//                        alert('addUser failed: ' + err);
                     }
                 });
             }
@@ -256,7 +256,7 @@
                 }
             },
             error: function(xhr, err) {
-                alert('Ajax request ' + err);
+//                alert('Ajax request ' + err);
             }
         });
     }
@@ -305,7 +305,7 @@
                 }
             },
             error: function(xhr, err) {
-                console.log('Ajax request ' + err);
+//                console.log('Ajax request ' + err);
             }
         });
     }
@@ -412,7 +412,7 @@
                 }
             },
             error: function(xhr, err) {
-                alert('Ajax request ' + err);
+//                alert('Ajax request ' + err);
             }
         });
     }
