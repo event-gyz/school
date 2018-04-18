@@ -57,7 +57,7 @@ if(isset($_SESSION['user_token'])) {
                 <section class="contbox clearfix">
 
                     <!--//主選單標題與路徑//-->
-                    <h2 class="title">宝宝疫苗</h2>
+                    <h2 class="title"><?=$nick_name?>的疫苗接种表</h2>
                     <section class="gopath"><a href="index.php">首页</a> > 宝宝疫苗</section>
                 </section>
                 <p><img src="../content/epaper/images/baby_vaccine.jpg" alt=""></p>

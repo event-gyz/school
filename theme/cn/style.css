@@ -665,12 +665,12 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .baby_vaccine {width:100%;}
 .baby_vaccine p>img{width:100%;height:auto;}
 .vaccine_info{text-align: center;width:100%;}
-.vaccine_info th{color:#5EC053;padding: 0.2927rem 0 0.1951rem;box-shadow: 1px 2px 3px #E8E8E8;}
-.vaccine_info th:last-child,.vaccine_info td:last-child{box-shadow: 0 2px 3px #E8E8E8;}
+.vaccine_info th{color:#fff;padding: 0.2927rem 0 0.1951rem;background:#73D565;box-shadow: -1px 0 0 #52D040;}
+.vaccine_info td:last-child{box-shadow: 0 2px 3px #E8E8E8;}
 .vaccine_info .inoculation_time{width: 2.9268rem;}
-.vaccine_info .age{width: 1.3659rem;}
+.vaccine_info .age{width: 1.2683rem;}
 .vaccine_info tr{color:#7ED871;}
-.vaccine_info td{padding: 0.1951rem 0;box-shadow: 1px 2px 3px #E8E8E8;font-size: 0.3317rem;}
+.vaccine_info td{padding: 0.1951rem 0;box-shadow: -1px 2px 3px #E8E8E8;font-size: 0.3317rem;}
 /* 宝宝疫苗页面样式 end*/
 
 /* 我的页面样式 start */
