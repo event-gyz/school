@@ -11,7 +11,7 @@ $user_obj = $_SESSION['wx_info'];
 if(empty($user_obj['openid'])){
     die(genResponse(false, "数据有误"));
 }
-$membership = time()+3888000;
+$membership = time()+7776000;
 
 $headimg = '"'.$user_obj['headimgurl'].'"';
 

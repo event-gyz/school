@@ -169,7 +169,7 @@ class MyUser
 		$_EMAIL = strtolower($_EMAIL);
 		if(!$this->exist( $_EMAIL ))
 		{
-            $membership = time()+3888000;
+            $membership = time()+7776000;
 
 			$sql = "INSERT INTO member (`id`, password, first_name, last_name, cellphone, email,city,membership) VALUES ('".$_EMAIL."',md5(lower('".$_PASS."')),'".$_FNAME."','".$_LNAME."','".$_PHONE."','".$_EMAIL."','".$_CITY."',$membership)";
 			$result = query($sql);

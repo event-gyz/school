@@ -23,9 +23,8 @@ else {
 	$supervisor_uid = $CMEMBER->accessFromToken($_token);
 	$sql = "select uid,email from member where cellphone='$_PHONE'";
 	$row = M()->find($sql);
-	//todo 如果手机号绑定过，将微信账号和手机账号进行关联
 	if(!$row) {
-		$update = "update member set cellphone='".$_PHONE."',membership=membership+3888000 where uid =".$supervisor_uid;
+		$update = "update member set cellphone='".$_PHONE."',membership=membership+15552000 where uid =".$supervisor_uid;
 		if(query($update)){
 			// 更新手机验证码信息状态
 			$update ="update message set status=1 where phone ='{$_PHONE}' and message_code='{$_AUTH}'";
