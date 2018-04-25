@@ -281,7 +281,7 @@ if(isset($payload)) {
                             <li class="tooth_s">
                                 <div class="tooth"></div>
                                 <p>s <span>侧门齿（10-16月）</span></p>
-                                <div class="date">
+                                <div class="date_input">
                                     <input class="datepicker" data-bud="s" type="text" readonly value="<?=isset($buds['s'])?$buds['s']:''?>">
                                     <b class="clear_btn">×</b>
                                 </div>
@@ -359,15 +359,13 @@ if(isset($payload)) {
             },
             dataType: "json",
             success: function (jsonStr) {
-                if(jsonStr.result=='success') {
-
-
+                if(jsonStr.errno == 1) {
                     if(date == ''){
                         $(this).parent().siblings('.tooth').css('display','none')
                     }else{
                         $(this).parent().siblings('.tooth').css('display','block')
                     }
-                    // layer.msg('修改成功！')
+                    layer.msg(jsonStr.msg)
                 }
             }.bind(this)
         });
@@ -385,8 +383,9 @@ if(isset($payload)) {
         $(this).prev().val('')
         $(this).css({display:"none"})
         $(this).parent().siblings('.tooth').css('display','none')
-        var buds_type = $(this).attr('data-bud');
-        var date  = $(this).val();
+        var buds_type = $(this).siblings('input').attr('data-bud');
+        console.log($(this).siblings('input'))
+        var date  = $(this).siblings('input').val();
         $.ajax({
             url: "_buds_record.php",
             type: "POST",
@@ -398,8 +397,8 @@ if(isset($payload)) {
             },
             dataType: "json",
             success: function (jsonStr) {
-                if(jsonStr.result=='success') {
-                    // layer.msg('删除成功！');
+                if(jsonStr.errno == 1) {
+                    layer.msg(jsonStr.msg)
                 }
             }
         });
