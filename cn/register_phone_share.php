@@ -30,12 +30,13 @@ query($update);
 $user_info_sql = 'select * from `member` where cellphone='.$_PHONE;
 $user_info = M()->find($user_info_sql);
 if(empty($user_info)){
-    $membership = time()+15552000;
+    $membership = time()+15768000;
 	$sql = "INSERT INTO member (id,password,cellphone,membership) VALUES ('".$_PHONE."',md5('123456'),'".$_PHONE."',$membership)";
 	$result = M()->execute($sql);
     if($result){
         if(!empty($uid)){
-            $update = "update member set membership=membership+7776000 where uid =".$uid;
+            //加3个月的使用权
+            $update = "update member set membership=membership+7862400,share_time=share_time+1 where share_time<10 and uid =".$uid;
             query($update);
         }
     }
