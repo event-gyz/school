@@ -35,7 +35,7 @@ if(empty($user_info)){
 	$result = M()->execute($sql);
     if($result){
         if(!empty($uid)){
-            $update = "update member set membership=membership+3888000 where uid =".$uid;
+            $update = "update member set membership=membership+7776000 where uid =".$uid;
             query($update);
         }
     }
