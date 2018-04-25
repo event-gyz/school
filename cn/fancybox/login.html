@@ -4,26 +4,47 @@
     <section class="fy-bd clearfix">
         <section class="fy-cont clearfix">
             <form name="login_form" id="login_form" method="post">
-            <section class="lbox">
-                <section class="formbox">
-                    <div class="fbar clearfix">
-                        <label><i>帐号</i><input name="login_id" id="login_id" type="text" class="tf"></label>
-                        <div id="div_err_email" class="errorbar">请输入正确的电子邮件</div>
-                    </div>
-                    <div class="fbar clearfix">
-                        <label><i>密码</i><input type="password" name="login_pass" id="login_pass" class="tf"></label>
-                        <div id="div_err_password" class="errorbar">须6至20位，可含字母、数字、下划线</div>
-                    </div>
+                <section class="lbox">
+                    <section class="formbox">
+                        <div class="fbar clearfix">
+                            <label><i>手机号</i><input name="login_id" id="login_id" type="text" class="tf"></label>
+                            <div id="div_err_email" class="errorbar">请输入正确的手机号</div>
+                        </div>
+                        <div class="fbar clearfix">
+                            <label><i>密码</i><input type="password" name="login_pass" id="login_pass" class="tf"></label>
+                            <div id="div_err_password" class="errorbar">须6至20位，可含字母、数字、下划线</div>
+                        </div>
+                    </section>
                 </section>
-            </section>
-            <section class="rbox">
-                <div class="errorbar error01">登入失败！请输入正确的帐号及密码。</div>
-                <div class="mlinks"><a href="#fy-register" class="fancybox">尚未成为会员？</a><a href="#fy-forget" class="fancybox">忘记密码？</a></div>
-                <input type="submit" class="btn_submit03" value="">
-            </section>
+                <section class="rbox">
+                    <div class="errorbar error01">登入失败！请输入正确的帐号及密码。</div>
+                    <div class="mlinks"><a href="#fy-register" class="fancybox">尚未成为会员？</a><a href="#fy-forget" class="fancybox">忘记密码？</a></div>
+                    <input type="submit" class="btn_submit03" value="">
+                </section>
             </form>
+            <ul class="other_logins">
+                <li class="weixin login_wx" id="login_wx">
+                    <i></i>
+                    <p>微信登录</p>
+                </li>
+                <li class="mobile">
+                    <a href="#fy-mobile-login">
+                        <i></i>
+                        <p>手机登录送好礼</p>
+                    </a>
+                </li>
+            </ul>
         </section>
-       <section class="gotop divtop"><img src="../theme/cn/images/content/item_gotop02.png">回顶端</section>
+        <section class="gotop divtop"><img src="../theme/cn/images/content/item_gotop02.png">回顶端</section>
     </section>
 </section>
+<script>
+    $(function(){
+        $('.other_logins a').click(function(){
+            $.fancybox({
+                href: "#fy-mobile-login"
+            });
+        })
+    })
+</script>
 <!--//【fancybox】登入//-->

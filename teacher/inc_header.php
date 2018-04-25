@@ -5,10 +5,10 @@ $(function(){
 	// Login
 	$("#login_form").submit(function(e){
 		e.preventDefault();
-		if(!checkEmailFormat() || !checkPasswordFormat()) {
-			$("#fy-login .error01").show().delay(3000).fadeOut();
-			return true;
-		}
+//		if(!checkEmailFormat() || !checkPasswordFormat()) {
+//			$("#fy-login .error01").show().delay(3000).fadeOut();
+//			return true;
+//		}
 		var user_id = $("#login_id").val();
 		var user_password = $("#login_pass").val();
     	$.ajax({
@@ -168,7 +168,7 @@ function OpenWindowWithPost(url, windowoption, name, params) {
 				}
 				else {
 			?>
-                <li class="m_name-point fst"><a href="#fy-login" class="fancybox">登入</a></li>					
+                <li class="m_name-point fst"><a href="#fy-login" class="fancybox">登入</a></li>
             <?php 
 				}
 			?>

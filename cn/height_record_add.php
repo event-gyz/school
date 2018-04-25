@@ -6,7 +6,6 @@ include('inc.php');
 <html><!-- InstanceBegin template="/Templates/_page01.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
 	<?php include('inc_head.php');	?>
-	<script src="../scripts/megapix/megapix-image.js"></script>
 	<style>
 		body{background: none;}
 		h1,h2,h3,h4,h5,h6,p,ul,li,dl,dt,dd{margin:0;padding:0;list-style: none;}
@@ -106,34 +105,41 @@ if(isset($payload)) {
 
 	<!--【Content】-->
 	<section id="content">
-		<!-- InstanceBeginEditable name="content" -->
-		<section class="height_record">
-			<form action="height_record.php" method="post" enctype="multipart/form-data">
-				<input hidden="" name="type" value="diary" />
-				<h4>新增身高记录</h4>
-				<section class="gopath"><a href="index.php">首页</a> > 新增身高记录</section>
-				<ul class="form">
-					<li><p>身高（公分）：</p><input name="height" type="text" maxlength="20"></li>
-					<li>
-						<b class="clock"></b>
-						记录时间：
-						<input class="time date_a"  name="date" type="text" data-position='bottomLeft' readonly x-webkit-speech="none" value="<?php echo date('Y-m-d',time())?>">
-					</li>
-				</ul>
-				<ul class="uploadImgList">
-					<li class="uploadImg">
-						<div class="imgContent">+</div>
-						<input type="file" name="file" accept="image/png,image/jpg,image/jpeg"/>
-						<!-- <div class="camera_photograph">
-                        <p><img src="../content/epaper/images/camera.png" alt=""></p>
-                        <input type="file" class="camera_input" name="myPhoto" capture="camera" accept="image/*"/>
-                    </div> -->
-					</li>
-				</ul>
-				<!-- <p class="uploadDemand">(上传图片档案大小不得超过3MB)</p> -->
-				<button class="submit">提交</button>
-			</form>
+		<!--//主內容//-->
+		<section class="indexcont">
+			<section class="inbox noBoxShadowPage">
+				<section class="contbox clearfix">
+					<section class="height_record">
+						<form action="height_record.php" method="post" enctype="multipart/form-data">
+							<input hidden="" name="type" value="diary" />
+							<h4>新增身高记录</h4>
+							<section class="gopath"><a href="index.php">首页</a> > 新增身高记录</section>
+							<ul class="form">
+								<li><p>身高（公分）：</p><input name="height"></li>
+								<li>
+									<b class="clock"></b>
+									记录时间：
+									<input class="time date_a"  name="date" type="text" data-position='bottomLeft' readonly x-webkit-speech="none" value="<?php echo date('Y-m-d',time())?>">
+								</li>
+							</ul>
+							<ul class="uploadImgList">
+								<li class="uploadImg">
+									<div class="imgContent">+</div>
+									<input type="file" name="file" accept="image/png,image/jpg,image/jpeg"/>
+									<!-- <div class="camera_photograph">
+                                    <p><img src="../content/epaper/images/camera.png" alt=""></p>
+                                    <input type="file" class="camera_input" name="myPhoto" capture="camera" accept="image/*"/>
+                                </div> -->
+								</li>
+							</ul>
+							<!-- <p class="uploadDemand">(上传图片档案大小不得超过3MB)</p> -->
+							<button class="submit">提交</button>
+						</form>
+					</section>
+				</section>
+			</section>
 		</section>
+		<!--//主內容//-->
 		<!-- InstanceEndEditable -->
 	</section>
 	<!--【Content End】-->

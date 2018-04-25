@@ -62,7 +62,6 @@ if($member_uid > 0) {
 <script>
     $('.board-baby .btn01').click(function(){
         showEditBabyBox()
-        $('.empty_prompt').hide()
         var birthday = $('.birthDay').html()
         var years = parseInt(birthday.split('-')[0])
         var months = parseInt(birthday.split('-')[1])

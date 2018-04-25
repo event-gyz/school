@@ -1,0 +1,202 @@
+<!--【fancybox】完整信息//-->
+<section id="fy-complete-info" class="mbbox">
+    <section class="fy-hd"><h2 class="title">完整信息</h2></section>
+    <section class="fy-bd clearfix">
+        <section class="fy-cont clearfix">
+            <form id="complete_info_form">
+                <section class="lbox">
+                    <p>注：为保证服务质量，请填写正确完整信息，我们将提供您最精准贴心的育儿服务</p>
+                    <section class="formbox">
+                        <!--<div class="fbar clearfix isbind_mobile">-->
+                            <!--<label><i>手机号</i><input name="mobile" id="mobile" type="tel" placeholder="11位手机号码" class="tf"></label>-->
+                            <!--<p class="bind_courtesy">-->
+                                <!--<a href="#fy-mobile-bind">现在绑定立享好礼</a>-->
+                            <!--</p>-->
+                        <!--</div>-->
+                        <div class="fbar clearfix">
+                            <label><i>宝宝昵称</i><input name="reg_name" id="reg_name" type="text" class="tf"></label>
+                            <div id="errorbar_reg_name" class="errorbar">请输入6-20位中文或英文字符</div>
+                        </div>
+                        <div class="fbar clearfix">
+                            <label><i>宝宝性别</i>
+                                <div class="ralist ralist02">
+                                    <ul class="clearfix">
+                                        <li><label><input type="radio" name="fbar_sex" value="0" checked><b class="genner">男</b></label></li>
+                                        <li><label><input type="radio" name="fbar_sex" value="1"><b class="genner">女</b></label></li>
+                                    </ul>
+                                </div>
+                                <!--<s class="genner selected">男</s>-->
+                                <!--<s class="genner">女</s>-->
+                            </label>
+                        </div>
+                        <div class="fbar clearfix">
+                            <label><i>宝宝生日</i>
+                                <input id="reg_date" name="reg_date" type="date" class="tf">
+                            </label>
+                            <div id="errorbar_reg_date" class="errorbar">请选择宝宝生日</div>
+                        </div>
+                        <div class="fbar clearfix">
+                            <label>
+                                <i>所在城市</i>
+                                <div class="search-citys">
+                                    <input class="text tf" id="city_name" type="text" placeholder="请输入城市中文或拼音/点击选择城市" onKeyUp="input_keyup();" onClick="append_city();" onBlur="input_blur()" onFocus="if(value=='请输入城市中文或拼音 / 点击选择城市'){value='';style.color='#606060';}" />
+                                    <input class="text" id="hid_city_name" name="index_city" style="display:none">
+                                    <input class="text" id="hid_real_city_name" name="real_index_city" style="display:none">
+                                    <div class="pop search-citys-pop click" style="display:none;z-index:9999" id="cityarea">
+                                        <a href="javascript:void(0)" class="pop-close" ></a>
+                                        <div class="search-citys-tit click">热门城市(可直接输入中文名/拼音)</div>
+                                        <div class="search-citys-tt click">
+                                            <a class="current click" onClick="tabCutover(this,'s-citys1')" href="javascript:void(0)">热门<span></span></a>
+                                            <a class="click" onClick="tabCutover(this,'s-citys2')" href="javascript:void(0)">ABCDEFG<span></span></a>
+                                            <a class="click" onClick="tabCutover(this,'s-citys3')" href="javascript:void(0)">HIJKL<span></span></a>
+                                            <a class="click" onClick="tabCutover(this,'s-citys4')" href="javascript:void(0)">MNOPQRST<span></span></a>
+                                            <a class="click" onClick="tabCutover(this,'s-citys5')" href="javascript:void(0)">UVWXYZ<span></span></a>
+                                        </div>
+                                        <div class="search-citys-list click" id="citylist"></div>
+                                    </div>
+                                </div>
+                            </label>
+                            <div id="errorbar_address" class="errorbar">请输入所在城市</div>
+                        </div>
+                    </section>
+                </section>
+                <section class="rbox">
+                    <input type="submit" class="btn_submit05" value="">
+                </section>
+            </form>
+        </section>
+    </section>
+</section>
+<script>
+    var cityChange= eval(cityChange);
+    $(function(){
+        $('.bind_courtesy a').click(function(){
+            $.fancybox({
+                href: "#fy-mobile-bind"
+            });
+        })
+        $('#index_province').change(function(){
+            for(var i in cityChange){
+                if(i==this.value){
+                   var index_city_obj = $('#index_city')[0];
+                   index_city_obj.innerHTML='';
+                   var obj = cityChange[i];
+                   for(var k in obj){
+                      if(obj[k].name){             
+                        index_city_obj.options[index_city_obj.options.length] = new Option( obj[k].name,obj[k].pinyin);
+                      }
+                   }
+                   break;
+                }
+            }
+        });
+
+        $('#city_name').autocomplete(cities, {
+            max: 12, //列表里的条目数
+            minChars: 0, //自动完成激活之前填入的最小字符
+            width: 385, //提示的宽度，溢出隐藏
+            scrollHeight: 300, //提示的高度，溢出显示滚动条
+            matchContains: true, //包含匹配，就是data参数里的数据，是否只要包含文本框里的数据就显示
+            autoFill: false, //自动填充
+            minChars:1,
+            formatItem: function(row, i, max) {
+            return row.name + '（'+row.pinyin+'）';
+            },
+            formatMatch: function(row, i, max) {
+            return row.match;
+            },
+            
+            formatResult: function(row) {
+                return row.name;
+            },
+            resultsClass:'search-text'
+        }).result(function(event, row, formatted) {
+            $("#hid_city_name").val(row.pinyin);
+            $("#hid_real_city_name").val(row.name);
+            $('#pop_cities').hide();
+        });
+    })
+    function append_city(){
+        $('#cityarea').show();
+        $('.search-text').hide()
+        if($("#citylist").text()==""){
+            $("#citylist").append(cityarea);
+        }
+    }
+    $(document).ready(function(){
+        $(document).bind('click', hide_div);
+    });
+       
+    function hide_div(e){
+        var biaoqian = "click";
+        var classname= $(e.target)[0].className;
+        if(classname.indexOf('click')>'-1' ||$(e.target)[0].id=='city_name')
+        return ;
+        $("#cityarea").hide();
+    } 
+    //直接输入地址框的onblur事件
+    function input_blur()
+    {
+        var value = $('#city_name').val();
+        var all_city_val = $(".ac_over").text();
+        if(all_city_val && all_city_val!="")
+        {
+            var str = all_city_val.substr(0,(all_city_val.length-1));
+            strs=str.split("（");
+            $("#hid_city_name").val(strs[1]);
+            $("#hid_real_city_name").val(strs[0]);
+            $("#city_name").val(strs[0]);
+            $(".search-text").hide();
+        }  
+    }
+        
+    //直接输入地址框的onkeyup事件
+    function input_keyup()
+    {
+        var value = $('#city_name').val();
+        if($('#hid_real_city_name').val()!=value || $('#hid_real_city_name').val()=='')
+        {
+            $('#cityarea').hide();
+        }else if(value==$('#hid_real_city_name').val())
+        {
+            $('#cityarea').hide();
+        }
+        $('.search-text').css('width','180px')
+    }
+    function check_input(){
+        var value = $('#city_name').val();
+        if(value==$('#hid_real_city_name').val() && $("#hid_city_name").val()!=""){
+            return true;
+        }
+        return false;
+    }
+    /**
+     * 字母页面内链
+     *
+     */
+    function letter_scroll(letter)
+    {
+         var obj = $("#c_"+letter);
+         $('html,body').animate({scrollTop: obj.offset().top}, 500);
+    }
+    /*
+     * 用户点击城市后，城市名填入input框
+    */
+    function change_city_val(city, pinyin_city)
+    {
+        $('#city_name').css({ color: "#606060"});
+        $('#city_name').val(city);
+        $('#hid_city_name').val(pinyin_city);
+        $("#hid_real_city_name").val(city);
+        $('#cityarea').hide();
+//        console.log($("#hid_real_city_name").val())
+    }
+    function tabCutover(c,d){
+        $(c).parent().attr("class");
+        $(c).parent().children().removeClass("current");
+        $(c).addClass("current");
+        $("."+d).parent().children().hide();
+        $("."+d).show();
+    }
+</script>
+<!--//【fancybox】完整信息//-->

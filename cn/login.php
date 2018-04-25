@@ -24,15 +24,21 @@ else {
 	$token = $CMEMBER->getUserToken();
 	$credit= $CMEMBER->credit;
 	if(isset($token)) {
-		$arr = array(
-			'token' => $token,
-			'credit' => !empty($credit)?$credit:'',
-			'email' => $CMEMBER->email
-		);
+        $email = '';
+        if($CMEMBER->id){
+            $email = $CMEMBER->id;
+        }elseif($CMEMBER->nickname){
+            $email = $CMEMBER->nickname;
+        }
+        $arr = array(
+            'token' => $token,
+            'credit' => !empty($credit)?$credit:'',
+            'email' => $email
+        );
 		
 		$_SESSION['user_token'] = $token;
 		$_SESSION['user_credit'] = $credit;
-		$_SESSION['user_email'] = $CMEMBER->email;
+		$_SESSION['user_email'] = $email;
 		$_SESSION['user_epaper'] = $CMEMBER->epaper;
 		$sql = 'select * from `user` where supervisor_uid='.$CMEMBER->uid;
 		$kid = M()->find($sql);
@@ -49,8 +55,8 @@ else {
 		$user_age = $months;
 		$_SESSION['CURRENT_KID_AGE'] = $user_age;
 		echo(genResponse(true, json_encode($arr)));
-	}
-	else
+	} else {
 		echo(genResponse(false, $_v_ERROR_LOGIN_FAILED));
+	}
 }
 ?>

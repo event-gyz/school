@@ -1,7 +1,6 @@
 <?php
 session_start();
 include('inc.php');
-
 ?>
 <!DOCTYPE html>
 <html><!-- InstanceBegin template="/Templates/_page01.dwt" codeOutsideHTMLIsLocked="false" -->
@@ -119,6 +118,30 @@ if(isset($payload)) {
 }
 
 ?>
+<?php
+if(isset($_SESSION['user_token'])) {
+    $member_uid = $CMEMBER->accessFromToken($_SESSION['user_token']);
+    if($member_uid > 0) {
+        $sql = "select first_name,email,cellphone,image_url from member where uid='$member_uid'";
+        $result = M()->find($sql);
+        if($result!=null) {
+            $name = $result['first_name'];
+            $email = $result['email'];
+            $phone = $result['cellphone'];
+            $image_url = (!empty($result['image_url']) && $result['image_url']!=' ')?$result['image_url']:'';
+        }
+        unset($result);
+        unset($sql);
+        $sql = "select nick_name,birth_day,gender from user where supervisor_uid='$member_uid'";
+        $result = M()->find($sql);
+        if($result!=null) {
+            $nick_name = $result['nick_name'];
+            $birth_day = $result['birth_day'];
+            $gender = ($result['gender']==0?"男":"女");
+        }
+    }
+}
+?>
 <!-- InstanceBeginEditable name="wrap" -->
 <section id="wrap">
     <!-- InstanceEndEditable -->
@@ -172,9 +195,11 @@ if(isset($payload)) {
                 <!--//4 Banner//-->
                 <section class="sbnr">
                     <ul class="clearfix">
-                        <li><a href="#exbox01" class="fancybox"><img src="../theme/cn/images/content/item_sbnr03.jpg"></a></li>
-                        <li><a href="javascript:onMenuItem3Click();"><img src="../theme/cn/images/content/item_sbnr02.jpg"></a></li>
-                        <li><a href="javascript:onMenuItem2Click();"><img src="../theme/cn/images/content/item_sbnr05.png"></a></li>
+                        <li><a href="#exbox01" class="fancybox"><img src="../theme/cn/images/content/item_sbnr01.png"></a></li>
+                        <li><a href="javascript:onMenuItem3Click();"><img src="../theme/cn/images/content/item_sbnr02.png"></a></li>
+                        <li><a href="javascript:onMenuItem2Click();"><img src="../theme/cn/images/content/item_sbnr03.png"></a></li>
+                        <li><a href="javascript: void(0)" onclick="goUrlClick('report.php')"><img src="../theme/cn/images/content/item_sbnr04.png"></a></li>
+                        <li><a href="recommend.php"><img src="../theme/cn/images/content/item_sbnr05.png"></a></li>
                         <li><a href="javascript:onMenuItem4Click();"><img src="../theme/cn/images/content/item_sbnr06.png"></a></li>
                     </ul>
                 </section>
@@ -197,16 +222,52 @@ if(isset($payload)) {
                         echo('<section class="list03 fl">');
                     }
                     ?>
-                    <h3 class="title">推荐文章<a href="recommend.php" class="i-more">更多内容<span>&gt;&gt;</span></a></h3>
-                    <?php af_articles_list_recommend('首页'); ?>
+                    <h3 class="title">最新消息</h3>
+                    <?php
+                    if(empty($phone)){
+                        ?>
+                        <a href="javascript:void(0)" class="bind_mobile">绑定手机赢好礼</a>
+                        <?php
+                    }
+                    ?>
+
+                    <ul>
+                        <li>
+                            <h4>您的宝宝最近一次疫苗</h4>
+                            <p>
+                                <?php get_baby_vaccine(); ?>
+                            </p>
+                        </li>
+                    </ul>
+                    <?php af_articles_list_recommend('推荐'); ?>
                 </section>
                 <!--//推薦文章//-->
 
                 <!--//最新消息//-->
                 <!--【註1】固定五則訊息，最後二個給予class="m-none"是For手機不顯示用。-->
                 <section class="list02 fl">
-                    <h3 class="title">最新消息<a href="news.php" class="i-more">更多内容<span>&gt;&gt;</span></a></h3>
-                    <?php af_index_list_news(); ?>
+                    <!-- <h3 class="title">家长分享<a href="parental_sharing.php" class="i-more">更多内容</a></h3>
+                    <ul>
+                        <li>
+                            <h4>您的宝宝最近一次疫苗</h4>
+                            <p>
+                                2018年4月15日1月龄乙肝疫苗第二次-乙型病毒性肝炎
+                            </p>
+                        </li>
+                        <li>
+                            <h4>您的宝宝最近一次疫苗</h4>
+                            <p>
+                                2018年4月15日1月龄乙肝疫苗第二次-乙型病毒性肝炎
+                            </p>
+                        </li>
+                        <li>
+                            <h4>您的宝宝最近一次疫苗</h4>
+                            <p>
+                                2018年4月15日1月龄乙肝疫苗第二次-乙型病毒性肝炎
+                            </p>
+                        </li>
+                    </ul> -->
+                    <?php //af_index_list_news(); ?>
                 </section>
                 <!--//最新消息//-->
 
@@ -235,6 +296,19 @@ if(isset($payload)) {
 
 </section>
 <?php include 'inc_bottom_js.php'; ?>
-
+<script>
+    $(function(){
+        <?php if(isset($_GET['ask_account']) && $_GET['ask_account']==1 && isset($_SESSION['wx_info'])){?>
+        $.fancybox({
+            href: "#fy-info-ask-account"
+        });
+        <?php }?>
+    })
+    $('.bind_mobile').click(function(){
+        $.fancybox({
+            href: "#fy-mobile-bind"
+        });
+    })
+</script>
 </body>
 <!-- InstanceEnd --></html>

@@ -21,6 +21,22 @@ if(!isset($tabon))
     </style>
 </head>
 <body>
+<?php
+$_token = $_SESSION['user_token'];
+$supervisor_uid = $CMEMBER->accessFromToken($_token);
+$select_membership = 'select membership from member where uid = '.$supervisor_uid;
+$membership = M()->find($select_membership);
+if($membership['membership']<time()){
+    header("Content-type: text/html; charset=utf-8");
+    $url = "/cn/index.php";
+//    echo "<script src=\"../scripts/layer.js\"></script>";
+    echo "<script language='javascript' type='text/javascript'>";
+    echo "alert('您的会员已到期');";
+    echo "window.location.href='$url';";
+    echo "</script>";
+    exit;
+}
+?>
 <style>
     .fancybox-wrap,.fancybox-inner{max-width:550px !important;}
     .articlebox .Txt img{}

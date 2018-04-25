@@ -1,0 +1,71 @@
+<!--【fancybox】完整信息//-->
+<section id="fy-complete-info01" class="mbbox">
+    <section class="fy-hd"><h2 class="title">完整信息</h2></section>
+    <section class="fy-bd clearfix">
+        <section class="fy-cont clearfix">
+            <section class="lbox">
+                <p>注：为保证服务质量，请填写正确完整信息，我们 将提供您最精准贴心的育儿服务</p>
+                <section class="formbox">
+                    <div class="fbar clearfix">
+                        <label><i>手机号</i><input name="mobile" id="mobile" type="tel" placeholder="11位手机号码" class="tf"></label>
+                        <p class="bind_courtesy">
+                            <a href="#fy-mobile-bind">现在绑定立享好礼</a>
+                        </p>
+                    </div>
+                    <div class="fbar clearfix">
+                        <label><i>宝宝昵称</i><input name="reg_name" id="reg_name" type="text" class="tf"></label>
+                        <div id="errorbar_reg_name" class="errorbar">请输入6-20位中文或英文字符</div>
+                    </div>
+                    <div class="fbar clearfix">
+                        <label><i>宝宝性别</i>
+                            <s class="genner selected">男</s>
+                            <s class="genner">女</s>
+                        </label>
+                    </div>
+                    <div class="fbar clearfix">
+                        <label><i>宝宝生日</i>
+                            <input id="reg_date" name="reg_date" type="date" class="tf">
+                        </label>
+                        <div id="errorbar_reg_date" class="errorbar">请选择宝宝生日</div>
+                    </div>
+                    <div class="fbar clearfix">
+                        <label>
+                            <i>所在城市</i>
+                            <div class="search-citys">
+                                <input class="text tf" id="city_name" type="text" placeholder="请输入城市中文或拼音/点击选择城市" onKeyUp="input_keyup();" onClick="append_city();" onBlur="input_blur()" onFocus="if(value=='请输入城市中文或拼音 / 点击选择城市'){value='';style.color='#606060';}" />
+                                <input class="text" id="hid_city_name" name="index_city" style="display:none">
+                                <input class="text" id="hid_real_city_name" name="real_index_city" style="display:none">
+                                <div class="pop search-citys-pop click" style="display:none;z-index:9999" id="cityarea">
+                                    <a href="javascript:void(0)" class="pop-close" ></a>
+                                    <div class="search-citys-tit click">热门城市(可直接输入中文名/拼音)</div>
+                                    <div class="search-citys-tt click">
+                                        <a class="current click" onClick="tabCutover(this,'s-citys1')" href="javascript:void(0)">热门<span></span></a>
+                                        <a class="click" onClick="tabCutover(this,'s-citys2')" href="javascript:void(0)">ABCDEFG<span></span></a>
+                                        <a class="click" onClick="tabCutover(this,'s-citys3')" href="javascript:void(0)">HIJKL<span></span></a>
+                                        <a class="click" onClick="tabCutover(this,'s-citys4')" href="javascript:void(0)">MNOPQRST<span></span></a>
+                                        <a class="click" onClick="tabCutover(this,'s-citys5')" href="javascript:void(0)">UVWXYZ<span></span></a>
+                                    </div>
+                                    <div class="search-citys-list click" id="citylist"></div>
+                                </div>
+                            </div>
+                        </label>
+                        <div id="errorbar_address" class="errorbar">请输入所在城市</div>
+                    </div>
+                </section>
+            </section>
+            <section class="rbox">
+                <input type="submit" class="btn_submit05" value="">
+            </section>
+        </section>
+    </section>
+</section>
+<script>
+    $(function(){
+        $('.bind_courtesy a').click(function(){
+            $.fancybox({
+                href: "#fy-mobile-bind"
+            });
+        })
+    })
+</script>
+<!--//【fancybox】完整信息//-->

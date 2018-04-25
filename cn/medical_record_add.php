@@ -104,50 +104,59 @@ if(isset($payload)) {
 
 	<!--【Content】-->
 	<section id="content">
-		<!-- InstanceBeginEditable name="content" -->
-		<section class="medical_record">
-			<h4>新增就诊记录</h4>
-			<section class="gopath goback"><a href="index.php">首页</a> > 新增就诊记录</section>
-			<form action="medical_records.php" method="post" enctype="multipart/form-data">
-				<input hidden="" name="type" value="diary" />
-				<ul class="form">
-					<li>
-						<b class="clock"></b>
-						<p>就诊日期：</p>
-						<input class="time" name="date" type="date" value="<?php echo date('Y-m-d',time())?>">
-					</li>
-					<li class="title"><p>医院：</p><input name="hospital" type="text" value=""></li>
-					<li class="doctor"><p>医生：</p><input name="doctor" type="text" value=""></li>
-					<li class="original_info">
-						<p>或套用之前建立资料：</p>
-						<select class="diagnosis-doctors">
-							<option value=""></option>
-							<?php
-							$member_uid = $_SESSION["CURRENT_KID_UID"];
-							$sql = "select * from wap_medical where uid in (select supervisor_uid from user where uid={$member_uid}) order by id";
-							$re = M()->select($sql);
-							if($re){
-								foreach($re as $value){
-									?>
-									<option value="<?=$value['id']?>" data-hospital="<?=$value['hospital']?>" data-name="<?=$value['doctor_name']?>"><?=$value['hospital']?> <?=$value['doctor_name']?></option>
-									<?php
-								}
-							}
+		<!--//主內容//-->
+		<section class="indexcont">
+			<section class="inbox noBoxShadowPage">
+				<section class="contbox clearfix">
+					<section class="medical_record">
+						<div class="breadcrumbs_logo">
+							<h2 class="title">新增就诊记录</h2>
+							<section class="gopath"><a href="index.php">首页</a> > 新增就诊记录</section>
+						</div>
+						<form action="medical_records.php" method="post" enctype="multipart/form-data">
+							<input hidden="" name="type" value="diary" />
+							<ul class="form">
+								<li>
+									<b class="clock"></b>
+									<p>就诊日期：</p>
+									<input class="time" name="date" type="date" value="<?php echo date('Y-m-d',time())?>">
+								</li>
+								<li class="title"><p>医院：</p><input name="hospital" type="text" value=""></li>
+								<li class="doctor"><p>医生：</p><input name="doctor" type="text" value=""></li>
+								<li class="original_info">
+									<p>或套用之前建立资料：</p>
+									<select class="diagnosis-doctors">
+										<option value=""></option>
+										<?php
+										$member_uid = $_SESSION["CURRENT_KID_UID"];
+										$sql = "select * from wap_medical where uid in (select supervisor_uid from user where uid={$member_uid}) order by id";
+										$re = M()->select($sql);
+										if($re){
+											foreach($re as $value){
+												?>
+												<option value="<?=$value['id']?>" data-hospital="<?=$value['hospital']?>" data-name="<?=$value['doctor_name']?>"><?=$value['hospital']?> <?=$value['doctor_name']?></option>
+												<?php
+											}
+										}
 
-							?>
+										?>
 
-						</select>
-						<!--         				<i></i> -->
-					</li>
-					<li class="diagnosis"><p>诊断：</p><input name="symptom" type="text" value=""></li>
-					<li class="told">
-						<p>医生叮嘱：</p>
-						<textarea name="note" maxlength="100"></textarea>
-					</li>
-				</ul>
-				<button class="medical_record_add_submit submit">提交</button>
-			</form>
+									</select>
+									<!--         				<i></i> -->
+								</li>
+								<li class="diagnosis"><p>诊断：</p><input name="symptom" type="text" value=""></li>
+								<li class="told">
+									<p>医生叮嘱：</p>
+									<textarea name="note" maxlength="100"></textarea>
+								</li>
+							</ul>
+							<button class="medical_record_add_submit">提交</button>
+						</form>
+					</section>
+				</section>
+			</section>
 		</section>
+		<!--//主內容//-->
 		<!-- InstanceEndEditable -->
 	</section>
 	<!--【Content End】-->

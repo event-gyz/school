@@ -3,22 +3,23 @@ session_start();
 
 include("inc.php"); 
 
-$_ID = $_POST['p1'];
 $_AUTH = $_POST['p2'];
 $_PHONE = $_POST['p3'];
+
+if(empty($_AUTH)) {
+	die(genResponse(false, "请填写验证码"));
+}
+
 // 查询手机号和验证码
 $select = "select  *  from message where phone ='{$_PHONE}' and message_code='{$_AUTH}' and status=0 ";
 if(!query_result($select)){
     die(genResponse(false, "验证码错误"));
 }
 
-if(empty($_ID) || empty($_AUTH)) {
-	die(genResponse(false, "请填写完整资料"));
-}
 else {
 	// send email
 	$log_file = "../log/send_forget_log".date("Y_m_d_H_i_s").".txt";
-	$sql = "select uid,email from member where id='$_ID'";
+	$sql = "select uid,email from member where cellphone='$_PHONE'";
 	$row = M()->find($sql);
 	if($row) {
 		$uid = $row['uid'];

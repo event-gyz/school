@@ -20,7 +20,7 @@ if(!isset($_SESSION['user_token'])) {
         h1,h2,h3,h4,h5,h6,p,ul,li,dl,dt,dd{margin:0;padding:0;list-style: none;}
         input,button{padding: 0;margin:0;border:0;outline: none;}
         img{vertical-align: bottom}
-        .ceanza_menu_bg{padding-top: 125px;}
+
     </style>
 </head>
 <body>
@@ -141,10 +141,10 @@ if($member_uid > 0) {
     <!--【Content】-->
     <section id="content">
         <!-- InstanceBeginEditable name="content" -->
-        <section class="ceanza">
+        <section class="ceanza ceanza_menu">
             <div class="ceanza_menu_bg">
-                <h4>成长日记</h4>
-                <section class="gopath goback"><a href="index.php">首页</a> > 成长日记</section>
+                <h4>成长记录</h4>
+                <section class="gopath goback"><a href="index.php">首页</a> > 成长记录</section>
                 <div class="photos">
 
                     <div class="father-head-portrait">
@@ -157,7 +157,14 @@ if($member_uid > 0) {
                             <b></b>
                             <p></p>
                             <form action="head_sculpture.php" class="personForm" method="post" enctype="multipart/form-data">
-                                <input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="personImgfile">
+                                <!-- <input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="personImgfile"> -->
+                                <div class="clipper">
+                                    <input class="clipper_input personImgfile"
+                                           ref="input"
+                                           type="file"
+                                           accept="image/gif,image/jpeg,image/png,image/bmp,image/jpg"
+                                    >
+                                </div>
                                 <input hidden="" name="type" value="father" />
                             </form>
                         </div>
@@ -173,7 +180,14 @@ if($member_uid > 0) {
                             <b></b>
                             <p></p>
                             <form action="head_sculpture.php" class="babyForm" method="post" enctype="multipart/form-data">
-                                <input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="babyImgfile">
+                                <!-- <input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="babyImgfile"> -->
+                                <div class="clipper">
+                                    <input class="clipper_input babyImgfile"
+                                           ref="input"
+                                           type="file"
+                                           accept="image/gif,image/jpeg,image/png,image/bmp,image/jpg"
+                                    >
+                                </div>
                                 <input hidden="" name="type" value="baby" />
                             </form>
                         </div>
@@ -189,7 +203,14 @@ if($member_uid > 0) {
                             <b></b>
                             <p></p>
                             <form action="head_sculpture.php" class="momForm" method="post" enctype="multipart/form-data">
-                                <input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="momImgfile">
+                                <!-- <input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="momImgfile"> -->
+                                <div class="clipper">
+                                    <input class="clipper_input momImgfile"
+                                           ref="input"
+                                           type="file"
+                                           accept="image/gif,image/jpeg,image/png,image/bmp,image/jpg"
+                                    >
+                                </div>
                                 <input hidden="" name="type" value="mother" />
                             </form>
                         </div>
@@ -219,10 +240,10 @@ if($member_uid > 0) {
                 </li>
                 <li>
                     <a class="a_box" href="/cn/ceanza_list.php">
-                        <h4>成长记录</h4>
+                        <h4>宝贝日记</h4>
                         <p>替您的宝宝写下成长日記，为您的宝宝记录每天的成长与回忆......</p>
                         <i></i>
-                        <div class="menu_logo"><img src="../content/epaper/images/ceanza.png" alt=""></div>
+                        <div class="menu_logo ceanza_img"><img src="../content/epaper/images/ceanza.png" alt=""></div>
                     </a>
                 </li>
                 <li>
@@ -270,18 +291,102 @@ if($member_uid > 0) {
 <?php include 'inc_bottom_js.php'; ?>
 <script>
 
+    var clipper = null,imgElm = undefined;
+    clipper = new Clipper()
 
-    $('.personImgfile').on('change', function(){
-        $(this).closest('form').submit();
-        $('.personForm').submit();
+    $('.personImgfile').on('change', function(e){
+        let resultObj = imgElm // 预览对象
+        clipper.clip(e, {
+            resultObj,
+            aspectRatio : 1
+        })
+        clipper.confirm(function(file){
+            // formData
+            let fd = new FormData()
+            // 上传头像参数
+            fd.append('file', file)
+            fd.append('type', 'father')
+            // 调用接口
+            $.ajax({
+                url: "head_sculpture.php",
+                type: 'post',
+                data: fd,
+                dataType: 'json',
+                processData: false,
+                contentType: false,
+                success: function (jsonStr) {
+                    if(jsonStr.errno=='1') {
+                        window.location.reload();
+                    }
+                },
+            });
+
+        })
+        // $(this).closest('form').submit();
+        // $('.personForm').submit();
     });
-    $('.babyImgfile').on('change', function(){
-        $(this).closest('form').submit();
-        $('.babyForm').submit();
+    $('.babyImgfile').on('change', function(e){
+        let resultObj = imgElm // 预览对象
+        clipper.clip(e, {
+            resultObj,
+            aspectRatio : 1
+        })
+        clipper.confirm(function(file){
+            // formData
+            let fd = new FormData()
+            // 上传头像参数
+            fd.append('file', file)
+            fd.append('type', 'baby')
+            // 调用接口
+            $.ajax({
+                url: "head_sculpture.php",
+                type: 'post',
+                data: fd,
+                dataType: 'json',
+                processData: false,
+                contentType: false,
+                success: function (jsonStr) {
+                    if(jsonStr.errno=='1') {
+                        window.location.reload();
+                    }
+                },
+            });
+
+        })
+        // $(this).closest('form').submit();
+        // $('.babyForm').submit();
     });
-    $('.momImgfile').on('change', function(){
-        $(this).closest('form').submit();
-        $('.momForm').submit();
+    $('.momImgfile').on('change', function(e){
+        let resultObj = imgElm // 预览对象
+        clipper.clip(e, {
+            resultObj,
+            aspectRatio : 1
+        })
+        clipper.confirm(function(file){
+            // formData
+            let fd = new FormData()
+            // 上传头像参数
+            fd.append('file', file)
+            fd.append('type', 'mother')
+            // 调用接口
+            $.ajax({
+                url: "head_sculpture.php",
+                type: 'post',
+                data: fd,
+                dataType: 'json',
+                processData: false,
+                contentType: false,
+                success: function (jsonStr) {
+                    if(jsonStr.errno=='1') {
+                        window.location.reload();
+                    }
+                },
+            });
+
+        })
+        // $(this).closest('form').submit();
+        // $('.momForm').submit();
+
     });
 </script>
 </body>

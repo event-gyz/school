@@ -34,12 +34,12 @@ if(!isset($_tag))
         <!--//主內容//-->
         <section class="indexcont">
             <section class="inbox noBoxShadowPage">
-                <section class="contbox clearfix">
+                <section class="contbox clearfix recommend">
 
                     <!--//主選單標題與路徑//-->
                     <div class="breadcrumbs_logo">
-                        <h2 class="title">推荐文章</h2>
-                        <section class="gopath"><a href="index.php">首页</a> > 推荐文章</section>
+                        <h2 class="title">育儿天地</h2>
+                        <section class="gopath"><a href="index.php">首页</a> > 育儿天地</section>
                     </div>
                     <p <?php if($_tag==0) echo('style="display:block"'); ?>><img src="../content/epaper/images/parenting.jpg" alt=""></p>
                     <p <?php if($_tag==1) echo('style="display:block"'); ?>><img src="../content/epaper/images/medical_care.jpg" alt=""></p>

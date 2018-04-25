@@ -1,14 +1,13 @@
 <?php
 session_start();
 include('inc.php');
-
-$tabon = @$_REQUEST['f'];
-if(!isset($tabon))
-    $tabon = 0;
 if(!isset($_SESSION['user_token'])) {
     header( 'Location: index.php' ) ;
     exit();
 }
+$tabon = @$_REQUEST['f'];
+if(!isset($tabon))
+    $tabon = '0';
 ?>
 <!DOCTYPE html>
 <html><!-- InstanceBegin template="/Templates/_page01.dwt" codeOutsideHTMLIsLocked="false" -->
@@ -103,7 +102,7 @@ if(isset($payload)) {
 }
 ?>
 <!-- InstanceBeginEditable name="wrap" -->
-<section id="wrap">
+<section id="wrap" class="inpage">
     <!-- InstanceEndEditable -->
 
     <!--【Header】-->
@@ -136,64 +135,82 @@ if(isset($payload)) {
     <!--【Content】-->
     <section id="content">
         <!-- InstanceBeginEditable name="content" -->
-        <section class="person">
-            <div class="parent-head-portrait">
-                <div class="upHead">
-                    <?php if($image_url){?>
-                        <img src=<?= $image_url?> alt=""  class="userHead">
-                    <?php }else{ ?>
-                        <img src="../content/epaper/images/parent.png" alt=""  class="noHead">
-                    <?php } ?>
-                    <b></b>
-                    <p></p>
-                    <form action="head_sculpture.php"  method="post" enctype="multipart/form-data">
-                        <input type="file" name="file" accept="image/png,image/jpg,image/jpeg" class="imgfile">
-                        <input hidden="" name="type" value="person" />
-                    </form>
-                </div>
-                <span>家长已登录</span>
-            </div>
-            <ul class="info_list">
-                <li>
-                    <p class="account"></p>
-                    <span>账号资料</span>
-                    <input type="text" value="<?=$email?>" disabled>
-                </li>
-                <li>
-                    <p class="password"></p>
-                    <span>密码</span>
-                    <input type="password" value="xxxxxx" disabled>
-                </li>
-                <li>
-                    <p class="password"></p>
-                    <span>确认密码</span>
-                    <input type="password" value="xxxxxx" disabled>
-                </li>
-                <li>
-                    <p class="mobile"></p>
-                    <span>电话</span>
-                    <input type="phone" value="<?=$phone?>" disabled>
-                </li>
-                <li>
-                    <a href="baby_info.php">
-                        <i></i>
-                        <p class="info"></p>
-                        <span>宝宝信息</span>
-                        <input type="text" value="<?=$nick_name?>" disabled>
-                    </a>
-                </li>
-                <li>
-                    <i></i>
-                    <p class="consultation"></p>
-                    <span>专家咨询</span>
-                </li>
-                <li>
-                    <i></i>
-                    <p class="recommend"></p>
-                    <span>推荐好友</span>
-                </li>
-            </ul>
+
+        <!--//主內容//-->
+        <section class="indexcont newcomers">
+            <section class="inbox noBoxShadowPage">
+                <section class="contbox clearfix">
+                    <!-- InstanceBeginEditable name="content" -->
+                    <section class="person">
+                        <div class="parent-head-portrait">
+                            <div class="upHead">
+                                <?php if($image_url){?>
+                                    <img src=<?= $image_url?> alt=""  class="userHead">
+                                <?php }else{ ?>
+                                    <img src="../content/epaper/images/parent.png" alt=""  class="noHead">
+                                <?php } ?>
+                                <b></b>
+                                <p></p>
+                                <!-- <form action="head_sculpture.php"  method="post" enctype="multipart/form-data"> -->
+                                <div class="clipper">
+                                    <input class="clipper_input imgfile"
+                                           ref="input"
+                                           type="file"
+                                           accept="image/gif,image/jpeg,image/png,image/bmp,image/jpg"
+                                    >
+                                </div>
+                                <!-- <input hidden="" name="type" value="person" /> -->
+                                <!-- </form> -->
+                            </div>
+                            <span>家长已登录</span>
+                        </div>
+                        <ul class="info_list">
+                            <li>
+                                <p class="account"></p>
+                                <span>账号资料</span>
+                                <input type="text" value="<?=$_SESSION['user_email']?>" disabled>
+                            </li>
+                            <li>
+                                <p class="mobile"></p>
+                                <span>电话</span>
+                                <?php
+                                if(!empty($phone)){
+                                    ?>
+                                    <input type="phone" value="<?=$phone?>" disabled>
+                                    <?php
+                                }else{
+                                    ?>
+                                    <b><a style="float: right;width: 4.4878rem;height: 1.0732rem;text-align: right;color:#C84648;padding:0;font-size: 0.3902rem;" class="bind_mobile">现在绑定立享好礼</a></b>
+                                    <?php
+                                }
+                                ?>
+
+                            </li>
+                            <li class="baby_infos">
+                                <a href="baby_info.php">
+                                    <i></i>
+                                    <p class="info"></p>
+                                    <span>宝宝信息</span>
+                                    <input type="text" value="<?=$nick_name?>" disabled>
+                                </a>
+                            </li>
+                            <li>
+                                <i></i>
+                                <p class="consultation"></p>
+                                <span>专家咨询</span>
+                            </li>
+                            <li>
+                                <i></i>
+                                <p class="recommend"></p>
+                                <span>推荐好友</span>
+                            </li>
+                        </ul>
+                    </section>
+
+                </section>
+            </section>
         </section>
+        <!--//主內容//-->
         <!-- InstanceEndEditable -->
     </section>
     <!--【Content End】-->
@@ -202,16 +219,53 @@ if(isset($payload)) {
     <?php include 'inc_footer.html'; ?>
     <!--【Footer End】-->
 </section>
+<script type="text/javascript">
+    var clipper = null,imgElm = undefined;
+    clipper = new Clipper()
+
+    $('.imgfile').on('change', function(e){
+        let resultObj = imgElm // 预览对象
+        clipper.clip(e, {
+            resultObj,
+            aspectRatio : 1
+        })
+        clipper.confirm(function(file){
+            // formData
+            let fd = new FormData()
+            // 上传头像参数
+            fd.append('type', 'person')
+            fd.append('file', file)  // 通过append向form对象添加数据
+
+            // 调用接口
+            $.ajax({
+                url: "head_sculpture.php",
+                type: 'post',
+                data: fd,
+                dataType: 'json',
+                processData: false,
+                contentType: false,
+                success: function (jsonStr) {
+                    if(jsonStr.errno=='1') {
+                        window.location.reload();
+                    }
+                },
+            });
+        })
+        // $(this).closest('form').submit();
+
+    });
+    // $('form').submit( function(){
+    //     return true;
+    // });
+
+    $('.bind_mobile').click(function(){
+        $.fancybox({
+            href: "#fy-mobile-bind"
+        });
+    })
+
+
+</script>
 <?php include 'inc_bottom_js.php'; ?>
 </body>
-<script>
-    $('.imgfile').on('change', function(){
-        $(this).closest('form').submit();
-    });
-
-    $('form').submit( function(){
-
-        return true;
-    });
-</script>
 <!-- InstanceEnd --></html>

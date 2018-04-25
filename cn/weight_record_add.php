@@ -106,34 +106,41 @@ if(isset($payload)) {
 
 	<!--【Content】-->
 	<section id="content">
-		<!-- InstanceBeginEditable name="content" -->
-		<section class="weight_record">
-			<form action="weight_record.php" method="post" enctype="multipart/form-data">
-				<input hidden="" name="type" value="diary" />
-				<h4>新增体重记录</h4>
-				<section class="gopath"><a href="index.php">首页</a> > 新增体重记录</section>
-				<ul class="form">
-					<li><p>体重（公斤）：</p><input name="weight" type="text" maxlength="20"></li>
-					<li>
-						<b class="clock"></b>
-						记录时间：
-						<input class="time date_a"  name="date" type="text" data-position='bottomLeft' readonly x-webkit-speech="none" value="<?php echo date('Y-m-d',time())?>">
-					</li>
-				</ul>
-				<ul class="uploadImgList">
-					<li class="uploadImg">
-						<div class="imgContent">+</div>
-						<input type="file" name="file" accept="image/png,image/jpg,image/jpeg"/>
-						<!-- <div class="camera_photograph">
-                        <p><img src="../content/epaper/images/camera.png" alt=""></p>
-                        <input type="file" class="camera_input" name="myPhoto" capture="camera" accept="image/*"/>
-                    </div> -->
-					</li>
-				</ul>
-				<!-- <p class="uploadDemand">(上传图片档案大小不得超过3MB)</p> -->
-				<button class="submit">提交</button>
-			</form>
+		<!--//主內容//-->
+		<section class="indexcont">
+			<section class="inbox noBoxShadowPage">
+				<section class="contbox clearfix">
+					<section class="weight_record">
+						<form action="weight_record.php" method="post" enctype="multipart/form-data">
+							<input hidden="" name="type" value="diary" />
+							<h4>新增体重记录</h4>
+							<section class="gopath"><a href="index.php">首页</a> > 新增体重记录</section>
+							<ul class="form">
+								<li><p>体重（公斤）：</p><input name="weight"></li>
+								<li>
+									<b class="clock"></b>
+									记录时间：
+									<input class="time date_a"  name="date" type="text" data-position='bottomLeft' readonly x-webkit-speech="none" value="<?php echo date('Y-m-d',time())?>">
+								</li>
+							</ul>
+							<ul class="uploadImgList">
+								<li class="uploadImg">
+									<div class="imgContent">+</div>
+									<input type="file" name="file" accept="image/png,image/jpg,image/jpeg"/>
+									<!-- <div class="camera_photograph">
+                                    <p><img src="../content/epaper/images/camera.png" alt=""></p>
+                                    <input type="file" class="camera_input" name="myPhoto" capture="camera" accept="image/*"/>
+                                </div> -->
+								</li>
+							</ul>
+							<!-- <p class="uploadDemand">(上传图片档案大小不得超过3MB)</p> -->
+							<button class="submit">提交</button>
+						</form>
+					</section>
+				</section>
+			</section>
 		</section>
+		<!--//主內容//-->
 		<!-- InstanceEndEditable -->
 	</section>
 	<!--【Content End】-->

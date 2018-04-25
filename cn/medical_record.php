@@ -93,7 +93,6 @@ if(isset($payload)) {
 		}
 	}
 }
-
 ?>
 <!-- InstanceBeginEditable name="wrap" -->
 <section id="wrap">
@@ -105,112 +104,122 @@ if(isset($payload)) {
 
 	<!--【Content】-->
 	<section id="content">
-		<!-- InstanceBeginEditable name="content" -->
-		<section class="ceanza">
-			<h4>就诊记录</h4>
-			<section class="gopath goback"><a href="index.php">首页</a> > 就诊记录</section>
-			<p>每笔就诊记录都是日后珍贵的就医参考，同时也能了解宝宝的免疫能力与健康状态。</p>
-			<a href="medical_record_add.php" class="add_consultation">新增就诊记录<b></b></a>
-			<a href="medical_institution_add.php" class="add_medical_institution">新增常用医疗机构<b></b></a>
+		<!--//主內容//-->
+		<section class="indexcont">
+			<section class="inbox noBoxShadowPage">
+				<section class="contbox clearfix">
+					<section class="ceanza">
+						<div class="breadcrumbs_logo">
+							<h2 class="title">就诊记录</h2>
+							<section class="gopath"><a href="index.php">首页</a> > 就诊记录</section>
+						</div>
+						<section class="Txt clearfix">
+							<p>每笔就诊记录都是日后珍贵的就医参考，同时也能了解宝宝的免疫能力与健康状态。</p>
+						</section>
+						<a href="medical_record_add.php" class="add_consultation">新增就诊记录<b></b></a>
+						<a href="medical_institution_add.php" class="add_medical_institution">新增常用医疗机构<b></b></a>
+					</section>
+					<div class="consultation_list">
+						<p>就诊记录</p>
+						<?php
+
+						if(isset($_SESSION['user_token'])) {
+							$member_uid = $_SESSION["CURRENT_KID_UID"];
+							$diagnosessql = "select * from wap_diagnoses where uid in (select supervisor_uid from user where uid={$member_uid}) order by id desc";
+							$diagnoseslist = M()->select($diagnosessql);
+						}
+						?>
+						<?php
+
+						foreach($diagnoseslist as $v){?>
+							<ul class="consultation_detail">
+								<li>
+									<p>就诊日期：</p>
+									<span><?= date('Y年m月d日',strtotime($v['date']))?></span>
+									<ul class="operation">
+										<li>
+											<p class="eqit"></p>
+											<span><a href="medical_record_eqit.php?id=<?= $v['id']?>">编辑</a></span>
+										</li>
+										<li>
+											<p class="delete"></p>
+											<span><a href="medical_records.php?id=<?= $v['id']?>&type=delete">删除</a></span>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<p>医院：</p>
+									<span><?= $v['hospital']?></span>
+								</li>
+								<li>
+									<p>医生：</p>
+									<span><?= $v['doctor']?>医生</span>
+								</li>
+								<li>
+									<p>诊断：</p>
+									<span><?= $v['symptom']?></span>
+								</li>
+								<li>
+									<p>医生叮嘱：</p>
+									<span><?= $v['note']?></span>
+								</li>
+
+							</ul>
+						<?php } ?>
+					</div>
+					<?php
+
+					if(isset($_SESSION['user_token'])) {
+						$member_uid = $_SESSION["CURRENT_KID_UID"];
+						$medicalsql = "select * from wap_medical where uid in (select supervisor_uid from user where uid={$member_uid}) order by id desc";
+						$medicallist = M()->select($medicalsql);
+					}
+					?>
+					<div class="medical_institution_list">
+						<p>常用医疗机构</p>
+						<ul class="medical_institution_detail">
+							<?php foreach($medicallist as $value){?>
+								<li>
+									<p>医院：</p>
+									<span><?= $value['hospital']?></span>
+									<ul class="operation">
+										<li>
+											<p class="eqit"></p>
+											<span><a href="medical_institution_eqit.php?id=<?= $value['id']?>">编辑</a></span>
+										</li>
+										<li>
+											<p class="delete"></p>
+											<span><a href="medical_institution.php?id=<?= $value['id']?>&type=delete">删除</a></span>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<p>医生：</p>
+									<span><?= $value['doctor_name']?></span>
+								</li>
+								<li>
+									<p>地址：</p>
+									<span><?= $value['address']?></span>
+								</li>
+								<li>
+									<p>电话：</p>
+									<span><?= $value['doctor_phone']?></span>
+								</li>
+							<?php }?>
+						</ul>
+					</div>
+					<section class="clearfix relevant_articles">
+						<h3 class="title">就诊相关文章<a href="recommend.php" class="i-more">更多内容<span>&gt;&gt;</span></a></h3>
+						<?php af_articles_list_recommend('就诊'); ?>
+					</section>
+				</section>
+			</section>
 		</section>
-		<div class="consultation_list">
-			<p>就诊记录</p>
-			<?php
+		<!--//主內容//-->
 
-			if(isset($_SESSION['user_token'])) {
-				$member_uid = $_SESSION["CURRENT_KID_UID"];
-				$diagnosessql = "select * from wap_diagnoses where uid in (select supervisor_uid from user where uid={$member_uid}) order by id desc";
-				$diagnoseslist = M()->select($diagnosessql);
-			}
-			?>
-			<?php
-
-			foreach($diagnoseslist as $v){?>
-				<ul class="consultation_detail">
-					<li>
-						<p>就诊日期：</p>
-						<span><?= date('Y年m月d日',strtotime($v['date']))?></span>
-						<ul class="operation">
-							<li>
-								<p class="eqit"></p>
-								<span><a href="medical_record_eqit.php?id=<?= $v['id']?>">编辑</a></span>
-							</li>
-							<li>
-								<p class="delete"></p>
-								<span><a href="medical_records.php?id=<?= $v['id']?>&type=delete">删除</a></span>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<p>医院：</p>
-						<span><?= $v['hospital']?></span>
-					</li>
-					<li>
-						<p>医生：</p>
-						<span><?= $v['doctor']?>医生</span>
-					</li>
-					<li>
-						<p>诊断：</p>
-						<span><?= $v['symptom']?></span>
-					</li>
-					<li>
-						<p>医生叮嘱：</p>
-						<span><?= $v['note']?></span>
-					</li>
-
-				</ul>
-			<?php } ?>
-		</div>
-		<?php
-
-		if(isset($_SESSION['user_token'])) {
-			$member_uid = $_SESSION["CURRENT_KID_UID"];
-			$medicalsql = "select * from wap_medical where uid in (select supervisor_uid from user where uid={$member_uid}) order by id desc";
-			$medicallist = M()->select($medicalsql);
-		}
-		?>
-		<div class="medical_institution_list">
-			<p>常用医疗机构</p>
-			<ul class="medical_institution_detail">
-				<?php foreach($medicallist as $value){?>
-					<li>
-						<p>医院：</p>
-						<span><?= $value['hospital']?></span>
-						<ul class="operation">
-							<li>
-								<p class="eqit"></p>
-								<span><a href="medical_institution_eqit.php?id=<?= $value['id']?>">编辑</a></span>
-							</li>
-							<li>
-								<p class="delete"></p>
-								<span><a href="medical_institution.php?id=<?= $value['id']?>&type=delete">删除</a></span>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<p>医生：</p>
-						<span><?= $value['doctor_name']?></span>
-					</li>
-					<li>
-						<p>地址：</p>
-						<span><?= $value['address']?></span>
-					</li>
-					<li>
-						<p>电话：</p>
-						<span><?= $value['doctor_phone']?></span>
-					</li>
-				<?php }?>
-			</ul>
-		</div>
 		<!-- InstanceEndEditable -->
 	</section>
 	<!--【Content End】-->
-	<div class="relevant_articles">
-		<h4>就诊相关文章</h4>
-		<ul>
-			<?php af_articles_list_recommend('就诊'); ?>
-		</ul>
-	</div>
 
 	<!--【Footer】-->
 	<?php include 'inc_footer.html'; ?>

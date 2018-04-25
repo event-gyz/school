@@ -7,9 +7,9 @@ function fetchContent($age, $type, $func,$e) {
 	$htmlString = "";
 	$user_uid = $_SESSION["CURRENT_KID_UID"];
 	$start_age = $age-1;
-	$end_age = $age+5;
+	$end_age = $age+1;
 	if(!empty($e) && ($start_age>=12)){
-		$start_age -=12;
+		$start_age -=4;
 	}
     $sql = "select grow_index.uid,grow_index.text,grow_index.age_max,grow_index.age_min from grow_index where ((grow_index.age_min >= '$start_age' and grow_index.age_min<= '$end_age') or (grow_index.age_max <= '$end_age' and grow_index.age_max >= '$start_age')) and grow_index.type='$type' order by uid asc";
     $sql2 = "select early ,user_uid,item_uid from grow_log where user_uid=$user_uid";
@@ -55,7 +55,31 @@ function fetchContent($age, $type, $func,$e) {
 		$htmlString .= '<i><img src="../theme/cn/images/content/item_rep01.jpg"></i><p style="float:left">
 	                    <input type="checkbox" class="new_ck" value="'.$uid.'"';
 	    if($checked) $htmlString .= (' checked ');
-	    $htmlString .= '>'.$age_min.'月-'.$age_max.'月</p><div class="detail">
+
+		$year = floor($age_min/12);
+		if($year>1){
+			$new_age_min = $year.'岁';
+			$mm = $age_min%12;
+			if($mm>0){
+				$new_age_min .= $mm.'个月';
+			}
+
+		}else{
+			$new_age_min = $age_min.'个月';
+		}
+
+		$year = floor($age_max/12);
+		if($year>1){
+			$new_age_max = $year.'岁';
+			$mm = $age_max%12;
+			if($mm>0){
+				$new_age_max .= $mm.'个月';
+			}
+
+		}else{
+			$new_age_max = $age_max.'个月';
+		}
+	    $htmlString .= '>'.$new_age_min.'-'.$new_age_max.'</p><div class="detail">
                                             <p>'.$text.'</p>
                                         </div>
 	                

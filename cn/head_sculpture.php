@@ -5,7 +5,10 @@ session_start();
 include("inc.php"); 
 
 include("../inc/upload.php");
-if(isset($_POST['type']) && $_POST['type'] == 'person'){
+$_type = $_REQUEST['type'];
+$file_last = explode('/',$_FILES['file']['type']);
+$_FILES['file']['name'] = time().rand(1,1000).'.'.array_pop($file_last);
+if(isset($_type) && $_type == 'person'){
     $files = $_FILES['file'];
     $_token = $_SESSION['user_token'];
 
@@ -13,14 +16,15 @@ if(isset($_POST['type']) && $_POST['type'] == 'person'){
         $picurl = ceanza_upload("file");
         $sql = "update member set image_url='{$picurl}' where uid = $supervisor_uid";
         $result = query($sql);
-        if($result!=null) {
-            header("Location:".$_SERVER['HTTP_REFERER']);
+        if($result) {
+            echo json_encode(['errno'=>1,'msg'=>'保存成功']);
+            exit;
         }
     }
     exit;
 }
 
-if(isset($_POST['type']) && $_POST['type'] == 'baby'){
+if(isset($_type) && $_type == 'baby'){
     $files = $_FILES['file'];
     $_token = $_SESSION['user_token'];
 
@@ -29,13 +33,14 @@ if(isset($_POST['type']) && $_POST['type'] == 'baby'){
         $sql = "update `user` set image_url='{$picurl}' where supervisor_uid = $supervisor_uid";
         $result = query($sql);
         if($result!=null) {
-            header("Location:".$_SERVER['HTTP_REFERER']);
+            echo json_encode(['errno'=>1,'msg'=>'保存成功']);
+            exit;
         }
     }
     exit;
 }
 
-if(isset($_POST['type']) && $_POST['type'] == 'mother'){
+if(isset($_type) && $_type == 'mother'){
     $files = $_FILES['file'];
     $_token = $_SESSION['user_token'];
 
@@ -44,13 +49,14 @@ if(isset($_POST['type']) && $_POST['type'] == 'mother'){
         $sql = "update member set mother_image='{$picurl}' where uid = $supervisor_uid";
         $result = query($sql);
         if($result!=null) {
-            header("Location:".$_SERVER['HTTP_REFERER']);
+            echo json_encode(['errno'=>1,'msg'=>'保存成功']);
+            exit;
         }
     }
     exit;
 }
 
-if(isset($_POST['type']) && $_POST['type'] == 'father'){
+if(isset($_type) && $_type == 'father'){
     $files = $_FILES['file'];
     $_token = $_SESSION['user_token'];
 
@@ -59,7 +65,8 @@ if(isset($_POST['type']) && $_POST['type'] == 'father'){
         $sql = "update member set father_image='{$picurl}' where uid = $supervisor_uid";
         $result = query($sql);
         if($result!=null) {
-            header("Location:".$_SERVER['HTTP_REFERER']);
+            echo json_encode(['errno'=>1,'msg'=>'保存成功']);
+            exit;
         }
     }
     exit;

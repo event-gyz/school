@@ -104,37 +104,44 @@ if(isset($payload)) {
 
 	<!--【Content】-->
 	<section id="content">
-		<!-- InstanceBeginEditable name="content" -->
-		<section class="height_record">
-			<form action="height_record.php" method="post" enctype="multipart/form-data">
-				<input type="hidden" name="type" value="update" />
-				<input type="hidden" name="id" value="<?php echo $_GET['id']?>" />
+		<!--//主內容//-->
+		<section class="indexcont">
+			<section class="inbox noBoxShadowPage">
+				<section class="contbox clearfix">
+					<section class="height_record">
+						<form action="height_record.php" method="post" enctype="multipart/form-data">
+							<input type="hidden" name="type" value="update" />
+							<input type="hidden" name="id" value="<?php echo $_GET['id']?>" />
 
-				<?php
-				$sql  = 'select * from wap_height where id='.$_GET['id'];
-				$result = M()->find($sql);
-				//				print_r($result);
-				?>
-				<input type="hidden" name="file" value=<?php echo $result['picurl']?> />
-				<h4>编辑身高记录</h4>
-				<section class="gopath"><a href="index.php">首页</a> > 编辑身高记录</section>
-				<ul class="eqit_content">
-					<li class="title">身高（公分）：<input type="text" name="height" value="<?= $result['height']?>"></li>
-					<li class="eqitUploadImg">
-						<div class="imgContent"><img src=<?php echo $result['picurl']?> alt=""></div>
-						<input type="file" name="file" >
-						<span>点击图片，重新上传</span>
-					</li>
-					<li>
-						<b class="clock"></b>
-						记录时间：
-						<input class="time" type="date" name="date" value="<?php echo $result['date']?>">
-					</li>
-				</ul>
+							<?php
+							$sql  = 'select * from wap_height where id='.$_GET['id'];
+							$result = M()->find($sql);
+							//				print_r($result);
+							?>
+							<input type="hidden" name="file" value=<?php echo $result['picurl']?> />
+							<h4>编辑身高记录</h4>
+							<section class="gopath"><a href="index.php">首页</a> > 编辑身高记录</section>
+							<ul class="eqit_content">
+								<li class="title">身高（公分）：<input type="text" name="height" value="<?= $result['height']?>"></li>
+								<li class="eqitUploadImg">
+									<div class="imgContent"><img src=<?php echo $result['picurl']?> alt=""></div>
+									<input type="file" name="file" >
+									<span>点击图片，重新上传</span>
+								</li>
+								<li>
+									<b class="clock"></b>
+									记录时间：
+									<input class="time" type="date" name="date" value="<?php echo $result['date']?>">
+								</li>
+							</ul>
 
-				<button class="submit">提交</button>
-			</form>
+							<button class="submit">提交</button>
+						</form>
+					</section>
+				</section>
+			</section>
 		</section>
+		<!--//主內容//-->
 		<!-- InstanceEndEditable -->
 	</section>
 	<!--【Content End】-->
