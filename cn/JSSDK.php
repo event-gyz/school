@@ -4,7 +4,7 @@ class JSSDK
     private $appId;
     private $appSecret;
 
-    public function __construct($appId, $appSecret) {
+    public function __construct($appId='wxb87c1c8fcec6c6c2', $appSecret='bbd2828138fbd24fc5747ec370572fc0') {
         $this->appId = $appId;
         $this->appSecret = $appSecret;
     }

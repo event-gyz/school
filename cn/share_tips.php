@@ -34,9 +34,7 @@ include('inc.php');
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <?php
 require("JSSDK.php");
-$appid = 'wxb87c1c8fcec6c6c2';
-$appSecret = 'bbd2828138fbd24fc5747ec370572fc0';
-$jssdk = new JSSDK($appid, $appSecret);
+$jssdk = new JSSDK();
 //返回签名基本信息
 $signPackage = $jssdk->getSignPackage();
 ?>
