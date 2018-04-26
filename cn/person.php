@@ -200,10 +200,10 @@ if(isset($payload)) {
                                 <p class="consultation"></p>
                                 <span>专家咨询</span>
                             </li>
-                            <li class="baby_infos"  >
+                            <li>
                                 <a href="share_tips.php">
                                     <i></i>
-                                    <p class="info"></p>
+                                    <p class="recommend"></p>
                                     <span>推荐好友</span>
                                 </a>
                             </li>
