@@ -55,7 +55,15 @@ $signPackage = $jssdk->getSignPackage();
             "onMenuShareQZone",
         ]
     });
-    var url = 'http://<?=$_SERVER['HTTP_HOST']?>/cn/share.php?uid=54';
+    <?php
+    if(isset($_SESSION['user_token'])) {
+        $member_uid = $CMEMBER->accessFromToken($_SESSION['user_token']);
+        echo "var url = 'http://".$_SERVER['HTTP_HOST']."/cn/share.php?uid=".$member_uid."';";
+    }else{
+        echo "var url = 'http://".$_SERVER['HTTP_HOST']."/cn/share.php';";
+    }
+    ?>
+
     var imgUrl = 'http://colavia.com.cn/cn/images/bobdog.png';
     wx.ready(function () {
         // 在这里调用 API
