@@ -68,6 +68,7 @@ $signPackage = $jssdk->getSignPackage();
         ]
     });
     var url = 'http://<?=$_SERVER['HTTP_HOST']?>/cn/share.php?uid=54';
+    var imgUrl = 'http://colavia.com.cn/cn/images/bobdog.png';
     wx.ready(function () {
         // 在这里调用 API
         wx.checkJsApi({
@@ -89,7 +90,7 @@ $signPackage = $jssdk->getSignPackage();
         wx.onMenuShareTimeline({
             title: '宝贝成长日记', // 分享标题
             link: url, // 分享链接
-            imgUrl: 'http://www.thinkphp.cn/Public/new/img/header_logo.png', // 分享图标
+            imgUrl: imgUrl, // 分享图标
             success: function () {
                 // 用户确认分享后执行的回调函数
             },
@@ -101,8 +102,8 @@ $signPackage = $jssdk->getSignPackage();
         wx.onMenuShareAppMessage({
             title: '宝贝成长日记' , // 分享标题
             desc: '加入成长日记，一起轻松养娃', // 分享描述
-            link: 'http://colavia.com/cn/share.php?uid=111', // 分享链接
-            imgUrl: 'http://colavia.com.cn/cn/images/bobdog.png', // 分享图标
+            link: url, // 分享链接
+            imgUrl: imgUrl, // 分享图标
             type: '', // 分享类型,music、video或link，不填默认为link
             dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
             success: function () {
@@ -116,8 +117,8 @@ $signPackage = $jssdk->getSignPackage();
         wx.onMenuShareQQ({
             title: '宝贝成长日记', // 分享标题
             desc: '加入成长日记，一起轻松养娃', // 分享描述
-            link: '', // 分享链接
-            imgUrl: 'http://colavia.com.cn/cn/images/bobdog.png', // 分享图标
+            link: url, // 分享链接
+            imgUrl: imgUrl, // 分享图标
             success: function () {
                 // 用户确认分享后执行的回调函数
             },
@@ -129,8 +130,8 @@ $signPackage = $jssdk->getSignPackage();
         wx.onMenuShareWeibo({
             title: '宝贝成长日记', // 分享标题
             desc: '加入成长日记，一起轻松养娃', // 分享描述
-            link: '', // 分享链接
-            imgUrl: 'http://colavia.com.cn/cn/images/bobdog.png', // 分享图标
+            link: url, // 分享链接
+            imgUrl: imgUrl, // 分享图标
             success: function () {
                 // 用户确认分享后执行的回调函数
             },
@@ -142,8 +143,8 @@ $signPackage = $jssdk->getSignPackage();
         wx.onMenuShareQZone({
             title: '宝贝成长日记', // 分享标题
             desc: '加入成长日记，一起轻松养娃', // 分享描述
-            link: '', // 分享链接
-            imgUrl: 'http://colavia.com.cn/cn/images/bobdog.png', // 分享图标
+            link: url, // 分享链接
+            imgUrl: imgUrl, // 分享图标
             success: function () {
                 // 用户确认分享后执行的回调函数
             },
