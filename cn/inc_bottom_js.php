@@ -97,18 +97,18 @@
                 $(this).addClass('selected').siblings('.selected').removeClass('selected');
             }
         });
-//    $("#ref_code").click(function() {
-//        if(!checkRegTelFormat()){
-//            return false;
-//        }
-//        var params = {
-//          Mobile: $('#reg_tel').val(),
-//          validEl: $('#ref_code'),
-//          type: "send",
-//          errEl: $('#errorbar_reg_tel')
-//        };
-//        getCode(waitTime, params,params.Mobile,params.type);
-//    });
+    $(".getcode").click(function() {
+        if(!checkRegTelFormat()){
+            return false;
+        }
+        var params = {
+          Mobile: $('#reg_tel').val(),
+          validEl: $('#ref_code'),
+          type: "send",
+          errEl: $('#errorbar_reg_tel')
+        };
+        getCode(waitTime, params,params.Mobile,params.type);
+    });
         $("#reg_tel").blur(checkRegTelFormat);
         $("#reg_email").blur(checkRegEmailFormat);
         $("#reg_password").blur(checkRegPasswordFormat);
