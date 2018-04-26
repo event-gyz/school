@@ -68,7 +68,6 @@ class JSSDK
             $url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=$this->appId&secret=$this->appSecret";
             $res = json_decode($this->httpGet($url));
             $access_token = $res->access_token;
-            print_r($access_token);exit;
             if ($access_token) {
 //                $this->redis->setEx("wx_access_token", 7000, $access_token);
                 $_SESSION['wx_access_token'] = $access_token;
