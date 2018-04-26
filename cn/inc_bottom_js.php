@@ -14,6 +14,33 @@
     var reg_genner = "男";
     $(function(){
 
+        $("#share_register_form").submit(function(){
+            var auth_code = $("#share_vcode").val();
+            var phone = $("#share_mobile").val();
+            $.ajax({
+                url: "register_phone_share.php",
+                type: "POST",
+                data: {
+                    'p2': auth_code,
+                    'p1': phone
+                },
+                dataType: "json",
+                success: function (jsonStr) {
+                    console.log(jsonStr);
+                    if(jsonStr.result=='success') {
+                        $.fancybox.close();
+                        document.location.href = 'share_succ.php?phone='+phone;
+                    }
+                    else {
+                        layer.msg(jsonStr.message);
+                    }
+                },
+                error: function(xhr, err) {
+//					alert('Ajax request ' + err);
+                }
+            });
+            return false;
+        });
 
         // modify baby
         $("#modify_baby_form").submit(function(){

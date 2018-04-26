@@ -13,7 +13,6 @@ include('inc.php');
         img{vertical-align: bottom}
     </style>
 </head>
-<?php include 'inc_header.php'; ?>
 <body>
 <!-- InstanceBeginEditable name="wrap" -->
 <section id="wrap">
