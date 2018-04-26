@@ -675,7 +675,7 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 /* 宝宝疫苗页面样式 end*/
 
 /* 我的页面样式 start */
-.parent-head-portrait,.baby_info .baby-head-portrait{text-align: center;}
+.parent-head-portrait,.baby_info .baby-head-portrait{text-align: center;position: relative;}
 .parent-head-portrait .upHead,.baby_info .baby-head-portrait .upHead{position: relative;width:2.3415rem;height:2.3415rem;border:2px solid #CDEAC9;border-radius: 50%;overflow: hidden;background: #fff;margin:0 auto;}
 .parent-head-portrait .upHead>img{width:100%;height:100%;position: relative;}
 .baby_info .baby-head-portrait .upHead>img{width:100%;height:100%;}
@@ -684,6 +684,8 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .parent-head-portrait .upHead b,.baby_info .baby-head-portrait .upHead b{position: absolute;left:50%;bottom:0;width:0.5268rem;height:0.5268rem;background:#FFEEE2;border-radius:50%;transform: translateX(-50%);opacity: .6;}
 .parent-head-portrait .upHead p,.baby_info .baby-head-portrait .upHead p{position: absolute;left:50%;bottom:0.1073rem;width: 0.3902rem;height: 0.3122rem;background:url('../../content/epaper/images/samll_camera.png') no-repeat;background-size:100% 100%;transform: translateX(-50%);}
 .parent-head-portrait .upHead + span,.baby_info .baby-head-portrait .upHead + span{color:#B7B2A9;font-size: 0.5854rem;line-height: 1.1707rem;}
+.parent-head-portrait > a{position: absolute;right:0;bottom:0;color:#5FBF55;text-decoration: underline;font-size: 0.3317rem;}
+
 .info_list{margin: 0.2927rem auto 0;border-bottom: 1px solid #E3E3E3;}
 .info_list li{border-top:1px solid #E3E3E3;padding: 0 1.1707rem 0 0.3902rem;line-height: 1.0732rem;font-size: 0.3902rem;color:#B7B2A9;position: relative;overflow: hidden;}
 .info_list li.baby_infos a{display: block;color:#B7B2A9;transition: none;}
@@ -702,11 +704,21 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .info_list li p.weight{background: url('../../content/epaper/images/weight.png') no-repeat center center;background-size: 60% 70%;}
 .info_list li input{float: right;background: #fff;width: 4.4878rem;height: 1.0732rem;text-align: right;font-size: 0.3902rem;color:#B7B2A9;}
 .baby_info .info_list li input{width: 3.5122rem;}
+.set_meal_info{padding: 0.3902rem 0.5854rem;}
+.set_meal_info h3{font-size: 0.5463rem;line-height: 0.878rem;color:#8CD981;font-weight: normal;}
+.set_meal_info h3 i{font-size: 0.6829rem;margin:0 0.1463rem;}
+.set_meal_info>span{font-size: 0.3317rem;color:#8CD981;line-height: 0.5854rem;}
+.set_meal_info>div{margin-top:0.3902rem;background:#8CD981;color:#fff;border-radius: 0.039rem;padding:0.1951rem 0.3902rem 0.1951rem 0.4878rem;overflow: hidden;}
+.set_meal_info>div .member_name{float: left;}
+.set_meal_info>div .member_name p{font-size: 0.5854rem;line-height: 0.878rem;}
+.set_meal_info>div .member_name p>i{font-size: 0.722rem;margin-right:0.2927rem;}
+.set_meal_info>div .member_name span{line-height: 0.5854rem}
+.set_meal_info>div .member_price{float: right;line-height: 1.561rem;font-size: 0.5854rem;}
 /* 我的页面样式 end */
 
 /* 分享页面样式 start */
-.share p,.share_succ p{width:100%;}
-.share p>img,.share_succ p>img,.share_two_dimension_code p>img{width:100%;height:100%;}
+.share p,.share_succ p,.share_tips p{width:100%;}
+.share p>img,.share_succ p>img,.share_two_dimension_code p>img,.share_tips p>img{width:100%;height:100%;}
 .share_register{width:8.2927rem;margin:1.1707rem auto 0;}
 .share_register input{height:0.9171rem;padding-left: 0.3902rem;font-size: 0.3317rem;border:1px solid #DBDBDB;box-sizing: border-box;}
 .mobile_code input{width:100%;margin-bottom: 0.6341rem;}
