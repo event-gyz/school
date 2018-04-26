@@ -163,7 +163,7 @@ if(isset($payload)) {
                                 <!-- </form> -->
                             </div>
                             <span>家长已登录</span>
-                            <a href="javascript: void(0)">积分：100积分</a>
+                            <!--                            <a href="javascript: void(0)">积分：100积分</a>-->
                         </div>
                         <ul class="info_list">
                             <li>
@@ -201,31 +201,31 @@ if(isset($payload)) {
                                 <span>专家咨询</span>
                             </li>
                             <li>
-                                <a href="share_tips.php">
+                                <a href="share_tips.php" class="recommend_friends">
                                     <i></i>
                                     <p class="recommend"></p>
                                     <span>推荐好友</span>
                                 </a>
                             </li>
                         </ul>
-                        <div class='set_meal_info'>
-                            <h3>免费体验<i>3</i>个月</h3>
-                            <span>3个月后1200项指标测验将对您暂停服务</span>
-                            <div class="half_year_member">
-                                <div class="member_name">
-                                    <p><i>半年</i>超级会员</p>
-                                    <span>享用最全面的宝贝成长记录</span>
-                                </div>
-                                <div class="member_price">¥39.00</div>
-                            </div>
-                            <div class="one_year_member">
-                                <div class="member_name">
-                                    <p><i>一年</i>尊享会员</p>
-                                    <span>享用最全面的宝贝成长记录</span>
-                                </div>
-                                <div class="member_price">¥69.00</div>
-                            </div>
-                        </div>
+                        <!--                        <div class='set_meal_info'>-->
+                        <!--                            <h3>免费体验<i>3</i>个月</h3>-->
+                        <!--                            <span>3个月后1200项指标测验将对您暂停服务</span>-->
+                        <!--                            <div class="half_year_member">-->
+                        <!--                                <div class="member_name">-->
+                        <!--                                    <p><i>半年</i>超级会员</p>-->
+                        <!--                                    <span>享用最全面的宝贝成长记录</span>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="member_price">¥39.00</div>-->
+                        <!--                            </div>-->
+                        <!--                            <div class="one_year_member">-->
+                        <!--                                <div class="member_name">-->
+                        <!--                                    <p><i>一年</i>尊享会员</p>-->
+                        <!--                                    <span>享用最全面的宝贝成长记录</span>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="member_price">¥69.00</div>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
                     </section>
 
                 </section>

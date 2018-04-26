@@ -703,6 +703,7 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .info_list li p.height{background: url('../../content/epaper/images/height.png') no-repeat center center;background-size: 60% 70%;}
 .info_list li p.weight{background: url('../../content/epaper/images/weight.png') no-repeat center center;background-size: 60% 70%;}
 .info_list li input{float: right;background: #fff;width: 4.4878rem;height: 1.0732rem;text-align: right;font-size: 0.3902rem;color:#B7B2A9;}
+.info_list .recommend_friends{color:#B7B2A9;transition: none;}
 .baby_info .info_list li input{width: 3.5122rem;}
 .set_meal_info{padding: 0.3902rem 0.5854rem;}
 .set_meal_info h3{font-size: 0.5463rem;line-height: 0.878rem;color:#8CD981;font-weight: normal;}
@@ -720,11 +721,11 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .share p,.share_succ p,.share_tips p{width:100%;}
 .share p>img,.share_succ p>img,.share_two_dimension_code p>img,.share_tips p>img{width:100%;height:100%;}
 .share_register{width:8.2927rem;margin:1.1707rem auto 0;}
-.share_register input{height:0.9171rem;padding-left: 0.3902rem;font-size: 0.3317rem;border:1px solid #DBDBDB;box-sizing: border-box;}
+.mobile_code input,.valid_code input{height:0.9171rem;padding-left: 0.3902rem;font-size: 0.3317rem;border:1px solid #DBDBDB;box-sizing: border-box;}
 .mobile_code input{width:100%;margin-bottom: 0.6341rem;}
 .valid_code{overflow: hidden;}
 .valid_code input{float:left;width:4.6829rem;margin-right:0.4878rem;}
-.valid_code .getcode{float: left;width:2.9268rem;height:0.7805rem;margin-top: 0.0683rem;background:#619E5F;border:0;border-radius: 0.039rem;color:#F5F5F5;font-size: 0.3902rem;font-weight: bold;}
+.valid_code .getcode{float: left;width:2.9268rem;height:0.7805rem;margin-top: 0.0683rem;background:#619E5F;border:0;border-radius: 0.039rem;color:#F5F5F5;font-size: 0.3902rem;font-weight: bold;line-height: 0.7805rem;text-align: center;transition: none;}
 .share_register_submit{display: block;width:3.8049rem;height:0.7805rem;background:#619E5F;border:0;border-radius: 0.039rem;color:#F5F5F5;font-size: 0.3902rem;font-weight: bold;margin:0.9756rem auto 0;}
 .share_two_dimension_code{text-align: center;font-size: 0.2927rem;color:#CCCCCC;}
 .share_two_dimension_code h3{font-size: 0.4488rem;color:#666666;margin-top: 0.1951rem;}
