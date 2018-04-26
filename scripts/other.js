@@ -239,6 +239,17 @@ $(function(){
         getCode(waitTime, params)
     })
 
+    //手机号注册
+    $(".mobile_reg_ref_code").click(function() {
+        var params = {
+            Mobile: $('#share_mobile').val(),
+            validEl: $('.mobile_reg_ref_code'),
+            errEl: $('#div_err_mobile_reg'),
+            type: 'send',
+        }
+        getCode(waitTime, params)
+    })
+
     //绑定旧账号
     $("#mobile_info_ref_code").click(function() {
         var params = {

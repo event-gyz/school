@@ -29,10 +29,11 @@ include('inc.php');
                     <div class="share_register">
                         <div class="mobile_code">
                             <input name="share_mobile" id="share_mobile" type="tel" class="tf" placeholder="请输入手机号码">
+                            <div id="div_err_mobile_reg" class="errorbar">请输入正确的手机号</div>
                         </div>
                         <div class="valid_code">
                             <input type="number" id="share_vcode" placeholder="短信验证码">
-                            <a href="javascript: void(0)" class="getcode">获取验证码</a>
+                            <a href="javascript: void(0)" class="getcode mobile_reg_ref_code">获取验证码</a>
                         </div>
                         <input type="submit" class="share_register_submit" value="注册">
                     </div>
