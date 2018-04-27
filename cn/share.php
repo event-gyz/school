@@ -48,6 +48,10 @@ include('inc.php');
     <!--//主內容//-->
 </section>
 <?php include 'inc_bottom_js.php'; ?>
-
+<script>
+    $(".login_wx").click(function(e) {
+        document.location.href = 'login_wx.php';
+    });
+</script>
 </body>
 <!-- InstanceEnd --></html>
