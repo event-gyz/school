@@ -56,9 +56,9 @@ $signPackage = $jssdk->getSignPackage();
     <?php
     if(isset($_SESSION['user_token'])) {
         $member_uid = $CMEMBER->accessFromToken($_SESSION['user_token']);
-        echo "var url = 'http://".$_SERVER['HTTP_HOST']."/cn/share.php?uid=".$member_uid."';";
+        echo "var url = 'https://".$_SERVER['HTTP_HOST']."/cn/share.php?uid=".$member_uid."';";
     }else{
-        echo "var url = 'http://".$_SERVER['HTTP_HOST']."/cn/share.php';";
+        echo "var url = 'https://".$_SERVER['HTTP_HOST']."/cn/share.php';";
     }
     ?>
 
