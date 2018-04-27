@@ -69,9 +69,7 @@ if($membership['membership']<time()){
                         <!--//文字編輯器區//-->
                         <section class="Txt fl clearfix">
                             <p>
-                                幼儿发展是阶段性的，每一步都必须踩稳才能迈向下一步！「1200项幼儿成长指标」其内容涵盖语言、认知、<br>
-                                粗动作、细动作、人格、自主能力等六大范围，家长只要输入孩子的出生日期，系统即会协助家长检核孩子的发<br>
-                                展，让孩子的成长基础更稳固、大脑的神经网络更紧密，好在未来有实力迎向各种挑战。
+                                幼儿发展是阶段性的，每一步都必须踩稳才能迈向下一步！「1200项幼儿成长指标」其内容涵盖语言、认知、粗动作、细动作、人格、自主能力等六大范围，家长只要输入孩子的出生日期，系统即会协助家长检核孩子的发展，让孩子的成长基础更稳固、大脑的神经网络更紧密，好在未来有实力迎向各种挑战。
                             </p>
                         </section>
 
@@ -87,7 +85,7 @@ if($membership['membership']<time()){
 
                                     ?>
                                 </h3>
-                                    <h4>
+                                <h4>
                                     <?php
                                     $birthday = new DateTime($_SESSION['CURRENT_KID_BIRTH_DAY']);
                                     $diff = $birthday->diff(new DateTime());
@@ -103,7 +101,7 @@ if($membership['membership']<time()){
                                     }
                                     echo ')';
                                     ?>
-                                        </h4>
+                                </h4>
 
                                 <h4>进度记分板</h4>
                                 <ul>
@@ -136,25 +134,26 @@ if($membership['membership']<time()){
                             <div class="project_list">
                                 <ul class="clearfix">
                                     <li class="ttile selected">
-                                        <a id="tab_01">语言<br>沟通</a>
+                                        <a id="tab_01">语言沟通</a>
                                     </li>
                                     <li class="ttile">
-                                        <a id="tab_02">社会<br>人格</a>
+                                        <a id="tab_02">社会人格</a>
                                     </li>
                                     <li class="ttile">
-                                        <a id="tab_03">自觉<br>认知</a>
+                                        <a id="tab_03">自觉认知</a>
                                     </li>
                                     <li class="ttile">
-                                        <a id="tab_04">粗动作<br>技能</a>
+                                        <a id="tab_04">粗动作</a>
                                     </li>
                                     <li class="ttile">
-                                        <a id="tab_05">细动作<br>技能</a>
+                                        <a id="tab_05">细动作</a>
                                     </li>
                                     <li class="ttile">
-                                        <a id="tab_06">自主<br>能力</a>
+                                        <a id="tab_06">自主能力</a>
                                     </li>
                                 </ul>
                             </div>
+                            <p><img src="../content/epaper/images/autonomy.jpg" alt=""></p>
                         </section>
                         <section class="replist">
                             <section class="tab-bd">
