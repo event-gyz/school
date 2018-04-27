@@ -26,6 +26,7 @@ include('inc.php');
                 </div>
                 <form name="share_register_form" id="share_register_form" method="post">
                     <div class="share_register">
+                        <p>注：手机注册送半年</p>
                         <div class="mobile_code">
                             <input name="share_mobile" id="share_mobile" type="tel" class="tf" placeholder="请输入手机号码">
                             <div id="div_err_mobile_reg" class="errorbar">请输入正确的手机号</div>
@@ -37,6 +38,10 @@ include('inc.php');
                         <input type="submit" class="share_register_submit" value="注册">
                     </div>
                 </form>
+                <div class="probation weixin login_wx" id="login_wx">
+                    <p><img src="../content/epaper/images/weixin.png" alt=""></p>
+                    <span>微信试用</span>
+                </div>
             </section>
         </section>
     </section>
