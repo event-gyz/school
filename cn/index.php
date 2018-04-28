@@ -246,28 +246,9 @@ if(isset($_SESSION['user_token'])) {
                 <!--//最新消息//-->
                 <!--【註1】固定五則訊息，最後二個給予class="m-none"是For手機不顯示用。-->
                 <section class="list02 fl">
-                    <!-- <h3 class="title">家长分享<a href="parental_sharing.php" class="i-more">更多内容</a></h3>
-                    <ul>
-                        <li>
-                            <h4>您的宝宝最近一次疫苗</h4>
-                            <p>
-                                2018年4月15日1月龄乙肝疫苗第二次-乙型病毒性肝炎
-                            </p>
-                        </li>
-                        <li>
-                            <h4>您的宝宝最近一次疫苗</h4>
-                            <p>
-                                2018年4月15日1月龄乙肝疫苗第二次-乙型病毒性肝炎
-                            </p>
-                        </li>
-                        <li>
-                            <h4>您的宝宝最近一次疫苗</h4>
-                            <p>
-                                2018年4月15日1月龄乙肝疫苗第二次-乙型病毒性肝炎
-                            </p>
-                        </li>
-                    </ul> -->
-                    <?php //af_index_list_news(); ?>
+                     <h3 class="title">家长分享<a href="parental_sharing.php" class="i-more">更多内容</a></h3>
+
+                    <?php index_grow_diary_list(); ?>
                 </section>
                 <!--//最新消息//-->
 

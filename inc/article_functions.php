@@ -510,4 +510,24 @@ function get_baby_vaccine(){
     echo '<a href="javascript:void(0)" onclick="goUrlClick(\'baby_vaccine.php\')" class="i-more">完整疫苗接种信息》</a>';
 
 }
+
+function index_grow_diary_list() {
+	$sql = "SELECT * from grow_diary WHERE `open`='1' order by rand() limit 3";
+    $result = M()->query($sql);
+	echo("<ul>");
+	foreach($result as $key=>$value){
+		$Id = $value['Id'];
+        $title = $value['title'];
+//		$time = date('Y年m月d日',$value['create_time']);
+		$content = mb_substr($value['content'],0,10, 'utf-8');
+		echo("<a href='ceanza_view.php?grow_id={$Id}' class='fancybox'>
+                            <h4>{$title}</h4></a>
+                            <p>
+        {$content}
+        </p>");
+//		echo('<li class="m-none"><a href="javascript:loadArticle('.$uid.')" class="fancybox"><div class="n-img"><img src="../theme/cn/images/content/img/'.$icon.'"></div><span><b>'.$title.'</b>'.$desc.'<i>'.$pub_date.'</i></span></a></li>');
+	}
+	echo("</ul>");
+
+}
 ?>

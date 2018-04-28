@@ -224,4 +224,5 @@ function get_articles($type,$count) {
 	echo(result_to_table($result));
 	return mysqli_num_rows($result);
 }
+
 ?>

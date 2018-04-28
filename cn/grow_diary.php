@@ -7,6 +7,11 @@ include("inc.php");
 include("../inc/upload.php");
 if(isset($_POST['type']) && $_POST['type'] == 'diary'){
 
+    if(isset($_POST['checkshare']) && ($_POST['checkshare']=='on')){
+        $open = 1;
+    }else{
+        $open = 2;
+    }
     $title = $_POST['title'];
     $content = $_POST['content'];
     $files = $_FILES['file'];
@@ -21,8 +26,8 @@ if(isset($_POST['type']) && $_POST['type'] == 'diary'){
     else {
         if ($supervisor_uid = $CMEMBER->accessFromToken($_token)) {
             $picurl = ceanza_upload("file");
-            $sql = "INSERT INTO grow_diary (title,content,picurl, address,create_time,uid,grow_diary_category_name,`date`)  "
-                . "VALUES ('".$title."','".$content."','".$picurl."','".$address."','".$create_time."','".$supervisor_uid."','".$grow_diary_category_name."','". $date ."')";
+            $sql = "INSERT INTO grow_diary (title,content,picurl, address,create_time,uid,grow_diary_category_name,`date`,`open`)  "
+                . "VALUES ('".$title."','".$content."','".$picurl."','".$address."','".$create_time."','".$supervisor_uid."','".$grow_diary_category_name."','". $date ."','". $open ."')";
             $result = query($sql);
             if($result!=null) {
                 header("Location:ceanza_list.php");
