@@ -167,9 +167,11 @@ if(isset($payload)) {
                         </div>
                         <ul class="info_list">
                             <li>
-                                <p class="account"></p>
-                                <span>账号资料</span>
-                                <input type="text" value="<?=$_SESSION['user_email']?>" disabled>
+                                <a href="#fy-modify" class="basic-info">
+                                    <p class="account"></p>
+                                    <span>账号资料</span>
+                                    <input type="text" value="<?=$_SESSION['user_email']?>" disabled>
+                                </a>
                             </li>
                             <li>
                                 <p class="mobile"></p>
@@ -275,9 +277,9 @@ if(isset($payload)) {
         // $(this).closest('form').submit();
 
     });
-    // $('form').submit( function(){
-    //     return true;
-    // });
+    $('.basic-info').click(function(){
+        $.fancybox({href: "#fy-modify"});
+    })
 
     $('.bind_mobile').click(function(){
         $.fancybox({
