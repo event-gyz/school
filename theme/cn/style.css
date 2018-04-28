@@ -713,7 +713,7 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .info_list li p.height{background: url('../../content/epaper/images/height.png') no-repeat center center;background-size: 60% 70%;}
 .info_list li p.weight{background: url('../../content/epaper/images/weight.png') no-repeat center center;background-size: 60% 70%;}
 .info_list li input{float: right;background: #fff;width: 4.4878rem;height: 1.0732rem;text-align: right;font-size: 0.3902rem;color:#B7B2A9;}
-.info_list li>a{display:block;color:#B7B2A9;transition: none;}
+.info_list li>a{color:#B7B2A9;transition: none;}
 .baby_info .info_list li input{width: 3.5122rem;}
 .set_meal_info{padding: 0.3902rem 0.5854rem;}
 .set_meal_info h3{font-size: 0.5463rem;line-height: 0.878rem;color:#8CD981;font-weight: normal;}
