@@ -29,6 +29,10 @@ include('inc.php');
         </section>
     </section>
     <!--//主內容//-->
+
+    <!--【Footer】-->
+    <?php include 'inc_footer.html'; ?>
+    <!--【Footer End】-->
 </section>
 <?php include 'inc_bottom_js.php'; ?>
 <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
