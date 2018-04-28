@@ -43,12 +43,13 @@ include('inc.php');
 						$result = M()->query($sql);
 						if(is_array($result) && !empty($result)){
 							foreach($result as $value){
+                                $Id = $value['Id'];
 								$title = $value['title'];
 								$content = $value['content'];
 								$time = $value['create_time'];
 						?>
 								<li>
-									<a href="ceanza_view.php">
+									<a href="ceanza_view.php?grow_id=<?=$Id;?>">
 										<h4><?=$title ?></h4>
 									</a>
 									<p><?=$content?></p>
