@@ -216,6 +216,40 @@
         time.second = 60
     }
 
+    function checkRegTelFormat(){
+        if(!isTel($("#reg_tel").val())){
+            $("#errorbar_reg_tel").show();
+            return false;
+        }
+        else{
+            $("#errorbar_reg_tel").hide();
+            return true;
+        }
+    }
+
+    function checkPasswordRepeat() {
+        var a = $("#reg_password").val();
+        var b = $("#confirm_password").val();
+        if( a !== b) {
+            $("#errorbar_confirm_password").show();
+            return false;
+        }
+        else {
+            $("#errorbar_confirm_password").hide();
+            return true;
+        }
+    }
+
+    function checkRegDateFormat(){
+        if(!isdate($("#reg_date").val())) {
+            $("#errorbar_reg_date").show();
+            return false;
+        }
+        else {
+            $("#errorbar_reg_date").hide();
+            return true;
+        }
+    }
 
     function onMenuItem2Click() {
         $.ajax({url: "check_login_status.ajax.php",

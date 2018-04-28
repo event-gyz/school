@@ -6,6 +6,8 @@ include('inc.php');
 <html><!-- InstanceBegin template="/Templates/_page01.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
     <?php include('inc_head.php');  ?>
+    <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&ak=c5bAV1QzSlHHzKTj3rFkWRO7Ok2pom9n"></script>
+    <script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
     <style>
         body{background: none;}
         h1,h2,h3,h4,h5,h6,p,ul,li,dl,dt,dd{margin:0;padding:0;list-style: none;}
@@ -97,6 +99,8 @@ if(isset($payload)) {
 ?>
 <!-- InstanceBeginEditable name="wrap" -->
 <section id="wrap">
+    <!-- 百度地图 -->
+    <div id="allmap" style="display: none"></div>
     <!-- InstanceEndEditable -->
 
     <!--【Header】-->
@@ -173,6 +177,7 @@ if(isset($payload)) {
                                         </ul>
                                         <p class="close">×</p>
                                     </div>
+                                    <div class="isShare"><i class=""></i>公开</div>
                                 </li>
                                 <li class="title-menu">
                                     <p>日记分类：</p>
@@ -200,7 +205,7 @@ if(isset($payload)) {
                                 <li>
                                     <b class="address"></b>
                                     记录地址：
-                                    <input name="address"  class="address-input" type="text" value="">
+                                    <input type="text" name="address"  class="address-input" id="suggestId"/>
                                 </li>
                             </ul>
                             <ul class="uploadImgList">
@@ -234,6 +239,7 @@ if(isset($payload)) {
 <?php include 'inc_bottom_js.php'; ?>
 <link rel="stylesheet" href="../theme/cn/jquery.cxcalendar.css">
 <script src="../scripts/jquery.cxcalendar.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.1.0.js"> </script>
 <script>
     // 限制可选日期
     $('.date_a').cxCalendar({
@@ -242,6 +248,41 @@ if(isset($payload)) {
         wday: 0,
         endDate: new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate()
     });
+
+    $('.isShare i').click(function(){
+        $(this).toggleClass('isCheck')
+    })
+
+    $(function(){
+        var route_iconBG  = document.getElementsByClassName('route-icon');
+        const map = new BMap.Map("allmap");
+
+        var point = new BMap.Point(116.331398,39.897445);
+        map.centerAndZoom(point,12);
+
+        var geolocation = new BMap.Geolocation();
+        // geolocation.getCurrentPosition( r => {
+        //     if(geolocation.getStatus() == BMAP_STATUS_SUCCESS){
+        //         var mk = new BMap.Marker(r.point);
+        //         var new_point = new BMap.Point(r.point.lng,r.point.lat);
+        //         BMap.Convertor.translate(new_point, 0, point => {
+        //             var geoc = new BMap.Geocoder();
+        //             geoc.getLocation(point, rs => {
+        //                 var addComp = rs.addressComponents;
+        //                 $('#suggestId').val(addComp.district + addComp.street + addComp.streetNumber)
+        //             });
+        //         });
+        //     }
+        // else {
+        //     alert('failed'+geolocation.getStatus());
+        // }
+        // },{enableHighAccuracy: true})
+        // var ac = new BMap.Autocomplete({//建立一个自动完成的对象
+        //     "input" : "suggestId",
+        //     "location" : map
+        // });
+    })
+
 </script>
 </body>
 <!-- InstanceEnd --></html>
