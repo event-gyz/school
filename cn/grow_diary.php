@@ -40,6 +40,11 @@ if(isset($_POST['type']) && $_POST['type'] == 'diary'){
 }
 
 if(isset($_POST['type']) && $_POST['type'] == 'update'){
+    if(isset($_POST['checkshare']) && ($_POST['checkshare']=='on')){
+        $open = 1;
+    }else{
+        $open = 2;
+    }
     $id = $_POST['id'];
     $title = $_POST['title'];
     $content = $_POST['content'];
@@ -60,7 +65,7 @@ if(isset($_POST['type']) && $_POST['type'] == 'update'){
             }else{
                 $picurl = '"'.$files.'"';
             }
-            $sql = "update grow_diary set title='{$title}',content='{$content}',picurl='{$picurl}',address='{$address}',`date`='{$date}' where Id=$id";
+            $sql = "update grow_diary set title='{$title}',content='{$content}',picurl='{$picurl}',address='{$address}',`date`='{$date}',`open`='{$open}' where Id=$id";
             $result = query($sql);
             if($result!=null) {
                 header("Location:ceanza_list.php");

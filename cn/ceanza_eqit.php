@@ -49,7 +49,7 @@ include('inc.php');
                                 <li class="title">
                                     标题：<input type="text" name="title" value="<?php echo $result['title']?>">
                                     <div class="isShare">
-                                        <input type="checkbox" id="checkshare">
+                                        <input type="checkbox" id="checkshare" name="checkshare" <?php echo ($result['open']==1)?'checked':''?>>
                                         <label for="checkshare">公开</label>
                                     </div>
                                 </li>
