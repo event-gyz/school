@@ -97,7 +97,7 @@ if($membership['membership']<time()){
                                     </li>
                                 </ul>
                             </div>
-                            <p><img src="../content/epaper/images/autonomy.jpg" alt=""></p>
+                            <p><img src="../content/epaper/images/language_communication.jpg" alt=""></p>
                         </section>
                         <section class="replist">
                             <section class="tab-bd">
@@ -112,7 +112,6 @@ if($membership['membership']<time()){
                                         <div class="loadmore">
                                             <p><span class="decrement">-</span><span class="increase">+</span>稍早</p>
                                         </div>
-
                                     </table>
                                 </div>
                             </section>
@@ -141,7 +140,7 @@ if($membership['membership']<time()){
 </section>
 
 <script type="text/javascript">
-    $(function() {
+//    $(function() {
         /**
          * 传入相应参数返回圆形制定半径的弧度坐标
          * @param {*} x 中心点X坐标
@@ -255,10 +254,11 @@ if($membership['membership']<time()){
             tspan.setAttribute('background-color', data.background || '');
             // 设置文本背景倒角
             tspan.setAttribute('border-radius', data.radius || '');
+            tspan.setAttribute('alignment-baseline', 'before-edge');
             // 设置文本内容
             tspan.textContent = data.text
             // 边线宽度
-            tspan.setAttribute('font-weight', data.width || 'normal');
+            tspan.setAttribute('font-weight', data.weight || 'normal');
             data.transform ? tspan.setAttribute('transform', data.transform) : '';
             return tspan;
         }
@@ -268,7 +268,7 @@ if($membership['membership']<time()){
          * @param {*} size 已完成的指标个数
          * @param {*} currentSize 当前年龄段所需完成指标个数
          */
-        function svgView($select, size, currentSize) {
+        function svgView($select, size, currentSize , late) {
             var size = size,
                 // 创建SVG
                 svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -277,29 +277,54 @@ if($membership['membership']<time()){
             svg.appendChild(new drawSVG({
                 startAngle: 25,
                 endAngle: 335,
-                x: 110,
-                y: 170,
+                x: 80,
+                y: 120,
                 R: 63,
                 strokelinecap: 'round',
                 color: '#62BE54',
                 strokeWidth: 8,
-                transform: 'rotate(-270, 120, 130)'
+                transform: 'rotate(90, 80, 120)'
+            }));
+            // 画矩形框并加入SVG中
+            svg.appendChild(new drawRectSVG({
+                x: 18,
+                y: 7,
+                width: 12,
+                height: 12,
+                fill: '#FFD181'
             }));
             // 画文本并加入SVG中
             svg.appendChild(new drawTextSVG({
                 x: '50%',
-                y: 115,
+                y: 2,
+                size: '14px',
+                text: '完成度'+Math.round(size/currentSize*100)+'%',
+                color: '#7C7C7C',
+                weight: 'bold',
+                anchor: 'middle'
+            }));
+            svg.appendChild(new drawTextSVG({
+                x: '50%',
+                y: 20,
+                size: '14px',
+                text: '（落后项目：'+late+'）',
+                color: '#A6A7A8',
+                anchor: 'middle'
+            }));
+            svg.appendChild(new drawTextSVG({
+                x: '50%',
+                y: 100,
                 size: '16px',
                 text: '<?= $_SESSION['CURRENT_KID_NICKNAME'];?>',
                 color: '#8D8D8D',
-                width: 'bold',
+                weight: 'bold',
                 anchor: 'middle'
             }));
 
 
             svg.appendChild(new drawTextSVG({
                 x: '50%',
-                y: 135,
+                y: 120,
                 size: '14px',
                 text: '<?php
                     $birthday = new DateTime($_SESSION['CURRENT_KID_BIRTH_DAY']);
@@ -319,125 +344,130 @@ if($membership['membership']<time()){
                 color: '#8D8D8D',
                 anchor: 'middle'
             }));
-            // svg.appendChild(new drawRectSVG({
-            //   x: 66,
-            //   y: 164,
-            //   transform: 'rotate(60, 66, 164)'
-            // }));
-            // svg.appendChild(new drawTextSVG({
-            //   className: 'age-group',
-            //   x: 70,
-            //   y: 176,
-            //   size: '12px',
-            //   text: '1岁',
-            //   color: '#FFF',
-            //   transform: 'rotate(60, 70, 176)'
-            // }));
-            // svg.appendChild(new drawRectSVG({
-            //   x: 66,
-            //   y: 164,
-            //   transform: 'rotate(120, 66, 164)'
-            // }));
-            // svg.appendChild(new drawTextSVG({
-            //   className: 'age-group',
-            //   x: 70,
-            //   y: 176,
-            //   size: '12px',
-            //   text: '2岁',
-            //   color: '#FFF',
-            //   transform: 'rotate(120, 70, 176)'
-            // }));
-            // svg.appendChild(new drawRectSVG({
-            //   x: 66,
-            //   y: 164,
-            //   transform: 'rotate(180, 66, 164)'
-            // }));
-            // svg.appendChild(new drawTextSVG({
-            //   className: 'age-group',
-            //   x: 70,
-            //   y: 176,
-            //   size: '12px',
-            //   text: '3岁',
-            //   color: '#FFF',
-            //   transform: 'rotate(180, 70, 176)'
-            // }));
-            // svg.appendChild(new drawRectSVG({
-            //   x: 66,
-            //   y: 164,
-            //   transform: 'rotate(240, 66, 164)'
-            // }));
-            // svg.appendChild(new drawTextSVG({
-            //   className: 'age-group',
-            //   x: 70,
-            //   y: 176,
-            //   size: '12px',
-            //   text: '4岁',
-            //   color: '#FFF',
-            //   transform: 'rotate(240, 70, 176)'
-            // }));
-            // svg.appendChild(new drawRectSVG({
-            //   x: 66,
-            //   y: 164,
-            //   transform: 'rotate(300, 66, 164)'
-            // }));
-            // svg.appendChild(new drawTextSVG({
-            //   className: 'age-group',
-            //   x: 70,
-            //   y: 176,
-            //   size: '12px',
-            //   text: '5岁',
-            //   color: '#FFF',
-            //   transform: 'rotate(300, 70, 176)'
-            // }));
+            svg.appendChild(new drawRectSVG({
+                x: 33,
+                y: 126,
+                transform: 'rotate(60, 33, 126)'
+            }));
+            svg.appendChild(new drawTextSVG({
+                className: 'age-group',
+                x: 38,
+                y: 130,
+                size: '12px',
+                text: '1岁',
+                color: '#FFF',
+                transform: 'rotate(60, 38, 130)'
+            }));
+            svg.appendChild(new drawRectSVG({
+                x: 51,
+                y: 84,
+                transform: 'rotate(-240, 51, 84)'
+            }));
+            svg.appendChild(new drawTextSVG({
+                className: 'age-group',
+                x: 50,
+                y: 88,
+                size: '12px',
+                text: '2岁',
+                color: '#FFF',
+                transform: 'rotate(-240, 50, 88)'
+            }));
+            svg.appendChild(new drawRectSVG({
+                x: 66,
+                y: 60
+            }));
+            svg.appendChild(new drawTextSVG({
+                className: 'age-group',
+                x: 70,
+                y: 60,
+                size: '12px',
+                text: '3岁',
+                color: '#FFF'
+            }));
+            svg.appendChild(new drawRectSVG({
+                x: 127,
+                y: 84,
+                transform: 'rotate(60, 127, 84)'
+            }));
+            svg.appendChild(new drawTextSVG({
+                className: 'age-group',
+                x: 129,
+                y: 88,
+                size: '12px',
+                text: '4岁',
+                color: '#FFF',
+                transform: 'rotate(60, 129, 88)'
+            }));
+            svg.appendChild(new drawRectSVG({
+                x: 109,
+                y: 154,
+                transform: 'rotate(-60, 109, 154)'
+            }));
+            svg.appendChild(new drawTextSVG({
+                className: 'age-group',
+                x: 111,
+                y: 150,
+                size: '12px',
+                text: '5岁',
+                color: '#FFF',
+                transform: 'rotate(-60, 111, 150)'
+            }));
             svg.appendChild(new drawTextSVG({
                 x: '50%',
-                y: 195,
+                y: 180,
                 size: '13px',
                 text: '0岁~6岁',
                 color: '#62BE55',
-                width: 'bold',
+                weight: 'bold',
+                anchor: 'middle'
+            }));
+            svg.appendChild(new drawTextSVG({
+                x: '50%',
+                y: 180,
+                size: '13px',
+                text: '0岁~6岁',
+                color: '#62BE55',
+                weight: 'bold',
                 anchor: 'middle'
             }));
             // 画内圈并加入SVG中
             svg.appendChild(new drawSVG({
                 startAngle: 1,
                 endAngle: 359,
-                x: 110,
-                y: 170,
+                x: 80,
+                y: 120,
                 R: 57,
                 strokelinecap: 'round',
                 color: '#E9EFF1',
                 opacity: .6,
-                strokeWidth: 5,
-                transform: 'rotate(-270, 120, 130)'
+                strokeWidth: 5
             }));
             // 步长
-
             var step = (330 - 30) / 1200,
                 i = 1;
             // 画当前阶段所需完成度弧线并加入SVG中
             svg.appendChild(new drawSVG({
                 startAngle: 30,
                 endAngle: 30 + (330 - 30) / 1200 * currentSize,
-                x: 110,
-                y: 170,
+                x: 80,
+                y: 120,
                 R: 75,
                 strokelinecap: 'round',
                 strokeWidth: 10,
                 color: '#F3A41A',
-                transform: 'rotate(-270, 120, 130)'
+                transform: 'rotate(90, 80, 120)'
             }));
             // 画已完成度弧线并加入SVG中
             svg.appendChild(new drawSVG({
                 startAngle: 30,
                 endAngle: 30 + step * i,
-                x: 110,
-                y: 170,
+                x: 80,
+                y: 120,
                 R: 75,
                 strokelinecap: 'round',
                 strokeWidth: 10,
-                color: '#ffe400',
-                transform: 'rotate(-270, 120, 130)'
+                color: '#FFD181',
+                transform: 'rotate(90, 80, 120)'
             }));
             // 写入页面
             document.querySelector('.item_successed_chart').appendChild(svg);
@@ -447,42 +477,47 @@ if($membership['membership']<time()){
                 svg.replaceChild(new drawSVG({
                     startAngle: 30,
                     endAngle: 30 + step * i,
-                    x: 110,
-                    y: 170,
+                    x: 80,
+                    y: 120,
                     R: 75,
                     strokelinecap: 'round',
                     strokeWidth: 10,
-                    color: '#ffe400',
-                    transform: 'rotate(-270, 120, 130)'
+                    color: '#FFD181',
+                    transform: 'rotate(90, 80, 120)'
                 }), svg.lastChild);
                 i++;
                 if (i > size) {
                     clearInterval(tc);
                 }
-            }, 20);
+            }, 5);
         };
-        <?php
-        $user_age = $_SESSION['CURRENT_KID_AGE'];
-        $start_age = $user_age-1;
-        $end_age = $user_age+1;
-        if(!empty($e) && ($start_age>=12)){
-            $start_age -=4;
-        }
-        $user_uid = $_SESSION["CURRENT_KID_UID"];
-        $sql = "select count(*) as cc from grow_index left join grow_log as log on log.item_uid=grow_index.uid where ((grow_index.age_min >= '$start_age' and grow_index.age_min<= '$end_age') or (grow_index.age_max <= '$end_age' and grow_index.age_max >= '$start_age')) and user_uid=$user_uid";
-        $res = M()->find($sql);
-        if(empty($res)){
-            $res['cc'] = 0;
-        }
-        ?>
-        <?php
-        $sql = "select count(*) as cc from grow_index where ((grow_index.age_min >= '$start_age' and grow_index.age_min<= '$end_age') or (grow_index.age_max <= '$end_age' and grow_index.age_max >= '$start_age'))";
-        $re = M()->find($sql);
-        if(empty($re)){
-            $re['cc'] = 0;
-        }
-        ?>
-        svgView('#svgView', <?=$res['cc']?>, <?=$re['cc']?>);
+<!--        --><?php
+//        $user_age = $_SESSION['CURRENT_KID_AGE'];
+//        $start_age = $user_age-1;
+//        $end_age = $user_age+1;
+//        if(!empty($e) && ($start_age>=12)){
+//            $start_age -=4;
+//        }
+//        $user_uid = $_SESSION["CURRENT_KID_UID"];
+//        $sql = "select count(*) as cc from grow_index left join grow_log as log on log.item_uid=grow_index.uid where ((grow_index.age_min >= '$start_age' and grow_index.age_min<= '$end_age') or (grow_index.age_max <= '$end_age' and grow_index.age_max >= '$start_age')) and user_uid=$user_uid";
+//        $res = M()->find($sql);
+//        if(empty($res)){
+//            $res['cc'] = 0;
+//        }
+//        $sql = "select count(*) as cc from grow_index where ((grow_index.age_min >= '$start_age' and grow_index.age_min<= '$end_age') or (grow_index.age_max <= '$end_age' and grow_index.age_max >= '$start_age'))";
+//        $re = M()->find($sql);
+//        if(empty($re)){
+//            $re['cc'] = 0;
+//        }
+//
+//        $sql = "select count(DISTINCT grow_index.uid) as cc from grow_index left join grow_log on grow_index.uid = grow_log.item_uid where grow_index.age_max <= '$start_age' and( grow_log.user_uid != $user_uid or grow_log.uid is null)";
+//        $late = M()->find($sql);
+//        if(empty($late)){
+//            $late['cc'] = 0;
+//        }
+//
+//        ?>
+//        svgView('#svgView', <?//=$res['cc']?>//, <?//=$re['cc']?>//, <?//=$late['cc']?>//);
 
 
 //        a=all b=buhui c=yihui
@@ -492,6 +527,7 @@ if($membership['membership']<time()){
             $(".ttile").removeClass("selected");
             $(this).parent('li').addClass("selected");
             $(".loadmore p").removeClass("have_selected");
+            $('.slider_container p>img').attr('src','../content/epaper/images/language_communication.jpg')
         });
         //社会人格
         $("#tab_02").click(function(){
@@ -499,6 +535,7 @@ if($membership['membership']<time()){
             $(".ttile").removeClass("selected");
             $(this).parent('li').addClass("selected");
             $(".loadmore p").removeClass("have_selected");
+            $('.slider_container p>img').attr('src','../content/epaper/images/social_personality.jpg')
         });
         //知觉认知
         $("#tab_03").click(function(){
@@ -506,6 +543,7 @@ if($membership['membership']<time()){
             $(".ttile").removeClass("selected");
             $(this).parent('li').addClass("selected");
             $(".loadmore p").removeClass("have_selected");
+            $('.slider_container p>img').attr('src','../content/epaper/images/conscious_cognition.jpg')
         });
         //粗动作
         $("#tab_04").click(function(){
@@ -513,6 +551,7 @@ if($membership['membership']<time()){
             $(".ttile").removeClass("selected");
             $(this).parent('li').addClass("selected");
             $(".loadmore p").removeClass("have_selected");
+            $('.slider_container p>img').attr('src','../content/epaper/images/fine_action.jpg')
         });
         //细动作
         $("#tab_05").click(function(){
@@ -520,6 +559,7 @@ if($membership['membership']<time()){
             $(".ttile").removeClass("selected");
             $(this).parent('li').addClass("selected");
             $(".loadmore p").removeClass("have_selected");
+            $('.slider_container p>img').attr('src','../content/epaper/images/rough_action.jpg')
         });
         //自主能力
         $("#tab_06").click(function(){
@@ -527,36 +567,24 @@ if($membership['membership']<time()){
             $(".ttile").removeClass("selected");
             $(this).parent('li').addClass("selected");
             $(".loadmore p").removeClass("have_selected");
+            $('.slider_container p>img').attr('src','../content/epaper/images/autonomy.jpg')
         });
 
         ajaxLoadUserStat();
         initList('<?php echo($tabon); ?>');
 
-        $(".project_status p").click(function(){
-            var func = $(this).attr('data-status');
-            var selectedId = $("li[class$='selected']").children("a").attr("ID");
-            var type = '';
-            if(selectedId == 'tab_01'){
-                type = '0';
-            }else if(selectedId == 'tab_02'){
-                type = '1';
-            }else if(selectedId == 'tab_03'){
-                type = '4';
-            }else if(selectedId == 'tab_04'){
-                type = '2';
-            }else if(selectedId == 'tab_05'){
-                type = '3';
-            }else if(selectedId == 'tab_06'){
-                type = '5';
-            }
-            initList(type,func);
-        });
-
         $(".loadmore p").click(function(){
             $(this).children('.increase').toggle().siblings('.decrement').toggle();
+            var have_selected = $(this).hasClass("have_selected");
             var func = $("span[class$='success']").parents().attr('data-status');
             var selectedId = $("li[class$='selected']").children("a").attr("ID");
             var type = '';
+            if(have_selected){
+                $(".loadmore p").removeClass("have_selected");
+            }else{
+                $(this).addClass("have_selected");
+                var early = 'yes';
+            }
             if(selectedId == 'tab_01'){
                 type = '0';
             }else if(selectedId == 'tab_02'){
@@ -572,8 +600,9 @@ if($membership['membership']<time()){
             }
             initList(type,func);
 
+
         });
-    });
+//    });
 
     function initList(type,func) {
         if( $(".increase").css("display")=='none' ) {
@@ -668,12 +697,10 @@ if($membership['membership']<time()){
             success: function (jsonStr) {
                 nick_name = jsonStr.nickname;
                 all_count = jsonStr.all;
-                $(".all").html(all_count);
-                early_count = jsonStr.early;
-                $(".eraly").html(early_count);
+                fina_count = jsonStr.fina;
                 late_count = jsonStr.late;
-                $(".late").html(late_count);
-
+                $("svgView").remove();
+                svgView('#svgView', fina_count, all_count, late_count);
             },
             error: function(xhr, err) {
                 console.log('ajaxLoadUserStat failed: ' + err);

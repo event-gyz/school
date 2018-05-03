@@ -52,8 +52,7 @@ function fetchContent($age, $type, $func,$e) {
 //		if($li_count > 4)
 //			$htmlString .= (' style="display:none;" ');
 		$htmlString .= '>';
-		$htmlString .= '<i><img src="../theme/cn/images/content/item_rep01.jpg"></i><p style="float:left">';
-
+		$htmlString .= '<p style="float:left">';
 		if($checked) $htmlString .= (' checked ');
 
 		$year = floor($age_min/12);

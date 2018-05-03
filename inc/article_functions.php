@@ -236,7 +236,25 @@ function af_recommend_load_article() {
 				$tag_string = '育儿';
 				break;
 		}
-		$sql = "select * from articles where type = 'REC' and tag='$tag_string' order by uid desc limit 1";
+        $show_date = date('Y-m-d',time());
+        $sql = "select * from articles WHERE type='REC' and tag='$tag_string' AND show_date2='{$show_date}' order by uid desc limit 1";
+        $re = M()->select($sql);
+        if(!is_array($re) || empty($re)){
+            $all_art = "SELECT uid from articles WHERE type='REC' and tag='$tag_string' ";
+            $all_res = M()->select($all_art);
+            $all_uid = array_column($all_res,'uid');
+            shuffle($all_uid);
+            $i=0;
+            foreach($all_uid as $k_uid=>$uid){
+                $s_date = date("Y-m-d",strtotime("$i day"));
+                $i++;
+                if(empty($s_date)){
+                    $s_date=$show_date;
+                }
+                $up_sql = "update articles set show_date2='{$s_date}' where uid=$uid";
+                M()->execute($up_sql);
+            }
+        }
 	}
 	else {
 		$args = func_get_args();
