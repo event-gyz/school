@@ -104,16 +104,13 @@ if($membership['membership']<time()){
 
                                 <div class="tabcont on">
                                     <table id="gi_table" border="0" cellpadding="0" cellspacing="0" class="tb-rep">
-                                        <div class="project_status">
-                                            <p data-status="b"><span class="changeStatus success"></span>未完成项目</p>
-                                            <p data-status="c"><span class="changeStatus"></span>已完成项目</p>
-                                        </div>
                                         <div class="title">
                                             <p>时间</p>
                                             <p>发展成就量表</p>
                                         </div>
+                                        <p class="backwardness"><span>红字</span>进度落后</p>
                                         <div class="loadmore">
-                                            <p><span>+</span>稍早</p>
+                                            <p><span class="decrement">-</span><span class="increase">+</span>稍早</p>
                                         </div>
 
                                     </table>
@@ -268,14 +265,10 @@ if($membership['membership']<time()){
 
         /**
          * @param {*} $select  容器
-         * @param {*} size 多少步 共100步
-         * @param {*} old 多少个月 共76步
+         * @param {*} size 已完成的指标个数
+         * @param {*} currentSize 当前年龄段所需完成指标个数
          */
-        function svgView($select, size, old) {
-            if(old > 72){
-                layer.msg('最大年龄阶段为6岁！')
-                old = 72
-            }
+        function svgView($select, size, currentSize) {
             var size = size,
                 // 创建SVG
                 svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -419,12 +412,13 @@ if($membership['membership']<time()){
                 transform: 'rotate(-270, 120, 130)'
             }));
             // 步长
-            var step = (330 - 30) / 100,
+
+            var step = (330 - 30) / 1200,
                 i = 1;
             // 画当前阶段所需完成度弧线并加入SVG中
             svg.appendChild(new drawSVG({
                 startAngle: 30,
-                endAngle: 30 + (330 - 30) / 72 * old,
+                endAngle: 30 + (330 - 30) / 1200 * currentSize,
                 x: 110,
                 y: 170,
                 R: 75,
@@ -467,7 +461,28 @@ if($membership['membership']<time()){
                 }
             }, 20);
         };
-        svgView('#svgView', 40, 40);
+        <?php
+        $user_age = $_SESSION['CURRENT_KID_AGE'];
+        $start_age = $user_age-1;
+        $end_age = $user_age+1;
+        if(!empty($e) && ($start_age>=12)){
+            $start_age -=4;
+        }
+        $user_uid = $_SESSION["CURRENT_KID_UID"];
+        $sql = "select count(*) as cc from grow_index left join grow_log as log on log.item_uid=grow_index.uid where ((grow_index.age_min >= '$start_age' and grow_index.age_min<= '$end_age') or (grow_index.age_max <= '$end_age' and grow_index.age_max >= '$start_age')) and user_uid=$user_uid";
+        $res = M()->find($sql);
+        if(empty($res)){
+            $res['cc'] = 0;
+        }
+        ?>
+        <?php
+        $sql = "select count(*) as cc from grow_index where ((grow_index.age_min >= '$start_age' and grow_index.age_min<= '$end_age') or (grow_index.age_max <= '$end_age' and grow_index.age_max >= '$start_age'))";
+        $re = M()->find($sql);
+        if(empty($re)){
+            $re['cc'] = 0;
+        }
+        ?>
+        svgView('#svgView', <?=$res['cc']?>, <?=$re['cc']?>);
 
 
 //        a=all b=buhui c=yihui
