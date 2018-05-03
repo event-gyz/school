@@ -297,16 +297,32 @@ if($membership['membership']<time()){
                 x: '50%',
                 y: 115,
                 size: '16px',
-                text: '巴布豆',
+                text: '<?= $_SESSION['CURRENT_KID_NICKNAME'];?>',
                 color: '#8D8D8D',
                 width: 'bold',
                 anchor: 'middle'
             }));
+
+
             svg.appendChild(new drawTextSVG({
                 x: '50%',
                 y: 135,
                 size: '14px',
-                text: '(3岁1个月)',
+                text: '<?php
+                    $birthday = new DateTime($_SESSION['CURRENT_KID_BIRTH_DAY']);
+                    $diff = $birthday->diff(new DateTime());
+                    $months = $diff->format('%m') + 12 * $diff->format('%y');
+                    $year = floor($months/12);
+                    $mm = $months%12;
+                    echo '(';
+                    if($year>0){
+                        echo $year.'岁';
+                    }
+                    if($mm>0){
+                        echo $mm.'个月';
+                    }
+                    echo ')';
+                    ?>',
                 color: '#8D8D8D',
                 anchor: 'middle'
             }));
@@ -451,7 +467,7 @@ if($membership['membership']<time()){
                 }
             }, 20);
         };
-        svgView('#svgView', 22, 38);
+        svgView('#svgView', 40, 40);
 
 
 //        a=all b=buhui c=yihui
