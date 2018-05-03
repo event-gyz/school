@@ -71,64 +71,8 @@ if($membership['membership']<time()){
                             <p>
                                 幼儿发展是阶段性的，每一步都必须踩稳才能迈向下一步！「1200项幼儿成长指标」其内容涵盖语言、认知、粗动作、细动作、人格、自主能力等六大范围，家长只要输入孩子的出生日期，系统即会协助家长检核孩子的发展，让孩子的成长基础更稳固、大脑的神经网络更紧密，好在未来有实力迎向各种挑战。
                             </p>
+                            <div class="item_successed_chart"></div>
                         </section>
-
-                        <!--//記分板//-->
-                        <div class="progress_board">
-                            <div class="progress_data">
-
-                                <h3>
-                                    <?=
-
-                                    $_SESSION['CURRENT_KID_NICKNAME'];
-
-
-                                    ?>
-                                </h3>
-                                <h4>
-                                    <?php
-                                    $birthday = new DateTime($_SESSION['CURRENT_KID_BIRTH_DAY']);
-                                    $diff = $birthday->diff(new DateTime());
-                                    $months = $diff->format('%m') + 12 * $diff->format('%y');
-                                    $year = floor($months/12);
-                                    $mm = $months%12;
-                                    echo '(';
-                                    if($year>0){
-                                        echo $year.'岁';
-                                    }
-                                    if($mm>0){
-                                        echo $mm.'个月';
-                                    }
-                                    echo ')';
-                                    ?>
-                                </h4>
-
-                                <h4>进度记分板</h4>
-                                <ul>
-                                    <li>
-                                        <p><span class="all">0</span>/ 1200</p>
-                                        完成项目：
-                                    </li>
-                                    <li>
-                                        <p><span class="eraly">0</span>枚</p>
-                                        提前奖章：
-                                    </li>
-                                    <li>
-                                        <p><span class="late">755</span>项</p>
-                                        落后项目：
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!--//指標列表說明//-->
-                        <div class="icon_explain">
-                            <p><img src="../theme/cn/images/content/item_rep01.jpg"></b>进度超前
-                                <span>红字</span>进度落后</p>
-                            <p><img src="../theme/cn/images/content/item_rep02.jpg"></b>详细说明
-                                <img src="../theme/cn/images/content/item_rep03.jpg"></b>专家建议</p>
-                        </div>
-
                         <!--//成長指標列表//-->
                         <section class="slider_container">
                             <div class="project_list">
@@ -201,6 +145,315 @@ if($membership['membership']<time()){
 
 <script type="text/javascript">
     $(function() {
+        /**
+         * 传入相应参数返回圆形制定半径的弧度坐标
+         * @param {*} x 中心点X坐标
+         * @param {*} y 中心点y坐标
+         * @param {*} R 圆半径
+         * @param {*} a 角度
+         */
+        function coordMap(x, y, R, a) {
+            var ta = (360 - a) * Math.PI / 180,
+                tx, ty;
+            tx = R * Math.cos(ta); // 角度邻边
+            ty = R * Math.sin(ta); // 角度的对边
+            return {
+                x: x + tx,
+                y: y - ty // 注意此处是“-”号，因为我们要得到的Y是相对于（0,0）而言的。
+            }
+        }
+
+        /**
+         * 创建弧线
+         * @param {*} data.startAngle 开始角度
+         * @param {*} data.endAngle 结束角度
+         * @param {*} data.R 圆半径
+         * @param {*} data.x 中心点X坐标
+         * @param {*} data.y 中心点y坐标
+         * @param {*} data.color 边框颜色  默认#CCC
+         * @param {*} data.strokeWidth 边框宽度 默认1
+         * @param {*} data.strokelinecap 不同类型的路径的开始结束点 可选值 butt round square  默认butt
+         * @param {*} data.strokeDasharray 虚线设置 它是一个<length>和<percentage>数列，数与数之间用逗号或者
+         * 空白隔开，指定短划线和缺口的长度。如果提供了奇数个值，则这个值的数列重复一次，从而变成偶数个值。因此，5,3,2等同于5,3,2,5,3,2。
+         * @param {*} data.transform CSS3旋转设置
+         */
+        function drawSVG(data) {
+            var path,
+                // 起点坐标
+                s = new coordMap(data.x, data.y, data.R, data.startAngle),
+                // 结束坐标
+                e = new coordMap(data.x, data.y, data.R, data.endAngle),
+                // 创建弧线路径
+                tpath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            // 画一段到(x,y)的椭圆弧. 椭圆弧的 x, y 轴半径分别为 rx,ry. 椭圆相对于 x 轴旋转 x-axis-rotation 度. large-arc=0表明弧线小于180读, large-arc=1表示弧线大于180度. sweep=0表明弧线逆时针旋转, sweep=1表明弧线顺时间旋转.
+            // svg : [A | a] (rx ry x-axis-rotation large-arc-flag sweep-flag x y)+
+            path = 'M' + s.x + ',' + s.y + 'A' + data.R + ',' + data.R + ',0,' + (+(data.endAngle - data.startAngle > 180)) + ',1,' + e.x + ',' + e.y;
+            // 设置路径
+            tpath.setAttribute('d', path);
+            // 去掉填充
+            tpath.setAttribute("fill", "none");
+            // 设置颜色
+            tpath.setAttribute('stroke', data.color || '#CCC');
+            // 设置透明度
+            tpath.setAttribute('opacity', data.opacity || '1');
+            // 边线宽度
+            tpath.setAttribute('stroke-width', data.strokeWidth || 1);
+            data.strokelinecap ? tpath.setAttribute('stroke-linecap', data.strokelinecap) : '';
+            data.strokeDasharray ? tpath.setAttribute('stroke-dasharray', data.strokeDasharray) : '';
+            data.transform ? tpath.setAttribute('transform', data.transform) : '';
+            return tpath;
+        }
+
+        /**
+         * 创建文本
+         * @param {*} data.x 中心点X坐标
+         * @param {*} data.y 中心点y坐标
+         * @param {*} data.transform CSS3旋转设置
+         */
+        function drawRectSVG(data) {
+            // 创建text
+            var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+            // 设置 x
+            rect.setAttribute('x', data.x);
+            // 设置 y
+            rect.setAttribute('y', data.y);
+            // 设置 width
+            rect.setAttribute('width', data.width || '28');
+            // 设置 height
+            rect.setAttribute('height', data.height || '16');
+            // 设置 rx
+            rect.setAttribute('rx', data.rx || '2');
+            // 设置 ry
+            rect.setAttribute('ry', data.ry || '2');
+            // 设置 fill
+            rect.setAttribute('fill', data.fill || '#62BE54');
+            data.transform ? rect.setAttribute('transform', data.transform) : '';
+            return rect;
+        }
+
+        /**
+         * 创建文本
+         * @param {*} data.x 中心点X坐标
+         * @param {*} data.y 中心点y坐标
+         * @param {*} data.strokeDasharray 虚线设置 它是一个<length>和<percentage>数列，数与数之间用逗号或者
+         * 空白隔开，指定短划线和缺口的长度。如果提供了奇数个值，则这个值的数列重复一次，从而变成偶数个值。因此，5,3,2等同于5,3,2,5,3,2。
+         * @param {*} data.transform CSS3旋转设置
+         */
+        function drawTextSVG(data) {
+            // 创建text
+            var tspan = document.createElementNS("http://www.w3.org/2000/svg", "text");
+            // 设置 class
+            tspan.setAttribute('class', data.className || '');
+            // 设置 x
+            tspan.setAttribute('x', data.x);
+            // 设置 y
+            tspan.setAttribute('y', data.y);
+            // 设置文本大小
+            tspan.setAttribute("font-size", data.size || '12px');
+            // 设置颜色
+            tspan.setAttribute('fill', data.color || '#CCC');
+            // 设置文本居中
+            tspan.setAttribute('text-anchor', data.anchor || '');
+            // 设置文本背景颜色
+            tspan.setAttribute('background-color', data.background || '');
+            // 设置文本背景倒角
+            tspan.setAttribute('border-radius', data.radius || '');
+            // 设置文本内容
+            tspan.textContent = data.text
+            // 边线宽度
+            tspan.setAttribute('font-weight', data.width || 'normal');
+            data.transform ? tspan.setAttribute('transform', data.transform) : '';
+            return tspan;
+        }
+
+        /**
+         * @param {*} $select  容器
+         * @param {*} size 多少步 共100步
+         * @param {*} old 多少个月 共76步
+         */
+        function svgView($select, size, old) {
+            if(old > 72){
+                layer.msg('最大年龄阶段为6岁！')
+                old = 72
+            }
+            var size = size,
+                // 创建SVG
+                svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            svg.setAttribute("version", "1.1"); // IE9+ support SVG 1.1 version
+            // 画轴线并加入SVG中
+            svg.appendChild(new drawSVG({
+                startAngle: 25,
+                endAngle: 335,
+                x: 110,
+                y: 170,
+                R: 63,
+                strokelinecap: 'round',
+                color: '#62BE54',
+                strokeWidth: 8,
+                transform: 'rotate(-270, 120, 130)'
+            }));
+            // 画文本并加入SVG中
+            svg.appendChild(new drawTextSVG({
+                x: '50%',
+                y: 115,
+                size: '16px',
+                text: '巴布豆',
+                color: '#8D8D8D',
+                width: 'bold',
+                anchor: 'middle'
+            }));
+            svg.appendChild(new drawTextSVG({
+                x: '50%',
+                y: 135,
+                size: '14px',
+                text: '(3岁1个月)',
+                color: '#8D8D8D',
+                anchor: 'middle'
+            }));
+            // svg.appendChild(new drawRectSVG({
+            //   x: 66,
+            //   y: 164,
+            //   transform: 'rotate(60, 66, 164)'
+            // }));
+            // svg.appendChild(new drawTextSVG({
+            //   className: 'age-group',
+            //   x: 70,
+            //   y: 176,
+            //   size: '12px',
+            //   text: '1岁',
+            //   color: '#FFF',
+            //   transform: 'rotate(60, 70, 176)'
+            // }));
+            // svg.appendChild(new drawRectSVG({
+            //   x: 66,
+            //   y: 164,
+            //   transform: 'rotate(120, 66, 164)'
+            // }));
+            // svg.appendChild(new drawTextSVG({
+            //   className: 'age-group',
+            //   x: 70,
+            //   y: 176,
+            //   size: '12px',
+            //   text: '2岁',
+            //   color: '#FFF',
+            //   transform: 'rotate(120, 70, 176)'
+            // }));
+            // svg.appendChild(new drawRectSVG({
+            //   x: 66,
+            //   y: 164,
+            //   transform: 'rotate(180, 66, 164)'
+            // }));
+            // svg.appendChild(new drawTextSVG({
+            //   className: 'age-group',
+            //   x: 70,
+            //   y: 176,
+            //   size: '12px',
+            //   text: '3岁',
+            //   color: '#FFF',
+            //   transform: 'rotate(180, 70, 176)'
+            // }));
+            // svg.appendChild(new drawRectSVG({
+            //   x: 66,
+            //   y: 164,
+            //   transform: 'rotate(240, 66, 164)'
+            // }));
+            // svg.appendChild(new drawTextSVG({
+            //   className: 'age-group',
+            //   x: 70,
+            //   y: 176,
+            //   size: '12px',
+            //   text: '4岁',
+            //   color: '#FFF',
+            //   transform: 'rotate(240, 70, 176)'
+            // }));
+            // svg.appendChild(new drawRectSVG({
+            //   x: 66,
+            //   y: 164,
+            //   transform: 'rotate(300, 66, 164)'
+            // }));
+            // svg.appendChild(new drawTextSVG({
+            //   className: 'age-group',
+            //   x: 70,
+            //   y: 176,
+            //   size: '12px',
+            //   text: '5岁',
+            //   color: '#FFF',
+            //   transform: 'rotate(300, 70, 176)'
+            // }));
+            svg.appendChild(new drawTextSVG({
+                x: '50%',
+                y: 195,
+                size: '13px',
+                text: '0岁~6岁',
+                color: '#62BE55',
+                width: 'bold',
+                anchor: 'middle'
+            }));
+            // 画内圈并加入SVG中
+            svg.appendChild(new drawSVG({
+                startAngle: 1,
+                endAngle: 359,
+                x: 110,
+                y: 170,
+                R: 57,
+                strokelinecap: 'round',
+                color: '#E9EFF1',
+                opacity: .6,
+                strokeWidth: 5,
+                transform: 'rotate(-270, 120, 130)'
+            }));
+            // 步长
+            var step = (330 - 30) / 100,
+                i = 1;
+            // 画当前阶段所需完成度弧线并加入SVG中
+            svg.appendChild(new drawSVG({
+                startAngle: 30,
+                endAngle: 30 + (330 - 30) / 72 * old,
+                x: 110,
+                y: 170,
+                R: 75,
+                strokelinecap: 'round',
+                strokeWidth: 10,
+                color: '#F3A41A',
+                transform: 'rotate(-270, 120, 130)'
+            }));
+            // 画已完成度弧线并加入SVG中
+            svg.appendChild(new drawSVG({
+                startAngle: 30,
+                endAngle: 30 + step * i,
+                x: 110,
+                y: 170,
+                R: 75,
+                strokelinecap: 'round',
+                strokeWidth: 10,
+                color: '#ffe400',
+                transform: 'rotate(-270, 120, 130)'
+            }));
+            // 写入页面
+            document.querySelector('.item_successed_chart').appendChild(svg);
+            // 通过设置时间循环步
+            var tc = setInterval(function() {
+                // 创建新的弧线 替换进度弧线
+                svg.replaceChild(new drawSVG({
+                    startAngle: 30,
+                    endAngle: 30 + step * i,
+                    x: 110,
+                    y: 170,
+                    R: 75,
+                    strokelinecap: 'round',
+                    strokeWidth: 10,
+                    color: '#ffe400',
+                    transform: 'rotate(-270, 120, 130)'
+                }), svg.lastChild);
+                i++;
+                if (i > size) {
+                    clearInterval(tc);
+                }
+            }, 20);
+        };
+        svgView('#svgView', 22, 38);
+
+
 //        a=all b=buhui c=yihui
         //语言沟通
         $("#tab_01").click(function(){
