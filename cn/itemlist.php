@@ -553,16 +553,10 @@ if($membership['membership']<time()){
         });
 
         $(".loadmore p").click(function(){
-            var have_selected = $(this).hasClass("have_selected");
+            $(this).children('.increase').toggle().siblings('.decrement').toggle();
             var func = $("span[class$='success']").parents().attr('data-status');
             var selectedId = $("li[class$='selected']").children("a").attr("ID");
             var type = '';
-            if(have_selected){
-                $(".loadmore p").removeClass("have_selected");
-            }else{
-                $(this).addClass("have_selected");
-                var early = 'yes';
-            }
             if(selectedId == 'tab_01'){
                 type = '0';
             }else if(selectedId == 'tab_02'){
@@ -576,12 +570,16 @@ if($membership['membership']<time()){
             }else if(selectedId == 'tab_06'){
                 type = '5';
             }
-            initList(type,func,early);
+            initList(type,func);
 
         });
     });
 
-    function initList(type,func,early) {
+    function initList(type,func) {
+        if( $(".increase").css("display")=='none' ) {
+            var early = 'yes';
+
+        }
         cur_func = func;
         var url = "gi_list_by_age.php?t="+type;
         if(func){
@@ -626,24 +624,20 @@ if($membership['membership']<time()){
             loadGIDetail(u,t);
             return false;
         });
-        $(".new_ck").unbind();
-        $(".new_ck").change(function() {
-                //alert($(this).val() + ($(this).prop("checked")?"checked":"unchecked"));
-                var item_uid = $(this).val();
-                var checked = ($(this).prop("checked")?1:0);
-                $("input[value="+item_uid+"]").prop("checked",$(this).prop("checked"));
-                ajaxCheckItem(item_uid,checked);
+        $(".isComplete").unbind();
+        $(".isComplete").click(function() {
+                var item_uid = $(this).attr('name');
+                ajaxCheckItem(item_uid);
             }
         );
     }
 
-    function ajaxCheckItem(uid,checked) {
+    function ajaxCheckItem(uid) {
         $.ajax({
             url: "gi_check_item.ajax.php",
             type: "POST",
             data: {
-                'p1': uid,
-                'p2': checked,
+                'p1': uid
             },
             dataType: "json",
             success: function (jsonStr) {
