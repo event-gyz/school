@@ -29,19 +29,19 @@ else {
 	$nickname = $_SESSION['CURRENT_KID_NICKNAME'];
 }
 
-// late
+
 $user_age = $_SESSION['CURRENT_KID_AGE'];
 $start_age = $user_age-1;
 $end_age = $user_age+1;
-if(!empty($e) && ($start_age>=12)){
-    $start_age -=4;
-}
 $user_uid = $_SESSION["CURRENT_KID_UID"];
+
+//fina
 $sql = "select count(*) as cc from grow_index left join grow_log as log on log.item_uid=grow_index.uid where ((grow_index.age_min >= '$start_age' and grow_index.age_min<= '$end_age') or (grow_index.age_max <= '$end_age' and grow_index.age_max >= '$start_age')) and user_uid=$user_uid";
 $res = M()->find($sql);
 if(empty($res)){
     $res['cc'] = 0;
 }
+//all
 $sql = "select count(*) as cc from grow_index where ((grow_index.age_min >= '$start_age' and grow_index.age_min<= '$end_age') or (grow_index.age_max <= '$end_age' and grow_index.age_max >= '$start_age'))";
 $re = M()->find($sql);
 if(empty($re)){

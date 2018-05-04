@@ -113,12 +113,13 @@ if(isset($payload)) {
         $member_uid = $CMEMBER->accessFromToken($_SESSION['user_token']);
     }
     if($member_uid > 0) {
-        $sql = "select first_name,email,cellphone,image_url from member where uid='$member_uid'";
+        $sql = "select * from member where uid='$member_uid'";
         $result = M()->find($sql);
         if($result!=null) {
             $name = $result['first_name'];
             $email = $result['email'];
             $phone = $result['cellphone'];
+            $membership = $result['membership'];
             $image_url = (!empty($result['image_url']) && $result['image_url']!=' ')?$result['image_url']:'';
         }
         unset($result);
@@ -208,7 +209,7 @@ if(isset($payload)) {
                                 <span>推荐好友</span>
                             </li>
                             <li>
-                                <input type="text" value="2018年3月20日" disabled>
+                                <input type="text" value="<?= date('Y年m月d日',$membership)?>" disabled>
                                 <p class="expiry_date"></p>
                                 <span>会员截止日期</span>
                             </li>

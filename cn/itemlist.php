@@ -587,16 +587,22 @@ if($membership['membership']<time()){
             var early = 'yes';
         }
         if(selectedId == 'tab_01'){
+            //语言沟通
             type = '0';
         }else if(selectedId == 'tab_02'){
+            //社会
             type = '1';
         }else if(selectedId == 'tab_03'){
+            //自觉认知
             type = '4';
         }else if(selectedId == 'tab_04'){
+            //粗动作
             type = '2';
         }else if(selectedId == 'tab_05'){
+            //系动作
             type = '3';
         }else if(selectedId == 'tab_06'){
+            //自主能力
             type = '5';
         }
         initList(type,func);
