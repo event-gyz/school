@@ -450,9 +450,11 @@ function af_recommend_list($tag) {
 		if(empty($icon))
 			$icon = 'ig04_70-70.jpg';
 		if($_show_image)
-			echo('<li><a href="javascript:loadMainArticle('.$uid.');"><img src="../theme/cn/images/content/img/'.$icon.'"><span><b>'.$title.'</b>'.$desc.'<i>'.$pub_date.'</i></span></a></li>');
+//			echo('<li><a href="javascript:loadMainArticle('.$uid.');"><img src="../theme/cn/images/content/img/'.$icon.'"><span><b>'.$title.'</b>'.$desc.'<i>'.$pub_date.'</i></span></a></li>');
+            echo('<li><a href="javascript:loadMainArticle('.$uid.');"><img src="../theme/cn/images/content/img/'.$icon.'"><span><b>'.$title.'</b>'.$desc.'</span></a></li><br/>');
 		else {
-			echo('<li><a href="javascript:loadMainArticle('.$uid.');"><b>'.$title.'</b>'.$desc.'<i>'.$pub_date.'</i></a></li>');
+//			echo('<li><a href="javascript:loadMainArticle('.$uid.');"><b>'.$title.'</b>'.$desc.'<i>'.$pub_date.'</i></a></li>');
+            echo('<li><a href="javascript:loadMainArticle('.$uid.');"><b>'.$title.'</b>'.$desc.'</a></li>');
 		}
 	}
 }
