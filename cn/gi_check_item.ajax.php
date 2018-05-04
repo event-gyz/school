@@ -3,7 +3,8 @@ session_start();
 include('inc.php');
 	
 $item_uid = $_REQUEST['p1'];
-$is_learned = $_REQUEST['p2'];
+//$is_learned = $_REQUEST['p2'];
+$is_learned = 1;
 $user_uid = $_SESSION['CURRENT_KID_UID'];	
 $user_age = $_SESSION['CURRENT_KID_AGE'];
 

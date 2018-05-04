@@ -113,12 +113,13 @@ if(isset($payload)) {
         $member_uid = $CMEMBER->accessFromToken($_SESSION['user_token']);
     }
     if($member_uid > 0) {
-        $sql = "select first_name,email,cellphone,image_url from member where uid='$member_uid'";
+        $sql = "select * from member where uid='$member_uid'";
         $result = M()->find($sql);
         if($result!=null) {
             $name = $result['first_name'];
             $email = $result['email'];
             $phone = $result['cellphone'];
+            $membership = $result['membership'];
             $image_url = (!empty($result['image_url']) && $result['image_url']!=' ')?$result['image_url']:'';
         }
         unset($result);
@@ -167,9 +168,11 @@ if(isset($payload)) {
                         </div>
                         <ul class="info_list">
                             <li>
-                                <p class="account"></p>
-                                <span>账号资料</span>
-                                <input type="text" value="<?=$_SESSION['user_email']?>" disabled>
+                                <a href="#fy-modify" class="basic-info">
+                                    <p class="account"></p>
+                                    <span>账号资料</span>
+                                    <input type="text" value="<?=$_SESSION['user_email']?>" disabled>
+                                </a>
                             </li>
                             <li>
                                 <p class="mobile"></p>
@@ -181,7 +184,7 @@ if(isset($payload)) {
                                     <?php
                                 }else{
                                     ?>
-                                    <b><a style="float: right;width: 4.4878rem;height: 1.0732rem;text-align: right;color:#C84648;padding:0;font-size: 0.3902rem;" class="bind_mobile">现在绑定立享好礼</a></b>
+                                    <b><a style="float: right;width: 4.4878rem;height: 1.0732rem;text-align: right;color:#C84040;padding:0;font-size: 0.3902rem;" class="bind_mobile">绑定手机送好礼</a></b>
                                     <?php
                                 }
                                 ?>
@@ -201,11 +204,14 @@ if(isset($payload)) {
                                 <span>专家咨询</span>
                             </li>
                             <li>
-                                <a href="share_tips.php" class="recommend_friends">
-                                    <i></i>
-                                    <p class="recommend"></p>
-                                    <span>推荐好友</span>
-                                </a>
+                                <a href="share_tips.php" class="recommend_friends">推荐好友送好礼</a>
+                                <p class="recommend"></p>
+                                <span>推荐好友</span>
+                            </li>
+                            <li>
+                                <input type="text" value="<?= date('Y年m月d日',$membership)?>" disabled>
+                                <p class="expiry_date"></p>
+                                <span>会员截止日期</span>
                             </li>
                         </ul>
                         <!--                        <div class='set_meal_info'>-->
@@ -275,9 +281,9 @@ if(isset($payload)) {
         // $(this).closest('form').submit();
 
     });
-    // $('form').submit( function(){
-    //     return true;
-    // });
+    $('.basic-info').click(function(){
+        $.fancybox({href: "#fy-modify"});
+    })
 
     $('.bind_mobile').click(function(){
         $.fancybox({

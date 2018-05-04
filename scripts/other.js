@@ -411,7 +411,7 @@ $(function(){
                 $(this).attr('name',"new_file")
                 $(this).siblings('.imgContent').css('height','auto')
             }else {
-                $(this).siblings('.imgContent').css('height','240px')
+                $(this).siblings('.imgContent').css('height','6.2439rem')
                 imgContent.html('<div class="img" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + this.value + '\'"></div>');
             }
             setTimeout(function(){

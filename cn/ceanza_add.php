@@ -6,6 +6,8 @@ include('inc.php');
 <html><!-- InstanceBegin template="/Templates/_page01.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
     <?php include('inc_head.php');  ?>
+    <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&ak=c5bAV1QzSlHHzKTj3rFkWRO7Ok2pom9n"></script>
+    <script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
     <style>
         body{background: none;}
         h1,h2,h3,h4,h5,h6,p,ul,li,dl,dt,dd{margin:0;padding:0;list-style: none;}
@@ -15,88 +17,11 @@ include('inc.php');
 </head>
 
 <body>
-<?php
-$payload=@$_GET['t'];
-if(isset($payload)) {
-    $dec_string = my_decrypt($payload);
-    $params = explode("|",$dec_string);
-    $action = $params[0];
-    $goodlink = false;
-    if($action == "resetpw") {
-        $link_date = $params[1];
-        $ver_code = $params[2];
-        $token = $params[3];
-        $date1 = new DateTime();
-        $date2 = new DateTime($link_date);
-        $interval = $date1->diff($date2);
-        if($interval->days == 0) {
-            $member_uid = $CMEMBER->accessFromToken($token);
-            $CMEMBER->getUserInfo();
-            if($member_uid > 0) {
-                // check if the link is already used
-                $sql = "UPDATE reset_password SET status=1,act_datetime=now() WHERE member_id='".$CMEMBER->id."' AND code='$ver_code' AND status=0";
-                $result = query($sql);
-                if(mysql_affected_rows() > 0) {
-                    // login for now
-                    $_SESSION['user_token'] = $token;
-                    $_SESSION['user_email'] = $CMEMBER->email;
-                    $_SESSION['user_credit'] = $CMEMBER->credit;
-                    $_SESSION['user_epaper'] = $CMEMBER->epaper;
-                    $goodlink = true;
-                    echo('<script type="text/javascript">$(function(){$.fancybox({        href: "#fcb_pw_reset"    }	);});</script>');
-                }
-            }
-        }
-        if(!$goodlink) {
-            // expired
-            echo('
-						<script type="text/javascript"> 
-							$(function(){
-								$("#wrap").attr("class","inpage");
-								$("#content").load("fg_nouse_content.html");
-							});
-						</script>						
-						');
-        }
-    }
-    else if($action == 'verify') {
-        $member_id = $params[1];
-        $ver_code = $params[2];
-        $sql = "UPDATE reg_verify SET status='1',act_datetime=now() WHERE member_id='$member_id' AND ver_code='$ver_code' AND status=0";
-        $result = query($sql);
-        if(mysql_affected_rows() > 0) {
-            echo ('<script type="text/javascript"> 
-			        			$(function(){
-			        				$("#regwork").fancybox().trigger("click");
-			        			});</script>
-			        		');
-        }
-        else {
-            // TODO error handling
-        }
-    }
-    else if($action == 'epaper' || $action == 'train') {
-        $member_id = $params[1];
-        $token = $params[2];
-        $member_uid = $CMEMBER->accessFromToken($token);
-        if($member_uid > 0) {
-            $CMEMBER->getUserInfo();
-            $_SESSION['user_token'] = $token;
-            $_SESSION['user_email'] = $CMEMBER->email;
-            $_SESSION['user_credit'] = $CMEMBER->credit;
-            $_SESSION['user_epaper'] = $CMEMBER->epaper;
-            if($action == 'epaper') {
-                echo ('<script type="text/javascript"> $(function(){document.location.href ="epaper.php";});</script>');
-            }
-            else {
-                echo ('<script type="text/javascript"> $(function(){document.location.href ="training.php";});</script>');
-            }
-        }
-    }
-}
-?>
+
 <!-- InstanceBeginEditable name="wrap" -->
 <section id="wrap">
+    <!-- 百度地图 -->
+    <div id="allmap" style="display: none"></div>
     <!-- InstanceEndEditable -->
 
     <!--【Header】-->
@@ -173,6 +98,10 @@ if(isset($payload)) {
                                         </ul>
                                         <p class="close">×</p>
                                     </div>
+                                    <div class="isShare">
+                                        <input type="checkbox" id="checkshare" name="checkshare">
+                                        <label for="checkshare">公开</label>
+                                    </div>
                                 </li>
                                 <li class="title-menu">
                                     <p>日记分类：</p>
@@ -200,13 +129,13 @@ if(isset($payload)) {
                                 <li>
                                     <b class="address"></b>
                                     记录地址：
-                                    <input name="address"  class="address-input" type="text" value="">
+                                    <input type="text" name="address"  class="address-input" id="suggestId"/>
                                 </li>
                             </ul>
                             <ul class="uploadImgList">
                                 <li class="uploadImg">
                                     <div class="imgContent">+</div>
-                                    <input type="file" name="file" accept="image/png,image/jpg,image/jpeg"/>
+                                    <input type="file" name="file" accept="image/gif,image/jpeg,image/png,image/bmp,image/jpg"/>
                                     <!-- <div class="camera_photograph">
                                          <p><img src="../content/epaper/images/camera.png" alt=""></p>
                                          <input type="file" class="camera_input" name="myPhoto" capture="camera" accept="image/*"/>
@@ -234,6 +163,7 @@ if(isset($payload)) {
 <?php include 'inc_bottom_js.php'; ?>
 <link rel="stylesheet" href="../theme/cn/jquery.cxcalendar.css">
 <script src="../scripts/jquery.cxcalendar.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.1.0.js"> </script>
 <script>
     // 限制可选日期
     $('.date_a').cxCalendar({
@@ -242,6 +172,37 @@ if(isset($payload)) {
         wday: 0,
         endDate: new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate()
     });
+
+    $(function(){
+        var route_iconBG  = document.getElementsByClassName('route-icon');
+        const map = new BMap.Map("allmap");
+
+        var point = new BMap.Point(116.331398,39.897445);
+        map.centerAndZoom(point,12);
+
+        var geolocation = new BMap.Geolocation();
+        // geolocation.getCurrentPosition( r => {
+        //     if(geolocation.getStatus() == BMAP_STATUS_SUCCESS){
+        //         var mk = new BMap.Marker(r.point);
+        //         var new_point = new BMap.Point(r.point.lng,r.point.lat);
+        //         BMap.Convertor.translate(new_point, 0, point => {
+        //             var geoc = new BMap.Geocoder();
+        //             geoc.getLocation(point, rs => {
+        //                 var addComp = rs.addressComponents;
+        //                 $('#suggestId').val(addComp.district + addComp.street + addComp.streetNumber)
+        //             });
+        //         });
+        //     }
+        // else {
+        //     alert('failed'+geolocation.getStatus());
+        // }
+        // },{enableHighAccuracy: true})
+        // var ac = new BMap.Autocomplete({//建立一个自动完成的对象
+        //     "input" : "suggestId",
+        //     "location" : map
+        // });
+    })
+
 </script>
 </body>
 <!-- InstanceEnd --></html>

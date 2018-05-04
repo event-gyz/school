@@ -236,7 +236,25 @@ function af_recommend_load_article() {
 				$tag_string = '育儿';
 				break;
 		}
-		$sql = "select * from articles where type = 'REC' and tag='$tag_string' order by uid desc limit 1";
+        $show_date = date('Y-m-d',time());
+        $sql = "select * from articles WHERE type='REC' and tag='$tag_string' AND show_date2='{$show_date}' order by uid desc limit 1";
+        $re = M()->select($sql);
+        if(!is_array($re) || empty($re)){
+            $all_art = "SELECT uid from articles WHERE type='REC' and tag='$tag_string' ";
+            $all_res = M()->select($all_art);
+            $all_uid = array_column($all_res,'uid');
+            shuffle($all_uid);
+            $i=0;
+            foreach($all_uid as $k_uid=>$uid){
+                $s_date = date("Y-m-d",strtotime("$i day"));
+                $i++;
+                if(empty($s_date)){
+                    $s_date=$show_date;
+                }
+                $up_sql = "update articles set show_date2='{$s_date}' where uid=$uid";
+                M()->execute($up_sql);
+            }
+        }
 	}
 	else {
 		$args = func_get_args();
@@ -432,9 +450,11 @@ function af_recommend_list($tag) {
 		if(empty($icon))
 			$icon = 'ig04_70-70.jpg';
 		if($_show_image)
-			echo('<li><a href="javascript:loadMainArticle('.$uid.');"><img src="../theme/cn/images/content/img/'.$icon.'"><span><b>'.$title.'</b>'.$desc.'<i>'.$pub_date.'</i></span></a></li>');
+//			echo('<li><a href="javascript:loadMainArticle('.$uid.');"><img src="../theme/cn/images/content/img/'.$icon.'"><span><b>'.$title.'</b>'.$desc.'<i>'.$pub_date.'</i></span></a></li>');
+            echo('<li><a href="javascript:loadMainArticle('.$uid.');"><img src="../theme/cn/images/content/img/'.$icon.'"><span><b>'.$title.'</b>'.$desc.'</span></a></li><br/>');
 		else {
-			echo('<li><a href="javascript:loadMainArticle('.$uid.');"><b>'.$title.'</b>'.$desc.'<i>'.$pub_date.'</i></a></li>');
+//			echo('<li><a href="javascript:loadMainArticle('.$uid.');"><b>'.$title.'</b>'.$desc.'<i>'.$pub_date.'</i></a></li>');
+            echo('<li><a href="javascript:loadMainArticle('.$uid.');"><b>'.$title.'</b>'.$desc.'</a></li>');
 		}
 	}
 }
@@ -508,6 +528,26 @@ function get_baby_vaccine(){
         echo '乙肝疫苗第一次-乙型病毒性肝炎，卡介苗第一次-结核病';
     }
     echo '<a href="javascript:void(0)" onclick="goUrlClick(\'baby_vaccine.php\')" class="i-more">完整疫苗接种信息》</a>';
+
+}
+
+function index_grow_diary_list() {
+	$sql = "SELECT * from grow_diary WHERE `open`='1' order by rand() limit 3";
+    $result = M()->query($sql);
+	echo("<ul>");
+	foreach($result as $key=>$value){
+		$Id = $value['Id'];
+        $title = $value['title'];
+//		$time = date('Y年m月d日',$value['create_time']);
+		$content = mb_substr($value['content'],0,10, 'utf-8');
+		echo("<a href='ceanza_view.php?grow_id={$Id}' class='fancybox'>
+                            <h4>{$title}</h4></a>
+                            <p>
+        {$content}
+        </p>");
+//		echo('<li class="m-none"><a href="javascript:loadArticle('.$uid.')" class="fancybox"><div class="n-img"><img src="../theme/cn/images/content/img/'.$icon.'"></div><span><b>'.$title.'</b>'.$desc.'<i>'.$pub_date.'</i></span></a></li>');
+	}
+	echo("</ul>");
 
 }
 ?>

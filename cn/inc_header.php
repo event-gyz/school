@@ -564,33 +564,6 @@
 		});
 	}
 
-	function goUrlClick(url) {
-		$.ajax({url: "check_login_status.ajax.php",
-			type: "POST",
-			dataType: "json",
-			success: function (jsonStr) {
-				if(jsonStr.islogin==true) {
-					if(jsonStr.haskid==true) {
-						_next_move_ = 0;
-						document.location.href = url;
-					}
-					else {
-						_next_move_ = 100;
-						showEditBabyBox();
-					}
-				}
-				else {
-					_next_move_ = 100;
-					$.fancybox({
-						href: "#fy-login"
-					});
-				}
-			},
-			error: function(xhr, err) {
-//				alert('Ajax request ' + err);
-			}
-		});
-	}
 	//-- birhday --//
 	function showEditBabyBox() {
 		var cur_year = new Date().getFullYear();

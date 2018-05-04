@@ -24,6 +24,12 @@
                 <b>成长报告</b>
             </a>
         </li>
+        <!-- <li class="icon_recommend_friends">
+            <a href="share_tips.php">
+                <p></p>
+                <b>推荐好友</b>
+            </a>
+        </li> -->
         <li class="icon_person">
             <a  href="javascript:void(0)" onclick="goUrlClick('person.php')">
                 <p></p>
@@ -48,7 +54,11 @@
         $('.foooter_nav li.icon_report').addClass('active')
     }else if(pageName() == 'newcomers'){
         $('.foooter_nav li.icon_newcomers').addClass('active')
-    }else if(pageName() == 'person'){
+    }
+    // else if(pageName() == 'share_tips'){
+    //     $('.foooter_nav li.icon_recommend_friends').addClass('active')
+    // }
+    else if(pageName() == 'person'){
         $('.foooter_nav li.icon_person').addClass('active')
     }
 </script>
