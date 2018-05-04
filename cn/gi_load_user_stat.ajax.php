@@ -61,20 +61,9 @@ $sqq = "select item_uid from grow_log where user_uid = $user_uid";
 $noItemUidRe = M()->select($sqq);
 $noItemUidAr = array_column($noItemUidRe,'item_uid');
 $noItemUid = implode($noItemUidAr,',');
-$sql = "select grow_index.uid,grow_index.text,grow_index.age_max,grow_index.age_min from grow_index  where ((grow_index.age_min >= '$start_age' and grow_index.age_min<= '$end_age') or (grow_index.age_max <= '$end_age' and grow_index.age_max >= '$start_age')) and  uid not in ($noItemUid) order by uid asc";
-$resule = M()->select($sql);
-
-//    echo '<pre>';print_r($resule);exit;
-$late = 0;
-foreach($resule as $row) {
-    $age_max = $row["age_max"];
-
-    if ($age_max < $_SESSION['CURRENT_KID_AGE']) {
-        $late++;
-
-    }
-}
-$arr = array('nickname'=>$nickname,'all'=>$re['cc'],'fina'=>$res['cc'],'late'=>$late);
+$sql = "select count(uid) as cc from grow_index  where age_max<$user_age and ((grow_index.age_min >= '$start_age' and grow_index.age_min<= '$end_age') or (grow_index.age_max <= '$end_age' and grow_index.age_max >= '$start_age')) and  uid not in ($noItemUid) order by uid asc";
+$resule = M()->find($sql);
+$arr = array('nickname'=>$nickname,'all'=>$re['cc'],'fina'=>$res['cc'],'late'=>$resule['cc']);
 echo(json_encode($arr));
 
 
