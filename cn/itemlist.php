@@ -352,12 +352,12 @@ if($membership['membership']<time()){
         }));
         svg.appendChild(new drawTextSVG({
             className: 'age-group',
-            x: 38,
+            x: 36,
             y: 130,
             size: '12px',
             text: '1岁',
             color: '#FFF',
-            transform: 'rotate(60, 38, 130)'
+            transform: 'rotate(60, 36, 130)'
         }));
         svg.appendChild(new drawRectSVG({
             x: 51,
@@ -366,12 +366,12 @@ if($membership['membership']<time()){
         }));
         svg.appendChild(new drawTextSVG({
             className: 'age-group',
-            x: 50,
+            x: 49,
             y: 88,
             size: '12px',
             text: '2岁',
             color: '#FFF',
-            transform: 'rotate(-240, 50, 88)'
+            transform: 'rotate(-240, 49, 88)'
         }));
         svg.appendChild(new drawRectSVG({
             x: 66,
@@ -380,7 +380,7 @@ if($membership['membership']<time()){
         svg.appendChild(new drawTextSVG({
             className: 'age-group',
             x: 70,
-            y: 60,
+            y: 62,
             size: '12px',
             text: '3岁',
             color: '#FFF'
@@ -392,12 +392,12 @@ if($membership['membership']<time()){
         }));
         svg.appendChild(new drawTextSVG({
             className: 'age-group',
-            x: 130,
+            x: 128,
             y: 88,
             size: '12px',
             text: '4岁',
             color: '#FFF',
-            transform: 'rotate(60, 130, 88)'
+            transform: 'rotate(60, 128, 88)'
         }));
         svg.appendChild(new drawRectSVG({
             x: 110,
@@ -406,12 +406,12 @@ if($membership['membership']<time()){
         }));
         svg.appendChild(new drawTextSVG({
             className: 'age-group',
-            x: 111,
+            x: 112,
             y: 150,
             size: '12px',
             text: '5岁',
             color: '#FFF',
-            transform: 'rotate(-60, 111, 150)'
+            transform: 'rotate(-60, 112, 150)'
         }));
         svg.appendChild(new drawTextSVG({
             x: '50%',
