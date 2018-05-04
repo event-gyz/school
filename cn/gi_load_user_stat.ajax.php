@@ -48,13 +48,33 @@ if(empty($re)){
     $re['cc'] = 0;
 }
 
-$sql = "select count(DISTINCT grow_index.uid) as cc from grow_index left join grow_log on grow_index.uid = grow_log.item_uid where grow_index.age_max <= '$start_age' and( grow_log.user_uid != $user_uid or grow_log.uid is null)";
-//        echo $sql;
-$late = M()->find($sql);
-if(empty($late)){
-    $late['cc'] = 0;
+//late
+//$sql = "select count(DISTINCT grow_index.uid) as cc from grow_index left join grow_log on grow_index.uid = grow_log.item_uid where grow_index.age_max <= '$start_age' and( grow_log.user_uid != $user_uid or grow_log.uid is null)";
+////        echo $sql;
+//$late = M()->find($sql);
+//if(empty($late)){
+//    $late['cc'] = 0;
+//}
+
+
+$sqq = "select item_uid from grow_log where user_uid = $user_uid";
+$noItemUidRe = M()->select($sqq);
+$noItemUidAr = array_column($noItemUidRe,'item_uid');
+$noItemUid = implode($noItemUidAr,',');
+$sql = "select grow_index.uid,grow_index.text,grow_index.age_max,grow_index.age_min from grow_index  where ((grow_index.age_min >= '$start_age' and grow_index.age_min<= '$end_age') or (grow_index.age_max <= '$end_age' and grow_index.age_max >= '$start_age')) and  uid not in ($noItemUid) order by uid asc";
+$resule = M()->select($sql);
+
+//    echo '<pre>';print_r($resule);exit;
+$late = 0;
+foreach($resule as $row) {
+    $age_max = $row["age_max"];
+
+    if ($age_max < $_SESSION['CURRENT_KID_AGE']) {
+        $late++;
+
+    }
 }
-$arr = array('nickname'=>$nickname,'all'=>$re['cc'],'fina'=>$res['cc'],'late'=>$late['cc']);
+$arr = array('nickname'=>$nickname,'all'=>$re['cc'],'fina'=>$res['cc'],'late'=>$late);
 echo(json_encode($arr));
 
 
