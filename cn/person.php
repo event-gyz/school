@@ -184,7 +184,7 @@ if(isset($payload)) {
                                     <?php
                                 }else{
                                     ?>
-                                    <b><a style="float: right;width: 4.4878rem;height: 1.0732rem;text-align: right;color:#C84040;padding:0;font-size: 0.3902rem;" class="bind_mobile">绑定手机送好礼</a></b>
+                                    <a style="float: right;width: 4.4878rem;height: 1.0732rem;text-align: right;color:#C84040;padding:0;font-size: 0.3902rem;" class="bind_mobile"><b>绑定手机送好礼</b></a>
                                     <?php
                                 }
                                 ?>
@@ -204,7 +204,7 @@ if(isset($payload)) {
                                 <span>专家咨询</span>
                             </li>
                             <li>
-                                <a href="share_tips.php" class="recommend_friends">推荐好友送好礼</a>
+                                <a href="share_tips.php" class="recommend_friends"><b>推荐好友送好礼</b></a>
                                 <p class="recommend"></p>
                                 <span>推荐好友</span>
                             </li>
