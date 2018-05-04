@@ -178,7 +178,7 @@ a.i-more span{font-family: 'simsun';}
 .in_iframe .ratio{display:block;height:auto;width:100%;}
 .in_iframe iframe{height:100%;left:0;position:absolute;top:0;width:100%;}
 .repbox .Txt.fl{padding:0 0 15px;position: relative;}
-.item_successed_chart{position: absolute;top:-10px;right:0;width:50%;height:160px;text-align: center;z-index: 99;}
+.item_successed_chart{position: absolute;top:-18px;right:0;width:50%;height:160px;text-align: center;z-index: 99;}
 .item_successed_chart svg{width:160px;height:200px;}
 .board{background:none repeat scroll 0 0 #5EC152;border-radius:15px;color:#666666;display:inline;float:right;margin:0 0 15px;padding:0 0 0 3%;width:27%;}
 .board .inboard{background:none repeat scroll 0 0 #EEEEEE;border-radius:0 15px 15px 0;padding:15px 5%;}
