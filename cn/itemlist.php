@@ -289,7 +289,7 @@ if($membership['membership']<time()){
         // 画矩形框并加入SVG中
         svg.appendChild(new drawRectSVG({
             x: 18,
-            y: 6,
+            y: 3,
             width: 12,
             height: 12,
             fill: '#FFD181'
