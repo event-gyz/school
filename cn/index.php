@@ -222,7 +222,7 @@ if(isset($_SESSION['user_token'])) {
                     }
                     ?>
 
-                    <a href="javascript:void(0)" class="recommend_tips">推荐好友送好礼</a>
+                    <a href="share_tips.php" class="recommend_tips">推荐好友送好礼</a>
 
                     <ul>
                         <li>

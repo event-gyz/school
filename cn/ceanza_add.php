@@ -6,7 +6,10 @@ include('inc.php');
 <html><!-- InstanceBegin template="/Templates/_page01.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
     <?php include('inc_head.php');  ?>
-    <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&ak=c5bAV1QzSlHHzKTj3rFkWRO7Ok2pom9n"></script>
+    <!-- 开发环境 -->
+    <!-- <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&ak=c5bAV1QzSlHHzKTj3rFkWRO7Ok2pom9n"></script> -->
+    <!-- 测试环境 -->
+    <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&ak=Zl4UAeBdHG55A1LXGuSXgRB4t1f6fMKy"></script>
     <script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
     <style>
         body{background: none;}
@@ -21,7 +24,7 @@ include('inc.php');
 <!-- InstanceBeginEditable name="wrap" -->
 <section id="wrap">
     <!-- 百度地图 -->
-    <div id="allmap" style="display: none"></div>
+    <div id="allmap"></div>
     <!-- InstanceEndEditable -->
 
     <!--【Header】-->
@@ -173,35 +176,26 @@ include('inc.php');
         endDate: new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate()
     });
 
-    $(function(){
-        var route_iconBG  = document.getElementsByClassName('route-icon');
-        const map = new BMap.Map("allmap");
 
-        var point = new BMap.Point(116.331398,39.897445);
-        map.centerAndZoom(point,12);
+    var map = new BMap.Map("allmap");
+    var geoc = new BMap.Geocoder();
+    var geolocation = new BMap.Geolocation();
 
-        var geolocation = new BMap.Geolocation();
-        // geolocation.getCurrentPosition( r => {
-        //     if(geolocation.getStatus() == BMAP_STATUS_SUCCESS){
-        //         var mk = new BMap.Marker(r.point);
-        //         var new_point = new BMap.Point(r.point.lng,r.point.lat);
-        //         BMap.Convertor.translate(new_point, 0, point => {
-        //             var geoc = new BMap.Geocoder();
-        //             geoc.getLocation(point, rs => {
-        //                 var addComp = rs.addressComponents;
-        //                 $('#suggestId').val(addComp.district + addComp.street + addComp.streetNumber)
-        //             });
-        //         });
-        //     }
-        // else {
-        //     alert('failed'+geolocation.getStatus());
-        // }
-        // },{enableHighAccuracy: true})
-        // var ac = new BMap.Autocomplete({//建立一个自动完成的对象
-        //     "input" : "suggestId",
-        //     "location" : map
-        // });
+    geolocation.getCurrentPosition( r => {
+        if(geolocation.getStatus() == BMAP_STATUS_SUCCESS){
+        geoc.getLocation(r.point, function(rs){
+            var addComp = rs.addressComponents;
+            $('#suggestId').val(addComp.province + addComp.city + addComp.district + addComp.street + addComp.streetNumber);
+        });
+    }else {
+        alert('failed' + geolocation.getStatus());
+    }
     })
+
+    // var ac = new BMap.Autocomplete({//建立一个自动完成的对象
+    //     "input" : "suggestId",
+    //     "location" : map
+    // });
 
 </script>
 </body>
