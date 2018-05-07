@@ -87,7 +87,7 @@ input:invalid,textarea:invalid{background-color:#f0dddd;}
 	.Txt a{display:inline !important;color:#69C !important;padding:0 !important;font-size:14px !important;}.Txt a:hover{color:#069 !important;text-decoration:underline;}
 
 /*==【clearfix】==*/
-.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix:after{content:"";display:block;height:0;clear:both;visibility:hidden;}
 *html>body .clearfix{display:inline-block;width:100%;}
 *html .clearfix{height:1%;/* End hide from IE-mac */}
 *+html .clearfix{min-height:1%;/* ie7 hack*/}

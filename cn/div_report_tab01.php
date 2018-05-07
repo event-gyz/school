@@ -1,6 +1,6 @@
 <?php
-session_start(); 
-include('inc.php'); 
+session_start();
+include('inc.php');
 //SELECT TYPE , COUNT( * ) FROM grow_index GROUP BY TYPE
 $fen_mu = array(161,217,176,123,289,180);
 $fen_zi = array(0,0,0,0,0,0);
@@ -33,7 +33,7 @@ $arr_date[] = "";// date("Y");
 $arr_count[] = 0;
 foreach($result as $row){
     $arr_date[] = $row['md'];
-    $arr_count[] = $row['c'];   
+    $arr_count[] = $row['c'];
 }
 $max = max($arr_count);
 if($max > 20) {
@@ -53,32 +53,32 @@ else {
     当日完成项目
     <canvas id="canvas01" height="330" width="500"></canvas>
     <div align="center">日期</div> -->
-    <script>
-        // var width01 = $('#canvas01').parent().width();
-        // $('#canvas01').attr('width',width01);
-     //    var lineChartData = {
-     //        labels : <?php //echo(json_encode($arr_date)); ?>,
-     //        datasets : [
-     //            {
-     //                fillColor : "rgba(151,187,205,0.5)",
-     //                strokeColor : "rgba(151,187,205,1)",
-     //                pointColor : "rgba(151,187,205,1)",
-     //                pointStrokeColor : "#fff",
-     //                data :  <?php //echo(json_encode($arr_count)); ?>
-     //            }
-     //        ]
-     //    }
-     //    var options = {
-     //     scaleOverlay: true,
-     //     scaleShowLabels : true,
-     //     bezierCurve: true,
-     //     scaleOverride: true,
-     //     scaleSteps: <?php //echo($scaleSteps); ?>,
-     //     scaleStepWidth: <?php //echo($scaleStepWidth); ?>,
-     //     scaleStartValue: 0
-     //    };
-     //    var myLine = new Chart(document.getElementById("canvas01").getContext("2d")).Line(lineChartData,options);
-    </script>
+<script>
+    // var width01 = $('#canvas01').parent().width();
+    // $('#canvas01').attr('width',width01);
+    //    var lineChartData = {
+    //        labels : <?php //echo(json_encode($arr_date)); ?>,
+    //        datasets : [
+    //            {
+    //                fillColor : "rgba(151,187,205,0.5)",
+    //                strokeColor : "rgba(151,187,205,1)",
+    //                pointColor : "rgba(151,187,205,1)",
+    //                pointStrokeColor : "#fff",
+    //                data :  <?php //echo(json_encode($arr_count)); ?>
+    //            }
+    //        ]
+    //    }
+    //    var options = {
+    //     scaleOverlay: true,
+    //     scaleShowLabels : true,
+    //     bezierCurve: true,
+    //     scaleOverride: true,
+    //     scaleSteps: <?php //echo($scaleSteps); ?>,
+    //     scaleStepWidth: <?php //echo($scaleStepWidth); ?>,
+    //     scaleStartValue: 0
+    //    };
+    //    var myLine = new Chart(document.getElementById("canvas01").getContext("2d")).Line(lineChartData,options);
+</script>
 <!-- </section> -->
 <section class="report02">
     <h3 class="title">六力分析图</h3>
@@ -98,7 +98,7 @@ else {
                 }
             ]
         }
-        var myRadar = new Chart(document.getElementById("canvas02").getContext("2d")).Radar(radarChartData,{scaleShowLabels : false, pointLabelFontSize : 10});
+        var myRadar = new Chart(document.getElementById("canvas02").getContext("2d")).Radar(radarChartData,{scaleShowLabels : false, pointLabelFontSize : 12});
     </script>
     <ul class="description">
         <?php
@@ -137,12 +137,12 @@ else {
             }else if($percent<60){
                 ?>
                 <p>语言<b class="normal"></b></p>
-                <span>0-6岁是语言发展的黄金期。如果给予适当引导，诱发兴趣，可以见到明显的进步</span>
+                <span>0-6岁是语言发展的黄金期,如果给予适当引导,诱发兴趣,可以见到明显的进步</span>
                 <?php
             }else{
                 ?>
                 <p>语言<b class="strong"></b></p>
-                <span>宝贝可能缺少语言的刺激或互动，建议多加互动引导</span>
+                <span>宝贝有绝佳的语言天分,值得持续给予多元的听,说,读的引导</span>
                 <?php
             }
             ?>
@@ -154,7 +154,7 @@ else {
             if($percent<30){
                 ?>
                 <p>社交<b class="weak"></b></p>
-                <span>宝贝正逐步展现这个年龄段应有的社会互动能力,多鼓励他(她)探索世界,未来在群体中的发展无可限量</span>
+                <span>宝贝可能需要有更多与外界接触的机会,幼儿时期的人格发展特别重要,一定要细心留意</span>
                 <?php
             }else if($percent<60){
                 ?>
@@ -164,7 +164,7 @@ else {
             }else{
                 ?>
                 <p>社交<b class="strong"></b></p>
-                <span>宝贝可能需要有很多与外界接触的机会，幼儿时期的人格发展特别重要，一定要细心留意</span>
+                <span>宝贝正逐步展现这个年龄段应有的社会互动能力,多鼓励他(她)探索世界,未来在群体中的发展无可限量</span>
                 <?php
             }
             ?>
@@ -175,7 +175,7 @@ else {
             if($percent<30){
                 ?>
                 <p>粗大动作<b class="weak"></b></p>
-                <span>健康的运动潜质已崭露头角,记得持续为宝贝进行评测观察,并适量给予运动机会</span>
+                <span>宝贝是否被过度呵护或是缺乏训练?注意我们的专家建议,给予适当的辅导或咨询专业医师</span>
                 <?php
             }else if($percent<60){
                 ?>
@@ -185,7 +185,7 @@ else {
             }else{
                 ?>
                 <p>粗大动作<b class="strong"></b></p>
-                <span>宝贝是否被过度呵护或是缺乏训练?注意我们的专家建议,给予适当的辅导或咨询专业医师</span>
+                <span>健康的运动潜质已崭露头角,记得持续为宝贝进行评测观察,并适量给予运动机会</span>
                 <?php
             }
             ?>
@@ -197,7 +197,7 @@ else {
             if($percent<30){
                 ?>
                 <p>细微动作<b class="weak"></b></p>
-                <span>宝贝对于细微动作的掌握令人满意,持续为宝贝进行评测观察,未来可进一步观察他(她)在艺术,运动等领域的发展潜质</span>
+                <span>幼儿时期的细微动作发展往往容易被忽略,建议多花时间与宝贝互动观察</span>
                 <?php
             }else if($percent<60){
                 ?>
@@ -207,7 +207,7 @@ else {
             }else{
                 ?>
                 <p>细微动作<b class="strong"></b></p>
-                <span>幼儿时期的细微动作发展往往容易被忽略,建议多花时间与宝贝互动观察</span>
+                <span>宝贝对于细微动作的掌握令人满意,持续为宝贝进行评测观察,未来可进一步观察他(她)在艺术,运动等领域的发展潜质</span>
                 <?php
             }
             ?>
@@ -218,7 +218,7 @@ else {
             if($percent<30){
                 ?>
                 <p>认知<b class="weak"></b></p>
-                <span>宝贝已具备现阶段年龄应有的认知能力,家长可以适当增加认知学习的辅导,有助于孩子的智力发展</span>
+                <span>宝贝可能需要更多探索世界的机会,参考评测中的专家建议,并适时给予辅导</span>
                 <?php
             }else if($percent<60){
                 ?>
@@ -228,7 +228,7 @@ else {
             }else{
                 ?>
                 <p>认知<b class="strong"></b></p>
-                <span>宝贝可能需要更多探索世界的机会,参考评测中的专家建议,并适时给予辅导</span>
+                <span>宝贝已具备现阶段年龄应有的认知能力,家长可以适当增加认知学习的辅导,有助于孩子的智力发展</span>
                 <?php
             }
             ?>
@@ -239,7 +239,7 @@ else {
             if($percent<30){
                 ?>
                 <p>自我帮助<b class="weak"></b></p>
-                <span>宝贝的自我帮助能力符合标准,说明家长引导得当,可以搭配分年龄段的家庭早教包,更轻松让孩子养成多元的能力</span>
+                <span>自主能力的养成是发展更多能力的基础,依不同年龄段给予正确的引导,同时家长的耐心也很重要</span>
                 <?php
             }else if($percent<60){
                 ?>
@@ -249,39 +249,39 @@ else {
             }else{
                 ?>
                 <p>自我帮助<b class="strong"></b></p>
-                <span>自主能力的养成是发展更多能力的基础,依不同年龄段给予正确的引导,同时家长的耐心也很重要</span>
+                <span>宝贝的自我帮助能力符合标准,说明家长引导得当,可以搭配分年龄段的家庭早教包,更轻松让孩子养成多元的能力</span>
                 <?php
             }
             ?>
         </li>
     </ul>
-<!--    <h3 class="title">完成项目</h3>-->
-<!--    <ul class="complete_item">-->
-<!--        <li>-->
-<!--            <p>2016年6月20</p>-->
-<!--            <ul class="item_list">-->
-<!--                <li><p>能说出现实中或图片中物品的名称</p></li>-->
-<!--                <li><p>能模仿听到的声音或语言</p></li>-->
-<!--            </ul>-->
-<!--        </li>-->
-<!--        <li>-->
-<!--            <p>2016年5月20</p>-->
-<!--            <ul class="item_list">-->
-<!--                <li><p>能说出现实中或图片中物品的名称</p></li>-->
-<!--                <li><p>能模仿听到的声音或语言</p></li>-->
-<!--                <li><p>能说出现实中或图片中物品的名称</p></li>-->
-<!--            </ul>-->
-<!--        </li>-->
-<!--    </ul>-->
+    <!--    <h3 class="title">完成项目</h3>-->
+    <!--    <ul class="complete_item">-->
+    <!--        <li>-->
+    <!--            <p>2016年6月20</p>-->
+    <!--            <ul class="item_list">-->
+    <!--                <li><p>能说出现实中或图片中物品的名称</p></li>-->
+    <!--                <li><p>能模仿听到的声音或语言</p></li>-->
+    <!--            </ul>-->
+    <!--        </li>-->
+    <!--        <li>-->
+    <!--            <p>2016年5月20</p>-->
+    <!--            <ul class="item_list">-->
+    <!--                <li><p>能说出现实中或图片中物品的名称</p></li>-->
+    <!--                <li><p>能模仿听到的声音或语言</p></li>-->
+    <!--                <li><p>能说出现实中或图片中物品的名称</p></li>-->
+    <!--            </ul>-->
+    <!--        </li>-->
+    <!--    </ul>-->
 </section>
 
 <script>
-$(window).resize(function() {
-    var width01 = $('#canvas01').parent().width();
-    $('#canvas01').attr('width', width01);
-    var myLine = new Chart(document.getElementById("canvas01").getContext("2d")).Line(lineChartData);
-    var width02 = $('#canvas02').parent().width();
-    $('#canvas02').attr('width', width02);
-    var myRadar = new Chart(document.getElementById("canvas02").getContext("2d")).Radar(radarChartData,{scaleShowLabels : false, pointLabelFontSize : 10});
-});
+    $(window).resize(function() {
+        var width01 = $('#canvas01').parent().width();
+        $('#canvas01').attr('width', width01);
+        var myLine = new Chart(document.getElementById("canvas01").getContext("2d")).Line(lineChartData);
+        var width02 = $('#canvas02').parent().width();
+        $('#canvas02').attr('width', width02);
+        var myRadar = new Chart(document.getElementById("canvas02").getContext("2d")).Radar(radarChartData,{scaleShowLabels : false, pointLabelFontSize : 10});
+    });
 </script>

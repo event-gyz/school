@@ -69,7 +69,7 @@ if($membership['membership']<time()){
                         <!--//文字編輯器區//-->
                         <section class="Txt fl clearfix">
                             <p>
-                                幼儿发展是阶段性的，每一步都必须踩稳才能迈向下一步！「1200项幼儿成长指标」其内容涵盖语言、认知、粗动作、细动作、人格、自主能力等六大范围，家长只要输入孩子的出生日期，系统即会协助家长检核孩子的发展，让孩子的成长基础更稳固、大脑的神经网络更紧密，好在未来有实力迎向各种挑战。
+                                「1200项幼儿成长指标」其内容涵盖0-6岁关键期的语言、认知、粗动作、细动作、人格、自主能力等六大范围，家长只要输入孩子的出生日期，系统即会协助家长检核孩子的发展，参考分析结果为孩子扬长補短，奠定未来发展的基础。
                             </p>
                             <div class="item_successed_chart"></div>
                         </section>
@@ -78,13 +78,13 @@ if($membership['membership']<time()){
                             <div class="project_list">
                                 <ul class="clearfix">
                                     <li class="ttile selected">
-                                        <a id="tab_01">语言沟通</a>
+                                        <a id="tab_01">语言</a>
                                     </li>
                                     <li class="ttile">
-                                        <a id="tab_02">社会人格</a>
+                                        <a id="tab_02">人格</a>
                                     </li>
                                     <li class="ttile">
-                                        <a id="tab_03">自觉认知</a>
+                                        <a id="tab_03">认知</a>
                                     </li>
                                     <li class="ttile">
                                         <a id="tab_04">粗动作</a>
@@ -93,7 +93,7 @@ if($membership['membership']<time()){
                                         <a id="tab_05">细动作</a>
                                     </li>
                                     <li class="ttile">
-                                        <a id="tab_06">自主能力</a>
+                                        <a id="tab_06">自主</a>
                                     </li>
                                 </ul>
                             </div>
@@ -103,15 +103,72 @@ if($membership['membership']<time()){
                             <section class="tab-bd">
 
                                 <div class="tabcont on">
+                                    <div class="title">
+                                        <p>时间</p>
+                                        <p class="develop">发展成就量表</p>
+                                    </div>
+                                    <p class="backwardness"><span>红字</span>进度落后</p>
+                                    <div class="loadmore">
+                                        <p><span class="decrement">-</span><span class="increase">+</span>稍早</p>
+                                    </div>
                                     <table id="gi_table" border="0" cellpadding="0" cellspacing="0" class="tb-rep">
-                                        <div class="title">
-                                            <p>时间</p>
-                                            <p>发展成就量表</p>
-                                        </div>
-                                        <p class="backwardness"><span>红字</span>进度落后</p>
-                                        <div class="loadmore">
-                                            <p><span class="decrement">-</span><span class="increase">+</span>稍早</p>
-                                        </div>
+                                        <tr id="gi_132">
+                                            <td>
+                                                <p>
+                                                    2岁3个月-2岁6个月
+                                                    <input type="button" class="isComplete new_ck" value="会了" name="132">
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <div class="detail_tablinks">
+                                                    <div class="detail">
+                                                        <p>了解更多动词</p>
+                                                    </div>
+                                                    <div class="tablinks">
+                                                        <a name="132" value="0" href="javascript:void(0)"><img src="../theme/cn/images/content/item_rep02.jpg">详细说明</a>
+                                                        <a name="132" value="1" href="javascript:void(0)"><img src="../theme/cn/images/content/item_rep03.jpg">专家建议</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr id="gi_133">
+                                            <td>
+                                                <p>
+                                                    2岁4个月-2岁10个月
+                                                    <input type="button" class="isComplete new_ck" value="会了" name="133">
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <div class="detail_tablinks">
+                                                    <div class="detail">
+                                                        <p>了解物品及他们的用途</p>
+                                                    </div>
+                                                    <div class="tablinks">
+                                                        <a name="133" value="0" href="javascript:void(0)"><img src="../theme/cn/images/content/item_rep02.jpg">详细说明</a>
+                                                        <a name="133" value="1" href="javascript:void(0)"><img src="../theme/cn/images/content/item_rep03.jpg">专家建议</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr id="gi_134">
+                                            <td>
+                                                <p>
+                                                    2岁4个月-2岁10个月
+                                                    <input type="button" class="isComplete new_ck" value="会了" name="134">
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <div class="detail_tablinks">
+                                                    <div class="detail">
+                                                        <p>了解身体的部份及他们的作用及功能</p>
+                                                    </div>
+                                                    <div class="tablinks">
+                                                        <a name="134" value="0" href="javascript:void(0)"><img src="../theme/cn/images/content/item_rep02.jpg">详细说明</a>
+                                                        <a name="134" value="1" href="javascript:void(0)"><img src="../theme/cn/images/content/item_rep03.jpg">专家建议</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
                                     </table>
                                 </div>
                             </section>
@@ -346,32 +403,32 @@ if($membership['membership']<time()){
             anchor: 'middle'
         }));
         svg.appendChild(new drawRectSVG({
-            x: 33,
-            y: 126,
-            transform: 'rotate(60, 33, 126)'
+            x: 37,
+            y: 131,
+            transform: 'rotate(60, 37, 131)'
         }));
         svg.appendChild(new drawTextSVG({
             className: 'age-group',
-            x: 36,
-            y: 130,
+            x: 40,
+            y: 135,
             size: '12px',
             text: '1岁',
             color: '#FFF',
-            transform: 'rotate(60, 36, 130)'
+            transform: 'rotate(60, 40, 135)'
         }));
         svg.appendChild(new drawRectSVG({
-            x: 51,
-            y: 84,
-            transform: 'rotate(-240, 51, 84)'
+            x: 48,
+            y: 87,
+            transform: 'rotate(-240, 48, 87)'
         }));
         svg.appendChild(new drawTextSVG({
             className: 'age-group',
-            x: 49,
-            y: 88,
+            x: 46,
+            y: 91,
             size: '12px',
             text: '2岁',
             color: '#FFF',
-            transform: 'rotate(-240, 49, 88)'
+            transform: 'rotate(-240, 46, 91)'
         }));
         svg.appendChild(new drawRectSVG({
             x: 66,
@@ -386,18 +443,18 @@ if($membership['membership']<time()){
             color: '#FFF'
         }));
         svg.appendChild(new drawRectSVG({
-            x: 127,
-            y: 83,
-            transform: 'rotate(60, 127, 83)'
+            x: 125,
+            y: 80,
+            transform: 'rotate(60, 125, 80)'
         }));
         svg.appendChild(new drawTextSVG({
             className: 'age-group',
-            x: 128,
-            y: 88,
+            x: 126,
+            y: 85,
             size: '12px',
             text: '4岁',
             color: '#FFF',
-            transform: 'rotate(60, 128, 88)'
+            transform: 'rotate(60, 126, 85)'
         }));
         svg.appendChild(new drawRectSVG({
             x: 110,
@@ -611,46 +668,46 @@ if($membership['membership']<time()){
     });
     //    });
 
-    function initList(type,func) {
-        if( $(".increase").css("display")=='none' ) {
-            var early = 'yes';
+    //     function initList(type,func) {
+    //         if( $(".increase").css("display")=='none' ) {
+    //             var early = 'yes';
 
-        }
-        cur_func = func;
-        var url = "gi_list_by_age.php?t="+type;
-        if(func){
-            link = url + "&f="+func;
-        }else{
-            link = url;
-        }
-        if(early){
-            link = link + "&e="+early;
-        }
-//    	$("#next a").attr("href",url+"&p=2");
+    //         }
+    //         cur_func = func;
+    //         var url = "gi_list_by_age.php?t="+type;
+    //         if(func){
+    //             link = url + "&f="+func;
+    //         }else{
+    //             link = url;
+    //         }
+    //         if(early){
+    //             link = link + "&e="+early;
+    //         }
+    // //    	$("#next a").attr("href",url+"&p=2");
 
-        var infiniteScrollContainer = $("#gi_table");
-        // Reset the plugin before intializing it again
-        infiniteScrollContainer.load(link, function() {
-            addItemListeners();
-            infiniteScrollContainer.infinitescroll('binding','unbind');
-            infiniteScrollContainer.data('infinitescroll', null);
-            $(window).unbind('.infscr');
+    //         var infiniteScrollContainer = $("#gi_table");
+    //         // Reset the plugin before intializing it again
+    //         infiniteScrollContainer.load(link, function() {
+    //             addItemListeners();
+    //             infiniteScrollContainer.infinitescroll('binding','unbind');
+    //             infiniteScrollContainer.data('infinitescroll', null);
+    //             $(window).unbind('.infscr');
 
-            infiniteScrollContainer.infinitescroll({
-                state: {
-                    isDestroyed: false,
-                    isDone: false,
-                    isDuringAjax : false
-                }
-            });
+    //             infiniteScrollContainer.infinitescroll({
+    //                 state: {
+    //                     isDestroyed: false,
+    //                     isDone: false,
+    //                     isDuringAjax : false
+    //                 }
+    //             });
 
-//	   		infiniteScrollContainer.infinitescroll({
-//				navSelector  	: "#next",
-//				nextSelector 	: "#next a",
-//				itemSelector 	: "tr"
-//			},addItemListeners);
-        });
-    }
+    // //	   		infiniteScrollContainer.infinitescroll({
+    // //				navSelector  	: "#next",
+    // //				nextSelector 	: "#next a",
+    // //				itemSelector 	: "tr"
+    // //			},addItemListeners);
+    //         });
+    //     }
 
     function addItemListeners() {
         $(".tablinks a").unbind();

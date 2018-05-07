@@ -6,10 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="format-detection" content="telphone=no, email=no" />
-<!-- 微信测试用清理缓存  -->
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-<meta http-equiv="Pragma" content="no-cache" />
-<meta http-equiv="Expires" content="0" />
 <link rel="stylesheet" href="../theme/cn/main-style.css">
 <link rel="stylesheet" href="../theme/cn/style.css">
 <link rel="stylesheet" href="../theme/cn/cropper.css">
