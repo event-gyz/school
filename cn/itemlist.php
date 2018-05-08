@@ -112,7 +112,7 @@ if($membership['membership']<time()){
                                         <p><span class="decrement">-</span><span class="increase">+</span>稍早</p>
                                     </div>
                                     <table id="gi_table" border="0" cellpadding="0" cellspacing="0" class="tb-rep">
-                                        
+
                                     </table>
                                 </div>
                             </section>
@@ -265,15 +265,18 @@ if($membership['membership']<time()){
     }
 
     /**
-     * @param {*} $select  容器
      * @param {*} size 已完成的指标个数
      * @param {*} currentSize 当前年龄段所需完成指标个数
      */
         // 创建SVG
     var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     svg.setAttribute("version", "1.1"); // IE9+ support SVG 1.1 version
-    function svgView($select, size, currentSize , late) {
+    function svgView(size, currentSize , late, old) {
         $("svg").empty()
+        if(old > 72) {
+            old = 72;
+            layer.msg('最大年龄段为6岁！')
+        }
         var size = size
         // 画轴线并加入SVG中
         svg.appendChild(new drawSVG({
@@ -450,7 +453,7 @@ if($membership['membership']<time()){
         // 画当前阶段所需完成度弧线并加入SVG中
         svg.appendChild(new drawSVG({
             startAngle: 30,
-            endAngle: 30 + (330 - 30) / 1200 * currentSize,
+            endAngle: 30 + (330 - 30) / 72 * old,
             x: 80,
             y: 120,
             R: 75,
@@ -612,46 +615,46 @@ if($membership['membership']<time()){
     });
     //    });
 
-         function initList(type,func) {
-             if( $(".increase").css("display")=='none' ) {
-                 var early = 'yes';
+    function initList(type,func) {
+        if( $(".increase").css("display")=='none' ) {
+            var early = 'yes';
 
-             }
-             cur_func = func;
-             var url = "gi_list_by_age.php?t="+type;
-             if(func){
-                 link = url + "&f="+func;
-             }else{
-                 link = url;
-             }
-             if(early){
-                 link = link + "&e="+early;
-             }
-     //    	$("#next a").attr("href",url+"&p=2");
+        }
+        cur_func = func;
+        var url = "gi_list_by_age.php?t="+type;
+        if(func){
+            link = url + "&f="+func;
+        }else{
+            link = url;
+        }
+        if(early){
+            link = link + "&e="+early;
+        }
+        //    	$("#next a").attr("href",url+"&p=2");
 
-             var infiniteScrollContainer = $("#gi_table");
-             // Reset the plugin before intializing it again
-             infiniteScrollContainer.load(link, function() {
-                 addItemListeners();
-                 infiniteScrollContainer.infinitescroll('binding','unbind');
-                 infiniteScrollContainer.data('infinitescroll', null);
-                 $(window).unbind('.infscr');
+        var infiniteScrollContainer = $("#gi_table");
+        // Reset the plugin before intializing it again
+        infiniteScrollContainer.load(link, function() {
+            addItemListeners();
+            infiniteScrollContainer.infinitescroll('binding','unbind');
+            infiniteScrollContainer.data('infinitescroll', null);
+            $(window).unbind('.infscr');
 
-                 infiniteScrollContainer.infinitescroll({
-                     state: {
-                         isDestroyed: false,
-                         isDone: false,
-                         isDuringAjax : false
-                     }
-                 });
+            infiniteScrollContainer.infinitescroll({
+                state: {
+                    isDestroyed: false,
+                    isDone: false,
+                    isDuringAjax : false
+                }
+            });
 
-     //	   		infiniteScrollContainer.infinitescroll({
-     //				navSelector  	: "#next",
-     //				nextSelector 	: "#next a",
-     //				itemSelector 	: "tr"
-     //			},addItemListeners);
-             });
-         }
+            //	   		infiniteScrollContainer.infinitescroll({
+            //				navSelector  	: "#next",
+            //				nextSelector 	: "#next a",
+            //				itemSelector 	: "tr"
+            //			},addItemListeners);
+        });
+    }
 
     function addItemListeners() {
         $(".tablinks a").unbind();
@@ -707,8 +710,8 @@ if($membership['membership']<time()){
                 all_count = jsonStr.all;
                 fina_count = jsonStr.fina;
                 late_count = jsonStr.late;
-                $("svgView").remove();
-                svgView('#svgView', fina_count, all_count, late_count);
+                age = jsonStr.age;
+                svgView(fina_count, all_count, late_count, age);
             },
             error: function(xhr, err) {
                 console.log('ajaxLoadUserStat failed: ' + err);

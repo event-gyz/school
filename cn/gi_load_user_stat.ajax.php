@@ -66,7 +66,7 @@ $resule = M()->find($sql);
 if(empty($resule)){
     $resule['cc'] = 0;
 }
-$arr = array('nickname'=>$nickname,'all'=>$re['cc'],'fina'=>$res['cc'],'late'=>$resule['cc']);
+$arr = array('nickname'=>$nickname,'all'=>$re['cc'],'fina'=>$res['cc'],'late'=>$resule['cc'],'age'=>$user_age);
 echo(json_encode($arr));
 
 

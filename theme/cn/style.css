@@ -402,7 +402,7 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .photos{position: relative;}
 .photos>div{position: absolute;text-align: center;}
 .mather-head-portrait{top:0.3902rem;right:0.7805rem;}
-.baby-head-portrait{top:-1.561rem;left:4.2927rem;}
+.baby-head-portrait{top:-1.3659rem;left:3.9512rem;}
 .father-head-portrait{top: 0.7805rem;left:0.4878rem;}
 .photos .upHead{position: relative;width:2.2439rem;height:2.2439rem;border:2px solid #D8EFD5;border-radius: 50%;margin-bottom:0.1463rem;overflow: hidden;background: #fff;}
 .photos .upHead>img{width:100%;height:100%;position: relative;}
@@ -411,7 +411,7 @@ img.userHead{width:100%;height:100%;}
 .photos .upHead b{position: absolute;left:50%;bottom:0;width:0.5268rem;height:0.5268rem;background:#FFFFFE;border-radius:50%;transform: translateX(-50%);opacity: .6;}
 .photos .upHead p{position: absolute;left:50%;bottom:0.1073rem;width: 0.3902rem;height: 0.3122rem;background:url('../../content/epaper/images/samll_camera.png') no-repeat;background-size:100% 100%;transform: translateX(-50%);}
 .photos .upHead + span{color:#1D940D;font-weight: bold;font-size: 14px;font-family: sans-serif;}
-.ceanza_menu_bg{width:100%;height:7.3171rem;background:url('../../content/epaper/images/ceanza_menu_bg.png') no-repeat center;background-size: 100% 100%;}
+.ceanza_menu_bg{width:10.0rem;height:7.3171rem;background:url('../../content/epaper/images/ceanza_menu_bg.png') no-repeat center;background-size: 100% 100%;}
 .ceanza_menu_bg{padding-top: 1.0732rem;}
 .ceanza h4,.relevant_articles>h4,.height_record h4,.weight_record h4,.buds_record>h4,.medical_record h4,.newcomers .title h4{margin-bottom: 0.0976rem;padding: 0 0.5854rem;color:#5FBF51;font-size:20px;text-shadow: 2px 3px 5px rgba(0,0,0,0.15);font-weight: 600;}
 .ceanza>form h4,.height_record>form h4,.weight_record>form h4,.ceanza_view>h4{padding: 0;}
@@ -953,6 +953,7 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .gotop,.fy-bd .gotop{display:block;}
 .fy-bd .gotop{bottom:10%;margin-left:125px;}
 .repbox .Txt p{font-size: 0.3512rem;}
+.baby-head-portrait{top:-2.0488rem;left:3.9512rem;}
 }
 @media (max-width:450px){
 .category-list{width:200%;}
