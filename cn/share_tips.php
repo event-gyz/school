@@ -24,7 +24,6 @@ include('inc.php');
                 <!--//主選單標題與路徑//-->
                 <div class="share_tips">
                     <p><img src="../content/epaper/images/sharing_tips.jpg" alt=""></p>
-                    <p class="tips">注:每推荐一位好友您就可以增加三个月的会员哦，多多分享吧！</p>
                 </div>
             </section>
         </section>
