@@ -112,63 +112,7 @@ if($membership['membership']<time()){
                                         <p><span class="decrement">-</span><span class="increase">+</span>稍早</p>
                                     </div>
                                     <table id="gi_table" border="0" cellpadding="0" cellspacing="0" class="tb-rep">
-                                        <tr id="gi_132">
-                                            <td>
-                                                <p>
-                                                    2岁3个月-2岁6个月
-                                                    <input type="button" class="isComplete new_ck" value="会了" name="132">
-                                                </p>
-                                            </td>
-                                            <td>
-                                                <div class="detail_tablinks">
-                                                    <div class="detail">
-                                                        <p>了解更多动词</p>
-                                                    </div>
-                                                    <div class="tablinks">
-                                                        <a name="132" value="0" href="javascript:void(0)"><img src="../theme/cn/images/content/item_rep02.jpg">详细说明</a>
-                                                        <a name="132" value="1" href="javascript:void(0)"><img src="../theme/cn/images/content/item_rep03.jpg">专家建议</a>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr id="gi_133">
-                                            <td>
-                                                <p>
-                                                    2岁4个月-2岁10个月
-                                                    <input type="button" class="isComplete new_ck" value="会了" name="133">
-                                                </p>
-                                            </td>
-                                            <td>
-                                                <div class="detail_tablinks">
-                                                    <div class="detail">
-                                                        <p>了解物品及他们的用途</p>
-                                                    </div>
-                                                    <div class="tablinks">
-                                                        <a name="133" value="0" href="javascript:void(0)"><img src="../theme/cn/images/content/item_rep02.jpg">详细说明</a>
-                                                        <a name="133" value="1" href="javascript:void(0)"><img src="../theme/cn/images/content/item_rep03.jpg">专家建议</a>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr id="gi_134">
-                                            <td>
-                                                <p>
-                                                    2岁4个月-2岁10个月
-                                                    <input type="button" class="isComplete new_ck" value="会了" name="134">
-                                                </p>
-                                            </td>
-                                            <td>
-                                                <div class="detail_tablinks">
-                                                    <div class="detail">
-                                                        <p>了解身体的部份及他们的作用及功能</p>
-                                                    </div>
-                                                    <div class="tablinks">
-                                                        <a name="134" value="0" href="javascript:void(0)"><img src="../theme/cn/images/content/item_rep02.jpg">详细说明</a>
-                                                        <a name="134" value="1" href="javascript:void(0)"><img src="../theme/cn/images/content/item_rep03.jpg">专家建议</a>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                        
                                     </table>
                                 </div>
                             </section>
@@ -668,46 +612,46 @@ if($membership['membership']<time()){
     });
     //    });
 
-    //     function initList(type,func) {
-    //         if( $(".increase").css("display")=='none' ) {
-    //             var early = 'yes';
+         function initList(type,func) {
+             if( $(".increase").css("display")=='none' ) {
+                 var early = 'yes';
 
-    //         }
-    //         cur_func = func;
-    //         var url = "gi_list_by_age.php?t="+type;
-    //         if(func){
-    //             link = url + "&f="+func;
-    //         }else{
-    //             link = url;
-    //         }
-    //         if(early){
-    //             link = link + "&e="+early;
-    //         }
-    // //    	$("#next a").attr("href",url+"&p=2");
+             }
+             cur_func = func;
+             var url = "gi_list_by_age.php?t="+type;
+             if(func){
+                 link = url + "&f="+func;
+             }else{
+                 link = url;
+             }
+             if(early){
+                 link = link + "&e="+early;
+             }
+     //    	$("#next a").attr("href",url+"&p=2");
 
-    //         var infiniteScrollContainer = $("#gi_table");
-    //         // Reset the plugin before intializing it again
-    //         infiniteScrollContainer.load(link, function() {
-    //             addItemListeners();
-    //             infiniteScrollContainer.infinitescroll('binding','unbind');
-    //             infiniteScrollContainer.data('infinitescroll', null);
-    //             $(window).unbind('.infscr');
+             var infiniteScrollContainer = $("#gi_table");
+             // Reset the plugin before intializing it again
+             infiniteScrollContainer.load(link, function() {
+                 addItemListeners();
+                 infiniteScrollContainer.infinitescroll('binding','unbind');
+                 infiniteScrollContainer.data('infinitescroll', null);
+                 $(window).unbind('.infscr');
 
-    //             infiniteScrollContainer.infinitescroll({
-    //                 state: {
-    //                     isDestroyed: false,
-    //                     isDone: false,
-    //                     isDuringAjax : false
-    //                 }
-    //             });
+                 infiniteScrollContainer.infinitescroll({
+                     state: {
+                         isDestroyed: false,
+                         isDone: false,
+                         isDuringAjax : false
+                     }
+                 });
 
-    // //	   		infiniteScrollContainer.infinitescroll({
-    // //				navSelector  	: "#next",
-    // //				nextSelector 	: "#next a",
-    // //				itemSelector 	: "tr"
-    // //			},addItemListeners);
-    //         });
-    //     }
+     //	   		infiniteScrollContainer.infinitescroll({
+     //				navSelector  	: "#next",
+     //				nextSelector 	: "#next a",
+     //				itemSelector 	: "tr"
+     //			},addItemListeners);
+             });
+         }
 
     function addItemListeners() {
         $(".tablinks a").unbind();

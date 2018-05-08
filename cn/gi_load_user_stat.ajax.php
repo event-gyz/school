@@ -63,6 +63,9 @@ $noItemUidAr = array_column($noItemUidRe,'item_uid');
 $noItemUid = implode($noItemUidAr,',');
 $sql = "select count(uid) as cc from grow_index  where age_max<$user_age and ((grow_index.age_min >= '$start_age' and grow_index.age_min<= '$end_age') or (grow_index.age_max <= '$end_age' and grow_index.age_max >= '$start_age')) and  uid not in ($noItemUid) order by uid asc";
 $resule = M()->find($sql);
+if(empty($resule)){
+    $resule['cc'] = 0;
+}
 $arr = array('nickname'=>$nickname,'all'=>$re['cc'],'fina'=>$res['cc'],'late'=>$resule['cc']);
 echo(json_encode($arr));
 

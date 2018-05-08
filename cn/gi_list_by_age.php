@@ -39,7 +39,7 @@ function fetchContent($age, $type, $func,$e) {
 		if(($func == 'b' && $checked) || ($func == 'c' && !$checked))
 			continue;
 
-		$htmlString .= ('<li id="gi_'.$uid.'"');
+		$htmlString .= ('<tr id="gi_'.$uid.'" class="even"');
 
 		if(isset($early) && $early!='') {
 			if($early) {
@@ -78,8 +78,8 @@ function fetchContent($age, $type, $func,$e) {
 		}else{
 			$new_age_max = $age_max.'个月';
 		}
-		$htmlString .= ''.$new_age_min.'-'.$new_age_max.'<input type="button" class="isComplete new_ck" value="会了" name="'.$uid.'"></p>
-					<div class="detail_tablinks">
+		$htmlString .= '<td>'.$new_age_min.'-'.$new_age_max.'<input type="button" class="isComplete new_ck" value="会了" name="'.$uid.'"></p></td>
+					<td><div class="detail_tablinks">
 						<div class="detail">
                             <p>'.$text.'</p>
                         </div>
@@ -89,7 +89,7 @@ function fetchContent($age, $type, $func,$e) {
 		                    <a name="'.$uid.'" value="1" href="javascript:void(0)"><img src="../theme/cn/images/content/item_rep03.jpg">专家建议</a>
 		            	</div>
 	            	</div>
-	            </li>';
+	            </td>';
 		$li_count++;
 	}
 	$cur_li_count = $li_count;
@@ -97,12 +97,12 @@ function fetchContent($age, $type, $func,$e) {
 }
 
 function echo_start() {
-	echo('<tr><td width="65%"><ul class="clearfix">');
+	echo('<tr><td width="65%">');
 }
 
 function echo_end() {
 	echo('
-	        </ul>
+	        
 	    </td>
 	</tr>
 	');
@@ -130,10 +130,10 @@ if(($user_age) > 72) {
 //b还不会的项目
 //c已经会的项目
 $li = fetchContent($age, $type, $func,$e);
-echo_start($age, $type, $type==0);
+//echo_start();
 if(strlen($li) > 0)
 	echo($li);
 else
 	echo('<li> - - </li>');
-echo_end();
+//echo_end();
 ?>
