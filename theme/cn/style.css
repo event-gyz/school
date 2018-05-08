@@ -208,18 +208,7 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .tb-rep span{display:block;width:100%;}
 .tb-rep .tablinks{height:0.4683rem;line-height: 0.4683rem;margin-top: 0.2927rem;}
 .tb-rep .tablinks img{width:0.6244rem;height:0.4683rem;margin-right: 0.0488rem;}
-.tb-rep li.pass i{display:block;}
-.tb-rep li.out i{display:none;}
-.tb-rep li.more{display:none;}
-.tb-rep li.passmore{display:none;}
-.tb-rep li.outmore{display:none;}
-.tb-rep li.out p{color:#FF0000;}
-.tab-bd .scrolltype{max-height:800px;overflow:auto;}
-.tab-info{display:inline;float:left;padding:5px 0 0;text-align:left;width:65%;}
-.tab-info br{display:none;}
-.tab-info span{padding:0 0.5%;}
-.tab-info span b{color:#FF0000;font-size:15px;margin:0 5px 0 0;}
-.tab-info span img{height:30px;}
+.tb-rep tr.out{color:#FF0000;}
 .repwrap{padding:20px 2%;}
 .report01{display:inline;float:left;width:55%;}
 .report02{border-left:1px solid #CCCCCC;display:inline;float:left;margin:0 0 0 2%;padding:0 0 0 2%;}

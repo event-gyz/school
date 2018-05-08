@@ -39,7 +39,7 @@ function fetchContent($age, $type, $func,$e) {
 		if(($func == 'b' && $checked) || ($func == 'c' && !$checked))
 			continue;
 
-		$htmlString .= ('<tr id="gi_'.$uid.'" class="even"');
+		$htmlString .= ('<tr id="gi_'.$uid.'" ');
 
 		if(isset($early) && $early!='') {
 			if($early) {
