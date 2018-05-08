@@ -733,7 +733,6 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 /* 分享页面样式 start */
 .share p,.share_succ p,.share_tips p{width:100%;}
 .share p>img,.share_succ p>img,.share_two_dimension_code p>img,.share_tips p>img{width:100%;height:100%;}
-.share_tips p.tips{width:80%;color:#C84040;font-size: 0.2341rem;margin:0.4878rem auto;}
 .share_register{width:8.2927rem;margin:1.1707rem auto 0;}
 .share_register p{color:#629E5F;line-height: 0.5854rem;}
 .mobile_code input,.valid_code input{height:0.9171rem;padding-left: 0.3902rem;font-size: 0.3317rem;border:1px solid #DBDBDB;box-sizing: border-box;}
