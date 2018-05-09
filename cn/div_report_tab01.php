@@ -6,7 +6,10 @@ $fen_mu = array(161,217,176,123,289,180);
 $fen_zi = array(0,0,0,0,0,0);
 $total_learned = 0;
 $user_uid = $_SESSION["CURRENT_KID_UID"];
-$sql = "SELECT TYPE as t , COUNT( * ) as c FROM grow_log where user_uid='$user_uid' GROUP BY t";
+$user_age = $_SESSION['CURRENT_KID_AGE'];
+$start_age = $user_age-1;
+$end_age = $user_age+1;
+$sql = "SELECT grow_log.`type` as t , COUNT( * ) as c FROM grow_log left join grow_index on grow_index.uid=grow_log.item_uid where ((grow_index.age_min >= '$start_age' and grow_index.age_min<= '$end_age') or (grow_index.age_max <= '$end_age' and grow_index.age_max >= '$start_age')) and user_uid='$user_uid' GROUP BY t";
 $result = M()->select($sql);
 if($result!=null) {
     foreach($result as $row){
