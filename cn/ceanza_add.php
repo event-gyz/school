@@ -7,24 +7,21 @@ include('inc.php');
 <head>
     <?php include('inc_head.php');  ?>
     <!-- 开发环境 -->
-    <!-- <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&ak=c5bAV1QzSlHHzKTj3rFkWRO7Ok2pom9n"></script> -->
-
+    <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&ak=c5bAV1QzSlHHzKTj3rFkWRO7Ok2pom9n"></script>
     <?php if(strpos($_SERVER['SERVER_NAME'],'.com.cn')===false){
         ?>
         <!-- 测试环境 -->
         <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&ak=MDD4sezyIh6fuPuiG9cY1CGHFqUbs5GS"></script>
         <script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
-        <?php
+    <?php
     }else{
-        ?>
+    ?>
         <!-- 生产环境 -->
         <script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&ak=MDD4sezyIh6fuPuiG9cY1CGHFqUbs5GS"></script>
         <script type="text/javascript" src="https://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
         <?php
     }
     ?>
-
-
     <style>
         body{background: none;}
         h1,h2,h3,h4,h5,h6,p,ul,li,dl,dt,dd{margin:0;padding:0;list-style: none;}
@@ -190,21 +187,26 @@ include('inc.php');
         endDate: new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate()
     });
 
+    const map = new BMap.Map("allmap");
 
-    var map = new BMap.Map("allmap");
-    var geoc = new BMap.Geocoder();
+    var point = new BMap.Point(116.331398,39.897445);
+    map.centerAndZoom(point,12);
+
     var geolocation = new BMap.Geolocation();
 
     geolocation.getCurrentPosition( r => {
         if(geolocation.getStatus() == BMAP_STATUS_SUCCESS){
-        geoc.getLocation(r.point, function(rs){
+        var mk = new BMap.Marker(r.point);
+        var new_point = new BMap.Point(r.point.lng,r.point.lat);
+        var geoc = new BMap.Geocoder();
+        geoc.getLocation(new_point, rs => {
             var addComp = rs.addressComponents;
-            $('#suggestId').val(addComp.province + addComp.city + addComp.district + addComp.street + addComp.streetNumber);
-        });
+        $('#suggestId').val(addComp.province + addComp.city + addComp.district + addComp.street + addComp.streetNumber);
+    });
     }else {
         alert('failed' + geolocation.getStatus());
     }
-    })
+    },{enableHighAccuracy: true})
 
     // var ac = new BMap.Autocomplete({//建立一个自动完成的对象
     //     "input" : "suggestId",
