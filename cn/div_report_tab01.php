@@ -9,21 +9,9 @@ $user_uid = $_SESSION["CURRENT_KID_UID"];
 $user_age = $_SESSION['CURRENT_KID_AGE'];
 $start_age = $user_age-1;
 $end_age = $user_age+1;
-$sql = "SELECT grow_log.`type` as t , COUNT( * ) as c FROM grow_log left join grow_index on grow_index.uid=grow_log.item_uid where ((grow_index.age_min >= '$start_age' and grow_index.age_min<= '$end_age') or (grow_index.age_max <= '$end_age' and grow_index.age_max >= '$start_age')) and user_uid='$user_uid' GROUP BY t";
-$result = M()->select($sql);
-if($result!=null) {
-    foreach($result as $row){
-        $type = $row['t'];
-        $count = $row['c'];
-        $fen_zi[$type] = $count;
-        $total_learned += $count;
-    }
-    $data = array(0,0,0,0,0,0);
-    if($total_learned > 0) {
-        for($i = 0; $i < 6; $i++) {
-            $data[$i] = $fen_zi[$i]* 100.0  / $total_learned;// / $fen_mu[$i];
-        }
-    }
+
+for($i=0;$i<6;$i++){
+    $data[$i] = getPercent($i);
 }
 
 //echo(json_encode($data));
@@ -97,11 +85,20 @@ else {
                     strokeColor : "rgba(151,187,205,1)",
                     pointColor : "rgba(151,187,205,1)",
                     pointStrokeColor : "#fff",
+                    // data : Array 每个项目所完成的百分比集合
                     data : <?php echo(json_encode($data));?>
                 }
             ]
         }
-        var myRadar = new Chart(document.getElementById("canvas02").getContext("2d")).Radar(radarChartData,{scaleShowLabels : false, pointLabelFontSize : 12});
+        var radaroptions = {
+            scaleShowLabels: false,
+            pointLabelFontSize: 12,
+            scaleOverride: true,
+            scaleSteps: 5,
+            scaleStepWidth: 20,
+            scaleStartValue: 0
+        };
+        var myRadar = new Chart(document.getElementById("canvas02").getContext("2d")).Radar(radarChartData, radaroptions);
     </script>
     <ul class="description">
         <?php
@@ -247,12 +244,12 @@ else {
             }else if($percent<60){
                 ?>
                 <p>自我帮助<b class="normal"></b></p>
-                <span>自我帮助是不断重复练习的生活能力,家长可以使用家庭早教包或参照测评中的专家建议,温柔地坚持让宝贝完成任务</span>
+                <span>自我帮助是不断重复练习的生活能力,家长可以在家中利用一些早教相关产品或参照测评中的专家建议,温柔地坚持让宝贝完成任务</span>
                 <?php
             }else{
                 ?>
                 <p>自我帮助<b class="strong"></b></p>
-                <span>宝贝的自我帮助能力符合标准,说明家长引导得当,可以搭配分年龄段的家庭早教包,更轻松让孩子养成多元的能力</span>
+                <span>宝贝的自我帮助能力符合标准,说明家长引导得当,建议可以更细化,依宝贝年龄选用合适的家庭幼儿教育辅助材料,更轻松让孩子养成多元的能力</span>
                 <?php
             }
             ?>
