@@ -43,7 +43,7 @@
                         }
                         else if(_next_move_ == 104) {
                             _next_move_ = 0;
-                            document.location.href = 'training.php';
+
                         }
                         else if(_next_move_ == 106) {
                             onMenuItem6Click();

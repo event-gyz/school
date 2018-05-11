@@ -86,12 +86,7 @@ if(isset($payload)) {
 			$_SESSION['user_email'] = $CMEMBER->email;
 			$_SESSION['user_credit'] = $CMEMBER->credit;
 			$_SESSION['user_epaper'] = $CMEMBER->epaper;
-			if($action == 'epaper') {
-				echo ('<script type="text/javascript"> $(function(){document.location.href ="epaper.php";});</script>');
-			}
-			else {
-				echo ('<script type="text/javascript"> $(function(){document.location.href ="training.php";});</script>');
-			}
+			echo ('<script type="text/javascript"> $(function(){document.location.href ="http://x.eqxiu.com/s/PclsbuXT";});</script>');
 		}
 	}
 }
