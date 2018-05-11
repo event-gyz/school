@@ -9,8 +9,8 @@ include('inc.php');
     <!-- 开发环境 -->
     <!-- <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&ak=c5bAV1QzSlHHzKTj3rFkWRO7Ok2pom9n"></script> -->
     <!-- 测试环境 -->
-    <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&ak=MDD4sezyIh6fuPuiG9cY1CGHFqUbs5GS"></script>
-    <script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
+    <script type="text/javascript" src="../scripts/api.map.baidu.min.js"></script>
+    <script type="text/javascript" src="../scripts/convertor.js"></script>
     <style>
         body{background: none;}
         h1,h2,h3,h4,h5,h6,p,ul,li,dl,dt,dd{margin:0;padding:0;list-style: none;}
