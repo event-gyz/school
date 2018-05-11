@@ -9,7 +9,7 @@ include('inc.php');
     <!-- 开发环境 -->
     <!-- <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&ak=c5bAV1QzSlHHzKTj3rFkWRO7Ok2pom9n"></script> -->
     <!-- 测试环境 -->
-    <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&ak=Zl4UAeBdHG55A1LXGuSXgRB4t1f6fMKy"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&ak=MDD4sezyIh6fuPuiG9cY1CGHFqUbs5GS"></script>
     <script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
     <style>
         body{background: none;}
