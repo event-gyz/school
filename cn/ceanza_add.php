@@ -200,7 +200,7 @@ include('inc.php');
                 var geoc = new BMap.Geocoder();
             geoc.getLocation(point, rs => {
                 var positionList = rs.surroundingPois,
-                html = `<li><p>${rs.addressComponents.city}</p></li>`;
+                html = `<li class="first_position"><p>${rs.addressComponents.city}</p></li>`;
             for(var i = 0; i < positionList.length; i++){
                 html += `<li><p>${positionList[i].title}</p><span>${positionList[i].address}</span></li>`
             }
@@ -224,11 +224,15 @@ include('inc.php');
         $(this).parent().hide()
     })
 
-    $('.position_list').on('click','li',function(){
+    $('.position_list').on('click','li:not(li.first_position)',function(){
         var address = $('.position_list li:first-child p').html() + $(this).children('p').html()
         $('#suggestId').val(address)
     })
 
+    $('.position_list').on('click','li.first_position',function(){
+        var address = $(this).children('p').html()
+        $('#suggestId').val(address)
+    })
 </script>
 </body>
 <!-- InstanceEnd --></html>

@@ -455,7 +455,7 @@ img.userHead{width:100%;height:100%;}
 .form>li input{float: right;width:56%;height:100%;color:#B7B2A9;text-align: right;padding:0 5px;box-sizing: border-box;}
 
 .form>li.geographical_location{overflow:visible;position: relative;}
-.relative_position{display:none;position: absolute;top:40px;left:0;width:100%;min-height:200px;z-index: 99;background: #fff;padding:0 0.1463rem;margin-bottom: 0.2927rem;box-sizing: border-box;}
+.relative_position{display:none;position: absolute;top:40px;left:0;width:100%;min-height:200px;z-index: 99;background: #fff;padding:0 0.1463rem;margin-bottom: 1.561rem;box-sizing: border-box;}
 .relative_position>p{color:#5F739A;line-height: 1.0rem;font-size: 0.3512rem;font-weight: bold;}
 .relative_position li{border-top:1px solid #F8F8F8;padding: 0.1171rem 0;line-height: 0.5268rem;font-size: 0.2927rem;color:#7C7C7C;}
 .relative_position li:first-child{line-height: 1.0146rem;}
