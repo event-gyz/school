@@ -143,7 +143,7 @@ include('inc.php');
                                     记录地址：
                                     <input type="text" id="suggestId" name="address"  class="address-input"/>
                                     <div class="relative_position">
-                                        <p>不显示位置</p>
+                                        <p>手动输入</p>
                                         <ul class="position_list"></ul>
                                     </div>
                                 </li>
