@@ -6,8 +6,6 @@ include('inc.php');
 <html><!-- InstanceBegin template="/Templates/_page01.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
     <?php include('inc_head.php');  ?>
-    <!-- 开发环境 -->
-    <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&ak=c5bAV1QzSlHHzKTj3rFkWRO7Ok2pom9n"></script>
     <?php if(strpos($_SERVER['SERVER_NAME'],'.com.cn')===false){
         ?>
         <!-- 测试环境 -->
@@ -35,7 +33,7 @@ include('inc.php');
 <!-- InstanceBeginEditable name="wrap" -->
 <section id="wrap">
     <!-- 百度地图 -->
-    <div id="allmap"></div>
+    <div id="allmap" style="display: none"></div>
     <!-- InstanceEndEditable -->
 
     <!--【Header】-->
@@ -140,10 +138,14 @@ include('inc.php');
                                     记录时间：
                                     <input class="time date_a"  name="date" type="text" data-position='bottomLeft' readonly x-webkit-speech="none" value="<?php echo date('Y-m-d',time())?>">
                                 </li>
-                                <li>
+                                <li class="geographical_location">
                                     <b class="address"></b>
                                     记录地址：
-                                    <input type="text" name="address"  class="address-input" id="suggestId"/>
+                                    <input type="text" id="suggestId" name="address"  class="address-input"/>
+                                    <div class="relative_position">
+                                        <p>不显示位置</p>
+                                        <ul class="position_list"></ul>
+                                    </div>
                                 </li>
                             </ul>
                             <ul class="uploadImgList">
@@ -177,7 +179,6 @@ include('inc.php');
 <?php include 'inc_bottom_js.php'; ?>
 <link rel="stylesheet" href="../theme/cn/jquery.cxcalendar.css">
 <script src="../scripts/jquery.cxcalendar.js"></script>
-<script src="http://res.wx.qq.com/open/js/jweixin-1.1.0.js"> </script>
 <script>
     // 限制可选日期
     $('.date_a').cxCalendar({
@@ -189,29 +190,44 @@ include('inc.php');
 
     const map = new BMap.Map("allmap");
 
-    var point = new BMap.Point(116.331398,39.897445);
-    map.centerAndZoom(point,12);
-
     var geolocation = new BMap.Geolocation();
 
-    geolocation.getCurrentPosition( r => {
-        if(geolocation.getStatus() == BMAP_STATUS_SUCCESS){
-        var mk = new BMap.Marker(r.point);
-        var new_point = new BMap.Point(r.point.lng,r.point.lat);
-        var geoc = new BMap.Geocoder();
-        geoc.getLocation(new_point, rs => {
-            var addComp = rs.addressComponents;
-        $('#suggestId').val(addComp.province + addComp.city + addComp.district + addComp.street + addComp.streetNumber);
-    });
-    }else {
-        alert('failed' + geolocation.getStatus());
-    }
+    $('#suggestId').focus(function(){
+        geolocation.getCurrentPosition( r => {
+            if(geolocation.getStatus() == BMAP_STATUS_SUCCESS){
+            var new_point = new BMap.Point(r.point.lng,r.point.lat);
+            BMap.Convertor.translate(new_point, 0, point => {
+                var geoc = new BMap.Geocoder();
+            geoc.getLocation(point, rs => {
+                var positionList = rs.surroundingPois,
+                html = `<li><p>${rs.addressComponents.city}</p></li>`;
+            for(var i = 0; i < positionList.length; i++){
+                html += `<li><p>${positionList[i].title}</p><span>${positionList[i].address}</span></li>`
+            }
+            $('.position_list').html(html)
+        });
+        });
+        }else {
+            alert('failed'+geolocation.getStatus());
+        }
     },{enableHighAccuracy: true})
+        $(this).siblings('.relative_position').show()
+    })
 
-    // var ac = new BMap.Autocomplete({//建立一个自动完成的对象
-    //     "input" : "suggestId",
-    //     "location" : map
-    // });
+    $('#suggestId').blur(function(){
+        setTimeout(()=>{$(this).siblings('.relative_position').hide()},100)
+    })
+
+    $('.relative_position p').click(function(event){
+        var e = event || window.event
+        event.stopPropagation()
+        $(this).parent().hide()
+    })
+
+    $('.position_list').on('click','li',function(){
+        var address = $('.position_list li:first-child p').html() + $(this).children('p').html()
+        $('#suggestId').val(address)
+    })
 
 </script>
 </body>

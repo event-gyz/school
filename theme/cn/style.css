@@ -241,7 +241,7 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .weak{background: url('../../content/epaper/images/star_weak.png');background-size: 100% 100%;}
 .normal{background: url('../../content/epaper/images/star_normal.png');background-size: 100% 100%;}
 .strong{background: url('../../content/epaper/images/star_strong.png');background-size: 100% 100%;}
-.description li span{color:#727272;font-size: 0.3122rem;line-height: 0.439rem;}
+.description li span{color:#727272;font-size: 0.3317rem;line-height: 0.439rem;}
 .replist ul.complete_item{margin-top:0.5854rem;color:#727272;}
 .complete_item>li{line-height: 1.4244rem;font-size: 0.2927rem}
 .complete_item>li>p{float:left;width:2.3415rem;}
@@ -448,11 +448,19 @@ img.userHead{width:100%;height:100%;}
 .diaryTime{text-align: right;padding-right: 0.5854rem;line-height: 24px;margin:8px 0;font-size: 16px;color:#B7B2A9;}
 .ceanza .ceanza_eqit_submit,.ceanza .submit,.height_record .submit,.height_record_eqit_submit,.weight_record .submit,.weight_record_eqit_submit,.medical_institution_eqit_submit,.medical_institution_add_submit,.medical_record_eqit_submit,.medical_record_add_submit{display:block;width:100px;height:34px;background: #7FC242;border-radius: 3px;color:#fff;font-size: 16px;font-weight: bold;margin:100px auto 20px;border-bottom: 3px solid #69A036;}
 .ceanza .ceanza_eqit_submit,.medical_institution_eqit_submit,.medical_institution_add_submit,.medical_record_eqit_submit,.medical_record_add_submit{text-align: center;line-height: 34px;}
-.form>li{overflow: hidden;color:#B7B2A9;}
+.form>li{color:#B7B2A9;overflow: hidden;}
 .form .title-menu{padding: 0 15px;height:38px;line-height: 38px;position: relative;overflow: inherit;}
-.form>li p{float: left;}
+.form>li>p{float: left;}
 .isShare{position: absolute;top:0;right:0;color:#5FBF51;font-size: 14px;line-height: 38px;}
-.form>li input{float: right;width:56%;height:100%;color:#B7B2A9;text-align: right;}
+.form>li input{float: right;width:56%;height:100%;color:#B7B2A9;text-align: right;padding:0 5px;box-sizing: border-box;}
+
+.form>li.geographical_location{overflow:visible;position: relative;}
+.relative_position{display:none;position: absolute;top:40px;left:0;width:100%;min-height:200px;z-index: 99;background: #fff;padding:0 0.1463rem;margin-bottom: 0.2927rem;box-sizing: border-box;}
+.relative_position>p{color:#5F739A;line-height: 1.0rem;font-size: 0.3512rem;font-weight: bold;}
+.relative_position li{border-top:1px solid #F8F8F8;padding: 0.1171rem 0;line-height: 0.5268rem;font-size: 0.2927rem;color:#7C7C7C;}
+.relative_position li:first-child{line-height: 1.0146rem;}
+.relative_position li>p{color:#282828;font-size: 0.3512rem;font-weight: bold;}
+
 .isShare input{width:auto;height:auto;display: none;}
 .isShare input + label::before{content:"\a0";display: inline-block;width:12px;height:12px;margin-right: 5px;background:url('../../content/epaper/images/nocheck.png') no-repeat;background-size: 100%;text-indent: .15em;line-height: .9;}
 .isShare input:checked + label::before{background:url('../../content/epaper/images/checked.png') no-repeat;background-size: 100%;}
@@ -632,18 +640,18 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .tabcont .loadmore p{width: 40%;color: #5EC053;line-height: 24px;border-right: 1px solid #E2E2E2;box-sizing: border-box;}
 .tabcont .loadmore p span{margin:0 5px;}
 .tabcont .loadmore p span.decrement{display: none;}
-#gi_table tr td{font-size: 0.2927rem;border-bottom: 1px solid #E2E2E2;}
+#gi_table tr td{font-size: 0.3122rem;border-bottom: 1px solid #E2E2E2;}
 #gi_table tr:last-child td{border-bottom: 0;}
 #gi_table tr td:first-child{width:40%;padding:0.1951rem;border-right:1px solid #E2E2E2;}
 #gi_table .detail{overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;}
-.isComplete{display: block;width:1.3659rem;height:0.6829rem;font-size:0.2537rem;background:#5FC152;border-radius: 0.078rem;color: #fff;margin:0.2927rem auto 0;}
+.isComplete{display: block;width:1.3659rem;height:0.6829rem;font-size: 0.2732rem;background:#5FC152;border-radius: 0.078rem;color: #fff;margin:0.2927rem auto 0;}
 #gi_table tr td:last-child{width:60%;padding:0.1951rem;text-align: center;}
 .detail_tablinks a{color:#666666;font-size: 0.2537rem;transition: none;}
 
 .project_list ul{height: 100%;width: 100%;border:1px solid #F4F4F4;border-bottom: 0;box-sizing: border-box;overflow: hidden;}
 .project_list li{float: left;width:16.666%;text-align: center;}
 .project_list li:last-child{margin-right: 0}
-.project_list li a{display: block;text-align: center;color:#B1B1B1;font-size: 0.3512rem 0.3707rem;transition: none;text-decoration:none;height:0.7805rem;line-height: 0.7805rem;overflow: hidden;}
+.project_list li a{display: block;text-align: center;color:#B1B1B1;font-size: 0.3707rem;transition: none;text-decoration:none;height:0.7805rem;line-height: 0.7805rem;overflow: hidden;}
 .project_list li.selected a{color:#59C448;}
 
 .project_status{overflow: hidden;}
