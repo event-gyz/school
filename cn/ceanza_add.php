@@ -192,9 +192,9 @@ include('inc.php');
 
     var geolocation = new BMap.Geolocation();
 
-    $('#suggestId').focus(function(){
-        geolocation.getCurrentPosition( r => {
-            if(geolocation.getStatus() == BMAP_STATUS_SUCCESS){
+    geolocation.getCurrentPosition( r => {
+        $('#suggestId').focus(function(){
+        if(geolocation.getStatus() == BMAP_STATUS_SUCCESS){
             var new_point = new BMap.Point(r.point.lng,r.point.lat);
             BMap.Convertor.translate(new_point, 0, point => {
                 var geoc = new BMap.Geocoder();
@@ -210,9 +210,9 @@ include('inc.php');
         }else {
             alert('failed'+geolocation.getStatus());
         }
-    },{enableHighAccuracy: true})
         $(this).siblings('.relative_position').show()
     })
+    },{enableHighAccuracy: true})
 
     $('#suggestId').blur(function(){
         setTimeout(()=>{$(this).siblings('.relative_position').hide()},100)
@@ -221,6 +221,8 @@ include('inc.php');
     $('.relative_position p').click(function(event){
         var e = event || window.event
         event.stopPropagation()
+        $('#suggestId').val('')
+        $('#suggestId').focus()
         $(this).parent().hide()
     })
 
