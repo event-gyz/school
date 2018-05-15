@@ -117,6 +117,7 @@ if(!isset($_tag))
 
 
 </section>
+<?php include 'inc_bottom_js.php'; ?>
 <script type="text/javascript">
     function loadMainArticle(v_id) {
         // get THE article

@@ -14,6 +14,7 @@ if(!isset($_SESSION['user_token'])) {
 <html><!-- InstanceBegin template="/Templates/_page01.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
     <?php include('inc_head.php');	?>
+    <script src='../scripts/cropper.js'></script>
     <style>
         body{background: none;}
         #content{padding-top: 0}
