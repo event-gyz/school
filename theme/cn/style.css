@@ -236,7 +236,7 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 
 /* 成长报告新添样式 start */
 .replist ul.description{text-align: left;padding: 0 0.3902rem;margin-bottom: 0.6829rem;}
-.description li p{color:#61C254;font-size: 0.4098rem;line-height: 0.5854rem;}
+.description li p{color:#61C254;font-size: 0.4098rem;line-height: 0.5854rem;margin-top: 0.2927rem}
 .description li b{display: inline-block;width:1.3756rem;height:0.4rem;margin-left: 0.078rem;position: relative;top: 0.0585rem;}
 .weak{background: url('../../content/epaper/images/star_weak.png');background-size: 100% 100%;}
 .normal{background: url('../../content/epaper/images/star_normal.png');background-size: 100% 100%;}
