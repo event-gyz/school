@@ -9,13 +9,13 @@ include('inc.php');
     <?php if(strpos($_SERVER['SERVER_NAME'],'.com.cn')===false){
         ?>
         <!-- 测试环境 -->
-        <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&ak=MDD4sezyIh6fuPuiG9cY1CGHFqUbs5GS"></script>
+        <script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&ak=MDD4sezyIh6fuPuiG9cY1CGHFqUbs5GS&s=1"></script>
         <script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
     <?php
     }else{
     ?>
         <!-- 生产环境 -->
-        <script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&ak=MDD4sezyIh6fuPuiG9cY1CGHFqUbs5GS"></script>
+        <script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&ak=MDD4sezyIh6fuPuiG9cY1CGHFqUbs5GS&s=1"></script>
         <script type="text/javascript" src="https://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
         <?php
     }
