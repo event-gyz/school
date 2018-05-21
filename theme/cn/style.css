@@ -762,6 +762,7 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .education{padding: 0 0.3512rem}
 .education_bag{width:7.2683rem;margin:0 auto;}
 .education img,.education video{width:100%;height:auto;}
+.education iframe{width:100%;height:4.7317rem;}
 .education_explain{margin-top:0.5854rem;padding: 0.3902rem 0.1463rem 0.2927rem;line-height: 0.4878rem;font-size: 0.2927rem;color:#B7B2A9;border-top: 1px solid #E3E3E3;border-bottom: 1px solid #E3E3E3;}
 .age_division{margin-top:0.4878rem;}
 .edition_list{margin-top:0.5854rem;overflow: hidden;}
