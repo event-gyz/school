@@ -140,12 +140,12 @@ include('inc.php');
                         			<span>听听专家怎么说？</span>
                         			<i></i>
                         		</h4>
-                        		<iframe frameborder="0" allow="autoplay; fullscreen" allowfullscreen="true" src="//v.qq.com/txp/iframe/player.html?origin=https%3A%2F%2Fmp.weixin.qq.com&amp;vid=x1316chg668&amp;autoplay=false&amp;full=true&amp;show1080p=false"></iframe>
+                        		<video src="../content/epaper/source/expert_explain.mp4" autoplay></video>
                         		<p>巴布豆家庭早教针对1-8岁孩子以力、真、美的核心理念全面培养孩子的感知力、表达能力、创造力、解决问题的能力等。让孩子懂得尊重自己欣赏自己，有合作精神并心怀感恩。养成自信、自爱的优质人格。</p>
                         	</div>
                         	<div class="interest_explain">
                         		<h4>----趣味玩中学----</h4>
-                        		<iframe frameborder="0" allow="autoplay; fullscreen" allowfullscreen="true" src="//v.qq.com/txp/iframe/player.html?origin=https%3A%2F%2Fmp.weixin.qq.com&amp;vid=o1323w1b83w&amp;autoplay=false&amp;full=true&amp;show1080p=false"></iframe>
+                        		<video src="../content/epaper/source/interest_explain.mp4" autoplay></video>
                         		<div class="app">
                         			<p>APP【益智游戏】每期核心主题趣味学</p>
                         			<span>只有巴布豆家庭早教</span>
@@ -192,7 +192,7 @@ include('inc.php');
                         	</div>
                         	<div class="learning_platform">
                         		<h4>----掌上学习平台（手机APP）----</h4>
-                        		<iframe frameborder="0" allow="autoplay; fullscreen" allowfullscreen="true" src="//v.qq.com/txp/iframe/player.html?origin=https%3A%2F%2Fmp.weixin.qq.com&amp;vid=o1326rsgct2&amp;autoplay=false&amp;full=true&amp;show1080p=false"></iframe>
+                        		<video src="../content/epaper/source/learning_platform.mp4" autoplay></video>
                         		<p>APP【主题影音】每期DVD内容全收纳</p>
                         	</div>
                         	<div class="early_education_bag">

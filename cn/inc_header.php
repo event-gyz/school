@@ -5,66 +5,66 @@
 	var authcode = false;
 	var reg_genner = "男";
 	$(function(){
-		// Login
-		$("#login_form").submit(function(e){
-			e.preventDefault();
-			if(!checkEmailFormat() || !checkPasswordFormat()) {
-				$("#fy-login .error01").show().delay(3000).fadeOut();
-				return true;
-			}
-			var user_id = $("#login_id").val();
-			var user_password = $("#login_pass").val();
+        // Login
+        $("#login_form").submit(function(e){
+            e.preventDefault();
+            if(!checkEmailFormat() || !checkPasswordFormat()) {
+                $("#fy-login .error01").show().delay(3000).fadeOut();
+                return true;
+            }
+            var user_id = $("#login_id").val();
+            var user_password = $("#login_pass").val();
 
-			$.ajax({
-				url: "login.php",
-				type: "POST",
-				data: {
-					'p1': user_id,
-					'p2': user_password
-				},
-				dataType: "json",
-				success: function (jsonStr) {
-					if(jsonStr.result=='success') {
-						var message = $.parseJSON(jsonStr.message);
-						showLoginStatus(message.email,message.credit);
-						$.fancybox.close();
-						<?php
-						if(isset($b_post_tv_submit) && $b_post_tv_submit == true) {
-							$b_post_tv_submit = false;
-							echo('postTvSubmit();');
-						}
-						?>
-						if(_next_move_ == 100) {
-							onMenuItem3Click();
-						}
-						else if(_next_move_ == 102) {
-							_next_move_ = 0;
-							document.location.href = 'ceanza_menu.php';
-						}
-						else if(_next_move_ == 104) {
-							_next_move_ = 0;
+            $.ajax({
+                url: "login.php",
+                type: "POST",
+                data: {
+                    'p1': user_id,
+                    'p2': user_password
+                },
+                dataType: "json",
+                success: function (jsonStr) {
+                    if(jsonStr.result=='success') {
+                        var message = $.parseJSON(jsonStr.message);
+                        showLoginStatus(message.email,message.credit);
+                        $.fancybox.close();
+                        <?php
+                        if(isset($b_post_tv_submit) && $b_post_tv_submit == true) {
+                            $b_post_tv_submit = false;
+                            echo('postTvSubmit();');
+                        }
+                        ?>
+                        if(_next_move_ == 100) {
+                            onMenuItem3Click();
+                        }
+                        else if(_next_move_ == 102) {
+                            _next_move_ = 0;
+                            document.location.href = 'ceanza_menu.php';
+                        }
+                        else if(_next_move_ == 104) {
+                            _next_move_ = 0;
 
-						}
-						else if(_next_move_ == 106) {
-							onMenuItem6Click();
-						}
-						else if(_next_move_ == 107) {
-							_next_move_ = 0;
+                        }
+                        else if(_next_move_ == 106) {
+                            onMenuItem6Click();
+                        }
+                        else if(_next_move_ == 107) {
+                            _next_move_ = 0;
 //                            document.location.href = 'http://x.eqxiu.com/s/PclsbuXT';
 
-							document.location.href = '';
-						}
-					}
-					else {
-						$("#fy-login .error01").show().delay(3000).fadeOut();
-					}
-				},
-				error: function(xhr, err) {
-					layer.msg('账号或密码不一致，请重新输入');
-				}
-			});
-			return false;
-		});
+                            document.location.href = '';
+                        }
+                    }
+                    else {
+                        $("#fy-login .error01").show().delay(3000).fadeOut();
+                    }
+                },
+                error: function(xhr, err) {
+                    layer.msg('账号或密码不一致，请重新输入');
+                }
+            });
+            return false;
+        });
 
 		$("#mobile_login_form").submit(function(e){
 			e.preventDefault();
@@ -84,7 +84,7 @@
 				},
 				dataType: "json",
 				success: function (jsonStr) {
-					console.log(jsonStr);
+                    console.log(jsonStr);
 					if(jsonStr.result=='success') {
 						$.fancybox.close();
 						<?php
@@ -93,11 +93,11 @@
 							echo('postTvSubmit();');
 						}
 						?>
-						if(jsonStr.need_complete == 1){
-							document.location.href = 'package.php';
-						}else{
-							document.location.href = 'index.php';
-						}
+                        if(jsonStr.need_complete == 1){
+                            document.location.href = 'package.php';
+                        }else{
+                            document.location.href = 'index.php';
+                        }
 
 					}
 					else {
@@ -111,9 +111,9 @@
 			return false;
 		});
 
-		$(".login_wx").click(function(e) {
-			document.location.href = 'login_wx.php';
-		});
+        $(".login_wx").click(function(e) {
+            document.location.href = 'login_wx.php';
+        });
 
 
 //		// Register
@@ -176,18 +176,18 @@
 //						showLoginStatus(message.email,message.credit);
 //						$.fancybox.close();
 //						<?php
-		//						if(isset($b_post_tv_submit) && $b_post_tv_submit == true) {
-		//							$b_post_tv_submit = false;
-		//							echo('postTvSubmit();');
-		//						}
-		//						else {
-		//							//echo('$("#regdone").fancybox().trigger("click");');
-		//							echo('
-		//			            	$("#regdone").css("max-width","500px");
-		//			            	$("#regdone").fancybox({"width":500, "height":500, "autoSize" : false}).trigger("click");
-		//			            ');
-		//						}
-		//						?>
+//						if(isset($b_post_tv_submit) && $b_post_tv_submit == true) {
+//							$b_post_tv_submit = false;
+//							echo('postTvSubmit();');
+//						}
+//						else {
+//							//echo('$("#regdone").fancybox().trigger("click");');
+//							echo('
+//			            	$("#regdone").css("max-width","500px");
+//			            	$("#regdone").fancybox({"width":500, "height":500, "autoSize" : false}).trigger("click");
+//			            ');
+//						}
+//						?>
 //					}
 //					else
 //					{
@@ -257,61 +257,61 @@
 			return false;
 		});
 // forget password
-		$("#forget_pwd_form").submit(function(){
-			var auth_code = $("#forget_authcode").val();
-			var phone = $("#forget_mobile").val();
-			$.ajax({
-				url: "send_forget.php",
-				type: "POST",
-				data: {
-					'p2': auth_code,
-					'p3': phone
-				},
-				dataType: "json",
-				success: function (jsonStr) {
-					console.log(jsonStr);
-					if(jsonStr.result=='success') {
-						$.fancybox.close();
-						$.fancybox({        href: "#fgsend"    }	);
-					}
-					else {
-						$("#fy-forget .error01").text(jsonStr.message).show().delay(3000).fadeOut();
-					}
-				},
-				error: function(xhr, err) {
+        $("#forget_pwd_form").submit(function(){
+            var auth_code = $("#forget_authcode").val();
+            var phone = $("#forget_mobile").val();
+            $.ajax({
+                url: "send_forget.php",
+                type: "POST",
+                data: {
+                    'p2': auth_code,
+                    'p3': phone
+                },
+                dataType: "json",
+                success: function (jsonStr) {
+                    console.log(jsonStr);
+                    if(jsonStr.result=='success') {
+                        $.fancybox.close();
+                        $.fancybox({        href: "#fgsend"    }	);
+                    }
+                    else {
+                        $("#fy-forget .error01").text(jsonStr.message).show().delay(3000).fadeOut();
+                    }
+                },
+                error: function(xhr, err) {
 //                    alert('Ajax request ' + err);
-				}
-			});
-			return false;
-		});
+                }
+            });
+            return false;
+        });
 
-		$("#mobile_bind").submit(function(){
-			var auth_code = $("#bind_vcode").val();
-			var phone = $("#bind_mobile").val();
-			$.ajax({
-				url: "mobile_bind.php",
-				type: "POST",
-				data: {
-					'p2': auth_code,
-					'p3': phone
-				},
-				dataType: "json",
-				success: function (jsonStr) {
-					console.log(jsonStr);
-					if(jsonStr.result=='success') {
-						$.fancybox.close();
-						$.fancybox({        href: "#bmsend"    }	);
-					}
-					else {
-						$("#fy-mobile-bind .error01").text(jsonStr.message).show().delay(3000).fadeOut();
-					}
-				},
-				error: function(xhr, err) {
+        $("#mobile_bind").submit(function(){
+            var auth_code = $("#bind_vcode").val();
+            var phone = $("#bind_mobile").val();
+            $.ajax({
+                url: "mobile_bind.php",
+                type: "POST",
+                data: {
+                    'p2': auth_code,
+                    'p3': phone
+                },
+                dataType: "json",
+                success: function (jsonStr) {
+                    console.log(jsonStr);
+                    if(jsonStr.result=='success') {
+                        $.fancybox.close();
+                        $.fancybox({        href: "#bmsend"    }	);
+                    }
+                    else {
+                        $("#fy-mobile-bind .error01").text(jsonStr.message).show().delay(3000).fadeOut();
+                    }
+                },
+                error: function(xhr, err) {
 //                    alert('Ajax request ' + err);
-				}
-			});
-			return false;
-		});
+                }
+            });
+            return false;
+        });
 
 		//关联旧账号
 		$("#wx_bind_mobile").submit(function(){
@@ -359,7 +359,7 @@
 					console.log(jsonStr);
 					if(jsonStr.result=='success') {
 						$.fancybox.close();
-						document.location.href = 'package.php';
+                        document.location.href = 'package.php';
 					}
 					else {
 						$("#fy-mobile-bind .error01").text(jsonStr.message).show().delay(3000).fadeOut();
@@ -479,7 +479,7 @@
 					_next_move_ = 0;
 //					document.location.href = 'http://x.eqxiu.com/s/PclsbuXT';
 
-					document.location.href = 'education.php';
+                    document.location.href = 'education.php';
 				}
 				else {
 					_next_move_ = 104;
@@ -529,7 +529,7 @@
 				if(jsonStr.islogin==true) {
 					_next_move_ = 0;
 //					document.location.href = 'http://x.eqxiu.com/s/PclsbuXT';
-					document.location.href = '';
+                    document.location.href = '';
 				}
 				else {
 					_next_move_ = 107;
