@@ -140,12 +140,18 @@ include('inc.php');
                         			<span>听听专家怎么说？</span>
                         			<i></i>
                         		</h4>
-                        		<video src="../content/epaper/source/expert_explain.mp4" autoplay></video>
+                        		<div class="source">
+                        			<video src="../content/epaper/source/expert_explain.mp4" controls="true" poster="../content/epaper/images/expert_explain.jpg"></video>
+                        			<!-- <a href="javascript: void(0)" class="expert_explain_played"><img src="../content/epaper/images/played.png" alt=""></a> -->
+                        		</div>
                         		<p>巴布豆家庭早教针对1-8岁孩子以力、真、美的核心理念全面培养孩子的感知力、表达能力、创造力、解决问题的能力等。让孩子懂得尊重自己欣赏自己，有合作精神并心怀感恩。养成自信、自爱的优质人格。</p>
                         	</div>
                         	<div class="interest_explain">
                         		<h4>----趣味玩中学----</h4>
-                        		<video src="../content/epaper/source/interest_explain.mp4" autoplay></video>
+                        		<div class="source">
+                        			<video src="../content/epaper/source/interest_explain.mp4" controls="true" poster="../content/epaper/images/interest_explain.jpg"></video>
+                        			<!-- <a href="javascript: void(0)" class="interest_explain_played"><img src="../content/epaper/images/played.png" alt=""></a> -->
+                        		</div>
                         		<div class="app">
                         			<p>APP【益智游戏】每期核心主题趣味学</p>
                         			<span>只有巴布豆家庭早教</span>
@@ -192,7 +198,10 @@ include('inc.php');
                         	</div>
                         	<div class="learning_platform">
                         		<h4>----掌上学习平台（手机APP）----</h4>
-                        		<video src="../content/epaper/source/learning_platform.mp4" autoplay></video>
+                        		<div class="source">
+                        			<video src="../content/epaper/source/learning_platform.mp4" controls="true" poster="../content/epaper/images/learning_platform.jpg"></video>
+                        			<!-- <a href="javascript: void(0)" class="learning_platform_played"><img src="../content/epaper/images/played.png" alt=""></a> -->
+                        		</div>
                         		<p>APP【主题影音】每期DVD内容全收纳</p>
                         	</div>
                         	<div class="early_education_bag">
@@ -272,7 +281,7 @@ include('inc.php');
 	                        			<p><img src="../content/epaper/images/offline_service.png" alt=""></p>
 	                        			<div class="early_education_bag_info">
 	                        				<b>线下门店服务：</b>
-	                        				<p>豆粉生日会活动、巴布豆见面会、巴布豆手偶剧等,提供优质成长环境培 养孩子社交能力！</p>
+	                        				<p>豆粉生日会活动、巴布豆见面会、巴布豆手偶剧等,提供优质成长环境培养孩子社交能力！</p>
 	                        			</div>
 	                        		</li>
 	                        	</ul>
@@ -297,4 +306,21 @@ include('inc.php');
     </section>
     <?php include 'inc_bottom_js.php'; ?>
 </body>
+<script>
+	// $('.source').on('touchstart', 'a', function(){
+	// 	$(this).siblings('video')[0].play()
+	// 	$(this).children('img').attr('src','../content/epaper/images/paused.png')
+	// 	setTimeout(function(){
+	// 		$(this).animate({'opacity': 0}, 300, 'linear')
+	// 	}.bind(this), 100);
+	// })
+
+	// $('.source').on('touchstart', 'video', function(){
+	// 	$(this)[0].pause()
+	// 	$(this).siblings('a').children('img').attr('src','../content/epaper/images/played.png')
+	// 	setTimeout(function(){
+	// 		$(this).siblings('a').animate({'opacity': 1}, 300, 'linear')
+	// 	}.bind(this), 100);
+	// })
+</script>
 <!-- InstanceEnd --></html>
