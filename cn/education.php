@@ -33,7 +33,7 @@ include('inc.php');
                         	<div class="education_bag">
                         		<img src="../content/epaper/images/education_bag.png" alt="">
                         	</div>
-                        	<div class="education_explain">巴布豆家庭早教将品格培养教育并列成家庭教育主轴，通过活泼、有 趣、智能互动、生动的教育方式全面培养孩子的创意思维能力、解决问题能力、逻辑分析能力等！真正做到高教于乐的家庭早教方案。实力品牌、备受欢迎！</div>
+                        	<div class="education_explain">巴布豆家庭早教将<span>品格培养</span>教育并列成家庭教育主轴，通过<span>活泼、有趣、智能互动、生动的教育方式全面培养孩子的创意思维能力、解决问题能力、逻辑分析能力等！</span>真正做到高教于乐的家庭早教方案。实力品牌、备受欢迎！</div>
                         	<div class="age_division">
                         		<img src="../content/epaper/images/age_division.png" alt="">
                         	</div>
@@ -62,28 +62,28 @@ include('inc.php');
                         	<div class="education_explain">
                         		<h4>什么是巴布豆家庭早教包?</h4>
                         		<h4>怎么教孩子？</h4>
-                        		<p>巴布豆家庭早教包汇集了两岸育儿专家并通过科学专业的育儿知识， 全力打造的一套系统、专业的家庭早教方案。针对1-8岁不同年龄孩子特点精心设计，通过玩中学，学中玩的形式全面系统的解决父母育儿过程中的各种困惑。</p>
-                        		<p>巴布豆家庭早教将品格培养教育并列成家庭教育主轴，通过活泼、有 趣、智能互动、生动的教育方式全面培养孩子的创意思维能力、解决问题能力、逻辑分析能力等！真正做到寓教于乐的家庭早教方案。实力品牌、备受欢迎！</p>
+                        		<p>巴布豆家庭早教包汇集了两岸育儿专家并通过科学专业的育儿知识，全力打造的一套系统、专业的家庭早教方案。针对1-8岁不同年龄孩子特点精心设计，通过<span>玩中学，学中玩的形式</span>全面系统的解决<span>父母育儿过程中的各种困惑。</span></p>
+                        		<p>巴布豆家庭早教将<span>品格培养教育</span>并列成家庭教育主轴，通过活泼、有趣、<span>智能互动、生动的教育方式全面培养孩子的创意思维能力、解决问题能力、逻辑分析能力等！</span>真正做到寓教于乐的家庭早教方案。实力品牌、备受欢迎！</p>
                         	</div>
                         	<div class="education_explain">
                         		<h4>为什么选巴布豆家庭早教包?</h4>
                         		<ul>
                         			<li>
                         				<i></i>
-                        				<b>与国际接轨:</b>来自台湾三大权威教育专家联合制定，根据不同年龄段 设计的家庭幼教体系，以品格教育为主轴，全面发展幼儿的心智与能力
+                        				<b>与国际接轨:</b>来自台湾三大权威教育专家联合制定，根据不同年龄段设计的家庭幼教体系，以品格教育为主轴，全面发展幼儿的心智与能力
                         			</li>
                         			<li>
                         				<i></i>
                         				<b>唯一针对新世代儿童设计的互动学习型态:</b>
-                        				阅读/动手做/开口说/玩 中学，让学习更有效更有趣。
+                        				阅读/动手做/开口说/玩中学，让学习更有效更有趣。
                         			</li>
                         			<li>
                         				<i></i>
                         				<b>最立体完整的教育场景:</b>
-                        				家庭早教包学习计划+线上育儿与社群对接+线下门店服务与活动的互动。
+                        				<span>家庭早教包学习计划+线上育儿与社群对接+线下门店服务与活动的互动。</span>
                         			</li>
-                        			<span>巴布豆家庭早教包不只是一套教育产品，而是全场景营造的育儿环境。</span>
                         		</ul>
+                        		巴布豆家庭早教包不只是一套教育产品，而是全场景营造的育儿环境。
                         	</div>
                         	<div class="annual_guarantee">
                         		<p><img src="../content/epaper/images/annual_guarantee.jpg" alt=""></p>
@@ -142,15 +142,13 @@ include('inc.php');
                         		</h4>
                         		<div class="source">
                         			<video src="../content/epaper/source/expert_explain.mp4" controls="true" poster="../content/epaper/images/expert_explain.jpg"></video>
-                        			<!-- <a href="javascript: void(0)" class="expert_explain_played"><img src="../content/epaper/images/played.png" alt=""></a> -->
                         		</div>
-                        		<p>巴布豆家庭早教针对1-8岁孩子以力、真、美的核心理念全面培养孩子的感知力、表达能力、创造力、解决问题的能力等。让孩子懂得尊重自己欣赏自己，有合作精神并心怀感恩。养成自信、自爱的优质人格。</p>
+                        		<p>巴布豆家庭早教针对1-8岁孩子以<span>力、真、美</span>的核心理念全面培养孩子的<span>感知力、表达能力、创造力、解决问题的能力</span>等。让孩子懂得尊重自己<span>欣赏自己，有合作精神并心怀感恩。</span>养成<span>自信、自爱的优质人格。</span></p>
                         	</div>
                         	<div class="interest_explain">
                         		<h4>----趣味玩中学----</h4>
                         		<div class="source">
                         			<video src="../content/epaper/source/interest_explain.mp4" controls="true" poster="../content/epaper/images/interest_explain.jpg"></video>
-                        			<!-- <a href="javascript: void(0)" class="interest_explain_played"><img src="../content/epaper/images/played.png" alt=""></a> -->
                         		</div>
                         		<div class="app">
                         			<p>APP【益智游戏】每期核心主题趣味学</p>
@@ -200,7 +198,6 @@ include('inc.php');
                         		<h4>----掌上学习平台（手机APP）----</h4>
                         		<div class="source">
                         			<video src="../content/epaper/source/learning_platform.mp4" controls="true" poster="../content/epaper/images/learning_platform.jpg"></video>
-                        			<!-- <a href="javascript: void(0)" class="learning_platform_played"><img src="../content/epaper/images/played.png" alt=""></a> -->
                         		</div>
                         		<p>APP【主题影音】每期DVD内容全收纳</p>
                         	</div>
@@ -218,14 +215,14 @@ include('inc.php');
 	                        			<p><img src="../content/epaper/images/game.png" alt=""></p>
 	                        			<div class="early_education_bag_info">
 	                        				<b>游戏读本：</b>
-	                        				<p>益智游戏书锻炼孩子逻辑思维能力的专辑。 是主题读本的内容延伸与拓展。</p>
+	                        				<p>益智游戏书锻炼孩子逻辑思维能力的专辑。是主题读本的内容延伸与拓展。</p>
 	                        			</div>
 	                        		</li>
 	                        		<li>
 	                        			<p><img src="../content/epaper/images/parents_handbook.png" alt=""></p>
 	                        			<div class="early_education_bag_info">
 	                        				<b>家长手册：</b>
-	                        				<p>当月主题重点扩充，敏感期问题解决方案、 健康常识等内容。</p>
+	                        				<p>当月主题重点扩充，敏感期问题解决方案、健康常识等内容。</p>
 	                        			</div>
 	                        		</li>
 	                        		<li class="light_disk">
@@ -239,14 +236,14 @@ include('inc.php');
 	                        			<p><img src="../content/epaper/images/flash_card.png" alt=""></p>
 	                        			<div class="early_education_bag_info">
 	                        				<b>闪卡：</b>
-	                        				<p>回顾本月重点内容，增强孩子的词汇量。增强孩子的瞬间记忆。 </p>
+	                        				<p>回顾本月重点内容，增强孩子的词汇量。增强孩子的瞬间记忆。</p>
 	                        			</div>
 	                        		</li>
 	                        		<li class="toys">
 	                        			<p><img src="../content/epaper/images/toys.png" alt=""></p>
 	                        			<div class="early_education_bag_info">
 	                        				<b>玩教具：</b>
-	                        				<p>教玩具配合当月主题设计有多种玩法。拓展孩子的思维分析能力和创意能力。是陪伴孩子并能有效互动的趣味教具。 </p>
+	                        				<p>教玩具配合当月主题设计有多种玩法。拓展孩子的思维分析能力和创意能力。是陪伴孩子并能有效互动的趣味教具。</p>
 	                        			</div>
 	                        		</li>
 	                        		<li class="intelligenceApp">
@@ -287,9 +284,34 @@ include('inc.php');
 	                        	</ul>
 	                        	<p><img src="../content/epaper/images/photo_wall.jpg" alt=""></p>
                         	</div>
-                        	<p class="family_morning_education_bag">
+                        	<div class="family_morning_education_bag">
                         		<img src="../content/epaper/images/family_morning_education_bag.jpg" alt="">
-                        	</p>
+                        	</div>
+                        	<div class="more_wonderful">
+                        		<p><img src="../content/epaper/images/more_wonderful.jpg" alt=""></p>
+                        	</div>
+                        	<div class="more_attention">
+                        		<h4>了解更多关注：</h4>
+                        		<dl class="attention_info">
+                        			<dd>微信号1：</dd>
+                        			<dd>gogostar-bj(GoGo星球大本营)</dd>
+                        			<dd>
+                        				<p>
+                        					<img src="../content/epaper/images/more_attention.png" alt="">
+                        				</p>
+                        			</dd>
+                        			<dd>微信号2：</dd>
+                        			<dd>gogostar-cn(GoGo星球)</dd>
+                        		</dl>
+                        	</div>
+                        	<div class="consulting_phone">
+                        		<p><img src="../content/epaper/images/consulting_phone.png" alt=""></p>
+                        	</div>
+                        	<div class="footer_logo">
+                        		<p>
+                        			<img src="../content/epaper/images/footer_logo.png" alt="">
+                        		</p>
+                        	</div>
                         </div>
                     </section>
                 </section>
@@ -306,21 +328,4 @@ include('inc.php');
     </section>
     <?php include 'inc_bottom_js.php'; ?>
 </body>
-<script>
-	// $('.source').on('touchstart', 'a', function(){
-	// 	$(this).siblings('video')[0].play()
-	// 	$(this).children('img').attr('src','../content/epaper/images/paused.png')
-	// 	setTimeout(function(){
-	// 		$(this).animate({'opacity': 0}, 300, 'linear')
-	// 	}.bind(this), 100);
-	// })
-
-	// $('.source').on('touchstart', 'video', function(){
-	// 	$(this)[0].pause()
-	// 	$(this).siblings('a').children('img').attr('src','../content/epaper/images/played.png')
-	// 	setTimeout(function(){
-	// 		$(this).siblings('a').animate({'opacity': 1}, 300, 'linear')
-	// 	}.bind(this), 100);
-	// })
-</script>
 <!-- InstanceEnd --></html>
