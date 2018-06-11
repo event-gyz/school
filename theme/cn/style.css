@@ -761,15 +761,15 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .brand{width:10.0rem;height:4.2732rem;}
 .early_education_module{width:8.4488rem;margin:0 auto;}
 .early_education_introduce,.business_cooperation_introduce{position: relative;width:8.4488rem;height:3.4146rem;}
-.introduce{position: absolute;right:0;top:-0.1951rem;width:1.6683rem;height:3.6098rem;background:#D9691D;color:#FDFDFD;text-align: center;padding-top: 0.2927rem;box-sizing: border-box;overflow: hidden;}
+.introduce{position: absolute;right:0;top:-0.1951rem;width:2.0683rem;height:3.6098rem;background:#D9691D;color:#FDFDFD;text-align: center;padding-top: 0.2927rem;box-sizing: border-box;overflow: hidden;}
 .business_cooperation_introduce .introduce{left:0;}
 .introduce h3{font-size: 0.2537rem;line-height: 0.3902rem}
-.introduce p{margin: 0.2927rem auto 0.5854rem;width:1.2683rem;height:auto;position: relative;text-align: left;font-size: 0.1171rem;}
+.introduce p{margin: 0.2927rem auto 0.1951rem;width:1.3659rem;height:auto;position: relative;text-align: left;font-size: 0.1561rem;}
 .business_cooperation_introduce .introduce p{margin-top: 0.4878rem;}
 .introduce p i{position: absolute;width:0.1756rem;height:0.1756rem;background:url('../../content/epaper/images/left_right_angle.png') no-repeat;background-size: 100% 100%;top:-0.0585rem;left:-0.0488rem;}
 .introduce p b{position: absolute;width:0.1756rem;height:0.1756rem;background:url('../../content/epaper/images/left_right_angle.png') no-repeat;background-size: 100% 100%;bottom:0;right:0;transform: rotate(180deg);}
-.introduce a{color:#fff;font-size: 0.1171rem}
-.early_education_introduce>p,.business_cooperation_introduce>p{width:6.7805rem;height:3.4146rem;}
+.introduce a{color:#fff;font-size: 0.2341rem}
+.early_education_introduce>p,.business_cooperation_introduce>p{width:6.3805rem;height:3.4146rem;}
 .business_cooperation_introduce>p{float: right;}
 /*巴布豆家庭早教 start */
 
