@@ -768,7 +768,7 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .business_cooperation_introduce .introduce p{margin-top: 0.4878rem;}
 .introduce p i{position: absolute;width:0.1756rem;height:0.1756rem;background:url('../../content/epaper/images/left_right_angle.png') no-repeat;background-size: 100% 100%;top:-0.078rem;left:-0.078rem;}
 .introduce p b{position: absolute;width:0.1756rem;height:0.1756rem;background:url('../../content/epaper/images/left_right_angle.png') no-repeat;background-size: 100% 100%;bottom:-0.078rem;right:-0.078rem;transform: rotate(180deg);}
-.introduce a{position: absolute;bottom:0.1951rem;left:50%;transform: translateX(-50%);width:1.1707rem;color:#fff;font-size: 0.2341rem;}
+.introduce a{position: absolute;bottom:0.1951rem;left:0;width:100%;color:#fff;font-size: 0.2341rem;text-align: center;}
 .early_education_introduce>p,.business_cooperation_introduce>p{width:6.3805rem;height:3.4146rem;}
 .business_cooperation_introduce>p{float: right;}
 /*巴布豆家庭早教 start */
