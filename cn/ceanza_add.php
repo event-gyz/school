@@ -21,7 +21,7 @@ include('inc.php');
     }
     ?>
     <style>
-        body{background: none;}
+        body{background: #fff;}
         h1,h2,h3,h4,h5,h6,p,ul,li,dl,dt,dd{margin:0;padding:0;list-style: none;}
         input,button{padding: 0;margin:0;border:0;outline: none;}
         img{vertical-align: bottom}

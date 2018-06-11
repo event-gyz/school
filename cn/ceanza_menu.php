@@ -16,7 +16,6 @@ if(!isset($_SESSION['user_token'])) {
     <?php include('inc_head.php');	?>
     <script src='../scripts/cropper.js'></script>
     <style>
-        body{background: none;}
         #content{padding-top: 0}
         h1,h2,h3,h4,h5,h6,p,ul,li,dl,dt,dd{margin:0;padding:0;list-style: none;}
         input,button{padding: 0;margin:0;border:0;outline: none;}

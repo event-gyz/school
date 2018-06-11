@@ -7,7 +7,7 @@ include('inc.php');
 <head>
     <?php include('inc_head.php');	?>
     <style>
-    	body{background: none;}
+    	body{background: #fff;}
     </style>
 </head>
 <body>

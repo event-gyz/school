@@ -318,7 +318,7 @@
                 if(jsonStr.islogin==true) {
                     _next_move_ = 0;
 //                    document.location.href = 'http://x.eqxiu.com/s/PclsbuXT';
-                    document.location.href = 'education.php';
+                    document.location.href = 'early_education.php';
                 }
                 else {
                     _next_move_ = 104;

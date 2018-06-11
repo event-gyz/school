@@ -14,7 +14,7 @@ if(!isset($tabon))
 <head>
     <?php include('inc_head.php');	?>
     <style>
-        body{background: none;}
+        body{background: #fff;}
         h1,h2,h3,h4,h5,h6,p,ul,li,dl,dt,dd{margin:0;padding:0;list-style: none;}
         input,button{padding: 0;margin:0;border:0;outline: none;}
         img{vertical-align: bottom}
@@ -268,7 +268,7 @@ if($membership['membership']<time()){
      * @param {*} size 已完成的指标个数
      * @param {*} currentSize 当前年龄段所需完成指标个数
      */
-        // 创建SVG
+    // 创建SVG
     var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     svg.setAttribute("version", "1.1"); // IE9+ support SVG 1.1 version
     function svgView(size, currentSize , late, old) {
