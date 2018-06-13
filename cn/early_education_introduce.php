@@ -297,11 +297,16 @@ include('inc.php');
                         			<dd>gogostar-bj(GoGo星球大本营)</dd>
                         			<dd>
                         				<p>
-                        					<img src="../content/epaper/images/more_attention.png" alt="">
+                        					<img src="../content/epaper/images/more_attention_01.png" alt="">
                         				</p>
                         			</dd>
                         			<dd>微信号2：</dd>
                         			<dd>gogostar-cn(GoGo星球)</dd>
+                                          <dd>
+                                                <p>
+                                                      <img src="../content/epaper/images/more_attention_02.png" alt="">
+                                                </p>
+                                          </dd>
                         		</dl>
                         	</div>
                         	<div class="consulting_phone">

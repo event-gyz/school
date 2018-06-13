@@ -35,10 +35,6 @@ include('inc.php');
                             <img src="../content/epaper/images/spread_area.jpg" alt="">
                         </p>
                     </div>
-                    <div class="bobdog">
-                        <h3>BOBDOG</h3>
-                        <p>教育路上任重道远，巴布豆与您一路同行</p>
-                    </div>
                     <div class="shop_cooperation">
                         <h3>线下门店加盟合作</h3>
                         <p>BOBDOG巴布豆，国际知名卡通品牌，专注为儿童设计，致力科技研发；高品位设计打造聚焦潮流的童品，产品涵盖服装、鞋类、配件各大类别，关爱呵护孩子的童年。</p>
@@ -55,17 +51,12 @@ include('inc.php');
                             <img src="../content/epaper/images/strategic_resource_cooperation.jpg" alt="">
                         </div>
                     </div>
-                    <div class="join_in">
-                        <h3>JOIN US</h3>
-                        <b>加盟巴布豆</b>
-                        <div class="addition_method">
-                            <p>通过改善家庭的育儿方式改善今天的孩子，改善明天的世界</p>
-                            <p>还在等什么？快来加盟巴布豆吧！</p>
-                            <b>400-885-8089</b>
-                            <div class="two_dimension_code">
-                                <img src="../content/epaper/images/more_attention.png" alt="">
-                            </div>
+                    <div class="contact_us">
+                        <h3>Contact US</h3>
+                        <div class="two_dimension_code">
+                            <img src="../content/epaper/images/contact_us.png" alt="">
                         </div>
+                        <b>400-885-8089</b>
                     </div>
                 </section>
             </section>

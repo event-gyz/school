@@ -759,17 +759,18 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 /*巴布豆家庭早教 start */
 .early_education img{width:100%;height:100%;}
 .brand{width:10.0rem;height:4.2732rem;}
-.early_education_module{width:8.4488rem;margin:0 auto;}
-.early_education_introduce,.business_cooperation_introduce{position: relative;width:8.4488rem;height:3.4146rem;}
-.introduce{position: absolute;right:0;top:-0.1951rem;width:2.0683rem;height:3.6098rem;background:#D9691D;color:#FDFDFD;text-align: center;padding-top: 0.2927rem;box-sizing: border-box;overflow: hidden;}
+/*.early_education_module{width:8.4488rem;margin:0 auto;}*/
+.early_education_introduce,.business_cooperation_introduce{position: relative;}
+.early_education_introduce:after,.business_cooperation_introduce:after{content: '';display: block;clear: both;}
+.introduce{position: absolute;right:0;top:-0.1951rem;width:2.3805rem;height:4.2927rem;background:#D9691D;color:#FDFDFD;text-align: center;padding-top: 0.2927rem;box-sizing: border-box;overflow: hidden;}
 .business_cooperation_introduce .introduce{left:0;}
-.introduce h3{font-size: 0.2537rem;line-height: 0.3902rem}
-.introduce p{margin: 0.2927rem auto 0.1951rem;width:1.3659rem;height:auto;position: relative;text-align: left;font-size: 0.1561rem;}
-.business_cooperation_introduce .introduce p{margin-top: 0.4878rem;}
-.introduce p i{position: absolute;width:0.1756rem;height:0.1756rem;background:url('../../content/epaper/images/left_right_angle.png') no-repeat;background-size: 100% 100%;top:-0.078rem;left:-0.078rem;}
-.introduce p b{position: absolute;width:0.1756rem;height:0.1756rem;background:url('../../content/epaper/images/left_right_angle.png') no-repeat;background-size: 100% 100%;bottom:-0.078rem;right:-0.078rem;transform: rotate(180deg);}
-.introduce a{position: absolute;bottom:0.1951rem;left:0;width:100%;color:#fff;font-size: 0.2341rem;text-align: center;}
-.early_education_introduce>p,.business_cooperation_introduce>p{width:6.3805rem;height:3.4146rem;}
+.introduce h3{font-size: 0.3317rem;line-height: 0.4878rem}
+.introduce p{margin: 0.3902rem auto 0;width:1.4634rem;position: relative;text-align: left;font-size: 0.2341rem;}
+.business_cooperation_introduce .introduce p{margin-top:0.5854rem;}
+.introduce p i{position: absolute;width:0.1756rem;height:0.1756rem;background:url('../../content/epaper/images/left_right_angle.png') no-repeat;background-size: 100% 100%;top:-0.1366rem;left:-0.1366rem;}
+.introduce p b{position: absolute;width:0.1756rem;height:0.1756rem;background:url('../../content/epaper/images/left_right_angle.png') no-repeat;background-size: 100% 100%;bottom:-0.1366rem;right:-0.1366rem;transform: rotate(180deg);}
+.introduce a{position: absolute;bottom:0.2927rem;left:0;width:100%;color:#fff;font-size: 0.2927rem;text-align: center;}
+.early_education_introduce>p,.business_cooperation_introduce>p{width:7.6293rem;height:4.0976rem;}
 .business_cooperation_introduce>p{float: right;}
 /*巴布豆家庭早教 start */
 
@@ -778,13 +779,13 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .education_bag{width:7.2683rem;margin:0 auto;}
 .education img,.education video{width:100%;height:auto;}
 .education iframe{width:100%;height:4.7317rem;}
-.education_explain{margin-top:0.5854rem;padding: 0.3902rem 0.1463rem 0.2927rem;line-height: 0.4878rem;font-size: 0.2927rem;color:#B7B2A9;border-top: 1px solid #E3E3E3;border-bottom: 1px solid #E3E3E3;}
+.education_explain{margin-top:0.5854rem;padding: 0.3902rem 0.1463rem 0.2927rem;line-height: 0.4878rem;font-size: 0.3122rem;color:#B7B2A9;letter-spacing:1px;border-top: 1px solid #E3E3E3;border-bottom: 1px solid #E3E3E3;}
 .education_explain span,.expert_explain p span{color:#807D78;}
 .age_division{margin-top:0.4878rem;}
 .edition_list{margin-top:0.5854rem;overflow: hidden;}
 .edition_list li{float:left;width:33.3333%;text-align: center;box-sizing: border-box;}
 .edition_list li img{width:2.4585rem;height:3.1707rem;}
-.education_explain h4{text-align: center;line-height: 0.4878rem;}
+.education_explain h4{text-align: center;line-height: 0.4878rem;font-size: 0.3512rem;}
 .education_explain p{margin-top: 0.4878rem;}
 .education_explain ul{margin-top:0.3902rem;}
 .education_explain li{margin-bottom: 0.2927rem}
@@ -807,8 +808,8 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .expert_explain{margin-top: 0.5854rem;border-bottom: 1px solid #E9E9E9;}
 .expert_explain h4{width:3.122rem;height:0.4488rem;padding-top: 0.039rem;padding-left: 0.3902rem;color:#fff;font-size: 0.2927rem;background:#5FC04F;box-sizing: border-box;position: relative;}
 .expert_explain h4 i{position: absolute;width:0.2146rem;height:0.361rem;background: url('../../content/epaper/images/left_bottom_horn.png') no-repeat;background-size: 100% 100%;top:0;right:-0.2146rem;}
-.expert_explain p{padding:0.3902rem 0.1463rem;line-height: 0.4878rem;font-size: 0.3122rem;color:#B7B2A9;}
-.interest_explain,.learning_platform{color:#B7B2A9;font-size: 0.3317rem;line-height: 0.4878rem;padding-bottom: 0.3902rem;border-bottom:1px solid #E9E9E9;}
+.expert_explain p{padding:0.3902rem 0.1463rem;line-height: 0.4878rem;font-size: 0.3122rem;color:#B7B2A9;letter-spacing:1px;}
+.interest_explain,.learning_platform{color:#B7B2A9;font-size: 0.3122rem;letter-spacing:1px;line-height: 0.4878rem;padding-bottom: 0.3902rem;border-bottom:1px solid #E9E9E9;}
 .interest_explain h4,.learning_platform h4,.early_education_bag h4{line-height: 0.9756rem;color:#5CC156;text-align: center;font-size: 0.3512rem;}
 .interest_explain .app{margin:0.3902rem 0;text-align: center;line-height: 0.439rem;font-weight: bold;}
 .interest_explain p{padding-left:0.3415rem;}
@@ -816,7 +817,7 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .interest_explain li i{display: inline-block;width:0.2634rem;height:0.2049rem;background:url('../../content/epaper/images/arrow.png') no-repeat;background-size: 100% 100%;}
 .learning_platform p{margin-top:0.4878rem;text-align: center;font-weight: bold;}
 .early_education_bag{padding-bottom: 0.4878rem;border-bottom: 1px solid #E9E9E9;}
-.early_education_bag li{margin-bottom: 0.8rem;position: relative;overflow: hidden;color:#B7B2A9;font-size: 0.3122rem;line-height: 0.439rem;}
+.early_education_bag li{margin-bottom: 0.8rem;position: relative;overflow: hidden;color:#B7B2A9;font-size: 0.3122rem;letter-spacing:1px;line-height: 0.439rem;}
 .early_education_bag li>p{float: left;width:2.761rem;}
 .early_education_bag li.light_disk>p{width:3.3073rem;}
 .early_education_bag li.flash_card>p{width:3.3756rem;}
@@ -837,28 +838,23 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .more_attention{padding: 0 0.1463rem;color:#E93C15;}
 .more_attention h4{line-height: 1.0732rem;}
 .more_attention dl{margin: 0.4878rem auto 0;width:4.3902rem;}
-.more_attention dd{line-height: 0.4878rem;font-size: 0.2927rem}
+.more_attention dd{line-height: 0.4878rem;font-size: 0.3122rem}
 .more_attention dd p{width:100%;margin:0.7805rem 0;}
 .consulting_phone p{width:7.8049rem;margin: 0.5854rem auto;}
 .footer_logo{overflow: hidden;}
-.footer_logo p{width:6.5366rem;margin: 0 auto 1.561rem;}
+.footer_logo p{width:6.5366rem;margin: 0 auto 0.2927rem;}
 /* 家庭早教介绍 end */
 
 /* 商业合作 start */
 .business_cooperation img{width:100%;height:auto;}
 .spread_area{width:100%;padding-bottom: 0.5268rem;border-bottom: 1px solid #E3E3E3;}
-.bobdog{padding: 0.3317rem 0;border-bottom: 1px solid #E3E3E3;text-align: center;color:#843D1F;}
-.bobdog h3,.join_in h3{font-size:0.5854rem;margin-bottom: 0.1951rem;}
-.bobdog p{font-size: 0.2341rem;}
 .shop_cooperation,.strategic_resource_cooperation{color:#BCB7AF;border-bottom: 1px solid #E3E3E3;}
-.shop_cooperation h3,.strategic_resource_cooperation h3{line-height: 1.0146rem;text-align: center;font-size: 0.3512rem}
-.shop_cooperation p,.strategic_resource_cooperation p{line-height: 0.4878rem;font-size: 0.2732rem;}
+.shop_cooperation h3,.strategic_resource_cooperation h3{line-height: 1.0146rem;text-align: center;font-size: 0.3512rem;}
+.shop_cooperation p,.strategic_resource_cooperation p{line-height: 0.4878rem;font-size: 0.3122rem;letter-spacing:1px;}
 .cooperation{width:100%;margin:0.2927rem 0;}
-.join_in{color:#823B1E;margin-top:0.2927rem;text-align: center;}
-.join_in>b{font-size: 0.3122rem;}
-.addition_method{width:7.2195rem;margin:0.2927rem auto;line-height: 0.5366rem;font-size: 0.2927rem;text-align: left;position: relative;}
-.addition_method>b{font-size: 0.4878rem;}
-.two_dimension_code{position: absolute;right:0.078rem;bottom:0.078rem;width:0.8976rem;height:0.8976rem;}
+.contact_us{color:#823B1E;margin-top:0.3902rem;text-align: center;font-size: 0.4683rem;}
+.contact_us h3{font-size: 0.6829rem;}
+.two_dimension_code{width:1.561rem;height:1.561rem;margin:0.3902rem auto 0.1951rem;}
 /* 商业合作 end */
 
 /* 底部导航栏样式 start */
