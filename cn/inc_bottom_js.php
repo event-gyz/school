@@ -159,8 +159,6 @@
         $("#menuitem_4_m").click(onMenuItem4Click);
         $("#menuitem_6").click(onMenuItem6Click);
         $("#menuitem_6_m").click(onMenuItem6Click);
-        $("#menuitem_7").click(onMenuItem7Click);
-        $("#menuitem_7_m").click(onMenuItem7Click);
     });
 
     // 发送验证码
@@ -262,12 +260,12 @@
                         document.location.href = 'ceanza_menu.php';
                     }
                     else {
-                        _next_move_ = 100;
+                        _next_move_ = 102;
                         showEditBabyBox();
                     }
                 }
                 else {
-                    _next_move_ = 100;
+                    _next_move_ = 102;
                     $.fancybox({
                         href: "#fy-login"
                     });
@@ -356,28 +354,6 @@
             },
             error: function(xhr, err) {
 //                console.log('Ajax request ' + err);
-            }
-        });
-    }
-
-    function onMenuItem7Click() {
-        $.ajax({url: "check_login_status.ajax.php",
-            type: "POST",
-            dataType: "json",
-            success: function (jsonStr) {
-                if(jsonStr.islogin==true) {
-                    _next_move_ = 0;
-//                    document.location.href = 'http://x.eqxiu.com/s/PclsbuXT';
-                    document.location.href = '';
-                }
-                else {
-                    _next_move_ = 107;
-                    $.fancybox({
-                        href: "#fy-login"
-                    });
-                }
-            },
-            error: function(xhr, err) {
             }
         });
     }
@@ -545,17 +521,23 @@
             dataType: "json",
             success: function (jsonStr) {
                 if(jsonStr.islogin==true) {
+                    console.log(11)
                     if(jsonStr.haskid==true) {
                         _next_move_ = 0;
                         document.location.href = url;
-                    }
-                    else {
+                    }else {
                         _next_move_ = 100;
                         showEditBabyBox();
                     }
                 }
                 else {
-                    _next_move_ = 100;
+                    if(url == 'baby_vaccine.php') {
+                        _next_move_ = 108;
+                    }else if(url == 'person.php') {
+                        _next_move_ = 109;
+                    }else{
+                        _next_move_ = 100;
+                    }
                     $.fancybox({
                         href: "#fy-login"
                     });

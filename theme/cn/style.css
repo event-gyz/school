@@ -848,9 +848,9 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 /* 商业合作 start */
 .business_cooperation img{width:100%;height:auto;}
 .spread_area{width:100%;padding-bottom: 0.5268rem;border-bottom: 1px solid #E3E3E3;}
-.shop_cooperation,.strategic_resource_cooperation{color:#BCB7AF;border-bottom: 1px solid #E3E3E3;}
+.shop_cooperation,.strategic_resource_cooperation{color:#807d78;border-bottom: 1px solid #E3E3E3;}
 .shop_cooperation h3,.strategic_resource_cooperation h3{line-height: 1.0146rem;text-align: center;font-size: 0.3512rem;}
-.shop_cooperation p,.strategic_resource_cooperation p{line-height: 0.4878rem;font-size: 0.3122rem;letter-spacing:1px;}
+.shop_cooperation p,.strategic_resource_cooperation p{line-height: 0.4878rem;font-size: 0.3317rem;letter-spacing:1px;}
 .cooperation{width:100%;margin:0.2927rem 0;}
 .contact_us{color:#823B1E;margin-top:0.3902rem;text-align: center;font-size: 0.4683rem;}
 .contact_us h3{font-size: 0.6829rem;}

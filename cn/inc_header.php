@@ -43,7 +43,7 @@
                         }
                         else if(_next_move_ == 104) {
                             _next_move_ = 0;
-
+                            document.location.href = 'early_education.php';
                         }
                         else if(_next_move_ == 106) {
                             onMenuItem6Click();
@@ -51,8 +51,15 @@
                         else if(_next_move_ == 107) {
                             _next_move_ = 0;
 //                            document.location.href = 'http://x.eqxiu.com/s/PclsbuXT';
-
-                            document.location.href = '';
+                            document.location.href = 'buds_record.php';
+                        }
+                        else if(_next_move_ == 108) {
+                            _next_move_ = 0;
+                            document.location.href = 'baby_vaccine.php';
+                        }
+                        else if(_next_move_ == 109) {
+                            _next_move_ = 0;
+                            document.location.href = 'person.php';
                         }
                     }
                     else {
@@ -407,8 +414,6 @@
 		$("#menuitem_4_m").click(onMenuItem4Click);
 		$("#menuitem_6").click(onMenuItem6Click);
 		$("#menuitem_6_m").click(onMenuItem6Click);
-		$("#menuitem_7").click(onMenuItem7Click);
-		$("#menuitem_7_m").click(onMenuItem7Click);
 		$("#menuitem_8").click(onMenuItem8Click);
 		$("#menuitem_8_m").click(onMenuItem8Click);
 	});
@@ -425,12 +430,12 @@
 						document.location.href = 'ceanza_menu.php';
 					}
 					else {
-						_next_move_ = 100;
+						_next_move_ = 102;
 						showEditBabyBox();
 					}
 				}
 				else {
-					_next_move_ = 100;
+					_next_move_ = 102;
 					$.fancybox({
 						href: "#fy-login"
 					});
@@ -517,28 +522,6 @@
 			},
 			error: function(xhr, err) {
 //				console.log('Ajax request ' + err);
-			}
-		});
-	}
-
-	function onMenuItem7Click() {
-		$.ajax({url: "check_login_status.ajax.php",
-			type: "POST",
-			dataType: "json",
-			success: function (jsonStr) {
-				if(jsonStr.islogin==true) {
-					_next_move_ = 0;
-//					document.location.href = 'http://x.eqxiu.com/s/PclsbuXT';
-                    document.location.href = '';
-				}
-				else {
-					_next_move_ = 107;
-					$.fancybox({
-						href: "#fy-login"
-					});
-				}
-			},
-			error: function(xhr, err) {
 			}
 		});
 	}
@@ -793,13 +776,8 @@ $pagename = substr($filename, 0, strrpos($filename, "."));
 				<li <?php if($pagename=='itemlist') echo('class="on"'); ?>><a id="menuitem_3" href="javascript:void(0);">成长指标</a></li>
 				<li <?php if($pagename=='report') echo('class="on"'); ?>><a id="menuitem_6" href="javascript:void(0);">成长报告</a></li>
 				<li <?php if($pagename=='ceanza_menu') echo('class="on"'); ?>><a id="menuitem_2" href="javascript:void(0);">成长记录</a></li>
-
-				<!--	            <li --><?php //if($pagename=='training') echo('class="on"'); ?><!-->
-				<!--					<a id="menuitem_4" href="javascript:void(0);">每日e练习</a>-->
-				<!--				</li>-->
 				<li <?php if($pagename=='buds_record') echo('class="on"'); ?>><a id="menuitem_8">萌芽记录</a></li>
-
-				<li <?php if($pagename=='epaper') echo('class="on"'); ?>><a  id="menuitem_7" href="javascript:void(0);">巴布豆家庭早教</a></li>
+				<li <?php if($pagename=='epaper') echo('class="on"'); ?>><a  id="menuitem_4">巴布豆家庭早教</a></li>
 				<li <?php if($pagename=='about') echo('class="on"'); ?>><a href="about.php">关于我们</a></li>
 			</ul>
 		</nav>
@@ -818,7 +796,7 @@ $pagename = substr($filename, 0, strrpos($filename, "."));
 			<li <?php if($pagename=='buds_record') echo('class="on"'); ?>><a id="menuitem_8_m">萌芽记录</a></li>
 			<li <?php if($pagename=='news') echo('class="on"'); ?> ><a href="news.php">最新消息</a></li>
 			<li <?php if($pagename=='recommend') echo('class="on"'); ?>><a href="recommend.php">育儿天地</a></li>
-			<li <?php if($pagename=='epaper') echo('class="on"'); ?>><a id="menuitem_7_m" href="javascript:onMenuItem4Click();">巴布豆家庭早教</a></li>
+			<li <?php if($pagename=='epaper') echo('class="on"'); ?>><a id="menuitem_4_m">巴布豆家庭早教</a></li>
 			<li <?php if($pagename=='about') echo('class="on"'); ?>><a href="about.php">关于我们</a></li>
 			<?php
 			if(isset($_SESSION['user_token'])) {
