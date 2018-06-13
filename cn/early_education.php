@@ -36,28 +36,32 @@ include('inc.php');
                 </div>
                 <div class="early_education_module">
                     <div class="early_education_introduce">
-                        <div class="introduce">
-                            <h3>巴布豆</h3>
-                            <h3>家庭早教包</h3>
-                            <p>
-                                <i></i>
-                                <span>全力打造的一套系统、专业的家庭早教方案。</span>
-                                <b></b>
-                            </p>
-                            <a href="early_education_introduce.php">了解更多》</a>
-                        </div>
+                        <a href="early_education_introduce.php">
+                            <div class="introduce">
+                                <h3>巴布豆</h3>
+                                <h3>家庭早教包</h3>
+                                <p>
+                                    <i></i>
+                                    <span>全力打造的一套系统、专业的家庭早教方案。</span>
+                                    <b></b>
+                                </p>
+                                <span>了解更多》</span>
+                            </div>
+                        </a>
                         <p><img src="../content/epaper/images/early_education.jpg" alt=""></p>
                     </div>
                     <div class="business_cooperation_introduce">
-                        <div class="introduce">
-                            <h3>商业合作</h3>
-                            <p>
-                                <i></i>
-                                <span>诚挚邀请您,携手开展幼儿教育广大商机！</span>
-                                <b></b>
-                            </p>
-                            <a href="business_cooperation.php">了解更多》</a>
-                        </div>
+                        <a href="business_cooperation.php">
+                            <div class="introduce">
+                                <h3>商业合作</h3>
+                                <p>
+                                    <i></i>
+                                    <span>诚挚邀请您,携手开展幼儿教育广大商机！</span>
+                                    <b></b>
+                                </p>
+                                <span>了解更多》</span>
+                            </div>
+                        </a>
                         <p><img src="../content/epaper/images/business_cooperation.jpg" alt=""></p>
                     </div>
                 </div>

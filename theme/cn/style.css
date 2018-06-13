@@ -769,7 +769,7 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .business_cooperation_introduce .introduce p{margin-top:0.5854rem;}
 .introduce p i{position: absolute;width:0.1756rem;height:0.1756rem;background:url('../../content/epaper/images/left_right_angle.png') no-repeat;background-size: 100% 100%;top:-0.1366rem;left:-0.1366rem;}
 .introduce p b{position: absolute;width:0.1756rem;height:0.1756rem;background:url('../../content/epaper/images/left_right_angle.png') no-repeat;background-size: 100% 100%;bottom:-0.1366rem;right:-0.1366rem;transform: rotate(180deg);}
-.introduce a{position: absolute;bottom:0.2927rem;left:0;width:100%;color:#fff;font-size: 0.2927rem;text-align: center;}
+.introduce>span{position: absolute;bottom:0.2927rem;left:0;width:100%;color:#fff;font-size: 0.2927rem;text-align: center;}
 .early_education_introduce>p,.business_cooperation_introduce>p{width:7.6293rem;height:4.0976rem;}
 .business_cooperation_introduce>p{float: right;}
 /*巴布豆家庭早教 start */
@@ -854,7 +854,7 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .cooperation{width:100%;margin:0.2927rem 0;}
 .contact_us{color:#823B1E;margin-top:0.3902rem;text-align: center;font-size: 0.4683rem;}
 .contact_us h3{font-size: 0.6829rem;}
-.two_dimension_code{width:1.561rem;height:1.561rem;margin:0.3902rem auto 0.1951rem;}
+.two_dimension_code{width:1.9512rem;height:1.9512rem;margin:0.3902rem auto 0.1951rem;}
 /* 商业合作 end */
 
 /* 底部导航栏样式 start */
