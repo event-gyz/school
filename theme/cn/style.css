@@ -387,7 +387,7 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 
 /* 添加日记页面样式 start */
 #content{padding-top:80px;}
-.ceanza,.height_record,.weight_record,.buds_record,.medical_institution,.medical_record{color:#B7B2A9;} 
+.ceanza,.height_record,.weight_record,.buds_record,.medical_institution,.medical_record{color:#807d78;} 
 .photos{position: relative;}
 .photos>div{position: absolute;text-align: center;}
 .mather-head-portrait{top:0.3902rem;right:0.7805rem;}
@@ -431,9 +431,9 @@ img.userHead{width:100%;height:100%;}
 .ceanza_view .eqitUploadImg{text-align: center;}
 .eqit_content li,.form>li,.ceanza_view li{box-shadow: 0px 4px 5px -1px #E3E3E3;padding: 8px 15px;font-size: 16px;position: relative;}
 .medical_institution .form>li,.medical_record .form>li{padding:15px;}
-.eqit_content,.ceanza_view,.medical_record .form,.medical_institution .form{color:#B7B2A9;line-height: 22px;margin-top:5px;}
-.eqit_content input{color:#B7B2A9;width:50%;}
-.medical_institution .form li>input,.medical_record .form li>input{float:left;color:#B7B2A9;height:22px;text-align: left;}
+.eqit_content,.ceanza_view,.medical_record .form,.medical_institution .form{color:#807d78;line-height: 22px;margin-top:5px;}
+.eqit_content input{color:#807d78;width:50%;}
+.medical_institution .form li>input,.medical_record .form li>input{float:left;color:#807d78;height:22px;text-align: left;}
 .eqit_content .eqitUploadImg{text-align: center;color:#E5674D;font-size: 12px;position:relative;overflow: hidden;}
 .eqit_content li>b,.form li>b{float: left;width:14px;height:22px;position: relative;}
 .eqit_content .address b,.form .address b{background: url('../../content/epaper/images/address.png') no-repeat;background-size: 100%;margin-right: 15px;}
@@ -445,14 +445,14 @@ img.userHead{width:100%;height:100%;}
 .eqitUploadImg .imgContent{width:7.8049rem;height:auto;border:1px solid #A9CE87;border-radius: 5px;box-shadow: 0px 2px 5px -1px #A9CE87;margin: 10px auto 5px;overflow: hidden;}
 .eqitUploadImg .imgContent>img{width:80%;height:auto;}
 .eqitUploadImg input{position: absolute;width:7.8049rem;height:6.2439rem;top:20px;left:50%;transform: translateX(-50%);opacity: 0;}
-.diaryTime{text-align: right;padding-right: 0.5854rem;line-height: 24px;margin:8px 0;font-size: 16px;color:#B7B2A9;}
+.diaryTime{text-align: right;padding-right: 0.5854rem;line-height: 24px;margin:8px 0;font-size: 16px;color:#807d78;}
 .ceanza .ceanza_eqit_submit,.ceanza .submit,.height_record .submit,.height_record_eqit_submit,.weight_record .submit,.weight_record_eqit_submit,.medical_institution_eqit_submit,.medical_institution_add_submit,.medical_record_eqit_submit,.medical_record_add_submit{display:block;width:100px;height:34px;background: #7FC242;border-radius: 3px;color:#fff;font-size: 16px;font-weight: bold;margin:100px auto 20px;border-bottom: 3px solid #69A036;}
 .ceanza .ceanza_eqit_submit,.medical_institution_eqit_submit,.medical_institution_add_submit,.medical_record_eqit_submit,.medical_record_add_submit{text-align: center;line-height: 34px;}
-.form>li{color:#B7B2A9;overflow: hidden;}
+.form>li{color:#807d78;overflow: hidden;}
 .form .title-menu{padding: 0 15px;height:38px;line-height: 38px;position: relative;overflow: inherit;}
 .form>li>p{float: left;}
 .isShare{position: absolute;top:0;right:0;color:#5FBF51;font-size: 14px;line-height: 38px;}
-.form>li input{float: right;width:56%;height:100%;color:#B7B2A9;text-align: right;padding:0 5px;box-sizing: border-box;}
+.form>li input{float: right;width:56%;height:100%;color:#807d78;text-align: right;padding:0 5px;box-sizing: border-box;}
 
 .form>li.geographical_location{overflow:visible;position: relative;}
 .relative_position{display:none;position: absolute;top:40px;left:0;width:100%;min-height:200px;z-index: 99;background: #fff;padding:0 0.1463rem;margin-bottom: 1.561rem;box-sizing: border-box;}
@@ -474,7 +474,7 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .form>li .clock,.eqit_content .time b,.eqit_content>li .clock{float: left;width:20px;height:20px;background:url('../../content/epaper/images/clock.png') no-repeat;background-size: 100%;margin-right: 10px;position: relative;top:2px;}
 .height_record li .clock,.weight_record li .clock{top:5px;}
 .form>li .address,.eqit_content>li b.address{float: left;width:14px;height:22px;background:url('../../content/epaper/images/address.png') no-repeat;background-size: 100%;margin-right: 10px;margin-left:5px;}
-.original_info i{float: right;width:20px;height:20px;border-radius: 50%;border:1px solid #B7B2A9;background: url('../../content/epaper/images/down.png') no-repeat 4px 7px;background-size: 12px 7px;cursor: pointer;}
+.original_info i{float: right;width:20px;height:20px;border-radius: 50%;border:1px solid #807d78;background: url('../../content/epaper/images/down.png') no-repeat 4px 7px;background-size: 12px 7px;cursor: pointer;}
 .title-menu>a{color:#60C351;text-decoration: underline;}
 .title-list,.category-list,.headtitle-list{display:none;position: absolute;width:100%;background: #fff;border:1px solid #BFE0A1;border-radius: 4px;top:38px;left:50%;transform: translateX(-50%);z-index: 88;box-shadow: 0 1px 1px 1px #B7B7B7;margin-bottom: 80px;}
 .title-list-block,.category-list-block,.headtitle-list-block{display:block;}
@@ -484,7 +484,7 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .title-list li.checked,.category-list li.checked,.headtitle-list li.checked{background: #92CA63;color:#fff;}
 .uploadImgList{overflow: hidden;}
 .uploadImg{position: relative;float:left;padding-top: 60px;}
-.uploadImgList .imgContent{width:120px;height:120px;font-size: 80px;text-align: center;line-height: 100px;border:1px dotted #B8B3AA;margin: 0 15px;color:#B7B2A9;}
+.uploadImgList .imgContent{width:120px;height:120px;font-size: 80px;text-align: center;line-height: 100px;border:1px dotted #B8B3AA;margin: 0 15px;color:#807d78;}
 .uploadImgList .imgContent>img{width:100%;height:100%;}
 .uploadImg>input{position: absolute;top:61px;left:16px;width:120px;height:120px;opacity: 0;overflow: hidden;}
 .camera_photograph{float: left;position: relative;width:100px;height:120px;}
@@ -506,7 +506,7 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .mode_sel li b{position: absolute;left:0;bottom:-0.3902rem;width:100%;height:0.5756rem;background: url('../../content/epaper/images/mode_noselected.png') no-repeat;background-size: 100%;}
 .mode_sel li.selected{color:#7FC242;}
 .mode_sel li.selected b{background: url('../../content/epaper/images/mode_selected.png') no-repeat;background-size: 100%;}
-.ceanza_list,.height_record_list,.weight_record_list{margin-top:20px;font-size: 16px;color:#B7B2A9;}
+.ceanza_list,.height_record_list,.weight_record_list{margin-top:20px;font-size: 16px;color:#807d78;}
 .contraction{margin-top: 20px;}
 .ceanza_list>p,.consultation_list>p,.medical_institution_list>p{width:120px;height:30px;background: #7FC242;border-radius: 4px;color:#fff;font-size: 16px;font-weight: bold;padding-left: 20px;line-height: 30px;}
 .ceanza_list>p span{margin-left: 15px;}
@@ -528,7 +528,7 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .noData{display: none;width:80%;margin:60px auto;color:#BCBCBC;}
 .noData a{color:#8CC558;}
 .end_line{width:8.6634rem;height:0.0976rem;background: url('../../content/epaper/images/end_line.png') no-repeat;background-size: 100%;margin: 20px auto;}
-.relevant_articles{margin: 80px auto 0;color: #B7B2A9;}
+.relevant_articles{margin: 80px auto 0;color: #807d78;}
 .relevant_articles ul{font-size: 14px;}
 .recommended_articles li a{color:#666;position: relative;}
 .recommended_articles li p a{position: relative;color:#68C35E;}
@@ -603,7 +603,7 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 /* 添加萌芽记录页面样式 end */
 
 /* 添加就诊记录页面样式 start */
-.consultation_detail,.medical_institution_detail,.medical_institution_detail{margin-top:20px;box-shadow: 0 -4px 5px -1px #E6E6E6;color:#B7B2A9;font-size: 16px;}
+.consultation_detail,.medical_institution_detail,.medical_institution_detail{margin-top:20px;box-shadow: 0 -4px 5px -1px #E6E6E6;color:#807d78;font-size: 16px;}
 .consultation_detail>li,.medical_institution_detail>li{box-shadow: 0 4px 5px -1px #E6E6E6;min-height:60px;line-height: 60px;overflow: hidden;}
 .consultation_detail>li>p,.medical_institution_detail>li>p{float:left;margin-left: 10px}
 .consultation_detail>li>span,.medical_institution_detail>li>span{float:left;min-width:100px;max-width:70%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
@@ -663,10 +663,10 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .newcomers dd p{font-size: 14px;}
 .newcomers p>img{width:100%;height:auto;}
 .newcomers_guide{margin: 0.2927rem auto;border-top:1px solid #E3E3E3;}
-.newcomers_guide dt{padding: 0 0.2927rem;line-height: 0.9756rem;font-size: 0.4293rem;border-bottom:1px solid #E3E3E3;color:#B7B2A9;}
+.newcomers_guide dt{padding: 0 0.2927rem;line-height: 0.9756rem;font-size: 0.4293rem;border-bottom:1px solid #E3E3E3;color:#807d78;}
 .newcomers_guide dt i{float: right;width:0.2927rem;height:0.2341rem;background:url('../../content/epaper/images/down.png') no-repeat;background-size: 100% 100%;margin-top: 0.3415rem;transition: all .3s linear;}
 .newcomers_guide dt i.active{transform: rotate(180deg);}
-.newcomers_guide dd{display: none;padding: 0 0.2927rem 0.2927rem;line-height: 0.4878rem;color:#B7B2A9;}
+.newcomers_guide dd{display: none;padding: 0 0.2927rem 0.2927rem;line-height: 0.4878rem;color:#807d78;}
 /* 新手上路页面样式 end */
 
 /* 家长分享页面样式 start */
@@ -699,12 +699,12 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .parent-head-portrait .upHead input,.baby_info .baby-head-portrait .upHead input{position: absolute;width:100%;height:100%;top:0;left:0;opacity: 0;}
 .parent-head-portrait .upHead b,.baby_info .baby-head-portrait .upHead b{position: absolute;left:50%;bottom:0;width:0.5268rem;height:0.5268rem;background:#FFEEE2;border-radius:50%;transform: translateX(-50%);opacity: .6;}
 .parent-head-portrait .upHead p,.baby_info .baby-head-portrait .upHead p{position: absolute;left:50%;bottom:0.1073rem;width: 0.3902rem;height: 0.3122rem;background:url('../../content/epaper/images/samll_camera.png') no-repeat;background-size:100% 100%;transform: translateX(-50%);}
-.parent-head-portrait .upHead + span,.baby_info .baby-head-portrait .upHead + span{color:#B7B2A9;font-size: 0.5854rem;line-height: 1.1707rem;}
+.parent-head-portrait .upHead + span,.baby_info .baby-head-portrait .upHead + span{color:#807d78;font-size: 0.5854rem;line-height: 1.1707rem;}
 .parent-head-portrait > a{position: absolute;right:0;bottom:0;color:#5FBF55;text-decoration: underline;font-size: 0.3317rem;}
 
 .info_list{margin: 0.2927rem auto 0;border-bottom: 1px solid #E3E3E3;}
-.info_list li{border-top:1px solid #E3E3E3;padding: 0 0.6829rem 0 0.1951rem;line-height: 1.0732rem;font-size: 0.3902rem;color:#B7B2A9;position: relative;overflow: hidden;}
-.info_list li.baby_infos a{display: block;color:#B7B2A9;transition: none;}
+.info_list li{border-top:1px solid #E3E3E3;padding: 0 0.6829rem 0 0.1951rem;line-height: 1.0732rem;font-size: 0.3902rem;color:#807d78;position: relative;overflow: hidden;}
+.info_list li.baby_infos a{display: block;color:#807d78;transition: none;}
 .info_list li i{position:absolute;top:0.3415rem;right:0.2439rem;width:0.2341rem;height:0.3902rem;background:url('../../content/epaper/images/right.png') no-repeat;background-size: 100% 100%;}
 .info_list li p{float: left;width:1.1707rem;height:1.0732rem;}
 .info_list li p.account{background: url('../../content/epaper/images/person.png') no-repeat center center;background-size: 60% 70%;}
@@ -719,8 +719,8 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .info_list li p.gender{background: url('../../content/epaper/images/gender.png') no-repeat center center;background-size: 60% 70%;}
 .info_list li p.height{background: url('../../content/epaper/images/height.png') no-repeat center center;background-size: 60% 70%;}
 .info_list li p.weight{background: url('../../content/epaper/images/weight.png') no-repeat center center;background-size: 60% 70%;}
-.info_list li input{float: right;background: #fff;width: 4.0976rem;height: 1.0732rem;text-align: right;font-size: 0.3902rem;color:#B7B2A9;}
-.info_list li>a{color:#B7B2A9;transition: none;}
+.info_list li input{float: right;background: #fff;width: 4.0976rem;height: 1.0732rem;text-align: right;font-size: 0.3902rem;color:#807d78;}
+.info_list li>a{color:#807d78;transition: none;}
 .info_list li .recommend_friends{float: right;color:#C84040;text-decoration: underline;}
 .baby_info .info_list li input{width: 3.5122rem;}
 .set_meal_info{padding: 0.3902rem 0.5854rem;}
@@ -765,7 +765,7 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .introduce{position: absolute;right:0;top:-0.1951rem;width:2.3805rem;height:4.2927rem;background:#D9691D;color:#FDFDFD;text-align: center;padding-top: 0.2927rem;box-sizing: border-box;overflow: hidden;}
 .business_cooperation_introduce .introduce{left:0;}
 .introduce h3{font-size: 0.3317rem;line-height: 0.4878rem}
-.introduce p{margin: 0.3902rem auto 0;width:1.4634rem;position: relative;text-align: left;font-size: 0.2341rem;}
+.introduce p{margin: 0.3902rem auto 0;width:1.4634rem;position: relative;text-align: left;font-size: 0.2537rem;}
 .business_cooperation_introduce .introduce p{margin-top:0.5854rem;}
 .introduce p i{position: absolute;width:0.1756rem;height:0.1756rem;background:url('../../content/epaper/images/left_right_angle.png') no-repeat;background-size: 100% 100%;top:-0.1366rem;left:-0.1366rem;}
 .introduce p b{position: absolute;width:0.1756rem;height:0.1756rem;background:url('../../content/epaper/images/left_right_angle.png') no-repeat;background-size: 100% 100%;bottom:-0.1366rem;right:-0.1366rem;transform: rotate(180deg);}
@@ -779,13 +779,13 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .education_bag{width:7.2683rem;margin:0 auto;}
 .education img,.education video{width:100%;height:auto;}
 .education iframe{width:100%;height:4.7317rem;}
-.education_explain{margin-top:0.5854rem;padding: 0.3902rem 0.1463rem 0.2927rem;line-height: 0.4878rem;font-size: 0.3122rem;color:#B7B2A9;letter-spacing:1px;border-top: 1px solid #E3E3E3;border-bottom: 1px solid #E3E3E3;}
-.education_explain span,.expert_explain p span{color:#807D78;}
+.education_explain{margin-top:0.5854rem;padding: 0.3902rem 0.1463rem 0.2927rem;line-height: 0.4878rem;font-size: 0.3317rem;color:#807d78;letter-spacing:1px;border-top: 1px solid #E3E3E3;border-bottom: 1px solid #E3E3E3;}
+.education_explain span,.expert_explain p span{color:#2d2c2c;}
 .age_division{margin-top:0.4878rem;}
 .edition_list{margin-top:0.5854rem;overflow: hidden;}
 .edition_list li{float:left;width:33.3333%;text-align: center;box-sizing: border-box;}
 .edition_list li img{width:2.4585rem;height:3.1707rem;}
-.education_explain h4{text-align: center;line-height: 0.4878rem;font-size: 0.3512rem;}
+.education_explain h4{text-align: center;line-height: 0.4878rem;font-size: 0.3707rem;color:#2d2c2c;}
 .education_explain p{margin-top: 0.4878rem;}
 .education_explain ul{margin-top:0.3902rem;}
 .education_explain li{margin-bottom: 0.2927rem}
@@ -794,8 +794,8 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .annual_guarantee p{width:2.4976rem;margin:0 auto;text-align: center;}
 .dialogue{margin-top:0.9171rem;}
 .expert_recommend{margin-top:0.3902rem;}
-.expert_recommend h4{line-height: 0.7805rem;color:#5DC157;text-align: center;font-size: 0.3317rem;}
-.expert_list{margin-top:0.5854rem;color:#B7B2A9;}
+.expert_recommend h4{line-height: 0.7805rem;color:#5DC157;text-align: center;font-size: 0.3512rem;}
+.expert_list{margin-top:0.5854rem;color:#807d78;}
 .expert_list li{margin-bottom:0.5854rem;position: relative;overflow: hidden;}
 .expert_list li .expert{float: left;text-align: center;width:40%;}
 .expert_list li .expert p{width:2.2829rem;height:2.2829rem;border-radius: 50%;overflow: hidden;margin:0 auto 0.0976rem;;}
@@ -806,10 +806,10 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .education .source{position: relative;height:4.5366rem;overflow: hidden;}
 .source a{position: absolute;width:1.0732rem;height:1.0732rem;top:50%;left:50%;transform: translate(-50%,-50%) ;}
 .expert_explain{margin-top: 0.5854rem;border-bottom: 1px solid #E9E9E9;}
-.expert_explain h4{width:3.122rem;height:0.4488rem;padding-top: 0.039rem;padding-left: 0.3902rem;color:#fff;font-size: 0.2927rem;background:#5FC04F;box-sizing: border-box;position: relative;}
+.expert_explain h4{width:3.122rem;height:0.4878rem;padding-top: 0.0585rem;padding-left: 0.3902rem;color:#fff;font-size: 0.3317rem;background:#5FC04F;box-sizing: border-box;position: relative;}
 .expert_explain h4 i{position: absolute;width:0.2146rem;height:0.361rem;background: url('../../content/epaper/images/left_bottom_horn.png') no-repeat;background-size: 100% 100%;top:0;right:-0.2146rem;}
-.expert_explain p{padding:0.3902rem 0.1463rem;line-height: 0.4878rem;font-size: 0.3122rem;color:#B7B2A9;letter-spacing:1px;}
-.interest_explain,.learning_platform{color:#B7B2A9;font-size: 0.3122rem;letter-spacing:1px;line-height: 0.4878rem;padding-bottom: 0.3902rem;border-bottom:1px solid #E9E9E9;}
+.expert_explain p{padding:0.3902rem 0.1463rem;line-height: 0.4878rem;font-size: 0.3122rem;color:#807d78;letter-spacing:1px;}
+.interest_explain,.learning_platform{color:#807d78;font-size: 0.3317rem;letter-spacing:1px;line-height: 0.4878rem;padding-bottom: 0.3902rem;border-bottom:1px solid #E9E9E9;}
 .interest_explain h4,.learning_platform h4,.early_education_bag h4{line-height: 0.9756rem;color:#5CC156;text-align: center;font-size: 0.3512rem;}
 .interest_explain .app{margin:0.3902rem 0;text-align: center;line-height: 0.439rem;font-weight: bold;}
 .interest_explain p{padding-left:0.3415rem;}
@@ -817,7 +817,7 @@ input[type='number']::-webkit-inner-spin-button{-webkit-appearance: none}
 .interest_explain li i{display: inline-block;width:0.2634rem;height:0.2049rem;background:url('../../content/epaper/images/arrow.png') no-repeat;background-size: 100% 100%;}
 .learning_platform p{margin-top:0.4878rem;text-align: center;font-weight: bold;}
 .early_education_bag{padding-bottom: 0.4878rem;border-bottom: 1px solid #E9E9E9;}
-.early_education_bag li{margin-bottom: 0.8rem;position: relative;overflow: hidden;color:#B7B2A9;font-size: 0.3122rem;letter-spacing:1px;line-height: 0.439rem;}
+.early_education_bag li{margin-bottom: 0.8rem;position: relative;overflow: hidden;color:#807d78;font-size: 0.3317rem;letter-spacing:1px;line-height: 0.439rem;}
 .early_education_bag li>p{float: left;width:2.761rem;}
 .early_education_bag li.light_disk>p{width:3.3073rem;}
 .early_education_bag li.flash_card>p{width:3.3756rem;}
