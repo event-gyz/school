@@ -41,7 +41,7 @@ include('inc.php');
                             <h3>家庭早教包</h3>
                             <p>
                                 <i></i>
-                                <span>巴布豆家庭早教全力打造的一套系统、专业的家庭早教方案。</span>
+                                <span>全力打造的一套系统、专业的家庭早教方案。</span>
                                 <b></b>
                             </p>
                             <a href="early_education_introduce.php">了解更多》</a>
@@ -53,7 +53,7 @@ include('inc.php');
                             <h3>商业合作</h3>
                             <p>
                                 <i></i>
-                                <span>巴布豆家庭早教诚挚邀请您,携手开展幼儿教 育广大商机！</span>
+                                <span>诚挚邀请您,携手开展幼儿教育广大商机！</span>
                                 <b></b>
                             </p>
                             <a href="business_cooperation.php">了解更多》</a>
