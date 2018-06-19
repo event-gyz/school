@@ -151,13 +151,6 @@ if(!isset($_tag))
          */
         $("a").click(function(){$(this).css('style="color:lightgreen"');});
     }
-    /*
-     function listMore() {
-     $("#article_list").load('rec_list.ajax.php?tag='+<?php echo($_tag); ?>);
-     //		$("#article_list").load('rec_list.ajax.php?tag=999');
-     $("#a_show_all").hide();
-     }
-     */
 </script>
 <script src="../scripts/jquery.masonry.min.js"></script>
 <link rel="stylesheet" href="../scripts/fancybox/jquery.fancybox.css">

@@ -1,6 +1,9 @@
 <?php
 session_start();
 include('inc.php');
+if(isset($_GET['id'])&&!empty($_GET['id'])){
+    $_SESSION['agency_id'] = $_GET['id'];
+}
 ?>
 <!DOCTYPE html>
 <html><!-- InstanceBegin template="/Templates/_page01.dwt" codeOutsideHTMLIsLocked="false" -->

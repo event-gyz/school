@@ -18,7 +18,13 @@ $headimg = '"'.$user_obj['headimgurl'].'"';
 $user_info_sql = 'select * from `member` where wx_openid="'.$user_obj['openid'].'"';
 $user_info = M()->find($user_info_sql);
 if(empty($user_info)){
-    $sql = "INSERT INTO member (password, nickname, city, image_url, wx_openid,membership) VALUES (md5(lower('123456')),'".$user_obj['nickname']."','".$user_obj['city']."','".$headimg."','".$user_obj['openid']."',$membership)";
+	if(isset($_SESSION['agency_id']) && !empty($_SESSION['agency_id'])){
+		$agency_id = $_SESSION['agency_id'];
+	}else{
+		$agency_id = 0;
+	}
+
+    $sql = "INSERT INTO member (password, nickname, city, image_url, wx_openid,membership,agency_id) VALUES (md5(lower('123456')),'".$user_obj['nickname']."','".$user_obj['city']."','".$headimg."','".$user_obj['openid']."',$membership,$agency_id)";
     $result = M()->execute($sql);
 }
 

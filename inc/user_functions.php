@@ -170,8 +170,13 @@ class MyUser
 		if(!$this->exist( $_EMAIL ))
 		{
             $membership = time()+7776000;
+			if(isset($_SESSION['agency_id']) && !empty($_SESSION['agency_id'])){
+				$agency_id = $_SESSION['agency_id'];
+			}else{
+				$agency_id = 0;
+			}
 
-			$sql = "INSERT INTO member (`id`, password, first_name, last_name, cellphone, email,city,membership) VALUES ('".$_EMAIL."',md5(lower('".$_PASS."')),'".$_FNAME."','".$_LNAME."','".$_PHONE."','".$_EMAIL."','".$_CITY."',$membership)";
+			$sql = "INSERT INTO member (`id`, password, first_name, last_name, cellphone, email,city,membership,agency_id) VALUES ('".$_EMAIL."',md5(lower('".$_PASS."')),'".$_FNAME."','".$_LNAME."','".$_PHONE."','".$_EMAIL."','".$_CITY."',$membership,$agency_id)";
 			$result = query($sql);
 
 			if($this->login($_EMAIL, $_PASS) == -1)
