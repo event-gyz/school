@@ -27,18 +27,4 @@
         </section>
     </section>
 </section>
-<script>
-    $(function(){
-        $('#fy-mobile-register .rbox a').click(function(){
-            var arr = location.href.split('#');
-            fancyboxName = arr[arr.length-1];
-            if(fancyboxName == 'fy-mobile-register'){
-                $('.isbind_mobile').show()
-            }
-            $.fancybox({
-                href: "#fy-complete-info"
-            });
-        })
-    })
-</script>
 <!--//【fancybox】手机注册//-->
