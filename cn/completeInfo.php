@@ -7,6 +7,10 @@ $_nick_name = $_REQUEST['p1'];
 $_gender = $_REQUEST['p2'];
 $_birthday = $_REQUEST['p3'];
 $_city = $_REQUEST['p4'];
+$_city = (explode(' ',$_city));
+$city = $_city[1];
+$province = $_city[0];
+
 $_token = $_SESSION['user_token'];
 
 if(empty($_nick_name)) {
@@ -52,7 +56,7 @@ else {
 		//if UID exist, means this user has been created.
 		if(isset($UID)) {
 //			更新家长city
-			$upadte_sql = "update member set city='{$_city}' where uid=$supervisor_uid";
+			$upadte_sql = "update member set city='{$city}',province='{$province}' where uid=$supervisor_uid";
 			$re = M()->execute($upadte_sql);
 			$resp = '{"uid":"'.$UID.'"}';
 			$_SESSION['CURRENT_KID_UID'] = $UID;
