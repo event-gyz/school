@@ -41,6 +41,16 @@ if(!isset($_tag))
                         <h2 class="title">育儿天地</h2>
                         <section class="gopath"><a href="index.php">首页</a> > 育儿天地</section>
                     </div>
+                    <div class="bbd_mother_college">
+                        <p class="college_icon">
+                            <img src="../content/epaper/images/bbd_mother_college.png" alt="">
+                        </p>
+                        <p class="children_psychology">
+                            <a href="children_psychology.php">
+                                <img src="../content/epaper/images/children_psychology.jpg" alt="">
+                            </a>
+                        </p>
+                    </div>
                     <p <?php if($_tag==0) echo('style="display:block"'); ?>><img src="../content/epaper/images/parenting.jpg" alt=""></p>
                     <p <?php if($_tag==1) echo('style="display:block"'); ?>><img src="../content/epaper/images/medical_care.jpg" alt=""></p>
                     <p <?php if($_tag==2) echo('style="display:block"'); ?>><img src="../content/epaper/images/psychology.jpg" alt=""></p>

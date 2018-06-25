@@ -55,6 +55,47 @@ function w(){
     }
 }
 
+function plays(container, liContent,smallStop){
+    var now = 0, timer = null;
+    liContent[0].style.opacity = 1;
+    // 定义并调用自动播放函数
+    timer = setInterval(autoPlay, 3000);
+    // 鼠标划过整个容器时停止自动播放
+    container.onmouseover = function () {
+        clearInterval(timer);
+        timer=null;
+    }
+    // 鼠标离开整个容器时继续播放至下一张
+    container.onmouseout = function () {
+        timer = setInterval(autoPlay, 3000);
+    }
+    // 遍历所有数字导航实现划过切换至对应的图片
+    for (var i = 0; i < smallStop.length; i++) {
+        smallStop[i].onclick = function (e) {
+            e.preventDefault();
+            clearInterval(timer);
+            now = parseInt(this.getAttribute("href")) - 1;
+            changePic(now);
+        }
+    }
+    function autoPlay() {
+        now += 1;
+        if (now >= liContent.length) now = 0;
+        changePic(now);
+    }
+    // 定义图片切换函数
+    function changePic(curIndex) {
+        for (var i = 0; i < liContent.length; ++i) {
+            liContent[i].style.opacity = "0";
+            liContent[i].style.zIndex = "1";
+            smallStop[i].className = "";
+        }
+        liContent[curIndex].style.opacity = "1";
+        liContent[curIndex].style.zIndex = "4";
+        smallStop[curIndex].className = "on";
+    }
+};
+
 function getCode (time, params) { // params: 参数对象
   if (time.timer) return false
   var mobileReg = /^[1][34578](\d){9}$/,html = ''
