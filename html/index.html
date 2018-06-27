@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="telphone=no, email=no" />
+    <!-- 微信测试用清理缓存  -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!-- ios全屏浏览模式 -->
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <title></title>
+    <script>
+      (function (doc, win) {
+        var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc    = function () {
+            var clientWidth = docEl.clientWidth;
+            if (clientWidth>=750) {
+                clientWidth = 750;
+            };
+            if (!clientWidth) return;
+            docEl.style.fontSize = 75 * (clientWidth / 750) + 'px';
+        };
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    </script>
+    <style>
+      html,body{padding: 0;margin:0;/*background: #262626;*/}
+      .prize{width:10.0rem;margin:0 auto;}
+      .prize img{width:100%;height:16.2133rem;vertical-align: bottom;}
+    </style>
+  </head>
+  <body>
+    <div class="prize">
+      <img src="images/prize.png" alt="">
+    </div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
