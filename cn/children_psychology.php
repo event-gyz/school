@@ -66,6 +66,19 @@ include('inc.php');
                             </div>
                         </div>
                     </div>
+
+                    <div class="course_column">
+                        <p><a href="psychological_course.php">更多》</a></p>
+                        <h4>
+                            儿童心理课程
+                            <i></i>
+                        </h4>
+                        <div class="psychological_course">
+                            <a href="course.php">
+                                <p><img src="../content/epaper/images/psychological_course.jpg" alt=""></p>
+                            </a>
+                        </div>
+                    </div>
                     <!--//主選單標題與路徑//-->
 
                 </section>

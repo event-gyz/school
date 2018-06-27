@@ -135,37 +135,52 @@ a.i-more span{font-family: 'simsun';}
 /* 育儿天地页面样式 end */
 
 /* 儿童心理页面样式 start */
-.children_psychology img,.psychological_article img,.article img{width:100%;height:100%;}
+.children_psychology img,.psychological_article img,.psychological_course img,.article img,.course img{width:100%;height:100%;}
 .column_introduction{width:100%;margin-top:0.2927rem;}
-.article_column{height:4.878rem;margin-top:0.2927rem;}
-.article_column h4{width:2.9268rem;height:0.6244rem;line-height: 0.6244rem;background:#F78080;color:#FFFFFF;font-size: 0.3317rem;padding-left: 0.3415rem;box-sizing: border-box;position: relative;}
-.article_column h4 i{width:0.2244rem;height:0.5561rem;background:url('../../content/epaper/images/left_bot_horn.png') no-repeat;background-size: 100% 100%;position: absolute;right:-0.2244rem;top:0;}
-.article_column > p{float: right;font-size: 0.2146rem;line-height: 0.6244rem;}
-.article_column > p a{color:#F78080;}
+.article_column,.course_column{min-height:4.878rem;margin-top:0.2927rem;overflow: hidden;}
+.article_column h4,.course_column h4{width:2.9268rem;height:0.6244rem;line-height: 0.6244rem;background:#F78080;color:#FFFFFF;font-size: 0.3317rem;padding-left: 0.3415rem;box-sizing: border-box;position: relative;}
+.article_column h4 i,.course_column h4 i{width:0.2244rem;height:0.5561rem;background:url('../../content/epaper/images/left_bot_horn.png') no-repeat;background-size: 100% 100%;position: absolute;right:-0.2244rem;top:0;}
+.article_column > p,.course_column > p{float: right;font-size: 0.3317rem;line-height: 0.6244rem;}
+.article_column > p a,.course_column > p a{color:#F78080;}
 /*轮播图样式*/
-#slider_box{position: relative;width:100%;height:4.2537rem;clear: both;}
+#slider_box{position: relative;width:100%;height:4.2634rem;clear: both;}
 .wrap{position: absolute;width:100%;height: 100%;top:0px;left: 0px;}
 #pic{width:100%;height:100%;}
 #pic li{position: absolute;width:100%;height:100%;-webkit-transition: all .3s linear;-moz-transition: all .3s linear;-ms-transition: all .3s linear;-o-transition: all .3s linear;transition: all .3s linear;}
-#pic li a{display: block;}
 #pic li:first-child{z-index: 1;}
+#pic img{height:100%}
 #slider_box ol{position: absolute;right:0.3512rem;bottom:0.1756rem;background: transparent;width:0.8293rem;height:0.039rem;z-index: 5;}
 #slider_box ol a{float: left;width:0.1756rem;height: 0.039rem;margin-right: 0.039rem;opacity: 1;background: #B9C9DE;}
 #slider_box ol li:last-child a{margin:0;}
 #slider_box ol a:hover{color:#fff;background: #D89C9B;}
 #slider_box ol a.on{background: #D89C9B;}
 
-.psychological_article_list li{float: left;width:48%;margin-right: 2%;margin-bottom:0.2927rem;line-height: 0.439rem;font-size: 0.3317rem;}
-.psychological_article_list li a{color:#5E5858;transition: none;}
-.psychological_article_list li:nth-child(even){margin-right: 0;margin-left: 2%;}
-.article_deatil{line-height: 0.4878rem;font-size: 0.3317rem;color: #807d78;letter-spacing: 1px;text-align: center;}
+.psychological_article_list li,.psychological_course_list li{float: left;width:48%;margin-right: 2%;margin-bottom:0.2927rem;line-height: 0.439rem;font-size: 0.3317rem;}
+.psychological_article_list li a,.psychological_course_list li a{color:#5E5858;transition: none;}
+.psychological_article_list li:nth-child(even),.psychological_course_list li:nth-child(even){margin-right: 0;margin-left: 2%;}
+.article_deatil,.course_deatil{line-height: 0.4878rem;font-size: 0.3317rem;color: #807d78;letter-spacing: 1px;text-align: center;}
 .article_detail_list li{display: none;}
-.article_deatil>h4{line-height: 1.0732rem;}
-.article_deatil>p{line-height: 0.4878rem;font-size: 0.3317rem;color:#807D78;margin-top:0.1951rem;}
-.article_deatil b{color:#2D2C2C;}
-.article_txt{text-align: left;}
-.article_txt h4{text-align: center;color:#2D2C2C;margin-top:0.6829rem;}
-.article_txt p{margin-top: 0.3902rem;}
+.article_deatil>h4,.course_deatil>h4{line-height: 1.0732rem;}
+.article_deatil>p,.course_deatil>span{line-height: 0.5854rem;font-size: 0.3317rem;color:#807D78;}
+.course_deatil>p{margin-bottom: 0.1951rem;}
+.article_deatil b,.course_deatil b{color:#2D2C2C;}
+.article_txt,.course_txt{text-align: left;}
+.course_txt>h3{color:#D44444;margin:0.2927rem 0 0.4878rem;line-height: 0.4878rem;font-size: 0.3317rem;}
+.article_txt>h4,.course_txt>h4{text-align: center;color:#2D2C2C;margin-top:0.6829rem;}
+.article_txt>p,.course_txt>p{margin-top: 0.3902rem;}
+.course_txt ul{margin-top:0.4878rem;line-height: 0.4878rem;text-align: center;font-size: 0.3317rem;}
+.required_course h3{width:7.3171rem;margin:0.2927rem auto;}
+.required_course h4{color:#CD0808;text-align: center;line-height: 0.5854rem;font-size: 0.3707rem;}
+.required_course>p{margin-top: 0.2927rem;}
+.course_arrange{text-align: center;margin-top:0.2927rem;line-height: 0.5854rem;font-size: 0.2927rem;}
+.course_arrange h3{line-height: 0.7805rem;font-size: 0.3707rem;color:#CD0808;}
+.course_arrange h4{font-size: 0.3317rem;color:#2D2C2C;}
+.course_arrange p{color:#CD0808;}
+.course_arrange_info{width:6.2244rem;margin:0 auto;}
+.cooperative_partner{text-align: center;}
+.cooperative_partner h3{line-height: 0.7805rem;color:#D12727;font-size: 0.3707rem;margin-top:0.1951rem;}
+.cooperative_partner p{width:7.239rem;margin:0.1951rem auto;}
+.cooperative_partner h4{color:#CD0808;font-weight: normal;line-height: 0.5854rem}
 /* 儿童心理页面样式 end */
 
 .artbox_category{box-shadow: 0 2px 2px 1px #DADADA;overflow: hidden;}
