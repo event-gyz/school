@@ -40,7 +40,14 @@ include('inc.php');
                     </div>
 
                     <div class="course_column">
-                        <img src="../content/epaper/images/psychological_course.jpg" alt="">
+                        <p>
+                            <img src="../content/epaper/images/psychological_course.jpg" alt="">
+                        </p>
+                        <div class="slider_mask"></div>
+                        <div class="course_info">
+                            <h4>夜深了，孩子正在跟你拔河！</h4>
+                            <p>孩子出现这种令你困惑的作息拔河，一定要思考看看，他是不是还有其他心理的需求，正在透过他的行为得到满足。</p>
+                        </div>
                     </div>
 
                     <ul class="psychological_course_list">
