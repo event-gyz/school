@@ -164,11 +164,17 @@ if(isset($_SESSION['user_token'])) {
                                 <img src="../theme/cn/images/header/item_bnr03.png">
                             </div>
                         </li>
+                        <li>
+                            <div class="item">
+                                <img src="../theme/cn/images/header/item_bnr04.png">
+                            </div>
+                        </li>
                     </ul>
                 </div>
                 <div class="slider-pg">
                     <div class="pgs">
                         <div class="item fst on"></div>
+                        <div class="item"></div>
                         <div class="item"></div>
                         <div class="item"></div>
                     </div>
