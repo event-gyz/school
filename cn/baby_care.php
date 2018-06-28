@@ -141,7 +141,7 @@ include('inc.php');
                             <i></i>
                         </h4>
                         <div class="baby_care_video">
-                            <a href="#">
+                            <a href="baby_care_video.php">
                                 <p>
                                     <img src="../content/epaper/images/care_video.jpg" alt="">
                                 </p>
