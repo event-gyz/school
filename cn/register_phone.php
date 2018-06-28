@@ -28,7 +28,12 @@ $user_info_sql = 'select * from `member` where cellphone='.$_PHONE;
 $user_info = M()->find($user_info_sql);
 if(empty($user_info)){
     $membership = time()+15768000;
-	$sql = "INSERT INTO member (id,password,cellphone,membership) VALUES ('".$_PHONE."',md5('123456'),'".$_PHONE."',$membership)";
+	if(isset($_SESSION['agency_id']) && !empty($_SESSION['agency_id'])){
+		$agency_id = $_SESSION['agency_id'];
+	}else{
+		$agency_id = 0;
+	}
+	$sql = "INSERT INTO member (id,password,cellphone,membership,agency_id) VALUES ('".$_PHONE."',md5('123456'),'".$_PHONE."',$membership,$agency_id)";
 	$result = M()->execute($sql);
 }
 

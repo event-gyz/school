@@ -354,29 +354,44 @@
 		$("#mobile_register_form").submit(function(){
 			var auth_code = $("#register_vcode").val();
 			var phone = $("#register_mobile").val();
-			$.ajax({
-				url: "register_phone.php",
-				type: "POST",
-				data: {
-					'p2': auth_code,
-					'p1': phone
-				},
-				dataType: "json",
-				success: function (jsonStr) {
-					console.log(jsonStr);
-					if(jsonStr.result=='success') {
-						$.fancybox.close();
-                        document.location.href = 'package.php';
+			if(auth_code && phone){
+				$.ajax({
+					url: "register_phone.php",
+					type: "POST",
+					data: {
+						'p2': auth_code,
+						'p1': phone
+					},
+					dataType: "json",
+					success: function (jsonStr) {
+						if(jsonStr.result=='success') {
+							$.fancybox.close();
+	                        document.location.href = 'package.php';
+						}
+						else {
+							$("#fy-mobile-bind .error01").text(jsonStr.message).show().delay(3000).fadeOut();
+						}
+					},
+					error: function(xhr, err) {
+						// alert('Ajax request ' + err);
 					}
-					else {
-						$("#fy-mobile-bind .error01").text(jsonStr.message).show().delay(3000).fadeOut();
-					}
-				},
-				error: function(xhr, err) {
-//					alert('Ajax request ' + err);
-				}
-			});
-			return false;
+				});
+				var arr = location.href.split('#');
+	            fancyboxName = arr[arr.length-1];
+	            if(fancyboxName == 'fy-mobile-register'){
+	                $('.isbind_mobile').show()
+	            }
+	            $.fancybox({
+	                href: "#fy-complete-info"
+	            });
+				return false;
+			}else if(!phone){
+				$('#div_err_mobile_reg').show()
+				return false;
+			}else if(!auth_code){
+				layer.msg('验证码错误，请重新输入。')
+				return false;
+			}
 		});
 
 

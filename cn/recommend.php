@@ -41,6 +41,21 @@ if(!isset($_tag))
                         <h2 class="title">育儿天地</h2>
                         <section class="gopath"><a href="index.php">首页</a> > 育儿天地</section>
                     </div>
+                    <div class="bbd_mother_college">
+                        <p class="college_icon">
+                            <img src="../content/epaper/images/bbd_mother_college.png" alt="">
+                        </p>
+                        <p class="children_psychology">
+                            <a href="children_psychology.php">
+                                <img src="../content/epaper/images/children_psychology.jpg" alt="">
+                            </a>
+                        </p>
+                        <p class="baby_care">
+                            <a href="baby_care.php">
+                                <img src="../content/epaper/images/baby_care.jpg" alt="">
+                            </a>
+                        </p>
+                    </div>
                     <p <?php if($_tag==0) echo('style="display:block"'); ?>><img src="../content/epaper/images/parenting.jpg" alt=""></p>
                     <p <?php if($_tag==1) echo('style="display:block"'); ?>><img src="../content/epaper/images/medical_care.jpg" alt=""></p>
                     <p <?php if($_tag==2) echo('style="display:block"'); ?>><img src="../content/epaper/images/psychology.jpg" alt=""></p>
@@ -151,13 +166,6 @@ if(!isset($_tag))
          */
         $("a").click(function(){$(this).css('style="color:lightgreen"');});
     }
-    /*
-     function listMore() {
-     $("#article_list").load('rec_list.ajax.php?tag='+<?php echo($_tag); ?>);
-     //		$("#article_list").load('rec_list.ajax.php?tag=999');
-     $("#a_show_all").hide();
-     }
-     */
 </script>
 <script src="../scripts/jquery.masonry.min.js"></script>
 <link rel="stylesheet" href="../scripts/fancybox/jquery.fancybox.css">

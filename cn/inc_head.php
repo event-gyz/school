@@ -6,17 +6,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="format-detection" content="telphone=no, email=no" />
-<link rel="stylesheet" href="../theme/cn/main-style.css">
-<link rel="stylesheet" href="../theme/cn/style.css">
 <link rel="stylesheet" href="../theme/cn/cropper.css">
 <link rel="stylesheet" href="../theme/cn/layer.css">
 <link rel="stylesheet" href="../theme/cn/jquery-ui.min.css">
+<link rel="stylesheet" href="../theme/cn/layout.min.css">
+<link rel="stylesheet" href="../theme/cn/scs.min.css">
+<link rel="stylesheet" href="../theme/cn/main-style.css">
+<link rel="stylesheet" href="../theme/cn/style.css">
 <script src="../scripts/jquery-1.11.0.min.js"></script>
 <script src="../scripts/jquery-ui.min.js"></script>
 <script src="../scripts/jquery.easing-1.3.js"></script>
 <script src='../scripts/exif.js'></script>
 <script src='../scripts/clipper.js'></script>
 <script src="../scripts/layer.js"></script>
+<script src="../scripts/city_select/CNAddrArr.min.js"  type="text/javascript"></script>
+<script src="../scripts/city_select/jquery.scs.min.js" type="text/javascript"></script>
 <!--[if IE]>
 <script>
     document.createElement("header");
