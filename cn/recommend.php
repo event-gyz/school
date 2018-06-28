@@ -50,6 +50,11 @@ if(!isset($_tag))
                                 <img src="../content/epaper/images/children_psychology.jpg" alt="">
                             </a>
                         </p>
+                        <p class="baby_care">
+                            <a href="baby_care.php">
+                                <img src="../content/epaper/images/baby_care.jpg" alt="">
+                            </a>
+                        </p>
                     </div>
                     <p <?php if($_tag==0) echo('style="display:block"'); ?>><img src="../content/epaper/images/parenting.jpg" alt=""></p>
                     <p <?php if($_tag==1) echo('style="display:block"'); ?>><img src="../content/epaper/images/medical_care.jpg" alt=""></p>
