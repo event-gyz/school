@@ -198,6 +198,9 @@ a.i-more span{font-family: 'simsun';}
 .cooperative_partner h3{line-height: 0.7805rem;color:#D12727;font-size: 0.3707rem;margin-top:0.1951rem;}
 .cooperative_partner p{width:7.239rem;margin:0.1951rem auto;}
 .cooperative_partner h4{color:#CD0808;font-weight: normal;line-height: 0.5854rem}
+
+#meta_content a{color:#5FBF51;font-size: 18px;}
+.rich_media{padding-top:20px;}
 /* 儿童心理页面样式 end */
 
 .artbox_category{box-shadow: 0 2px 2px 1px #DADADA;overflow: hidden;}
