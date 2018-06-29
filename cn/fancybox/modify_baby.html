@@ -15,7 +15,7 @@
                     <section class="formbox">
                         <div class="fbar clearfix">
                             <label><i>昵称</i><input id="fst_nickname" type="text" class="tf" value="<?= (isset($userInfo['nick_name'])?$userInfo['nick_name']:'')?>"></label>
-                            <div class="errorbar">请填入昵称</div>
+                            <div class="errorbar fst_nickname_err">请填入昵称</div>
                         </div>
                         <div class="fbar clearfix">
                             <i>性别</i>
@@ -27,7 +27,7 @@
                             </div>
                         </div>
                         <div class="fbar clearfix">
-                            <i>生日</i>
+                            <!-- <i>生日</i>
                             <select id="birth_box_years">
                                 <option>请选择...</option>
                             </select>
@@ -39,7 +39,9 @@
                             <select id="birth_box_days">
                                 <option>请选择...</option>
                             </select>
-                            日
+                            日 -->
+                            <label><i>生日</i><input id="fst_birthdate" class="tf datepicker" value="" readonly></label>
+                            <div class="errorbar fst_birthdate_err">请填入生日日期</div>
                         </div>
                     </section>
                     <section class="btnbox clearfix">

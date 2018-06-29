@@ -312,21 +312,7 @@ if(isset($payload)) {
 
 </section>
 <?php include 'inc_bottom_js.php'; ?>
-<!-- <link rel="stylesheet" href="../theme/cn/jquery.cxcalendar.css">
-<script src="../scripts/jquery.cxcalendar.js"></script> -->
-<link rel="stylesheet" href="../theme/cn/jquery-ui.min.css">
-<script src="../scripts/jquery-ui.min.js"></script>
 <script>
-    // 定义日期选择器属性
-    $( ".datepicker" ).datepicker({
-        maxDate: 0,
-        changeYear: true,
-        changeMonth: true,
-        monthNamesShort: ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'],
-        dayNamesMin: ['日','一','二','三','四','五','六'],
-        dateFormat: 'yy-mm-dd'
-    });
-
     $(function () {
         var inputList = $('.model_diagram input')
         // console.log(inputList)

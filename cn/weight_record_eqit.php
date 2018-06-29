@@ -126,7 +126,7 @@ if(isset($payload)) {
 								<li>
 									<b class="clock"></b>
 									记录时间：
-									<input class="time" type="date" name="date" value="<?php echo $result['date']?>">
+									<input class="time datepicker" name="date" value="<?php echo $result['date']?>" readonly>
 								</li>
 							</ul>
 
