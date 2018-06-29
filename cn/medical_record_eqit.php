@@ -121,7 +121,7 @@ if(isset($payload)) {
 								<li>
 									<b class="clock"></b>
 									记录时间：
-									<input class="time" type="date" name="date" value="<?= $result['date']?>">
+									<input class="time datepicker" name="date" value="<?= $result['date']?>" readonly>
 								</li>
 								<li class="title">医院：<input name="hospital" type="text" value="<?= $result['hospital']?>"></li>
 								<li class="doctor">医生：<input name="doctor" type="text" value="<?= $result['doctor']?>"></li>

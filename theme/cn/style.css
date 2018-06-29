@@ -419,7 +419,7 @@ table.tb-rep{border-collapse:inherit;border-spacing:0;color:#666666;width:100%;}
 .fy-bd .fstmb .rbox{display:inline;float:right;padding:0;position:static;width:45%;}
 .fy-bd .fstmb .lbox{padding:0;}
 .fy-bd .fstmb .lbox .fbar,.fy-bd .fstmb .rbox .fbar{padding:15px 0 15px 20%;}
-.fy-bd .fstmb .fbar .errorbar{left:10%;}
+.fy-bd .fstmb .fbar .errorbar{left:15%;}
 .fy-bd .fstmb .lbox .fbar .errorbar,.fy-bd .fstmb .rbox .fbar .errorbar{left:20%;}
 .fy-bd>h3{color:#666666;font-size: 16px;}
 .repwrap h3.title,.repother h3.title{text-shadow:none;}

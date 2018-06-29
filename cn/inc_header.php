@@ -564,42 +564,39 @@
 
 	//-- birhday --//
 	function showEditBabyBox() {
-		var cur_year = new Date().getFullYear();
-		$('#birth_box_years').html('');
-		$('#birth_box_months').html('');
-		$('#birth_box_days').html('');
-		for (i = cur_year; i > (cur_year-10); i--) {
-			$('#birth_box_years').append($('<option />').val(i).html(i));
-		}
+		$('#fst_birthdate').val('')
+		// for (i = cur_year; i > (cur_year-10); i--) {
+		// 	$('#birth_box_years').append($('<option />').val(i).html(i));
+		// }
 
-		for (i = 1; i < 13; i++) {
-			$('#birth_box_months').append($('<option />').val(i).html(i));
-		}
-		updateNumberOfDays();
+		// for (i = 1; i < 13; i++) {
+		// 	$('#birth_box_months').append($('<option />').val(i).html(i));
+		// }
+		// updateNumberOfDays();
 
-		$('#birth_box_years, #birth_box_months').change(function(){
-			updateNumberOfDays();
-		});
+		// $('#birth_box_years, #birth_box_months').change(function(){
+		// 	updateNumberOfDays();
+		// });
 		$.fancybox({
-            href: "#fy-complete-info"
-//			href: "#fy-fst"
+//            href: "#fy-complete-info"
+			href: "#fy-fst"
 		});
 	}
 
-	function updateNumberOfDays(){
-		$('#birth_box_days').html('');
-		month=$('#birth_box_months').val();
-		year=$('#birth_box_years').val();
-		days=daysInMonth(month, year);
+	// function updateNumberOfDays(){
+	// 	$('#birth_box_days').html('');
+	// 	month=$('#birth_box_months').val();
+	// 	year=$('#birth_box_years').val();
+	// 	days=daysInMonth(month, year);
 
-		for(i=1; i < days+1 ; i++){
-			$('#birth_box_days').append($('<option />').val(i).html(i));
-		}
-	}
+	// 	for(i=1; i < days+1 ; i++){
+	// 		$('#birth_box_days').append($('<option />').val(i).html(i));
+	// 	}
+	// }
 
-	function daysInMonth(month, year) {
-		return new Date(year, month, 0).getDate();
-	}
+	// function daysInMonth(month, year) {
+	// 	return new Date(year, month, 0).getDate();
+	// }
 
 	function checkEmailFormat() {
 		if(!isEmail($("#login_id").val()) && !isTel($("#login_id").val())) {

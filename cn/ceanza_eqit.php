@@ -63,7 +63,7 @@ include('inc.php');
                                 <li>
                                     <b class="clock"></b>
                                     记录时间：
-                                    <input class="time" type="date" name="date" value="<?php echo $result['date']?>">
+                                    <input class="time datepicker" name="date" readonly value="<?php echo $result['date']?>">
                                 </li>
                                 <li>
                                     <b class="address"></b>

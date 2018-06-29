@@ -114,7 +114,7 @@ if(isset($payload)) {
 								<li>
 									<b class="clock"></b>
 									<p>就诊日期：</p>
-									<input class="time" name="date" type="date" value="<?php echo date('Y-m-d',time())?>">
+									<input class="time datepicker" name="date" value="<?php echo date('Y-m-d',time())?>" readonly>
 								</li>
 								<li class="title"><p>医院：</p><input name="hospital" type="text" value=""></li>
 								<li class="doctor"><p>医生：</p><input name="doctor" type="text" value=""></li>
