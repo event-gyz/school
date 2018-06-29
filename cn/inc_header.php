@@ -581,8 +581,8 @@
 			updateNumberOfDays();
 		});
 		$.fancybox({
-//            href: "#fy-complete-info"
-			href: "#fy-fst"
+            href: "#fy-complete-info"
+//			href: "#fy-fst"
 		});
 	}
 

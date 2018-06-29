@@ -1,4 +1,15 @@
 <!-- 【fancybox】完整信息 -->
+<?php
+if($member_uid > 0) {
+    $sql = "select * from member where uid='$member_uid'";
+    $result = M()->find($sql);
+    if($result!=null) {
+        $phone = $result['cellphone'];
+    }else{
+        $phone = '';
+    }
+}
+?>
 <section id="fy-complete-info" class="mbbox">
     <section class="fy-hd"><h2 class="title">完整信息</h2></section>
     <section class="fy-bd clearfix">
@@ -7,12 +18,14 @@
                 <section class="lbox">
                     <p>注：为保证服务质量，请填写正确完整信息，我们将提供您最精准贴心的育儿服务</p>
                     <section class="formbox">
-                        <!--<div class="fbar clearfix isbind_mobile">-->
-                            <!--<label><i>手机号</i><input name="mobile" id="mobile" type="tel" placeholder="11位手机号码" class="tf"></label>-->
-                            <!--<p class="bind_courtesy">-->
-                                <!--<a href="#fy-mobile-bind">现在绑定立享好礼</a>-->
-                            <!--</p>-->
-                        <!--</div>-->
+                        <?php if($phone == ''){?>
+                        <div class="fbar clearfix isbind_mobile">
+                            <label><i>手机号</i><input name="mobile" id="mobile" type="tel" placeholder="11位手机号码" class="tf"></label>
+                            <p class="bind_courtesy">
+                                <a href="#fy-mobile-bind">现在绑定立享好礼</a>
+                            </p>
+                        </div>
+                        <?php }?>
                         <div class="fbar clearfix">
                             <label><i>宝宝昵称</i><input name="reg_name" id="reg_name" type="text" class="tf"></label>
                             <div id="errorbar_reg_name" class="errorbar">请输入6-20位中文或英文字符</div>
