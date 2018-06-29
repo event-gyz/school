@@ -1,6 +1,6 @@
 <!-- 【fancybox】完整信息 -->
 <?php
-if($member_uid > 0) {
+if(isset($member_uid) && $member_uid > 0) {
     $sql = "select * from member where uid='$member_uid'";
     $result = M()->find($sql);
     if($result!=null) {
