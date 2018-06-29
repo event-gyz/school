@@ -44,54 +44,44 @@ include('inc.php');
                             <div class="wrap" id='slider'>
                                 <ul id="pic">
                                     <li>
-                                        <a href="#">
-                                            <img src="../content/epaper/images/care_article01.jpg" alt="">
-                                            <div class="slider_mask"></div>
-                                            <div class="article_info">
-                                                <h4>母乳副食品篇</h4>
-                                                <p>简单两步骤 母乳奶油轻松做</p>
-                                            </div>
-                                        </a>
+                                        <img src="../content/epaper/images/care_article01.jpg" alt="">
+                                        <div class="slider_mask"></div>
+                                        <div class="article_info">
+                                            <h4>母乳副食品篇</h4>
+                                            <p>简单两步骤 母乳奶油轻松做</p>
+                                        </div>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            <img src="../content/epaper/images/care_article02.jpg" alt="">
-                                            <div class="slider_mask"></div>
-                                            <div class="article_info">
-                                                <h4>亲子运动篇</h4>
-                                                <p>亲子蹲运动 核心肌肉锻炼</p>
-                                            </div>
-                                        </a>
+                                        <img src="../content/epaper/images/care_article02.jpg" alt="">
+                                        <div class="slider_mask"></div>
+                                        <div class="article_info">
+                                            <h4>亲子运动篇</h4>
+                                            <p>亲子蹲运动 核心肌肉锻炼</p>
+                                        </div>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            <img src="../content/epaper/images/care_article03.jpg" alt="">
-                                            <div class="slider_mask"></div>
-                                            <div class="article_info">
-                                                <h4>按摩篇</h4>
-                                                <p>肩颈疼痛？按三点，速缓解</p>
-                                            </div>
-                                        </a>
+                                        <img src="../content/epaper/images/care_article03.jpg" alt="">
+                                        <div class="slider_mask"></div>
+                                        <div class="article_info">
+                                            <h4>按摩篇</h4>
+                                            <p>肩颈疼痛？按三点，速缓解</p>
+                                        </div>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            <img src="../content/epaper/images/care_article04.jpg" alt="">
-                                            <div class="slider_mask"></div>
-                                            <div class="article_info">
-                                                <h4>生活篇</h4>
-                                                <p>奶瓶真的有洗干净吗？</p>
-                                            </div>
-                                        </a>
+                                        <img src="../content/epaper/images/care_article04.jpg" alt="">
+                                        <div class="slider_mask"></div>
+                                        <div class="article_info">
+                                            <h4>生活篇</h4>
+                                            <p>奶瓶真的有洗干净吗？</p>
+                                        </div>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            <img src="../content/epaper/images/care_article05.jpg" alt="">
-                                            <div class="slider_mask"></div>
-                                            <div class="article_info">
-                                                <h4>亲子篇</h4>
-                                                <p>当爸爸后生活大不同!</p>
-                                            </div>
-                                        </a>
+                                        <img src="../content/epaper/images/care_article05.jpg" alt="">
+                                        <div class="slider_mask"></div>
+                                        <div class="article_info">
+                                            <h4>亲子篇</h4>
+                                            <p>当爸爸后生活大不同!</p>
+                                        </div>
                                     </li>
                                 </ul>
                                 <ol id="list">
@@ -113,13 +103,13 @@ include('inc.php');
                             </h4>
                             <ul>
                                 <li>
-                                    <a href="#">
+                                    <a href="baby_care_article/massage01.html">
                                         <p><img src="../content/epaper/images/massage01.jpg" alt=""></p>
                                         <span>肩颈疼痛？按3点，速缓解</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="baby_care_article/massage02.html">
                                         <p><img src="../content/epaper/images/massage02.jpg" alt=""></p>
                                         <span>宝宝正在学翻身、坐、爬？</span>
                                     </a>
@@ -145,7 +135,7 @@ include('inc.php');
                             </h4>
                             <ul>
                                 <li>
-                                    <a href="#">
+                                    <a href="baby_care_article/sports01.html">
                                         <p><img src="../content/epaper/images/sports01.jpg" alt=""></p>
                                         <span>亲子蹲运动，核心肌肉锻炼</span>
                                     </a>
@@ -183,13 +173,13 @@ include('inc.php');
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="baby_care_article/non_staple_food02.html">
                                         <p><img src="../content/epaper/images/non_staple_food02.jpg" alt=""></p>
                                         <span>简单4步骤，周岁母奶乳霜蛋糕！</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="baby_care_article/non_staple_food03.html">
                                         <p><img src="../content/epaper/images/non_staple_food03.jpg" alt=""></p>
                                         <span>母奶冰激淋，秋天美味清凉点心！</span>
                                     </a>
@@ -215,7 +205,7 @@ include('inc.php');
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="baby_care_article/life02.html">
                                         <p><img src="../content/epaper/images/life02.jpg" alt=""></p>
                                         <span>奶瓶用完就洗or累计多支1次洗？</span>
                                     </a>
@@ -227,7 +217,7 @@ include('inc.php');
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="baby_care_article/life04.html">
                                         <p><img src="../content/epaper/images/life04.jpg" alt=""></p>
                                         <span>宝宝半夜常哭闹？过敏惹的祸！</span>
                                     </a>
@@ -236,7 +226,7 @@ include('inc.php');
                         </div>
                         <div class="parent_offspring">
                             <h4>
-                                生活篇
+                                亲子篇
                                 <i></i>
                             </h4>
                             <ul>
@@ -259,7 +249,7 @@ include('inc.php');
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="baby_care_article/parent_offspring04.html">
                                         <p><img src="../content/epaper/images/parent_offspring04.jpg" alt=""></p>
                                         <span>爸爸多陪伴孩子，让孩子更有竞争力！</span>
                                     </a>

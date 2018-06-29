@@ -53,7 +53,7 @@ include('inc.php');
                             <div class="wrap" id='slider'>
                                 <ul id="pic">
                                     <li>
-                                        <a href="#">
+                                        <a href="baby_care_article.php">
                                             <img src="../content/epaper/images/care_article01.jpg" alt="">
                                             <div class="slider_mask"></div>
                                             <div class="article_info">
@@ -63,7 +63,7 @@ include('inc.php');
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="baby_care_article.php">
                                             <img src="../content/epaper/images/care_article02.jpg" alt="">
                                             <div class="slider_mask"></div>
                                             <div class="article_info">
@@ -73,7 +73,7 @@ include('inc.php');
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="baby_care_article.php">
                                             <img src="../content/epaper/images/care_article03.jpg" alt="">
                                             <div class="slider_mask"></div>
                                             <div class="article_info">
@@ -83,7 +83,7 @@ include('inc.php');
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="baby_care_article.php">
                                             <img src="../content/epaper/images/care_article04.jpg" alt="">
                                             <div class="slider_mask"></div>
                                             <div class="article_info">
@@ -93,7 +93,7 @@ include('inc.php');
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="baby_care_article.php">
                                             <img src="../content/epaper/images/care_article05.jpg" alt="">
                                             <div class="slider_mask"></div>
                                             <div class="article_info">
