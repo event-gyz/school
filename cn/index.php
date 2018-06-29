@@ -166,7 +166,9 @@ if(isset($_SESSION['user_token'])) {
                         </li>
                         <li>
                             <div class="item">
-                                <img src="../theme/cn/images/header/item_bnr04.png">
+                                <a href="recommend.php">
+                                    <img src="../theme/cn/images/header/item_bnr04.png">
+                                </a>
                             </div>
                         </li>
                     </ul>
