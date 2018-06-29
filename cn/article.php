@@ -154,7 +154,6 @@ include('inc.php');
         return theRequest;  
     }  
     var queryIndex = GetRequest()
-    console.log(queryIndex.index)
     var lis = $('.article_detail_list li')
     for(var i = 0; i < lis.length; i++){
         console.log($(lis[i]).attr('data-index'))
