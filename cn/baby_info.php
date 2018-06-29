@@ -266,12 +266,13 @@ if($member_uid > 0) {
     $('.info_list a').click(function(){
         showEditBabyBox()
         var birthday = $('.birthday_time').val()
-        var years = parseInt(birthday.split('-')[0])
-        var months = parseInt(birthday.split('-')[1])
-        var days = parseInt(birthday.split('-')[2])
-        $('#birth_box_years').val(years)
-        $('#birth_box_months').val(months)
-        $('#birth_box_days').val(days)
+        // var years = parseInt(birthday.split('-')[0])
+        // var months = parseInt(birthday.split('-')[1])
+        // var days = parseInt(birthday.split('-')[2])
+        // $('#birth_box_years').val(years)
+        // $('#birth_box_months').val(months)
+        // $('#birth_box_days').val(days)
+        $('#fst_birthdate').val(birthday)
     })
 
 

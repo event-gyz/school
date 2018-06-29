@@ -46,12 +46,8 @@
         $("#modify_baby_form").submit(function(){
             var nickname = $("#fst_nickname").val();
             var sex = $('input[name=fst_sex]:checked').val()
-            var birth_year = $("#birth_box_years").val();
-            var birth_month = $("#birth_box_months").val();
-            var birth_day = $("#birth_box_days").val();
-            var birthdate = birth_year+"-"+birth_month+"-"+birth_day;
-            console.log("nickname:"+nickname+",sex:"+sex+",birthdate:"+birthdate);
-            if(nickname) {
+            var birthdate = $('#fst_birthdate').val();
+            if(nickname && birthdate) {
                 $.ajax({
                     url: "addUser.php",
                     type: "POST",
@@ -62,7 +58,6 @@
                     },
                     dataType: "json",
                     success: function (jsonStr) {
-                        console.log(jsonStr);
                         if(jsonStr.result=='success') {
                             var message = $.parseJSON(jsonStr.message);
                             $.fancybox.close();
@@ -78,7 +73,7 @@
                                 document.location.href= 'report.php?f=1';
                         }
                         else {
-                            alert(jsonStr.message);
+                            layer.msg(jsonStr.message);
                             $("#modify_baby_form .errorbar").text(jsonStr.message).show().delay(3000).fadeOut();
                         }
                     },
@@ -86,9 +81,10 @@
 //                        alert('addUser failed: ' + err);
                     }
                 });
-            }
-            else {
-                $("#modify_baby_form .errorbar").show().delay(3000).fadeOut();
+            }else if(!nickname){
+                $(".fst_nickname_err").show().delay(3000).fadeOut();
+            }else if(!birthdate){
+                $(".fst_birthdate_err").show().delay(3000).fadeOut();
             }
             return false;
         });
@@ -358,20 +354,20 @@
         });
     }
 
-    function updateNumberOfDays(){
-        $('#birth_box_days').html('');
-        month=$('#birth_box_months').val();
-        year=$('#birth_box_years').val();
-        days=daysInMonth(month, year);
+    // function updateNumberOfDays(){
+    //     $('#birth_box_days').html('');
+    //     month=$('#birth_box_months').val();
+    //     year=$('#birth_box_years').val();
+    //     days=daysInMonth(month, year);
 
-        for(i=1; i < days+1 ; i++){
-            $('#birth_box_days').append($('<option />').val(i).html(i));
-        }
-    }
+    //     for(i=1; i < days+1 ; i++){
+    //         $('#birth_box_days').append($('<option />').val(i).html(i));
+    //     }
+    // }
 
-    function daysInMonth(month, year) {
-        return new Date(year, month, 0).getDate();
-    }
+    // function daysInMonth(month, year) {
+    //     return new Date(year, month, 0).getDate();
+    // }
 
     function checkEmailFormat() {
         if(!isEmail($("#login_id").val()) && !isTel($("#login_id").val())) {
