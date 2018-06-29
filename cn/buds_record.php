@@ -313,6 +313,7 @@ if(isset($payload)) {
 </section>
 <?php include 'inc_bottom_js.php'; ?>
 <script>
+    
     $(function () {
         var inputList = $('.model_diagram input')
         // console.log(inputList)

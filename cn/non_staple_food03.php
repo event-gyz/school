@@ -1,14 +1,13 @@
+<?php
+session_start();
+include('inc.php');
+?>
 <!DOCTYPE html>
-
+<html><!-- InstanceBegin template="/Templates/_page01.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
-	<meta http-equiv='Content-Type' content='text/html;charset=utf-8'>
-	<meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'>
-	<title>
-		【母奶冰激淋 美味清涼點心-】
-	</title>
-	<script src='https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js'>
-	</script>
-	<style>
+    <?php include('inc_head.php');  ?>
+    <style>
+		body{background: none;}
 		a {
 			color: #607fa6;
 			text-decoration: none;
@@ -138,42 +137,9 @@
 			<h2 class="rich_media_title" id="activity-name">【母奶冰激淋 美味清涼點心!】</h2>
 			<div id="meta_content" class="rich_media_meta_list">
 				<span class="rich_media_meta rich_media_meta_text">
-					<a href="../baby_care_article.php">婴儿护理文章</a>
+					<a href="baby_care_article.php" style="text-decoration: underline;">返回</a>
 				</span>
-				<span class="rich_media_meta rich_media_meta_nickname" id="profileBt">
-					<a href="javascript:void(0);">GOGO星球</a>
-					<div id="js_profile_qrcode" class="profile_container" style="display:none;">
-						<div class="profile_inner">
-							<strong class="profile_nickname">GOGO星球</strong>
-							<img class="profile_avatar" id="js_profile_qrcode_img" src="" alt="">
-
-							<p class="profile_meta">
-								<label class="profile_meta_label">微信号</label>
-								<span class="profile_meta_value">gogostar_cn</span>
-							</p>
-
-							<p class="profile_meta">
-								<label class="profile_meta_label">功能介绍</label>
-								<span class="profile_meta_value">北京宝贝星球科技有限公司是一家集合学前教育课程研发,儿童智能学习软硬件产品开发,互动游戏制作的创新型儿童教育平台。巴布豆家庭早教是公司专为国内儿童创办发行的家庭早教类产品。结合在线的教育讲座与线下全国百家门市的服务,可以说是把教育中心搬回家</span>
-							</p>
-
-						</div>
-						<span class="profile_arrow_wrp" id="js_profile_arrow_wrp">
-							<i class="profile_arrow arrow_out"></i>
-							<i class="profile_arrow arrow_in"></i>
-						</span>
-					</div>
-				</span>
-
-
-				<em id="publish_time" class="rich_media_meta rich_media_meta_text">2018-06-28</em>
-
-
-
-
-
 			</div>
-
 
 
 
@@ -821,4 +787,8 @@
 				</p>
 			</div>
 		</div>
+	</div>
+	<?php include 'inc_footer.html'; ?>
+<?php include 'inc_bottom_js.php'; ?>
 </body>
+<!-- InstanceEnd --></html>

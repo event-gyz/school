@@ -1,14 +1,13 @@
+<?php
+session_start();
+include('inc.php');
+?>
 <!DOCTYPE html>
-
+<html><!-- InstanceBegin template="/Templates/_page01.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
-	<meta http-equiv='Content-Type' content='text/html;charset=utf-8'>
-	<meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'>
-	<title>
-		【奶瓶用完就洗or累积多支1次洗？】
-	</title>
-	<script src='https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js'>
-	</script>
-	<style>
+    <?php include('inc_head.php');  ?>
+    <style>
+		body{background: none;}
 		a {
 			color: #607fa6;
 			text-decoration: none;
@@ -135,43 +134,11 @@
 		<div id="img-content">
 
 
-			<h2 class="rich_media_title" id="activity-name">【奶瓶用完就洗or累积多支1次洗？】</h2>
+			<h2 class="rich_media_title" id="activity-name">【宝宝半夜常哭闹?过敏惹的祸!】</h2>
 			<div id="meta_content" class="rich_media_meta_list">
 				<span class="rich_media_meta rich_media_meta_text">
-					<a href="../baby_care_article.php">婴儿护理文章</a>
+					<a href="baby_care_article.php" style="text-decoration: underline;">返回</a>
 				</span>
-				<span class="rich_media_meta rich_media_meta_nickname" id="profileBt">
-					<a href="javascript:void(0);">GOGO星球</a>
-					<div id="js_profile_qrcode" class="profile_container" style="display:none;">
-						<div class="profile_inner">
-							<strong class="profile_nickname">GOGO星球</strong>
-							<img class="profile_avatar" id="js_profile_qrcode_img" src="" alt="">
-
-							<p class="profile_meta">
-								<label class="profile_meta_label">微信号</label>
-								<span class="profile_meta_value">gogostar_cn</span>
-							</p>
-
-							<p class="profile_meta">
-								<label class="profile_meta_label">功能介绍</label>
-								<span class="profile_meta_value">北京宝贝星球科技有限公司是一家集合学前教育课程研发,儿童智能学习软硬件产品开发,互动游戏制作的创新型儿童教育平台。巴布豆家庭早教是公司专为国内儿童创办发行的家庭早教类产品。结合在线的教育讲座与线下全国百家门市的服务,可以说是把教育中心搬回家</span>
-							</p>
-
-						</div>
-						<span class="profile_arrow_wrp" id="js_profile_arrow_wrp">
-							<i class="profile_arrow arrow_out"></i>
-							<i class="profile_arrow arrow_in"></i>
-						</span>
-					</div>
-				</span>
-
-
-				<em id="publish_time" class="rich_media_meta rich_media_meta_text">2018-06-28</em>
-
-
-
-
-
 			</div>
 
 
@@ -243,23 +210,13 @@
 									</strong>
 								</span>
 							</p>
-							<p style="box-sizing: border-box;">
-								<span style="font-size: 16px;box-sizing: border-box;">不论是配方奶或母奶多少含油脂</span>
+							<p style="box-sizing: border-box;">宝宝还小只能用哭来表达情绪</p>
+							<p style="box-sizing: border-box;">建议爸妈可以先从饮食、</p>
+							<p style="box-sizing: border-box;">外观、
+								<span style="letter-spacing: 0px;line-height: 2.5;">环境卫生</span>
 							</p>
 							<p style="box-sizing: border-box;">
-								<span style="font-size: 16px;box-sizing: border-box;">用清水不仅洗不干净，</span>
-							</p>
-							<p style="box-sizing: border-box;">
-								<span style="font-size: 16px;box-sizing: border-box;">久了还留下奶臭味！</span>
-							</p>
-							<p style="box-sizing: border-box;">
-								<span style="font-size: 16px;box-sizing: border-box;">不过若要经消毒、滚水烫等麻烦步骤</span>
-							</p>
-							<p style="box-sizing: border-box;">
-								<span style="font-size: 16px;box-sizing: border-box;">让家长开始累积7、8支后才一次洗，</span>
-							</p>
-							<p style="box-sizing: border-box;">
-								<span style="font-size: 16px;box-sizing: border-box;">但久了会滋生细菌，还会影响宝宝健康!!</span>
+								<span style="letter-spacing: 0px;line-height: 2.5;">推测宝宝是否有过敏现象!</span>
 							</p>
 							<p style="box-sizing: border-box;">
 								<br style="box-sizing: border-box;" />
@@ -270,7 +227,7 @@
 				<section class="Powered-by-XIUMI V5" powered-by="xiumi.us" style="line-height: 25.6px;white-space: normal;box-sizing: border-box;">
 					<section style="margin-top: 10px;margin-bottom: 10px;text-align: center;box-sizing: border-box;">
 						<section style="max-width: 100%;vertical-align: middle;display: inline-block;box-sizing: border-box;overflow: hidden !important;">
-							<img data-ratio="0.965625" data-w="640" src="images\KpzeYbsSAAEvQYKia3qHWibaibcbibCqxGng6LibzUAkCvZK8gXe8GiaFfYEyic0uOUbuTWrmEuBlCOEic6gbvlqQibR7KQ.jpg"
+							<img data-ratio="1.0047244" data-w="635" src="images\KpzeYbsSAAEvQYKia3qHWibaibcbibCqxGngiaicKtLE9cNK5OeqF6fPVfm08cZSfvnkkUibYzFgmsUicDcovN35F82jzg.jpg"
 							 data-type="png" style="vertical-align: middle;box-sizing: border-box;" />
 						</section>
 					</section>
@@ -295,9 +252,12 @@
 				<section class="Powered-by-XIUMI V5" powered-by="xiumi.us" style="line-height: 25.6px;white-space: normal;box-sizing: border-box;">
 					<section style="box-sizing: border-box;">
 						<section style="padding-right: 30px;padding-left: 30px;line-height: 2.5;font-size: 15px;box-sizing: border-box;">
-							<p style="box-sizing: border-box;">建议妈咪们用专用奶瓶清洁露吧，</p>
-							<p style="box-sizing: border-box;">挑选时务必认明「食用级」唷！</p>
-							<p style="box-sizing: border-box;">&nbsp;</p>
+							<p style="box-sizing: border-box;">提前做好防护措施，才能有效降低过敏源，
+								<span style="line-height: 2.5;">宝宝开心舒服不哭闹~</span>
+							</p>
+							<p style="box-sizing: border-box;">
+								<br style="box-sizing: border-box;" />
+							</p>
 						</section>
 					</section>
 				</section>
@@ -548,7 +508,9 @@
 									</section>
 									<section style="display: inline-block;vertical-align: top;height: 2em;line-height: 2em;color: rgb(255, 255, 255);box-sizing: border-box;background-color: rgb(236, 14, 14);">
 										<p style="box-sizing: border-box;">
-											<strong style="box-sizing: border-box;">为什么选择巴布豆家庭早教？</strong>
+											<span style="font-size: 18px;">
+												<strong style="box-sizing: border-box;">为什么选择巴布豆家庭早教？</strong>
+											</span>
 										</p>
 									</section>
 									<section style="display: inline-block;vertical-align: top;box-sizing: border-box;">
@@ -655,6 +617,11 @@
 							<section class="Powered-by-XIUMI V5" powered-by="xiumi.us" style="box-sizing: border-box;">
 								<section style="box-sizing: border-box;">
 									<section style="color: rgb(236, 14, 14);box-sizing: border-box;">
+										<p style="box-sizing: border-box;">
+											<span style="font-size: 18px;box-sizing: border-box;">
+												<strong style="box-sizing: border-box;"></strong>
+											</span>
+										</p>
 										<p style="color: rgb(236, 14, 14);line-height: 25.6px;text-align: center;white-space: normal;box-sizing: border-box;background-color: rgb(255, 255, 255);">
 											<span style="font-size: 18px;box-sizing: border-box;">
 												<strong style="box-sizing: border-box;"></strong>
@@ -697,6 +664,9 @@
 											</strong>
 										</p>
 										<p style="color: rgb(236, 14, 14);line-height: 25.6px;text-align: center;white-space: normal;box-sizing: border-box;background-color: rgb(255, 255, 255);">
+											<span style="font-size: 18px;box-sizing: border-box;">
+												<strong style="box-sizing: border-box;"></strong>
+											</span>
 											<br />
 										</p>
 									</section>
@@ -777,4 +747,8 @@
 				</p>
 			</div>
 		</div>
+	</div>
+	<?php include 'inc_footer.html'; ?>
+<?php include 'inc_bottom_js.php'; ?>
 </body>
+<!-- InstanceEnd --></html>
