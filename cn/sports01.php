@@ -1,14 +1,13 @@
+<?php
+session_start();
+include('inc.php');
+?>
 <!DOCTYPE html>
-
+<html><!-- InstanceBegin template="/Templates/_page01.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
-	<meta http-equiv='Content-Type' content='text/html;charset=utf-8'>
-	<meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no'>
-	<title>
-		【简单4步骤 周岁母奶乳霜蛋糕-】
-	</title>
-	<script src='https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js'>
-	</script>
-	<style>
+    <?php include('inc_head.php');  ?>
+    <style>
+		body{background: none;}
 		a {
 			color: #607fa6;
 			text-decoration: none;
@@ -135,43 +134,11 @@
 		<div id="img-content">
 
 
-			<h2 class="rich_media_title" id="activity-name">【简单4步骤 周岁母奶乳霜蛋糕!】</h2>
+			<h2 class="rich_media_title" id="activity-name">【亲子蹲运动 核心肌肉锻炼!】</h2>
 			<div id="meta_content" class="rich_media_meta_list">
 				<span class="rich_media_meta rich_media_meta_text">
-					<a href="../baby_care_article.php">婴儿护理文章</a>
+					<a href="baby_care_article.php" style="text-decoration: underline;">返回</a>
 				</span>
-				<span class="rich_media_meta rich_media_meta_nickname" id="profileBt">
-					<a href="javascript:void(0);">GOGO星球</a>
-					<div id="js_profile_qrcode" class="profile_container" style="display:none;">
-						<div class="profile_inner">
-							<strong class="profile_nickname">GOGO星球</strong>
-							<img class="profile_avatar" id="js_profile_qrcode_img" src="" alt="">
-
-							<p class="profile_meta">
-								<label class="profile_meta_label">微信号</label>
-								<span class="profile_meta_value">gogostar_cn</span>
-							</p>
-
-							<p class="profile_meta">
-								<label class="profile_meta_label">功能介绍</label>
-								<span class="profile_meta_value">北京宝贝星球科技有限公司是一家集合学前教育课程研发,儿童智能学习软硬件产品开发,互动游戏制作的创新型儿童教育平台。巴布豆家庭早教是公司专为国内儿童创办发行的家庭早教类产品。结合在线的教育讲座与线下全国百家门市的服务,可以说是把教育中心搬回家</span>
-							</p>
-
-						</div>
-						<span class="profile_arrow_wrp" id="js_profile_arrow_wrp">
-							<i class="profile_arrow arrow_out"></i>
-							<i class="profile_arrow arrow_in"></i>
-						</span>
-					</div>
-				</span>
-
-
-				<em id="publish_time" class="rich_media_meta rich_media_meta_text">2018-06-28</em>
-
-
-
-
-
 			</div>
 
 
@@ -189,12 +156,12 @@
 
 
 				<section class="Powered-by-XIUMI V5" powered-by="xiumi.us" style="line-height: 25.6px;white-space: normal;box-sizing: border-box;">
-					<p style="margin-top: 10px;margin-bottom: 10px;text-align: center;box-sizing: border-box;text-indent: 2em;">
-						<span style="font-size: 18px;"></span>
-						<img data-ratio="0.13125" data-w="640" src="images\KpzeYbsSAAEvQYKia3qHWibaibcbibCqxGngqgQg4R1RPZfcOjAYU1FNVV7ertBltj9cso90LnJMfAlhaS2MxrIzgw.gif"
-						 data-type="gif" style="line-height: 25.6px;vertical-align: middle;box-sizing: border-box;" />
-						<br />
-					</p>
+					<section style="margin-top: 10px;margin-bottom: 10px;text-align: center;box-sizing: border-box;">
+						<section style="max-width: 100%;vertical-align: middle;display: inline-block;box-sizing: border-box;overflow: hidden !important;">
+							<img data-ratio="0.13125" data-w="640" src="images\KpzeYbsSAAEvQYKia3qHWibaibcbibCqxGngqgQg4R1RPZfcOjAYU1FNVV7ertBltj9cso90LnJMfAlhaS2MxrIzgw.gif"
+							 data-type="gif" style="vertical-align: middle;box-sizing: border-box;" />
+						</section>
+					</section>
 				</section>
 				<section class="Powered-by-XIUMI V5" powered-by="xiumi.us" style="line-height: 25.6px;white-space: normal;box-sizing: border-box;">
 					<section style="margin-top: 10px;margin-bottom: 10px;text-align: center;box-sizing: border-box;">
@@ -235,22 +202,23 @@
 				</section>
 				<section class="Powered-by-XIUMI V5" powered-by="xiumi.us" style="line-height: 25.6px;white-space: normal;box-sizing: border-box;">
 					<section style="box-sizing: border-box;">
-						<section style="text-align: center;line-height: 2.5;box-sizing: border-box;">
+						<section style="padding-right: 30px;padding-left: 30px;line-height: 2.5;text-align: center;letter-spacing: 0px;font-size: 15px;box-sizing: border-box;">
 							<p style="box-sizing: border-box;">
+								<strong style="box-sizing: border-box;">
+									<span style="font-size: 18px;box-sizing: border-box;">-- 婴幼护理专栏/亲子运动篇 --</span>
+								</strong>
+							</p>
+							<p style="text-align: left;box-sizing: border-box;">产后忙着带小孩，没时间运动怎么办?</p>
+							<p style="text-align: left;box-sizing: border-box;">一招亲子深蹲运动，利用宝宝的重量，</p>
+							<p style="box-sizing: border-box;text-align: center;">
 								<span style="box-sizing: border-box;">
-									<strong style="box-sizing: border-box;">
-										<span style="font-size: 18px;box-sizing: border-box;">--- 婴幼护理专栏/母乳副食品篇 ---</span>
+									<strong style="box-sizing: border-box;">帮妈妈打造好身材，
+										<span style="line-height: 2.5;box-sizing: border-box;">每周3次、
+											<br />每次20下，</span>
 									</strong>
 								</span>
+								<span style="text-align: left;letter-spacing: 0px;line-height: 2.5;">屁股大腿一起瘦!!</span>
 							</p>
-							<p style="box-sizing: border-box;">宝宝要满周岁了!</p>
-							<p style="box-sizing: border-box;">要准备怎样的蛋糕给宝宝庆生呢?</p>
-							<p style="box-sizing: border-box;">简单4步骤，
-								<span style="box-sizing: border-box;">用
-									<strong style="box-sizing: border-box;">母奶打造爱心乳霜蛋糕</strong>
-								</span>，</p>
-							<p style="box-sizing: border-box;">不只滋味甜蜜蜜，更有妈妈满满的爱!</p>
-							<p style="box-sizing: border-box;">让全家人一起享用健康又美味的周岁蛋糕!</p>
 							<p style="box-sizing: border-box;">
 								<br style="box-sizing: border-box;" />
 							</p>
@@ -260,40 +228,8 @@
 				<section class="Powered-by-XIUMI V5" powered-by="xiumi.us" style="line-height: 25.6px;white-space: normal;box-sizing: border-box;">
 					<section style="margin-top: 10px;margin-bottom: 10px;text-align: center;box-sizing: border-box;">
 						<section style="max-width: 100%;vertical-align: middle;display: inline-block;box-sizing: border-box;overflow: hidden !important;">
-							<img data-ratio="1.3636364" data-w="506" src="images\KpzeYbsSAAEvQYKia3qHWibaibcbibCqxGngfMW8K33zVCuicTOxxuSPTia7Le9qdYF9QicRedhS78dJCzSicMXicb9o5jg.jpg"
+							<img data-ratio="0.928125" data-w="640" src="images\KpzeYbsSAAEvQYKia3qHWibaibcbibCqxGnggkLZ7q1lrDJGJYMialpYwz5qaxwCiaCtTVYU8qN4b1bdjSGH38vwV6LA.jpg"
 							 data-type="png" style="vertical-align: middle;box-sizing: border-box;" />
-						</section>
-					</section>
-				</section>
-				<section class="Powered-by-XIUMI V5" powered-by="xiumi.us" style="line-height: 25.6px;white-space: normal;box-sizing: border-box;">
-					<section style="margin-top: 10px;margin-bottom: 10px;box-sizing: border-box;text-align: left;">
-						<section style="display: inline-block;vertical-align: bottom;width: 491.031px;box-sizing: border-box;">
-							<section class="Powered-by-XIUMI V5" powered-by="xiumi.us" style="box-sizing: border-box;">
-								<section style="margin-bottom: 5px;box-sizing: border-box;">
-									<section style="display: inline-block;box-sizing: border-box;">
-										<section style="margin-bottom: 0.25em;padding-right: 5px;padding-left: 5px;display: inline-block;vertical-align: bottom;border-bottom-width: 1px;border-bottom-style: dashed;border-bottom-color: rgb(175, 175, 175);box-sizing: border-box;">
-											<p style="box-sizing: border-box;">
-												<strong style="box-sizing: border-box;">&nbsp; 准备材料</strong>
-											</p>
-										</section>
-										<section style="display: inline-block;vertical-align: bottom;width: 0.5em;height: 0.5em;border-radius: 50%;box-sizing: border-box;background-color: rgb(95, 156, 239);"></section>&nbsp;</section>
-								</section>
-							</section>
-						</section>
-					</section>
-				</section>
-				<section class="Powered-by-XIUMI V5" powered-by="xiumi.us" style="line-height: 25.6px;white-space: normal;box-sizing: border-box;">
-					<section style="box-sizing: border-box;">
-						<section style="padding-right: 30px;padding-left: 30px;line-height: 2.5;box-sizing: border-box;">
-							<p style="box-sizing: border-box;">&nbsp;
-								<span style="letter-spacing: 0px;line-height: 2.5;box-sizing: border-box;">1/4杯椰子油 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>
-								<span style="letter-spacing: 0px;line-height: 2.5;box-sizing: border-box;">6茶匙母奶</span>
-							</p>
-							<p style="box-sizing: border-box;">&nbsp; 2杯糖粉 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-								<span style="letter-spacing: 0px;line-height: 2.5;box-sizing: border-box;">1茶匙有机香草精</span>
-							</p>
-							<p style="box-sizing: border-box;">&nbsp; 1个戚风蛋糕</p>
-							<p style="box-sizing: border-box;">&nbsp;</p>
 						</section>
 					</section>
 				</section>
@@ -303,9 +239,9 @@
 							<section class="Powered-by-XIUMI V5" powered-by="xiumi.us" style="box-sizing: border-box;">
 								<section style="margin-bottom: 5px;box-sizing: border-box;">
 									<section style="display: inline-block;box-sizing: border-box;">
-										<section style="margin-bottom: 0.25em;padding-right: 5px;padding-left: 5px;display: inline-block;vertical-align: bottom;border-bottom-width: 1px;border-bottom-style: dashed;border-bottom-color: rgb(175, 175, 175);box-sizing: border-box;">
+										<section style="margin-bottom: 0.25em;padding-right: 5px;padding-left: 5px;display: inline-block;vertical-align: bottom;border-bottom-width: 1px;border-bottom-style: dashed;border-bottom-color: rgb(175, 175, 175);font-size: 15px;box-sizing: border-box;">
 											<p style="box-sizing: border-box;">
-												<strong style="box-sizing: border-box;">&nbsp; &nbsp;步骤 &nbsp; &nbsp;</strong>
+												<strong style="box-sizing: border-box;">&nbsp; &nbsp;贴心叮咛 &nbsp;&nbsp;</strong>
 											</p>
 										</section>
 										<section style="display: inline-block;vertical-align: bottom;width: 0.5em;height: 0.5em;border-radius: 50%;box-sizing: border-box;background-color: rgb(95, 156, 239);"></section>&nbsp;</section>
@@ -316,14 +252,11 @@
 				</section>
 				<section class="Powered-by-XIUMI V5" powered-by="xiumi.us" style="line-height: 25.6px;white-space: normal;box-sizing: border-box;">
 					<section style="box-sizing: border-box;">
-						<section style="padding-right: 30px;padding-left: 30px;line-height: 2.5;font-size: 15px;letter-spacing: 2px;box-sizing: border-box;">
-							<p style="box-sizing: border-box;">
-								<span style="letter-spacing: 0px;line-height: 2.5;box-sizing: border-box;">1.将椰子油搅拌成乳霜状。</span>
+						<section style="padding-right: 30px;padding-left: 30px;line-height: 2.5;font-size: 15px;box-sizing: border-box;">
+							<p style="box-sizing: border-box;">深蹲时膝盖不要超过脚趾，
+								<span style="letter-spacing: 0px;line-height: 2.5;box-sizing: border-box;">并建议使用婴儿背带、在后方放置软垫，亲子运动更安全</span>
+								<span style="letter-spacing: 0px;line-height: 2.5;box-sizing: border-box;">运动完一起跟宝宝冲个澡，更健康、更好眠。</span>
 							</p>
-							<p style="box-sizing: border-box;">2.加入母奶和糖粉搅拌 再混合香草粉 搅拌要均匀避免结块。</p>
-							<p style="box-sizing: border-box;">3.将搅拌好的材料均匀抹在戚风蛋糕上。</p>
-							<p style="box-sizing: border-box;">4.将装饰完的蛋糕放入冰箱30分钟定型。</p>
-							<p style="box-sizing: border-box;">5.蛋糕插上蜡烛后 许愿吹蜡烛就可以切蛋糕享用了。</p>
 							<p style="box-sizing: border-box;">
 								<br style="box-sizing: border-box;" />
 							</p>
@@ -339,29 +272,22 @@
 								<span style="margin-left: 5px;width: 5px;height: 5px;float: left;border-radius: 50%;border: 1px solid rgb(95, 156, 239);box-sizing: border-box;"></span>
 								<span style="margin-left: 5px;width: 5px;height: 5px;float: left;border-radius: 50%;border: 1px solid rgb(95, 156, 239);box-sizing: border-box;"></span>
 								<span style="margin-left: 5px;width: 5px;height: 5px;float: left;border-radius: 50%;border: 1px solid rgb(95, 156, 239);box-sizing: border-box;"></span>
-								<span style="margin-left: 5px;width: 5px;height: 5px;float: left;border-radius: 50%;border: 1px solid rgb(95, 156, 239);box-sizing: border-box;"></span>
 							</section>
-							<section style="clear: both;box-sizing: border-box;"></section>
 						</section>
 					</section>
 				</section>
-				<section class="Powered-by-XIUMI V5" powered-by="xiumi.us" style="white-space: normal;box-sizing: border-box;">
+				<section class="Powered-by-XIUMI V5" powered-by="xiumi.us" style="line-height: 25.6px;white-space: normal;box-sizing: border-box;">
 					<section style="margin-top: 10px;margin-bottom: 10px;box-sizing: border-box;">
 						<section style="display: inline-block;vertical-align: bottom;width: 491.031px;box-sizing: border-box;">
 							<section class="Powered-by-XIUMI V5" powered-by="xiumi.us" style="box-sizing: border-box;">
 								<section style="margin-bottom: 5px;box-sizing: border-box;">
 									<section style="display: inline-block;box-sizing: border-box;">
 										<section style="margin-bottom: 0.25em;padding-right: 5px;padding-left: 5px;display: inline-block;vertical-align: bottom;border-bottom-width: 1px;border-bottom-style: dashed;border-bottom-color: rgb(175, 175, 175);box-sizing: border-box;">
-											<p style="text-align: center;box-sizing: border-box;">
-												<span style="font-size: 15px;">
-													<strong style="line-height: 25.6px;box-sizing: border-box;"> &nbsp;Profile&nbsp;人物简介</strong>
-												</span>
+											<p style="box-sizing: border-box;">
+												<strong style="box-sizing: border-box;">&nbsp; Profile&nbsp;人物简介</strong>
 											</p>
 										</section>
-										<section style="line-height: 25.6px;display: inline-block;vertical-align: bottom;width: 0.5em;height: 0.5em;border-radius: 50%;box-sizing: border-box;background-color: rgb(95, 156, 239);"></section>
-										<span style="line-height: 25.6px;font-size: 15px;">&nbsp;</span>
-									</section>
-									<section style="line-height: 25.6px;display: inline-block;box-sizing: border-box;"></section>
+										<section style="display: inline-block;vertical-align: bottom;width: 0.5em;height: 0.5em;border-radius: 50%;box-sizing: border-box;background-color: rgb(95, 156, 239);"></section>&nbsp;</section>
 								</section>
 							</section>
 						</section>
@@ -512,7 +438,7 @@
 									</section>
 									<section style="display: inline-block;vertical-align: top;height: 2em;line-height: 2em;color: rgb(255, 255, 255);box-sizing: border-box;background-color: rgb(236, 14, 14);">
 										<p style="box-sizing: border-box;">
-											<strong style="box-sizing: border-box;">什么是家庭早教包？
+											<strong style="box-sizing: border-box;">什么是家庭早教包？？？
 												<span style="letter-spacing: 0px;line-height: 2;box-sizing: border-box;">&nbsp;</span>
 											</strong>
 										</p>
@@ -582,15 +508,15 @@
 									</section>
 									<section style="display: inline-block;vertical-align: top;height: 2em;line-height: 2em;color: rgb(255, 255, 255);box-sizing: border-box;background-color: rgb(236, 14, 14);">
 										<p style="box-sizing: border-box;">
-											<strong style="box-sizing: border-box;">为什么选择巴布豆家庭早教？？</strong>
+											<span style="font-size: 18px;">
+												<strong style="box-sizing: border-box;">为什么选择巴布豆家庭早教？</strong>
+											</span>
 										</p>
 									</section>
 									<section style="display: inline-block;vertical-align: top;box-sizing: border-box;">
 										<section style="margin-left: 10px;height: 2em;width: 1em;border-left-width: 1em;border-left-style: solid;border-left-color: rgb(236, 14, 14);box-sizing: border-box;border-top-width: 1em !important;border-top-style: solid !important;border-top-color: transparent !important;border-bottom-width: 1em !important;border-bottom-style: solid !important;border-bottom-color: transparent !important;"></section>
-										<section style="margin-top: -2em;margin-right: -8px;margin-left: 7px;height: 2em;width: 1em;border-left-width: 1em;border-left-style: solid;border-left-color: rgb(255, 255, 255);box-sizing: border-box;border-top-width: 1em !important;border-top-style: solid !important;border-top-color: transparent !important;border-bottom-width: 1em !important;border-bottom-style: solid !important;border-bottom-color: transparent !important;">
-											<br />
-											<br />
-										</section>
+										<section style="margin-top: -2em;margin-right: -8px;margin-left: 7px;height: 2em;width: 1em;border-left-width: 1em;border-left-style: solid;border-left-color: rgb(255, 255, 255);box-sizing: border-box;border-top-width: 1em !important;border-top-style: solid !important;border-top-color: transparent !important;border-bottom-width: 1em !important;border-bottom-style: solid !important;border-bottom-color: transparent !important;"></section>
+										<section style="margin-top: -2em;height: 2em;width: 1em;border-left-width: 1em;border-left-style: solid;border-left-color: rgb(236, 14, 14);box-sizing: border-box;border-top-width: 1em !important;border-top-style: solid !important;border-top-color: transparent !important;border-bottom-width: 1em !important;border-bottom-style: solid !important;border-bottom-color: transparent !important;"></section>
 									</section>
 								</section>
 							</section>
@@ -691,7 +617,7 @@
 							<section class="Powered-by-XIUMI V5" powered-by="xiumi.us" style="box-sizing: border-box;">
 								<section style="box-sizing: border-box;">
 									<section style="color: rgb(236, 14, 14);box-sizing: border-box;">
-										<p style="color: rgb(236, 14, 14);line-height: 25.6px;text-align: center;white-space: normal;box-sizing: border-box;background-color: rgb(255, 255, 255);">
+										<p style="box-sizing: border-box;">
 											<span style="font-size: 18px;box-sizing: border-box;">
 												<strong style="box-sizing: border-box;"></strong>
 											</span>
@@ -736,6 +662,16 @@
 								</strong>
 							</p>
 							<section class="Powered-by-XIUMI V5" powered-by="xiumi.us" style="box-sizing: border-box;">
+								<section style="box-sizing: border-box;">
+									<section style="text-align: left;box-sizing: border-box;">
+										<p style="box-sizing: border-box;">
+											<strong style="box-sizing: border-box;"></strong>
+										</p>
+									</section>
+								</section>
+								<br />
+							</section>
+							<section class="Powered-by-XIUMI V5" powered-by="xiumi.us" style="box-sizing: border-box;">
 								<section style="margin-top: 10px;margin-bottom: 10px;box-sizing: border-box;">
 									<section style="display: inline-block;width: 536px;vertical-align: top;box-sizing: border-box;background-image: url(&quot;https://mmbiz.qpic.cn/mmbiz_png/gVDzQU0lZtx8xtFgM5QXnqGAfBTesnAVwP2roasmVtxyKiaf2MeybNJkykyicX0zAib6P4ETMbPSibicOV2wQp4LQww/640?wx_fmt=png&quot;);background-attachment: scroll;background-size: 99.4573%;background-position: 0% 0%;background-repeat: repeat;">
 										<section class="Powered-by-XIUMI V5" powered-by="xiumi.us" style="box-sizing: border-box;">
@@ -745,7 +681,7 @@
 														<section style="margin-top: 18px;margin-bottom: 8px;box-sizing: border-box;">
 															<section style="padding-right: 0.75em;padding-left: 0.75em;display: inline-block;border-radius: 5px;border: 1px solid rgb(45, 69, 152);color: rgb(45, 69, 152);line-height: 1.9;text-align: left;box-sizing: border-box;background-color: rgb(254, 255, 255);">
 																<p style="box-sizing: border-box;">
-																	<br />
+																	<br style="box-sizing: border-box;" />
 																</p>
 																<p style="box-sizing: border-box;">
 																	<strong style="box-sizing: border-box;">全国客户服务电话，欢迎来电咨询！：</strong>
@@ -784,7 +720,6 @@
 										</section>
 									</section>
 								</section>
-								<br />
 							</section>
 						</section>
 					</section>
@@ -806,6 +741,13 @@
 						</section>
 					</section>
 				</section>
+				<p>
+					<br />
+				</p>
 			</div>
 		</div>
+	</div>
+	<?php include 'inc_footer.html'; ?>
+<?php include 'inc_bottom_js.php'; ?>
 </body>
+<!-- InstanceEnd --></html>

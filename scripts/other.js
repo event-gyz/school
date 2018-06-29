@@ -55,16 +55,6 @@ function w(){
     }
 }
 
-// 定义日期选择器属性
-$( ".datepicker" ).datepicker({
-    maxDate: 0,
-    changeYear: true,
-    changeMonth: true,
-    monthNamesShort: ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'],
-    dayNamesMin: ['日','一','二','三','四','五','六'],
-    dateFormat: 'yy-mm-dd'
-});
-
 function plays(container, liContent,smallStop){
     var now = 0, timer = null;
     liContent[0].style.opacity = 1;
@@ -142,6 +132,17 @@ $(window).resize(function(e){
 $(function(){
     
     w();
+
+    // 定义日期选择器属性
+    $( ".datepicker" ).datepicker({
+        maxDate: 0,
+        changeYear: true,
+        changeMonth: true,
+        monthNamesShort: ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'],
+        dayNamesMin: ['日','一','二','三','四','五','六'],
+        dateFormat: 'yy-mm-dd'
+    });
+        
     
     /*===========================【首頁主選單】 ===========================*/  
     $('#header nav li').hover(function(){

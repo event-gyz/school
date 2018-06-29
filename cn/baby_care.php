@@ -46,7 +46,7 @@ include('inc.php');
                     <div class="article_column">
                         <p><a href="baby_care_article.php">更多》</a></p>
                         <h4>
-                            婴儿护理文章
+                            婴幼护理文章
                             <i></i>
                         </h4>
                         <div id="slider_box">
@@ -117,7 +117,7 @@ include('inc.php');
                     <div class="course_column">
                         <p><a href="#">更多》</a></p>
                         <h4>
-                            婴儿护理课程
+                            婴幼护理课程
                             <i></i>
                         </h4>
                         <div class="baby_care_course">
@@ -137,7 +137,7 @@ include('inc.php');
                     <div class="video_column">
                         <p><a href="baby_care_video.php">更多》</a></p>
                         <h4>
-                            婴儿护理视频
+                            婴幼护理视频
                             <i></i>
                         </h4>
                         <div class="baby_care_video">

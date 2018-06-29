@@ -136,7 +136,7 @@ include('inc.php');
                                 <li>
                                     <b class="clock"></b>
                                     记录时间：
-                                    <input class="time date_a"  name="date" type="text" data-position='bottomLeft' readonly x-webkit-speech="none" value="<?php echo date('Y-m-d',time())?>">
+                                    <input class="time datepicker"  name="date" readonly value="<?php echo date('Y-m-d',time())?>">
                                 </li>
                                 <li class="geographical_location">
                                     <b class="address"></b>
@@ -177,16 +177,7 @@ include('inc.php');
 
 </section>
 <?php include 'inc_bottom_js.php'; ?>
-<link rel="stylesheet" href="../theme/cn/jquery.cxcalendar.css">
-<script src="../scripts/jquery.cxcalendar.js"></script>
 <script>
-    // 限制可选日期
-    $('.date_a').cxCalendar({
-        type: 'date',
-        format: 'YYYY-MM-DD',
-        wday: 0,
-        endDate: new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate()
-    });
 
     // const map = new BMap.Map("allmap");
 

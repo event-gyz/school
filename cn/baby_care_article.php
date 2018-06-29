@@ -103,13 +103,13 @@ include('inc.php');
                             </h4>
                             <ul>
                                 <li>
-                                    <a href="baby_care_article/massage01.html">
+                                    <a href="massage01.php">
                                         <p><img src="../content/epaper/images/massage01.jpg" alt=""></p>
                                         <span>肩颈疼痛？按3点，速缓解</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="baby_care_article/massage02.html">
+                                    <a href="massage02.php">
                                         <p><img src="../content/epaper/images/massage02.jpg" alt=""></p>
                                         <span>宝宝正在学翻身、坐、爬？</span>
                                     </a>
@@ -135,7 +135,7 @@ include('inc.php');
                             </h4>
                             <ul>
                                 <li>
-                                    <a href="baby_care_article/sports01.html">
+                                    <a href="sports01.php">
                                         <p><img src="../content/epaper/images/sports01.jpg" alt=""></p>
                                         <span>亲子蹲运动，核心肌肉锻炼</span>
                                     </a>
@@ -173,13 +173,13 @@ include('inc.php');
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="baby_care_article/non_staple_food02.html">
+                                    <a href="non_staple_food02.php">
                                         <p><img src="../content/epaper/images/non_staple_food02.jpg" alt=""></p>
                                         <span>简单4步骤，周岁母奶乳霜蛋糕！</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="baby_care_article/non_staple_food03.html">
+                                    <a href="non_staple_food03.php">
                                         <p><img src="../content/epaper/images/non_staple_food03.jpg" alt=""></p>
                                         <span>母奶冰激淋，秋天美味清凉点心！</span>
                                     </a>
@@ -205,7 +205,7 @@ include('inc.php');
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="baby_care_article/life02.html">
+                                    <a href="life02.php">
                                         <p><img src="../content/epaper/images/life02.jpg" alt=""></p>
                                         <span>奶瓶用完就洗or累计多支1次洗？</span>
                                     </a>
@@ -217,7 +217,7 @@ include('inc.php');
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="baby_care_article/life04.html">
+                                    <a href="life04.php">
                                         <p><img src="../content/epaper/images/life04.jpg" alt=""></p>
                                         <span>宝宝半夜常哭闹？过敏惹的祸！</span>
                                     </a>
@@ -249,7 +249,7 @@ include('inc.php');
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="baby_care_article/parent_offspring04.html">
+                                    <a href="parent_offspring04.php">
                                         <p><img src="../content/epaper/images/parent_offspring04.jpg" alt=""></p>
                                         <span>爸爸多陪伴孩子，让孩子更有竞争力！</span>
                                     </a>
