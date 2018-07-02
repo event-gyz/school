@@ -257,7 +257,7 @@
                     }
                     else {
                         _next_move_ = 102;
-                        showEditBabyBox();
+                        showCompleteInfoBox();
                     }
                 }
                 else {
@@ -288,7 +288,7 @@
                     }
                     else {
                         _next_move_ = 100;
-                        showEditBabyBox();
+                        showCompleteInfoBox();
                     }
                 }
                 else {
@@ -338,7 +338,7 @@
                     }
                     else {
                         _next_move_ = 106;
-                        showEditBabyBox();
+                        showCompleteInfoBox();
                     }
                 }
                 else {
@@ -523,7 +523,7 @@
                         document.location.href = url;
                     }else {
                         _next_move_ = 100;
-                        showEditBabyBox();
+                        showCompleteInfoBox();
                     }
                 }
                 else {
