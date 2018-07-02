@@ -446,7 +446,7 @@
 					}
 					else {
 						_next_move_ = 102;
-						showEditBabyBox();
+						showCompleteInfoBox();
 					}
 				}
 				else {
@@ -474,7 +474,7 @@
 					}
 					else {
 						_next_move_ = 100;
-						showEditBabyBox();
+						showCompleteInfoBox();
 					}
 				}
 				else {
@@ -525,7 +525,7 @@
 					}
 					else {
 						_next_move_ = 106;
-						showEditBabyBox();
+						showCompleteInfoBox();
 					}
 				}
 				else {
@@ -563,7 +563,7 @@
 	}
 
 	//-- birhday --//
-	function showEditBabyBox() {
+	function showCompleteInfoBox() {
 		$('#fst_birthdate').val('')
 		// for (i = cur_year; i > (cur_year-10); i--) {
 		// 	$('#birth_box_years').append($('<option />').val(i).html(i));
@@ -580,6 +580,14 @@
 		$.fancybox({
             href: "#fy-complete-info"
 //			href: "#fy-fst"
+		});
+	}
+
+	//-- birhday --//
+	function showEditBabyBox() {
+		$('#fst_birthdate').val('')
+		$.fancybox({
+			href: "#fy-fst"
 		});
 	}
 
