@@ -60,37 +60,37 @@ include('inc.php');
                     <ul class="baby_care_video_list">
                         <li>
                             <p>
-                                <video src="../content/epaper/source/baby_care_video01.mp4" controls="true" poster="../content/epaper/images/baby_care_video01.jpg"></video>
+                                <video class="c-h5" src="../content/epaper/source/baby_care_video01.mp4" controls="true" poster="../content/epaper/images/baby_care_video01.jpg" x5-video-player-type='h5' x5-video-player-fullscreen="true" playsinline="true" webkit-playsinline="true"></video>
                             </p>
                             <span>宝宝学爬？爸妈这样辅助！</span>
                         </li>
                         <li>
                             <p>
-                                <video src="../content/epaper/source/baby_care_video02.mp4" controls="true" poster="../content/epaper/images/baby_care_video02.jpg"></video>
+                                <video class="c-h5" src="../content/epaper/source/baby_care_video02.mp4" controls="true" poster="../content/epaper/images/baby_care_video02.jpg" x5-video-player-type='h5' x5-video-player-fullscreen="true" playsinline="true" webkit-playsinline="true"></video>
                             </p>
                             <span>0-1岁多按，促进视觉发展！</span>
                         </li>
                         <li>
                             <p>
-                                <video src="../content/epaper/source/baby_care_video03.mp4" controls="true" poster="../content/epaper/images/baby_care_video03.jpg"></video>
+                                <video class="c-h5" class="c-h5" src="../content/epaper/source/baby_care_video03.mp4" controls="true" poster="../content/epaper/images/baby_care_video03.jpg" x5-video-player-type='h5' x5-video-player-fullscreen="true" playsinline="true" webkit-playsinline="true"></video>
                             </p>
                             <span>增强宝宝益智健脑，这样按！</span>
                         </li>
                         <li>
                             <p>
-                                <video src="../content/epaper/source/baby_care_video04.mp4" controls="true" poster="../content/epaper/images/baby_care_video04.jpg"></video>
+                                <video class="c-h5" src="../content/epaper/source/baby_care_video04.mp4" controls="true" poster="../content/epaper/images/baby_care_video04.jpg" x5-video-player-type='h5' x5-video-player-fullscreen="true" playsinline="true" webkit-playsinline="true"></video>
                             </p>
                             <span>讨厌的肠绞痛，Bye-bye！</span>
                         </li>
                         <li>
                             <p>
-                                <video src="../content/epaper/source/baby_care_video05.mp4" controls="true" poster="../content/epaper/images/baby_care_video05.jpg"></video>
+                                <video class="c-h5" src="../content/epaper/source/baby_care_video05.mp4" controls="true" poster="../content/epaper/images/baby_care_video05.jpg" x5-video-player-type='h5' x5-video-player-fullscreen="true" playsinline="true" webkit-playsinline="true"></video>
                             </p>
                             <span>这样按，预防宝宝扁平足！</span>
                         </li>
                         <li>
                             <p>
-                                <video src="../content/epaper/source/baby_care_video06.mp4" controls="true" poster="../content/epaper/images/baby_care_video06.jpg"></video>
+                                <video class="c-h5" src="../content/epaper/source/baby_care_video06.mp4" controls="true" poster="../content/epaper/images/baby_care_video06.jpg" x5-video-player-type='h5' x5-video-player-fullscreen="true" playsinline="true" webkit-playsinline="true"></video>
                             </p>
                             <span>4招，让宝宝「高」人一等！</span>
                         </li>
@@ -115,5 +115,15 @@ include('inc.php');
 
 </section>
 <?php include 'inc_bottom_js.php'; ?>
+<script>
+    window.onload = function(){
+        var Width=$('.baby_care_video_list p').innerWidth();
+        var Height=$('.baby_care_video_list p').innerHeight();
+        $('.c-h5').css({
+            width:Width,
+            height:Height
+        })
+    }
+</script>
 </body>
 <!-- InstanceEnd --></html>

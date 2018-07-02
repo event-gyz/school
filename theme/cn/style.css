@@ -173,6 +173,7 @@ a.i-more span{font-family: 'simsun';}
 .baby_care_article_list ul{box-shadow: 0px 2px 2px #E7E7E7 inset;overflow: hidden;}
 .psychological_article_list li,.psychological_course_list li,.baby_care_video_list li,.baby_care_article_list li{float: left;width:48%;margin-right: 2%;margin-bottom:0.2927rem;line-height: 0.439rem;font-size: 0.3317rem;}
 .baby_care_article_list li{margin-top:0.2439rem;margin-bottom: 0;}
+.baby_care_video_list li p{height:3.3171rem;}
 .psychological_article_list li a,.psychological_course_list li a,.baby_care_video_list li span,.baby_care_article_list li a{display:block;color:#5E5858;transition: none;font-size: 0.3317rem;line-height: 0.4878rem;text-overflow:ellipsis;white-space: nowrap;overflow: hidden;width:100%;}
 .psychological_article_list li:nth-child(even),.psychological_course_list li:nth-child(even),.baby_care_video_list li:nth-child(even),.baby_care_article_list li:nth-child(even){margin-right: 0;margin-left: 2%;}
 .article_deatil,.course_deatil{line-height: 1.6;font-size: 14px;color: #807d78;letter-spacing: 1px;text-align: center;}
