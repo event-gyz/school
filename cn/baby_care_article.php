@@ -115,13 +115,13 @@ include('inc.php');
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="massage03.php">
                                         <p><img src="../content/epaper/images/massage03.jpg" alt=""></p>
                                         <span>宝宝肚子鼓鼓的，频哭闹？</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="massage04.php">
                                         <p><img src="../content/epaper/images/massage04.jpg" alt=""></p>
                                         <span>按、搓、推，让宝宝头脑更聪明！</span>
                                     </a>
@@ -141,19 +141,19 @@ include('inc.php');
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="sports02.php">
                                         <p><img src="../content/epaper/images/sports02.jpg" alt=""></p>
                                         <span>打造好体质健康宝宝瑜伽操！</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="sports03.php">
                                         <p><img src="../content/epaper/images/sports03.jpg" alt=""></p>
                                         <span>宝宝学爬更快速，简单一招搞定！</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="sports04.php">
                                         <p><img src="../content/epaper/images/sports04.jpg" alt=""></p>
                                         <span>宝宝健身操，学坐好轻松！</span>
                                     </a>
@@ -167,7 +167,7 @@ include('inc.php');
                             </h4>
                             <ul>
                                 <li>
-                                    <a href="#">
+                                    <a href="non_staple_food01.php">
                                         <p><img src="../content/epaper/images/non_staple_food01.jpg" alt=""></p>
                                         <span>简单两步骤母乳奶油轻松做！</span>
                                     </a>
@@ -185,7 +185,7 @@ include('inc.php');
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="non_staple_food04.php">
                                         <p><img src="../content/epaper/images/non_staple_food04.jpg" alt=""></p>
                                         <span>3招母奶变松饼，甜蜜过圣诞！</span>
                                     </a>
@@ -199,7 +199,7 @@ include('inc.php');
                             </h4>
                             <ul>
                                 <li>
-                                    <a href="#">
+                                    <a href="life01.php">
                                         <p><img src="../content/epaper/images/life01.jpg" alt=""></p>
                                         <span>体贴老婆，必做贴心事</span>
                                     </a>
@@ -211,7 +211,7 @@ include('inc.php');
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="life03.php">
                                         <p><img src="../content/epaper/images/life03.jpg" alt=""></p>
                                         <span>天冷，帮宝宝洗澡免紧张！</span>
                                     </a>
@@ -231,19 +231,19 @@ include('inc.php');
                             </h4>
                             <ul>
                                 <li>
-                                    <a href="#">
+                                    <a href="parent_offspring01.php">
                                         <p><img src="../content/epaper/images/parent_offspring01.jpg" alt=""></p>
                                         <span>当爸爸后，生活大不同！</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="parent_offspring02.php">
                                         <p><img src="../content/epaper/images/parent_offspring02.jpg" alt=""></p>
                                         <span>当妈之后，成了炫娃狂人！</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="parent_offspring03.php">
                                         <p><img src="../content/epaper/images/parent_offspring03.jpg" alt=""></p>
                                         <span>三人行约会更浪漫！</span>
                                     </a>
