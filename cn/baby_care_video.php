@@ -40,7 +40,7 @@ include('inc.php');
                         <section class="gopath"><a href="index.php">首页</a> > <a href="recommend.php">育儿天地</a> > <a href="baby_care.php">婴儿护理</a> > 婴儿护理视频</section>
                     </div>
 
-                    <div class="video_column">
+                    <div class="baby_care_video">
                         <p>
                             <img src="../content/epaper/images/care_video.jpg" alt="">
                         </p>

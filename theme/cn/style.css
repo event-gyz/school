@@ -206,7 +206,9 @@ a.i-more span{font-family: 'simsun';}
 .vjs-poster{width:100%;background-color: #fff;}
 
 .video-js .vjs-mute-control,.video-js .vjs-volume-panel,.video-js .vjs-time-control{display: none;}
-.video-js .vjs-big-play-button{width:1.5em;height:1.15em;line-height: 1em;top:50%;left:50%;transform: translate(-50%,-50%);}
+.vjs-icon-placeholder:before{font-size: 0.4683rem;}
+.video-js .vjs-big-play-button{width:0.878rem;height:0.878rem;line-height: 0.878rem;top:50%;left:50%;transform: translate(-50%,-50%);border-radius: 50%;border:0;}
+.vjs-loading-spinner{width:0.878rem;height:0.878rem;}
 /* 儿童心理页面样式 end */
 
 .artbox_category{box-shadow: 0 2px 2px 1px #DADADA;overflow: hidden;}
