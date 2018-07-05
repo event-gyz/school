@@ -6,6 +6,7 @@ include('inc.php');
 <!DOCTYPE html>
 <html><!-- InstanceBegin template="/Templates/_page01.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
+    <link href="https://vjs.zencdn.net/7.0.3/video-js.css" rel="stylesheet">
     <?php include('inc_head.php');	?>
     <style>
         body{background: #fff;}
@@ -39,7 +40,7 @@ include('inc.php');
                         <section class="gopath"><a href="index.php">首页</a> > <a href="recommend.php">育儿天地</a> > <a href="baby_care.php">婴儿护理</a> > 婴儿护理视频</section>
                     </div>
 
-                    <div class="video_column">
+                    <div class="baby_care_video">
                         <p>
                             <img src="../content/epaper/images/care_video.jpg" alt="">
                         </p>
@@ -60,37 +61,55 @@ include('inc.php');
                     <ul class="baby_care_video_list">
                         <li>
                             <p>
-                                <video src="../content/epaper/source/baby_care_video01.mp4" controls="true" poster="../content/epaper/images/baby_care_video01.jpg"></video>
+                                <video class="video-js" controls preload="auto"
+                                  poster="../content/epaper/images/baby_care_video01.jpg" data-setup="{}">
+                                    <source src="../content/epaper/source/baby_care_video01.mp4" type='video/mp4'>
+                                </video>
                             </p>
                             <span>宝宝学爬？爸妈这样辅助！</span>
                         </li>
                         <li>
                             <p>
-                                <video src="../content/epaper/source/baby_care_video02.mp4" controls="true" poster="../content/epaper/images/baby_care_video02.jpg"></video>
+                                <video class="video-js" controls preload="auto"
+                                  poster="../content/epaper/images/baby_care_video02.jpg" data-setup="{}">
+                                    <source src="../content/epaper/source/baby_care_video02.mp4" type='video/mp4'>
+                                </video>
                             </p>
                             <span>0-1岁多按，促进视觉发展！</span>
                         </li>
                         <li>
                             <p>
-                                <video src="../content/epaper/source/baby_care_video03.mp4" controls="true" poster="../content/epaper/images/baby_care_video03.jpg"></video>
+                                <video class="video-js" controls preload="auto"
+                                  poster="../content/epaper/images/baby_care_video03.jpg" data-setup="{}">
+                                    <source src="../content/epaper/source/baby_care_video03.mp4" type='video/mp4'>
+                                </video>
                             </p>
                             <span>增强宝宝益智健脑，这样按！</span>
                         </li>
                         <li>
                             <p>
-                                <video src="../content/epaper/source/baby_care_video04.mp4" controls="true" poster="../content/epaper/images/baby_care_video04.jpg"></video>
+                                <video class="video-js" controls preload="auto"
+                                  poster="../content/epaper/images/baby_care_video04.jpg" data-setup="{}">
+                                    <source src="../content/epaper/source/baby_care_video04.mp4" type='video/mp4'>
+                                </video>
                             </p>
                             <span>讨厌的肠绞痛，Bye-bye！</span>
                         </li>
                         <li>
                             <p>
-                                <video src="../content/epaper/source/baby_care_video05.mp4" controls="true" poster="../content/epaper/images/baby_care_video05.jpg"></video>
+                                <video class="video-js" controls preload="auto"
+                                  poster="../content/epaper/images/baby_care_video05.jpg" data-setup="{}">
+                                    <source src="../content/epaper/source/baby_care_video05.mp4" type='video/mp4'>
+                                </video>
                             </p>
                             <span>这样按，预防宝宝扁平足！</span>
                         </li>
                         <li>
                             <p>
-                                <video src="../content/epaper/source/baby_care_video06.mp4" controls="true" poster="../content/epaper/images/baby_care_video06.jpg"></video>
+                                <video class="video-js" controls preload="auto"
+                                  poster="../content/epaper/images/baby_care_video06.jpg" data-setup="{}">
+                                    <source src="../content/epaper/source/baby_care_video06.mp4" type='video/mp4'>
+                                </video>
                             </p>
                             <span>4招，让宝宝「高」人一等！</span>
                         </li>
@@ -115,5 +134,59 @@ include('inc.php');
 
 </section>
 <?php include 'inc_bottom_js.php'; ?>
+<script src="https://vjs.zencdn.net/7.0.3/video.js"></script>
+<script>
+    // window.onload = function(){
+    //     var Width=$('.baby_care_video_list p').innerWidth();
+    //     var Height=$('.baby_care_video_list p').innerHeight();
+    //     $('.c-h5').css({
+    //         width:Width,
+    //         height:Height
+    //     })
+    // }
+    //获取video
+
+    // var oLiveVideo=document.getElementById("liveVideo");
+
+    // //获取canvas画布
+
+    // var oLiveCanvas=document.getElementById("canvas");
+
+    // //设置画布
+
+    // var oLiveCanvas2D=oLiveCanvas.getContext('2d');
+
+    // //设置setinterval定时器
+
+    // var bLiveVideoTimer=null;
+
+    // //监听播放
+
+    // oLiveVideo.addEventListener('play',function() {
+
+    //     bLiveVideoTimer=setInterval(function() {
+
+    //         oLiveCanvas2D.drawImage(myPlayer,0,0,640,320);
+
+    //     },20);
+
+    // },false);
+
+    // //监听暂停
+
+    // oLiveVideo.addEventListener('pause',function() {
+
+    //     clearInterval(bLiveVideoTimer);
+
+    // },false);
+
+    // //监听结束
+
+    // oLiveVideo.addEventListener('ended',function() {
+
+    //     clearInterval(bLiveVideoTimer);
+
+    // },false);
+</script>
 </body>
 <!-- InstanceEnd --></html>

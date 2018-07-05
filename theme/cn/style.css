@@ -173,7 +173,8 @@ a.i-more span{font-family: 'simsun';}
 .baby_care_article_list ul{box-shadow: 0px 2px 2px #E7E7E7 inset;overflow: hidden;}
 .psychological_article_list li,.psychological_course_list li,.baby_care_video_list li,.baby_care_article_list li{float: left;width:48%;margin-right: 2%;margin-bottom:0.2927rem;line-height: 0.439rem;font-size: 0.3317rem;}
 .baby_care_article_list li{margin-top:0.2439rem;margin-bottom: 0;}
-.psychological_article_list li a,.psychological_course_list li a,.baby_care_video_list li span,.baby_care_article_list li a{display:block;color:#5E5858;transition: none;font-size: 0.3317rem;line-height: 0.4878rem;text-overflow:ellipsis;white-space: nowrap;overflow: hidden;width:100%;}
+.baby_care_video_list li p{height:2.4878rem;width:4.0878rem;}
+.psychological_article_list li a,.psychological_course_list li a,.baby_care_video_list li>span,.baby_care_article_list li a{display:block;color:#5E5858;transition: none;font-size: 0.3317rem;line-height: 0.4878rem;text-overflow:ellipsis;white-space: nowrap;overflow: hidden;width:100%;}
 .psychological_article_list li:nth-child(even),.psychological_course_list li:nth-child(even),.baby_care_video_list li:nth-child(even),.baby_care_article_list li:nth-child(even){margin-right: 0;margin-left: 2%;}
 .article_deatil,.course_deatil{line-height: 1.6;font-size: 14px;color: #807d78;letter-spacing: 1px;text-align: center;}
 .article_detail_list li{display: none;}
@@ -201,6 +202,13 @@ a.i-more span{font-family: 'simsun';}
 
 #meta_content a{color:#5FBF51;font-size: 18px;}
 .rich_media{padding-top:20px;}
+.video-js{width:100%;height:100%;}
+.vjs-poster{width:100%;background-color: #fff;}
+
+.video-js .vjs-mute-control,.video-js .vjs-volume-panel,.video-js .vjs-time-control{display: none;}
+.vjs-icon-placeholder:before{font-size: 0.4683rem;}
+.video-js .vjs-big-play-button{width:0.878rem;height:0.878rem;line-height: 0.878rem;top:50%;left:50%;transform: translate(-50%,-50%);border-radius: 50%;border:0;}
+.vjs-loading-spinner{width:0.878rem;height:0.878rem;border-radius: 50%;}
 /* 儿童心理页面样式 end */
 
 .artbox_category{box-shadow: 0 2px 2px 1px #DADADA;overflow: hidden;}
@@ -252,7 +260,7 @@ a.i-more span{font-family: 'simsun';}
 .in_iframe .ratio{display:block;height:auto;width:100%;}
 .in_iframe iframe{height:100%;left:0;position:absolute;top:0;width:100%;}
 .repbox .Txt.fl{padding:0 0 15px;position: relative;}
-.item_successed_chart{position: absolute;top:-26px;right:0;width:50%;height:160px;text-align: center;z-index: 99;}
+.item_successed_chart{position: absolute;top:-36px;right:0;width:50%;height:160px;text-align: center;z-index: 99;}
 .item_successed_chart svg{width:160px;height:200px;}
 .board{background:none repeat scroll 0 0 #5EC152;border-radius:15px;color:#666666;display:inline;float:right;margin:0 0 15px;padding:0 0 0 3%;width:27%;}
 .board .inboard{background:none repeat scroll 0 0 #EEEEEE;border-radius:0 15px 15px 0;padding:15px 5%;}
