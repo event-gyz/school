@@ -135,58 +135,5 @@ include('inc.php');
 </section>
 <?php include 'inc_bottom_js.php'; ?>
 <script src="https://vjs.zencdn.net/7.0.3/video.js"></script>
-<script>
-    // window.onload = function(){
-    //     var Width=$('.baby_care_video_list p').innerWidth();
-    //     var Height=$('.baby_care_video_list p').innerHeight();
-    //     $('.c-h5').css({
-    //         width:Width,
-    //         height:Height
-    //     })
-    // }
-    //获取video
-
-    // var oLiveVideo=document.getElementById("liveVideo");
-
-    // //获取canvas画布
-
-    // var oLiveCanvas=document.getElementById("canvas");
-
-    // //设置画布
-
-    // var oLiveCanvas2D=oLiveCanvas.getContext('2d');
-
-    // //设置setinterval定时器
-
-    // var bLiveVideoTimer=null;
-
-    // //监听播放
-
-    // oLiveVideo.addEventListener('play',function() {
-
-    //     bLiveVideoTimer=setInterval(function() {
-
-    //         oLiveCanvas2D.drawImage(myPlayer,0,0,640,320);
-
-    //     },20);
-
-    // },false);
-
-    // //监听暂停
-
-    // oLiveVideo.addEventListener('pause',function() {
-
-    //     clearInterval(bLiveVideoTimer);
-
-    // },false);
-
-    // //监听结束
-
-    // oLiveVideo.addEventListener('ended',function() {
-
-    //     clearInterval(bLiveVideoTimer);
-
-    // },false);
-</script>
 </body>
 <!-- InstanceEnd --></html>

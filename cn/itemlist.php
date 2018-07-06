@@ -293,7 +293,7 @@ if($membership['membership']<time()){
         // 画矩形框并加入SVG中
         svg.appendChild(new drawRectSVG({
             x: 18,
-            y: 4,
+            y: 2,
             width: 12,
             height: 12,
             fill: '#FFD181'
@@ -301,7 +301,7 @@ if($membership['membership']<time()){
         // 画文本并加入SVG中
         svg.appendChild(new drawTextSVG({
             x: '50%',
-            y: 3,
+            y: 1,
             size: '14px',
             text: '完成度'+Math.round(size/currentSize*100)+'%',
             color: '#7C7C7C',
@@ -310,7 +310,7 @@ if($membership['membership']<time()){
         }));
         svg.appendChild(new drawTextSVG({
             x: '50%',
-            y: 22,
+            y: 20,
             size: '14px',
             text: '（落后项目：'+late+'）',
             color: '#A6A7A8',
