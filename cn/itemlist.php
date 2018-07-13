@@ -414,7 +414,7 @@ if($membership['membership']<time()){
             y: 150,
             size: '12px',
             text: '5岁',
-            color: '#FFF',
+            color: '#FFF', 
             transform: 'rotate(-60, 112, 150)'
         }));
         svg.appendChild(new drawTextSVG({
