@@ -28,6 +28,7 @@
                         var message = $.parseJSON(jsonStr.message);
                         showLoginStatus(message.email,message.credit);
                         $.fancybox.close();
+						console.log(1213123123);
                         <?php
                         if(isset($b_post_tv_submit) && $b_post_tv_submit == true) {
                             $b_post_tv_submit = false;
@@ -60,7 +61,9 @@
                         else if(_next_move_ == 109) {
                             _next_move_ = 0;
                             document.location.href = 'person.php';
-                        }
+                        }else{
+							document.location.reload(true);
+						}
                     }
                     else {
                         $("#fy-login .error01").show().delay(3000).fadeOut();
