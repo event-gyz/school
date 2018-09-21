@@ -180,7 +180,7 @@ if(isset($payload)) {
                                     <?php
                                 }else{
                                     ?>
-                                    <a style="float: right;width: 4.4878rem;height: 1.0732rem;text-align: right;color:#C84040;padding:0;font-size: 0.3902rem;" class="bind_mobile"><b>绑定手机送好礼</b></a>
+                                    <a style="float: right;width: 4.6rem;height: 1.1rem;text-align: right;color:#C84040;padding:0;font-size: 0.4rem;" class="bind_mobile"><b>绑定手机送好礼</b></a>
                                     <?php
                                 }
                                 ?>

@@ -20,7 +20,7 @@ var waitTime = {
             clientWidth = 1025;
         };
         if (!clientWidth) return;
-        docEl.style.fontSize = 102.5 * (clientWidth / 1025) + 'px';
+        docEl.style.fontSize = 100 * (clientWidth / 1025) + 'px';
     };
     if (!doc.addEventListener) return;
     win.addEventListener(resizeEvt, recalc, false);

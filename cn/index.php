@@ -9,6 +9,9 @@ if(isset($_GET['id'])&&!empty($_GET['id'])){
 <html><!-- InstanceBegin template="/Templates/_page01.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
     <?php include('inc_head.php');	?>
+    <style>
+        body{background:#FFFFFF;}
+    </style>
 </head>
 
 <body>
@@ -50,20 +53,20 @@ if(isset($payload)) {
                     $_SESSION['user_credit'] = $CMEMBER->credit;
                     $_SESSION['user_epaper'] = $CMEMBER->epaper;
                     $goodlink = true;
-                    echo('<script type="text/javascript">$(function(){$.fancybox({        href: "#fcb_pw_reset"    }	);});</script>');
+                    echo('<script type="text/javascript">$(function(){$.fancybox({        href: "#fcb_pw_reset"    }    );});</script>');
                 }
             }
         }
         if(!$goodlink) {
             // expired
             echo('
-						<script type="text/javascript"> 
-							$(function(){
-								$("#wrap").attr("class","inpage");
-								$("#content").load("fg_nouse_content.html");
-							});
-						</script>						
-						');
+                        <script type="text/javascript"> 
+                            $(function(){
+                                $("#wrap").attr("class","inpage");
+                                $("#content").load("fg_nouse_content.html");
+                            });
+                        </script>                       
+                        ');
         }
     }
     else if($action == 'verify') {
@@ -73,10 +76,10 @@ if(isset($payload)) {
         $result = query($sql);
         if(mysql_affected_rows() > 0) {
             echo ('<script type="text/javascript"> 
-			        			$(function(){
-			        				$("#regwork").fancybox().trigger("click");
-			        			});</script>
-			        		');
+                                $(function(){
+                                    $("#regwork").fancybox().trigger("click");
+                                });</script>
+                            ');
         }
         else {
             // TODO error handling
@@ -131,164 +134,146 @@ if(isset($_SESSION['user_token'])) {
     }
 }
 ?>
+<?php
+include("inc_fancyboxes.php");
+?>
 <!-- InstanceBeginEditable name="wrap" -->
 <section id="wrap">
-    <!-- InstanceEndEditable -->
-
     <!--【Header】-->
-    <?php include 'inc_header.php'; ?>
+    <?php //include 'inc_header.php'; ?>
     <!--【Header End】-->
-
-    <!--【Content】-->
-    <section id="content">
-        <!-- InstanceBeginEditable name="content" -->
-
-        <!--//Slider Banner//-->
-        <!--【註1】class="slider"為圖片區，clider-pg為分頁icon區,幾張圖對應幾個icon。-->
-        <section class="sliderbox">
-            <div class="iosSlider">
-                <div class="slider">
-                    <ul class="clearfix">
-                        <li>
-                            <div class="item">
-                                <img src="../theme/cn/images/header/item_bnr01.png">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="item">
-                                <img src="../theme/cn/images/header/item_bnr02.png">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="item">
-                                <img src="../theme/cn/images/header/item_bnr03.png">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="item">
-                                <a href="recommend.php">
-                                    <img src="../theme/cn/images/header/item_bnr04.png">
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="slider-pg">
-                    <div class="pgs">
-                        <div class="item fst on"></div>
-                        <div class="item"></div>
-                        <div class="item"></div>
-                        <div class="item"></div>
+    <!-- InstanceEndEditable -->
+    <div class="index">
+        <div class="top_banner">
+            <div class="message">
+                <b></b>
+            </div>
+            <div class="sign_in"></div>
+            <div class="login_name">ZICO</div>
+            <div class="login_age">
+                <p>早上好~</p>
+                <span>今天你5岁1个月3天啦</span>
+            </div>
+        </div>
+        <div class="index_info">
+            <ul class="month">
+                <li>
+                    <p>6个月零1天</p>
+                </li>
+                <li class="current">
+                    <p>6个月零3天</p>
+                    <span>9月30日</span>
+                </li>
+                <li>
+                    <p>6个月零30天</p>
+                </li>
+            </ul>
+            <p>妈妈，我已经爬的很快了，我想学走路。</p>
+            <ul class="category">
+                <li class="height">
+                    <p>
+                        <b></b>
+                    </p>
+                    <span>38.6-45.3cm</span>
+                </li>
+                <li class="weight">
+                    <p>
+                        <b></b>
+                    </p>
+                    <span>18-24kg</span>
+                </li>
+                <li class="vaccine">
+                    <p>
+                        <b></b>
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <div class="todolist">
+            <ul class="todolist_category">
+                <li class="current">成长日记</li>
+                <li>生长发育</li>
+                <li>疫苗接种</li>
+            </ul>
+            <ul class="todoitems">
+                <li class="measure_body">
+                    <b></b>
+                    <p>您已经有85天没有给默默测量身高体重了</p>
+                </li>
+                <li class="share">
+                    <b></b>
+                    <p>好东西值得分享，快去分享给好友吧！</p>
+                </li>
+                <li class="vaccine">
+                    <b></b>
+                    <p>宝宝9个月了，已经打过四次疫苗了没来看看吧！</p>
+                </li>
+            </ul>
+        </div>
+        <div class="keep_diary">
+            <div class="small_title">
+                <i></i>
+                <b></b>
+                <p>写日记</p>
+            </div>
+            <div class="diary_info">
+                <i></i>
+                <s></s>
+                <div class="diary_date">
+                    <h2>暑假第一天</h2>
+                    <div class="date">
+                        <b>16</b>
+                        <div class="month">
+                            <p>AUG</p>
+                            <span>2018</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!--//Slider Banner//-->
-
-        <!--//主內容//-->
-        <section class="indexcont">
-            <section class="inbox">
-
-                <!--//4 Banner//-->
-                <section class="sbnr">
-                    <ul class="clearfix">
-                        <li><a href="#exbox01" class="fancybox"><img src="../theme/cn/images/content/item_sbnr01.png"></a></li>
-                        <li><a href="javascript:onMenuItem3Click();"><img src="../theme/cn/images/content/item_sbnr02.png"></a></li>
-                        <li><a href="javascript:onMenuItem2Click();"><img src="../theme/cn/images/content/item_sbnr03.png"></a></li>
-                        <li><a href="javascript:onMenuItem6Click();"><img src="../theme/cn/images/content/item_sbnr04.png"></a></li>
-                        <li><a href="recommend.php"><img src="../theme/cn/images/content/item_sbnr05.png"></a></li>
-                        <li><a href="javascript:onMenuItem4Click();"><img src="../theme/cn/images/content/item_sbnr06.png"></a></li>
-                    </ul>
-                </section>
-                <!--//4 Banner//-->
-
-                <!--//【Fancybox】體驗流程//-->
-                <?php include 'inc_trial.php'; ?>
-                <!--//【Fancybox】體驗流程//-->
-
-                <!--//首页三區塊//-->
-                <section class="contbox clearfix">
-
-                    <!--//推薦文章//-->
-                    <!--【註1】固定四則訊息，最後一個給予class="m-none"是For手機不顯示用。 原本用 list01 fl, 改為 list02 不顯示圖片-->
-                    <?php
-                    if($_show_image) {
-                        echo('<section class="list01 fl">');
-                    }
-                    else {
-                        echo('<section class="list03 fl">');
-                    }
-                    ?>
-                    <h3 class="title">最新消息</h3>
-                    <?php
-                    if(empty($phone)){
-                        ?>
-                        <a href="javascript:void(0)" class="bind_mobile">绑定手机赢好礼</a>
-                        <?php
-                    }
-                    ?>
-
-                    <a href="share_tips.php" class="recommend_tips">推荐好友送好礼</a>
-
-                    <ul>
-                        <li>
-                            <h4>您的宝宝最近一次疫苗</h4>
-                            <p>
-                                <?php get_baby_vaccine(); ?>
-                            </p>
-                        </li>
-                    </ul>
-                    <?php af_articles_list_recommend('推荐'); ?>
-                </section>
-                <!--//推薦文章//-->
-
-                <!--//最新消息//-->
-                <!--【註1】固定五則訊息，最後二個給予class="m-none"是For手機不顯示用。-->
-                <section class="list02 fl">
-                    <h3 class="title">家长分享<a href="parental_sharing.php" class="i-more">更多内容</a></h3>
-
-                    <?php index_grow_diary_list(); ?>
-                </section>
-                <!--//最新消息//-->
-
-                <!--//右側Bnr//-->
-                <section class="bnrlist fl">
-                    <ul>
-                        <li><a href="#fy-register" class="fancybox"><img src="../theme/cn/images/content/item_rbnr01.jpg"></a></li>
-                    </ul>
-                </section>
-                <!--//右側Bnr//-->
-
-            </section>
-            <!--//首页三區塊//-->
-
-        </section>
-    </section>
-    <!--//主內容//-->
-
+            <div class="diary_operation">
+                <ul>
+                    <li class="likes">
+                        <b></b>
+                        <span>33</span>
+                    </li>
+                    <li class="edit">
+                        <b></b>
+                        <span>50</span>
+                    </li>
+                    <li class="share">
+                        <b></b>
+                        <span>19</span>
+                    </li>
+                    <li class="delete">
+                        <b></b>
+                    </li>
+                </ul>
+                <p>全文</p>
+            </div>
+            <div class="comment">
+                <ul>
+                    <li>
+                        <p><img src="../content/epaper/images/commentator01.png" alt=""></p>
+                        <span>奶奶：哈哈 太淘气了 像他爸爸小时候</span>
+                    </li>
+                    <li>
+                        <p><img src="../content/epaper/images/commentator02.png" alt=""></p>
+                        <span>NINI：好可爱 \(//V//)\</span>
+                    </li>
+                    <li>
+                        <p></p>
+                        <span></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <!-- InstanceEndEditable -->
 </section>
 <!--【Content End】-->
-
 <!--【Footer】-->
 <?php include 'inc_footer.html'; ?>
 <!--【Footer End】-->
-
-</section>
 <?php include 'inc_bottom_js.php'; ?>
-<script>
-    $(function(){
-        <?php if(isset($_GET['ask_account']) && $_GET['ask_account']==1 && isset($_SESSION['wx_info'])){?>
-        $.fancybox({
-            href: "#fy-info-ask-account"
-        });
-        <?php }?>
-    })
-    $('.bind_mobile').click(function(){
-        $.fancybox({
-            href: "#fy-mobile-bind"
-        });
-    })
-</script>
 </body>
 <!-- InstanceEnd --></html>

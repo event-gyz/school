@@ -1,27 +1,27 @@
 ﻿<section>
     <ul class="foooter_nav">
-        <li class="icon_newcomers">
-            <a href="newcomers.php">
+        <li class="icon_home">
+            <a href="index.php">
                 <p></p>
-                <b>新手上路</b>
+                <b>首页</b>
             </a>
         </li>
-        <li class="icon_menu">
-            <a href="javascript:onMenuItem2Click();">
+        <li class="icon_evaluating">
+            <a href="javascript:void(0);">
+                <p></p>
+                <b>成长评测</b>
+            </a>
+        </li>
+        <li class="icon_record">
+            <a  href="ceanza_menu.php">
                 <p></p>
                 <b>成长记录</b>
             </a>
         </li>
-        <li class="icon_index">
-            <a  href="javascript:onMenuItem3Click();">
+        <li class="icon_community">
+            <a  href="javascript:void(0);">
                 <p></p>
-                <b>成长指标</b>
-            </a>
-        </li>
-        <li class="icon_report">
-            <a  href="javascript:onMenuItem6Click();">
-                <p></p>
-                <b>成长报告</b>
+                <b>社群</b>
             </a>
         </li>
         <li class="icon_person">
@@ -32,27 +32,3 @@
         </li>
     </ul>
 </section>
-<script>
-    function pageName(){
-        var a = location.href;
-        var b = a.split("/");
-        var c = b.slice(b.length-1, b.length).toString(String).split(".");
-        return c[0];
-    }
-    $('.foooter_nav li').removeClass('active')
-    if(pageName() == 'ceanza_menu'){
-        $('.foooter_nav li.icon_menu').addClass('active')
-    }else if(pageName() == 'itemlist'){
-        $('.foooter_nav li.icon_index').addClass('active')
-    }else if(pageName() == 'report'){
-        $('.foooter_nav li.icon_report').addClass('active')
-    }else if(pageName() == 'newcomers'){
-        $('.foooter_nav li.icon_newcomers').addClass('active')
-    }
-    // else if(pageName() == 'share_tips'){
-    //     $('.foooter_nav li.icon_recommend_friends').addClass('active')
-    // }
-    else if(pageName() == 'person'){
-        $('.foooter_nav li.icon_person').addClass('active')
-    }
-</script>
