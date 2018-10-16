@@ -50,7 +50,7 @@
                         }
                         else if(_next_move_ == 107) {
                             _next_move_ = 0;
-//                            document.location.href = 'http://x.eqxiu.com/s/PclsbuXT';
+                           // document.location.href = 'http://x.eqxiu.com/s/PclsbuXT';
                             document.location.href = 'buds_record.php';
                         }
                         else if(_next_move_ == 108) {
@@ -75,10 +75,10 @@
 
 		$("#mobile_login_form").submit(function(e){
 			e.preventDefault();
-//            if(!checkEmailFormat() || !checkPasswordFormat()) {
-//                $("#fy-login .error01").show().delay(3000).fadeOut();
-//                return true;
-//            }
+           // if(!checkEmailFormat() || !checkPasswordFormat()) {
+           //     $("#fy-login .error01").show().delay(3000).fadeOut();
+           //     return true;
+           // }
 			var login_mobile = $("#login_mobile").val();
 			var login_vcode = $("#login_vcode").val();
 
@@ -112,7 +112,7 @@
 					}
 				},
 				error: function(xhr, err) {
-//					alert('Ajax request ' + err);
+					// alert('Ajax request ' + err);
 				}
 			});
 			return false;
@@ -123,103 +123,103 @@
         });
 
 
-//		// Register
-//		$("#register_form").submit(function(e){
-//			e.preventDefault();
-//			if(!checkRegEmailFormat()) {
-//				$("#errorbar_reg_email").text('请输入正确的电子邮件').show().delay(3000).fadeOut();
-//				return true;
-//			}
-//			if (!checkRegPasswordFormat()) {
-//				$("#errorbar_reg_password").text('须6至20位，可含字母、数字、下划线').show().delay(3000).fadeOut();
-//				return true;
-//			}
-//			if (!checkPasswordRepeat()){
-//				return true;
-//			}
-////        if (!checkRegNameFormat()){
-////            return true;
-////        }
-//			if (!checkRegDateFormat()){
-//				return true;
-//			}
-//			// 参数
-//			var phone = $("#reg_tel").val();
-//			var auth_code = $("#reg_authcode").val();
-//			var user_id = $("#reg_email").val();
-//			var user_password = $("#reg_password").val();
-//			var birthday = $("#reg_date").val();
-//			var city_name = $("#city_name").val();
-//			var sex = 1;
-//			if(reg_genner == "男"){
-//				sex = 0;
-//			}
-//			var nickname = $("#reg_name").val();
-//			checkAuthcodeFormat(phone, auth_code);
-//			if (!authcode){
-//				$("#errorbar_reg_authcode").text('验证码错误').show().delay(3000).fadeOut();
-//				return true;
-//			}
-//
-//
-//			$.ajax({
-//				url: "register.php",
-//				type: "POST",
-//				data: {
-//					'p1': user_id,
-//					'p2': user_password,
-//					'p3': auth_code,
-//					'p4': phone,
-//					'p5':birthday,
-//					'p6':sex,
-//					'p7':nickname,
-//					'p8':city_name,
-//				},
-//				dataType: "json",
-//				success: function (jsonStr) {
-//					//console.log(jsonStr);
-//					if(jsonStr.result=='success') {
-//						var message = $.parseJSON(jsonStr.message);
-//						showLoginStatus(message.email,message.credit);
-//						$.fancybox.close();
-//						<?php
-//						if(isset($b_post_tv_submit) && $b_post_tv_submit == true) {
-//							$b_post_tv_submit = false;
-//							echo('postTvSubmit();');
-//						}
-//						else {
-//							//echo('$("#regdone").fancybox().trigger("click");');
-//							echo('
-//			            	$("#regdone").css("max-width","500px");
-//			            	$("#regdone").fancybox({"width":500, "height":500, "autoSize" : false}).trigger("click");
-//			            ');
-//						}
-//						?>
-//					}
-//					else
-//					{
-//						$("#fy-register .error01").text(jsonStr.message).show().delay(3000).fadeOut();
-//					}
-//				},
-//				error: function(xhr, err) {
-//					alert('Ajax request ' + err);
-//				}
-//			});
-//			return false;
-//		});
+		// Register
+		// $("#register_form").submit(function(e){
+		// 	e.preventDefault();
+		// 	if(!checkRegEmailFormat()) {
+		// 		$("#errorbar_reg_email").text('请输入正确的电子邮件').show().delay(3000).fadeOut();
+		// 		return true;
+		// 	}
+		// 	if (!checkRegPasswordFormat()) {
+		// 		$("#errorbar_reg_password").text('须6至20位，可含字母、数字、下划线').show().delay(3000).fadeOut();
+		// 		return true;
+		// 	}
+		// 	if (!checkPasswordRepeat()){
+		// 		return true;
+		// 	}
+		// 	// if (!checkRegNameFormat()){
+		// 	//    return true;
+		// 	// }
+		// 	if (!checkRegDateFormat()){
+		// 		return true;
+		// 	}
+		// 	// 参数
+		// 	var phone = $("#reg_tel").val();
+		// 	var auth_code = $("#reg_authcode").val();
+		// 	var user_id = $("#reg_email").val();
+		// 	var user_password = $("#reg_password").val();
+		// 	var birthday = $("#reg_date").val();
+		// 	var city_name = $("#city_name").val();
+		// 	var sex = 1;
+		// 	if(reg_genner == "男"){
+		// 		sex = 0;
+		// 	}
+		// 	var nickname = $("#reg_name").val();
+		// 	checkAuthcodeFormat(phone, auth_code);
+		// 	if (!authcode){
+		// 		$("#errorbar_reg_authcode").text('验证码错误').show().delay(3000).fadeOut();
+		// 		return true;
+		// 	}
+
+
+		// 	$.ajax({
+		// 		url: "register.php",
+		// 		type: "POST",
+		// 		data: {
+		// 			'p1': user_id,
+		// 			'p2': user_password,
+		// 			'p3': auth_code,
+		// 			'p4': phone,
+		// 			'p5':birthday,
+		// 			'p6':sex,
+		// 			'p7':nickname,
+		// 			'p8':city_name,
+		// 		},
+		// 		dataType: "json",
+		// 		success: function (jsonStr) {
+		// 			//console.log(jsonStr);
+		// 			if(jsonStr.result=='success') {
+		// 				var message = $.parseJSON(jsonStr.message);
+		// 				showLoginStatus(message.email,message.credit);
+		// 				$.fancybox.close();
+		// 				<?php
+		// 				if(isset($b_post_tv_submit) && $b_post_tv_submit == true) {
+		// 					$b_post_tv_submit = false;
+		// 					echo('postTvSubmit();');
+		// 				}
+		// 				else {
+		// 					//echo('$("#regdone").fancybox().trigger("click");');
+		// 					echo('
+		// 	            	$("#regdone").css("max-width","500px");
+		// 	            	$("#regdone").fancybox({"width":500, "height":500, "autoSize" : false}).trigger("click");
+		// 	            ');
+		// 				}
+		// 				?>
+		// 			}
+		// 			else
+		// 			{
+		// 				$("#fy-register .error01").text(jsonStr.message).show().delay(3000).fadeOut();
+		// 			}
+		// 		},
+		// 		error: function(xhr, err) {
+		// 			alert('Ajax request ' + err);
+		// 		}
+		// 	});
+		// 	return false;
+		// });
 		// modify baby
 
 		// modify member
 		$("#modify_member_form").submit(function(){
-//            var nickname = $("#fstmb_nickname").val();
+           // var nickname = $("#fstmb_nickname").val();
 			var phone = $("#fstmb_phone").val();
 			var password = $("#fstmb_password").val();
 			var password2 = $("#fstmb_password2").val();
 			var check_ok = true;
-//            if(!nickname) {
-//                $("#fstmb_error1").show().delay(2000).fadeOut();
-//                check_ok = false;
-//            }
+           // if(!nickname) {
+           //     $("#fstmb_error1").show().delay(2000).fadeOut();
+           //     check_ok = false;
+           // }
 
 			if(phone && !isTel(phone)) {
 				$("#fstmb_error2").show().delay(2000).fadeOut();
@@ -240,7 +240,7 @@
 					url: "edit_member.php",
 					type: "POST",
 					data: {
-//						'p1': nickname,
+						// 'p1': nickname,
 						'p2': phone,
 						'p3': password
 					},
@@ -257,13 +257,13 @@
 						}
 					},
 					error: function(xhr, err) {
-//						alert('edit member failed: ' + err);
+						// alert('edit member failed: ' + err);
 					}
 				});
 			}
 			return false;
 		});
-// forget password
+		// forget password
         $("#forget_pwd_form").submit(function(){
             var auth_code = $("#forget_authcode").val();
             var phone = $("#forget_mobile").val();
@@ -286,7 +286,7 @@
                     }
                 },
                 error: function(xhr, err) {
-//                    alert('Ajax request ' + err);
+                   // alert('Ajax request ' + err);
                 }
             });
             return false;
@@ -314,7 +314,7 @@
                     }
                 },
                 error: function(xhr, err) {
-//                    alert('Ajax request ' + err);
+                   // alert('Ajax request ' + err);
                 }
             });
             return false;
@@ -344,7 +344,7 @@
 					}
 				},
 				error: function(xhr, err) {
-//					alert('Ajax request ' + err);
+					// alert('Ajax request ' + err);
 				}
 			});
 			return false;
@@ -457,7 +457,7 @@
 				}
 			},
 			error: function(xhr, err) {
-//	            alert('Ajax request ' + err);
+	            // alert('Ajax request ' + err);
 			}
 		});
 	}
@@ -485,7 +485,7 @@
 				}
 			},
 			error: function(xhr, err) {
-//				alert('Ajax request ' + err);
+				// alert('Ajax request ' + err);
 			}
 		});
 	}
@@ -497,7 +497,7 @@
 			success: function (jsonStr) {
 				if(jsonStr.islogin==true) {
 					_next_move_ = 0;
-//					document.location.href = 'http://x.eqxiu.com/s/PclsbuXT';
+					// document.location.href = 'http://x.eqxiu.com/s/PclsbuXT';
 
                     document.location.href = 'early_education.php';
 				}
@@ -536,7 +536,7 @@
 				}
 			},
 			error: function(xhr, err) {
-//				console.log('Ajax request ' + err);
+				// console.log('Ajax request ' + err);
 			}
 		});
 	}
@@ -579,7 +579,7 @@
 		// });
 		$.fancybox({
             href: "#fy-complete-info"
-//			href: "#fy-fst"
+			// href: "#fy-fst"
 		});
 	}
 
@@ -757,11 +757,10 @@
 				$.fancybox({   	href: "#exbox02"    });
 			},
 			error: function(xhr, err) {
-//				alert('Woops! Something was wrong!');
+				// alert('Woops! Something was wrong!');
 			}
 		});
 	}
-
 </script>
 <?php
 if(isset($_SESSION['user_token'])) {

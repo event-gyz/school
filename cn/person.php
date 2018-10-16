@@ -253,6 +253,7 @@ if(isset($payload)) {
             aspectRatio : 1
         })
         clipper.confirm(function(file){
+            console.log(file);
             // formData
             let fd = new FormData()
             // 上传头像参数

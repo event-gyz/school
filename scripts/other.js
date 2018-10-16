@@ -10,6 +10,23 @@ var waitTime = {
             second: 60
         }
 
+var diaryUploadImgs = [{
+    id: '0',
+    url: '../content/epaper/images/upload_img01.jpg'
+},{
+    id: '1',
+    url: '../content/epaper/images/upload_img02.jpg'
+},{
+    id: '2',
+    url: '../content/epaper/images/baby_care.jpg'
+}]
+var newDiaryUploadImgs;
+
+$('.add_upload_img input').on('change', function(e){
+    newDiaryUploadImgs = [].concat(diaryUploadImgs)
+});
+
+
 // 单位换算
 ;(function (doc, win) {
     var docEl = doc.documentElement,
