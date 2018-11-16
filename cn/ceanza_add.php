@@ -142,10 +142,10 @@ include('inc.php');
                                     <b class="address"></b>
                                     记录地址：
                                     <input type="text" id="suggestId" name="address"  class="address-input"/>
-                                    <div class="relative_position">
+                                    <!-- <div class="relative_position">
                                         <p>手动输入</p>
                                         <ul class="position_list"></ul>
-                                    </div>
+                                    </div> -->
                                 </li>
                             </ul>
                             <ul class="uploadImgList">
@@ -183,32 +183,32 @@ include('inc.php');
 
     var geolocation = new BMap.Geolocation();
 
-    geolocation.getCurrentPosition( r => {
-        $('#suggestId').focus(function(){
-        if(geolocation.getStatus() == BMAP_STATUS_SUCCESS){
-            var new_point = new BMap.Point(r.point.lng,r.point.lat);
-            BMap.Convertor.translate(new_point, 0, point => {
-                var geoc = new BMap.Geocoder();
-            geoc.getLocation(point, rs => {
-                console.log(rs)
-                var positionList = rs.surroundingPois,
-                html = `<li class="first_position"><p>${rs.addressComponents.city}</p></li>`;
-            for(var i = 0; i < positionList.length; i++){
-                html += `<li><p>${positionList[i].title}</p><span>${positionList[i].address}</span></li>`
-            }
-            $('.position_list').html(html)
-        });
-        });
-        }else {
-            alert('failed'+geolocation.getStatus());
-        }
-        $(this).siblings('.relative_position').show()
-    })
-    },{enableHighAccuracy: true})
+    // geolocation.getCurrentPosition( r => {
+    //     $('#suggestId').focus(function(){
+    //     if(geolocation.getStatus() == BMAP_STATUS_SUCCESS){
+    //         var new_point = new BMap.Point(r.point.lng,r.point.lat);
+    //         BMap.Convertor.translate(new_point, 0, point => {
+    //             var geoc = new BMap.Geocoder();
+    //         geoc.getLocation(point, rs => {
+    //             console.log(rs)
+    //             var positionList = rs.surroundingPois,
+    //             html = `<li class="first_position"><p>${rs.addressComponents.city}</p></li>`;
+    //         for(var i = 0; i < positionList.length; i++){
+    //             html += `<li><p>${positionList[i].title}</p><span>${positionList[i].address}</span></li>`
+    //         }
+    //         $('.position_list').html(html)
+    //     });
+    //     });
+    //     }else {
+    //         alert('failed'+geolocation.getStatus());
+    //     }
+    //     $(this).siblings('.relative_position').show()
+    // })
+    // },{enableHighAccuracy: true})
 
-    $('#suggestId').blur(function(){
-        setTimeout(()=>{$(this).siblings('.relative_position').hide()},100)
-    })
+    // $('#suggestId').blur(function(){
+    //     setTimeout(()=>{$(this).siblings('.relative_position').hide()},100)
+    // })
 
     // $('.relative_position p').click(function(event){
     //     var e = event || window.event
